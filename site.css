@@ -96,7 +96,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .hero{position:relative;height:100svh;min-height:580px;overflow:hidden;background:var(--ink);display:flex;align-items:flex-end}
 .hero__reel{position:absolute;inset:0;z-index:1}
 .hero__reel img,.hero__reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:translateZ(0)}
-.hero.reel .hero__reel img{transition:opacity .16s linear}
+.hero.reel .hero__reel img{transition:none}
 .hero__reel img.on,.hero__reel video.on{opacity:1}
 .hero__reel .final{transition:opacity .9s ease}
 .hero__scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(23,21,19,.92),rgba(23,21,19,.4) 52%,rgba(23,21,19,.22));opacity:0;transition:opacity 1s ease}

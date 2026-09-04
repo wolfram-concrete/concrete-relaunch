@@ -88,7 +88,7 @@
             var cur=seq[n];
             cur.style.zIndex=String(10+n);      // neuer Frame legt sich OBEN drauf
             cur.classList.add("on");             // alter bleibt sichtbar darunter — kein Schwarzblitz
-            word.className="f"+(n%13);
+            word.className=cur.getAttribute("data-font")||("f"+(n%13));
             if(n>1){seq[n-2].classList.remove("on");seq[n-2].style.zIndex="";}
             n++;
           }
