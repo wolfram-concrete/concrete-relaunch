@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Regelblatt · Magazin → Website</title>
+<style>
+@font-face{font-family:"Arame";font-weight:400;font-display:swap;src:url("fonts/0Arame-Regular.otf") format("opentype")}
+@font-face{font-family:"Arame";font-weight:700;font-display:swap;src:url("fonts/0Arame-Bold.otf") format("opentype")}
+@font-face{font-family:"Grotesk";font-weight:400;font-display:swap;src:url("fonts/RocGrotesk-Regular.otf") format("opentype")}
+@font-face{font-family:"Grotesk";font-weight:700;font-display:swap;src:url("fonts/RocGrotesk-Bold.otf") format("opentype")}
+:root{
+  --paper:#f3efe7;--paper-deep:#ece6da;--grey:#ebebeb;--grey-d:#a8a8a8;
+  --ink:#171513;--ink-soft:#4a4642;--ink-60:rgba(23,21,19,.6);
+  --coral:#fe7e5e;--coral-l:#febdac;--rule:rgba(23,21,19,.18);
+  --fs-meta:13px;--fs-body:16px;--fs-sub:clamp(24px,2.4vw,32px);--fs-display:clamp(50px,11.8vw,190px);
+  --indent:16.6667%;--pad:clamp(20px,3.2vw,48px);--max:1440px;
+  --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;
+  --cta-h:48px;--radius-cta:calc(var(--cta-h) * .236);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Grotesk",Arial,sans-serif;font-size:var(--fs-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max);margin:0 auto;padding-inline:var(--pad)}
+a{color:inherit}
+h2{font-family:"Arame";font-weight:700;font-size:var(--fs-sub);line-height:1;letter-spacing:-.01em;margin:0 0 var(--s4)}
+.bar{background:var(--ink);color:var(--paper);padding:14px var(--pad);display:flex;justify-content:space-between;gap:var(--s4);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.bar span:last-child{font-weight:400;letter-spacing:.05em;opacity:.72;text-transform:none}
+.head{padding-block:var(--s7) var(--s6);border-bottom:1px solid var(--rule)}
+.eyebrow{display:block;font-weight:700;font-size:var(--fs-meta);letter-spacing:.28em;text-transform:uppercase;color:var(--ink-60);margin-bottom:var(--s4)}
+.head h1{font-family:"Arame";font-weight:700;font-size:clamp(44px,7vw,110px);line-height:.86;letter-spacing:-.02em;margin:0;max-width:16ch}
+.sec{padding-block:var(--s6);border-bottom:1px solid var(--rule)}
+.sec__grid{display:grid;grid-template-columns:minmax(160px,var(--indent)) 1fr;gap:var(--s5)}
+.sec__num{font-family:"Arame";font-weight:700;font-size:clamp(40px,5vw,72px);line-height:.8;color:var(--grey-d);letter-spacing:-.02em}
+.sec__num small{display:block;font-family:"Grotesk";font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-60);margin-top:12px}
+dl{margin:0;display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:10px var(--s4);font-size:14px;line-height:1.5;max-width:900px}
+dt{font-family:ui-monospace,Menlo,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60);padding-top:2px;white-space:nowrap}
+dd{margin:0}
+dd b{font-weight:700}
+.chip{display:inline-block;padding:1px 7px;font-family:ui-monospace,Menlo,monospace;font-size:11px;border:1px solid var(--rule);vertical-align:.06em}
+.swatches{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--rule);max-width:900px;margin-bottom:var(--s4)}
+.swatches div{flex:1 1 110px;min-height:96px;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;font-size:11px;line-height:1.4}
+.swatches b{font-family:ui-monospace,Menlo,monospace;font-weight:400}
+.typodemo{border:1px solid var(--rule);padding:var(--s4);max-width:900px;margin-top:var(--s4)}
+.typodemo .d{font-family:"Arame";font-weight:700;font-size:clamp(40px,6vw,96px);line-height:.86;letter-spacing:-.02em}
+.typodemo .s{font-family:"Arame";font-weight:700;font-size:var(--fs-sub);line-height:1;margin-top:var(--s3)}
+.typodemo .b{max-width:46ch;margin-top:var(--s3)}
+.typodemo .m{font-size:var(--fs-meta);font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-60);margin-top:var(--s3)}
+.linedemo{max-width:900px;margin-top:var(--s4)}
+.linedemo .l1{border-top:1px solid var(--rule);padding-top:8px;font-size:12px;color:var(--ink-60)}
+.linedemo .l2{border-top:1px solid var(--ink);width:96px;margin-top:var(--s3)}
+.decide{border-left:2px solid var(--coral);padding-left:var(--s3);max-width:70ch}
+.decide p{margin:0 0 .9em;font-size:14.5px;line-height:1.55}
+.ok{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-right:8px}
+.demo-cta{display:inline-flex;align-items:center;min-height:var(--cta-h);padding:12px var(--s3);border:1px solid var(--ink);border-radius:var(--radius-cta);font-size:var(--fs-meta);text-decoration:none}
+.demo-cta:hover{color:var(--coral);border-color:var(--coral)}
+.checklist{margin:0;padding:0;list-style:none;max-width:900px}
+.checklist li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.5}
+.checklist li::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border:1px solid var(--ink)}
+@media(max-width:820px){.sec__grid{grid-template-columns:1fr;gap:var(--s3)}dl{grid-template-columns:1fr}dt{padding-top:8px}}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#f3efe7"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#f3efe7"/><text x="600" y="430" text-anchor="middle" font-family="Arial Black" font-size="120" font-weight="900" fill="#171513">REGELBLATT</text><text x="600" y="520" text-anchor="middle" font-family="Arial" font-size="38" letter-spacing="12" fill="#fe7e5e">MAGAZIN → WEBSITE</text></svg></template>
+
+<div class="bar"><span>Regelblatt · Magazin → Website</span><span>Look: Magazin-Build (dieser Chat) · Inhalt/Struktur: konzept/ auf relaunch-v2 · noch keine Seite</span></div>
+
+<header class="head container">
+  <span class="eyebrow">Vor Modul 01 · zum Abhaken</span>
+  <h1>Die Regeln, bevor irgendetwas gebaut wird.</h1>
+</header>
+
+<section class="sec"><div class="container sec__grid">
+  <div class="sec__num">01<small>Grund &amp; Flächen</small></div>
+  <div>
+    <div class="swatches">
+      <div style="background:#f3efe7"><span>Grund / Papier</span><b>#f3efe7</b></div>
+      <div style="background:#ece6da"><span>Bildflächen, Platzhalter</span><b>#ece6da</b></div>
+      <div style="background:#ebebeb"><span>Zäsurfläche, sekundär</span><b>#ebebeb</b></div>
+      <div style="background:#171513;color:#f3efe7"><span>Ink · Text + dunkle Sektionen</span><b>#171513</b></div>
+      <div style="background:#fe7e5e"><span>Coral · Interaktion + 1 CTA-Fläche</span><b>#fe7e5e</b></div>
+      <div style="background:#febdac"><span>Coral hell · Akzent auf Ink</span><b>#febdac</b></div>
+    </div>
+    <dl>
+      <dt>Grund</dt><dd><b>#f3efe7</b> — das Cream des Magazin-Builds. Nicht #ebebeb (siehe Konflikt 1), nicht Weiß.</dd>
+      <dt>Dunkle Fläche</dt><dd><b>#171513</b>, warmes Fast-Schwarz — nie #000, nie #0c0c0c.</dd>
+      <dt>Betontextur</dt><dd>Das Markenzeichen des Bestandsauftritts, drei Familien in <span class="chip">assets/beton/</span>: <b>Solid Rot</b> (deckende Coral-Beton-Fläche — Pause-/Zäsurflächen), <b>Ink-Alpha</b> (dunkle Körnung auf Papier- oder Coral-Flächen — nie auf Ink, dort unsichtbar) und <b>Coral-Alpha</b> (auf Papier oder über Fotos). <b>Über Fotos gilt:</b> nur Coral-Alpha, nur <b>partiell (30–40 % der Bildfläche, als Band von einer Kante)</b> — nie das ganze Bild überziehen, nie Gesichter überlagern. Nie hinter Fließtext, maximal eine Texturfläche pro Viewport.</dd>
+      <dt>Verbote</dt><dd>Keine Verläufe, keine Schatten, keine Radien außer CTA, keine Kartenrahmen.</dd>
+    </dl>
+    <div class="swatches" style="margin-top:var(--s4);margin-bottom:0">
+      <div style="background:url('assets/beton/beton-red-quer.jpg') center/cover;color:#f3efe7;min-height:130px"><span>Solid Rot · Zäsurfläche</span><b>beton-red-*.jpg</b></div>
+      <div style="background:#f3efe7 url('assets/beton/beton-ink-alpha-quer.png') center/cover;min-height:130px"><span>Ink-Alpha auf Papier</span><b>beton-ink-alpha-*.png</b></div>
+      <div style="background:#f3efe7 url('assets/beton/beton-coral-alpha-quer.png') center/cover;min-height:130px"><span>Coral-Alpha auf Papier</span><b>beton-coral-alpha-*.png</b></div>
+      <div style="position:relative;min-height:130px;background:url('assets/magazine/meeting.jpg') center/cover;color:#f3efe7;flex:2 1 220px"><div style="position:absolute;left:0;right:0;bottom:0;height:38%;background:url('assets/beton/beton-coral-alpha-quer.png') bottom/cover"></div><span style="position:relative;text-shadow:0 0 6px rgba(23,21,19,.5)">Coral-Alpha über Foto · partiell 30–40 %, als Band</span><b style="position:relative">Überlagerung</b></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="container sec__grid">
+  <div class="sec__num">02<small>Schriftrollen</small></div>
+  <div>
+    <dl>
+      <dt>Arame Bold</dt><dd><b>Display.</b> H1, Sektionstitel, Zahlen, Schlusszeile im Footer. Immer eng: Zeilenhöhe .86, Laufweite −.02em. Arame hat keine Kleinbuchstaben — Text trotzdem gemischt schreiben, Darstellung ist ohnehin versal, kein <span class="chip">text-transform</span>.</dd>
+      <dt>Arame Regular</dt><dd>Nur für große ausgegraute Nummern und Zwischenwerte — nie für Fließtext.</dd>
+      <dt>Roc Grotesk 400</dt><dd><b>Alles Lesbare.</b> Fließtext, Sublines, UI-Beschriftung.</dd>
+      <dt>Roc Grotesk 700</dt><dd>Nur Mikro-Ebene: Eyebrows, Labels, Buttons, Hervorhebung im Satz.</dd>
+      <dt>Mono (System)</dt><dd>Meta-Daten am Rand: Slash-Labels, Rollen, Seitenzahl-Äquivalente.</dd>
+      <dt>Eyebrow</dt><dd>Roc 700, versal, Laufweite <b>.28em</b> — gemessener Magazinwert.</dd>
+    </dl>
+    <div class="typodemo">
+      <div class="d">Display .86</div>
+      <div class="s">Subline in Arame, eine Stufe darunter.</div>
+      <p class="b">Roc Grotesk 400 für alles Lesbare, Zeilenhöhe 1,6, Satzbreite maximal 46–68 Zeichen, linksbündig — kein Blocksatz auf Screen.</p>
+      <div class="m">Eyebrow · Laufweite .28em</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="container sec__grid">
+  <div class="sec__num">03<small>Satzverhältnisse</small></div>
+  <div>
+    <dl>
+      <dt>Vier Größen</dt><dd>Die Prototyp-Regel bleibt: <b>genau vier Schriftgrößen</b> pro Seite. Neu bemessen: <b>13 / 16 / 24–32 / bis 190 px</b>.</dd>
+      <dt>Übergröße</dt><dd>Dazu eine fünfte Ausnahmestufe: das <b>Statement</b> — Arame Bold in <b>Viewportmaß</b> <span class="chip">clamp(72px, 17vw, 300px)</span>, Zeilenhöhe .84. Nur für freistehende Aussagen als Aufllockerung zwischen Sektionen (Magazin-Vorbild „Gute Arbeit altert nicht.“): wenige Worte, gern über ein Foto gelegt (Text in Papier-Weiß, Bildmotiv darf zwischen den Zeilen durchscheinen), <b>maximal einmal pro Seite</b> — und zählt dann als die Display-Stufe dieser Sektion, nie zusätzlich zu einer H1 im selben Viewport.</dd>
+      <dt>Skalensprung</dt><dd>Body → Display = <b>Faktor 12,2</b> (gemessen am Magazin: 9,7 pt Body gegen 118 pt Display). Prototyp hatte 5,5 — zu flach; Teil A nannte 14–20 — zu hoch (siehe Konflikt 3).</dd>
+      <dt>Display-Frequenz</dt><dd>Display erscheint <b>zweimal pro Seite</b>: H1 und Footer-Schlusszeile (Prototyp-Regel, bleibt).</dd>
+      <dt>Lead</dt><dd>19–22 px, Zeilenhöhe 1,42, max. 46ch — die Vermittlungsebene zwischen Body und Display.</dd>
+      <dt>Differenzierung</dt><dd>Innerhalb einer Größe nur über Schnitt, Satzbreite, Position — nie über weitere Größen.</dd>
+    </dl>
+    <div style="position:relative;max-width:900px;margin-top:var(--s4);aspect-ratio:3/4;max-height:520px;overflow:hidden;background:url('assets/magazine/julia-1.jpg') center/cover">
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:4%">
+        <div style="font-family:'Arame';font-weight:700;font-size:clamp(40px,9vw,120px);line-height:.84;letter-spacing:-.02em;color:#f3efe7">Gute<br>Arbeit</div>
+        <div style="font-family:'Arame';font-weight:700;font-size:clamp(40px,9vw,120px);line-height:.84;letter-spacing:-.02em;color:#f3efe7;text-align:left">altert<br>nicht.</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="container sec__grid">
+  <div class="sec__num">04<small>Raster &amp; Einzug</small></div>
+  <div>
+    <dl>
+      <dt>Container</dt><dd>max. <b>1440 px</b>, Seitenrand <span class="chip">clamp(20px, 3.2vw, 48px)</span> — Prototyp-Werte.</dd>
+      <dt>Einzugstiefe</dt><dd><b>16,667 %</b> (zwei Zwölftel): Body-Text und CTAs beginnen zwei Rasterspalten rechts der Headline-Achse — die versetzte Achse des Magazins.</dd>
+      <dt>Raum</dt><dd>Vielfache von 8: <b>8 / 16 / 24 / 32 / 48 / 64 / 96</b>. Seitenrhythmus in drei Werten (Prototyp-Regel, bleibt).</dd>
+      <dt>Module</dt><dd>Offene Blöcke, keine Karten. Getrennt über Haarlinien und Raum (Prototyp-Regel, deckt sich mit dem Magazin).</dd>
+      <dt>Bildwechsel</dt><dd>Groß skalierte Einzelbilder gegen kleine Bildpaare/Raster; Freisteller und collagige Anordnungen als Akzent, sparsam. Vertikale Randlabels voll sichtbar, nie abgeschnitten.</dd>
+    </dl>
+  </div>
+</div></section>
+
+<section class="sec"><div class="container sec__grid">
+  <div class="sec__num">05<small>Linien</small></div>
+  <div>
+    <dl>
+      <dt>Haarlinie</dt><dd><b>1 px</b>, <span class="chip">rgba(23,21,19,.18)</span> — Sektionstrenner, Listenzeilen, Fußlinien.</dd>
+      <dt>Starke Regel</dt><dd><b>1 px Ink</b>, kurz (64–128 px) — unter Headlines, als Aside-Regel. Nie als Rahmen.</dd>
+      <dt>Keine Rahmen</dt><dd>Keine rahmenden Linien oben und an den Seiten (entschiedene Prototyp-Regel). Zwischenlinien bleiben.</dd>
+      <dt>Auf Ink</dt><dd>Haarlinien dort <span class="chip">rgba(243,239,231,.25)</span>.</dd>
+    </dl>
+    <div class="linedemo">
+      <div class="l1">Haarlinie · Trenner und Listen</div>
+      <div class="l2"></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="container sec__grid">
+  <div class="sec__num">06<small>Fest entschieden</small></div>
+  <div>
+    <dl>
+      <dt>CTA-Radius</dt><dd><b>0,236</b> der kurzen Achse (gekipptes Logo-O): <a class="demo-cta" href="#">Projekt anfragen</a></dd>
+      <dt>Logo</dt><dd>Header: vollständiges Logo inkl. „Brandbuilding". Footer: Wortmarke ohne Zusatz.</dd>
+      <dt>Pfeile</dt><dd><span class="chip">arrow.svg</span> aus dem ursprünglichen Websitestyling, als Mask in currentColor.</dd>
+      <dt>Struktur</dt><dd>Routen, Navigation, Sektionsreihenfolge, alle Texte, Footer-Aufbau: <b>unverändert aus dem Prototyp.</b> Kein Text aus dem Magazin.</dd>
+      <dt>Video</dt><dd>Fünf Videos auf der Startseite, mehr nicht: Hero (stumm, Schleife, kein Bedienelement), Arbeitsweise, Menschen, Projekt-Fit, Anfrage — die vier mit lokalem Standbild, Klick startet. Nie mehr als eins pro Abschnitt, kein Fremd-Player (kein YouTube); Player im Systemlook: Standbild + Coral-Pill in CTA-Rundung.</dd>
+      <dt>Motion</dt><dd>Pass D — nichts bewegt sich, bis die statische Hierarchie freigegeben ist.</dd>
+    </dl>
+  </div>
+</div></section>
+
+<section class="sec"><div class="container sec__grid">
+  <div class="sec__num">07<small>Die vier Konflikte</small></div>
+  <div class="decide">
+    <p><span class="ok">Entschieden</span><b>1 · Grund = #f3efe7.</b> Das #ebebeb stammt aus dem alten Designvertrag (Kopie vom 13.06.); der tatsächliche Magazin-Build setzt Cream #f3efe7 als Grundfläche und #ebebeb nur als sekundäre Zäsur. Deine Tendenz zu #ebebeb wäre die Nebenfläche als Hauptfläche. Wenn du #ebebeb trotzdem willst, sag es — dann gilt es.</p>
+    <p><span class="ok">Entschieden</span><b>2 · Coral = Interaktion + genau eine gefüllte CTA-Fläche pro Seite.</b> Die Prototyp-Regel gewinnt, weil eine Website Interaktionsfarbe braucht und vollflächige Coral-Sektionen diese Codierung zerstören würden. Die Magazin-Geste „ganze Fläche Coral" überlebt an genau einer Stelle: der primären Handlungsaufforderung.</p>
+    <p><span class="ok">Entschieden</span><b>3 · Skalensprung = 12,2.</b> Gemessen, nicht geschätzt. Teil A (14–20) überzeichnet, der Prototyp (5,5–7) unterspielt.</p>
+    <p><span class="ok">Entschieden</span><b>4 · Grammatik, nicht Dramaturgie.</b> Jede Sektion funktioniert eigenständig (Einstieg über Eyebrow + Haarlinie + Skalenkontrast), weil die Website springt. Lineare Abfolgen wie im Magazin gibt es nur innerhalb einer Sektion, nie über Sektionen hinweg.</p>
+  </div>
+</div></section>
+
+<section class="sec" style="border-bottom:0"><div class="container sec__grid">
+  <div class="sec__num">✓<small>Abhaken</small></div>
+  <div>
+    <ul class="checklist">
+      <li>Grund #f3efe7 — oder doch #ebebeb?</li>
+      <li>Vier Größen 13 / 16 / 24–32 / bis 190 px, Sprung 12,2 — plus Statement-Übergröße (17vw) als Ausnahme, max. 1× pro Seite</li>
+      <li>Coral: Interaktion + eine CTA-Fläche</li>
+      <li>Einzugstiefe 16,667 %, Raum in 8er-Schritten</li>
+      <li>Haarlinie rgba(23,21,19,.18) · starke Regel kurz · keine Rahmen</li>
+      <li>Schriftrollen wie oben (Arame nie im Fließtext, Roc 700 nur Mikro-Ebene)</li>
+      <li>Reihenfolge der Module: 01 Header/Hero → 02 Projekte-Sektion → 03 Hilfesituationen → 04 Leistungen/Pause → 05 Footer</li>
+    </ul>
+  </div>
+</div></section>
+</body>
+</html>

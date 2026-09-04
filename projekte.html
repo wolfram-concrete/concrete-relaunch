@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Projekte — CONCRETE Brandbuilding</title>
+<link rel="stylesheet" href="site.css?v=4">
+<style>
+.page-head{padding-block:clamp(192px,28vw,400px) clamp(60px,7.5vw,108px)}
+.page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(40px,7.6vw,120px);line-height:.88;letter-spacing:0;margin:0;font-kerning:normal}
+.page-head p{margin:var(--s4) 0 0 var(--indent);max-width:46ch;font-size:clamp(18px,1.5vw,22px);line-height:1.42}
+@media(max-width:900px){.page-head p{margin-left:0}}
+/* Filter */
+.fbar{position:relative;padding-block:14px;border-bottom:1px solid var(--rule);margin-bottom:clamp(32px,5vw,64px)}
+.fbar .container{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fchip{border:1px solid var(--rule);border-radius:calc(38px * .236);background:transparent;color:var(--ink);font:inherit;font-size:13px;font-weight:700;letter-spacing:.02em;padding:8px 14px;min-height:38px;cursor:pointer;transition:color .25s,border-color .25s,background .25s}
+.fchip i{font-style:normal;font-weight:400;color:var(--ink-60);margin-left:4px}
+.fchip:hover{border-color:var(--coral);color:var(--coral)}
+.fchip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.fchip.on i{color:var(--coral-l)}
+.fsearch{margin-left:auto;display:flex;align-items:center;gap:8px}
+.fsearch input{border:0;border-bottom:1px solid var(--rule);background:transparent;font:inherit;font-size:14px;padding:8px 0;min-width:180px;color:var(--ink)}
+.fsearch input:focus{outline:0;border-bottom-color:var(--coral)}
+@media(max-width:760px){.fsearch{margin-left:0;width:100%}}
+/* Masonry */
+.pgrid{display:flex;gap:clamp(14px,1.8vw,28px);align-items:flex-start;padding-bottom:clamp(56px,8vw,120px)}
+.pgrid .pcol{flex:1;min-width:0}
+.ptile{display:block;margin-bottom:clamp(24px,3vw,48px)}
+.ptile.hide{display:none}
+.ptile__media{display:block;overflow:hidden}
+.ptile__media img{width:100%;height:auto;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.ptile:hover .ptile__media img{transform:scale(1.05)}
+.ptile__head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);margin-top:12px}
+.ptile__head b{font-family:"Arame";font-weight:700;font-size:clamp(18px,1.6vw,22px);line-height:1}
+.ptile__head i{font-style:normal;font-size:11px;color:var(--coral);font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:right}
+.ptile__copy{display:block;margin-top:6px;font-size:14px;line-height:1.5;color:var(--ink-60);max-width:40ch}
+.ptile:hover .ptile__head b{color:var(--coral)}
+.ptile__tbox{display:flex;flex-direction:column;justify-content:space-between;gap:var(--s5);background:var(--paper-deep);padding:clamp(18px,2vw,28px);min-height:200px}
+.ptile--text.dark .ptile__tbox{background:var(--ink);color:var(--paper)}
+.ptile__tbox b{font-family:"Arame";font-weight:700;font-size:clamp(22px,2.2vw,30px);line-height:1.02}
+.ptile__tbox span{font-size:14px;line-height:1.5;color:var(--ink-60)}
+.ptile--text.dark .ptile__tbox span{color:rgba(243,239,231,.65)}
+.ptile--text:hover .ptile__tbox b{color:var(--coral)}
+
+/* Proof Stories */
+.sec-label{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:clamp(24px,3vw,44px)}
+.sec-label h2{font-family:"Arame";font-weight:700;font-size:clamp(22px,2.3vw,32px);line-height:1;margin:0}
+.sec-label span{font-size:var(--fs-meta);color:var(--ink-60)}
+.proofs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px) clamp(20px,2.6vw,44px);padding-bottom:clamp(48px,7vw,96px)}
+.proof{display:block}
+.proof__media{display:block;overflow:hidden}
+.proof__media img{width:100%;height:auto;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.proof:hover .proof__media img{transform:scale(1.04)}
+.proof__num{display:inline-block;font-family:"Arame";font-weight:700;font-size:clamp(26px,2.6vw,40px);line-height:.8;color:var(--coral);margin-top:var(--s3)}
+.proof__meta{display:inline-block;margin-left:12px;font-size:var(--fs-meta);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-60)}
+.proof__title{display:block;font-family:"Arame";font-weight:700;font-size:clamp(20px,2vw,28px);line-height:1.04;margin-top:10px;max-width:24ch}
+.proof:hover .proof__title{color:var(--coral)}
+.proof__copy{display:block;margin-top:8px;font-size:14px;line-height:1.5;color:var(--ink-60);max-width:44ch}
+@media(max-width:760px){.proofs{grid-template-columns:1fr}}
+/* Archiv */
+.archiv{padding-bottom:clamp(48px,7vw,96px)}
+.arow{display:grid;grid-template-columns:minmax(140px,.8fr) minmax(0,1.4fr) minmax(0,1fr);gap:var(--s2) clamp(20px,3vw,48px);padding-block:16px;border-top:1px solid var(--rule);align-items:start}
+.arow:last-child{border-bottom:1px solid var(--rule)}
+.arow__name{font-family:"Arame";font-weight:700;font-size:clamp(17px,1.5vw,21px);line-height:1.05}
+.arow:hover .arow__name{color:var(--coral)}
+.arow__sum{font-size:14px;line-height:1.5;color:var(--ink-60)}
+.arow__meta b{display:block;font-size:var(--fs-meta);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral)}
+.arow__meta small{display:block;margin-top:3px;font-size:12px;line-height:1.5;color:var(--ink-60)}
+.arow.hide{display:none}
+@media(max-width:760px){.arow{grid-template-columns:1fr}.arow__meta b{margin-top:2px}}
+/* Überleitung */
+.bridge{border-top:1px solid var(--rule);padding-block:clamp(44px,6vw,88px)}
+.bridge h2{font-family:"Arame";font-weight:700;font-size:clamp(26px,3vw,44px);line-height:1;margin:0 0 var(--s3);max-width:20ch}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#f3efe7"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#f3efe7"/><text x="600" y="430" text-anchor="middle" font-family="Arial Black" font-size="110" font-weight="900" fill="#171513">PROJEKTE</text><text x="600" y="520" text-anchor="middle" font-family="Arial" font-size="36" letter-spacing="10" fill="#fe7e5e">CONCRETE</text></svg></template>
+<a class="skip-link" href="#main">Zum Inhalt</a>
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="brand" href="./" aria-label="CONCRETE Brandbuilding, zur Startseite"><img src="assets/concrete-paper.svg" width="194" height="53" alt="CONCRETE"></a>
+    <nav class="desktop-nav" aria-label="Hauptnavigation">
+      <div class="nav-item" data-nav-item>
+        <a class="nav-link" aria-current="page" href="projekte.html">Projekte</a>
+        <button class="nav-disclosure" type="button" aria-expanded="false" aria-controls="mega-projekte" data-nav-toggle><span class="visually-hidden">Untermenü „Projekte" öffnen</span></button>
+        <div class="mega-menu" id="mega-projekte" data-mega>
+          <div class="mega-menu__inner container">
+            <div class="mega-menu__intro">
+              <span class="concept-label">Ausgewählt</span>
+              <p>Ein Blick in aktuelle Projekte — von der Vision zur Brand.</p>
+              <a class="link-arrow" href="projekte.html">Alle Projekte</a>
+            </div>
+            <div class="mega-cases">
+              <a href="case-nextbed.html"><span class="mc-img"><img src="assets/cases/nextbed/kampagne-1.jpg" alt="Nextbed" loading="lazy"></span><b>Nextbed</b><i>Neue Produktmarke</i></a>
+              <a href="case-noey.html"><span class="mc-img"><img src="assets/cases/noey/worker.jpg" alt="NOEY" loading="lazy"></span><b>NOEY</b><i>Robotik</i></a>
+              <a href="projekte.html"><span class="mc-img"><img src="assets/cases/bgf/header.jpg" alt="BGF+" loading="lazy"></span><b>BGF+</b><i>Rebranding</i></a>
+              <a href="projekte.html"><span class="mc-img"><img src="assets/magazine/ccf-arena.q.jpg" alt="Cologne Comedy Festival" loading="lazy"></span><b>Cologne Comedy</b><i>Kultur</i></a>
+              <a href="projekte.html"><span class="mc-img"><img src="assets/magazine/conlivo-family.q.jpg" alt="Conlivo" loading="lazy"></span><b>Conlivo</b><i>Markteinführung</i></a>
+              <a href="case-wackelzahn.html"><span class="mc-img"><img src="assets/cases/wackelzahn/kids.jpg" alt="Wackelzahn" loading="lazy"></span><b>Wackelzahn</b><i>Kinderzahnarzt</i></a>
+              <a href="case-medium.html"><span class="mc-img"><img src="assets/cases/medium/header.jpg" alt="medium Architekten" loading="lazy"></span><b>medium</b><i>Architektur</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item" data-nav-item>
+        <a class="nav-link" href="situation-marke-nicht-mitgewachsen.html">Wo wir helfen können</a>
+        <button class="nav-disclosure" type="button" aria-expanded="false" aria-controls="mega-hilfe" data-nav-toggle><span class="visually-hidden">Untermenü „Wo wir helfen können" öffnen</span></button>
+        <div class="mega-menu" id="mega-hilfe" data-mega>
+          <div class="mega-menu__inner container">
+            <div class="mega-menu__intro">
+              <span class="concept-label">Relevanz</span>
+              <p>Unternehmerische Anlässe, bei denen Marke und Kommunikation etwas bewegen müssen.</p>
+            </div>
+            <div class="mega-menu__grid">
+              <a class="mega-link" href="situation-marke-nicht-mitgewachsen.html">Unternehmen entwickelt. Marke nicht.<small>Repositionierung und Rebranding</small></a>
+              <a class="mega-link" href="situation-angebot-schwer-verstaendlich.html">Starkes Angebot. Schwer verständlich.<small>B2B, Technologie und Beratung</small></a>
+              <a class="mega-link" href="situation-neues-in-den-markt.html">Etwas Neues in den Markt bringen.<small>Geschäftsfeld, Angebot oder Produktmarke</small></a>
+              <a class="mega-link" href="situation-veraenderung-sichtbar.html">Veränderung sichtbar machen.<small>Marke muss Entwicklung mittragen</small></a>
+              <a class="mega-link" href="situation-vertrauen-sensible-maerkte.html">Vertrauen in sensiblen Märkten.<small>Finance, Versicherung, Healthcare</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link" href="leistungen.html">Leistungen</a>
+      <a class="nav-link" href="ueber-uns.html">Über uns</a>
+      <a class="nav-link nav-link--cta" href="erstgespraech.html"><span class="cta-avas" aria-hidden="true"><img src="assets/team/wolfram.jpg" alt=""><img src="assets/team/christian.jpg" alt=""></span>Projekt anfragen</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>Menü</button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-menu" aria-label="Mobile Navigation" data-mobile-menu>
+  <a href="projekte.html">Projekte</a>
+  <div class="mobile-nav__group"><a href="situation-marke-nicht-mitgewachsen.html">Wo wir helfen können</a><button class="mobile-nav__disclosure" type="button" aria-expanded="false" aria-controls="mnav-hilfe" data-mnav-toggle><span class="visually-hidden">Untermenü öffnen</span></button></div>
+  <div class="mobile-nav__sub" id="mnav-hilfe" hidden><a href="situation-marke-nicht-mitgewachsen.html">Unternehmen entwickelt. Marke nicht.<small>Repositionierung und Rebranding</small></a><a href="situation-angebot-schwer-verstaendlich.html">Starkes Angebot. Schwer verständlich.<small>B2B, Technologie und Beratung</small></a><a href="situation-neues-in-den-markt.html">Etwas Neues in den Markt bringen.<small>Geschäftsfeld, Angebot oder Produktmarke</small></a><a href="situation-veraenderung-sichtbar.html">Veränderung sichtbar machen.<small>Marke muss Entwicklung mittragen</small></a>
+              </div>
+  <a href="leistungen.html">Leistungen</a>
+  <a href="ueber-uns.html">Über uns</a>
+  <small>Nächster Schritt</small>
+  <a href="erstgespraech.html">Projekt anfragen</a>
+</nav>
+<main id="main">
+  <section class="page-head" data-screen-label="Projekte Intro">
+    <div class="container">
+      <h1>Von der Vision zur Brand.</h1>
+      <svg class="brand-arrow" viewBox="0 0 300 52" aria-hidden="true"><path d="M6 8 L22 25.95 H284" stroke="currentColor" stroke-width="11.3" fill="none"/><g transform="translate(259.32,0)"><path fill="currentColor" d="M40.39,20.29h-6.82l.03-.03C27.49,14.1,21.37,7.95,15.24,1.82,14.25,.73,12.86,.09,11.39,.03c-3.79-.03-7.58-.03-11.39-.03V11.31c2.59,0,5.17,0,7.76,.02,.49,0,.96,.18,1.33,.5,4.73,4.68,9.45,9.38,14.15,14.1-4.71,4.71-9.43,9.41-14.15,14.1-.37,.32-.84,.5-1.33,.5-2.59,.02-5.17,.02-7.76,.02v11.3c3.81,0,7.6,0,11.39-.03,1.47-.05,2.86-.7,3.85-1.79,6.12-6.14,12.23-12.28,18.33-18.42h7.11v-11.32h-.29Z"/></g></svg>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--s4);margin-top:var(--s3)"><p style="margin:0;max-width:40ch">Erhaltet einen Eindruck, wie sich eure Marke entwickeln kann.</p><a class="button button--solid" href="./#anfrage">Gespräch vereinbaren</a></div>
+    </div>
+  </section>
+
+  <section class="reel-band" data-screen-label="Reel" aria-hidden="true" style="margin-bottom:clamp(32px,5vw,64px)">
+    <video src="https://www.concrete-designs.de/wp-content/uploads/2023/10/Agentur_Reel-neu.mp4" autoplay muted loop playsinline preload="auto" style="display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover"></video>
+  </section>
+
+  <div class="fbar" data-screen-label="Filter">
+    <div class="container">
+      <button class="fchip on" type="button" data-f="*">Alle <i>40</i></button><button class="fchip" type="button" data-f="Technologie & Industrie">Technologie & Industrie <i>5</i></button><button class="fchip" type="button" data-f="Finance & Professional Services">Finance & Professional Services <i>6</i></button><button class="fchip" type="button" data-f="Food, Beverage & Hospitality">Food, Beverage & Hospitality <i>7</i></button><button class="fchip" type="button" data-f="Architektur, Immobilien & Räume">Architektur, Immobilien & Räume <i>4</i></button><button class="fchip" type="button" data-f="Kultur, Medien & Entertainment">Kultur, Medien & Entertainment <i>4</i></button><button class="fchip" type="button" data-f="Consumer, Retail & Lifestyle">Consumer, Retail & Lifestyle <i>4</i></button><button class="fchip" type="button" data-f="Gesundheit & Care">Gesundheit & Care <i>5</i></button><button class="fchip" type="button" data-f="Arbeit, Bildung & Community">Arbeit, Bildung & Community <i>5</i></button>
+      <span class="fsearch"><label class="visually-hidden" for="psearch">Projekte durchsuchen</label><input id="psearch" type="search" placeholder="Suchen …"></span>
+    </div>
+  </div>
+
+  <section data-screen-label="Projekte Grid">
+    <div class="container pgrid" data-tiles>
+        <a class="ptile rv" href="case-noey.html" data-cluster="Technologie & Industrie" data-search="noey solutions robotiknutzen für den industriellen mittelstand auf den punkt bringen. technologie & industrie"><span class="ptile__media"><img src="assets/cases/noey.webp" alt="NOEY Solutions" loading="lazy"></span><span class="ptile__head"><b>NOEY Solutions</b><i>Technologie & Industrie</i></span><span class="ptile__copy">Robotiknutzen für den industriellen Mittelstand auf den Punkt bringen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Gesundheit & Care" data-search="kinderzahnarzt wackelzahn ein skalierbares kinderzahnarzt-konzept mit vertrauen aufbauen. gesundheit & care"><span class="ptile__media"><img src="assets/cases/wackelzahn.t.png" alt="Kinderzahnarzt Wackelzahn" loading="lazy"></span><span class="ptile__head"><b>Kinderzahnarzt Wackelzahn</b><i>Gesundheit & Care</i></span><span class="ptile__copy">Ein skalierbares Kinderzahnarzt-Konzept mit Vertrauen aufbauen.</span></a>
+        <a class="ptile rv" href="case-nextbed.html" data-cluster="Consumer, Retail & Lifestyle" data-search="nextbed eine neue produktmarke aus bestehender unternehmenssubstanz. consumer, retail & lifestyle"><span class="ptile__media"><video autoplay muted loop playsinline preload="metadata" poster="assets/cases/nextbed.webp" aria-label="Animierte Projektvorschau Nextbed" style="width:100%;display:block" onerror="this.outerHTML='<img src=&quot;assets/cases/nextbed.webp&quot; alt=&quot;Nextbed&quot;>"><source src="https://www.concrete-designs.de/wp-content/uploads/2026/02/nextbed-preview.mp4" type="video/mp4"></video></span><span class="ptile__head"><b>Nextbed</b><i>Consumer, Retail & Lifestyle</i></span><span class="ptile__copy">Eine neue Produktmarke aus bestehender Unternehmenssubstanz.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Food, Beverage & Hospitality" data-search="little big pasta ein urbanes gastronomiekonzept eigenständig positionieren. food, beverage & hospitality"><span class="ptile__media"><img src="assets/cases/little-big-pasta.t.png" alt="Little Big Pasta" loading="lazy"></span><span class="ptile__head"><b>Little Big Pasta</b><i>Food, Beverage & Hospitality</i></span><span class="ptile__copy">Ein urbanes Gastronomiekonzept eigenständig positionieren.</span></a>
+        <a class="ptile rv" href="case-medium.html" data-cluster="Architektur, Immobilien & Räume" data-search="medium architekten marke und gewachsene architekturqualität angleichen. architektur, immobilien & räume"><span class="ptile__media"><img src="assets/cases/medium.webp" alt="medium Architekten" loading="lazy"></span><span class="ptile__head"><b>medium Architekten</b><i>Architektur, Immobilien & Räume</i></span><span class="ptile__copy">Marke und gewachsene Architekturqualität angleichen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Architektur, Immobilien & Räume" data-search="conlivo veränderung in einem konservativen markt glaubwürdig einführen. architektur, immobilien & räume"><span class="ptile__media"><img src="assets/cases/conlivo.webp" alt="Conlivo" loading="lazy"></span><span class="ptile__head"><b>Conlivo</b><i>Architektur, Immobilien & Räume</i></span><span class="ptile__copy">Veränderung in einem konservativen Markt glaubwürdig einführen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Food, Beverage & Hospitality" data-search="ca'n sort herkunft und handwerk als ruhige premium-weinmarke. food, beverage & hospitality"><span class="ptile__media"><img src="assets/cases/can-sort.t.png" alt="CA'N SORT" loading="lazy"></span><span class="ptile__head"><b>CA'N SORT</b><i>Food, Beverage & Hospitality</i></span><span class="ptile__copy">Herkunft und Handwerk als ruhige Premium-Weinmarke.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Food, Beverage & Hospitality" data-search="street gourmet foodtruck-catering als starke, skalierbare marke weiterentwickeln. food, beverage & hospitality"><span class="ptile__media"><img src="assets/cases/street-gourmet.webp" alt="Street Gourmet" loading="lazy"></span><span class="ptile__head"><b>Street Gourmet</b><i>Food, Beverage & Hospitality</i></span><span class="ptile__copy">Foodtruck-Catering als starke, skalierbare Marke weiterentwickeln.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Finance & Professional Services" data-search="mdb finance persönlichkeit und langfristiges vertrauen im finanzmarkt. finance & professional services"><span class="ptile__media"><img src="assets/cases/mdb-finance.webp" alt="MDB Finance" loading="lazy"></span><span class="ptile__head"><b>MDB Finance</b><i>Finance & Professional Services</i></span><span class="ptile__copy">Persönlichkeit und langfristiges Vertrauen im Finanzmarkt.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Architektur, Immobilien & Räume" data-search="bgf+ architekten gewachsene architekturqualität im auftritt sichtbar machen. architektur, immobilien & räume"><span class="ptile__media"><img src="assets/cases/bgf.webp" alt="BGF+ Architekten" loading="lazy"></span><span class="ptile__head"><b>BGF+ Architekten</b><i>Architektur, Immobilien & Räume</i></span><span class="ptile__copy">Gewachsene Architekturqualität im Auftritt sichtbar machen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Gesundheit & Care" data-search="sknmetrics den wert eines ai- und hautanalyse-angebots vor der technologie erklären. gesundheit & care"><span class="ptile__media"><img src="assets/cases/sknm-case.t.png" alt="SKNMETRICS" loading="lazy"></span><span class="ptile__head"><b>SKNMETRICS</b><i>Gesundheit & Care</i></span><span class="ptile__copy">Den Wert eines AI- und Hautanalyse-Angebots vor der Technologie erklären.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Gesundheit & Care" data-search="hy helpyourself selbsttests als zugängliche und selbstbestimmte gesundheitsmarke. gesundheit & care"><span class="ptile__media"><img src="assets/cases/hy.t.png" alt="hy helpyourself" loading="lazy"></span><span class="ptile__head"><b>hy helpyourself</b><i>Gesundheit & Care</i></span><span class="ptile__copy">Selbsttests als zugängliche und selbstbestimmte Gesundheitsmarke.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Finance & Professional Services" data-search="solit marketing marketingkompetenz im finanzumfeld schärfen und systematisieren. finance & professional services"><span class="ptile__media"><img src="assets/cases/solit.webp" alt="SOLIT Marketing" loading="lazy"></span><span class="ptile__head"><b>SOLIT Marketing</b><i>Finance & Professional Services</i></span><span class="ptile__copy">Marketingkompetenz im Finanzumfeld schärfen und systematisieren.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Consumer, Retail & Lifestyle" data-search="poodlewohl die beziehung zwischen mensch und tier als marke erzählen. consumer, retail & lifestyle"><span class="ptile__media"><img src="assets/cases/poodlewohl.webp" alt="Poodlewohl" loading="lazy"></span><span class="ptile__head"><b>Poodlewohl</b><i>Consumer, Retail & Lifestyle</i></span><span class="ptile__copy">Die Beziehung zwischen Mensch und Tier als Marke erzählen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Architektur, Immobilien & Räume" data-search="immofolia digitale immobilienleistung vertrauenswürdig und verständlich machen. architektur, immobilien & räume"><span class="ptile__media"><img src="assets/cases/immofolia.webp" alt="Immofolia" loading="lazy"></span><span class="ptile__head"><b>Immofolia</b><i>Architektur, Immobilien & Räume</i></span><span class="ptile__copy">Digitale Immobilienleistung vertrauenswürdig und verständlich machen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Kultur, Medien & Entertainment" data-search="cologne comedy festival ein skalierbares system für festival, artists und orte. kultur, medien & entertainment"><span class="ptile__media"><img src="assets/cases/cologne-comedy.webp" alt="Cologne Comedy Festival" loading="lazy"></span><span class="ptile__head"><b>Cologne Comedy Festival</b><i>Kultur, Medien & Entertainment</i></span><span class="ptile__copy">Ein skalierbares System für Festival, Artists und Orte.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Food, Beverage & Hospitality" data-search="baked glutenfreie lebensmittel als eigenständige qualitätsmarke. food, beverage & hospitality"><span class="ptile__media"><img src="assets/cases/baked.webp" alt="Baked" loading="lazy"></span><span class="ptile__head"><b>Baked</b><i>Food, Beverage & Hospitality</i></span><span class="ptile__copy">Glutenfreie Lebensmittel als eigenständige Qualitätsmarke.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Finance & Professional Services" data-search="finaplus gewachsene wealthtech-qualität sichtbar und systemfähig machen. finance & professional services"><span class="ptile__media"><img src="assets/cases/finaplus.webp" alt="FinaPlus" loading="lazy"></span><span class="ptile__head"><b>FinaPlus</b><i>Finance & Professional Services</i></span><span class="ptile__copy">Gewachsene WealthTech-Qualität sichtbar und systemfähig machen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Arbeit, Bildung & Community" data-search="highr berufliche entwicklung zwischen menschen und unternehmen vermitteln. arbeit, bildung & community"><span class="ptile__media"><img src="assets/cases/highr.t.png" alt="Highr" loading="lazy"></span><span class="ptile__head"><b>Highr</b><i>Arbeit, Bildung & Community</i></span><span class="ptile__copy">Berufliche Entwicklung zwischen Menschen und Unternehmen vermitteln.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Technologie & Industrie" data-search="digital2gether digitale beratung klarer und gemeinschaftlicher positionieren. technologie & industrie"><span class="ptile__media"><img src="assets/cases/d2g.t.png" alt="Digital2gether" loading="lazy"></span><span class="ptile__head"><b>Digital2gether</b><i>Technologie & Industrie</i></span><span class="ptile__copy">Digitale Beratung klarer und gemeinschaftlicher positionieren.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Technologie & Industrie" data-search="aconvia technologieeinführung als verständliches leistungsversprechen. technologie & industrie"><span class="ptile__media"><img src="assets/cases/aconvia.webp" alt="Aconvia" loading="lazy"></span><span class="ptile__head"><b>Aconvia</b><i>Technologie & Industrie</i></span><span class="ptile__copy">Technologieeinführung als verständliches Leistungsversprechen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Finance & Professional Services" data-search="system 360 komplexität erklären, ohne die notwendige diskretion zu verlieren. finance & professional services"><span class="ptile__media"><img src="assets/cases/system-360.t.png" alt="System 360" loading="lazy"></span><span class="ptile__head"><b>System 360</b><i>Finance & Professional Services</i></span><span class="ptile__copy">Komplexität erklären, ohne die notwendige Diskretion zu verlieren.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Food, Beverage & Hospitality" data-search="noveltea tee und spirituose als überraschendes genusserlebnis verbinden. food, beverage & hospitality"><span class="ptile__media"><img src="assets/cases/noveltea.t.png" alt="Noveltea" loading="lazy"></span><span class="ptile__head"><b>Noveltea</b><i>Food, Beverage & Hospitality</i></span><span class="ptile__copy">Tee und Spirituose als überraschendes Genusserlebnis verbinden.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Kultur, Medien & Entertainment" data-search="potatohead pictures eine neue produktionsmarke mit klarer haltung und persönlichkeit. kultur, medien & entertainment"><span class="ptile__media"><img src="assets/cases/potatohead.t.png" alt="Potatohead Pictures" loading="lazy"></span><span class="ptile__head"><b>Potatohead Pictures</b><i>Kultur, Medien & Entertainment</i></span><span class="ptile__copy">Eine neue Produktionsmarke mit klarer Haltung und Persönlichkeit.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Technologie & Industrie" data-search="be.care it-leistung menschlich und verständlich erzählen. technologie & industrie"><span class="ptile__media"><img src="assets/cases/be-care.webp" alt="be.care" loading="lazy"></span><span class="ptile__head"><b>be.care</b><i>Technologie & Industrie</i></span><span class="ptile__copy">IT-Leistung menschlich und verständlich erzählen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Arbeit, Bildung & Community" data-search="me, my life, my job berufliche orientierung über beziehung und vertrauen erzählen. arbeit, bildung & community"><span class="ptile__media"><img src="assets/cases/me.webp" alt="me, my life, my job" loading="lazy"></span><span class="ptile__head"><b>me, my life, my job</b><i>Arbeit, Bildung & Community</i></span><span class="ptile__copy">Berufliche Orientierung über Beziehung und Vertrauen erzählen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Kultur, Medien & Entertainment" data-search="pause and play eine event- und erlebnismarke strategisch und visuell neu aufstellen. kultur, medien & entertainment"><span class="ptile__media"><img src="assets/cases/pause-play.t.png" alt="pause and play" loading="lazy"></span><span class="ptile__head"><b>pause and play</b><i>Kultur, Medien & Entertainment</i></span><span class="ptile__copy">Eine Event- und Erlebnismarke strategisch und visuell neu aufstellen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Arbeit, Bildung & Community" data-search="project haya einen raum für kreativschaffende als eigenständige marke aufbauen. arbeit, bildung & community"><span class="ptile__media"><img src="assets/cases/project-haya.t.png" alt="Project Haya" loading="lazy"></span><span class="ptile__head"><b>Project Haya</b><i>Arbeit, Bildung & Community</i></span><span class="ptile__copy">Einen Raum für Kreativschaffende als eigenständige Marke aufbauen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Food, Beverage & Hospitality" data-search="the moc robotik und specialty coffee als neue erlebnisidee positionieren. food, beverage & hospitality"><span class="ptile__media"><img src="assets/cases/the-moc.t.png" alt="the moc" loading="lazy"></span><span class="ptile__head"><b>the moc</b><i>Food, Beverage & Hospitality</i></span><span class="ptile__copy">Robotik und Specialty Coffee als neue Erlebnisidee positionieren.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Technologie & Industrie" data-search="maleco fachwissen und nahbarkeit für eine gewachsene zielgruppe. technologie & industrie"><span class="ptile__media"><img src="assets/cases/maleco.t.png" alt="Maleco" loading="lazy"></span><span class="ptile__head"><b>Maleco</b><i>Technologie & Industrie</i></span><span class="ptile__copy">Fachwissen und Nahbarkeit für eine gewachsene Zielgruppe.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Arbeit, Bildung & Community" data-search="klang2 akustisches wissen spielerisch und visuell erfahrbar machen. arbeit, bildung & community"><span class="ptile__media"><img src="assets/cases/klang.webp" alt="Klang2" loading="lazy"></span><span class="ptile__head"><b>Klang2</b><i>Arbeit, Bildung & Community</i></span><span class="ptile__copy">Akustisches Wissen spielerisch und visuell erfahrbar machen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Finance & Professional Services" data-search="boneß & euteneuer eine etablierte steuerkanzlei zeitgemäß und nahbar positionieren. finance & professional services"><span class="ptile__media"><img src="assets/cases/boness.t.png" alt="Boneß & Euteneuer" loading="lazy"></span><span class="ptile__head"><b>Boneß & Euteneuer</b><i>Finance & Professional Services</i></span><span class="ptile__copy">Eine etablierte Steuerkanzlei zeitgemäß und nahbar positionieren.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Kultur, Medien & Entertainment" data-search="good humor ein neues entertainment-label mit eigenständigem profil. kultur, medien & entertainment"><span class="ptile__media"><img src="assets/cases/good-humor.t.png" alt="Good Humor" loading="lazy"></span><span class="ptile__head"><b>Good Humor</b><i>Kultur, Medien & Entertainment</i></span><span class="ptile__copy">Ein neues Entertainment-Label mit eigenständigem Profil.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Gesundheit & Care" data-search="lieblings-zahnarzt eine moderne praxisidee als wiedererkennbare marke etablieren. gesundheit & care"><span class="ptile__media"><img src="assets/cases/lieblings-zahnarzt.t.png" alt="Lieblings-Zahnarzt" loading="lazy"></span><span class="ptile__head"><b>Lieblings-Zahnarzt</b><i>Gesundheit & Care</i></span><span class="ptile__copy">Eine moderne Praxisidee als wiedererkennbare Marke etablieren.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Finance & Professional Services" data-search="adsuits eine performance-agentur mit eigenständigerer identität. finance & professional services"><span class="ptile__media"><img src="assets/cases/adsuits.t.png" alt="AdSuits" loading="lazy"></span><span class="ptile__head"><b>AdSuits</b><i>Finance & Professional Services</i></span><span class="ptile__copy">Eine Performance-Agentur mit eigenständigerer Identität.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Consumer, Retail & Lifestyle" data-search="mine mina eine hochwertige taschenmarke zwischen design und fairness. consumer, retail & lifestyle"><span class="ptile__media"><img src="assets/cases/mine-mina.t.png" alt="Mine Mina" loading="lazy"></span><span class="ptile__head"><b>Mine Mina</b><i>Consumer, Retail & Lifestyle</i></span><span class="ptile__copy">Eine hochwertige Taschenmarke zwischen Design und Fairness.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Consumer, Retail & Lifestyle" data-search="ergobag von der jungen produktidee zur international etablierten schulrucksack-marke. consumer, retail & lifestyle"><span class="ptile__media"><img src="assets/cases/ergobag.t.png" alt="ergobag" loading="lazy"></span><span class="ptile__head"><b>ergobag</b><i>Consumer, Retail & Lifestyle</i></span><span class="ptile__copy">Von der jungen Produktidee zur international etablierten Schulrucksack-Marke.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Food, Beverage & Hospitality" data-search="we:celebrate streetfood einen großen foodtruck-caterer als konsistente erlebnis- und servicemarke. food, beverage & hospitality"><span class="ptile__media"><img src="assets/cases/we-celebrate.t.png" alt="we:celebrate Streetfood" loading="lazy"></span><span class="ptile__head"><b>we:celebrate Streetfood</b><i>Food, Beverage & Hospitality</i></span><span class="ptile__copy">Einen großen Foodtruck-Caterer als konsistente Erlebnis- und Servicemarke.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Gesundheit & Care" data-search="get.on ein komplexes gesundheitsangebot neu ordnen und zugänglich machen. gesundheit & care"><span class="ptile__media"><img src="assets/cases/geton.t.png" alt="GET.ON" loading="lazy"></span><span class="ptile__head"><b>GET.ON</b><i>Gesundheit & Care</i></span><span class="ptile__copy">Ein komplexes Gesundheitsangebot neu ordnen und zugänglich machen.</span></a>
+        <a class="ptile rv" href="#" data-cluster="Arbeit, Bildung & Community" data-search="luis + lea ernährungsbildung für kita-kinder als lebendiges programm. arbeit, bildung & community"><span class="ptile__media"><img src="assets/cases/luisundlea-teaser.t.png" alt="Luis + Lea" loading="lazy"></span><span class="ptile__head"><b>Luis + Lea</b><i>Arbeit, Bildung & Community</i></span><span class="ptile__copy">Ernährungsbildung für Kita-Kinder als lebendiges Programm.</span></a>
+      </div>
+  </section>
+<div class="coral-wrap" style="margin-top:clamp(48px,7vw,110px)" data-screen-label="Projekt anfragen">
+    <div class="coral-block rv-block-r">
+    <img class="tex-lap plx" data-plx="-14" src="assets/beton/beton-ink-alpha-quer.png" alt="" aria-hidden="true" style="right:-2%;bottom:0;transform:translateY(46%);width:clamp(180px,22vw,380px)">
+    <div class="container inquiry__head">
+      <p class="eyebrow" style="color:rgba(23,21,19,.55)">Nächster Schritt</p>
+      <h2>Was verändert sich gerade bei euch?</h2>
+    </div>
+    <div class="container inquiry__grid">
+      <div class="inquiry__media"><img src="assets/magazine/meeting.q.jpg" alt="Das CONCRETE-Team im Gespräch" loading="lazy"></div>
+      <div class="inquiry__form">
+        <p class="big-copy">Erzählt uns nicht nur, welches Deliverable ihr sucht. Zeigt uns, was im Unternehmen passieren soll, und woran ihr merkt, dass die Marke noch nicht mitkommt.</p>
+        <a class="button button--solid" href="erstgespraech.html" style="margin-top:var(--s4)">Projekt anfragen</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer" data-screen-label="Footer">
+  <a class="footer-marquee" href="./" aria-label="CONCRETE — zur Startseite" style="display:block">
+    <div class="footer-marquee__track">
+      <div class="footer-marquee__row">
+        <img src="assets/concrete-coral.svg" alt="CONCRETE"><img src="assets/concrete-coral.svg" alt=""><img src="assets/concrete-coral.svg" alt="">
+      </div>
+      <div class="footer-marquee__row" aria-hidden="true">
+        <img src="assets/concrete-coral.svg" alt=""><img src="assets/concrete-coral.svg" alt=""><img src="assets/concrete-coral.svg" alt="">
+      </div>
+    </div>
+  </a>
+  <div class="container">
+    <nav class="footer-index" aria-label="Alle Seiten">
+      <details class="footer-col" open>
+        <summary class="footer-col__label"><span>Leistungen</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
+        <ul class="footer-col__list">
+          <li><a href="marken-check.html">Marken-Check</a></li><li><a href="zielgruppen-markt-und-wettbewerberanalyse.html">Zielgruppen-, Markt- &amp; Wettbewerbsanalyse</a></li><li><a href="kunden-und-mitarbeiterbefragungen.html">Kunden- &amp; Mitarbeiterbefragungen</a></li><li><a href="social-listening.html">Social Listening</a></li><li><a href="brand-workshop.html">Brand-Workshop</a></li><li><a href="brandvision.html">Brandvision</a></li><li><a href="markenpositionierung-brand-story.html">Markenpositionierung &amp; Brand Story</a></li><li><a href="namensentwicklung.html">Namensentwicklung</a></li><li><a href="headlines-und-textkonzept.html">Headlines &amp; Textkonzept</a></li><li><a href="corporate-design.html">Corporate Design</a></li><li><a href="design-kick-off-fuer-corporate-design.html">Design-Kick-off</a></li><li><a href="website-konzept.html">Website-Konzept</a></li><li><a href="website-design.html">Website-Design</a></li><li><a href="seo-und-ki-search.html">SEO &amp; KI-Search</a></li><li><a href="fotoproduktion.html">Fotoproduktion</a></li><li><a href="animationen-motion-design.html">Animationen &amp; Motion Design</a></li><li><a href="icons-und-llustration-sets.html">Icons &amp; Illustration-Sets</a></li><li><a href="package-design.html">Package Design</a></li><li><a href="retail-design.html">Retail Design</a></li><li><a href="employer-branding.html">Employer Branding</a></li><li><a href="internes-rollout.html">Internes Rollout</a></li>
+          <li class="footer-col__hub"><a class="link-arrow" href="leistungen.html">Alle Leistungen</a></li>
+        </ul>
+      </details>
+      <details class="footer-col" open>
+        <summary class="footer-col__label"><span>Branchen</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
+        <ul class="footer-col__list">
+          <li><a href="branchen.html#b2b">B2B Brands</a></li><li><a href="branchen.html#event-entertainment">Event &amp; Entertainment Brands</a></li><li><a href="branchen.html#recruiting">Recruiting Brands</a></li><li><a href="branchen.html#startups">Startups</a></li><li><a href="branchen.html#food-beverage">Food &amp; Beverage Brands</a></li><li><a href="branchen.html#consulting-it-finance">Consulting, IT &amp; Finance Brands</a></li><li><a href="branchen.html#gesundheit-care">Family &amp; Kids Brands</a></li><li><a href="branchen.html#architektur-immobilien">Architektur &amp; Immobilien Brands</a></li><li><a href="branchen.html#gesundheit-care">Health &amp; Education Brands</a></li><li><a href="branchen.html#marketing-media">Marketing &amp; Media Brands</a></li>
+          <li class="footer-col__hub"><a class="link-arrow" href="branchen.html">Alle Branchen</a></li>
+        </ul>
+      </details>
+      <details class="footer-col" open>
+        <summary class="footer-col__label"><span>Wissen</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
+        <ul class="footer-col__list">
+          <li><a href="was-kostet-ein-logo-design.html">Was kostet ein Logo-Design?</a></li><li><a href="wissen.html">Was ist wichtig beim Markendesign?</a></li><li><a href="wissen.html">Warum Early Adopter wichtig sind</a></li><li><a href="wissen.html">Wie wird meine Marke zur Lovebrand?</a></li><li><a href="wissen.html">Illustrationen im Markendesign</a></li><li><a href="wissen.html">KI im Layoutdesign</a></li><li><a href="wissen.html">Markenstrategie mit KI</a></li><li><a href="wissen.html">Diversität &amp; Inklusion im Design</a></li><li><a href="wissen.html">Beratung im Markenaufbau</a></li><li><a href="wissen.html">Designagentur digitalisieren</a></li><li><a href="wissen.html">Alle FAQs</a></li>
+          <li class="footer-col__hub"><a class="link-arrow" href="wissen.html">Zum Blog</a></li>
+        </ul>
+      </details>
+      <details class="footer-col" open>
+        <summary class="footer-col__label"><span>Agentur</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
+        <ul class="footer-col__list">
+          <li><a href="./">Home</a></li><li><a href="projekte.html">Projekte</a></li><li><a href="situation-marke-nicht-mitgewachsen.html">Wo wir helfen können</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="ueber-uns.html">Über CONCRETE</a></li><li><a href="leistungen.html">Unser Handwerk</a></li><li><a href="phase-verstehen.html">Verstehen</a></li><li><a href="phase-definieren.html">Definieren</a></li><li><a href="phase-umsetzen.html">Umsetzen</a></li><li><a href="phase-begleiten.html">Begleiten</a></li><li><a href="projekte.html">Projekte-Übersicht</a></li><li><a href="kontakt.html">Projekt anfragen</a></li>
+        </ul>
+      </details>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="footer-legal">
+      <a class="footer-legal__logo" href="./" aria-label="CONCRETE — zur Startseite"><img src="assets/concrete-brandbuilding-paper.svg" alt="CONCRETE Brandbuilding" width="200" height="55"></a>
+      <ul class="footer-legal__links"><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul>
+      <small>© 2026 CONCRETE Brandbuilding · Hamburg &amp; Frankfurt</small>
+    </div>
+  </div>
+</footer>
+<script src="site.js?v=4"></script>
+<script>
+(function(){
+  // Kacheln zeilenweise (neueste zuerst) auf Spalten verteilen
+  var grid=document.querySelector("[data-tiles]");
+  var all=[].slice.call(grid.querySelectorAll(".ptile"));
+  function colCount(){return innerWidth<=560?1:innerWidth<=900?2:3;}
+  var lastN=0;
+  function layout(){
+    var n=colCount();if(n===lastN)return;lastN=n;
+    grid.innerHTML="";
+    var cols=[];for(var i=0;i<n;i++){var d=document.createElement("div");d.className="pcol";grid.appendChild(d);cols.push(d);}
+    var visIdx=0;
+    all.forEach(function(t){cols[(visIdx++)%n].appendChild(t);});
+  }
+  layout();
+  addEventListener("resize",function(){layout();});
+  var chips=[].slice.call(document.querySelectorAll(".fchip"));
+  var rows=all;
+  var count=document.querySelector("[data-count]");
+  var search=document.getElementById("psearch");
+  var cluster="*";
+  function apply(){
+    var q=(search.value||"").toLowerCase().trim();
+    var n=0;
+    rows.forEach(function(r){
+      var ok=(cluster==="*"||r.getAttribute("data-cluster")===cluster)&&(!q||r.getAttribute("data-search").indexOf(q)>=0);
+      r.classList.toggle("hide",!ok);if(ok)n++;
+    });
+    if(count)count.textContent=n+(n===1?" Projekt":" Projekte");
+  }
+  chips.forEach(function(c){c.addEventListener("click",function(){chips.forEach(function(x){x.classList.remove("on")});c.classList.add("on");cluster=c.getAttribute("data-f");apply();});});
+  search.addEventListener("input",apply);
+})();
+</script>
+</body>
+</html>

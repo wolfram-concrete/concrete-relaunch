@@ -1,0 +1,532 @@
+# Changelog – CONCRETE Strukturprototyp
+
+## 04.09.2026 – Claude-Design-Export als zweite Struktur unter `website/`
+
+Der in Claude Design gebaute Relaunch (80 Seiten, Magazin-Look) liegt jetzt
+neben dem WordPress-Export im Repository, ohne den Bestand anzufassen.
+Details, Änderungen gegenüber dem Export und Prüfstand: `website/README.md`.
+Der Prototyp unter `konzept/` bleibt als Konzeptionsstand erhalten.
+
+
+## 30.08.2026 – Footer als vollständiger Seitenindex
+
+Auftrag: den Footer nach dem Webflow-Muster „footer-1“ mit allen SEO-Unter­seiten
+aufbauen, im Footer nur die Wortmarke ohne den Zusatz „Brandbuilding“.
+
+### Neu
+
+- **Vier Linkspalten mit 54 echten Zielen** – Leistungen (21), Branchen (10),
+  Wissen (11), Agentur (12). Die Routen stammen aus der URL-Matrix, nicht aus
+  einer Wunschliste; alle 60 Footer-Links wurden gegen den laufenden Server
+  geprüft und lösen mit 200 auf.
+- **Aufklappbar erst unterhalb 760 px.** Umgesetzt mit `<details>`/`<summary>`,
+  also ohne eigene ARIA-Konstruktion: Tastaturbedienung und Screenreader-
+  Semantik kommen vom Browser. Am Desktop stehen die Spalten offen, das Label
+  ist dort per `tabindex="-1"` aus der Tabfolge genommen und der Klick wird
+  abgefangen — ein Label, das nichts tut, soll auch keinen Fokus fangen.
+  Ohne JavaScript bleibt alles offen. Plus/Minus über zwei CSS-Striche.
+- **Laufendes Logoband** mit neun Kundenlogos (`konzept/assets/clients/`,
+  zusammen 55 KB WebP). Einfärbung über `brightness(0) invert(1)`.
+  Bei `prefers-reduced-motion` steht das Band still.
+- **Rechtszeile** mit Wortmarke, Kontakt/Impressum/Datenschutz und Copyright.
+
+### Entscheidungen und Korrekturen
+
+- **Wortmarke ohne „Brandbuilding“** im Footer (`concrete-paper.svg`, aus dem
+  Bestand übernommen). Der Header behält weiterhin das vollständige Logo.
+- **Die 97 FAQ-Seiten stehen nicht einzeln im Footer**, sondern über einen
+  Sammel-Link auf `/faqs/`. Die URL-Matrix empfiehlt, 210 Seiten zu
+  konsolidieren — fast alle davon FAQs, mit maximal 2 Klicks pro Seite. Sie
+  jetzt vollzählig zu verlinken würde genau diese Empfehlung unterlaufen.
+- **Drei Kundenlogos entfernt.** Gemessene Alphadeckung: CanSort 66 %,
+  Potatohead 65 % — Logos mit gefüllter Hintergrundfläche werden durch die
+  Einfärbung zum weißen Klotz. Street Gourmet fiel als zu schwache
+  Badge-Form heraus.
+- **Displaygröße korrigiert:** `--fs-display` von 52 px auf 44 px Untergrenze.
+  Bei 390 px Viewport stehen dem Satz 342 px zur Verfügung, „BRANDBUILDING“
+  misst in Arame Bold bei 46 px bereits 332 px — bei 52 px brach das Wort
+  mitten im Buchstaben um.
+- **Konzeptleiste erscheint nur noch mit `?konzept=1`.** Sie lag als
+  schwebender Kasten über den Footer-Links.
+- Der Versuch, alle „Alle …“-Links auf eine gemeinsame Grundlinie zu ziehen,
+  wurde zurückgenommen: der Inhalt eines `<details>` liegt in aktuellen
+  Engines in `::details-content` und ist damit kein direktes Flexkind. Ein
+  Pseudoelement-Hack ohne Safari-Rückhalt war den Gewinn nicht wert.
+
+### Geprüft
+
+16 Seitenansichten (1440×1000 und 390×844), keine Überläufe, keine toten
+internen Links. Tastatur: Label am Desktop nicht fokussierbar, im schmalen
+Raster mit Enter bedienbar. Klick auf ein Label am Desktop schließt die
+Spalte nicht.
+
+
+## 29.08.2026 – Versuch: Referenz André Cândido, Schrifttausch, Case-Wand
+
+Auftrag: den Ansatz challengen. Referenz analysiert, Hauptschrift getauscht,
+Aufbau geändert, damit die Startseite deutlich mehr Cases zeigt.
+
+### Referenz geprüft
+
+Die Seite wurde live gegengelesen, nicht nur das Dokument. Die Tokens im
+MD-File stimmen: H1 in Editorial New bei **160 px, Schnitt 200**, Body PP Mori
+400, Radien 80 / 24 / 8 / 50 / 800 px.
+
+**Das Dokument verfehlt aber die Dramaturgie**, und die ist der eigentliche
+Punkt: Auf einen stillen Papierhero folgt unmittelbar eine vollflächige,
+dichte Arbeitsfläche mit Dutzenden Kacheln. Erst danach kommt das aufgeräumte
+Raster mit benannten Projekten. Dieser Kontrast trägt die Seite.
+
+### Geändert
+
+- **Hauptschrift getauscht.** Display und H2 laufen jetzt in **Bodoni Moda**
+  (OFL, selbst gehostet, Latin-Subset 26 KB). Editorial New ist nicht
+  lizenzierbar; Bodoni Moda kommt im Charakter am nächsten. Roc Grotesk bleibt
+  für Fließtext und Navigation.
+- **Hero ist wieder rein typografisch auf Papier.** Das Case-Reel im Hero ist
+  entfallen — über einem Foto gehen die Haarlinien der Didone verloren.
+- **Neue Case-Wand direkt unter dem Hero:** 18 Projekte quer durch alle
+  Branchencluster, von BGF+ und NOEY über Street Gourmet und Cologne Comedy
+  bis Klang² und Poodlewohl.
+- Typo-Skala auf fünf Stufen: 124 / 54 / 24 / 18 / 13 px. Serif ab der
+  H2-Ebene, Groteske darunter — die Referenz setzt die Serif ausdrücklich erst
+  ab 48 px ein.
+- Kleintext getrackt mit 0,107 em wie in der Referenz.
+
+### Performance
+
+Die 18 Motive wogen als Originale **5,09 MB**. Nach Konvertierung auf WebP bei
+640 px Breite sind es **0,52 MB — 90 Prozent gespart.** Die Originale bleiben
+unangetastet, die konvertierten Kacheln liegen unter `assets/cases/`.
+
+### Bewusst nicht übernommen
+
+- **Die Radien der Referenz** (80 / 24 / 8 / 800 px). Die Rundung der
+  Handlungsflächen bleibt bei der Regel aus dem eigenen Logo (0,236 zur kurzen
+  Achse). Der eigene Ursprung schlägt die fremde Referenz.
+- **Der gelbe Akzent.** Koralle bleibt die Akzentfarbe, weiterhin nur für
+  Interaktion.
+
+### Zu entscheiden
+
+- **Der Schrifttausch löst die Website typografisch vom gedruckten Magazin.**
+  Arame trägt dort die gesamte Display-Ebene. In einem Schritt umkehrbar.
+
+### Geprüft
+
+- 16 Seitenansichten, 0 Überläufe, 0 Konsolenfehler, 0 defekte Links;
+- fünf Schriftgrößen, Radien weiterhin nur an Aktionen.
+
+## 29.08.2026 – Rahmenlinien, Bestandspfeile, Rundung aus dem Logo
+
+### Entfernt
+
+- **Rahmende Linien oben und links** an Kompetenzraster, Magazinraster und
+  Situationsliste. Sie lasen sich wie ein Darstellungsfehler statt wie
+  Struktur. Die Linien **zwischen** den Elementen bleiben — sie trennen,
+  statt zu umranden. Zusätzlich entfällt die Linie hinter der letzten
+  Situationszeile.
+
+### Geändert
+
+- **Pfeile aus dem ursprünglichen Website-Styling.** Die typografischen
+  Zeichen → und ↗ sind an 29 Stellen durch die Pfeilform aus
+  `Concrete-next.svg` ersetzt. Als CSS-Maske eingesetzt, damit sie die
+  Textfarbe übernimmt und in jedem Zustand mitgeht. Externe Ziele nutzen
+  denselben Pfeil, nach schräg oben gedreht. Der Pfeil im Fließtext
+  („Ausgangslage → Entscheidung → Veränderung") bleibt ein Textzeichen.
+
+- **Rundung der Handlungsflächen aus dem eigenen Logo abgeleitet.**
+  Gemessen am O in Arame Bold: 144 × 196 px mit 34 px Eckradius, in beiden
+  Achsen gleich. Um 90 Grad gekippt wird daraus 196 × 144 — der Radius
+  verhält sich damit wie **0,236 zur kurzen Achse**. Bei 48 px hohen CTAs
+  ergibt das 11,3 px. Als Token `--radius-cta` hinterlegt.
+
+  Das ersetzt die 999-px-Pillen aus dem Referenzdokument. Der Wert stammt
+  jetzt aus der eigenen Marke statt aus einer fremden Referenz.
+
+### Geprüft
+
+- 16 Seitenansichten, 0 Überläufe, 0 Konsolenfehler, 0 defekte Links;
+- Randprüfung im DOM: nur noch Schaltflächen und Zwischenlinien tragen Kanten;
+- weiterhin genau vier Schriftgrößen; Radien ausschließlich an Aktionen
+  (11,3 px an CTAs, 13,2 px an der Abspielmarke — dieselbe Regel).
+
+## 29.08.2026 – Echte Inhalte auf der Startseite
+
+Anlass: Auf Konzepttexten lässt sich kein UI beurteilen. Die Startseite trägt
+jetzt weitgehend die tatsächlichen Inhalte statt Beschreibungen des Konzepts.
+
+### Geändert
+
+- **Zusammenarbeit** und **Über uns** nutzen die echte Copy der Bestandsseite
+  („kurze Wege, klare Verantwortungen, keine Übergaben in die zweite Reihe";
+  „Echtes Handwerk aus Hamburg und Frankfurt – seit über 20 Jahren").
+- **Magazin-Modul** zeigt die reale Ausgabe N°01 mit den tatsächlichen
+  Artikelzeilen vom Umschlag: „Was ist eigentlich Brandbuilding?", „Warum
+  Brandbuilding im B2B anders funktioniert", „Gutes Design ist keine
+  Geschmacksfrage", „Wenn richtige Werte falsch ankommen".
+- **Videomodul ist jetzt sichtbar** — Standbild aus dem CONCRETE-Imagefilm mit
+  Abspielmarke und Verweis auf den YouTube-Kanal.
+- Konzeptkommentar aus den sichtbaren Texten entfernt (Kernleistungen,
+  Magazin, Videos). Es steht kein Text mehr auf der Seite, der die Seite
+  erklärt statt zu wirken.
+
+### Entschieden
+
+- **Der Agentur-Reel wird nicht eingebettet: 23 MB.** Auch der Imagefilm
+  bleibt draußen (11 MB). Beides verstößt gegen die Medienvorgabe aus
+  `06-relaunch-blueprint`. Gezeigt wird ein 36 KB großes Standbild aus dem
+  eigenen Film mit Abspielmarke.
+
+### Behoben
+
+- `.editorial-card h3` war im Prototyp auf 12ch begrenzt — bei Fließtextgröße
+  132 px, die Überschrift brach auf sechs Zeilen.
+
+### Noch nicht verbindlich
+
+- **Die Auswahl der drei kuratierten Cases.** Sichtbar sind Conlivo, NextBed
+  und medium/BGF+; die Bestandsseite zeigt SOLIT, Baked, BGF+ und NextBed.
+  Welche sechs bis acht Projekte die Positionierung tragen, ist eine
+  redaktionelle Entscheidung.
+- **Zahl und Benennung der vier Hilfesituationen.** Ohne Entsprechung auf der
+  Bestandsseite, weiterhin Konzeptvorschlag.
+- **Die Leistungslisten** unter Strategie / Branding / Websites sind knapper
+  als die Bestandstexte zu „Wir & Marken".
+
+### Geprüft
+
+- 16 Seitenansichten, 0 Überläufe, 0 Konsolenfehler, 0 defekte Links;
+- weiterhin genau vier Schriftgrößen, Radien nur an Aktionen.
+
+## 28.08.2026 – Hero mit Case-Reel, Referenz „Dash Digital Studio" übertragen
+
+### Geändert
+
+- **Hero zeigt jetzt ein vollflächiges Reel aus fünf Cases** — BGF+, NextBed,
+  Baked, SOLIT und medium Architekten. Überblendung alle sechs Sekunden,
+  30-Sekunden-Zyklus, reine CSS-Animation ohne JavaScript.
+- **Eyebrow „CONCRETE Brandbuilding" entfernt.** Die Referenz fordert für
+  Display-Überschriften ausdrücklich „no subheading, no eyebrow above".
+- **Die drei Quick-Links Strategie / Branding / Websites im Hero entfernt**,
+  ebenso die Leistungsbahn darunter.
+- **Display-Behandlung nach Referenz:** Zeilenhöhe 0,85 und Laufweite
+  −0,035 em auf Displaygrößen. Das lässt die Type architektonisch wirken
+  statt werblich.
+- **Pillen ausschließlich für Aktionen** (999 px), alles andere bleibt bei
+  0 px. Der Kontrast zwischen der harten Bildkante und der Pille ist das
+  Signal.
+- Sektionsabstände auf den Referenzbereich 80–120 px gebracht.
+
+### Bewusst nicht übernommen
+
+- **Die Achromatik.** Die Referenz fordert null Farbe („the 0% colorfulness
+  is the brand"). Das widerspricht der Festlegung, dass die CONCRETE-Farben
+  bleiben. Übernommen wurde die Farb*disziplin*: Koralle nur als Interaktion.
+- **Founders Grotesk.** Übernommen wurden die Proportionen, nicht die Schrift.
+
+### Zu prüfen
+
+- Das Entfernen der drei Quick-Links widerspricht der Entscheidung aus dem
+  Termin mit Christian vom 27.08.2026: „Strategie, Branding und Websites
+  müssen im ersten Homepage-Bildschirm erkennbar sein." Auf ausdrücklichen
+  Wunsch umgesetzt. Die drei Begriffe bleiben als Kompetenzabschnitt weiter
+  unten auf der Seite.
+- Das Reel wiegt rund 900 KB. Nach AVIF/WebP-Konvertierung wären es etwa 350 KB.
+  Bei `prefers-reduced-motion` werden die vier nicht sichtbaren Motive derzeit
+  trotzdem geladen — mit reinem CSS nicht vermeidbar.
+
+### Geprüft
+
+- 16 Seitenansichten, 0 Überläufe, 0 Konsolenfehler, 0 defekte Links;
+- fünf Motive geladen, gestaffelte Überblendung mit 0/6/12/18/24 s;
+- `prefers-reduced-motion`: Animation aus, nur das erste Motiv sichtbar;
+- weiterhin genau vier Schriftgrößen, Radien nur an Aktionen.
+
+## 28.08.2026 – Aufräumen: vier Schriftgrößen, kein Farbakzent in Überschriften
+
+Grundlage: Recherche über den Refero-MCP an drei Referenzen mit vergleichbarer
+Haltung — Koto (Markenagentur), Look inc (Editorial-Agentur), Adopt (Agentur
+auf Pergament). Alle drei konvergieren auf dieselben Prinzipien.
+
+### Gemessen
+
+- Vorher rendeten auf der Startseite **elf** verschiedene Schriftgrößen
+  (158 / 95 / 72 / 52 / 43 / 32 / 24 / 18 / 16 / 14 / 13 px). Ursache: zwei
+  Stylesheets, die nie aufeinander abgestimmt wurden.
+- Jetzt sind es **vier**: 88 / 32 / 18 / 13 px. Die Referenzen arbeiten mit
+  drei bis vier.
+
+### Geändert
+
+- **Typo-Skala auf vier Stufen.** Display erscheint bewusst genau zweimal pro
+  Seite: als H1 und als Schlusszeile im Footer.
+- **Keine eingefärbten Überschriften mehr.** Koralle hat jetzt genau eine
+  Rolle: Interaktion (Hover, Fokus, aktiver Navigationspunkt). Alle drei
+  Referenzen halten den Akzent aus der Typohierarchie heraus.
+- **Navigation ohne Versalien und weite Laufweite**, CTA im Header als
+  Haarlinie statt gefüllter Fläche. Die einzige gefüllte Fläche der Seite ist
+  die primäre Handlungsaufforderung im Inhalt.
+- **Module ohne Kästen.** Projektkarten haben keinen Rahmen und keine
+  Oberlinie mehr, Bilder sind offene Blöcke. Kompetenzfelder ohne Rahmen und
+  Mindesthöhe, Trennung nur über Raum.
+- **Keine Schatten, keine Radien** mehr auf der Seite — verifiziert.
+- Kartenüberschriften nutzen Fließtextgröße in der Displayschrift. Damit
+  entsteht Hierarchie zur Sektionsüberschrift, ohne eine fünfte Größe.
+- Zwei schwache Projektmotive (Präsentationsfolien) gegen dokumentarische
+  Fotografie getauscht.
+
+### Behoben
+
+- **Sprungziele lagen unter dem klebenden Header.** Ankerlinks wie
+  `/leistungen/#strategie` zeigten die angesteuerte Überschrift verdeckt.
+  `scroll-margin-top` ergänzt.
+
+### Unverändert
+
+Schriften, Farben, sämtliche Inhalte und der komplette Seitenaufbau.
+
+### Geprüft
+
+- 16 Seitenansichten, acht Routen auf Desktop 1440 × 1000 und Mobile 390 × 844;
+- 0 Überläufe, 0 Konsolenfehler, 0 defekte Bilder oder Links;
+- genau vier Schriftgrößen, null Radien, null Schatten.
+
+### Offen
+
+- Motion. Bewusst nachgelagert, siehe README.
+
+## 28.08.2026 – Designsystem: Proportionen, Weißraum, Betonfläche
+
+### Geändert
+
+- **Typo-Skala auf eine Regel gebracht.** Faktor 1,333 zwischen allen
+  Textstufen, Sprung 2,25 auf die Display-Ebene. Die bisherigen Verhältnisse
+  (1,42 / 1,75 / 1,32 / 1,47 / 1,31) waren gewachsen, nicht gesetzt.
+- **Raum auf ein 8er-Raster gebracht**, Seitenrhythmus auf drei Werte reduziert
+  (eng / normal / weit) und insgesamt großzügiger gefasst.
+- **Hero ist jetzt typografiegeführt und bildlos.** Die große Korallfläche ist
+  entfallen; Koralle wirkt nur noch als Akzent auf einer Headline-Zeile.
+- **Betonfläche aus dem Originalauftritt aufgenommen** – als neue
+  Pause-Section in der Seitenmitte, mit dem redaktionellen Kern des Magazins
+  als Aussage darüber.
+- Navigation in Versalien und Roc Grotesk, Header auf 72 px.
+
+### Aufgelöst
+
+- Die Vergleichsfassungen A, B und Hybrid und der zugehörige Umschalter. Es
+  gibt einen Designstand, kein `?ui=`-Parameter mehr.
+
+### Entschieden
+
+- Der Beton-Clip bleibt aus dem ersten Bildschirm: 11 MB verstoßen gegen die
+  Medienvorgabe aus `06-relaunch-blueprint`. Das Standbild wiegt 36 KB und
+  zeigt dasselbe Motiv. Ein komprimierter Loop gehört in den Motion-Pass.
+
+### Behoben
+
+- Die Bildprüfung der QA meldete `loading="lazy"`-Motive unterhalb des Folds
+  fälschlich als defekt. Sie lädt Bilder jetzt erzwungen, bevor sie prüft.
+
+### Geprüft
+
+- 16 Seitenansichten, acht Routen auf Desktop 1440 × 1000 und Mobile 390 × 844;
+- 0 Überläufe, 0 Konsolenfehler, 0 defekte Bilder oder Links, genau eine H1;
+- 40 Projekte, acht Branchenfilter, ein Treffer für „NOEY“.
+
+### Offen
+
+- Die Sections unterhalb des Heros sind noch der Strukturprototyp mit neuen
+  Tokens, nicht ausgestaltet.
+- Die sechs weiteren Seitentypen folgen erst, wenn die Homepage steht.
+
+## 28.08.2026 – Richtungsentscheidung: Hybrid
+
+### Entschieden
+
+- **UI-Richtung: Hybrid** – der bildgeführte Hero aus B auf dem disziplinierten
+  System aus A. Aufruf `?ui=h`. A und B bleiben zum Vergleich erhalten.
+- **Headline und Subline bleiben vorerst unverändert** („Marken für Unternehmen
+  in Bewegung.“). Der Blueprint-Nordstern wurde geprüft und nicht übernommen.
+- **Hero-Motiv: Projektbild statt Teamfoto** – dokumentarische Aufnahme aus dem
+  medium-Architekten-Case mit sichtbarem Markenzeichen. Beweist gestalterische
+  Arbeit im ersten Bildschirm statt Agenturselbstbild.
+- **Nächster Arbeitsschritt: URL-Entscheidungsmatrix**, nicht die Übertragung
+  auf die weiteren Seitentypen.
+
+### Geändert
+
+- `ui-directions.css` neu strukturiert: Hero-Regeln und System-Regeln sind
+  getrennt, damit der Hybrid B-Hero und A-System sauber kombiniert;
+- Hero-Motiv erhält ein definiertes Seitenverhältnis (4:5 Desktop, 4:3 Mobile).
+  Ohne das bestimmte das hochformatige Bild die Höhe des Heros und schob die
+  Kernleistungsbahn unter den ersten Bildschirm.
+
+### Geprüft
+
+- 64 Seitenansichten: acht Routen × vier Zustände (Aktuell/A/B/Hybrid) ×
+  Desktop 1440 × 1000 und Mobile 390 × 844;
+- 0 Überläufe, 0 Konsolenfehler, 0 defekte Bilder oder Links, genau eine H1;
+- 19 Interaktionstests bestanden; `prefers-reduced-motion` unverändert korrekt;
+- Trennung verifiziert: A zeigt Projektstreifen ohne Bildhero, B zeigt Mosaik
+  und Anschnitt ohne Section-Ziffern, Hybrid zeigt B-Hero mit A-Section-Ziffern.
+
+## 28.08.2026 – UI/UX-Pass A: globaler Rahmen und zwei UI-Richtungen
+
+### Hinzugefügt
+
+- `assets/ui-directions.css` mit gemeinsamer Token-Grundlage und zwei
+  vergleichbaren Richtungen, aufrufbar über `?ui=a` und `?ui=b`;
+- **Variante A „Editorial Grid“** – reduziert und typografiegeführt: Kernleistungen
+  als gerahmte Felder über die volle Breite, Projektstreifen mit drei Motiven im
+  ersten Bildschirm, laufende Section-Ziffern als Übergangsmittel;
+- **Variante B „Magazin-Raum“** – bildgeführt: Korallfeld mit dokumentarischer
+  Fotografie im Split, Headline mit Farbwechsel auf der letzten Zeile,
+  Kernleistungen als volle Bahn, asymmetrisches Mosaik im Projektbeweis;
+- lizenzierte Schriftschnitte **Arame Regular/Bold** und **Roc Grotesk
+  Regular/Bold** unter `assets/fonts/` (69 KB gesamt);
+- echte Disclosure-Mechanik für „Wo wir helfen können“ auf allen acht Seiten:
+  Klick, Enter, Escape, Klick nach außen, `aria-expanded`;
+- Unterebene in der mobilen Navigation als Akkordeon – vorher existierte sie
+  dort überhaupt nicht;
+- Prototyp-Kontrollleiste zum Umschalten von Konzepthinweisen und UI-Richtung.
+
+### Geändert
+
+- Konzepthinweise (Leiste, Notizen, Reihenfolgeschalter) sind **standardmäßig
+  ausgeblendet** und über die Kontrollleiste oder `?konzept=1` zuschaltbar;
+- Homepage-Reihenfolge **Projekte zuerst** ist der Standard; „Wo wir helfen
+  können zuerst“ bleibt über `?variante=szenarien` vergleichbar;
+- Mega-Menü öffnet nicht mehr per Hover. Hover öffnete das Panel und der
+  unmittelbar folgende Klick schloss es sofort wieder;
+- warme Magazin-Palette statt dreier fast identischer kühler Grautöne;
+- Navigation in Roc Grotesk statt Arame, Headerhöhe von 86 auf 68 px;
+- Projektmotive im Hero-Streifen von Präsentationsfolien auf dokumentarische
+  Fotografie getauscht.
+
+### Behoben
+
+- **Fake-Bold beseitigt.** `font-weight: 400 700` verwies auf eine statische
+  Einzelschnitt-Datei; jedes `<strong>` wurde vom Browser synthetisiert.
+  Geprüft durch Auslesen der WOFF2-Tabellenverzeichnisse: kein `fvar`.
+- **Unkontrollierte Überschriftenumbrüche.** `overflow-wrap: anywhere` schlug
+  `hyphens: auto` und zerlegte Wörter ohne Trennstrich. Auf Display-Größen ist
+  auch Auto-Silbentrennung falsch – sie machte aus „UNTERNEHMEN“ ein
+  „UNTER-NEHMEN“. Jetzt Umbruch an Wortgrenzen, `break-word` nur als Notfallnetz.
+- **`line-height: 0.96` pauschal auf H1 bis H3.** Für eine 150-px-Zeile richtig,
+  für eine 30-px-H3 zu eng. Jetzt je Ebene definiert.
+- **Bilder mit `width`/`height`-Attributen ignorierten `aspect-ratio`.** Beide
+  Dimensionen galten als gesetzt; `height: auto` in der Basisregel ergänzt.
+- Uneinheitliche Lesebreiten (34/38/78ch) durch Tokens ersetzt.
+
+### Geprüft
+
+- 48 Seitenansichten: acht Routen × drei Zustände (Aktuell/A/B) × Desktop
+  1440 × 1000 und Mobile 390 × 844;
+- 0 horizontale Überläufe, 0 Konsolenfehler, 0 fehlgeschlagene Requests,
+  0 defekte Bilder, 0 defekte Konzeptlinks, genau eine H1 je Seite;
+- 19 Interaktionstests bestanden: Klick, Tastatur, Escape, Fokusrückgabe,
+  Klick nach außen, Touch bei 1180 px, mobiles Akkordeon, 44-px-Touchziele,
+  Konzeptumschaltung, Richtungsumschaltung;
+- `prefers-reduced-motion`: Animation aus, Smooth-Scroll aus, Panel öffnet
+  vollständig – keine Information hängt an Bewegung;
+- 40 Projekte, acht Branchenfilter, ein Treffer für „NOEY“, kein sichtbarer
+  Leistungsfilter, Anfrageprototyp reagiert unverändert.
+
+### Noch offen
+
+- Wahl der Richtung; A und B sind bewusst gleichwertig gebaut;
+- Hero-Bild für Variante B (aktuell Teamfoto als Platzhalter);
+- Headline und Subline – siehe Rückfrage im Übergabegespräch;
+- Übertragung auf die Unterseiten erfolgt erst nach Entscheidung.
+
+## 27.08.2026 – Übergabe für die UI/UX-Phase
+
+### Hinzugefügt
+
+- scoped `konzept/CLAUDE.md` mit Architektur, festen Konzeptentscheidungen,
+  Arbeitsregeln, Tests und Git-/Preview-Grenzen;
+- ausführliches `UI-UX-HANDOFF-CLAUDE-CODE.md` mit UI/UX-Zielbild, offenen
+  Entscheidungen, vier empfohlenen Arbeitspässen und Gauntlet-Loop;
+- direkt nutzbarer Startprompt für den ersten Claude-Code-Durchlauf.
+
+### Präzisiert
+
+- UI/UX startet mit globalem Rahmen und Homepage, nicht mit einem gleichzeitigen
+  Redesign aller Seiten;
+- Motion folgt erst nach Freigabe der statischen Hierarchie;
+- interne Audit-Unterlagen bleiben außerhalb des teilbaren Preview-Branches;
+- Produktion, SEO-Bestandstexte und validierte Informationsarchitektur sind vor
+  unbeabsichtigten Änderungen geschützt.
+
+## 27.08.2026 – Meeting-Audit mit Christian eingearbeitet
+
+### Geändert
+
+- Hauptnavigation auf Home, Projekte, Wo wir helfen können, Leistungen, Über uns
+  und Projekt anfragen ausgerichtet;
+- sichtbaren Begriff „Szenarien“ durch „Wo wir helfen können“ ersetzt;
+- Dropdown und Pfeil auf den Navigationspunkt mit tatsächlicher Unterebene
+  konzentriert;
+- Strategie, Branding und Websites im Homepage-Hero und als drei sichtbare
+  Kernleistungen priorisiert;
+- Über uns und Arbeitsweise als gemeinsames Seitenziel bestätigt;
+- Projektarchiv auf eine primäre Branchenperspektive reduziert;
+- Leitüberschriften an zentralen Stellen verkürzt;
+- Magazin, Videos und persönliche Sichtbarkeit wieder in die Homepage-Struktur
+  aufgenommen.
+
+### Dokumentiert
+
+- bestehende SEO-Texte bleiben eine migrationskritische Quelle und werden nicht
+  pauschal neu geschrieben;
+- H1/Subline-Tausch, finales Interface-System und endgültiger Szenario-Slug sind
+  noch keine beschlossenen Punkte;
+- Meeting-Notizen wurden mit dem vollständigen Transkript gegengeprüft; im
+  Dokument waren keine Kommentar-Threads vorhanden.
+
+### Geprüft
+
+- acht Konzeptseiten in Desktop und Mobile, insgesamt 16 Seitenansichten;
+- keine kaputten Konzeptlinks, JavaScript-Fehler, fehlenden Medien oder
+  horizontalen Überläufe;
+- mobile Navigation, beide Homepage-Reihenfolgen und Anfrageprototyp;
+- 40 Projekte, acht Branchenfilter, ein Suchergebnis für „NOEY“ und kein
+  sichtbarer Leistungsfilter.
+
+## 27.08.2026 – Branchenorientiertes Projektarchiv
+
+### Hinzugefügt
+
+- vollständiges Verzeichnis der 40 veröffentlichten Cases;
+- acht Branchencluster mit transparenten Ergebniszahlen;
+- Projektsuche über Name, Beschreibung, Branche und Leistungsbereich;
+- alternative, nachgeordnete Ansicht nach Leistungsbereichen;
+- gleichberechtigte Projektzeilen mit alphabetischer Standardsortierung;
+- Pfeilkennzeichnung für Hauptnavigationselemente mit Unterebenen.
+
+### Geändert
+
+- Branchencluster sind jetzt die primäre Orientierung auf der Projekte-Seite;
+- B2B, B2C, B2B2C und Startup wurden aus der sichtbaren Filterlogik entfernt;
+- die Projekte-Seite trennt vollständiges Archiv und kuratierte Proof Stories;
+- Einleitung und Konzeptnotiz erläutern den geprüften Arbeitsstand.
+
+### Geprüft
+
+- 40 von 40 Projekten werden geladen;
+- alle acht Branchencluster liefern die erwarteten Case-Anzahlen;
+- Filter „Technologie & Industrie“ liefert fünf Projekte;
+- Suche nach „NOEY“ liefert genau den Case NOEY Solutions;
+- keine JavaScript-Konsolenfehler im geprüften Ablauf;
+- kein horizontaler Überlauf bei 390 × 844 Pixeln.
+
+## 26.08.2026 – Erster Strukturprototyp
+
+- neue Hauptnavigation mit Projekte, Szenarien, Leistungen, Über CONCRETE und
+  Projektanfrage;
+- vergleichbare Homepage-Reihenfolgen „Projekte zuerst“ und „Szenarien zuerst“;
+- exemplarische Projekt- und Szenario-Detailseiten;
+- nicht sendender Anfrageprototyp;
+- bestehende Gestaltung als bewusst reduzierte Arbeitsoberfläche übernommen.

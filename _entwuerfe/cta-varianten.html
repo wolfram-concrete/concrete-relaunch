@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CTA-Varianten</title>
+<style>
+@font-face{font-family:"Arame";font-weight:700;font-display:swap;src:url("fonts/0Arame-Bold.otf") format("opentype")}
+@font-face{font-family:"Grotesk";font-weight:400;font-display:swap;src:url("fonts/RocGrotesk-Regular.otf") format("opentype")}
+@font-face{font-family:"Grotesk";font-weight:700;font-display:swap;src:url("fonts/RocGrotesk-Bold.otf") format("opentype")}
+:root{--paper:#f3efe7;--ink:#171513;--ink-60:rgba(23,21,19,.6);--coral:#fe7e5e;--rule:rgba(23,21,19,.18)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Grotesk",Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:64px clamp(20px,4vw,48px)}
+h1{font-family:"Arame";font-weight:700;font-size:clamp(32px,4.5vw,56px);line-height:.9;letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--ink-60);max-width:60ch;margin:0 0 56px}
+.var{border-top:1px solid var(--rule);padding:40px 0 56px;display:grid;grid-template-columns:minmax(180px,300px) 1fr;gap:32px;align-items:start}
+.var__label{font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral)}
+.var__label small{display:block;margin-top:8px;font-weight:400;font-size:13px;letter-spacing:0;text-transform:none;color:var(--ink-60);max-width:32ch}
+.row{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center}
+.dark{background:var(--ink);color:var(--paper);padding:28px 32px;margin-top:20px}
+.arr{display:inline-block;width:.42em;height:.535em;background:currentColor;-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain;vertical-align:-.02em}
+@media(max-width:720px){.var{grid-template-columns:1fr}}
+
+/* V0 aktuell */
+.b0{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border:1px solid var(--ink);border-radius:calc(48px * .236);font-size:13px;font-weight:700;letter-spacing:.04em;color:inherit;text-decoration:none}
+
+/* V1 Pfeil-Textlink */
+.b1{display:inline-flex;align-items:center;gap:.6em;font-weight:700;font-size:15px;color:inherit;text-decoration:none;transition:color .3s ease}
+.b1 .arr{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.b1:hover{color:var(--coral)}
+.b1:hover .arr{transform:translateX(.45em)}
+
+/* V2 Editorial-Unterstrich */
+.b2{position:relative;display:inline-block;font-weight:700;font-size:15px;color:inherit;text-decoration:none;padding-bottom:7px}
+.b2::before{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--rule)}
+.b2::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.b2:hover::after{transform:scaleX(1)}
+.b2:hover{color:var(--coral);transition:color .3s ease .1s}
+
+/* V3 kompakte Pill */
+.b3{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:10px 18px;border:1px solid var(--ink);border-radius:calc(40px * .236);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:inherit;text-decoration:none;transition:color .35s ease,border-color .35s ease}
+.b3::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--coral);transform:scaleY(0);transform-origin:bottom;transition:transform .38s cubic-bezier(.2,.7,.2,1)}
+.b3:hover{color:#fff;border-color:var(--coral)}
+.b3:hover::before{transform:scaleY(1)}
+
+/* V4 Pfeil-Pill asymmetrisch */
+.b4{display:inline-flex;align-items:center;gap:14px;font-weight:700;font-size:15px;color:inherit;text-decoration:none}
+.b4 .pip{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;width:46px;height:40px;border:1px solid var(--ink);border-radius:calc(40px * .236);transition:border-color .35s ease,color .35s ease}
+.b4 .pip::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--coral);transform:scaleY(0);transform-origin:bottom;transition:transform .38s cubic-bezier(.2,.7,.2,1)}
+.b4:hover .pip{border-color:var(--coral);color:#fff}
+.b4:hover .pip::before{transform:scaleY(1)}
+.b4:hover{color:var(--coral)}
+
+/* dark context tweaks */
+.dark .b1,.dark .b2,.dark .b3,.dark .b4{color:var(--paper)}
+.dark .b2::before{background:rgba(243,239,231,.25)}
+.dark .b3,.dark .b4 .pip{border-color:var(--paper)}
+.dark .b1:hover,.dark .b4:hover{color:var(--coral)}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#f3efe7"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#f3efe7"/><text x="600" y="440" text-anchor="middle" font-family="Arial Black" font-size="110" font-weight="900" fill="#171513">CTA</text></svg></template>
+<div class="wrap">
+  <h1>CTA-Varianten</h1>
+  <p class="sub">Alle mit Hover — einfach drüberfahren. Empfehlung: V3 für primäre Handlungen, V1 für alles Sekundäre.</p>
+
+  <div class="var">
+    <div class="var__label">V0 · Aktuell<small>48px-Pill, Coral-Sweep — zum Vergleich</small></div>
+    <div><div class="row"><a class="b0" href="#">Projekt anfragen</a><a class="b0" href="#">Projekte ansehen</a></div></div>
+  </div>
+
+  <div class="var">
+    <div class="var__label">V1 · Pfeil-Textlink<small>kein Rahmen; Pfeil schiebt, Text kippt Coral</small></div>
+    <div>
+      <div class="row"><a class="b1" href="#">Projekt anfragen&nbsp;<span class="arr"></span></a><a class="b1" href="#">Projekte ansehen&nbsp;<span class="arr"></span></a></div>
+      <div class="dark"><div class="row"><a class="b1" href="#">Alle Situationen ansehen&nbsp;<span class="arr"></span></a></div></div>
+    </div>
+  </div>
+
+  <div class="var">
+    <div class="var__label">V2 · Editorial-Unterstrich<small>Haarlinie darunter, Coral wischt von links</small></div>
+    <div>
+      <div class="row"><a class="b2" href="#">Projekt anfragen</a><a class="b2" href="#">Projekte ansehen</a></div>
+      <div class="dark"><div class="row"><a class="b2" href="#">Alle Situationen ansehen</a></div></div>
+    </div>
+  </div>
+
+  <div class="var">
+    <div class="var__label">V3 · Kompakte Pill<small>40px, versal 12px, Sweep bleibt — deutlich leiser</small></div>
+    <div>
+      <div class="row"><a class="b3" href="#">Projekt anfragen</a><a class="b3" href="#">Projekte ansehen</a></div>
+      <div class="dark"><div class="row"><a class="b3" href="#">Termin buchen</a></div></div>
+    </div>
+  </div>
+
+  <div class="var">
+    <div class="var__label">V4 · Pfeil-Pill asymmetrisch<small>Text frei, kleine Pill nur ums Icon</small></div>
+    <div>
+      <div class="row"><a class="b4" href="#">Projekt anfragen <span class="pip"><span class="arr"></span></span></a><a class="b4" href="#">Projekte ansehen <span class="pip"><span class="arr"></span></span></a></div>
+      <div class="dark"><div class="row"><a class="b4" href="#">Termin buchen <span class="pip"><span class="arr"></span></span></a></div></div>
+    </div>
+  </div>
+
+  <div class="var">
+    <div class="var__label">Empfehlung · V3 + V1<small>Hierarchie: primär Pill, sekundär Textlink</small></div>
+    <div>
+      <div class="row"><a class="b3" href="#">Projekt anfragen</a><a class="b1" href="#">Projekte ansehen&nbsp;<span class="arr"></span></a></div>
+      <div class="dark"><div class="row"><a class="b3" href="#">Termin buchen</a><a class="b1" href="#">Alle Situationen ansehen&nbsp;<span class="arr"></span></a></div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
