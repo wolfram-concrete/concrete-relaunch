@@ -473,6 +473,9 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* Standorte mit Foto */
 .standort{display:block;margin:0 0 var(--s3);aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep)}
 .standort img{width:100%;height:100%;object-fit:cover;display:block}
+.inquiry__media .vteaser{align-self:start;width:100%}
+.inquiry__media .vteaser__thumb{width:clamp(150px,17vw,230px)}
+.inquiry__media .vteaser__thumb img{height:auto;aspect-ratio:16/9;object-fit:cover}
 @keyframes marquee{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.footer-marquee__track{animation:none}}
 .footer-index{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);padding-top:clamp(20px,3vw,40px);border-top:1px solid var(--rule-inv)}
