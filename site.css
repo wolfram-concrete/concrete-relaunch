@@ -45,7 +45,14 @@ h1,h2,h3,p,ul,figure{margin:0}
 .site-header{position:fixed;top:0;left:0;right:0;z-index:100;min-height:var(--header-height);transform:translateY(-110%);transition:transform .38s ease,background .3s ease}
 body.intro .site-header{transform:translateY(-110%) !important}
 .site-header.show{transform:none}
-.site-header.carrier{background:rgba(23,21,19,.35);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+/* Wiederkehrender Header beim Hochscrollen: Coral-Traeger mit Blur, Text/Logo in Ink */
+.site-header.carrier{background:rgba(254,126,94,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.site-header.carrier .brand img{filter:brightness(0)}
+.site-header.carrier .nav-link,.site-header.carrier .nav-disclosure,.site-header.carrier .menu-toggle{color:var(--ink);mix-blend-mode:normal}
+.site-header.carrier .nav-link:hover,.site-header.carrier .nav-link:focus-visible{color:var(--ink);text-shadow:0 0 .6px currentColor,0 0 .6px currentColor,0 0 .6px currentColor;opacity:1}
+.site-header.carrier .nav-link--cta{color:var(--ink);border-color:var(--ink)}
+.site-header.carrier .nav-link--cta:hover,.site-header.carrier .nav-link--cta:focus-visible{color:var(--paper)}
+.site-header.carrier .menu-toggle{border-color:var(--ink)}
 .site-header.attop{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
 @media(prefers-reduced-motion:reduce){.site-header{transition:none}}
 .site-header__inner{display:flex;align-items:center;justify-content:space-between;min-height:var(--header-height);gap:32px}
@@ -277,12 +284,15 @@ body.intro .site-header{transform:translateY(-110%) !important}
 @media(max-width:900px){.scenario-link{grid-template-columns:56px 1fr}.scenario-link__copy{grid-column:2}}
 
 /* Pause: Coral-Beton komponiert (Vollton + Alpha-Textur) + Statement-Übergröße */
-.pause-wrap{position:relative;padding-bottom:clamp(48px,7vw,104px)}
+.pause-wrap{position:relative;z-index:3;padding-bottom:clamp(48px,7vw,104px)}
 @media(prefers-reduced-motion:no-preference){.pause-wrap{height:280vh}.pause-wrap .pause{display:flex;align-items:center;min-height:72vh}}
 .pause__statement .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em}
 .pause__statement .w>i{display:inline-block;font-style:normal;will-change:transform}
-.pause{position:relative;overflow:hidden;background:var(--coral);margin-right:clamp(20px,7vw,110px);margin-top:calc(-1 * clamp(40px,6vw,96px));z-index:2}
-.pause__tex{position:absolute;inset:0;background:url("assets/beton/beton-red-alpha-quer.png") center/cover;mix-blend-mode:multiply;opacity:.85}
+.pause{position:relative;overflow:visible;background:var(--coral);margin-right:clamp(20px,7vw,110px);margin-top:calc(-1 * clamp(40px,6vw,96px));z-index:2}
+/* Betontextur bewusst gegen den Coral-Kasten versetzt: sie ragt rechts und unten
+   ueber den Rand hinaus und laesst oben/links einen reinen Coral-Streifen -
+   zwei Ebenen, nicht deckungsgleich, wie im Magazin. */
+.pause__tex{--off:clamp(18px,2.6vw,44px);position:absolute;top:var(--off);left:var(--off);right:calc(-1 * var(--off));bottom:calc(-1 * var(--off));background:url("assets/beton/beton-red-alpha-quer.png") center/cover;mix-blend-mode:multiply;opacity:.85;pointer-events:none}
 .pause .container{position:relative;padding-block:clamp(88px,16vw,220px)}
 .pause__statement{font-family:"Arame";font-weight:700;font-size:clamp(48px,8.6vw,150px);line-height:.84;letter-spacing:-.02em;color:var(--ink);position:relative}
 .pause__statement span{display:block}
@@ -303,6 +313,13 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .competence.in h3{transition-delay:.08s}
 @media(prefers-reduced-motion:reduce){.competence li,.competence h3,.competence .eyebrow{opacity:1;transform:none;transition:none}}
 .competence li:last-child{border-bottom:1px solid var(--rule)}
+.competence li a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .18s ease,border-color .18s ease}
+.competence li a:hover,.competence li a:focus-visible{color:var(--ink);border-bottom-color:var(--coral);outline:0}
+/* Fit-Check auf Coral: Platzhalter, Labels und Auswahl in einem dunkleren Ton */
+.fitcheck input::placeholder{color:rgba(23,21,19,.6);opacity:1}
+.fitcheck label{color:rgba(23,21,19,.72)}
+.fitcheck select,.fitcheck select option{color:var(--ink)}
+
 .section--competences .button-row{margin-top:clamp(28px,4vw,52px);margin-left:var(--indent)}
 @media(max-width:860px){.competence-grid{grid-template-columns:1fr}.competence{border-left:0;padding-inline:0;border-top:1px solid var(--rule)}.competence:first-child{border-top:0}.section--competences .button-row{margin-left:0}}
 
@@ -389,16 +406,42 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .footer-marquee__track:hover{animation-play-state:paused}
 .footer-marquee__row{display:flex;align-items:center;gap:clamp(40px,5vw,96px)}
 .footer-marquee__row img{width:clamp(560px,86vw,1400px);max-width:none;height:auto;display:block}
-/* --- Logobänder: drei Reihen, gegenläufig, weiß auf Ink ------------------ */
-.logo-band{position:relative;z-index:6;isolation:isolate;overflow:hidden;background:var(--ink);padding-block:clamp(28px,4vw,56px);display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(18px,2.4vw,34px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.logo-band__track{display:flex;width:max-content;animation:marquee 58s linear infinite;will-change:transform}
-.logo-band__track--2{animation-direction:reverse;animation-duration:66s}
-.logo-band__track--3{animation-duration:74s}
+/* --- Logobänder: drei Reihen, gegenläufig, dunkelgrau auf Papier ---------
+   Jede Marke bekommt eine eigene Breite (--lw), berechnet auf gleiche optische
+   Flaeche statt gleiche Hoehe - sonst wirken Wortmarken riesig, Bildmarken winzig. */
+.logo-band{--k:1;position:relative;z-index:6;isolation:isolate;overflow:hidden;background:var(--paper);padding-block:clamp(40px,6vw,88px);display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(22px,3vw,44px)}
+.logo-band__track{display:flex;width:max-content;animation:marquee-band 96s linear infinite;will-change:transform}
+@keyframes marquee-band{to{transform:translateX(-25%)}}
+.logo-band__track--2{animation-direction:reverse;animation-duration:110s}
+.logo-band__track--3{animation-duration:124s}
 .logo-band:hover .logo-band__track{animation-play-state:paused}
-.logo-band__row{display:flex;align-items:center;gap:clamp(44px,5.5vw,96px);padding-right:clamp(44px,5.5vw,96px)}
-.logo-band__row img{height:clamp(26px,3vw,44px);width:auto;max-width:none;display:block;filter:brightness(0) invert(1);opacity:.78;transition:opacity .25s ease}
-.logo-band__row img:hover{opacity:1}
+.logo-band__row{display:flex;align-items:center;gap:clamp(48px,6vw,104px);padding-right:clamp(48px,6vw,104px)}
+.logo-band__row img{width:calc(var(--lw,110px) * var(--k));height:auto;max-width:none;display:block;filter:brightness(0);opacity:.62;transition:opacity .25s ease}
+.logo-band__row img:hover{opacity:.9}
+@media (max-width:900px){.logo-band{--k:.72}}
 @media (prefers-reduced-motion:reduce){.logo-band__track{animation:none}}
+/* --- Personen (Über uns): Coral-Textkasten neben grossem Portrait, Betonband ueber
+   dem unteren Bildteil, Seiten wechseln - nach dem Muster der bisherigen Seite. */
+.people{display:grid;gap:clamp(56px,8vw,128px);margin-top:var(--s5)}
+.person{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:0}
+.person__box{position:relative;z-index:2;background:var(--coral);color:var(--ink);padding:clamp(32px,4.5vw,72px) clamp(28px,4vw,64px);margin-block:clamp(24px,4vw,64px)}
+.person--text-left .person__box{grid-column:1;margin-right:calc(-1 * clamp(24px,3vw,48px))}
+.person--text-right .person__box{grid-column:2;grid-row:1;margin-left:calc(-1 * clamp(24px,3vw,48px))}
+.person--text-right .person__media{grid-column:1;grid-row:1}
+.person__box h3{font-family:"Arame";font-weight:700;font-size:var(--fs-meta);letter-spacing:.06em;text-transform:uppercase;margin:0 0 4px}
+.person__role{display:block;font-family:"Arame";font-weight:400;font-style:italic;font-size:var(--fs-meta);letter-spacing:.06em;text-transform:uppercase;margin-bottom:clamp(20px,3vw,44px)}
+.person__box p{font-size:var(--fs-body);line-height:1.6;margin:0 0 var(--s3)}
+.person__mail{color:var(--ink);font-weight:700}
+.person__media{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--paper-deep)}
+.person--text-right .person__media{aspect-ratio:5/4}
+.person__media img{width:100%;height:100%;object-fit:cover;display:block}
+.person__tex{position:absolute;left:0;right:0;bottom:0;height:52%;background:url("assets/beton/beton-coral-alpha-quer.png") center/cover;mix-blend-mode:screen;opacity:.9;pointer-events:none}
+@media (max-width:900px){
+  .person{grid-template-columns:1fr}
+  .person--text-left .person__box,.person--text-right .person__box{grid-column:1;grid-row:auto;margin:0;margin-top:calc(-1 * clamp(24px,6vw,48px));margin-inline:clamp(12px,4vw,32px)}
+  .person--text-right .person__media{grid-row:auto}
+  .person__media{aspect-ratio:4/5}
+}
 @keyframes marquee{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.footer-marquee__track{animation:none}}
 .footer-index{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);padding-top:clamp(20px,3vw,40px);border-top:1px solid var(--rule-inv)}
