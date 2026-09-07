@@ -427,7 +427,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .logo-band__row img{width:calc(var(--lw,110px) * var(--k));height:auto;max-width:none;display:block;filter:brightness(0);opacity:.62;transition:opacity .25s ease}
 .logo-band__row img:hover{opacity:.9}
 /* LINK: blaues Quadrat mit weiss ausgespartem L - die Datei ist selbst auf Ink/Papier umgefaerbt, der Filter wuerde das L schwaerzen */
-.logo-band__row img[src$="link.svg"],.logo-band__row img[src$="cansort.svg"],.logo-band__row img[src$="potatohead.svg"],.logo-band__row img[src$="assmann.svg"],.logo-band__row img[src$="fraunhofer.svg"],.logo-band__row img[src$="maleco.svg"]{filter:none}
+.logo-band__row img[src$="link.svg"],.logo-band__row img[src$="cansort.svg"],.logo-band__row img[src$="potatohead.svg"],.logo-band__row img[src$="assmann.svg"],.logo-band__row img[src$="fraunhofer.svg"],.logo-band__row img[src$="maleco.svg"],.logo-band__row img[src$="rieckermann.svg"]{filter:none}
 .logo-band__row img[src$="ihp.png"]{filter:grayscale(1) contrast(1.15)}
 
 @media (max-width:900px){.logo-band{--k:.72}}
