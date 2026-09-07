@@ -8,6 +8,26 @@ Claude Design, fortgeführt in Claude Code. Statisches HTML/CSS/JS, kein Build.
 - `assets/` – Bilder (webverkleinert), `fonts/` – lizenzierte WOFF2, `vendor/` – GSAP
 - `docs/` – Konzeption, Übergaben und Entscheidungshistorie
 - `_entwuerfe/` – unverlinkte Arbeitsstände aus der Designphase
+- `assets/clients/` – Logos für das Logoband der Startseite (SVG bevorzugt, PNG mit 240 px Höhe)
+
+## Logoband
+
+Das Band auf der Startseite läuft in vier gegenläufigen Zeilen, jede Zeile
+viermal kopiert, damit es bei jeder Breite ohne Lücke endlos läuft. Die
+Logogrößen werden über `--lw` so gesetzt, dass alle Marken optisch gleich
+schwer wirken (gleiche Fläche, Höhe 22 bis 44 px). Einfarbige Logos werden
+per `brightness(0)` auf Ink gebracht; gefüllte Marken (Kästen, Badges) sind
+in der SVG selbst auf Ink/Papier umgefärbt und in `site.css` vom Filter
+ausgenommen. Neue Logos: Datei nach `assets/clients/`, Zeile im Band
+ergänzen, `--lw` nach derselben Formel setzen. EPS-Originale lassen sich per
+Illustrator-Skript zu SVG exportieren (siehe `docs/CHANGELOG.md`, 07.09.2026).
+
+## Header
+
+Der Header ist im Hero transparent, beim Hochscrollen erscheint er als
+transluzenter Papier-Träger mit Blur. Das Mega-Menü nutzt dieselbe Fläche.
+Bei offenem Menü trägt ein `::before` den Blur des Headers, damit auch das
+Menü selbst die Seite dahinter weichzeichnen kann.
 
 Videos kommen vom CDN `concrete-video-cdn.vercel.app` (siehe `docs/VIDEO-VERANKERUNG.md`).
 Originalbilder und der alte WordPress-Export liegen im Repository

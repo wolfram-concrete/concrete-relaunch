@@ -1,5 +1,57 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 07.09.2026 – Logoband mit 54 Marken, Header in Papier, Pin-Stabilität
+
+### Logoband
+
+- **31 neue Marken** ergänzt: Banijay Germany, CA'N SORT, goSchneider,
+  goodBytz, IHP, Kidsbert, Mischok, PARQ energy, Poodlewohl, Potatohead
+  Pictures, SpaceGenie, Street Monkeys, aconvia, be.care, Assmann (aktuelles
+  Lockup BKW Engineering | Assmann von assmann.info), CONBAU Nord, Fraunhofer,
+  Goldmann, Good Humor, freenet, Hapag-Lloyd, Helmholtz HIDA, I-SEC, klang2,
+  Maleco, minemina, Opternus, Rieckermann, ZEISS. Luis & Lea auf die
+  Querformat-Vektorversion, goSchneider auf die bearbeitete Outline-Version,
+  Kidsbert auf das Lockup mit Erdmännchen und Subline umgestellt.
+- **Vierte Zeile**, gegenläufig mit 104 s Umlauf. Verteilung 14/14/13/13,
+  vier Kopien je Zeile; Lückenprüfung bei 390, 1440, 1878 und 2560 px.
+- **Gefüllte Marken** (CA'N SORT, Potatohead, Assmann, Fraunhofer, Maleco,
+  Rieckermann, ZEISS, goSchneider) sind in der SVG auf Ink/Papier umgefärbt
+  und vom `brightness(0)`-Filter ausgenommen; IHP läuft als PNG in Graustufen.
+- **EPS-Route**: Rieckermann lag nur als Pantone-EPS vor. Export über ein
+  ExtendScript in Illustrator 2026 (`do javascript` per osascript), danach
+  Umfärbung wie oben. Ghostscript ist auf dem Rechner nicht vorhanden.
+- **Layout-Stabilität**: Alle Band-Bilder tragen `width`/`height`, damit die
+  Bandhöhe vor dem Laden feststeht.
+
+### Header und Mega-Menü
+
+- Träger beim Hochscrollen wieder **Papier statt Coral**, transluzent
+  (`rgba(243,239,231,.72)`) mit `blur(18px)`. Mega-Menü in derselben Fläche.
+- **Blur im Mega-Menü repariert**: Ein Backdrop-Filter auf dem Header bildete
+  einen Backdrop-Root, dadurch konnte das Menü die Seite dahinter nicht mehr
+  weichzeichnen. Bei offenem Menü trägt jetzt ein `::before` den Header-Blur.
+- **Hover-Öffnen** setzte die Klasse `mega-open` nicht (nur der Klick tat
+  das). `syncMega()` läuft jetzt auch in `openIt`/`closeIt`.
+- Hover-Farben im Menü von Papier auf Coral, sonst wären sie auf der
+  Papierfläche unsichtbar.
+
+### Statement-Pin
+
+- ScrollTrigger misst die Pin-Positionen nach `load`, nach `fonts.ready` und
+  nachdem alle Band-Bilder geladen sind neu. Grund: Späte Layout-Änderungen
+  oberhalb ließen den Coral-Block zu früh einrasten und über die BGF+-Section
+  scrollen.
+
+### Startseite
+
+- Situation 05 („Unser Markt lebt von Vertrauen.“) hat jetzt wie die anderen
+  vier einen Beschreibungstext. Die fünf Punkte entsprechen eins zu eins dem
+  Mega-Menü „Wo wir helfen können“; dort stehen Kategorie-Labels, auf der
+  Home Aussagen in der Ich-Perspektive.
+
+Cache-Buster `site.css`/`site.js` auf `v=26`.
+
+
 ## 04.09.2026 – Claude-Design-Export als zweite Struktur unter `website/`
 
 Der in Claude Design gebaute Relaunch (80 Seiten, Magazin-Look) liegt jetzt

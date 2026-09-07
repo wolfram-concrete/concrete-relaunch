@@ -46,14 +46,14 @@ h1,h2,h3,p,ul,figure{margin:0}
 body.intro .site-header{transform:translateY(-110%) !important}
 .site-header.show{transform:none}
 /* Wiederkehrender Header beim Hochscrollen: Coral-Traeger mit Blur, Text/Logo in Ink */
-.site-header.carrier{background:rgba(254,126,94,.66);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
+.site-header.carrier{background:rgba(243,239,231,.72);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
 .site-header.carrier .brand img{filter:brightness(0)}
 .site-header.carrier .brand,.site-header.mega-open .brand{mix-blend-mode:normal}
 
 .site-header.carrier .nav-link,.site-header.carrier .nav-disclosure,.site-header.carrier .menu-toggle{color:var(--ink);mix-blend-mode:normal}
 .site-header.carrier .nav-link:hover,.site-header.carrier .nav-link:focus-visible{color:var(--ink);text-shadow:0 0 .6px currentColor,0 0 .6px currentColor,0 0 .6px currentColor;opacity:1}
 .site-header.carrier .nav-link--cta{color:var(--ink);border-color:var(--ink)}
-.site-header.carrier .nav-link--cta:hover,.site-header.carrier .nav-link--cta:focus-visible{color:var(--paper)}
+.site-header.carrier .nav-link--cta:hover,.site-header.carrier .nav-link--cta:focus-visible{color:var(--coral)}
 .site-header.carrier .menu-toggle{border-color:var(--ink)}
 .site-header.attop{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
 @media(prefers-reduced-motion:reduce){.site-header{transition:none}}
@@ -77,7 +77,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .nav-disclosure[aria-expanded="true"]::before{margin-top:2px;transform:rotate(-135deg)}
 .nav-disclosure:hover,.nav-disclosure:focus-visible{opacity:1}
 .nav-item:hover .nav-disclosure::before,.nav-disclosure:focus-visible::before{border-right-width:2px;border-bottom-width:2px}
-.mega-menu{position:absolute;top:100%;left:0;right:0;display:none;border-bottom:0;background:rgba(254,126,94,.66);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);color:var(--ink)}
+.mega-menu{position:absolute;top:100%;left:0;right:0;display:none;border-bottom:0;background:rgba(243,239,231,.72);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);color:var(--ink)}
 .mega-menu.is-open{display:block}
 .mega-menu__inner{display:grid;grid-template-columns:minmax(200px,.7fr) minmax(0,1.6fr);gap:clamp(30px,5vw,80px);padding-top:42px;padding-bottom:52px}
 .mega-menu__intro p{max-width:34ch;color:var(--ink-60)}
@@ -554,21 +554,23 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 .case-wide.img-plx{overflow:hidden}
 
 /* Offenes Mega-Menü: Navi + Panel als eine Coral-Fläche */
-.site-header.mega-open,.site-header.mega-open.attop,.site-header.mega-open.carrier{background:rgba(254,126,94,.66);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom:0;transition:none}
+/* Bei offenem Megamenue traegt ein ::before den Blur, damit der Header selbst keinen Backdrop-Root bildet und das Menue die Seite dahinter ebenfalls weichzeichnen kann */
+.site-header.mega-open,.site-header.mega-open.attop,.site-header.mega-open.carrier{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:0;transition:none}
+.site-header.mega-open::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(243,239,231,.72);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
 .site-header.mega-open .brand img{filter:brightness(0) saturate(100%)}
 .site-header.mega-open .nav-link,.site-header.mega-open .nav-disclosure{color:var(--ink);mix-blend-mode:normal}
 .site-header.mega-open .nav-link:hover,.site-header.mega-open .nav-link:focus-visible{color:var(--ink)}
 .site-header.mega-open .nav-link--cta{color:var(--ink);border-color:var(--ink)}
 .site-header.mega-open .nav-link--cta::before{background:var(--ink)}
 .site-header.mega-open .nav-link--cta:hover,.site-header.mega-open .nav-link--cta:focus-visible{color:var(--coral);border-color:var(--ink)}
-.site-header.mega-open .mega-menu{border-top:0;border-bottom:0;background:rgba(254,126,94,.66);color:var(--ink)}
+.site-header.mega-open .mega-menu{border-top:0;border-bottom:0;background:rgba(243,239,231,.72);color:var(--ink)}
 .site-header.mega-open .mega-menu .concept-label{color:var(--ink)}
 .site-header.mega-open .mega-menu__intro p{color:rgba(23,21,19,.7)}
 .site-header.mega-open .mega-link{border-bottom-color:rgba(23,21,19,.25)}
 .site-header.mega-open .mega-link small{color:rgba(23,21,19,.65)}
-.site-header.mega-open .mega-link:hover,.site-header.mega-open .mega-link:focus-visible{color:var(--paper)}
+.site-header.mega-open .mega-link:hover,.site-header.mega-open .mega-link:focus-visible{color:var(--coral)}
 .site-header.mega-open .mega-cases i{color:rgba(23,21,19,.65)}
-.site-header.mega-open .mega-cases a:hover b,.site-header.mega-open .mega-cases a:focus-visible b{color:var(--paper)}
+.site-header.mega-open .mega-cases a:hover b,.site-header.mega-open .mega-cases a:focus-visible b{color:var(--coral)}
 .site-header.mega-open .link-arrow{color:var(--ink)}
 
 /* Brand-Pfeil als Gestaltungsmittel/Trenner */

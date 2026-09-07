@@ -50,8 +50,8 @@
     navItems.forEach(function(n){
       if(!n.toggle||!n.panel)return;
       var closeTimer=null;
-      function openIt(){clearTimeout(closeTimer);closeNav(n.panel);n.toggle.setAttribute("aria-expanded","true");n.panel.classList.add("is-open");}
-      function closeIt(){clearTimeout(closeTimer);closeTimer=setTimeout(function(){n.toggle.setAttribute("aria-expanded","false");n.panel.classList.remove("is-open");},180);}
+      function openIt(){clearTimeout(closeTimer);closeNav(n.panel);n.toggle.setAttribute("aria-expanded","true");n.panel.classList.add("is-open");syncMega();}
+      function closeIt(){clearTimeout(closeTimer);closeTimer=setTimeout(function(){n.toggle.setAttribute("aria-expanded","false");n.panel.classList.remove("is-open");syncMega();},180);}
       n.item.addEventListener("mouseenter",openIt);
       n.item.addEventListener("mouseleave",closeIt);
     });
@@ -317,3 +317,13 @@
   document.addEventListener("visibilitychange",sweep);
   sweep();
 })();
+
+  // Pin-Positionen nach spaetem Layout (Fonts, Logoband-Bilder) neu messen
+  (function(){
+    if(!window.ScrollTrigger)return;
+    var t=null; function rf(){clearTimeout(t);t=setTimeout(function(){ScrollTrigger.refresh();},80);}
+    window.addEventListener("load",rf);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(rf);
+    var imgs=document.querySelectorAll(".logo-band img"); var left=imgs.length;
+    imgs.forEach(function(i){ if(i.complete){if(--left===0)rf();} else i.addEventListener("load",function(){if(--left===0)rf();},{once:true}); });
+  })();
