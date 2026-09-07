@@ -1,6 +1,6 @@
 # Changelog – CONCRETE Strukturprototyp
 
-## 07.09.2026 – Logoband mit 54 Marken, Header in Papier, Pin-Stabilität
+## 07.09.2026 – Logoband mit 54 Marken, Header in Papier, Hero-Ausrichtung
 
 ### Logoband
 
@@ -42,14 +42,32 @@
   oberhalb ließen den Coral-Block zu früh einrasten und über die BGF+-Section
   scrollen.
 
+### Projektseite
+
+- Kachelraster mit rund 50 % mehr Luft: Spaltenabstand `clamp(21px,2.7vw,42px)`
+  statt `clamp(14px,1.8vw,28px)`, Abstand unter jeder Kachel
+  `clamp(36px,4.5vw,72px)` statt `clamp(24px,3vw,48px)`. Die feine Linie
+  unter der Filterleiste ist entfernt.
+- Nextbed-Kachel im Mega-Menü „Projekte“ zeigt den Transporter, der ohne
+  Anschnitt in 4:3 passt.
+
 ### Startseite
 
+- Hero auf breiten Screens: Body-Text und CTA bündig mit dem Logo
+  (Container-Kante). H1 und Pfeil rücken nur einen Teil des freien Randes
+  nach außen (`--hero-out`, maximal 240 px), auf 1440 px und darunter
+  unverändert.
+- Situationsliste: Jeder Beschreibungstext beginnt mit dem Angebotsbegriff in
+  Fett und Papierfarbe (Repositionierung und Rebranding, B2B/Technologie/
+  Beratung, Geschäftsfeld/Angebot/Produktmarke, Marke muss Entwicklung
+  mittragen, Finance/Versicherung/Healthcare).
+- Mega-Menü: Nummern 01 bis 05 in Coral.
 - Situation 05 („Unser Markt lebt von Vertrauen.“) hat jetzt wie die anderen
   vier einen Beschreibungstext. Die fünf Punkte entsprechen eins zu eins dem
   Mega-Menü „Wo wir helfen können“; dort stehen Kategorie-Labels, auf der
   Home Aussagen in der Ich-Perspektive.
 
-Cache-Buster `site.css`/`site.js` auf `v=26`.
+Cache-Buster `site.css`/`site.js` auf `v=28`.
 
 
 ## 04.09.2026 – Claude-Design-Export als zweite Struktur unter `website/`
