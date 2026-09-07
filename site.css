@@ -294,7 +294,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* Betontextur bewusst gegen den Coral-Kasten versetzt: sie ragt rechts und unten
    ueber den Rand hinaus und laesst oben/links einen reinen Coral-Streifen -
    zwei Ebenen, nicht deckungsgleich, wie im Magazin. */
-.pause__tex{--off:clamp(18px,2.6vw,44px);position:absolute;top:var(--off);left:var(--off);right:calc(-1 * var(--off));bottom:calc(-1 * var(--off));background:url("assets/beton/beton-red-alpha-quer.png") center/cover;mix-blend-mode:multiply;opacity:.85;pointer-events:none}
+.pause__tex{--off:clamp(18px,2.6vw,44px);position:absolute;top:var(--off);left:var(--off);right:calc(-1 * var(--off));bottom:calc(-1 * var(--off));background:url("assets/beton/beton-red-alpha-quer.webp") center/cover;mix-blend-mode:multiply;opacity:.85;pointer-events:none}
 .pause .container{position:relative;padding-block:clamp(88px,16vw,220px)}
 .pause__statement{font-family:"Arame";font-weight:700;font-size:clamp(48px,8.6vw,150px);line-height:.84;letter-spacing:-.02em;color:var(--ink);position:relative}
 .pause__statement span{display:block}
@@ -344,7 +344,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* Menschen (Foto + partielles Coral-Alpha) */
 .people-figure{position:relative;overflow:hidden}
 .people-figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
-.people-figure::after{content:"";position:absolute;left:0;right:0;bottom:0;height:36%;background:url("assets/beton/beton-coral-alpha-quer.png") bottom/cover;pointer-events:none}
+.people-figure::after{content:"";position:absolute;left:0;right:0;bottom:0;height:36%;background:url("assets/beton/beton-coral-alpha-quer.webp") bottom/cover;pointer-events:none}
 .section--people p+p{margin-top:var(--s3);color:var(--ink-60)}
 .section--people .button{margin-top:var(--s4)}
 
@@ -392,7 +392,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .review__media{aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep);margin-bottom:var(--s3)}
 .review__media img{width:100%;height:100%;object-fit:cover}
 .review__media--tex{background:var(--coral)}
-.review__media--tex .tex{width:100%;height:100%;background:url("assets/beton/beton-red-alpha-quer.png") center/cover;mix-blend-mode:multiply;opacity:.85}
+.review__media--tex .tex{width:100%;height:100%;background:url("assets/beton/beton-red-alpha-quer.webp") center/cover;mix-blend-mode:multiply;opacity:.85}
 .review blockquote{margin:0;font-size:var(--fs-body);line-height:1.6;color:var(--ink-60)}
 .review blockquote b{color:var(--ink);font-weight:400}
 .review figcaption{margin-top:auto;padding-top:var(--s3);font-weight:700;font-size:var(--fs-meta);letter-spacing:.02em}
@@ -444,7 +444,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .person__media{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--paper-deep)}
 .person--text-right .person__media{aspect-ratio:5/4}
 .person__media img{width:100%;height:100%;object-fit:cover;display:block}
-.person__tex{position:absolute;left:0;right:0;bottom:0;height:52%;background:url("assets/beton/beton-coral-alpha-quer.png") center/cover;mix-blend-mode:screen;opacity:.9;pointer-events:none}
+.person__tex{position:absolute;left:0;right:0;bottom:0;height:52%;background:url("assets/beton/beton-coral-alpha-quer.webp") center/cover;mix-blend-mode:screen;opacity:.9;pointer-events:none}
 @media (max-width:900px){
   .person{grid-template-columns:1fr}
   .person--text-left .person__box,.person--text-right .person__box{grid-column:1;grid-row:auto;margin:0;margin-top:calc(-1 * clamp(24px,6vw,48px));margin-inline:clamp(12px,4vw,32px)}
@@ -456,6 +456,23 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .proof-solo--overlap{position:relative;z-index:4;padding-bottom:0;margin-bottom:calc(-1 * clamp(56px,8vw,140px))}
 .proof-solo--overlap .proof-row__media{position:relative;z-index:4;box-shadow:0 24px 60px rgba(23,21,19,.18)}
 @media (max-width:900px){.proof-solo--overlap{margin-bottom:calc(-1 * clamp(32px,8vw,64px))}}
+/* --- Erstgespraech: drei Schritte (global, auch auf Kontakt) --- */
+.eg-steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
+.eg-step{padding:clamp(20px,2.6vw,36px) clamp(16px,2vw,28px) clamp(24px,3vw,40px);border-left:1px solid var(--rule)}
+.eg-step:first-child{border-left:0;padding-left:0}
+.eg-step .num{display:block;font-family:"Arame";font-weight:700;font-size:clamp(28px,3vw,44px);line-height:.8;color:var(--coral);margin-bottom:var(--s3)}
+.eg-step h3{font-family:"Arame";font-weight:700;font-size:clamp(18px,1.6vw,22px);line-height:1.04;margin:0 0 var(--s2)}
+.eg-step p{font-size:14.5px;line-height:1.55;color:var(--ink-60);margin:0}
+.eg-steps{grid-template-columns:1fr}
+.eg-step{border-left:0;padding-inline:0;border-top:1px solid var(--rule)}
+.eg-step:first-child{border-top:0}
+.coral-block .eg-steps{margin-top:var(--s4)}
+.coral-block .eg-step .num{color:var(--ink)}
+.coral-block .eg-step h3,.coral-block .eg-step p{color:var(--ink)}
+.coral-block .eg-step{border-color:rgba(23,21,19,.28)}
+/* Standorte mit Foto */
+.standort{display:block;margin:0 0 var(--s3);aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep)}
+.standort img{width:100%;height:100%;object-fit:cover;display:block}
 @keyframes marquee{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.footer-marquee__track{animation:none}}
 .footer-index{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);padding-top:clamp(20px,3vw,40px);border-top:1px solid var(--rule-inv)}
