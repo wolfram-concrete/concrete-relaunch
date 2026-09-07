@@ -48,6 +48,8 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* Wiederkehrender Header beim Hochscrollen: Coral-Traeger mit Blur, Text/Logo in Ink */
 .site-header.carrier{background:rgba(254,126,94,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .site-header.carrier .brand img{filter:brightness(0)}
+.site-header.carrier .brand,.site-header.mega-open .brand{mix-blend-mode:normal}
+
 .site-header.carrier .nav-link,.site-header.carrier .nav-disclosure,.site-header.carrier .menu-toggle{color:var(--ink);mix-blend-mode:normal}
 .site-header.carrier .nav-link:hover,.site-header.carrier .nav-link:focus-visible{color:var(--ink);text-shadow:0 0 .6px currentColor,0 0 .6px currentColor,0 0 .6px currentColor;opacity:1}
 .site-header.carrier .nav-link--cta{color:var(--ink);border-color:var(--ink)}
@@ -449,6 +451,11 @@ body.intro .site-header{transform:translateY(-110%) !important}
   .person--text-right .person__media{grid-row:auto}
   .person__media{aspect-ratio:4/5}
 }
+/* "Aus der Praxis" vor dem Statement: der Bildcontainer ragt in den Coral-Kasten
+   darunter hinein - Collage statt gestapelter Bloecke. */
+.proof-solo--overlap{position:relative;z-index:4;padding-bottom:0;margin-bottom:calc(-1 * clamp(56px,8vw,140px))}
+.proof-solo--overlap .proof-row__media{position:relative;z-index:4;box-shadow:0 24px 60px rgba(23,21,19,.18)}
+@media (max-width:900px){.proof-solo--overlap{margin-bottom:calc(-1 * clamp(32px,8vw,64px))}}
 @keyframes marquee{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.footer-marquee__track{animation:none}}
 .footer-index{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);padding-top:clamp(20px,3vw,40px);border-top:1px solid var(--rule-inv)}
