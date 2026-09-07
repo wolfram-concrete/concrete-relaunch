@@ -131,12 +131,15 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .hero.reel .hero__word span{transition:none}
 .hero.word .hero__word span{opacity:1;transform:none}
 .hero.done .hero__word span{opacity:0;transform:scale(1.03);transition:opacity .6s ease,transform .8s ease}
-.hero__content{position:relative;z-index:4;width:100%;padding-bottom:clamp(28px,5vh,64px);opacity:0;transform:translateY(26px);transition:opacity .9s ease .15s,transform 1s ease .15s}
+.hero__content{position:relative;z-index:4;padding-bottom:clamp(28px,5vh,64px);opacity:0;transform:translateY(26px);transition:opacity .9s ease .15s,transform 1s ease .15s}
 .hero.done .hero__content{opacity:1;transform:none}
 .hero h1{font-family:"Arame";font-weight:700;font-size:clamp(44px,8.4vw,132px);line-height:.86;letter-spacing:0;max-width:16ch;color:var(--paper);hyphens:manual;overflow-wrap:break-word;font-kerning:normal}
 .hero h1 .accent{color:var(--coral)}
 .hero__arrow{display:block;width:clamp(140px,20vw,300px);height:auto;margin-top:var(--s4);color:var(--paper)}
-.hero__body{margin-left:var(--indent);margin-top:var(--s4);max-width:46ch;color:var(--paper)}
+/* Hero auf breiten Screens: Body und CTA buendig mit dem Logo (Container-Kante), H1 und Pfeil ruecken nur einen Teil des freien Randes nach aussen */
+.hero{--hero-out:clamp(0px,((100vw - var(--max)) / 2) * .55,240px)}
+.hero h1,.hero__arrow{margin-left:calc(-1 * var(--hero-out))}
+.hero__body{margin-left:0;margin-top:var(--s4);max-width:46ch;color:var(--paper)}
 .hero__copy{font-size:clamp(18px,1.5vw,22px);line-height:1.42}
 .hero__body .button-row{margin-top:var(--s4)}
 .hero__body .button{border-color:var(--paper);color:var(--paper)}
@@ -144,7 +147,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .hero__body .link-arrow:hover{color:var(--coral)}
 .hero__body .button--solid{border-color:var(--coral);color:var(--coral)}
 .hero__body .button:hover,.hero__body .button:focus-visible{border-color:var(--coral);color:#fff}
-@media(max-width:900px){.hero__body{margin-left:0}}
+
 @media(prefers-reduced-motion:reduce){.hero__word{display:none}.hero__scrim{opacity:1}.hero__content{opacity:1;transform:none;transition:none}.hero__reel .final{opacity:1}}
 
 /* ===== Eigener Video-Player (kein Fremd-Player) ===== */
@@ -279,6 +282,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .scenario-link{display:grid;grid-template-columns:minmax(120px,var(--indent)) minmax(0,1.1fr) minmax(0,1fr);gap:clamp(16px,3vw,48px);align-items:start;padding-block:clamp(22px,3vw,40px);border-top:1px solid var(--rule-inv);color:var(--paper)}
 .scenario-link__number{margin-top:-.04em}
 .scenario-link__copy{margin-top:.34em}
+.scenario-link__copy strong{font-weight:700;color:var(--paper)}
 .scenario-link:last-child{border-bottom:0}
 .scenario-link__number{font-family:"Arame";font-weight:700;font-size:clamp(36px,4.4vw,64px);line-height:.8;color:var(--coral);letter-spacing:-.02em}
 .scenario-link__title{font-family:"Arame";font-weight:700;font-size:clamp(21px,2.1vw,29px);line-height:1.04}
