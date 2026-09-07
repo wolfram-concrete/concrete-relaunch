@@ -51,6 +51,16 @@
 - Nextbed-Kachel im Mega-Menü „Projekte“ zeigt den Transporter, der ohne
   Anschnitt in 4:3 passt.
 
+### Hero-Video
+
+- Das Würfel-Video lief mit 2,4 Mbit/s (CRF 25) und wirkte weich. Neu vom
+  34-Mbit/s-Master encodiert: `hero-2.webm` (VP9, CRF 32, 13,6 MB) zuerst,
+  `hero-2.mp4` (H.264, CRF 23, 19 MB) als Fallback. Der Master liegt nur in
+  1920×1076 vor, eine höhere Auflösung gibt es nicht. Neue Dateinamen, weil
+  das CDN ein Jahr immutable cacht; CDN-Header decken jetzt auch `.webm` ab.
+- Der dunkle Verlauf (`hero__scrim`) endet jetzt bei 60 % Höhe und ist oben
+  transparent; unten bleibt er für die Lesbarkeit der Headline.
+
 ### Startseite
 
 - Hero auf breiten Screens: Body-Text und CTA bündig mit dem Logo
@@ -67,7 +77,7 @@
   Mega-Menü „Wo wir helfen können“; dort stehen Kategorie-Labels, auf der
   Home Aussagen in der Ich-Perspektive.
 
-Cache-Buster `site.css`/`site.js` auf `v=28`.
+Cache-Buster `site.css`/`site.js` auf `v=29`.
 
 
 ## 04.09.2026 – Claude-Design-Export als zweite Struktur unter `website/`
