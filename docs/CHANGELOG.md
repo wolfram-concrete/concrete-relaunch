@@ -44,6 +44,19 @@
 
 ### Projektseite
 
+- Fünf Kacheln zeigen jetzt Shooting-Fotos statt Freisteller-Teaser
+  (`assets/cases/*-shooting.jpg`, 1600 px, aus dem Drive): Boneß &
+  Euteneuer (beide Geschäftsführer auf Gartenliegen mit Buch,
+  `boness_euteneuer105.jpg` aus „Projekte Concrete/BEH plus“ – der
+  ARCHIV-Ordner enthält keine Fotos mehr), AdSuits (Team-Szene aus dem
+  Büroshooting, High-res-Fassung), Mine Mina (Modelshoot Frühjahr 2022,
+  Loft mit Cognac-Tasche), we:celebrate (Gäste am Foodtruck aus
+  „5_Website/CASES/we celebrate“), Luis + Lea (Sitzkreis mit Kindern aus
+  den Shooting-Highlights).
+- Mega-Menü „Projekte“: Kacheln zeigen das Hero-Motiv der jeweiligen
+  Case-Seite. BGF+, Cologne Comedy und Conlivo haben noch keine Case-Seite
+  und springen per Anker auf ihre Kachel in der Übersicht. Die
+  Wackelzahn-Kachel in der Übersicht verlinkt jetzt ihre Case-Seite.
 - Kachelraster mit rund 50 % mehr Luft: Spaltenabstand `clamp(21px,2.7vw,42px)`
   statt `clamp(14px,1.8vw,28px)`, Abstand unter jeder Kachel
   `clamp(36px,4.5vw,72px)` statt `clamp(24px,3vw,48px)`. Die feine Linie
