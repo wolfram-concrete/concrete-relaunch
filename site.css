@@ -414,7 +414,6 @@ body.intro .site-header{transform:translateY(-110%) !important}
 @keyframes marquee-band{to{transform:translateX(-25%)}}
 .logo-band__track--2{animation-direction:reverse;animation-duration:110s}
 .logo-band__track--3{animation-duration:124s}
-.logo-band:hover .logo-band__track{animation-play-state:paused}
 .logo-band__row{display:flex;align-items:center;gap:clamp(48px,6vw,104px);padding-right:clamp(48px,6vw,104px)}
 .logo-band__row img{width:calc(var(--lw,110px) * var(--k));height:auto;max-width:none;display:block;filter:brightness(0);opacity:.62;transition:opacity .25s ease}
 .logo-band__row img:hover{opacity:.9}
