@@ -422,11 +422,13 @@ body.intro .site-header{transform:translateY(-110%) !important}
 @keyframes marquee-band{to{transform:translateX(-25%)}}
 .logo-band__track--2{animation-direction:reverse;animation-duration:110s}
 .logo-band__track--3{animation-duration:124s}
+.logo-band__track--4{animation-direction:reverse;animation-duration:104s}
 .logo-band__row{display:flex;align-items:center;gap:clamp(48px,6vw,104px);padding-right:clamp(48px,6vw,104px)}
 .logo-band__row img{width:calc(var(--lw,110px) * var(--k));height:auto;max-width:none;display:block;filter:brightness(0);opacity:.62;transition:opacity .25s ease}
 .logo-band__row img:hover{opacity:.9}
 /* LINK: blaues Quadrat mit weiss ausgespartem L - die Datei ist selbst auf Ink/Papier umgefaerbt, der Filter wuerde das L schwaerzen */
-.logo-band__row img[src$="link.svg"]{filter:none}
+.logo-band__row img[src$="link.svg"],.logo-band__row img[src$="cansort.svg"],.logo-band__row img[src$="potatohead.svg"],.logo-band__row img[src$="assmann.svg"],.logo-band__row img[src$="fraunhofer.svg"]{filter:none}
+.logo-band__row img[src$="ihp.png"]{filter:grayscale(1) contrast(1.15)}
 
 @media (max-width:900px){.logo-band{--k:.72}}
 @media (prefers-reduced-motion:reduce){.logo-band__track{animation:none}}
