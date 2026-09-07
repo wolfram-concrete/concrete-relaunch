@@ -326,4 +326,5 @@
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(rf);
     var imgs=document.querySelectorAll(".logo-band img"); var left=imgs.length;
     imgs.forEach(function(i){ if(i.complete){if(--left===0)rf();} else i.addEventListener("load",function(){if(--left===0)rf();},{once:true}); });
+    if(window.ResizeObserver){var lastH=0;new ResizeObserver(function(){var h=document.documentElement.scrollHeight;if(Math.abs(h-lastH)>2){lastH=h;rf();}}).observe(document.body);}
   })();
