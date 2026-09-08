@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Nextbed — Projekt · CONCRETE Brandbuilding</title>
-<link rel="stylesheet" href="site.css?v=59">
+<link rel="stylesheet" href="site.css?v=60">
 <style>
 /* ===== Projekt-Seite (Muster) ===== */
 .case-hero{overflow:hidden}
@@ -217,7 +217,7 @@
   <section class="case-sec case-gallery" data-screen-label="Bildwelt">
     <figure class="case-gallery__lead"><img class="case-wide" src="assets/cases/nextbed/produkt-hd.jpg" alt="Nextbed Produkt im Raum"></figure>
     <div class="case-mosaic rv" data-mosaic>
-      <video style="--ar:1.778" src="https://www.concrete-designs.de/wp-content/uploads/2026/02/nextbed-preview.mp4" data-fallback="assets/cases/nextbed/header.jpg" autoplay muted loop playsinline preload="metadata" poster="assets/cases/nextbed/header.jpg"></video>
+      <video style="--ar:1.778" src="https://concrete-video-cdn.vercel.app/v/nextbed-preview.mp4" data-fallback="assets/cases/nextbed/header.jpg" autoplay muted loop playsinline preload="metadata" poster="assets/cases/nextbed/header.jpg"></video>
       <img style="--ar:0.800" loading="lazy" src="assets/cases/nextbed/kampagne-2.jpg" alt="Sie kauften ein NextBed — Kampagnen-Shooting">
       <img style="--ar:1.718" loading="lazy" src="assets/cases/nextbed/messe.jpg" alt="Nextbed Messeauftritt">
       <img style="--ar:1.777" loading="lazy" src="assets/cases/nextbed/brandvision-1.jpg" alt="Nextbed Brandvision">
@@ -226,7 +226,7 @@
       <img style="--ar:1.718" loading="lazy" src="assets/cases/nextbed/right.jpg" alt="Nextbed Messearchitektur">
       <img style="--ar:1.777" loading="lazy" src="assets/cases/nextbed/brandvision-3.jpg" alt="Nextbed Brandvision — Kommunikationskonzept">
       <img style="--ar:0.800" loading="lazy" src="assets/cases/nextbed/konstruktion.jpg" alt="Nextbed Konstruktionsmotiv">
-      <video style="--ar:0.800" src="https://www.concrete-designs.de/wp-content/uploads/2026/02/nextbed-detail.mp4" data-fallback="assets/cases/nextbed/konstruktion.jpg" autoplay muted loop playsinline preload="metadata" poster="assets/cases/nextbed/konstruktion.jpg"></video>
+      <video style="--ar:0.800" src="https://concrete-video-cdn.vercel.app/v/nextbed-detail.mp4" data-fallback="assets/cases/nextbed/konstruktion.jpg" autoplay muted loop playsinline preload="metadata" poster="assets/cases/nextbed/konstruktion.jpg"></video>
       <img style="--ar:1.493" loading="lazy" src="assets/cases/nextbed/slideshow.jpg" alt="Nextbed Website">
       <img style="--ar:0.667" loading="lazy" src="assets/cases/nextbed/pos-2.jpg" alt="Nextbed POS-Präsentation">
       <img style="--ar:1.777" loading="lazy" src="assets/cases/nextbed/brandvision-6.jpg" alt="Nextbed Brandvision">
@@ -329,14 +329,14 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=59"></script>
+<script src="site.js?v=60"></script>
 <script>
 document.querySelectorAll("video[data-fallback]").forEach(function(v){
   v.addEventListener("error",function(){
-    var im=document.createElement("img");im.src=v.getAttribute("data-fallback");im.alt="Nextbed";
+    var fb=v.getAttribute("data-fallback");if(v.parentNode&&v.parentNode.querySelector('img[src="'+fb+'"]')){v.remove();return;}var im=document.createElement("img");im.src=fb;im.alt="Nextbed";
     im.style.cssText=v.style.cssText;v.replaceWith(im);
   });
-  if(v.error){var im=document.createElement("img");im.src=v.getAttribute("data-fallback");im.alt="Nextbed";im.style.cssText=v.style.cssText;v.replaceWith(im);}
+  if(v.error){var fb=v.getAttribute("data-fallback");if(v.parentNode&&v.parentNode.querySelector('img[src="'+fb+'"]')){v.remove();return;}var im=document.createElement("img");im.src=fb;im.alt="Nextbed";im.style.cssText=v.style.cssText;v.replaceWith(im);}
 });
 document.querySelectorAll(".case-masonry").forEach(function(m){
   [].forEach.call(m.querySelectorAll("img"),function(im,i){im.style.transitionDelay=(i*90)+"ms";});
