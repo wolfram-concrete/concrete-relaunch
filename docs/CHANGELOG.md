@@ -62,6 +62,40 @@
 
 Cache-Buster `site.css`/`site.js` auf `v=67`.
 
+### Nachtrag 08.09.2026, zweiter Teil
+
+- **Ergebnis-Modul** umgebaut: Eyebrow und Headline (Größe wie die Abschnitts-h2)
+  stehen über einem 1px-Ink-Rahmen, rechts daneben ein großer Coral-Pfeil; im
+  Rahmen nur die Tabelle (Body-Größe, beide Spalten Ink, Köpfe Ink, keine
+  Linie nach der letzten Zeile). Herausforderungs-Text und Ausgangslage in
+  Body-Größe. Kundenlogo im Modul auf Spaltenbreite.
+- **Attributionen** zweizeilig: Name, darunter fett Titel und Firma
+  („CONCRETE – Brandbuilding GmbH“). Zitat-Attribution folgt der Textfarbe
+  des Moduls (`--case-ink`), damit sie auf dunklen Flächen lesbar bleibt.
+- **Projektseite**: Aufbau beim Scrollen (Wörter der Headline hinter einer
+  Kante, Pfeil, Chips, Kacheln je Spalte versetzt mit Bildmaske von oben).
+  Galerie-Zeilen werden per JS (dynamische Programmierung) gleich hoch gepackt,
+  nur die letzte Zeile darf wachsen.
+- **Karussell**: alle Kacheln zeigen Shootingfotos oder Keyvisuals
+  (`assets/cases/<slug>-shooting.jpg`, 64:42), Wackelzahn-Label ohne
+  „Kinderzahnarzt“.
+- **Header** schaltet über hellen Hero-Motiven auf Ink, wenn die Hero-Section
+  `data-light` trägt (Poodlewohl, SOLIT).
+- **Galerien** der sechs bestehenden Cases aus `_eingang/` ergänzt (BGF+ 11,
+  Wackelzahn 10, NOEY 2, medium 4 plus 3 Videos, Conlivo 5).
+- **13 neue Case-Seiten** aus einem gemeinsamen Builder (`build_case.py`,
+  Vorlage case-bgf.html, Spec-JSON je Projekt): baked, can-sort,
+  digital2gether, finaplus, hy, immofolia, little-big-pasta, mdb-finance,
+  poodlewohl, sknmetrics, solit, street-gourmet, system-360. Übersichtskacheln
+  und Marquee auf allen 20 Case-Seiten verlinken sie. Strukturprüfung
+  (`gauntlet.py`) gegen Nextbed für alle 20 Seiten grün.
+- Offen aus den Agentenberichten: Finaplus-Zitat ist Agenturtext (kein echtes
+  Zitat der alten Seite), Titel der hy-Zitatgeberin ist Zuschreibung, kein
+  Kundenfoto bei SOLIT, D2G, Poodlewohl, Little Big Pasta, CA'N SORT,
+  SKNMETRICS, mdb finance; Finaplus-Material nur klein (700–1800 px).
+
+Cache-Buster `site.css`/`site.js` auf `v=75`.
+
 
 ## 07.09.2026 – Logoband mit 54 Marken, Header in Papier, Hero-Ausrichtung
 
