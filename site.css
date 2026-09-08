@@ -250,6 +250,8 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .section-heading p{margin-top:.14em}
 .section-heading h2{font-family:"Arame";font-weight:700;font-size:var(--fs-sub);line-height:1;letter-spacing:-.01em;max-width:20ch}
 .section-heading p{color:var(--ink-60);max-width:52ch}
+/* Eyebrows auf Papier immer Coral, auch innerhalb von Section-Headings */
+.section-heading p.eyebrow,.section-heading .eyebrow{color:var(--coral);max-width:none}
 .section--ink .section-heading p{color:rgba(243,239,231,.65)}
 @media(max-width:820px){.section-heading{grid-template-columns:1fr}}
 
