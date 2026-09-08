@@ -1,5 +1,68 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 08.09.2026 – Case-Module ausgerollt, zwei neue Case-Seiten, Karussell mit Shootingfotos
+
+### Case-Module „Die Herausforderung“ und „Ergebnis der Veränderung“
+
+- Nach dem Nextbed-Muster auf `case-bgf`, `case-noey`, `case-wackelzahn` und
+  `case-medium` ausgerollt. Texte aus dem Case-Sheet (Zeilen 11, 1, 2, 5),
+  Briefing im Google Doc. Modul 1 direkt nach der Meta-Zeile, das Kundenlogo
+  wandert aus der Meta-Zeile ins Modul (NOEY und medium mit breiterem Logo).
+  Modul 2 vor der Galerie; bei Bestandsmarken (BGF+, medium, Cologne Comedy)
+  heißt es „Was sich verändert hat“ mit den Spalten Vorher/Danach, bei
+  Startups „Was entstanden ist“ mit Ausgangspunkt/Ergebnis.
+- Zitat-Sektionen auf BGF+, Wackelzahn und medium auf das Nextbed-Modul
+  umgestellt (Christians Porträt, Markenfarbe): BGF+ `#ec6408` (Warm Orange
+  aus dem Logo), Wackelzahn `#daabea` (Lila aus der Wortmarke), medium
+  `#f7cfe7` (Rosa der Logobalken). Nicht bestätigte Werte, bei Bedarf tauschen.
+- Alle Zitat- und Stimme-Module tragen die Titel: Wolfram Stratmann ·
+  Geschäftsführer Kreation, Christian Rosenberger · Geschäftsführer Strategie.
+
+### Neue Case-Seiten Cologne Comedy Festival und Conlivo
+
+- `case-cologne-comedy.html` und `case-conlivo.html` nach dem BGF+-Muster,
+  Inhalte aus den WordPress-Seiten gestrafft, beide Module aus dem Sheet
+  (Zeilen 17 und 8). Bilder aus dem WordPress-Export ohne Hochskalieren
+  nach `assets/cases/cologne-comedy/` (23) und `assets/cases/conlivo/` (26).
+  Zitatfarben: CCF Pink `#fd8199`, Conlivo Orange `#ff7b57`.
+- Conlivo: Kundenzitat (Lennart Jörn) ohne Foto, es gibt keins im Export;
+  Christians Stimme-Modul mit seinem Zitat von der alten Seite. Cologne
+  Comedy: Zitat Daniela Mayer mit Foto aus dem Export.
+- Mega-Menü (alle Seiten und `_header.partial.html`), Projekt-Marquee und
+  die Kacheln in `projekte.html` verlinken jetzt die beiden Seiten statt der
+  Anker in der Übersicht.
+
+### Projekt-Marquee „Weitere Projekte“
+
+- 20 freigestellte Teaser (`*.t.png`, `be-care`, `klang`, `me`, `poodlewohl`)
+  durch Shootingfotos der Projekte ersetzt, auf 64:42 vorgeschnitten
+  (`assets/cases/<slug>-shooting.jpg`, 1200 px), damit im Karussell nichts
+  angeschnitten wird. System 360 zeigt die Designelemente statt des
+  Bürofotos, Baked bleibt (Plakatmotiv). Nur `hy.t.png` bleibt, das ist das
+  Keyvisual-Foto.
+- Horizontales Wischen auf dem Trackpad (Wheel-Event mit deltaX) verschiebt
+  das Band, vertikales Scrollen bleibt unberührt.
+
+### Galerie und Layout
+
+- Justified-Galerie: Die letzte Zeile füllt die volle Breite und darf
+  höher werden. Der Platzhalter `.fill` kommt per JS nur zurück, wenn die
+  Zeile dadurch mehr als 1,75-mal so hoch wie die erste würde.
+- Nextbed-Galerie: elf neue Motive aus `_eingang/nextbed/` (Transporter,
+  Geschäftsausstattung, Messestand, Visitenkarte, Umschläge, Mappe,
+  Notizbuch, Leaflet, Bett-Rendering, Social-Phones) und zwei kurze Videos
+  (Moodmoment 4:5, Website-Scroll). Rollups, Rahmen, Tablet, Messefotos,
+  Instagram-Kacheln und die pt1-Animation waren schon da (CDN-Preview).
+- Stimme-Modul (Wolfram auf Nextbed, Christian auf Conlivo): Foto füllt die
+  Spalte und nimmt ein Drittel der Modulbreite.
+- Nextbed: Strategie und Designsystem stehen nebeneinander (`.case-cols`,
+  Spalten ab der Einzugskante). Eine Drei-Spalten-Variante mit Ausgangslage
+  (`.case-cols--full`, `--n:3`) ist vorbereitet, Entscheidung offen.
+- `_eingang/` hat jetzt Unterordner für alle Projekte (gitignored).
+
+Cache-Buster `site.css`/`site.js` auf `v=67`.
+
+
 ## 07.09.2026 – Logoband mit 54 Marken, Header in Papier, Hero-Ausrichtung
 
 ### Logoband
