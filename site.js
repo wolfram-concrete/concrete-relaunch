@@ -122,11 +122,20 @@
     im.loading="eager";im.decoding="async";
   });
 
+  // Wort-Masken: Headline-Wörter einzeln umhüllen, damit sie hinter einer Kante hochfahren können
+  document.querySelectorAll(".mask-words").forEach(function(el){
+    if(el.getAttribute("data-split"))return;
+    var words=el.textContent.trim().split(/\s+/);el.textContent="";
+    words.forEach(function(w,i){var o=document.createElement("span");o.className="w";var s=document.createElement("span");s.textContent=w;s.style.transitionDelay=(i*70)+"ms";o.appendChild(s);el.appendChild(o);if(i<words.length-1)el.appendChild(document.createTextNode(" "));});
+    el.setAttribute("data-split","1");
+  });
+  // Filter-Chips: nacheinander
+  document.querySelectorAll(".fbar.rv .fchip,.fbar.rv .fsearch").forEach(function(c,i){c.style.transitionDelay=(i*35)+"ms";});
   // Scroll-Reveals
   (function(){
-    if(matchMedia("(prefers-reduced-motion:reduce)").matches){document.querySelectorAll(".rv,.rv-media,.rv-block-l,.rv-block-r,.rv-lines").forEach(function(e){e.classList.add("in")});return;}
+    if(matchMedia("(prefers-reduced-motion:reduce)").matches){document.querySelectorAll(".rv,.rv-media,.rv-block-l,.rv-block-r,.rv-lines,.mask-words").forEach(function(e){e.classList.add("in")});return;}
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{rootMargin:"0px 0px -12% 0px",threshold:.05});
-    var all=[].slice.call(document.querySelectorAll(".rv,.rv-media,.rv-block-l,.rv-block-r,.rv-lines"));
+    var all=[].slice.call(document.querySelectorAll(".rv,.rv-media,.rv-block-l,.rv-block-r,.rv-lines,.mask-words"));
     all.forEach(function(e){io.observe(e)});
     // __rvFallback: IO kann in eingebetteten Kontexten stallen — sichtbare Elemente per Scroll-Check nachziehen
     var pend=all.slice(),tick=false;
