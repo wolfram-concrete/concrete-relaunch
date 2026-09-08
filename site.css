@@ -563,7 +563,10 @@ body.intro .site-header{transform:translateY(-110%) !important}
 @media(max-width:700px){.shift,.shift tbody,.shift tr,.shift td{display:block;width:auto}.shift thead{display:none}.shift tr{padding:16px 0;border-bottom:1px solid var(--rule)}.shift td{padding:4px 0;border:0}.shift__from{padding-right:0!important}.shift__arrow span{width:28px;margin:6px 0}}
 /* ===== Case-Galerie: volle Bildschirmbreite, ein Leitbild, darunter ein dichtes Mosaik ===== */
 .case-sec.case-gallery{padding-top:0;padding-bottom:0;overflow-x:clip}
-.case-gallery .case-mosaic{margin-bottom:0}
+.case-gallery .case-mosaic{margin-bottom:10px}
+@media(max-width:700px){.case-gallery .case-mosaic{margin-bottom:8px}}
+section.case-quote{overflow:hidden}
+section.case-quote .qtex{top:0;height:100%}
 .case-gallery__lead,.case-mosaic{width:100vw;margin-left:calc(50% - 50vw)}
 .case-gallery__lead{margin-top:0;margin-bottom:10px;overflow:hidden;max-height:74vh}
 .case-gallery__lead img{width:100%;height:auto;max-height:74vh;object-fit:cover;display:block;margin:0}
