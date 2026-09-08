@@ -377,20 +377,45 @@
     requestAnimationFrame(frame);
   });
 
-  // Justified-Galerie: die letzte Zeile füllt die volle Breite (und darf höher werden),
-  // nur wenn sie dabei unverhältnismäßig hoch würde, bleibt der Platzhalter am Ende stehen
+  // Justified-Galerie: Zeilen werden per JS so umbrochen, dass alle Zeilen möglichst
+  // gleich hoch sind (Zielhöhe --h, kein Anschnitt). Nur die letzte Zeile darf höher
+  // werden, damit rechts keine Lücke bleibt; würde sie dabei mehr als 1,75× so hoch,
+  // bleibt sie auf Zielhöhe und der Platzhalter füllt den Rest.
   document.querySelectorAll("[data-mosaic]").forEach(function(g){
-    var fill=g.querySelector(".fill");if(!fill)return;
-    function check(){
-      var items=[].filter.call(g.children,function(c){return c!==fill});if(items.length<2)return;
-      fill.style.display="none";
-      var first=items[0].getBoundingClientRect().height;
-      var lastTop=items[items.length-1].offsetTop;
-      var row=items.filter(function(i){return Math.abs(i.offsetTop-lastTop)<2});
-      if(row.length===items.length)return;
-      var h=row[0].getBoundingClientRect().height;
-      if(h>first*1.75)fill.style.display="";
+    var fill=g.querySelector(".fill");
+    var probe=document.createElement("i");probe.setAttribute("aria-hidden","true");probe.style.cssText="position:absolute;visibility:hidden;height:var(--h);width:0;flex:none;margin:0;padding:0";g.appendChild(probe);
+    function ar(el){var v=parseFloat(el.style.getPropertyValue("--ar"));return v>0?v:1.5;}
+    function layout(){
+      var items=[].filter.call(g.children,function(c){return c!==fill&&c!==probe});if(items.length<2)return;
+      var W=g.clientWidth,gap=parseFloat(getComputedStyle(g).gap)||0,H=probe.offsetHeight||300;if(!W)return;
+      g.classList.add("is-packed");
+      // Umbruch per dynamischer Programmierung: minimale Summe der quadrierten Abweichungen
+      // aller Zeilen von der Zielhöhe; die letzte Zeile zählt nicht, sie darf abweichen
+      var n=items.length,ars=items.map(ar),best=new Array(n+1).fill(Infinity),prev=new Array(n+1).fill(-1);best[0]=0;
+      function h(count,sumAr){return (W-gap*(count-1))/sumAr;}
+      for(var i=0;i<n;i++){if(best[i]===Infinity)continue;var sumAr=0;
+        for(var j=i;j<n;j++){sumAr+=ars[j];var count=j-i+1,rh=h(count,sumAr);
+          if(rh<H*0.6&&count>1)break;
+          var cost=j===n-1?0:(rh-H)*(rh-H)*(rh>H*1.6?4:1);
+          if(best[i]+cost<best[j+1]){best[j+1]=best[i]+cost;prev[j+1]=i;}}}
+      var breaks=[],k=n;while(k>0){breaks.unshift([prev[k],k]);k=prev[k];}
+      var rows=breaks.map(function(b){var els=items.slice(b[0],b[1]);return [els,els.reduce(function(a,el){return a+ar(el)},0)];});
+      var lastOpen=true;
+      rows.forEach(function(r,idx){
+        var els=r[0],sumAr=r[1],rowH=h(els.length,sumAr),isLast=idx===rows.length-1&&lastOpen;
+        if(isLast){
+          var natural=Math.min(rowH,H);
+          if(rowH>H*1.75){rowH=natural;if(fill)fill.style.display="";}
+          else{if(fill)fill.style.display="none";}
+        }else if(fill&&idx===rows.length-1){fill.style.display="none";}
+        var used=0;
+        els.forEach(function(el,k){
+          var w=k===els.length-1&&!(isLast&&rowH<h(els.length,sumAr))?W-gap*(els.length-1)-used:Math.floor(ar(el)*rowH);
+          used+=w;el.style.width=w+"px";
+        });
+      });
     }
-    check();addEventListener("resize",check);
-    g.querySelectorAll("img").forEach(function(im){if(!im.complete)im.addEventListener("load",check,{once:true});});
+    layout();
+    var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(layout,80);});
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
   });

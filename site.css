@@ -576,6 +576,8 @@ section.case-quote .qtex{top:0;height:100%}
 .case-mosaic{--h:clamp(230px,27vw,440px);display:flex;flex-wrap:wrap;gap:10px;width:100vw;margin-left:calc(50% - 50vw)}
 .case-mosaic>*{flex-grow:calc(var(--ar,1.5) * 100);flex-shrink:1;flex-basis:calc(var(--ar,1.5) * var(--h));width:auto;min-width:0;min-height:0;aspect-ratio:var(--ar,1.5);height:auto;max-width:100%;object-fit:cover;display:block;margin:0;background:var(--paper-deep)}
 .case-mosaic>.fill{flex-grow:1000000;flex-shrink:1;flex-basis:0;aspect-ratio:auto;height:0;background:none}
+.case-mosaic.is-packed>*{flex:0 0 auto;max-width:none}
+.case-mosaic.is-packed>.fill{flex-grow:1000000;flex-basis:0;width:auto}
 .case-mosaic.rv{opacity:1;transform:none;transition:none}
 .case-mosaic>*:not(.fill){opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .case-mosaic.in>*{opacity:1;transform:none}
