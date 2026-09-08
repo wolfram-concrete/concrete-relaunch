@@ -253,6 +253,7 @@
       for(var i=0;i<els.length;i++){
         var el=els[i];
         if(h.contains(el)||el.closest&&el.closest(".site-header,.mobile-nav,.mega-menu"))continue;
+        if(el.closest&&el.closest("[data-light]"))return true; // helles Hero-Motiv: Navigation in Ink
         var node=el;
         while(node&&node!==document.documentElement){
           if(node.tagName==="IMG"||node.tagName==="VIDEO"||node.tagName==="CANVAS")return false; // Foto/Video: hell nicht garantiert → Paper-Navi

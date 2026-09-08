@@ -603,6 +603,7 @@ body{overflow-x:clip}
 /* Case-Zitat: Hintergrund in der Projektfarbe (Variable am Abschnitt), Textfarbe nach Helligkeit */
 section.case-quote{background:var(--case-color,var(--coral));color:var(--case-ink,var(--ink))}
 section.case-quote .qtex{opacity:.55}
+section.case-quote figcaption{color:var(--case-ink,var(--ink));opacity:.72}
 @keyframes marquee{to{transform:translateX(-50%)}}
 .footer-index{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);padding-top:clamp(20px,3vw,40px);border-top:1px solid var(--rule-inv)}
 .footer-col__label{display:flex;justify-content:space-between;align-items:center;list-style:none;cursor:default;font-weight:700;font-size:var(--fs-meta);letter-spacing:.28em;text-transform:uppercase;color:rgba(243,239,231,.6);padding-bottom:var(--s3);border-bottom:1px solid var(--rule-inv);margin-bottom:var(--s2)}
