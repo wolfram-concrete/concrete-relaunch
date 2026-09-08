@@ -548,8 +548,10 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .case-challenge{padding-block:clamp(56px,8vw,128px)}
 .case-challenge .eyebrow{display:block;margin-bottom:var(--s4)}
 .case-challenge .case-challenge__claim{font-family:"Arame";font-weight:700;font-size:clamp(34px,5.4vw,84px);line-height:.96;letter-spacing:-.01em;max-width:18ch;margin:0}
-.case-challenge__copy{margin:var(--s5) 0 0 var(--indent);max-width:56ch;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--ink-60)}
-@media(max-width:900px){.case-challenge__copy{margin-left:0}}
+.case-challenge__row{display:grid;grid-template-columns:minmax(160px,var(--indent)) minmax(0,1fr);gap:var(--s3) clamp(40px,7vw,120px);align-items:start;margin-top:var(--s5)}
+.case-challenge__logo img{width:clamp(120px,10vw,170px);height:auto;display:block}
+.case-challenge__copy{margin:0;max-width:56ch;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--ink-60)}
+@media(max-width:900px){.case-challenge__row{grid-template-columns:1fr}}
 .case-shift{position:relative;z-index:2;padding-block:clamp(56px,8vw,128px)}
 .case-shift .eyebrow{display:block;margin-bottom:var(--s3)}
 .case-shift .case-shift__title{font-family:"Arame";font-weight:700;font-size:clamp(30px,3.6vw,52px);line-height:1;margin:0 0 clamp(28px,4vw,56px)}
