@@ -518,6 +518,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .phase-stack .phase h3{font-size:clamp(20px,1.9vw,26px);margin-bottom:var(--s2)}
 .phase-stack .phase p{font-size:var(--fs-body);line-height:1.5;max-width:44ch}
 .phase-layout__aside{position:sticky;top:clamp(96px,14vh,150px)}
+.phase-layout__aside .brand-arrow{margin-top:clamp(20px,2.6vw,36px);width:clamp(96px,9vw,160px)}
 @media(max-width:860px){.phase-layout{grid-template-columns:1fr;gap:var(--s5)}.phase-layout__aside{position:static}.phase-stack .phase{grid-template-columns:48px minmax(0,1fr)}}
 
 /* ===== Typo-Trenner "Aus der Praxis" als Endlos-Lauf von links nach rechts ===== */
