@@ -544,6 +544,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .section--carrier .competence li:has(a)::before{background:var(--ink)}
 .section--carrier .competence li a:hover,.section--carrier .competence li a:focus-visible,.section--carrier .link-arrow:hover,.section--carrier .link-arrow:focus-visible{color:var(--paper)}
 .section--carrier .link-arrow{color:var(--ink)}
+.inquiry__form .vteaser+.button{margin-top:clamp(32px,4vw,56px)}
 @keyframes marquee{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.footer-marquee__track{animation:none}}
 .footer-index{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);padding-top:clamp(20px,3vw,40px);border-top:1px solid var(--rule-inv)}
