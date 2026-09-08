@@ -534,7 +534,6 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* ===== Section auf coralfarbenem Traeger (wie der Statement-Block: rechts eingerueckt, Betonstruktur) ===== */
 .section--carrier{position:relative;isolation:isolate;color:var(--ink);padding-block:clamp(56px,7vw,110px)}
 .section--carrier::before{content:"";position:absolute;inset:0 clamp(20px,7vw,110px) 0 0;background:var(--coral);z-index:-2}
-.section--carrier::after{--off:clamp(18px,2.6vw,44px);content:"";position:absolute;top:var(--off);left:var(--off);right:calc(clamp(20px,7vw,110px) - var(--off));bottom:calc(-1 * var(--off));background:url("assets/beton/beton-white-alpha-quer.webp") center/cover;mix-blend-mode:screen;opacity:.7;z-index:-1;pointer-events:none}
 .section--carrier .section-heading h2,.section--carrier .competence h3{color:var(--ink)}
 .section--carrier .section-heading p{color:rgba(23,21,19,.74)}
 .section--carrier .competence .eyebrow{color:var(--ink)}
