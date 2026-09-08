@@ -372,5 +372,25 @@
     function up(e){if(!down)return;down=false;m.classList.remove("dragging");if(performance.now()-lastT>80)v=0;target=m.matches(":hover")?0.15:1;}
     ["pointerup","pointercancel"].forEach(function(ev){m.addEventListener(ev,up)});
     m.addEventListener("click",function(e){if(moved>6){e.preventDefault();e.stopPropagation();}},true);
+    // Trackpad: horizontales Wischen verschiebt das Band, vertikales Scrollen bleibt unberührt
+    m.addEventListener("wheel",function(e){if(Math.abs(e.deltaX)<=Math.abs(e.deltaY))return;e.preventDefault();v=0;x-=e.deltaX;target=0.15;wrap();},{passive:false});
     requestAnimationFrame(frame);
+  });
+
+  // Justified-Galerie: die letzte Zeile füllt die volle Breite (und darf höher werden),
+  // nur wenn sie dabei unverhältnismäßig hoch würde, bleibt der Platzhalter am Ende stehen
+  document.querySelectorAll("[data-mosaic]").forEach(function(g){
+    var fill=g.querySelector(".fill");if(!fill)return;
+    function check(){
+      var items=[].filter.call(g.children,function(c){return c!==fill});if(items.length<2)return;
+      fill.style.display="none";
+      var first=items[0].getBoundingClientRect().height;
+      var lastTop=items[items.length-1].offsetTop;
+      var row=items.filter(function(i){return Math.abs(i.offsetTop-lastTop)<2});
+      if(row.length===items.length)return;
+      var h=row[0].getBoundingClientRect().height;
+      if(h>first*1.75)fill.style.display="";
+    }
+    check();addEventListener("resize",check);
+    g.querySelectorAll("img").forEach(function(im){if(!im.complete)im.addEventListener("load",check,{once:true});});
   });
