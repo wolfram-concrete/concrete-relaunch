@@ -175,24 +175,44 @@
     addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(run);}},{passive:true});
     run();
   })();
-  // Weiterlesen in Rezensionen
-  document.querySelectorAll("[data-readmore]").forEach(function(b){
-    b.addEventListener("click",function(){
-      var f=b.closest(".review"),open=f.classList.toggle("open");
-      b.textContent=open?"Ausblenden":"Weiterlesen";b.setAttribute("aria-expanded",String(open));
-    });
+  // Weiterlesen in Rezensionen (delegiert, gilt auch fuer geklonte Karten)
+  document.addEventListener("click",function(e){
+    var b=e.target.closest&&e.target.closest("[data-readmore]");if(!b)return;
+    var f=b.closest(".review"),open=f.classList.toggle("open");
+    b.textContent=open?"Ausblenden":"Weiterlesen";b.setAttribute("aria-expanded",String(open));
   });
-  // Rezensions-Slider: Pfeile + Drag-Scroll
+  // Rezensions-Karussell: laeuft von selbst, wird bei Hover/Fokus/Drag langsam und bleibt stehen, Pfeile springen kartenweise
   (function(){
     var t=document.querySelector("[data-revtrack]");if(!t)return;
+    var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+    var cards=Array.prototype.slice.call(t.querySelectorAll(".review"));if(cards.length<2)return;
     function step(){var c=t.querySelector(".review");return c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(t).gap||0):320;}
+    // Endlos: Karten einmal klonen, beim Erreichen der Haelfte zurueckspringen
+    var loopW=0;
+    if(!reduce){cards.forEach(function(c){var d=c.cloneNode(true);d.setAttribute("aria-hidden","true");d.querySelectorAll("a,button").forEach(function(x){x.setAttribute("tabindex","-1")});t.appendChild(d);});}
+    function measure(){loopW=0;cards.forEach(function(c){loopW+=c.getBoundingClientRect().width});loopW+=cards.length*parseFloat(getComputedStyle(t).gap||0);}
+    measure();addEventListener("resize",measure);
+    var speed=0.55,factor=1,target=1,hold=0,last=0,paused=false;
+    function wrap(){if(!loopW)return;if(t.scrollLeft>=loopW)t.scrollLeft-=loopW;else if(t.scrollLeft<0)t.scrollLeft+=loopW;}
+    function frame(ts){
+      var dt=last?Math.min(48,ts-last):16;last=ts;
+      factor+=(target-factor)*Math.min(1,dt/420);
+      if(!paused&&factor>0.005){t.scrollLeft+=speed*factor*(dt/16.7);wrap();}
+      requestAnimationFrame(frame);
+    }
+    function slow(){target=0}function go(){target=1}
+    t.addEventListener("pointerenter",slow);t.addEventListener("pointerleave",function(){if(!t.matches(":focus-within"))go()});
+    t.addEventListener("focusin",slow);t.addEventListener("focusout",function(){if(!t.matches(":hover"))go()});
     var p=document.querySelector("[data-rev-prev]"),n=document.querySelector("[data-rev-next]");
-    if(p)p.addEventListener("click",function(){t.scrollBy({left:-step(),behavior:"smooth"})});
-    if(n)n.addEventListener("click",function(){t.scrollBy({left:step(),behavior:"smooth"})});
+    function nudge(dir){target=0;factor=0;t.scrollBy({left:dir*step(),behavior:"smooth"});clearTimeout(hold);hold=setTimeout(function(){if(!t.matches(":hover,:focus-within"))go()},2600);}
+    if(p)p.addEventListener("click",function(){nudge(-1)});
+    if(n)n.addEventListener("click",function(){nudge(1)});
     var down=false,sx=0,sl=0;
-    t.addEventListener("pointerdown",function(e){down=true;sx=e.clientX;sl=t.scrollLeft;t.classList.add("dragging");t.setPointerCapture(e.pointerId);});
-    t.addEventListener("pointermove",function(e){if(down)t.scrollLeft=sl-(e.clientX-sx);});
-    ["pointerup","pointercancel"].forEach(function(ev){t.addEventListener(ev,function(){down=false;t.classList.remove("dragging");});});
+    t.addEventListener("pointerdown",function(e){down=true;paused=true;sx=e.clientX;sl=t.scrollLeft;t.classList.add("dragging");t.setPointerCapture(e.pointerId);});
+    t.addEventListener("pointermove",function(e){if(down){t.scrollLeft=sl-(e.clientX-sx);wrap();}});
+    ["pointerup","pointercancel"].forEach(function(ev){t.addEventListener(ev,function(){down=false;paused=false;t.classList.remove("dragging");});});
+    t.addEventListener("scroll",function(){if(!down)wrap()},{passive:true});
+    if(!reduce)requestAnimationFrame(frame);
   })();
   // Aktives Video schließen, sobald es aus dem Viewport scrollt (kein unsichtbarer Ton)
   (function(){
