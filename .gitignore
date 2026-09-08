@@ -3,3 +3,7 @@ _entwuerfe/assets-unbenutzt/
 _entwuerfe/fonts-otf/
 .vercel/
 .vercel
+
+# Eingang fuer Originalbilder, nicht versionieren
+_eingang/*
+!_eingang/README.md
