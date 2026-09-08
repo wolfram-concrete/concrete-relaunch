@@ -351,3 +351,26 @@
     imgs.forEach(function(i){ if(i.complete){if(--left===0)rf();} else i.addEventListener("load",function(){if(--left===0)rf();},{once:true}); });
     if(window.ResizeObserver){var lastH=0;new ResizeObserver(function(){var h=document.documentElement.scrollHeight;if(Math.abs(h-lastH)>2){lastH=h;rf();}}).observe(document.body);}
   })();
+
+  // Projekte-Karussell auf Case-Seiten: langsamer Eigenlauf, Ziehen mit Schwung, Endlosschleife
+  document.querySelectorAll("[data-marquee]").forEach(function(m){
+    var track=m.querySelector(".case-marquee__track"),row=m.querySelector(".case-marquee__row");if(!track||!row)return;
+    var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+    var x=0,v=0,auto=reduce?0:0.35,target=1,factor=1,down=false,sx=0,sxx=0,lastX=0,lastT=0,moved=0,last=0,loop=0;
+    function gap(){return parseFloat(getComputedStyle(track).gap)||0}
+    function measure(){loop=row.getBoundingClientRect().width+gap()}
+    measure();addEventListener("resize",measure);
+    function wrap(){if(!loop)return;while(x<=-loop)x+=loop;while(x>0)x-=loop;}
+    function frame(ts){var dt=last?Math.min(48,ts-last):16;last=ts;
+      if(!down){factor+=(target-factor)*Math.min(1,dt/500);
+        if(Math.abs(v)>0.02){x+=v*dt;v*=Math.pow(0.94,dt/16.7);}else{v=0;}
+        x-=auto*factor*(dt/16.7);}
+      wrap();track.style.transform="translate3d("+x.toFixed(2)+"px,0,0)";requestAnimationFrame(frame);}
+    m.addEventListener("pointerenter",function(){target=0.15});m.addEventListener("pointerleave",function(){if(!down)target=1});
+    m.addEventListener("pointerdown",function(e){down=true;v=0;sx=e.clientX;sxx=x;lastX=e.clientX;lastT=performance.now();moved=0;m.classList.add("dragging");m.setPointerCapture(e.pointerId);});
+    m.addEventListener("pointermove",function(e){if(!down)return;var now=performance.now();var dx=e.clientX-lastX;var dt=Math.max(1,now-lastT);v=v*0.6+(dx/dt)*0.4;lastX=e.clientX;lastT=now;x=sxx+(e.clientX-sx);moved=Math.max(moved,Math.abs(e.clientX-sx));wrap();});
+    function up(e){if(!down)return;down=false;m.classList.remove("dragging");if(performance.now()-lastT>80)v=0;target=m.matches(":hover")?0.15:1;}
+    ["pointerup","pointercancel"].forEach(function(ev){m.addEventListener(ev,up)});
+    m.addEventListener("click",function(e){if(moved>6){e.preventDefault();e.stopPropagation();}},true);
+    requestAnimationFrame(frame);
+  });
