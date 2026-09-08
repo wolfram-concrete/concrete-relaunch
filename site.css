@@ -534,6 +534,8 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* ===== Section auf coralfarbenem Traeger (wie der Statement-Block: rechts eingerueckt, Betonstruktur) ===== */
 .section--carrier{position:relative;isolation:isolate;color:var(--ink);padding-block:clamp(56px,7vw,110px)}
 .section--carrier::before{content:"";position:absolute;inset:0 clamp(20px,7vw,110px) 0 0;background:var(--coral);z-index:-2}
+/* Inhalt bleibt innerhalb des Traegers, wenn dessen rechte Einrueckung in den Container ragt */
+.section--carrier .container{padding-right:calc(var(--pad) + max(0px, clamp(20px,7vw,110px) - (100vw - min(100vw,var(--max))) / 2))}
 .section--carrier .section-heading h2,.section--carrier .competence h3{color:var(--ink)}
 .section--carrier .section-heading p{color:rgba(23,21,19,.74)}
 .section--carrier .competence .eyebrow{color:var(--ink)}
