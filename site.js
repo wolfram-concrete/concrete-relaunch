@@ -168,7 +168,10 @@
       els.forEach(function(el){
         var r=el.getBoundingClientRect();
         var c=(r.top+r.height/2-vh/2)/vh; // -0.5..0.5
-        el.style.setProperty("--py",(c*parseFloat(el.getAttribute("data-plx"))*10).toFixed(1));
+        var py=c*parseFloat(el.getAttribute("data-plx"))*10;
+        // Bildcontainer: Verschiebung auf den Spielraum der Skalierung (1.14 -> 7 % je Seite) begrenzen, sonst blitzt der Rand
+        if(el.classList.contains("img-plx")){var im=el.querySelector("img");var ih=im?im.getBoundingClientRect().height:0;var lim=Math.max(0,(ih-r.height)/2-1);if(py>lim)py=lim;if(py<-lim)py=-lim;}
+        el.style.setProperty("--py",py.toFixed(1));
       });
       t=false;
     }

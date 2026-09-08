@@ -416,8 +416,8 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* ===== Footer (Ink · Logo-Marquee groß + Index) ===== */
 .site-footer{background:var(--ink);color:var(--paper)}
 .footer-brand{padding-block:clamp(40px,6vw,88px) clamp(24px,3vw,48px)}
-.footer-brand a{display:inline-block}
-.footer-brand img{width:clamp(220px,26vw,380px);height:auto;display:block}
+.footer-brand a{display:block}
+.footer-brand img{width:100%;height:auto;display:block}
 /* --- Logobänder: drei Reihen, gegenläufig, dunkelgrau auf Papier ---------
    Jede Marke bekommt eine eigene Breite (--lw), berechnet auf gleiche optische
    Flaeche statt gleiche Hoehe - sonst wirken Wortmarken riesig, Bildmarken winzig. */
@@ -568,7 +568,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 
 /* Inner-Parallax in Bildcontainern */
 .img-plx{overflow:hidden}
-.img-plx img{transform:translateY(calc(var(--py,0) * 1px)) scale(1.1);will-change:transform;display:block}
+.img-plx img{transform:translateY(calc(var(--py,0) * 1px)) scale(1.14);will-change:transform;display:block}
 .case-masonry .img-plx{break-inside:avoid;margin-bottom:clamp(12px,1.4vw,22px)}
 .case-masonry .img-plx img{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){.img-plx img{transform:none}}
