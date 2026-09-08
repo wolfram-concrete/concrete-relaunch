@@ -42,6 +42,30 @@
   oberhalb ließen den Coral-Block zu früh einrasten und über die BGF+-Section
   scrollen.
 
+### Case-Seite BGF+
+
+- Neue Seite `case-bgf.html` nach dem Muster von `case-medium.html`, Inhalte
+  aus der alten WordPress-Seite gestrafft (Ausgangslage, „+“ als
+  strategisches Symbol, Designsystem mit PP Mori/Playfair und Off-White/Warm
+  Orange/Schwarz, Website bgf-plus.de), acht neue Bilder aus dem
+  WordPress-Export unter `assets/cases/bgf/`. „Zum Projekt“ auf der Home,
+  die Mega-Menü-Kachel und die Kachel in der Übersicht führen jetzt dorthin.
+
+### Startseite, zweiter Durchgang
+
+- Arbeitsweise: Phasen 01 bis 04 untereinander in einer breiten Spalte,
+  das Prozess-Video daneben bleibt beim Scrollen stehen (sticky), der
+  Markenpfeil sitzt unter der Headline. Der freistehende Pfeil-Trenner
+  darunter entfällt.
+- „Aus der Praxis“ läuft als Endlos-Typo von links nach rechts.
+- Kompetenz-Section liegt auf einem coralfarbenen Träger mit Betonstruktur,
+  rechts eingerückt wie der Statement-Block; Farben der Listen auf Ink.
+- Section „Zusammenarbeit / Direkt mit den Entscheidern“ entfernt.
+- „Wer sitzt mit am Tisch?“ als zweispaltige Section-Heading mit Arame-
+  Headline und Pfeil, Video und Link rechts.
+- Nextbed-Proof zeigt das Bett-von-oben-Motiv aus dem Peopleshoot 2025.
+- Hero-CTA und Seiten-CTAs führen auf die Erstgespräch-Seite.
+
 ### Projektseite
 
 - Fünf Kacheln zeigen jetzt Shooting-Fotos statt Freisteller-Teaser
@@ -90,7 +114,7 @@
   Mega-Menü „Wo wir helfen können“; dort stehen Kategorie-Labels, auf der
   Home Aussagen in der Ich-Perspektive.
 
-Cache-Buster `site.css`/`site.js` auf `v=29`.
+Cache-Buster `site.css`/`site.js` auf `v=31`.
 
 
 ## 04.09.2026 – Claude-Design-Export als zweite Struktur unter `website/`
