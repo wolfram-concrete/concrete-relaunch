@@ -529,17 +529,18 @@ body.intro .site-header{transform:translateY(-110%) !important}
 @media(prefers-reduced-motion:reduce){.praxis-statement .praxis-track{animation:none}}
 
 /* ===== Section auf coralfarbenem Traeger (wie der Statement-Block: rechts eingerueckt, Betonstruktur) ===== */
-.section--carrier{position:relative;isolation:isolate;color:var(--ink);padding-block:clamp(56px,7vw,110px)}
+.section--carrier{position:relative;isolation:isolate;color:var(--paper);padding-block:clamp(56px,7vw,110px)}
 .section--carrier::before{content:"";position:absolute;inset:0 clamp(20px,7vw,110px) 0 0;background:var(--coral);z-index:-2}
 .section--carrier::after{--off:clamp(18px,2.6vw,44px);content:"";position:absolute;top:var(--off);left:var(--off);right:calc(clamp(20px,7vw,110px) - var(--off));bottom:calc(-1 * var(--off));background:url("assets/beton/beton-red-alpha-quer.webp") center/cover;mix-blend-mode:multiply;opacity:.85;z-index:-1;pointer-events:none}
-.section--carrier .section-heading p{color:rgba(23,21,19,.72)}
-.section--carrier .competence .eyebrow{color:var(--ink)}
-.section--carrier .competence li{color:rgba(23,21,19,.78);border-color:rgba(23,21,19,.25)}
-.section--carrier .competence li:last-child{border-bottom-color:rgba(23,21,19,.25)}
-.section--carrier .competence{border-left-color:rgba(23,21,19,.25)}
-.section--carrier .competence li:has(a)::before{background:var(--ink)}
-.section--carrier .competence li a:hover,.section--carrier .competence li a:focus-visible,.section--carrier .link-arrow:hover,.section--carrier .link-arrow:focus-visible{color:var(--paper)}
-.section--carrier .link-arrow{color:var(--ink)}
+.section--carrier .section-heading h2,.section--carrier .competence h3{color:var(--paper)}
+.section--carrier .section-heading p{color:rgba(243,239,231,.8)}
+.section--carrier .competence .eyebrow{color:var(--paper)}
+.section--carrier .competence li{color:rgba(243,239,231,.82);border-color:rgba(243,239,231,.35)}
+.section--carrier .competence li:last-child{border-bottom-color:rgba(243,239,231,.35)}
+.section--carrier .competence{border-left-color:rgba(243,239,231,.35)}
+.section--carrier .competence li:has(a)::before{background:var(--paper)}
+.section--carrier .competence li a:hover,.section--carrier .competence li a:focus-visible,.section--carrier .link-arrow:hover,.section--carrier .link-arrow:focus-visible{color:var(--ink)}
+.section--carrier .link-arrow{color:var(--paper)}
 @keyframes marquee{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.footer-marquee__track{animation:none}}
 .footer-index{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);padding-top:clamp(20px,3vw,40px);border-top:1px solid var(--rule-inv)}
