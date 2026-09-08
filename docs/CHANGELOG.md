@@ -42,6 +42,20 @@
   oberhalb ließen den Coral-Block zu früh einrasten und über die BGF+-Section
   scrollen.
 
+### Vier neue Leistungsseiten, Home-Liste bereinigt
+
+- `kommunikationsstrategie.html` und `kampagnenentwicklung.html` aus den
+  WordPress-Seiten übernommen und gestrafft; beide waren auf WordPress
+  nicht in der Leistungsübersicht verlinkt und deshalb durchgerutscht.
+- `bildwelten-artworks-visual-looks.html` und
+  `kampagnen-design-key-visuals.html` neu getextet im Muster der anderen
+  Leistungsseiten (Was / Warum / Wie wir arbeiten / Was ihr bekommt / FAQ /
+  Zitat / Einordnung).
+- Home-Kompetenzen: alle Punkte verlinken jetzt eine Zielseite. „Digitale
+  Anwendungen“ und „Content und Aktivierung“ entfernt, Social Listening
+  ergänzt. Leistungsübersicht (Definieren/Umsetzen) und Footer auf allen
+  Seiten um die vier Leistungen erweitert.
+
 ### Case-Seite BGF+
 
 - Neue Seite `case-bgf.html` nach dem Muster von `case-medium.html`, Inhalte
