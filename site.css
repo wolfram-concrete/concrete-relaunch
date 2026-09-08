@@ -301,7 +301,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* Betontextur bewusst gegen den Coral-Kasten versetzt: sie ragt rechts und unten
    ueber den Rand hinaus und laesst oben/links einen reinen Coral-Streifen -
    zwei Ebenen, nicht deckungsgleich, wie im Magazin. */
-.pause__tex{--off:clamp(18px,2.6vw,44px);position:absolute;top:var(--off);left:var(--off);right:calc(-1 * var(--off));bottom:calc(-1 * var(--off));background:url("assets/beton/beton-red-alpha-quer.webp") center/cover;mix-blend-mode:multiply;opacity:.85;pointer-events:none}
+.pause__tex{--off:clamp(18px,2.6vw,44px);position:absolute;top:var(--off);left:var(--off);right:calc(-1 * var(--off));bottom:calc(-1 * var(--off));background:url("assets/beton/beton-red-alpha-quer-hd.webp") center/cover;mix-blend-mode:multiply;opacity:.85;pointer-events:none}
 .pause .container{position:relative;padding-block:clamp(88px,16vw,220px)}
 .pause__statement{font-family:"Arame";font-weight:700;font-size:clamp(48px,8.6vw,150px);line-height:.84;letter-spacing:-.02em;color:var(--ink);position:relative}
 .pause__statement span{display:block}
@@ -399,7 +399,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .review__media{aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep);margin-bottom:var(--s3)}
 .review__media img{width:100%;height:100%;object-fit:cover}
 .review__media--tex{background:var(--coral)}
-.review__media--tex .tex{width:100%;height:100%;background:url("assets/beton/beton-red-alpha-quer.webp") center/cover;mix-blend-mode:multiply;opacity:.85}
+.review__media--tex .tex{width:100%;height:100%;background:url("assets/beton/beton-red-alpha-quer-hd.webp") center/cover;mix-blend-mode:multiply;opacity:.85}
 .review blockquote{margin:0;font-size:var(--fs-body);line-height:1.6;color:var(--ink-60)}
 .review blockquote b{color:var(--ink);font-weight:400}
 .review figcaption{margin-top:auto;padding-top:var(--s3);font-weight:700;font-size:var(--fs-meta);letter-spacing:.02em}
