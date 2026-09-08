@@ -137,7 +137,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .hero h1 .accent{color:var(--coral)}
 .hero__arrow{display:block;width:clamp(140px,20vw,300px);height:auto;margin-top:var(--s4);color:var(--paper)}
 /* Hero auf breiten Screens: Body und CTA buendig mit dem Logo (Container-Kante), H1 und Pfeil ruecken nur einen Teil des freien Randes nach aussen */
-.hero{--hero-out:clamp(0px,((100vw - var(--max)) / 2) * .55,240px)}
+:root{--hero-out:clamp(0px,((100vw - var(--max)) / 2) * .55,240px)}
 .hero h1,.hero__arrow{margin-left:calc(-1 * var(--hero-out))}
 .hero__body{margin-left:0;margin-top:var(--s4);max-width:46ch;color:var(--paper)}
 .hero__copy{font-size:clamp(18px,1.5vw,22px);line-height:1.42}
@@ -580,6 +580,10 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 /* Brand-Pfeil als Gestaltungsmittel/Trenner */
 .brand-arrow{display:block;width:clamp(96px,11vw,190px);height:auto;color:var(--coral)}
 .page-head .brand-arrow{margin-top:var(--s4)}
+/* Seitenkoepfe wie der Home-Hero: H1 und Pfeil ruecken auf breiten Screens nach aussen, Text und CTA bleiben an der Container-Kante */
+.page-head .container>h1,.page-head .container>.brand-arrow{margin-left:calc(-1 * var(--hero-out))}
+.page-head .container>.lead,.page-head .container>p{margin-left:0}
+.page-head .lead strong{font-weight:700;color:var(--ink)}
 .arrow-divider{padding-block:0}
 .arrow-divider .brand-arrow{margin:clamp(8px,1.5vw,24px) 0 clamp(32px,4.5vw,64px)}
 .section--ink .brand-arrow{color:var(--coral)}
