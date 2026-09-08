@@ -526,7 +526,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 
 /* ===== Typo-Trenner "Aus der Praxis" als Endlos-Lauf von links nach rechts ===== */
 .praxis-statement{display:flex;overflow:hidden;text-align:left}
-.praxis-statement .praxis-track{display:flex;flex:0 0 auto;will-change:transform;animation:marquee-ltr 46s linear infinite}
+.praxis-statement .praxis-track{display:flex;flex:0 0 auto;will-change:transform;animation:marquee-ltr 84s linear infinite}
 .praxis-statement .praxis-track span{display:block;padding-right:.32em}
 @keyframes marquee-ltr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.praxis-statement .praxis-track{animation:none}}
