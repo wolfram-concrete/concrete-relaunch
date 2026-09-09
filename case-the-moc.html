@@ -20,13 +20,13 @@
 <style>
 /* ===== Projekt-Seite (Muster) ===== */
 .case-hero{overflow:hidden}
-.case-hero img{width:100%;height:auto;display:block}
-.case-hero img.plx{transform:translateY(calc(var(--py,0) * 1px)) scale(1.12);will-change:transform}
+.case-hero img,.case-hero video{width:100%;height:auto;display:block}
+.case-hero img.plx,.case-hero video.plx{transform:translateY(calc(var(--py,0) * 1px)) scale(1.12);will-change:transform}
 .case-masonry img,.case-masonry video{opacity:0;transform:translateY(26px) scale(1.02);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .case-masonry.in img,.case-masonry.in video{opacity:1;transform:none}
 .img-plx{overflow:hidden}
 .img-plx img{transform:translateY(calc(var(--py,0) * 1px)) scale(1.14);will-change:transform}
-@media(prefers-reduced-motion:reduce){.case-hero img.plx,.img-plx img{transform:none}.case-masonry img{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){.case-hero img.plx,.case-hero video.plx,.img-plx img{transform:none}.case-masonry img{opacity:1;transform:none;transition:none}}
 .case-meta{border-bottom:1px solid var(--rule)}
 .case-meta .container{display:grid;grid-template-columns:minmax(160px,var(--indent)) 1fr auto;gap:var(--s2) clamp(40px,7vw,120px);align-items:start;padding-block:clamp(18px,2.4vw,32px)}
 .case-meta .lbl{font-weight:700;font-size:var(--fs-meta);letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
@@ -149,7 +149,7 @@
 </nav>
 <main id="main">
   <section class="case-hero" data-screen-label="Case-Hero">
-    <img class="plx" data-plx="7" src="assets/cases/the-moc/header.jpg" alt="the moc, Robotic-Coffee-Kiosk in Orange mit Signet">
+    <video class="plx" data-plx="7" src="assets/cases/the-moc/hero-reel.mp4" poster="assets/cases/the-moc/hero-reel-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="the moc, Markenfilm mit Kiosk, Becher und App"></video>
   </section>
   <div class="container" style="padding-block:clamp(28px,4vw,56px) 0">
     <h1 style="font-family:'Arame';font-weight:700;font-size:clamp(40px,7vw,110px);line-height:.88;letter-spacing:0;margin:0;max-width:18ch;text-wrap:balance;font-kerning:normal">Die neue Robotic Coffee Brand.</h1>
@@ -228,14 +228,12 @@
       <img style="--ar:0.563" loading="lazy" src="assets/cases/the-moc/keyvisual.jpg" alt="the moc, Key Visual „your moment of coffee“">
       <video style="--ar:1.778" src="assets/cases/the-moc/video-glas.mp4" data-fallback="assets/cases/the-moc/video-glas-poster.jpg" autoplay muted loop playsinline preload="metadata" poster="assets/cases/the-moc/video-glas-poster.jpg" aria-label="the moc, Espresso trifft Milch im Glas"></video>
       <img style="--ar:0.800" loading="lazy" src="assets/cases/the-moc/produkt-iced-latte.jpg" alt="the moc, Iced Latte mit Eiswürfeln">
-      <img style="--ar:1.030" loading="lazy" src="assets/cases/the-moc/signet-2.jpg" alt="the moc, Signet auf Creme">
       <img style="--ar:1.333" loading="lazy" src="assets/cases/the-moc/visitenkarte.jpg" alt="the moc, Visitenkarten">
       <img style="--ar:0.800" loading="lazy" src="assets/cases/the-moc/produkt-mocha.jpg" alt="the moc, Schokoladiger Kaffeedrink">
       <img style="--ar:0.667" loading="lazy" src="assets/cases/the-moc/espresso-einguss.jpg" alt="the moc, Espresso wird in den Latte gegossen">
       <img style="--ar:1.120" loading="lazy" src="assets/cases/the-moc/kiosk-mockup.jpg" alt="the moc, Kiosk mit Wortmarke">
       <img style="--ar:0.800" loading="lazy" src="assets/cases/the-moc/produkt-caramel.jpg" alt="the moc, Caramel Latte im Glas">
       <img style="--ar:1.499" loading="lazy" src="assets/cases/the-moc/glas-logo.jpg" alt="the moc, Wortmarke vor Kaffeeglas">
-      <video style="--ar:1.778" src="assets/cases/the-moc/video-reel.mp4" data-fallback="assets/cases/the-moc/video-reel-poster.jpg" autoplay muted loop playsinline preload="metadata" poster="assets/cases/the-moc/video-reel-poster.jpg" aria-label="the moc, Markenfilm mit Kiosk, Becher und App"></video>
       <img style="--ar:0.800" loading="lazy" src="assets/cases/the-moc/produkt-cappuccino.jpg" alt="the moc, Cappuccino im Glas">
       <img style="--ar:0.666" loading="lazy" src="assets/cases/the-moc/becher.jpg" alt="the moc, Becher auf dem Podest">
       <img style="--ar:1.079" loading="lazy" src="assets/cases/the-moc/becher-set-2.jpg" alt="the moc, Becher in drei Größen auf Creme">
