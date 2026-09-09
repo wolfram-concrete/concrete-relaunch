@@ -484,9 +484,15 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .eg-step .num{display:block;font-family:"Arame";font-weight:700;font-size:clamp(28px,3vw,44px);line-height:.8;color:var(--coral);margin-bottom:var(--s3)}
 .eg-step h3{font-family:"Arame";font-weight:700;font-size:clamp(18px,1.6vw,22px);line-height:1.04;margin:0 0 var(--s2)}
 .eg-step p{font-size:14.5px;line-height:1.55;color:var(--ink-60);margin:0}
+@media(max-width:820px){
 .eg-steps{grid-template-columns:1fr}
 .eg-step{border-left:0;padding-inline:0;border-top:1px solid var(--rule)}
 .eg-step:first-child{border-top:0}
+}
+/* im Coral-Kasten (Kontakt) stehen die Schritte untereinander */
+.coral-block .eg-steps{grid-template-columns:1fr}
+.coral-block .eg-step{border-left:0;padding-inline:0;border-top:1px solid var(--rule)}
+.coral-block .eg-step:first-child{border-top:0}
 .coral-block .eg-steps{margin-top:var(--s4)}
 .coral-block .eg-step .num{color:var(--ink)}
 .coral-block .eg-step h3,.coral-block .eg-step p{color:var(--ink)}
