@@ -718,3 +718,8 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 .sym--num{list-style:none;margin:0;padding:0;counter-reset:sym}
 .sym--num li{position:relative;counter-increment:sym;padding-left:clamp(48px,4.4vw,72px);margin:0 0 clamp(12px,1.4vw,20px)}
 .sym--num li::before{content:counter(sym,decimal-leading-zero);position:absolute;left:0;top:-.1em;font-family:"Arame";font-weight:700;font-size:clamp(20px,1.8vw,28px);line-height:1;color:var(--coral)}
+
+/* Trennlinien der Sections laufen nur innerhalb des Grids */
+section.sec--line{border-top:0;position:relative}
+section.sec--line::before{content:"";position:absolute;top:0;height:1px;background:var(--rule);left:calc(max(0px,(100% - var(--max)) / 2) + var(--pad));right:calc(max(0px,(100% - var(--max)) / 2) + var(--pad))}
+.situation-visual + section.sec--line::before{display:none}
