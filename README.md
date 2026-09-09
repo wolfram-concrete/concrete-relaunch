@@ -69,9 +69,11 @@ der Browser die alte aus.
 
 ## Galerie-Bausteine
 
-`data-feature` an einem Galeriebild stellt es in eine eigene Zeile auf zwei
-Drittel der Rasterbreite. `data-full` am `figure.case-gallery__lead` zeigt das
-Lead-Bild ohne Beschnitt, der Container wächst mit.
+Ein Motiv wird groesser, indem es an eine Position mit breitem Slot rueckt
+und eng auf den Inhalt beschnitten wird (breiteres `--ar`), nicht ueber eine
+Sonderregel: Der Justify-Packer verteilt sonst die restliche Zeile schlecht.
+`data-full` am `figure.case-gallery__lead` zeigt das Lead-Bild ohne Beschnitt,
+der Container waechst mit.
 
 ## Lokal ansehen
 
