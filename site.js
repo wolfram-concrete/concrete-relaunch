@@ -402,7 +402,7 @@
     var probe=document.createElement("i");probe.setAttribute("aria-hidden","true");probe.style.cssText="position:absolute;visibility:hidden;height:var(--h);width:0;flex:none;margin:0;padding:0";g.appendChild(probe);
     function ar(el){var v=parseFloat(el.style.getPropertyValue("--ar"));return v>0?v:1.5;}
     function layout(){
-      var items=[].filter.call(g.children,function(c){return c!==fill&&c!==probe});if(items.length<2)return;
+      var items=[].filter.call(g.children,function(c){return c!==fill&&c!==probe&&c.tagName!=="I"&&!c.hasAttribute("data-feature")});if(items.length<2)return;
       var W=g.clientWidth,gap=parseFloat(getComputedStyle(g).gap)||0,H=probe.offsetHeight||300;if(!W)return;
       g.classList.add("is-packed");
       // Umbruch per dynamischer Programmierung: minimale Summe der quadrierten Abweichungen
