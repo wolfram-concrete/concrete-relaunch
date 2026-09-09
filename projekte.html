@@ -16,7 +16,7 @@
 <meta property="og:image:alt" content="Das CONCRETE-Team im Gespräch">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.concrete-designs.de/assets/og/concrete-og.jpg">
-<link rel="stylesheet" href="site.css?v=92">
+<link rel="stylesheet" href="site.css?v=93">
 <style>
 .page-head{padding-block:clamp(192px,28vw,400px) clamp(60px,7.5vw,108px)}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(40px,7.6vw,120px);line-height:.88;letter-spacing:0;margin:0;font-kerning:normal}
@@ -267,23 +267,48 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=92"></script>
+<script src="site.js?v=93"></script>
 <script>
 (function(){
   // Kacheln zeilenweise (neueste zuerst) auf Spalten verteilen
   var grid=document.querySelector("[data-tiles]");
   var all=[].slice.call(grid.querySelectorAll(".ptile"));
   function colCount(){return innerWidth<=560?1:innerWidth<=900?2:3;}
-  var lastN=0;
-  function layout(){
-    var n=colCount();if(n===lastN)return;lastN=n;
+  var lastN=0,heights=all.map(function(){return 1;});
+  function build(n){
     grid.innerHTML="";
     var cols=[];for(var i=0;i<n;i++){var d=document.createElement("div");d.className="pcol";grid.appendChild(d);cols.push(d);}
-    var visIdx=0;
-    all.forEach(function(t){cols[(visIdx++)%n].appendChild(t);});
+    return cols;
   }
+  // Kacheln der jeweils kuerzesten Spalte zuweisen, damit unten keine Luecke bleibt
+  function fill(cols){
+    var n=cols.length,totals=[];for(var i=0;i<n;i++)totals.push(0);
+    all.forEach(function(t,idx){
+      if(t.classList.contains("hide")){cols[0].appendChild(t);return;}
+      var min=0;for(var k=1;k<n;k++){if(totals[k]<totals[min]-0.5)min=k;}
+      cols[min].appendChild(t);totals[min]+=heights[idx];
+    });
+  }
+  function layout(force){
+    var n=colCount();if(n===lastN&&!force)return;lastN=n;fill(build(n));
+  }
+  function measure(){
+    var changed=false;
+    all.forEach(function(t,i){
+      var h=t.offsetHeight;
+      if(h&&Math.abs(h-heights[i])>2){heights[i]=h;changed=true;}
+    });
+    return changed;
+  }
+  function rebalance(){if(measure())fill(build(colCount()));}
   layout();
-  addEventListener("resize",function(){layout();});
+  addEventListener("resize",function(){lastN=0;layout();requestAnimationFrame(rebalance);});
+  addEventListener("load",rebalance);
+  grid.querySelectorAll("img").forEach(function(im){
+    if(im.complete)return;
+    im.addEventListener("load",function(){clearTimeout(window.__pbt);window.__pbt=setTimeout(rebalance,120);},{once:true});
+  });
+  setTimeout(rebalance,600);setTimeout(rebalance,2000);
   var chips=[].slice.call(document.querySelectorAll(".fchip"));
   var rows=all;
   var count=document.querySelector("[data-count]");
@@ -295,6 +320,7 @@
       r.classList.toggle("hide",!ok);if(ok)n++;
     });
     if(count)count.textContent=n+(n===1?" Projekt":" Projekte");
+    fill(build(colCount()));
   }
   chips.forEach(function(c){c.addEventListener("click",function(){chips.forEach(function(x){x.classList.remove("on")});c.classList.add("on");cluster=c.getAttribute("data-f");apply();});});
 })();
