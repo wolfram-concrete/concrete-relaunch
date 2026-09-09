@@ -46,6 +46,9 @@
 .next-band .container{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s4);padding-block:clamp(40px,5vw,72px)}
 .next-band h2{font-family:"Arame";font-weight:700;font-size:clamp(26px,3.4vw,48px);line-height:1;margin:0;max-width:18ch}
 
+.fit-head h2{max-width:24ch}
+.fit-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4) clamp(28px,5vw,80px);align-items:start;margin-top:clamp(32px,4vw,56px)}
+@media(max-width:860px){.fit-cols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -158,16 +161,13 @@
 </article>
 </div>
 </div></section>
-<section class="sec sec--line" data-screen-label="Projekt-Fit"><div class="container split split--wide-left">
-<div>
+<section class="sec sec--line" data-screen-label="Projekt-Fit"><div class="container">
+<div class="fit-head">
   <p class="eyebrow rv">Projekt-Fit</p>
   <h2 class="rv">Welche Kunden zu CONCRETE passen, und welche nicht.</h2>
   <p class="rv" style="max-width:40ch;color:var(--ink-60)">Nicht jedes Unternehmen passt zu CONCRETE. Und das ist bewusst so.</p>
-  <button class="vteaser rv-media" type="button" data-vteaser data-src="https://concrete-video-cdn.vercel.app/v/projekt-fit.mp4" style="margin-top:var(--s4)">
-    <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/projekt-fit.webp" alt="Standbild: Wolfram erklärt, welche Unternehmen zu CONCRETE passen" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
-    <span class="vteaser__meta"><span>Welche Kunden zu CONCRETE passen</span><span class="t">Video</span></span>
-  </button>
 </div>
+<div class="fit-cols">
 <div>
   <p class="big-copy rv">Brand Building ist kein Serviceprodukt, sondern ein gemeinsamer Prozess. Gute Markenarbeit entsteht nur, wenn beide Seiten wirklich zusammenarbeiten wollen, offen, ehrlich und auf Augenhöhe.</p>
   <h3 class="rv" style="margin-top:var(--s4)">Wir arbeiten mit Unternehmen, die</h3>
@@ -178,11 +178,19 @@
     <li>Verantwortung übernehmen</li>
     <li>Branding als strategisches Werkzeug sehen</li>
   </ul>
-  <p class="rv" style="color:var(--ink-60);margin-top:var(--s3)">Das können Startups sein, die am Anfang entscheidende Weichen stellen müssen. Und genauso gewachsene Unternehmen, deren Auftritt nicht mehr zu dem passt, was sie heute sind. Oft liegen die eigentlichen Herausforderungen nicht im Design, sondern tiefer: unklare Positionierung, widersprüchliche Kommunikation, fehlendes gemeinsames Verständnis im Team. Hier setzen wir an, nicht an der Oberfläche, sondern an der Struktur.</p>
+</div>
+<div>
+  <p class="rv" style="color:var(--ink-60)">Das können Startups sein, die am Anfang entscheidende Weichen stellen müssen. Und genauso gewachsene Unternehmen, deren Auftritt nicht mehr zu dem passt, was sie heute sind. Oft liegen die eigentlichen Herausforderungen nicht im Design, sondern tiefer: unklare Positionierung, widersprüchliche Kommunikation, fehlendes gemeinsames Verständnis im Team. Hier setzen wir an, nicht an der Oberfläche, sondern an der Struktur.</p>
   <h3 class="rv" style="margin-top:var(--s4)">Wer weniger gut zu uns passt</h3>
   <p class="rv" style="color:var(--ink-60)">Schwieriger wird es, wenn es ausschließlich um ein schnelles Ergebnis geht, Entscheidungen dauerhaft vertagt werden, Branding als reine Dekoration verstanden wird oder Verantwortung nicht übernommen werden soll. Brand Building braucht Vertrauen, und den Willen, gemeinsam an Klarheit zu arbeiten.</p>
   <h3 class="rv" style="margin-top:var(--s4)">Warum diese Klarheit wichtig ist</h3>
   <p class="rv" style="color:var(--ink-60)">Eine starke Zusammenarbeit entsteht nur, wenn Erwartungen auf beiden Seiten transparent sind. Brand Building funktioniert nicht als Einbahnstraße. Wenn diese Haltung vorhanden ist, entsteht eine Partnerschaft, die langfristig trägt.</p>
+  <p class="eyebrow rv" style="margin:var(--s5) 0 var(--s2)">Persönlich erklärt</p>
+  <button class="vteaser rv-media" type="button" data-vteaser data-src="https://concrete-video-cdn.vercel.app/v/projekt-fit.mp4" style="margin-top:0">
+    <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/projekt-fit.webp" alt="Standbild: Wolfram erklärt, welche Unternehmen zu CONCRETE passen" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
+    <span class="vteaser__meta"><span>Welche Kunden zu CONCRETE passen</span><span class="t">Video</span></span>
+  </button>
+</div>
 </div>
 </div></section>
 <section class="sec sec--line" data-screen-label="Methode"><div class="container">
