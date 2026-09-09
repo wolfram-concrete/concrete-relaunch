@@ -599,6 +599,9 @@ section.case-quote .qtex{top:0;height:100%}
 .case-gallery__lead,.case-mosaic{width:100vw;margin-left:calc(50% - 50vw)}
 .case-gallery__lead{margin-top:0;margin-bottom:10px;overflow:hidden;max-height:74vh}
 .case-gallery__lead img{width:100%;height:auto;max-height:74vh;object-fit:cover;display:block;margin:0}
+/* Lead ohne Beschnitt: der Container waechst mit dem Bild */
+.case-gallery__lead[data-full],.case-gallery__lead[data-full] .img-plx{max-height:none}
+.case-gallery__lead[data-full] img{max-height:none;object-fit:contain}
 .case-gallery__lead .img-plx{overflow:hidden;max-height:74vh}
 .case-mosaic{--h:clamp(230px,27vw,440px);display:flex;flex-wrap:wrap;gap:10px;width:100vw;margin-left:calc(50% - 50vw)}
 .case-mosaic>*{flex-grow:calc(var(--ar,1.5) * 100);flex-shrink:1;flex-basis:calc(var(--ar,1.5) * var(--h));width:auto;min-width:0;min-height:0;aspect-ratio:var(--ar,1.5);height:auto;max-width:100%;object-fit:cover;display:block;margin:0;background:var(--paper-deep)}
@@ -734,9 +737,13 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 .situation-visual .tex-lap{right:-3%;top:0;transform:translateY(-44%);width:clamp(240px,30vw,520px);z-index:2}
 
 /* Situationsseiten: „Woran ihr es merkt“ als nummerierte Liste */
-.sym--num{list-style:none;margin:0;padding:0;counter-reset:sym}
-.sym--num li{position:relative;counter-increment:sym;padding-left:clamp(48px,4.4vw,72px);margin:0 0 clamp(12px,1.4vw,20px)}
-.sym--num li::before{content:counter(sym,decimal-leading-zero);position:absolute;left:0;top:-.1em;font-family:"Arame";font-weight:700;font-size:clamp(20px,1.8vw,28px);line-height:1;color:var(--coral)}
+.sym--num{--sym-fs:clamp(20px,1.8vw,28px);--sym-lh:1.6;list-style:none;margin:0;padding:0;counter-reset:sym}
+.sym--num li{position:relative;counter-increment:sym;padding-left:clamp(48px,4.4vw,72px);padding-block:clamp(12px,1.4vw,18px);margin:0;line-height:var(--sym-lh);border-top:1px solid var(--rule)}
+.sym--num li:first-child{border-top:0;padding-top:0}
+.sym--num li:last-child{padding-bottom:0}
+/* Ziffer auf Oberlaenge mit der ersten Textzeile: Versalhoehe beider Schriften ist .7em */
+.sym--num li::before{content:counter(sym,decimal-leading-zero);position:absolute;left:0;top:calc(.479rem - .216 * var(--sym-fs));font-family:"Arame";font-weight:700;font-size:var(--sym-fs);line-height:1;color:var(--coral)}
+.sym--num li:first-child::before{top:calc(.479rem - .216 * var(--sym-fs))}
 
 /* Trennlinien der Sections laufen nur innerhalb des Grids */
 section.sec--line{border-top:0;position:relative}
@@ -762,3 +769,14 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 /* Mega-Menü: eine durchgehende Fläche mit dem Header, kein Absatz an der Kante */
 .site-header.mega-open::before{display:none}
 .site-header.mega-open .mega-menu.is-open{top:0;padding-top:var(--header-height);z-index:-1}
+/* --- Zitat auf den Leistungs-Detailseiten: schwarze Flaeche, rechts randabfallend,
+   linksbuendig mit den grossen Ziffern, Coral-Beton ueberlappt die obere Ecke --- */
+.stmt-band{border-top:0!important;padding-block:clamp(40px,6vw,96px)!important}
+.stmt-band + .sec{border-top:0}
+.stmt-band__inner{position:relative;background:var(--ink);color:var(--paper);
+  margin-left:calc(max(0px,(100% - var(--max)) / 2) + var(--pad));
+  padding:clamp(40px,5.5vw,92px) clamp(28px,4vw,72px) clamp(44px,6vw,104px)}
+.stmt-band__inner .stmt-q{color:var(--paper);max-width:24ch}
+.stmt-band__tex{position:absolute;left:calc(-1 * clamp(10px,1.4vw,26px));top:calc(-1 * clamp(14px,1.8vw,34px));
+  width:clamp(140px,15vw,260px);pointer-events:none;z-index:2}
+@media(max-width:820px){.stmt-band__inner{margin-left:var(--pad)}}
