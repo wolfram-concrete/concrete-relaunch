@@ -247,7 +247,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .coral-block{position:relative;z-index:2;background:var(--coral);color:var(--ink);margin-right:clamp(20px,7vw,110px);margin-top:calc(-1 * clamp(28px,4vw,64px));padding:clamp(44px,5.5vw,88px) 0}
 .section--ink{background:var(--ink);color:var(--paper)}
 .section--ink .eyebrow{color:var(--coral-l)}
-.section-heading{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--s5);align-items:start;margin-bottom:clamp(28px,4vw,56px)}
+.section-heading{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:var(--s4) clamp(24px,3vw,48px);align-items:start;margin-bottom:clamp(28px,4vw,56px)}
 .section-heading p{margin-top:.14em}
 .section-heading h2{font-family:"Arame";font-weight:700;font-size:var(--fs-sub);line-height:1;letter-spacing:-.01em;max-width:20ch}
 .section-heading p{color:var(--ink-60);max-width:52ch}
@@ -303,7 +303,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
    ueber den Rand hinaus und laesst oben/links einen reinen Coral-Streifen -
    zwei Ebenen, nicht deckungsgleich, wie im Magazin. */
 .pause__tex{--off:clamp(18px,2.6vw,44px);position:absolute;top:var(--off);left:var(--off);right:calc(-1 * var(--off));bottom:calc(-1 * var(--off));background:url("assets/beton/beton-red-alpha-quer-hd.webp") center/cover;mix-blend-mode:multiply;opacity:.85;pointer-events:none}
-.pause .container{position:relative;padding-block:clamp(88px,16vw,220px)}
+.pause .container{position:relative;padding-block:clamp(88px,16vw,220px);--max:1720px}
 .pause__statement{font-family:"Arame";font-weight:700;font-size:clamp(48px,8.6vw,150px);line-height:.84;letter-spacing:-.02em;color:var(--ink);position:relative}
 .pause__statement span{display:block}
 .pause__statement .accent{color:var(--coral)}
@@ -431,6 +431,9 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .logo-band__row{display:flex;align-items:center;gap:clamp(48px,6vw,104px);padding-right:clamp(48px,6vw,104px)}
 .logo-band__row img{width:calc(var(--lw,110px) * var(--k));height:auto;max-width:none;display:block;filter:brightness(0);opacity:.62;transition:opacity .25s ease}
 .logo-band__row img:hover{opacity:.9}
+.logo-band__link{display:block;flex:none;line-height:0;border-radius:2px}
+.logo-band__link:hover img,.logo-band__link:focus-visible img{opacity:1}
+.logo-band__link:focus-visible{outline:2px solid var(--coral);outline-offset:6px}
 /* LINK: blaues Quadrat mit weiss ausgespartem L - die Datei ist selbst auf Ink/Papier umgefaerbt, der Filter wuerde das L schwaerzen */
 .logo-band__row img[src$="link.svg"],.logo-band__row img[src$="cansort.svg"],.logo-band__row img[src$="potatohead.svg"],.logo-band__row img[src$="assmann.svg"],.logo-band__row img[src$="fraunhofer.svg"],.logo-band__row img[src$="maleco.svg"],.logo-band__row img[src$="rieckermann.svg"],.logo-band__row img[src$="zeiss.svg"],.logo-band__row img[src$="goschneider.svg"]{filter:none}
 .logo-band__row img[src$="ihp.png"]{filter:grayscale(1) contrast(1.15)}
@@ -521,7 +524,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .phase-stack .phase p{font-size:var(--fs-body);line-height:1.5;max-width:44ch}
 .phase-layout__aside{position:sticky;top:clamp(96px,14vh,150px)}
 .phase-layout__aside .brand-arrow{margin-top:clamp(20px,2.6vw,36px);width:clamp(96px,9vw,160px)}
-.phase-layout__aside .vteaser{margin-top:0;padding-top:0;border-top:0}
+.phase-layout__aside .vteaser{margin-top:0}
 @media(max-width:860px){.phase-layout{grid-template-columns:1fr;gap:var(--s5)}.phase-layout__aside{position:static}.phase-stack .phase{grid-template-columns:48px minmax(0,1fr)}}
 
 /* ===== Typo-Trenner "Aus der Praxis" als Endlos-Lauf von links nach rechts ===== */
