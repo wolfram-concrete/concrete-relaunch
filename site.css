@@ -449,8 +449,9 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .person__role{display:block;font-family:"Arame";font-weight:400;font-style:italic;font-size:var(--fs-meta);letter-spacing:.06em;text-transform:uppercase;margin-bottom:clamp(20px,3vw,44px)}
 .person__box p{font-size:var(--fs-body);line-height:1.6;margin:0 0 var(--s3)}
 .person__mail{color:var(--ink);font-weight:700}
+.person__mail:hover,.person__mail:focus-visible{color:var(--paper)}
 .person__media{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--paper-deep)}
-.person--text-right .person__media{aspect-ratio:5/4}
+.person--text-right .person__media{aspect-ratio:4/5}
 .person__media img{width:100%;height:100%;object-fit:cover;display:block}
 .person__tex{position:absolute;left:0;right:0;bottom:0;height:52%;background:url("assets/beton/beton-coral-alpha-quer.webp") center/cover;mix-blend-mode:screen;opacity:.9;pointer-events:none}
 @media (max-width:900px){
