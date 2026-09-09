@@ -67,7 +67,25 @@
   Video-Teaser rechts unten. Boneß & Euteneuer: Alt-Texte faktisch
   („Steuerberatungskanzlei Köln“).
 
-Cache-Buster `site.css`/`site.js` auf `v=90`.
+- **Logoband auf der Startseite** verlinkt jede Marke, zu der eine Case-Seite
+  existiert (32 von 54), in allen vier Laufzeilen. Die aria-hidden-Kopien der
+  Endlosschleife bekommen `tabindex="-1"`, damit der Tab-Fokus nicht mehrfach
+  durch dieselben Logos läuft.
+- **Rezensionskarussell**: Porträts aus den Projekten statt Platzhaltern,
+  Jochen Lampert (CA’N SORT), Daniel Mensing (dasselbe Foto wie im Case),
+  Lea Ley (goodBytz), Anke Reincke (kidsbert) und Eleonora Piu (Little Big
+  Pasta, auch im Zitatmodul der Case-Seite, Absender von Luca auf Eleonora
+  geändert). Fokuspunkte per `object-position` gesetzt, damit die Gesichter
+  im 4:3-Ausschnitt sitzen. Alle Karten tragen Person, Titel und Unternehmen;
+  Lena Wilms ist HR, nicht Marketing.
+- **Startseite Layout**: Der Textcontainer des Coral-Statements läuft bis
+  1720 px, damit „Erst verstehen. Dann entscheiden. Dann gestalten.“ auch auf
+  breiten Monitoren dreizeilig bleibt. Die feine Linie über dem Prozessvideo
+  ist zurück (`.phase-layout__aside .vteaser` behält `border-top`). Die
+  Abschnittsköpfe (`.section-heading`) stehen enger beieinander (1,12fr statt
+  1,4fr, kleinerer Spaltenabstand).
+
+Cache-Buster `site.css`/`site.js` auf `v=91`.
 
 
 ## 08.09.2026 – Case-Module ausgerollt, zwei neue Case-Seiten, Karussell mit Shootingfotos
