@@ -713,3 +713,8 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 .situation-visual__frame img.plx{transform:translateY(calc(var(--py,0) * 1px));will-change:transform}
 .situation-visual + .sec--line{border-top:0}
 .situation-visual .tex-lap{right:-3%;top:0;transform:translateY(-44%);width:clamp(240px,30vw,520px);z-index:2;opacity:.95;-webkit-mask-image:radial-gradient(ellipse 62% 60% at 50% 50%,#000 40%,transparent 78%);mask-image:radial-gradient(ellipse 62% 60% at 50% 50%,#000 40%,transparent 78%)}
+
+/* Situationsseiten: „Woran ihr es merkt“ als nummerierte Liste */
+.sym--num{list-style:none;margin:0;padding:0;counter-reset:sym}
+.sym--num li{position:relative;counter-increment:sym;padding-left:clamp(48px,4.4vw,72px);margin:0 0 clamp(12px,1.4vw,20px)}
+.sym--num li::before{content:counter(sym,decimal-leading-zero);position:absolute;left:0;top:-.1em;font-family:"Arame";font-weight:700;font-size:clamp(20px,1.8vw,28px);line-height:1;color:var(--coral)}
