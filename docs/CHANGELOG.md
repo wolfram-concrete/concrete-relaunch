@@ -97,7 +97,22 @@
   ergobag steht direkt vor Klang2.
 - **Kontaktformular**: Investitionsrahmen als „0 bis 5.000 €“ statt mit Komma.
 
-Cache-Buster `site.css`/`site.js` auf `v=92`.
+- **Website-Videos live aufgenommen**: BGF+ (Navigationslauf mit echten
+  Mausrad-Ereignissen, 20 s), Conlivo, medium, mdb finance und system 360 mit
+  je zwei Scroll-Sequenzen; hy mit der Interviewszene aus dem Erklärfilm. Die
+  älteren Website-Clips aus den Projektordnern sind bei medium und system 360
+  entfernt. Videodateien hängen nicht am Cache-Buster, deshalb bekommen neue
+  Fassungen einen neuen Dateinamen.
+- **Galerie**: Ein Bild mit `data-feature` steht in eigener Zeile auf zwei
+  Dritteln der Rasterbreite (the moc, Vertriebsbroschüre). Case-Leads mit
+  `data-full` wachsen mit dem Bild statt zu beschneiden (BGF+, the moc).
+- **Freisteller aus Originalquellen** statt Flutfüllung: pause/play Umschlag
+  und Flyer, Poodlewohl Dosen und Hoodie. be.care steht wieder auf Weiß, weil
+  die Illustrationen dafür angelegt sind.
+- **Branchenseite**: sechs Teaser getauscht, Überschriften zweizeilig.
+  **Footer**: Rubriken in Coral. **Header-CTA**: keine dunkle Kontur im Hover.
+
+Cache-Buster `site.css`/`site.js` auf `v=98`.
 
 
 ## 08.09.2026 – Case-Module ausgerollt, zwei neue Case-Seiten, Karussell mit Shootingfotos

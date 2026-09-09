@@ -55,6 +55,24 @@ jeden Leistungspunkt auf seine Detailseite (Dateiname = Slug, Muster
 Teaser direkt unter der Liste. Bei jeder Änderung an `site.css` oder
 `site.js` den Cache-Buster `?v=N` in allen HTML-Dateien erhöhen.
 
+## Website-Videos der Kundenmarken
+
+Die Screencasts der Kundenwebsites nehmen wir selbst im Browser auf: Seite
+laden, Cookie-Dialog wegklicken, dann per echten Mausrad-Ereignissen in
+kleinen Schritten mit Zwischenstopps scrollen (`page.mouse.wheel`, nicht
+`window.scrollTo`, weil manche Seiten nur auf Wheel-Events reagieren).
+Aufnahme mit Playwright (`recordVideo`), danach mit ffmpeg beschleunigen und
+auf 1280 px, `crf 30`, ohne Ton, plus Poster-JPG. Ein Clip bleibt unter
+2,5 MB und dauert 10 bis 22 Sekunden. Videodateien hängen nicht am
+Cache-Buster: Eine neue Fassung braucht einen neuen Dateinamen, sonst liefert
+der Browser die alte aus.
+
+## Galerie-Bausteine
+
+`data-feature` an einem Galeriebild stellt es in eine eigene Zeile auf zwei
+Drittel der Rasterbreite. `data-full` am `figure.case-gallery__lead` zeigt das
+Lead-Bild ohne Beschnitt, der Container wächst mit.
+
 ## Lokal ansehen
 
     python3 -m http.server 4173
