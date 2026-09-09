@@ -739,3 +739,7 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .phase-case__link i{font-style:normal;color:var(--coral)}
 .phase-case__link i::after{content:"";display:inline-block;width:.42em;height:.535em;margin-left:.55em;background:currentColor;vertical-align:-.02em;-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .phase-case:hover .phase-case__link i::after{transform:translateX(.45em)}
+
+/* Mega-Menü: eine durchgehende Fläche mit dem Header, kein Absatz an der Kante */
+.site-header.mega-open::before{display:none}
+.site-header.mega-open .mega-menu.is-open{top:0;padding-top:var(--header-height);z-index:-1}
