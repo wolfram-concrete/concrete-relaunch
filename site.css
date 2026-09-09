@@ -705,3 +705,8 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 .ptile.in .ptile__media{clip-path:inset(0 0 0 0)}
 .ptile.rv .ptile__head,.ptile.rv .ptile__copy{opacity:0;transform:translateY(10px);transition:opacity .6s ease calc(var(--d,0s) + .32s),transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--d,0s) + .32s)}
 .ptile.in .ptile__head,.ptile.in .ptile__copy{opacity:1;transform:none}
+
+/* Situationsseiten: großflächiges Shootingmotiv unter dem Intro */
+.situation-visual{position:relative;overflow:hidden;height:clamp(320px,58vw,780px);margin:clamp(8px,2vw,24px) 0 0}
+.situation-visual img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;display:block}
+.situation-visual img.plx{transform:translateY(calc(var(--py,0) * 1px));will-change:transform}

@@ -282,6 +282,12 @@
     }
     apply();
     addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(apply);}},{passive:true});
+    // Kontrast-Regel: Navi muss auf hellem Grund immer auf Ink stehen, auch ohne Scroll
+    // (nach Laden, Schriften, Resize, Bildern und nach dem Schließen des Mega-Menüs)
+    function syncInv(){if(h.classList.contains("mega-open"))return;if(h.classList.contains("show"))h.classList.toggle("inv",!h.classList.contains("carrier")&&bgIsLight());}
+    addEventListener("load",syncInv);addEventListener("resize",syncInv);addEventListener("pageshow",syncInv);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(syncInv);
+    setTimeout(syncInv,120);setTimeout(syncInv,600);setInterval(syncInv,900);
   })();
   // Case-Galerien: weiches Durchfaden mit Drift
   document.querySelectorAll("[data-gallery]").forEach(function(g){
