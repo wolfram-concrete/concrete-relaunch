@@ -54,6 +54,19 @@
   (Lead), Potatohead (Sven Steffensmeier), Luis + Lea (Norbert Klotz),
   AdSuits in Originalauflösung.
 
+- **Vier neue Leistungsseiten** nach dem Muster der bestehenden Detailseiten:
+  `ki-tools-analyse-strategie.html` (Phase 01), `reinzeichnung.html` (Phase 03),
+  `social-media.html` und `evaluierung-optimierung.html` (Phase 04). Verlinkt
+  aus `leistungen.html`, den Phasenseiten und dem Footer-Index aller Seiten.
+  Damit hat jeder Leistungspunkt eine Detailseite.
+- **the moc**: Markenfilm als Hero-Video (1920 px, 1,7 MB, Poster), Reel und
+  Signet aus dem Mosaik entfernt, Lead-Bild aus dem HighRes-Original (2400 px).
+- **Über uns**: „Wofür wir stehen“ mit vier Bildcontainern (4:3) über den
+  Texten, Motive aus dem Team-Shooting August 2024 (Drive `10_Shooting`) und
+  dem Brainstorming-Foto; Projekt-Fit als Headline-Block plus zwei Spalten mit
+  Video-Teaser rechts unten. Boneß & Euteneuer: Alt-Texte faktisch
+  („Steuerberatungskanzlei Köln“).
+
 Cache-Buster `site.css`/`site.js` auf `v=90`.
 
 

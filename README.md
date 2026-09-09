@@ -50,7 +50,8 @@ Schatten zu grauen Flächen. Details und Datum je Änderung in
 
 `leistungen.html` zeigt je Phase ein Case-Bild mit Shortlink und einen
 kleinen Video-Teaser (`data-vteaser`). Die vier `phase-*.html` verlinken
-ihre Leistungspunkte auf die Detailseiten und tragen Christians Video als
+jeden Leistungspunkt auf seine Detailseite (Dateiname = Slug, Muster
+`social-listening.html`) und tragen Christians Video als
 Teaser direkt unter der Liste. Bei jeder Änderung an `site.css` oder
 `site.js` den Cache-Buster `?v=N` in allen HTML-Dateien erhöhen.
 

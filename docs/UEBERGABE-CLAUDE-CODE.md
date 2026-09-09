@@ -140,9 +140,8 @@ final gemeint und sollen pixelgenau übernommen werden.
   zieht 50% hinter die Anfrage-Sektion hoch
 
 ## Offene Punkte
-- Alle 40 Case-Seiten stehen (Stand 09.09.2026); offen: Nextbed-Hero nur
-  1920 px, Detailseiten für KI-Tools, Reinzeichnung, Social Media,
-  Evaluierung fehlen (Punkte auf den Phasenseiten unverlinkt)
+- Alle 40 Case-Seiten und alle Leistungs-Detailseiten stehen (Stand
+  09.09.2026); Nextbed-Hero bleibt bewusst bei 1920 px
 - Kostenvideo („Was kostet ein Branding?") existiert nicht im CDN-Satz —
   Investitions-Stelle ist textfähig gebaut
 - Situationsseite 05 (Vertrauen/sensible Märkte) hat bewusst keine
