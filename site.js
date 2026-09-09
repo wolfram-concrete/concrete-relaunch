@@ -130,7 +130,7 @@
     el.setAttribute("data-split","1");
   });
   // Filter-Chips: nacheinander
-  document.querySelectorAll(".fbar.rv .fchip,.fbar.rv .fsearch").forEach(function(c,i){c.style.transitionDelay=(i*35)+"ms";});
+  document.querySelectorAll(".fbar.rv .fchip").forEach(function(c,i){c.style.transitionDelay=(i*35)+"ms";});
   // Scroll-Reveals
   (function(){
     if(matchMedia("(prefers-reduced-motion:reduce)").matches){document.querySelectorAll(".rv,.rv-media,.rv-block-l,.rv-block-r,.rv-lines,.mask-words").forEach(function(e){e.classList.add("in")});return;}

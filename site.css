@@ -177,7 +177,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .rv-lines.in span:nth-child(3){transition-delay:.28s}
 /* Parallax-Layer (JS setzt --py) */
 .plx{transform:translateY(calc(var(--py,0) * 1px));will-change:transform}
-@media(prefers-reduced-motion:reduce){.rv,.rv-media,.rv-block-l,.rv-block-r{opacity:1;transform:none;transition:none}.rv-lines span{opacity:1;transform:none;transition:none}.mask-words .w>span{transform:none;transition:none}.fbar.rv .fchip,.fbar.rv .fsearch,.ptile.rv .ptile__head,.ptile.rv .ptile__copy{opacity:1;transform:none;transition:none}.ptile.rv .ptile__media{clip-path:none;transition:none}.plx{transform:none}}
+@media(prefers-reduced-motion:reduce){.rv,.rv-media,.rv-block-l,.rv-block-r{opacity:1;transform:none;transition:none}.rv-lines span{opacity:1;transform:none;transition:none}.mask-words .w>span{transform:none;transition:none}.fbar.rv .fchip,.fbar.rv .fchip,.ptile.rv .ptile__head,.ptile.rv .ptile__copy{opacity:1;transform:none;transition:none}.ptile.rv .ptile__media{clip-path:none;transition:none}.plx{transform:none}}
 /* Beton-Layer, die Sektionsübergänge überlappen (sparsam) */
 .tex-lap{position:absolute;pointer-events:none;z-index:0}
 .vteaser{display:flex;align-items:center;gap:var(--s3);width:100%;margin-top:var(--s4);padding:14px 0;border:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:none;cursor:pointer;text-align:left}
@@ -186,8 +186,12 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .vteaser:hover .vteaser__thumb img,.vteaser:hover .vteaser__thumb video{transform:scale(1.05)}
 .vteaser__badge{position:absolute;left:8px;bottom:8px;display:inline-flex;align-items:center;gap:6px;background:var(--coral);color:var(--ink);padding:6px 10px;border-radius:var(--radius-cta);font-weight:700;font-size:11px;letter-spacing:.04em}
 .vteaser__meta{flex:1;display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-weight:700;font-size:var(--fs-meta);letter-spacing:.04em;transition:opacity .35s ease}
-.vteaser__meta .t{color:var(--coral)}
-.vteaser:hover .vteaser__meta{color:var(--coral)}
+.vteaser__meta .t{color:var(--vt-accent,var(--coral))}
+.vteaser:hover .vteaser__meta{color:var(--vt-accent,var(--coral))}
+/* Auf Coral-Flaechen darf der Akzent nicht mit dem Grund verschmelzen:
+   Label und Hover laufen dort auf Ink statt Coral. */
+.coral-block .vteaser,.coral-wrap .vteaser,.pause .vteaser{--vt-accent:var(--ink)}
+.coral-block .vteaser__badge,.coral-wrap .vteaser__badge,.pause .vteaser__badge{background:var(--paper)}
 .vteaser.open{cursor:default}
 .vteaser.open .vteaser__thumb{width:100%}
 .vteaser.open .vteaser__meta{opacity:0;flex:0;overflow:hidden;white-space:nowrap}
@@ -699,8 +703,8 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 .page-head .brand-arrow.rv:not(.in){transform:translateX(-40px)}
 /* Filterleiste: Chips treppen nacheinander hoch */
 .fbar.rv{opacity:1;transform:none}
-.fbar.rv .fchip,.fbar.rv .fsearch{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .65s cubic-bezier(.2,.7,.2,1),color .25s,border-color .25s,background-color .25s}
-.fbar.in .fchip,.fbar.in .fsearch{opacity:1;transform:none}
+.fbar.rv .fchip{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .65s cubic-bezier(.2,.7,.2,1),color .25s,border-color .25s,background-color .25s}
+.fbar.in .fchip{opacity:1;transform:none}
 /* Kacheln: pro Spalte leicht versetzt, Bild öffnet sich hinter einer Kante von oben, Titel folgt */
 .pcol:nth-child(2){--d:.1s}.pcol:nth-child(3){--d:.2s}
 .ptile.rv{transition-delay:var(--d,0s)}

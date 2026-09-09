@@ -85,7 +85,19 @@
   Abschnittsköpfe (`.section-heading`) stehen enger beieinander (1,12fr statt
   1,4fr, kleinerer Spaltenabstand).
 
-Cache-Buster `site.css`/`site.js` auf `v=91`.
+- **Video-Teaser** bekommen einen flächenabhängigen Akzent
+  (`--vt-accent`): Auf Coral-Flächen laufen Label „Video“ und Hover auf Ink
+  statt Coral, das Badge auf Papier. Vorher verschwand die Schrift beim Hover
+  im Grund. Alle zwölf Teaser auf neun Seiten geprüft, Kontrast dort jetzt
+  7,25 statt 1,0.
+- **Projektübersicht**: Suchfeld entfernt (Markup, CSS, Skript und die
+  `data-search`-Attribute der 40 Kacheln), die Cluster-Filter bleiben. Die
+  Eyebrow der Kacheln sitzt jetzt auf Oberlänge mit dem Markennamen
+  (Versalhöhe statt Grundlinie, Versatz skaliert mit der Schriftgröße).
+  ergobag steht direkt vor Klang2.
+- **Kontaktformular**: Investitionsrahmen als „0 bis 5.000 €“ statt mit Komma.
+
+Cache-Buster `site.css`/`site.js` auf `v=92`.
 
 
 ## 08.09.2026 – Case-Module ausgerollt, zwei neue Case-Seiten, Karussell mit Shootingfotos
