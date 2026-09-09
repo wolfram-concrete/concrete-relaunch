@@ -725,5 +725,7 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .situation-visual + section.sec--line::before{display:none}
 
 /* „Woran ihr es merkt“: Headline in der Breite der ersten Hilfe-Spalte, Liste beginnt an der zweiten */
-.cols--third{grid-template-columns:minmax(0,1fr) minmax(0,2fr)!important;gap:var(--s3) clamp(20px,3vw,44px)!important}
+.cols--third{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:var(--s3) clamp(20px,3vw,44px)!important}
 .cols--third>h2{white-space:nowrap}
+.cols--third>div{grid-column:2/4}
+@media(max-width:900px){.cols--third{grid-template-columns:1fr!important}.cols--third>div{grid-column:auto}.cols--third>h2{white-space:normal}}
