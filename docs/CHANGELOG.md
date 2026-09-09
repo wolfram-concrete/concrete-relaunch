@@ -1,5 +1,36 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 09.09.2026 – 40 Case-Seiten, Situationsseiten mit Bildmotiv, Textregeln
+
+- **20 weitere Case-Seiten** aus dem WordPress-Export (ohne Eingangsordner):
+  highr, aconvia, noveltea, potatohead, be-care, me, pause-play, project-haya,
+  the-moc, maleco, klang2, boness-euteneuer, good-humor, lieblings-zahnarzt,
+  adsuits, mine-mina, ergobag, we-celebrate, get-on, luis-lea. Damit haben alle
+  40 Projekte der Übersicht eine Case-Seite; Kacheln und Marquee verlinken alle.
+  Ohne echtes Kundenzitat entfällt die Zitat-Section (Highr, me, Finaplus,
+  system 360 mit Christians Stimme-Modul).
+- **Bildkonvertierung**: PNGs mit Alphakanal werden mit `premultiply`
+  abgeflacht (sonst graue Schattenflächen), Freisteller bekommen rundum 7 %
+  Rand (Alpha-Bounding-Box). 101 Bilder neu gerechnet, 45 Freisteller neu
+  gesetzt; Cologne-Comedy-Freisteller auf dem Marken-Pink.
+- **Header** schaltet über hellen Heros auf Ink (`data-light` auf der
+  Hero-Section, automatisch per Helligkeitsmessung gesetzt) und prüft den
+  Kontrast auch nach Laden, Resize und im Sekundentakt.
+- **Situationsseiten 01–05**: großflächiges Shootingmotiv unter dem Intro
+  (`.situation-visual`, links bündig mit dem Grid, rechts randabfallend, Coral-
+  Betonfragment oben rechts, 3200 px aus den Originalen); „Woran ihr es merkt“
+  als Headline links, nummerierte Liste rechts, bündig mit der zweiten Spalte
+  von „Wie wir helfen“; Section-Linien laufen nur innerhalb des Grids.
+- **Text**: keine Gedankenstriche mehr als Satzzeichen (1345 Ersetzungen,
+  Komma oder Punkt), Firmenname „CONCRETE – Brandbuilding GmbH“ bleibt.
+  Case-h1 auf 18ch mit balanciertem Umbruch. Mega-Menü-CTA als Button.
+- Kundenfotos ergänzt: SOLIT (Daniel Mensing), CA'N SORT (Jochen Lampert),
+  SKNMETRICS (Daria Klein), mdb finance (Markus Wiedergrün), Conlivo (Zuschreibung
+  Lennart Jörn), Digital2gether (Melanie Abel), Immofolia (nur Alexander Stade).
+
+Cache-Buster `site.css`/`site.js` auf `v=85`.
+
+
 ## 08.09.2026 – Case-Module ausgerollt, zwei neue Case-Seiten, Karussell mit Shootingfotos
 
 ### Case-Module „Die Herausforderung“ und „Ergebnis der Veränderung“
