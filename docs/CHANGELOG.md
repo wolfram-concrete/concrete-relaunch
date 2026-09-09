@@ -28,7 +28,33 @@
   SKNMETRICS (Daria Klein), mdb finance (Markus Wiedergrün), Conlivo (Zuschreibung
   Lennart Jörn), Digital2gether (Melanie Abel), Immofolia (nur Alexander Stade).
 
-Cache-Buster `site.css`/`site.js` auf `v=85`.
+- **Weiße Bildhintergründe abgeschafft**: Freisteller und Mockups auf Weiß
+  liegen jetzt auf Markenfarben (Case-Farbe im Wechsel mit einem 55-%-Papier-
+  Ton oder gemessenen Tönen aus dem Branding). Alpha-Quellen (PNG/WebP aus dem
+  WordPress-Export oder dem Drive-Archiv) werden mit `premultiply` und 7 %
+  Rand auf die Farbe gelegt; weiße JPG-Mockups per Flood-Fill vom Rand
+  (`-c.jpg`). Brandguide-Seiten (medium, Wackelzahn, Street Gourmet), bei
+  denen die Umfärbung den Inhalt auswusch, bleiben Originale. Nachgebessert
+  aus Alpha-Quellen: Maleco, Klang², Boneß & Euteneuer, Noveltea, the moc,
+  Lieblings-Zahnarzt.
+- **Galerien erweitert**: the moc (neun Produktfotos aus dem Shooting, vier
+  kurze Videos, Archivmotive; Becher-Podest als Lead), Noveltea (Flaschen-
+  Freisteller, Shooting, Styleguide-Farben), Boneß & Euteneuer (sechs weitere
+  Shootingfotos, Frühlingsfest als Lead), Lieblings-Zahnarzt (Hero und Lead
+  aus den 6000-px-Originalen). Klang²: Mozart-Keyvisual als Hero, damit die
+  Headline nicht mehr unter dem Logo liegt. Maleco-Zitat auf hellem Blau.
+- **Phasenseiten** (`phase-*.html`): Leistungspunkte verlinken auf ihre
+  Detailseiten (Pfeil, ohne Seite bleibt Text), Christians Video steht als
+  kleiner Teaser (`data-vteaser`) direkt unter der Liste, die eigene Video-
+  Section mit Trennlinie entfällt. Referenz für alle vier Phasen.
+- **Über uns**: beide Porträts im 4:5-Format, E-Mail-Links auf dem Coral-
+  Kasten wechseln beim Hover auf Papier statt Coral. Mega-Menü als eine Fläche
+  mit dem Header (kein Schnitt mehr an der Unterkante).
+- Weitere Bildtausche auf Zuruf: be.care, Highr, pause/play, Project Haya
+  (Lead), Potatohead (Sven Steffensmeier), Luis + Lea (Norbert Klotz),
+  AdSuits in Originalauflösung.
+
+Cache-Buster `site.css`/`site.js` auf `v=90`.
 
 
 ## 08.09.2026 – Case-Module ausgerollt, zwei neue Case-Seiten, Karussell mit Shootingfotos

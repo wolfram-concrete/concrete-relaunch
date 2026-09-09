@@ -140,9 +140,9 @@ final gemeint und sollen pixelgenau übernommen werden.
   zieht 50% hinter die Anfrage-Sektion hoch
 
 ## Offene Punkte
-- Case-Rollout Batch 2+ (Conlivo, Street Gourmet, MDB Finance, …33 weitere)
-  nach dem Nextbed-Muster; Teaser/Assets liegen unter `assets/cases/`
-- Luis + Lea hat kein Teaserbild (Textkachel als Platzhalter)
+- Alle 40 Case-Seiten stehen (Stand 09.09.2026); offen: Nextbed-Hero nur
+  1920 px, Detailseiten für KI-Tools, Reinzeichnung, Social Media,
+  Evaluierung fehlen (Punkte auf den Phasenseiten unverlinkt)
 - Kostenvideo („Was kostet ein Branding?") existiert nicht im CDN-Satz —
   Investitions-Stelle ist textfähig gebaut
 - Situationsseite 05 (Vertrauen/sensible Märkte) hat bewusst keine

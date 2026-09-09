@@ -33,6 +33,27 @@ Videos kommen vom CDN `concrete-video-cdn.vercel.app` (siehe `docs/VIDEO-VERANKE
 Originalbilder und der alte WordPress-Export liegen im Repository
 `wolfram-concrete/concrete-website`; hier gibt es bewusst keine Kopie davon.
 
+## Case-Seiten
+
+Alle 40 Projekte haben eine `case-<slug>.html` nach dem Nextbed-Muster
+(Hero, Meta, Herausforderung, Ausgangslage/Strategie, Vorher/Nachher-Kasten,
+Galerie, optional Zitat und Stimme, weitere Cases). Bilder liegen unter
+`assets/cases/<slug>/`, JPG bis 2400 px. Regeln: keine weißen
+Bildhintergründe (Freisteller auf Markenfarben), Karussell nur mit
+Shootingfotos, Zitat nur bei echtem Kundenzitat, keine Gedankenstriche im
+Fließtext. Freisteller aus PNG/WebP mit Alphakanal nur mit ffmpeg
+`premultiply` abflachen und mit 7 % Rand setzen, sonst werden weiche
+Schatten zu grauen Flächen. Details und Datum je Änderung in
+`docs/CHANGELOG.md`.
+
+## Phasen und Leistungen
+
+`leistungen.html` zeigt je Phase ein Case-Bild mit Shortlink und einen
+kleinen Video-Teaser (`data-vteaser`). Die vier `phase-*.html` verlinken
+ihre Leistungspunkte auf die Detailseiten und tragen Christians Video als
+Teaser direkt unter der Liste. Bei jeder Änderung an `site.css` oder
+`site.js` den Cache-Buster `?v=N` in allen HTML-Dateien erhöhen.
+
 ## Lokal ansehen
 
     python3 -m http.server 4173
