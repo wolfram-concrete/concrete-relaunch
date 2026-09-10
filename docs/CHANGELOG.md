@@ -1,5 +1,14 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (30) – Consent-Aktionen in zwei Hälften gegliedert
+
+- In der kompakten Consent-Karte steht nur „Akzeptieren“ als Button in der
+  linken Hälfte. „Ablehnen“ und „Einstellungen“ erscheinen als gleichartige
+  Textaktionen übereinander in der rechten Hälfte.
+- Ablehnung und Detailauswahl bleiben sichtbar, per Tastatur fokussierbar und
+  jeweils mit einem Klick erreichbar. Die Consent-Logik bleibt unverändert.
+- `site.css` erhält deshalb den globalen Cache-Buster `v=159`.
+
 ## 10.09.2026 (29) – Consent-Hinweis rechts unten positioniert
 
 - Die kompakte Consent-Karte sitzt jetzt statt links in der rechten unteren

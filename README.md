@@ -199,7 +199,9 @@ setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
 jederzeit geändert werden. Der initiale kompakte Hinweis sitzt mit sicherem
 Rand in der rechten unteren Bildschirmecke; der ausführliche
-Einstellungsdialog bleibt zentriert.
+Einstellungsdialog bleibt zentriert. In der ersten Ebene steht „Akzeptieren“
+als Button links; „Ablehnen“ und „Einstellungen“ bleiben als direkt
+erreichbare Textaktionen in der rechten Hälfte sichtbar.
 
 - Statistik: Google Analytics 4 und Microsoft Clarity
 - Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising
