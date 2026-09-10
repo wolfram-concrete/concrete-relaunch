@@ -970,6 +970,9 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 /* Erstgespraech: die vier Schritte stapeln auf dem Handy wie die Situationen */
 @media(max-width:900px){
   .eg-steps{display:block;border-top:0;padding-bottom:clamp(200px,36vh,340px)}
+  /* der Nachlauf gibt dem letzten Schritt Klebeweg, das Video rueckt trotzdem
+     direkt darunter und schiebt sich beim Weiterscrollen darueber */
+  .eg-video{margin-top:calc(clamp(24px,6vw,40px) - clamp(200px,36vh,340px))!important;position:relative;z-index:1;background:var(--paper)}
   .eg-step{position:sticky;top:calc(var(--header-height) - 1px);background:var(--paper);
     border-top:1px solid var(--rule);padding:clamp(20px,5vw,32px) 0 clamp(26px,6vw,40px)}
   .eg-step::before{content:"";position:absolute;inset:0 calc(-1 * var(--pad));background:var(--paper);z-index:-1}
