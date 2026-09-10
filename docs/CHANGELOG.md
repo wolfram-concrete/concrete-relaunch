@@ -112,7 +112,23 @@
 - **Branchenseite**: sechs Teaser getauscht, Überschriften zweizeilig.
   **Footer**: Rubriken in Coral. **Header-CTA**: keine dunkle Kontur im Hover.
 
-Cache-Buster `site.css`/`site.js` auf `v=98`.
+- **Mobil überarbeitet**: Menü mit Burger und X, Kopfleiste auf Papier mit
+  invertierter Wortmarke, „Projekt anfragen“ als Coral-CTA, Unterpunkte mit
+  Coral-Pfeilen und Trennlinie unter der Gruppe. Akkordeon und Mega-Menü
+  animieren weich (Höhe über eine auslaufende Kurve, Einträge gestaffelt).
+  „Aus der Praxis“ stapelt Headline, Bild, Copy, Links über die volle Breite;
+  die Galerie läuft dort ohne Parallax, sonst blitzt beim Wechsel der Grund
+  durch. BGF+ überlappt das Coral-Statement nicht mehr, das Statement füllt
+  den ganzen Schirm. Situationsfelder tragen den Pfeil-Link „Situation
+  ansehen“, weil auf dem Handy der Hover fehlt.
+- **Social-Profile**: LinkedIn und Instagram im Footer, auf der Kontaktseite
+  und im mobilen Menü, einfarbige Icons, die die Farbe ihrer Fläche annehmen.
+- **Preloader** ohne auffällige Typografie im Bild: Cologne Comedy zeigt den
+  Running Act in der Arena, Conlivo und Finaplus ihre Shootingfotos. Bild- und
+  Videodateien hängen nicht am Cache-Buster, ausgetauschte Motive bekommen
+  deshalb einen neuen Dateinamen.
+
+Cache-Buster `site.css`/`site.js` auf `v=113`.
 
 
 ## 08.09.2026 – Case-Module ausgerollt, zwei neue Case-Seiten, Karussell mit Shootingfotos

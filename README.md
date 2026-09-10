@@ -75,6 +75,16 @@ Sonderregel: Der Justify-Packer verteilt sonst die restliche Zeile schlecht.
 `data-full` am `figure.case-gallery__lead` zeigt das Lead-Bild ohne Beschnitt,
 der Container waechst mit.
 
+## Mobile Regeln
+
+Unter 900 px gelten eigene Regeln, der Desktop bleibt davon unberührt:
+Praxis-Module stapeln (Headline, Bild, Copy, Links) und laufen ohne Parallax
+in der Galerie, das Coral-Statement fuellt den Schirm und wird nicht
+ueberlappt, Situationsfelder tragen einen sichtbaren Pfeil-Link, weil es
+keinen Hover gibt. Das mobile Menue hat Burger und X, eine Kopfleiste auf
+Papier und den Coral-CTA. Auf- und Zuklappen animiert die Hoehe per JS
+(`site.js`, `[data-mnav-toggle]`), das Mega-Menue blendet weich ein.
+
 ## Lokal ansehen
 
     python3 -m http.server 4173
