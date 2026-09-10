@@ -197,7 +197,9 @@ Messwerte, Entscheidungen und verbleibende Grenzen des Optimierungspasses vom
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
-jederzeit geändert werden.
+jederzeit geändert werden. Der initiale kompakte Hinweis sitzt mit sicherem
+Rand in der rechten unteren Bildschirmecke; der ausführliche
+Einstellungsdialog bleibt zentriert.
 
 - Statistik: Google Analytics 4 und Microsoft Clarity
 - Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising

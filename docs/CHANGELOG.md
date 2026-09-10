@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (29) – Consent-Hinweis rechts unten positioniert
+
+- Die kompakte Consent-Karte sitzt jetzt statt links in der rechten unteren
+  Bildschirmecke: mit 18 px Abstand auf Desktop und 12 px auf Mobile.
+- Größe, Wording, Aktionen, Einstellungsdialog und Consent-Logik bleiben
+  unverändert.
+- `site.css` erhält deshalb den globalen Cache-Buster `v=158`.
+
 ## 10.09.2026 (28) – ergobag-Awards als Banderole vor der Herausforderung
 
 - Der bisherige große Award-Abschnitt nach der Bildwelt entfällt. Die vier
