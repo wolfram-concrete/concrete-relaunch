@@ -324,7 +324,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .proof-solo .proof-row h3{order:2;max-width:none}
 .proof-solo .proof-row__media{order:3}
 .proof-solo .proof-row .copy{order:4;max-width:none;margin-top:0}
-.proof-solo .proof-row>div>span:not(.proof-row__meta){order:5;margin-top:calc(-1 * var(--s3) / 2)}
+.proof-solo .proof-row>div>span:not(.proof-row__meta){order:5;margin-top:0!important}
 }
 
 /* Szenarien auf Ink */
