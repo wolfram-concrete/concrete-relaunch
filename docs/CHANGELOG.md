@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (8) – Technische Optimierung: JavaScript-Leerlauf
+
+- Parallax-Berechnungen laufen nur noch für Elemente im erweiterten
+  Viewport. Rezensionen und Projekt-Marquees pausieren außerhalb des
+  Viewports sowie in inaktiven Browser-Tabs; Case-Galerien starten ebenfalls
+  erst in Sichtweite.
+- Permanente Polling-Timer für Video-Ton und Navigationskontrast wurden durch
+  Ereignisse ersetzt. Resize-Messungen der Karussells und des Projektrasters
+  sind per `requestAnimationFrame` gebündelt.
+- Ausgeblendete Duplikate im Projekt-Marquee werden aus der Tab-Reihenfolge
+  genommen. Die Projektfilter melden ihren gedrückten Zustand und die
+  Ergebniszahl jetzt semantisch an Assistenztechnik.
+- Cache-Buster für `site.js` und `site.css` auf `v=149` erhöht.
+
 ## 10.09.2026 (7) – Technische Optimierung: Fonts
 
 - Die im ersten Bildschirm siteweit verwendeten Schnitte `arame-bold`,

@@ -21,7 +21,7 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=148">
+<link rel="stylesheet" href="site.css?v=149">
 <style>
 .page-head{padding-block:clamp(192px,28vw,400px) clamp(60px,7.5vw,108px);position:relative}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(40px,7.6vw,120px);line-height:.88;letter-spacing:0;margin:0;font-kerning:normal}
@@ -173,7 +173,7 @@
 
   <div class="fbar rv" data-screen-label="Filter">
     <div class="container">
-      <button class="fchip on" type="button" data-f="*">Alle <i>40</i></button><button class="fchip" type="button" data-f="Technologie & Industrie">Technologie & Industrie <i>5</i></button><button class="fchip" type="button" data-f="Finance & Professional Services">Finance & Professional Services <i>6</i></button><button class="fchip" type="button" data-f="Food, Beverage & Hospitality">Food, Beverage & Hospitality <i>7</i></button><button class="fchip" type="button" data-f="Architektur, Immobilien & Räume">Architektur, Immobilien & Räume <i>4</i></button><button class="fchip" type="button" data-f="Kultur, Medien & Entertainment">Kultur, Medien & Entertainment <i>4</i></button><button class="fchip" type="button" data-f="Consumer, Retail & Lifestyle">Consumer, Retail & Lifestyle <i>4</i></button><button class="fchip" type="button" data-f="Gesundheit & Care">Gesundheit & Care <i>5</i></button><button class="fchip" type="button" data-f="Arbeit, Bildung & Community">Arbeit, Bildung & Community <i>5</i></button>
+      <button class="fchip on" type="button" data-f="*" aria-pressed="true">Alle <i>40</i></button><button class="fchip" type="button" data-f="Technologie & Industrie" aria-pressed="false">Technologie & Industrie <i>5</i></button><button class="fchip" type="button" data-f="Finance & Professional Services" aria-pressed="false">Finance & Professional Services <i>6</i></button><button class="fchip" type="button" data-f="Food, Beverage & Hospitality" aria-pressed="false">Food, Beverage & Hospitality <i>7</i></button><button class="fchip" type="button" data-f="Architektur, Immobilien & Räume" aria-pressed="false">Architektur, Immobilien & Räume <i>4</i></button><button class="fchip" type="button" data-f="Kultur, Medien & Entertainment" aria-pressed="false">Kultur, Medien & Entertainment <i>4</i></button><button class="fchip" type="button" data-f="Consumer, Retail & Lifestyle" aria-pressed="false">Consumer, Retail & Lifestyle <i>4</i></button><button class="fchip" type="button" data-f="Gesundheit & Care" aria-pressed="false">Gesundheit & Care <i>5</i></button><button class="fchip" type="button" data-f="Arbeit, Bildung & Community" aria-pressed="false">Arbeit, Bildung & Community <i>5</i></button>
     </div>
   </div>
 
@@ -280,7 +280,7 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=148"></script>
+<script src="site.js?v=149"></script>
 <script>
 (function(){
   // Kacheln zeilenweise (neueste zuerst) auf Spalten verteilen
@@ -315,7 +315,8 @@
   }
   function rebalance(){if(measure())fill(build(colCount()));}
   layout();
-  addEventListener("resize",function(){lastN=0;layout();requestAnimationFrame(rebalance);});
+  var resizeTick=false;
+  addEventListener("resize",function(){if(resizeTick)return;resizeTick=true;requestAnimationFrame(function(){resizeTick=false;lastN=0;layout();rebalance();});},{passive:true});
   addEventListener("load",rebalance);
   grid.querySelectorAll("img").forEach(function(im){
     if(im.complete)return;
@@ -332,10 +333,10 @@
       var ok=(cluster==="*"||r.getAttribute("data-cluster")===cluster);
       r.classList.toggle("hide",!ok);if(ok)n++;
     });
-    if(count)count.textContent=n+(n===1?" Projekt":" Projekte");
+    if(count){count.setAttribute("aria-live","polite");count.textContent=n+(n===1?" Projekt":" Projekte");}
     fill(build(colCount()));
   }
-  chips.forEach(function(c){c.addEventListener("click",function(){chips.forEach(function(x){x.classList.remove("on")});c.classList.add("on");cluster=c.getAttribute("data-f");apply();});});
+  chips.forEach(function(c){c.addEventListener("click",function(){chips.forEach(function(x){x.classList.remove("on");x.setAttribute("aria-pressed","false")});c.classList.add("on");c.setAttribute("aria-pressed","true");cluster=c.getAttribute("data-f");apply();});});
 })();
 </script>
 </body>
