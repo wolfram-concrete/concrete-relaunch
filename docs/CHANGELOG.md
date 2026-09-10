@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (22) – Bildfokus des Standorts Frankfurt angepasst
+
+- Der individuelle Fokus des Frankfurter Standortfotos liegt jetzt weiter
+  unten. Dadurch zeigt der 4:3-Ausschnitt mehr vom Gebäude und weniger Himmel,
+  ohne das Originalbild oder das globale Standortlayout zu verändern.
+- Kein Cache-Buster nötig, weil `site.css` und `site.js` unverändert bleiben.
+
 ## 10.09.2026 (21) – Firmierung auf der Kontaktseite korrigiert
 
 - Die Firmierung an den Standorten Hamburg und Frankfurt lautet jetzt
