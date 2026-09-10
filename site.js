@@ -458,9 +458,12 @@
       // Umbruch per dynamischer Programmierung: minimale Summe der quadrierten Abweichungen
       // aller Zeilen von der Zielhöhe; die letzte Zeile zählt nicht, sie darf abweichen
       var n=items.length,ars=items.map(ar),best=new Array(n+1).fill(Infinity),prev=new Array(n+1).fill(-1);best[0]=0;
+      // Auf schmalen Screens hoechstens zwei Bilder pro Zeile, sonst werden sie zu klein
+      var maxPer=W<560?2:99;
       function h(count,sumAr){return (W-gap*(count-1))/sumAr;}
       for(var i=0;i<n;i++){if(best[i]===Infinity)continue;var sumAr=0;
         for(var j=i;j<n;j++){sumAr+=ars[j];var count=j-i+1,rh=h(count,sumAr);
+          if(count>maxPer)break;
           if(rh<H*0.6&&count>1)break;
           var cost=j===n-1?0:(rh-H)*(rh-H)*(rh>H*1.6?4:1);
           if(best[i]+cost<best[j+1]){best[j+1]=best[i]+cost;prev[j+1]=i;}}}

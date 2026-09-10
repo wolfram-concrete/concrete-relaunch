@@ -667,7 +667,7 @@ section.case-quote .qtex{top:0;height:100%}
 .case-mosaic>*:not(.fill){opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .case-mosaic.in>*{opacity:1;transform:none}
 .case-mosaic.in>*:nth-child(2){transition-delay:.06s}.case-mosaic.in>*:nth-child(3){transition-delay:.12s}.case-mosaic.in>*:nth-child(4){transition-delay:.18s}.case-mosaic.in>*:nth-child(5){transition-delay:.24s}.case-mosaic.in>*:nth-child(n+6){transition-delay:.3s}
-@media(max-width:700px){.case-mosaic{--h:clamp(150px,44vw,240px);gap:8px}}
+@media(max-width:700px){.case-mosaic{--h:clamp(190px,56vw,300px);gap:8px}}
 @media(prefers-reduced-motion:reduce){.case-mosaic>*{opacity:1;transform:none;transition:none}}
 /* Stimme: kleineres Foto mit Betonschicht im unteren Bereich */
 .stimme{align-items:stretch}
