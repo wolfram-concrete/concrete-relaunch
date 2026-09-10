@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (12) – Vercel-Deployment bereinigt
+
+- Eine `.vercelignore` schließt vier Entwurfsseiten, zwei HTML-Partials,
+  Eingangs- und Dokumentationsordner sowie ausschließlich vom Prototyp
+  verwendete Ressourcen aus dem Deployment aus.
+- Die Arbeitsdateien bleiben vollständig im Git erhalten, sind aber nicht
+  mehr als unbeabsichtigte öffentliche URLs erreichbar.
+
 ## 10.09.2026 (11) – Dauerhafter technischer Preflight
 
 - `tools/technical-preflight.py` prüft alle 129 Sitemap-Seiten auf fehlende

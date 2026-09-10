@@ -114,6 +114,26 @@ def local_path(raw_url: str, page: Path, *, link: bool) -> tuple[Path | None, st
 
 def scan() -> list[str]:
     findings: list[str] = []
+    required_vercel_ignores = {
+        "_eingang/",
+        "_entwuerfe/",
+        "docs/",
+        "tools/",
+        "README.md",
+        "*.partial.html",
+        "concrete-tokens.css",
+        "motion.css",
+        "motion.js",
+    }
+    vercel_ignore = ROOT / ".vercelignore"
+    ignored = {
+        line.strip()
+        for line in vercel_ignore.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    } if vercel_ignore.is_file() else set()
+    for missing in sorted(required_vercel_ignores - ignored):
+        findings.append(f".vercelignore: missing deployment exclusion: {missing}")
+
     pages = sitemap_pages()
     if len(pages) != 129:
         findings.append(f"sitemap.xml: expected 129 URLs, found {len(pages)}")

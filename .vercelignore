@@ -1,0 +1,12 @@
+# Arbeits- und Dokumentationsdateien, die nicht Teil der Website sind
+_eingang/
+_entwuerfe/
+docs/
+tools/
+README.md
+*.partial.html
+
+# Nur von den Entwurfsseiten verwendete Prototyp-Ressourcen
+concrete-tokens.css
+motion.css
+motion.js
