@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (13) – Case-Karussell per Tastatur bedienbar
+
+- Das „Weitere Projekte“-Band ist als benannte Region fokussierbar, pausiert
+  bei Fokus und lässt sich mit Links-/Rechts-Pfeil kartenweise bewegen.
+  Pointer-, Wheel- und Autoplay-Verhalten bleiben unverändert.
+- Cache-Buster für `site.js` und `site.css` auf `v=152` erhöht.
+
 ## 10.09.2026 (12) – Vercel-Deployment bereinigt
 
 - Eine `.vercelignore` schließt vier Entwurfsseiten, zwei HTML-Partials,

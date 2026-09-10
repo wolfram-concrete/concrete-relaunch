@@ -481,8 +481,9 @@
   document.querySelectorAll("[data-marquee]").forEach(function(m){
     var track=m.querySelector(".case-marquee__track"),row=m.querySelector(".case-marquee__row");if(!track||!row)return;
     track.querySelectorAll('.case-marquee__row[aria-hidden="true"] a,.case-marquee__row[aria-hidden="true"] button').forEach(function(el){el.setAttribute("tabindex","-1")});
+    m.tabIndex=0;m.setAttribute("role","region");if(!m.getAttribute("aria-label"))m.setAttribute("aria-label","Weitere Projekte");
     var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
-    var x=0,v=0,auto=reduce?0:0.35,target=1,factor=1,down=false,sx=0,sxx=0,lastX=0,lastT=0,moved=0,last=0,loop=0;
+    var x=0,v=0,auto=reduce?0:0.35,target=1,factor=1,down=false,sx=0,sxx=0,lastX=0,lastT=0,moved=0,last=0,loop=0,keyHold=0;
     function gap(){return parseFloat(getComputedStyle(track).gap)||0}
     function measure(){loop=row.getBoundingClientRect().width+gap()}
     var measureTick=false;
@@ -499,6 +500,14 @@
     if("IntersectionObserver" in window)new IntersectionObserver(function(entries){inView=entries[0].isIntersecting;if(inView)start();},{rootMargin:"160px 0px"}).observe(m);
     document.addEventListener("visibilitychange",start);
     m.addEventListener("pointerenter",function(){target=0.15});m.addEventListener("pointerleave",function(){if(!down)target=1});
+    m.addEventListener("focusin",function(){target=0});m.addEventListener("focusout",function(){if(!m.matches(":hover"))target=1});
+    m.addEventListener("keydown",function(e){
+      if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;
+      e.preventDefault();target=0;factor=0;v=0;
+      var card=row.querySelector("a"),amount=(card?card.getBoundingClientRect().width:320)+gap();
+      x+=e.key==="ArrowLeft"?amount:-amount;wrap();track.style.transform="translate3d("+x.toFixed(2)+"px,0,0)";
+      clearTimeout(keyHold);keyHold=setTimeout(function(){if(!m.matches(":hover,:focus-within"))target=1;},2600);
+    });
     m.addEventListener("pointerdown",function(e){down=true;v=0;sx=e.clientX;sxx=x;lastX=e.clientX;lastT=performance.now();moved=0;m.classList.add("dragging");m.setPointerCapture(e.pointerId);});
     m.addEventListener("pointermove",function(e){if(!down)return;var now=performance.now();var dx=e.clientX-lastX;var dt=Math.max(1,now-lastT);v=v*0.6+(dx/dt)*0.4;lastX=e.clientX;lastT=now;x=sxx+(e.clientX-sx);moved=Math.max(moved,Math.abs(e.clientX-sx));wrap();});
     function up(e){if(!down)return;down=false;m.classList.remove("dragging");if(performance.now()-lastT>80)v=0;target=m.matches(":hover")?0.15:1;}
