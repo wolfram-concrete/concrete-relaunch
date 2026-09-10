@@ -1,5 +1,24 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (31) – Finaler Desktop-/Mobile-Preflight dokumentiert
+
+- Alle 129 Sitemap-Seiten wurden auf Desktop, Mobile und 320 px geprüft. Die
+  387 Seiten-/Viewport-Kombinationen blieben ohne defekte interne Links oder
+  lokale Ressourcen, Konsolenfehler, fehlende Alt-Attribute, H1-Fehler und
+  horizontal bedienbaren Überlauf.
+- Navigation, Mega-Menü, mobiles Untermenü, Projektfilter, Case- und
+  Footer-Akkordeons sowie Consent-Ablehnung, -Zustimmung und -Einstellungen
+  wurden als gerenderte Nutzerwege geprüft. `seo-gauntlet.py` und
+  `technical-preflight.py` enden weiterhin mit Exit 0.
+- README hält den Launchstatus GELB und vier vor dem Domainwechsel zu
+  schließende Gates fest: zwei alte WordPress-Videoquellen, 128 abweichende
+  `og:url`-Angaben, Consent-/GTM-Freigabe sowie Auth-/Indexierungsumschaltung.
+- Weitere nicht blockierende Qualitätspunkte und der öffentliche Smoke-Test
+  direkt nach dem Deployment sind ebenfalls im README verankert.
+- Keine produktive Freischaltung, keine Änderung an `noindex`,
+  `middleware.js`, Seitencode, `site.css` oder `site.js`; deshalb bleibt der
+  Cache-Buster bei `v=159`.
+
 ## 10.09.2026 (30) – Consent-Aktionen in zwei Hälften gegliedert
 
 - In der kompakten Consent-Karte steht nur „Akzeptieren“ als Button in der

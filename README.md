@@ -191,6 +191,45 @@ Cache-Buster in allen HTML-Dateien.
 Messwerte, Entscheidungen und verbleibende Grenzen des Optimierungspasses vom
 10.09.2026 stehen in `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md`.
 
+### Finaler Preflight vom 10.09.2026
+
+Der vollständige Desktop-/Mobile-Gauntlet gegen `main` auf Commit `4796c84`
+umfasste alle 129 Sitemap-Seiten bei 1440 px, 390 px und 320 px. Die daraus
+entstandenen 387 Seiten-/Viewport-Prüfungen meldeten keine defekten internen
+Links oder lokalen Ressourcen, keine Konsolenfehler, keine fehlenden
+Alt-Attribute, keine H1-Fehler und keinen horizontal bedienbaren Überlauf.
+Navigation, Mega-Menü, mobiles Untermenü, Projektfilter, Case- und
+Footer-Akkordeons sowie die Consent-Zustände wurden zusätzlich interaktiv
+geprüft. Beide projektspezifischen Gauntlets enden mit Exit 0.
+
+Der Launchstatus bleibt trotzdem **GELB**, bis diese Punkte abgeschlossen und
+erneut geprüft sind:
+
+1. In `projekte.html` die beiden alten WordPress-Videoquellen ersetzen. Das
+   Nextbed-Vorschauvideo unter `/wp-content/uploads/2026/02/` liefert bereits
+   404; das 23,6-MB-Agentur-Reel unter `/wp-content/uploads/2023/10/` würde
+   nach einem vollständigen Domainwechsel ohne separate Migration ausfallen.
+2. Die `og:url`-Angaben von 128 Unterseiten an Canonical und Sitemap angleichen
+   und dort ebenfalls die Clean-URL ohne `.html` verwenden.
+3. Die aktuelle visuelle Gewichtung der Erstebenen-Consent-Aktionen rechtlich
+   freigeben oder die Ablehnung wieder als zur Zustimmung vergleichbare
+   Schaltfläche darstellen. Zusätzlich Facebook- und HubSpot-Alt-Tags im GTM
+   pausieren und eine bereinigte Container-Version veröffentlichen.
+4. Am Umschalttag Authentifizierung und beide `noindex`-Ebenen entfernen und
+   anschließend die öffentliche Auslieferung auf der echten Domain prüfen.
+
+Eine eigene `404.html`, zwei H1-zu-H3-Sprünge auf Kontakt und Erstgespräch,
+zwei unsichtbare Steuerzeichen in `kontakt.html`, strukturierte
+Organization-/Standortdaten sowie zusätzliche CSP-/Clickjacking-Header sind
+keine harten Launchblocker, bleiben aber dokumentierte Qualitätsaufgaben. Der
+Desktop-LCP der Startseite und der Coral-/Paper-Kontrast sind weiterhin die
+bekannten, gestalterisch abhängigen Abweichungen aus dem Technikbericht.
+
+Die lokale Arbeitskopie unter `/Users/wolfram/web-projekte/concrete-relaunch`
+stand beim finalen Audit noch auf `5fb524d`. Für Abnahme und weitere Arbeit
+zuerst mit `origin/main` synchronisieren; die Vercel-Revision von `4796c84`
+ist erfolgreich deployed.
+
 ## Datenschutz und Consent
 
 `consent-v3.js` ist der eigene Consent-Manager der statischen Website. Er
@@ -248,21 +287,27 @@ Am Launch-Tag:
     # 1) Meta-Tag aus allen Seiten nehmen
     sed -i '' '/<meta name="robots" content="noindex,nofollow">/d' *.html
     # 2) Header-Block aus vercel.json loeschen (Eintrag mit X-Robots-Tag)
-    # 3) Cache-Buster erhoehen, committen, pushen
-    # 4) Pruefen
+    # 3) middleware.js entfernen und PREVIEW_PASSWORD nicht mehr verwenden
+    # 4) Cache-Buster erhoehen, committen, pushen
+    # 5) Pruefen
     python3 tools/seo-gauntlet.py
+    python3 tools/technical-preflight.py
     curl -sI https://www.concrete-designs.de/ | grep -i x-robots-tag   # darf nichts liefern
 
 Die `robots.txt` bleibt unveraendert auf `Allow: /`. Eine Sperre dort waere
 falsch, weil Suchmaschinen die Seiten crawlen muessen, um ein `noindex`
 ueberhaupt zu sehen.
 
-Danach: Google Search Console und Bing Webmaster Tools einrichten, die
-`sitemap.xml` einreichen und die Weiterleitungen aus `vercel.json` gegen die
-alte URL-Liste des SEO-Experten gegenlesen.
+Danach öffentlich prüfen: Startseite und zentrale Seitentypen mit Status 200,
+eine unbekannte URL mit Status 404, `robots.txt`, `sitemap.xml`, ausgewählte
+alte Weiterleitungen, Canonicals, Calendly, Consent-Zustände und die
+Browserkonsole. Anschließend die `sitemap.xml` in Google Search Console und
+Bing Webmaster Tools einreichen beziehungsweise erneut anstoßen.
 
 ## Status
 
-Vorlaunch. Technischer Preflight abgeschlossen; offene Entscheidungen stehen
-in `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` und
+Vorlaunch, Status **GELB**. Der vollständige technische Preflight ist
+abgeschlossen; die vier oben genannten Launch-Gates sind vor der
+Domainumschaltung zu schließen. Weitere Entscheidungen stehen in
+`docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` und
 `docs/UEBERGABE-CLAUDE-CODE.md`.
