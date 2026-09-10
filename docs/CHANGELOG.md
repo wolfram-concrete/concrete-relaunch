@@ -1,5 +1,21 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (10) – Technische Optimierung: größte Bilddateien
+
+- Die 3,1-MB-Betontextur wurde bei identischem Seitenverhältnis und
+  unverändertem Motiv auf die tatsächlich benötigte Retina-Auflösung
+  reduziert (`beton-red-alpha-quer-hd-opt.webp`, 1,2 MB). Sie erscheint nie
+  breiter als rund 900 px.
+- Sechs der auf der Homepage und im Mega-Menü am häufigsten oder größten
+  geladenen JPEGs liegen zusätzlich als cache-sicher benannte WebP-Dateien
+  vor. Alle betroffenen Verweise nutzen die neuen Dateien; Maße und
+  Bildausschnitt bleiben identisch.
+- Allein die gemessene mobile Homepage spart dadurch gegenüber dem
+  vorherigen Stand rund 3,0 MB Bildtransfer. Die sieben danach unreferenzierten
+  Originaldateien wurden entfernt; über die Git-Historie bleiben sie
+  wiederherstellbar. Der Asset-Ordner schrumpft netto um rund 3 MB.
+- Cache-Buster für `site.js` und `site.css` auf `v=151` erhöht.
+
 ## 10.09.2026 (9) – Technische Optimierung: Accessibility und Favicon
 
 - Die animierte „Aus der Praxis“-Zeile besitzt jetzt einen regulären,

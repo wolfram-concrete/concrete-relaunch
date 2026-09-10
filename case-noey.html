@@ -22,7 +22,7 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=150">
+<link rel="stylesheet" href="site.css?v=151">
 <style>
 /* ===== Projekt-Seite (Muster) ===== */
 .case-hero{overflow:hidden}
@@ -71,7 +71,7 @@
 @media(max-width:700px){.case-imgs{grid-template-columns:1fr 1fr}.case-imgs .wide{grid-column:span 2}}
 /* Zitat */
 .case-quote{background:var(--coral);color:var(--ink);position:relative;overflow:visible}
-.case-quote .qtex{position:absolute;top:-14%;right:-2%;width:clamp(340px,46vw,900px);height:118%;background:url("assets/beton/beton-red-alpha-quer-hd.webp") top right/contain no-repeat;mix-blend-mode:multiply;opacity:.85;pointer-events:none;z-index:0}
+.case-quote .qtex{position:absolute;top:-14%;right:-2%;width:clamp(340px,46vw,900px);height:118%;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") top right/contain no-repeat;mix-blend-mode:multiply;opacity:.85;pointer-events:none;z-index:0}
 .case-quote .container{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,4vw,64px);align-items:center;padding-block:clamp(52px,7vw,104px)}
 .case-quote .qimg{width:100%;max-width:320px;display:block;box-shadow:0 22px 60px rgba(23,21,19,.28)}
 .case-quote blockquote{margin:0;font-family:"Arame";font-weight:700;font-size:clamp(22px,2.6vw,38px);line-height:1.05}
@@ -107,7 +107,7 @@
               <a class="button button--solid mega-menu__cta" href="projekte.html">Alle Projekte</a>
             </div>
             <div class="mega-cases">
-              <a href="case-nextbed.html"><span class="mc-img"><img src="assets/cases/nextbed/header.jpg" alt="Nextbed" loading="lazy" width="1920" height="1080" decoding="async"></span><b>Nextbed</b><i>Neue Produktmarke</i></a>
+              <a href="case-nextbed.html"><span class="mc-img"><img src="assets/cases/nextbed/header-opt.webp" alt="Nextbed" loading="lazy" width="1920" height="1080" decoding="async"></span><b>Nextbed</b><i>Neue Produktmarke</i></a>
               <a href="case-noey.html"><span class="mc-img"><img src="assets/cases/noey/header.jpg" alt="NOEY" loading="lazy" width="1920" height="1080" decoding="async"></span><b>NOEY</b><i>Robotik</i></a>
               <a href="case-bgf.html"><span class="mc-img"><img src="assets/cases/bgf/header.jpg" alt="BGF+" loading="lazy" width="1536" height="864" decoding="async"></span><b>BGF+</b><i>Rebranding</i></a>
               <a href="case-cologne-comedy.html"><span class="mc-img"><img src="assets/cases/cologne-comedy.webp" alt="Cologne Comedy Festival" loading="lazy" width="640" height="359" decoding="async"></span><b>Cologne Comedy</b><i>Kultur</i></a>
@@ -250,7 +250,7 @@
   <section class="case-quote" style="--case-color:#e088f8;--case-ink:#171513" data-screen-label="Zitat">
     <div class="qtex plx" data-plx="-6" aria-hidden="true"></div>
     <div class="container">
-      <img class="rv-media plx qimg" data-plx="-10" src="assets/cases/noey/gruender.jpg" alt="Timo und Tobias, Gründer NOEY Solutions" width="1280" height="1920">
+      <img class="rv-media plx qimg" data-plx="-10" src="assets/cases/noey/gruender-opt.webp" alt="Timo und Tobias, Gründer NOEY Solutions" width="1280" height="1920">
       <figure style="margin:0" class="rv">
         <blockquote style="font-size:clamp(17px,1.6vw,24px);line-height:1.4;font-family:'Grotesk',Arial,sans-serif;font-weight:400">„Die Zusammenarbeit mit CONCRETE ist absolut zu empfehlen. Offene Kommunikation, Transparenz und ehrliches Feedback sind genau das, was wir uns von einem Partner gewünscht haben, und genau das haben wir bekommen. Da wir zuvor noch nie eine eigene Marke aufgebaut hatten, war die Zusammenarbeit für uns auch ein echter Lernprozess. Der wichtigste Take-away: Eine Marke ist weit mehr als ein Logo und ein paar Farben. Sie ist vor allem ein Gefühl, das transportiert wird. Als junges Unternehmen war Geschwindigkeit für uns entscheidend. CONCRETE hat ein Angebot ausgearbeitet, das genau das ermöglicht, strukturiert, zielgerichtet und ohne Abstriche bei der Qualität. Wir sind sehr glücklich mit dem Ergebnis und freuen uns auf weitere gemeinsame Projekte!"</blockquote>
         <figcaption>Timo &amp; Tobias<br><b>Gründer NOEY Solutions GmbH</b></figcaption>
@@ -333,7 +333,7 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=150"></script>
+<script src="site.js?v=151"></script>
 <script>
 document.querySelectorAll("video[data-fallback]").forEach(function(v){
   v.addEventListener("error",function(){
