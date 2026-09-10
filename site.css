@@ -797,7 +797,7 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 .sym--num li:first-child{--sym-pt:0px;border-top:0;padding-top:0}
 .sym--num li:last-child{padding-bottom:0}
 /* Ziffer auf Oberlaenge mit der ersten Textzeile: Versalhoehe beider Schriften ist .7em */
-.sym--num li::before{content:counter(sym,decimal-leading-zero);position:absolute;left:0;top:calc(var(--sym-pt) + .479rem - .216 * var(--sym-fs));font-family:"Arame";font-weight:700;font-size:var(--sym-fs);line-height:1;color:var(--coral)}
+.sym--num li::before{content:counter(sym,decimal-leading-zero);position:absolute;left:0;top:calc(var(--sym-pt) + .489rem - .1844 * var(--sym-fs));font-family:"Arame";font-weight:700;font-size:var(--sym-fs);line-height:1;color:var(--coral)}
 
 /* Trennlinien der Sections laufen nur innerhalb des Grids */
 section.sec--line{border-top:0;position:relative}
