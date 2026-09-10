@@ -144,11 +144,22 @@ ausserdem einen zitierbaren Definitionssatz (`.geo-def`) fuer Antwort-
 maschinen. Die alten WordPress-Adressen liegen als Weiterleitung in
 `vercel.json`; die Zuordnung steht in `tools/redirects.json`.
 
+## Technischer Preflight
+
+Der technische Gauntlet prüft alle Sitemap-Seiten auf interne Links,
+Fragmentziele, lokale Ressourcen, Bilddimensionen, doppelte IDs,
+Medien-Querystrings, Cache-Version und das verpflichtende Vorlaunch-`noindex`:
+
+    python3 tools/technical-preflight.py
+
+Messwerte, Entscheidungen und verbleibende Grenzen des Optimierungspasses vom
+10.09.2026 stehen in `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md`.
+
 ## Lokal ansehen
 
-    python3 -m http.server 4173
+    python3 -m http.server 4174
 
-Dann `http://localhost:4173/`.
+Dann `http://localhost:4174/`.
 
 ## Vor dem Livegang: noindex entfernen
 
@@ -187,4 +198,6 @@ alte URL-Liste des SEO-Experten gegenlesen.
 
 ## Status
 
-Vorlaunch. Offene Punkte: `docs/UEBERGABE-CLAUDE-CODE.md`.
+Vorlaunch. Technischer Preflight abgeschlossen; offene Entscheidungen stehen
+in `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` und
+`docs/UEBERGABE-CLAUDE-CODE.md`.

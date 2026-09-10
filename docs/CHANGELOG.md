@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (14) – Technischer Abschlussbericht
+
+- `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` dokumentiert Scope,
+  Vorher-/Nachher-Lighthouse-Werte, umgesetzte Maßnahmen, Gauntlet-
+  Gegenhypothesen und offene Entscheidungen.
+- README um den technischen Prüfbefehl, den Bericht und den verbindlichen
+  lokalen Port 4174 ergänzt.
+
 ## 10.09.2026 (13) – Case-Karussell per Tastatur bedienbar
 
 - Das „Weitere Projekte“-Band ist als benannte Region fokussierbar, pausiert
