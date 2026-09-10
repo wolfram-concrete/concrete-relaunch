@@ -324,7 +324,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .proof-solo .proof-row h3{order:2;max-width:none}
 .proof-solo .proof-row__media{order:3}
 .proof-solo .proof-row .copy{order:4;max-width:none;margin-top:0}
-.proof-solo .proof-row>div>span:not(.proof-row__meta){order:5;margin-top:0}
+.proof-solo .proof-row>div>span:not(.proof-row__meta){order:5;margin-top:calc(-1 * var(--s3) / 2)}
 }
 
 /* Szenarien auf Ink */
@@ -337,7 +337,18 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .scenario-link__title{font-family:"Arame";font-weight:700;font-size:clamp(21px,2.1vw,29px);line-height:1.04}
 .scenario-link__copy{font-size:var(--fs-body);color:rgba(243,239,231,.62);max-width:44ch}
 .scenario-link:hover .scenario-link__title,.scenario-link:focus-visible .scenario-link__title{color:var(--coral-l)}
-@media(max-width:900px){.scenario-link{grid-template-columns:56px 1fr}.scenario-link__copy{grid-column:2}}
+@media(max-width:900px){.scenario-link{grid-template-columns:56px 1fr}.scenario-link__copy{grid-column:2}
+/* auf dem Handy fehlt der Hover: ein sichtbarer Hinweis zeigt, dass die Felder fuehren */
+.scenario-link__copy::after{content:"Situation ansehen";display:flex;align-items:center;gap:.5em;
+  margin-top:var(--s3);font-family:"Arame";font-weight:700;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--coral)}
+.scenario-link__copy::before{content:"";position:absolute;left:0;bottom:0;width:.62em;height:.76em;
+  background:var(--coral);-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;
+  mask:url("assets/arrow.svg") no-repeat center/contain;transform:translateY(-.18em)}
+.scenario-link__copy{position:relative;padding-bottom:0}
+.scenario-link__copy::after{padding-left:1.1em}
+.scenario-link:active .scenario-link__title{color:var(--coral-l)}
+}
 
 /* Pause: Coral-Beton komponiert (Vollton + Alpha-Textur) + Statement-Übergröße */
 .pause-wrap{position:relative;z-index:3;padding-bottom:clamp(48px,7vw,104px)}
@@ -843,3 +854,17 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
   -webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain;opacity:1;transition:transform .25s ease}
 .mobile-nav__sub a:hover::before,.mobile-nav__sub a:focus-visible::before{transform:translateX(3px)}
 .mobile-nav__sub a small{display:block;margin-top:3px;font-weight:400;color:var(--ink-60)}
+
+/* --- Social-Profile: monochrome Icons, Farbe folgt dem Umfeld --- */
+.social-links{display:flex;align-items:center;gap:14px;margin:0;padding:0;list-style:none}
+.social-links a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;color:inherit;
+  border-radius:50%;transition:opacity .25s ease,transform .3s cubic-bezier(.2,.8,.2,1),background .25s ease}
+.social-links a::before{content:"";width:20px;height:20px;background:currentColor;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:contain;mask-size:contain}
+.social-links a.li::before{-webkit-mask-image:url("assets/social/linkedin.svg");mask-image:url("assets/social/linkedin.svg")}
+.social-links a.ig::before{-webkit-mask-image:url("assets/social/instagram.svg");mask-image:url("assets/social/instagram.svg")}
+.social-links a:hover,.social-links a:focus-visible{color:var(--coral);transform:translateY(-2px)}
+.footer-legal .social-links{order:2}
+.contact-social{margin-top:var(--s4);color:var(--ink)}
+.mobile-nav .social-links{margin-top:var(--s5);color:var(--ink)}
