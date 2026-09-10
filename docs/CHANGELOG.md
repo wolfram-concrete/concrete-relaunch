@@ -1,5 +1,14 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (25) – Betonfragment an der Hilfe-Sektion vergrößert
+
+- Das dekorative Coral-Betonfragment am Übergang zu „Wo wir helfen können“
+  ist responsiv um 70 Prozent vergrößert.
+- Die obere linke Ausgangskante bleibt erhalten; die zusätzliche Fläche wächst
+  gezielt nach rechts unten. Inhalte, Raster und alle übrigen Betonfragmente
+  bleiben unverändert.
+- Kein Cache-Buster nötig, weil `site.css` und `site.js` unverändert bleiben.
+
 ## 10.09.2026 (24) – Consent-Banner kompakt und sachlich gestaltet
 
 - Der initiale Consent-Hinweis erscheint jetzt als kleine Karte am unteren
