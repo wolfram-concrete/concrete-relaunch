@@ -14,7 +14,7 @@
 <meta property="og:image:alt" content="Das CONCRETE-Team im Gespräch">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.concrete-designs.de/assets/og/concrete-og.jpg">
-<link rel="stylesheet" href="site.css?v=130">
+<link rel="stylesheet" href="site.css?v=132">
 <style>
 .page-head{padding-block:clamp(120px,18vw,260px) clamp(48px,6vw,88px)}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(38px,6.8vw,104px);line-height:.9;margin:0;font-kerning:normal}
@@ -29,8 +29,9 @@
 @media(max-width:820px){.faqg .grid{grid-template-columns:1fr}}
 .faqg h2{font-size:clamp(20px,2vw,28px)}
 .faql{list-style:none;margin:0;padding:0;max-width:72ch}
-.faql a{display:flex;justify-content:space-between;gap:var(--s3);padding:13px 0;border-bottom:1px solid var(--rule);font-size:15.5px;line-height:1.45}
-.faql a::after{content:"↗";color:var(--coral);flex:none}
+.faql a{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s3);padding:13px 0;border-bottom:1px solid var(--rule);font-size:15.5px;line-height:1.45}
+.faql a::after{display:block;flex:none;content:"";width:.42em;height:.535em;margin-top:calc((1.45em - .535em) / 2);background:var(--coral);-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.faql a:hover::after,.faql a:focus-visible::after{transform:translateX(.45em)}
 
 </style>
 </head>
@@ -106,7 +107,7 @@
       <svg class="brand-arrow" viewBox="0 0 300 52" aria-hidden="true"><path d="M6 8 L22 25.95 H284" stroke="currentColor" stroke-width="11.3" fill="none"/><g transform="translate(259.32,0)"><path fill="currentColor" d="M40.39,20.29h-6.82l.03-.03C27.49,14.1,21.37,7.95,15.24,1.82,14.25,.73,12.86,.09,11.39,.03c-3.79-.03-7.58-.03-11.39-.03V11.31c2.59,0,5.17,0,7.76,.02,.49,0,.96,.18,1.33,.5,4.73,4.68,9.45,9.38,14.15,14.1-4.71,4.71-9.43,9.41-14.15,14.1-.37,.32-.84,.5-1.33,.5-2.59,.02-5.17,.02-7.76,.02v11.3c3.81,0,7.6,0,11.39-.03,1.47-.05,2.86-.7,3.85-1.79,6.12-6.14,12.23-12.28,18.33-18.42h7.11v-11.32h-.29Z"/></g></svg>
 <p class="lead rv rv-d2">Die Fragen, die uns Unternehmen vor und während der Markenarbeit am häufigsten stellen, kuratiert aus unserem FAQ-Bestand. Jede Antwort öffnet den ausführlichen Beitrag.</p>
 </div></section><section class="faqg" data-screen-label="Zusammenarbeit & Kosten"><div class="container grid">
-  <h2 class="rv">Zusammenarbeit & Kosten</h2>
+  <h2 class="rv">Zusammen&shy;arbeit & Kosten</h2>
   <ul class="faql rv"><li><a href="was-kostet-ein-marken-setup-bei-euch.html">Was kostet ein Marken-Setup bei euch?</a></li><li><a href="wie-schnell-koennt-ihr-eine-marke-entwickeln.html">Wie schnell könnt ihr eine Marke entwickeln?</a></li><li><a href="uebernehmet-ihr-nur-die-strategie-oder-auch-design-und-umsetzung.html">Übernehmt ihr nur die Strategie oder auch Design und Umsetzung?</a></li><li><a href="muessen-wir-schon-genau-wissen-wie-wir-uns-positionieren-wollen.html">Müssen wir schon genau wissen, wie wir uns positionieren wollen?</a></li><li><a href="unterstuetzt-ihr-auch-bei-pitch-decks-und-investor-relations.html">Unterstützt ihr auch bei Pitch-Decks und Investor Relations?</a></li><li><a href="koennen-wir-unsere-eigenen-ideen-und-vorlieben-im-branding-prozess-einbringen.html">Können wir eigene Ideen und Vorlieben in den Prozess einbringen?</a></li><li><a href="was-passiert-wenn-uns-mehrere-designrouten-gefallen.html">Was passiert, wenn uns mehrere Designrouten gefallen?</a></li></ul>
 </div></section><section class="faqg" data-screen-label="Strategie & Analyse"><div class="container grid">
   <h2 class="rv">Strategie & Analyse</h2>
@@ -180,6 +181,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=130"></script>
+<script src="site.js?v=132"></script>
 </body>
 </html>
