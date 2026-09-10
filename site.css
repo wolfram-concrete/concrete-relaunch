@@ -868,3 +868,19 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .footer-legal .social-links{order:2}
 .contact-social{margin-top:var(--s4);color:var(--ink)}
 .mobile-nav .social-links{margin-top:var(--s5);color:var(--ink)}
+
+/* --- Handy: ruhige Bildwechsel, kein Ueberlappen ueber den Coral-Block --- */
+@media(max-width:900px){
+  /* Parallax in der Praxis-Galerie aus: sonst wandert das Bild im Container
+     und beim Wechsel blitzt der Grund durch */
+  .proof-gallery .img-plx img{transform:none!important;scale:1}
+  .proof-gallery img{transition:opacity .9s ease}
+  .proof-gallery img.on,.proof-gallery img.out{transform:none}
+  /* BGF+ schiebt sich nicht mehr in das Statement darunter */
+  .proof-solo--overlap{margin-bottom:0;padding-bottom:clamp(28px,6vw,56px)}
+  .proof-solo--overlap .proof-row__media{box-shadow:none}
+  /* Statement ueber die volle Breite und Hoehe des Schirms */
+  .pause-wrap{height:auto;padding-bottom:0}
+  .pause-wrap .pause,.pause{margin-right:0;margin-top:0;min-height:100svh;display:flex;align-items:center}
+  .pause .container{padding-block:clamp(72px,16vw,140px)}
+}
