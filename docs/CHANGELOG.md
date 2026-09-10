@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (26) – ergobag als Ursprung der Auszeichnungen belegt
+
+- Die ergobag-Projektseite enthält jetzt zwischen Bildwelt und Kundenstimme
+  einen eigenen Proof-Abschnitt mit allen vier Award-Logos.
+- Überschrift und Begleittext stellen ausdrücklich klar, dass sich German
+  Brand Award, Deutscher Gründerpreis, Marken Award und German Design Award
+  auf die gemeinsame Markenentwicklung und Markenführung für ergobag beziehen.
+- Die Logos führen weiterhin barrierearm zu den offiziellen Award-Seiten. Der
+  Abschnitt ist für Desktop und Mobile responsiv angelegt.
+- Kein Cache-Buster nötig, weil nur das seitenspezifische Inline-CSS der
+  ergobag-Seite ergänzt wurde und `site.css` sowie `site.js` unverändert bleiben.
+
 ## 10.09.2026 (25) – Betonfragment an der Hilfe-Sektion vergrößert
 
 - Das dekorative Coral-Betonfragment am Übergang zu „Wo wir helfen können“
