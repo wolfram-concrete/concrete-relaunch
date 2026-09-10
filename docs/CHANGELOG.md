@@ -1,5 +1,14 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (18) – CA’N-SORT-Quote korrekt zugeschrieben
+
+- Die Kundenstimme von CA’N SORT wird auf Startseite und Erstgespräch-Seite
+  jetzt konsistent Jochen Lampert zugeschrieben. Foto, Alternativtext und die
+  ausführliche Case-Seite nannten ihn bereits korrekt; die beiden
+  Figcaptions enthielten irrtümlich Fabian Lampert.
+- Der technische Preflight meldet den falschen Namen künftig als Befund.
+  Kein Cache-Buster nötig, weil `site.css` und `site.js` unverändert bleiben.
+
 ## 10.09.2026 (17) – Awards im Footer ergänzt
 
 - German Brand Award, Deutscher Gründerpreis, Marken Award und German Design

@@ -166,6 +166,8 @@ def scan() -> list[str]:
             )
         if '<meta name="robots" content="noindex,nofollow">' not in text:
             findings.append(f"{page.name}: required prelaunch noindex missing")
+        if "Fabian Lampert" in text:
+            findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
 
         mobile_cta = re.search(
             r'<a class="mobile-nav__cta"[^>]*>.*?</a>', text, flags=re.S
