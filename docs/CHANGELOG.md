@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (16) – Mobiler Menü-CTA vereinheitlicht
+
+- Auf `erstgespraech.html` war „Projekt anfragen" im mobilen Menü als
+  normaler Textlink ohne CTA-Klasse und Portraits hinterlegt. Die Seite nutzt
+  jetzt dieselbe Coral-Button-Komponente wie alle übrigen Sitemap-Seiten;
+  das Ziel bleibt dort bewusst der direkte Calendly-Link.
+- Die Social-Links unter dem CTA sind auch auf der Erstgespräch-Seite ergänzt,
+  sodass das mobile Menü auf allen Seiten gleich aufgebaut ist.
+- `tools/technical-preflight.py` meldet künftig fehlende oder unvollständige
+  mobile Menü-CTAs. Kein Cache-Buster nötig, weil `site.css` und `site.js`
+  unverändert bleiben.
+
 ## 10.09.2026 (15) – Über-uns-Seite mobil neu geordnet
 
 - „Wofür wir stehen" zeigt die vier Werte auf schmalen Viewports als

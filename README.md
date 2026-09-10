@@ -84,6 +84,9 @@ ueberlappt, Situationsfelder tragen einen sichtbaren Pfeil-Link, weil es
 keinen Hover gibt. Das mobile Menue hat Burger und X, eine Kopfleiste auf
 Papier und den Coral-CTA. Auf- und Zuklappen animiert die Hoehe per JS
 (`site.js`, `[data-mnav-toggle]`), das Mega-Menue blendet weich ein.
+Der Coral-CTA „Projekt anfragen" verwendet auf jeder Sitemap-Seite dieselbe
+Komponente mit den beiden Portraits; der technische Preflight prueft diese
+Konsistenz mit.
 
 Projektseiten haben mobil einen Hero ueber den ganzen Schirm (`100svh`,
 `object-fit: cover`); der Inhalt beginnt darunter. Der Bildausschnitt wird je

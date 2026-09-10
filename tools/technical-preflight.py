@@ -165,6 +165,22 @@ def scan() -> list[str]:
         if '<meta name="robots" content="noindex,nofollow">' not in text:
             findings.append(f"{page.name}: required prelaunch noindex missing")
 
+        mobile_cta = re.search(
+            r'<a class="mobile-nav__cta"[^>]*>.*?</a>', text, flags=re.S
+        )
+        if mobile_cta is None:
+            findings.append(f"{page.name}: mobile navigation CTA missing or inconsistent")
+        else:
+            cta_markup = mobile_cta.group(0)
+            required_cta_parts = {
+                'class="cta-avas"',
+                'assets/team/wolfram.jpg',
+                'assets/team/christian.jpg',
+                'Projekt anfragen',
+            }
+            if any(part not in cta_markup for part in required_cta_parts):
+                findings.append(f"{page.name}: mobile navigation CTA content inconsistent")
+
     for page, parser in parsed_pages.items():
         for _tag, href in parser.links:
             target, fragment = local_path(href, page, link=True)
