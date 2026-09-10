@@ -386,7 +386,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .fitcheck select,.fitcheck select option{color:var(--ink)}
 
 .section--competences .button-row{margin-top:clamp(28px,4vw,52px);margin-left:var(--indent)}
-@media(max-width:860px){.competence-grid{grid-template-columns:1fr}.competence{border-left:0;padding-inline:0;border-top:1px solid var(--rule)}.competence:first-child{border-top:0}.section--competences .button-row{margin-left:0}}
+@media(max-width:860px){.competence-grid{grid-template-columns:1fr}.competence{border-left:0;padding-inline:0;border-top:0;padding-top:clamp(28px,7vw,44px)}.competence:first-child{padding-top:0}.section--competences .button-row{margin-left:0}}
 
 /* Splits */
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,88px);align-items:start}
