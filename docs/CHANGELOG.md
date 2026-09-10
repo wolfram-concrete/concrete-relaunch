@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (5) – Technische Optimierung: mobiler Hero
+
+- Auf Viewports bis 700 px und bei aktiviertem Datensparmodus zeigt der
+  Homepage-Hero sofort das vorhandene 40-KB-Poster. Das 13,6-MB-Hero-Video
+  und die 13 nur für das Desktop-Intro benötigten Zwischenbilder werden dort
+  nicht mehr angefordert.
+- Desktop behält die abgenommene Intro- und Video-Choreografie. Das finale
+  Video lädt erst nach der mobilen/desktop Entscheidung parallel zum Intro
+  statt bereits mit dem HTML-Parsing; das Poster wird über Preconnect/Preload
+  priorisiert.
+- Cache-Buster für `site.js` und `site.css` auf `v=147` erhöht.
+
 ## 10.09.2026 (4) – Technische Optimierung: Bilddimensionen
 
 - Allen 5.859 bislang unbemaßten lokalen Bildern wurden ihre intrinsischen
