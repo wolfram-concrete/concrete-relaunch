@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (7) – Technische Optimierung: Fonts
+
+- Die im ersten Bildschirm siteweit verwendeten Schnitte `arame-bold`,
+  `rocgrotesk-regular` und `rocgrotesk-bold` werden als WOFF2 vorgeladen.
+  `font-display: swap` war bereits korrekt gesetzt.
+- Die 13 ausschließlich für das Desktop-Intro der Homepage benötigten
+  Google-Fonts blockieren auf Viewports bis 700 px nicht länger den
+  Renderpfad. Desktop lädt sie unverändert für die abgenommene Animation.
+- Kein weiteres Subsetting: Die vier lokalen Schnitte liegen bereits bei nur
+  16 bis 24 KB und der Zusatznutzen wäre gegenüber Zeichen- und Lizenzrisiko
+  nicht belastbar. Kein Cache-Buster nötig, CSS und JS sind unverändert.
+
 ## 10.09.2026 (6) – Technische Optimierung: Galerie-Videos
 
 - 29 Autoplay-Videos unterhalb des ersten Bildschirms tragen ihre Quelle
