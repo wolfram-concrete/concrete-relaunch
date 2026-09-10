@@ -896,3 +896,12 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .ink-block .vteaser{border-color:rgba(243,239,231,.3)}
 /* Handy: das Label "Video" entfaellt, der Titel steht fuer sich */
 @media(max-width:700px){.vteaser__meta .t{display:none}}
+
+/* Handy: die Rezensionen laufen per Wischen, die Pfeilknoepfe entfallen,
+   Titel, Wertung und Zeile ruecken zusammen */
+@media(max-width:700px){
+  .reviews__nav{display:none}
+  .reviews__title{margin-bottom:var(--s3)}
+  .reviews__head{gap:var(--s2) var(--s3);margin-bottom:var(--s3)}
+  .reviews__score{font-size:clamp(24px,7vw,32px)}
+}
