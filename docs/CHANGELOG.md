@@ -17,6 +17,11 @@
 - **158 Weiterleitungen** von den alten WordPress-Adressen in `vercel.json`,
   abgeleitet aus der alten `sitemap_index.xml`. Case-Seiten, Phasen,
   Übersichten und die alten FAQ-Seiten sind thematisch zugeordnet.
+- **Offen bis zum Livegang:** Die Seite steht vollständig auf `noindex`, als
+  Header in `vercel.json` und als Meta-Tag in 129 Dateien. Beides muss in dem
+  Moment entfernt werden, in dem die Domain auf dieses Projekt zeigt, sonst
+  wirken Titles, Descriptions, Sitemap und Grounding Page nicht. Ablauf steht
+  im README unter „Vor dem Livegang".
 - **`tools/seo-gauntlet.py`** prüft Description, Canonical, Title-Länge,
   Eindeutigkeit, Sitemap, robots.txt, Redirects und Ankertexte und endet
   mit Exit 1, sobald etwas fehlt.

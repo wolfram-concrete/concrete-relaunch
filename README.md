@@ -113,8 +113,8 @@ Footer zeigt direkt auf die Detailseiten.
 `fakten-zu-concrete-brandbuilding-gmbh.html` ist die faktische Referenz fuer
 KI-Systeme (Grounding Page Standard v1.4) mit Organization- und
 WebPage-Schema. Sie ist bewusst nicht in der Hauptnavigation verlinkt.
-Vor dem Livegang muss sie zusammen mit dem Rest der Seite von `noindex` auf
-`index,follow` umgestellt werden, sonst hat sie keine Wirkung.
+Ohne die Umstellung von `noindex` auf `index,follow` hat sie keine Wirkung,
+siehe „Vor dem Livegang".
 
 ## Freisteller
 
@@ -145,7 +145,41 @@ maschinen. Die alten WordPress-Adressen liegen als Weiterleitung in
 
 Dann `http://localhost:4173/`.
 
+## Vor dem Livegang: noindex entfernen
+
+**Die Seite ist vollstaendig auf `noindex` gestellt und darf so nicht live
+gehen.** Das ist Absicht, solange `www.concrete-designs.de` noch die alte
+WordPress-Fassung ausliefert: Zwei Fassungen derselben Inhalte im Index
+wuerden sich gegenseitig schaden, und alle `rel=canonical` zeigen bereits auf
+die spaetere Live-Adresse. Entfernt wird es genau in dem Moment, in dem die
+Domain auf dieses Projekt zeigt, nicht frueher.
+
+`noindex` steht an zwei Stellen, beide muessen weg:
+
+1. Als HTTP-Header fuer die ganze Domain in `vercel.json`, der Block mit
+   `X-Robots-Tag: noindex, nofollow` fuer `source: "/(.*)"`. Er erfasst auch
+   Bilder, PDFs und die `sitemap.xml`.
+2. Als Meta-Tag in Zeile 8 jeder Seite,
+   `<meta name="robots" content="noindex,nofollow">`, aktuell in 129 Dateien.
+
+Am Launch-Tag:
+
+    # 1) Meta-Tag aus allen Seiten nehmen
+    sed -i '' '/<meta name="robots" content="noindex,nofollow">/d' *.html
+    # 2) Header-Block aus vercel.json loeschen (Eintrag mit X-Robots-Tag)
+    # 3) Cache-Buster erhoehen, committen, pushen
+    # 4) Pruefen
+    python3 tools/seo-gauntlet.py
+    curl -sI https://www.concrete-designs.de/ | grep -i x-robots-tag   # darf nichts liefern
+
+Die `robots.txt` bleibt unveraendert auf `Allow: /`. Eine Sperre dort waere
+falsch, weil Suchmaschinen die Seiten crawlen muessen, um ein `noindex`
+ueberhaupt zu sehen.
+
+Danach: Google Search Console und Bing Webmaster Tools einrichten, die
+`sitemap.xml` einreichen und die Weiterleitungen aus `vercel.json` gegen die
+alte URL-Liste des SEO-Experten gegenlesen.
+
 ## Status
 
-Vorlaunch: `vercel.json` setzt `noindex` auf alle Seiten. Vor dem Livegang
-entfernen. Offene Punkte: `docs/UEBERGABE-CLAUDE-CODE.md`.
+Vorlaunch. Offene Punkte: `docs/UEBERGABE-CLAUDE-CODE.md`.
