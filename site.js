@@ -56,9 +56,35 @@
       n.item.addEventListener("mouseleave",closeIt);
     });
   }
+  // Mobiles Akkordeon: weiche Hoehenanimation statt harten Umschaltens,
+  // die Unterpunkte laufen leicht versetzt nach
   document.querySelectorAll("[data-mnav-toggle]").forEach(function(t){
     var panel=document.getElementById(t.getAttribute("aria-controls"));if(!panel)return;
-    t.addEventListener("click",function(){var open=t.getAttribute("aria-expanded")==="true";t.setAttribute("aria-expanded",String(!open));panel.hidden=open;});
+    var kids=[].slice.call(panel.children),busy=false;
+    kids.forEach(function(k,i){k.style.transitionDelay=(i*45)+"ms";});
+    function endOpen(){panel.style.height="auto";panel.classList.remove("is-animating");busy=false;}
+    function endClose(){panel.hidden=true;panel.style.height="";panel.classList.remove("is-animating","is-open");busy=false;}
+    panel.addEventListener("transitionend",function(e){
+      if(e.target!==panel||e.propertyName!=="height")return;
+      if(panel.classList.contains("is-open"))endOpen();else endClose();
+    });
+    t.addEventListener("click",function(){
+      if(busy)return;busy=true;
+      var open=t.getAttribute("aria-expanded")==="true";
+      t.setAttribute("aria-expanded",String(!open));
+      panel.classList.add("is-animating");
+      if(open){
+        panel.style.height=panel.scrollHeight+"px";
+        panel.classList.remove("is-open");
+        requestAnimationFrame(function(){requestAnimationFrame(function(){panel.style.height="0px";});});
+        setTimeout(function(){if(busy)endClose();},700);
+      }else{
+        panel.hidden=false;panel.style.height="0px";
+        requestAnimationFrame(function(){requestAnimationFrame(function(){
+          panel.classList.add("is-open");panel.style.height=panel.scrollHeight+"px";});});
+        setTimeout(function(){if(busy)endOpen();},700);
+      }
+    });
   });
   // Hero-Intro: Wort (Arame) → Reel: je Frame anderes Bild + andere Schrift → ruhiges Schlussbild
   var hero=document.querySelector("[data-hero]");
