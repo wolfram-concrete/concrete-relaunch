@@ -874,7 +874,8 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
   .proof-solo--overlap{margin-bottom:0;padding-bottom:clamp(28px,6vw,56px)}
   .proof-solo--overlap .proof-row__media{box-shadow:none}
   /* Statement ueber die volle Breite und Hoehe des Schirms */
-  .pause-wrap{height:auto;padding-bottom:0}
+  /* Scroll-Stopp: die Coral-Flaeche steht, die Zeilen laufen per Scroll ein */
+  .pause-wrap{height:230svh;padding-bottom:0}
   .pause-wrap .pause,.pause{margin-right:0;margin-top:0;min-height:100svh;display:flex;align-items:center}
   .pause .container{padding-block:clamp(72px,16vw,140px)}
 }
@@ -930,3 +931,23 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
     @keyframes comp-fade{from{opacity:0}to{opacity:1}}
   }
 }
+
+/* Handy: die Hero-Headline nutzt die Rasterbreite besser aus */
+@media(max-width:700px){.hero h1{font-size:clamp(44px,13.2vw,62px);max-width:none}}
+
+/* --- Handy: die fuenf Situationen stapeln sich wie die Kompetenzen,
+   jede bleibt stehen und die naechste schiebt sich darueber --- */
+@media(max-width:900px){
+  .scenario-link{position:sticky;top:calc(var(--header-height) - 1px);background:var(--ink);
+    padding-block:clamp(20px,5vw,32px) clamp(26px,6vw,40px)}
+  .scenario-link::before{content:"";position:absolute;inset:0 calc(-1 * var(--pad)) 0 calc(-1 * var(--pad));
+    background:var(--ink);z-index:-1}
+  .scenario-link:last-child{padding-bottom:0}
+}
+@supports (animation-timeline: view()){
+  @media(max-width:900px){
+    .scenario-link + .scenario-link{animation:comp-fade linear both;
+      animation-timeline:view();animation-range:entry 5% entry 55%}
+  }
+}
+@media(prefers-reduced-motion:reduce){.scenario-link{position:static}}
