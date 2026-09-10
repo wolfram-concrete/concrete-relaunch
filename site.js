@@ -28,7 +28,7 @@
     }
   }
   var menuButton=document.querySelector("[data-menu-toggle]"),mobileMenu=document.querySelector("[data-mobile-menu]");
-  function setMobileMenu(open){if(!menuButton||!mobileMenu)return;menuButton.setAttribute("aria-expanded",String(open));menuButton.textContent=open?"Schließen":"Menü";mobileMenu.classList.toggle("is-open",open);document.body.classList.toggle("menu-open",open);}
+  function setMobileMenu(open){if(!menuButton||!mobileMenu)return;menuButton.setAttribute("aria-expanded",String(open));menuButton.setAttribute("aria-label",open?"Menü schließen":"Menü öffnen");var hd=document.querySelector(".site-header");if(hd){hd.classList.toggle("menu-open",open);if(open)hd.classList.add("show");}mobileMenu.classList.toggle("is-open",open);document.body.classList.toggle("menu-open",open);}
   if(menuButton&&mobileMenu)menuButton.addEventListener("click",function(){setMobileMenu(menuButton.getAttribute("aria-expanded")!=="true");});
   var navItems=[].slice.call(document.querySelectorAll("[data-nav-item]")).map(function(item){return{item:item,toggle:item.querySelector("[data-nav-toggle]"),panel:item.querySelector("[data-mega]")};});
   function closeNav(except){navItems.forEach(function(n){if(!n.toggle||!n.panel||n.panel===except)return;n.toggle.setAttribute("aria-expanded","false");n.panel.classList.remove("is-open");});syncMega();}
