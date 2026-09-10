@@ -86,6 +86,7 @@
       }
     });
   });
+
   // Hero-Intro: Wort (Arame) → Reel: je Frame anderes Bild + andere Schrift → ruhiges Schlussbild
   var hero=document.querySelector("[data-hero]");
   if(hero){
@@ -371,7 +372,7 @@
     });
   });
   // Desktop: Footer-Spalten aus der Tabfolge nehmen (Prototyp-Regel)
-  function footerMode(){var d=matchMedia("(min-width:761px)").matches;document.querySelectorAll(".footer-col").forEach(function(c){c.open=true;var s=c.querySelector("summary");if(s)s.tabIndex=d?-1:0;});}
+  function footerMode(){var d=matchMedia("(min-width:761px)").matches;document.querySelectorAll(".footer-col").forEach(function(c){c.open=d;var s=c.querySelector("summary");if(s)s.tabIndex=d?-1:0;});}
   footerMode();matchMedia("(min-width:761px)").addEventListener("change",footerMode);
 })();
 

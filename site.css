@@ -878,3 +878,21 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
   .pause-wrap .pause,.pause{margin-right:0;margin-top:0;min-height:100svh;display:flex;align-items:center}
   .pause .container{padding-block:clamp(72px,16vw,140px)}
 }
+
+/* Kopfzeile "Passende Projekte" plus Pfeil-Link: der Link bleibt einzeilig */
+.sec-head-row .link-arrow{white-space:nowrap;flex:0 0 auto}
+@media(max-width:700px){.sec-head-row{gap:var(--s3)!important;align-items:center}
+.sec-head-row h2{max-width:9ch}}
+
+/* Handy: im Coral- und Ink-Kasten sitzen Eyebrow und Headline nicht an der Kante,
+   sondern im Raster (alle CTA-Module ueber dem Footer) */
+@media(max-width:900px){
+  .coral-block .container,.ink-block .container,.next-band .container{padding-inline:var(--pad)}
+  .inquiry__head{padding-inline:var(--pad)}
+}
+
+/* Auf Coral- und Ink-Flaechen sind die feinen Linien des Video-Teasers zu hell */
+.coral-block .vteaser{border-color:rgba(23,21,19,.28)}
+.ink-block .vteaser{border-color:rgba(243,239,231,.3)}
+/* Handy: das Label "Video" entfaellt, der Titel steht fuer sich */
+@media(max-width:700px){.vteaser__meta .t{display:none}}
