@@ -93,6 +93,11 @@ Querformat-Keyvisual im Hochformat nicht funktioniert, liegt im Hero ein
 Mobilmotiv. Die Galerie zeigt mobil hoechstens zwei Bilder pro Zeile
 (`site.js`, `maxPer`).
 
+In der Section „Weitere Projekte" steht der CTA mobil linksbuendig unter der
+Headline; die Regel haengt an `.section-heading:has(+ .case-marquee)`. Die
+Beschriftung im Karussell ist zweifarbig: Markenname auf Ink, Branche im
+`<i>` in Coral.
+
 Headlines duerfen nie aus dem Schirm laufen: `h1,h2` haben global
 `overflow-wrap:break-word`, lange Komposita bekommen weiche Trennstellen
 (`&shy;`) an der sinnvollen Fuge, damit der Umbruch nicht mitten im Wort
