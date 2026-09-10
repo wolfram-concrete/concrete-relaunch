@@ -85,6 +85,44 @@ keinen Hover gibt. Das mobile Menue hat Burger und X, eine Kopfleiste auf
 Papier und den Coral-CTA. Auf- und Zuklappen animiert die Hoehe per JS
 (`site.js`, `[data-mnav-toggle]`), das Mega-Menue blendet weich ein.
 
+Projektseiten haben mobil einen Hero ueber den ganzen Schirm (`100svh`,
+`object-fit: cover`); der Inhalt beginnt darunter. Der Bildausschnitt wird je
+Case ueber `style="--hero-pos:78% 50%"` auf der `.case-hero` gesteuert. Wo ein
+Querformat-Keyvisual im Hochformat nicht funktioniert, liegt im Hero ein
+`<picture>` mit `<source media="(max-width:820px)">` und einem eigenen
+Mobilmotiv. Die Galerie zeigt mobil hoechstens zwei Bilder pro Zeile
+(`site.js`, `maxPer`).
+
+Headlines duerfen nie aus dem Schirm laufen: `h1,h2` haben global
+`overflow-wrap:break-word`, lange Komposita bekommen weiche Trennstellen
+(`&shy;`) an der sinnvollen Fuge, damit der Umbruch nicht mitten im Wort
+passiert.
+
+## Branchenseiten
+
+Zehn Detailseiten (`b2b-brands.html`, `recruiting-brands.html`,
+`startups.html`, `architektur-und-immobilien-brands.html`,
+`consulting-it-und-finance-brands.html`, `food-und-beverage-brands.html`,
+`event-und-entertainment-brands.html`, `family-und-kids-brands.html`,
+`marketing-und-media-brands.html`, `b2b-marken-mallorca.html`) nach dem
+Muster der WordPress-Fassung. `branchen.html` verlinkt jede Branche, der
+Footer zeigt direkt auf die Detailseiten.
+
+## Grounding Page
+
+`fakten-zu-concrete-brandbuilding-gmbh.html` ist die faktische Referenz fuer
+KI-Systeme (Grounding Page Standard v1.4) mit Organization- und
+WebPage-Schema. Sie ist bewusst nicht in der Hauptnavigation verlinkt.
+Vor dem Livegang muss sie zusammen mit dem Rest der Seite von `noindex` auf
+`index,follow` umgestellt werden, sonst hat sie keine Wirkung.
+
+## Freisteller
+
+Umgefaerbte Mockups nur aus echten Alphaquellen mit `premultiply` rechnen.
+Flood-Fill aus dem Bildrand hinterlaesst ausgefranste Schattenkanten; alle so
+erzeugten Bilder wurden auf ihre Originale zurueckgesetzt. Im Zweifel bleibt
+das Original mit weissem Grund.
+
 ## Lokal ansehen
 
     python3 -m http.server 4173

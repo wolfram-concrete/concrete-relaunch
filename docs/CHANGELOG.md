@@ -1,5 +1,42 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 – Branchenseiten, Grounding Page, Mobile-Heros, Freisteller-Rückbau
+
+- **Zehn Branchen-Detailseiten** nach dem WordPress-Vorbild neu gebaut:
+  `b2b-brands`, `consulting-it-und-finance-brands`,
+  `architektur-und-immobilien-brands`, `food-und-beverage-brands`,
+  `event-und-entertainment-brands`, `family-und-kids-brands`,
+  `marketing-und-media-brands`, `recruiting-brands`, `startups` und
+  `b2b-marken-mallorca`. Aufbau je Seite: Einblicke, Herausforderungen,
+  Lösungsansatz, Beispiele aus passenden Cases, häufige Fragen, Weiterführung.
+  `branchen.html` verlinkt jede Branche auf ihre Detailseite und hat einen
+  neuen Abschnitt Mallorca; der Footer zeigt auf die Seiten statt auf Anker.
+- **Grounding Page** `fakten-zu-concrete-brandbuilding-gmbh.html` nach dem
+  Grounding Page Standard v1.4, mit Organization- und WebPage-Schema.
+  Nicht in der Navigation verlinkt, im Footer-Index vorhanden.
+- **Projektseiten mobil**: Der Hero füllt den Screen (`100svh`, `object-fit:
+  cover`), der Inhalt beginnt darunter. Fokuspunkt je Case über
+  `--hero-pos` auf der Hero-Section; wo das Keyvisual im Hochformat nicht
+  funktioniert, liefert ein `<picture>` mit `media="(max-width:820px)"` ein
+  eigenes Mobilmotiv (Baked, SOLIT, Street Gourmet, pause/play, GET.ON).
+- **Freisteller-Rückbau**: 55 umgefärbte Mockups hatten ausgefranste
+  Schattenkanten aus dem Flood-Fill und liegen wieder auf ihrem Original.
+  Sauber aus echten Alphaquellen gerechnete Serien bleiben (Maleco, Klang²,
+  Boneß & Euteneuer, pause/play).
+- **Galerie mobil**: höchstens zwei Bilder pro Zeile, größere Zielhöhe.
+- **Gründer-Kommentar** auf Projektseiten: mobil Bild oben, Text darunter;
+  Gesicht höher im Bild, Betonfläche nur noch im unteren Drittel, Firma in
+  eigener Zeile ohne Mittelpunkt.
+- **Headlines** laufen mobil nie mehr aus dem Screen: `overflow-wrap` global
+  plus weiche Trennstellen (`&shy;`) in allen langen Komposita.
+- **Ziffern** in nummerierten Listen sitzen exakt auf der Oberlänge des
+  Textes; der Offset ist aus den Fontmetriken hergeleitet.
+- Kleinteiliges: Zitat auf den Leistungsseiten mobil im schwarzen Band
+  eingerückt, schräger Pfeil in den Wissen-Listen durch den Standardpfeil
+  ersetzt, `was-kostet-ein-logo-design.html` inhaltlich gefüllt,
+  Footer-Link „Projekt anfragen" auf `erstgespraech.html`, Aconvia-Stylescape
+  entfernt, me-Hero auf das Sofa-Motiv gewechselt.
+
 ## 09.09.2026 – 40 Case-Seiten, Situationsseiten mit Bildmotiv, Textregeln
 
 - **20 weitere Case-Seiten** aus dem WordPress-Export (ohne Eingangsordner):
