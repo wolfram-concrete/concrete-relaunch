@@ -1023,3 +1023,10 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 /* Zuschreibung im Gruender-Modul: mobil bricht die Firma in eine eigene Zeile, der Mittelpunkt entfaellt */
 .attr-br{font-style:normal}
 @media(max-width:900px){.attr-br{display:block;font-size:0;line-height:0}}
+
+/* ===== Projektkarussell mobil: CTA linksbuendig unter die Headline, Section enger ===== */
+@media(max-width:820px){
+  main .case-sec:has(.case-marquee){padding-block:clamp(26px,7vw,44px)}
+  .section-heading:has(+ .case-marquee){gap:14px 0;margin-bottom:clamp(16px,4vw,24px)}
+  .section-heading:has(+ .case-marquee)>div{justify-self:start!important;text-align:left!important}
+}
