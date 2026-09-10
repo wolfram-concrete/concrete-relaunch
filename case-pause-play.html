@@ -22,7 +22,7 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=154">
+<link rel="stylesheet" href="site.css?v=155">
 <style>
 /* ===== Projekt-Seite (Muster) ===== */
 .case-hero{overflow:hidden}
@@ -278,15 +278,30 @@
   <div class="container footer-brand"><a href="./" aria-label="CONCRETE Brandbuilding, zur Startseite"><img src="assets/concrete-paper.svg" alt="CONCRETE" width="340" height="50"></a></div>
   <div class="container">
     <div class="footer-main">
-      <section class="footer-awards" aria-labelledby="footer-awards-title">
-        <h2 class="footer-awards__label" id="footer-awards-title">Ausgezeichnet</h2>
-        <ul class="footer-awards__grid">
-          <li><span class="footer-award footer-award--brand" role="img" aria-label="German Brand Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></span></li>
-          <li><span class="footer-award footer-award--gruender" role="img" aria-label="Deutscher Gründerpreis"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></span></li>
-          <li><span class="footer-award footer-award--marken" role="img" aria-label="Marken Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></span></li>
-          <li><span class="footer-award footer-award--design" role="img" aria-label="German Design Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></span></li>
-        </ul>
-      </section>
+      <div class="footer-trust">
+        <section class="footer-awards" aria-labelledby="footer-awards-title">
+          <h2 class="footer-trust__label" id="footer-awards-title">Ausgezeichnet</h2>
+          <ul class="footer-awards__grid">
+            <li><span class="footer-award footer-award--brand" role="img" aria-label="German Brand Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></span></li>
+            <li><span class="footer-award footer-award--gruender" role="img" aria-label="Deutscher Gründerpreis"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></span></li>
+            <li><span class="footer-award footer-award--marken" role="img" aria-label="Marken Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></span></li>
+            <li><span class="footer-award footer-award--design" role="img" aria-label="German Design Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></span></li>
+          </ul>
+        </section>
+        <section class="footer-partners" aria-labelledby="footer-partners-title">
+          <h2 class="footer-trust__label" id="footer-partners-title">Supporter &amp; Partner</h2>
+          <div class="footer-partners__grid">
+            <a class="footer-partner footer-partner--dmig" href="https://www.designmadeingermany.de/verzeichnis/agenturen/#37172" target="_blank" rel="noopener noreferrer" aria-label="CONCRETE im Agenturverzeichnis von Design made in Germany">
+              <img src="assets/partners/designmade-in-germany.svg" alt="Design made in Germany" width="512" height="512">
+              <span class="footer-partner__copy"><strong>Design made<br>in Germany</strong><small>Supporter</small></span>
+            </a>
+            <div class="footer-partner footer-partner--sortlist">
+              <div class="sortlist-badge"><a class="footer-partner__fallback" href="https://www.sortlist.de/agency/concrete-brandbuilding" target="_blank" rel="noopener noreferrer">Sortlist<br>Trusted Partner</a></div>
+              <script type="text/plain" data-consent-src="https://www.sortlist.de/api/badge-embed?agencySlug=concrete-brandbuilding&amp;agencyUuid=d98ebc67-bad3-45cc-9481-8b547ff930f7&amp;color=neutral&amp;hue=900&amp;type=trusted-partner&amp;country=DE&amp;locale=de" data-consent-category="marketing"></script>
+            </div>
+          </div>
+        </section>
+      </div>
       <nav class="footer-index" aria-label="Alle Seiten">
       <details class="footer-col" open>
         <summary class="footer-col__label"><span>Leistungen</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
@@ -327,8 +342,8 @@
     </div>
   </div>
 </footer>
-<script src="consent-v1.js"></script>
-<script src="site.js?v=154"></script>
+<script src="consent-v2.js"></script>
+<script src="site.js?v=155"></script>
 <script>
 document.querySelectorAll("video[data-fallback]").forEach(function(v){
   v.addEventListener("error",function(){

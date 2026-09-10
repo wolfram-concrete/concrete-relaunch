@@ -172,24 +172,29 @@ auf alle Sitemap-Seiten synchronisiert:
 
     python3 tools/sync-footer.py
 
-So bleiben Navigationsspalten, Awards und rechtliche Links auf allen Seiten
-identisch. Änderungen an `site.css` oder `site.js` erfordern weiterhin den
-globalen Cache-Buster in allen HTML-Dateien.
+So bleiben Navigationsspalten, Awards, Supporter/Partner und rechtliche Links
+auf allen Seiten identisch. Design made in Germany wird mit einem lokal
+gespeicherten SVG auf den CONCRETE-Eintrag im Agenturverzeichnis verlinkt.
+Das dynamische Sortlist Trusted Partner Badge liegt in derselben Vertrauensspalte,
+wird aber erst nach Einwilligung in „Marketing & externe Inhalte“ geladen.
+Änderungen an `site.css` oder `site.js` erfordern weiterhin den globalen
+Cache-Buster in allen HTML-Dateien.
 
 Messwerte, Entscheidungen und verbleibende Grenzen des Optimierungspasses vom
 10.09.2026 stehen in `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md`.
 
 ## Datenschutz und Consent
 
-`consent-v1.js` ist der eigene Consent-Manager der statischen Website. Er
+`consent-v2.js` ist der eigene Consent-Manager der statischen Website. Er
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
 jederzeit geändert werden.
 
 - Statistik: Google Analytics 4 und Microsoft Clarity
-- Marketing: Google Ads, LinkedIn Insight und Microsoft Advertising
-- Nicht freigeschaltet: Facebook/Meta, HubSpot, YouTube und Sortlist
+- Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising
+  und das dynamische Sortlist Trusted Partner Badge
+- Nicht freigeschaltet: Facebook/Meta, HubSpot und YouTube
 
 Die Kompatibilitäts-Cookie-Struktur hält die vorhandenen Borlabs-Sperrvariablen
 im GTM funktionsfähig. Facebook und HubSpot fehlen bewusst in jeder
@@ -198,7 +203,7 @@ bei der nächsten Container-Version entfernt werden. Search Console ist keine
 Browser-Einbindung und gehört nicht in den Banner. Calendly ist nur extern
 verlinkt, nicht eingebettet.
 
-Änderungen an `consent-v1.js` erfordern wegen fehlender Medien-Querystrings
+Änderungen an `consent-v2.js` erfordern wegen fehlender Medien-Querystrings
 einen neuen Dateinamen und eine Aktualisierung in allen Sitemap-Seiten. Die
 Implementierung, Prüffälle und noch nötigen Konto-/Vertragsprüfungen stehen in
 `docs/DATENSCHUTZ-CONSENT-2026-09-10.md`.

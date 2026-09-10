@@ -1,9 +1,9 @@
 (function () {
   "use strict";
 
-  var STORAGE_KEY = "concrete-consent-v1";
+  var STORAGE_KEY = "concrete-consent-v2";
   var COOKIE_NAME = "borlabs-cookie";
-  var CONSENT_VERSION = 1;
+  var CONSENT_VERSION = 2;
   var MAX_AGE_DAYS = 180;
   var GTM_ID = "GTM-N8223FX";
   var gtmLoaded = false;
@@ -63,7 +63,7 @@
     var groups = {
       essential: ["concrete-consent"],
       statistics: consent.statistics ? ["google-analytics", "microsoft-clarity"] : [],
-      marketing: consent.marketing ? ["google-ads", "linkedininsighttag", "microsoft-advertising"] : []
+      marketing: consent.marketing ? ["google-ads", "linkedininsighttag", "microsoft-advertising", "sortlist-badge"] : []
     };
     var expires = new Date(Date.now() + MAX_AGE_DAYS * 86400000);
     var payload = encodeURIComponent(JSON.stringify({
@@ -122,6 +122,30 @@
     document.head.appendChild(script);
   }
 
+  function loadConsentEmbeds(consent) {
+    if (!consent.marketing) return;
+    document.querySelectorAll('script[type="text/plain"][data-consent-category="marketing"][data-consent-src]').forEach(function (placeholder) {
+      if (placeholder.getAttribute("data-consent-loaded") === "true") return;
+      placeholder.setAttribute("data-consent-loaded", "true");
+      var script = document.createElement("script");
+      script.src = placeholder.getAttribute("data-consent-src");
+      script.defer = true;
+      script.addEventListener("load", function () {
+        var container = placeholder.parentNode.querySelector(".sortlist-badge");
+        if (!container) return;
+        var fallback = container.querySelector(".footer-partner__fallback");
+        var badgeLink = container.querySelector("a:not(.footer-partner__fallback)");
+        if (!badgeLink) return;
+        badgeLink.setAttribute("aria-label", "CONCRETE ist Sortlist Trusted Partner");
+        badgeLink.setAttribute("rel", "noopener noreferrer");
+        var badgeImage = badgeLink.querySelector("img");
+        if (badgeImage) badgeImage.alt = "Sortlist Trusted Partner";
+        if (fallback) fallback.remove();
+      });
+      placeholder.parentNode.insertBefore(script, placeholder.nextSibling);
+    });
+  }
+
   function applyConsent(consent) {
     writeCompatibilityCookie(consent);
     installBorlabsBridge(consent);
@@ -132,6 +156,7 @@
       concrete_marketing_consent: consent.marketing
     });
     loadGtm(consent);
+    loadConsentEmbeds(consent);
     updateClarityConsent(consent);
   }
 
@@ -185,7 +210,7 @@
         '<div class="consent-options">' +
           '<div class="consent-option"><div><h3>Notwendig</h3><p>Speichert ausschließlich deine Auswahl und stellt die Website bereit.</p></div><span class="consent-fixed" aria-label="Immer aktiv">Immer aktiv</span></div>' +
           '<label class="consent-option" for="consent-statistics"><span><strong>Statistik</strong><small>Google Analytics und Microsoft Clarity</small></span><span class="consent-switch"><input id="consent-statistics" type="checkbox" data-consent-statistics><i aria-hidden="true"></i></span></label>' +
-          '<label class="consent-option" for="consent-marketing"><span><strong>Marketing</strong><small>Google Ads, LinkedIn Insight und Microsoft Advertising</small></span><span class="consent-switch"><input id="consent-marketing" type="checkbox" data-consent-marketing><i aria-hidden="true"></i></span></label>' +
+          '<label class="consent-option" for="consent-marketing"><span><strong>Marketing &amp; externe Inhalte</strong><small>Google Ads, LinkedIn Insight, Microsoft Advertising und Sortlist-Badge</small></span><span class="consent-switch"><input id="consent-marketing" type="checkbox" data-consent-marketing><i aria-hidden="true"></i></span></label>' +
         '</div>' +
         '<div class="consent-actions consent-actions--settings">' +
           '<button class="consent-button consent-button--quiet" type="button" data-consent-reject>Alle ablehnen</button>' +

@@ -1,5 +1,22 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (20) – Supporter, Partner und Sortlist-Badge im Footer
+
+- Der Vertrauensbereich im Footer trennt jetzt sauber zwischen
+  „Ausgezeichnet“ und „Supporter & Partner“. Design made in Germany nutzt das
+  offizielle, lokal gespeicherte Signet und verlinkt direkt auf den
+  CONCRETE-Eintrag im Agenturverzeichnis.
+- Das offizielle Sortlist Trusted Partner Badge ergänzt den Partnerbereich.
+  Ohne Einwilligung bleibt ein normaler Link zum Agenturprofil sichtbar; das
+  externe Badge-Script lädt ausschließlich nach Zustimmung zu „Marketing &
+  externe Inhalte“.
+- Die Consent-Version steigt auf 2, damit frühere Marketingzustimmungen nicht
+  stillschweigend auf das neue Sortlist-Script ausgeweitet werden. README,
+  Datenschutzdokumentation und Datenschutzerklärung bilden den neuen Stand ab.
+- Der technische Preflight prüft Partnerlinks, lokales Designmade-Asset,
+  Sortlist-Sperre und Consent-Version auf allen 129 Seiten.
+- Cache-Buster für `site.css` und `site.js` auf `v=155` erhöht.
+
 ## 10.09.2026 (19) – Consent-System und Datenschutzerklärung
 
 - Ein eigener, barrierearm bedienbarer Consent-Dialog trennt notwendige,

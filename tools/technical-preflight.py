@@ -19,7 +19,7 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CACHE_VERSION = "154"
+EXPECTED_CACHE_VERSION = "155"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
 
@@ -169,9 +169,9 @@ def scan() -> list[str]:
             findings.append(f"{page.name}: required prelaunch noindex missing")
         if "Fabian Lampert" in text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
-        if text.count('<script src="consent-v1.js"></script>') != 1:
+        if text.count('<script src="consent-v2.js"></script>') != 1:
             findings.append(f"{page.name}: consent manager missing or duplicated")
-        elif text.index('<script src="consent-v1.js"></script>') > text.index(
+        elif text.index('<script src="consent-v2.js"></script>') > text.index(
             f'<script src="site.js?v={EXPECTED_CACHE_VERSION}"></script>'
         ):
             findings.append(f"{page.name}: consent manager must load before site.js")
@@ -183,6 +183,12 @@ def scan() -> list[str]:
             findings.append(f"{page.name}: direct third-party tracker or embed bypasses consent")
         if text.count('data-consent-manage') < 1:
             findings.append(f"{page.name}: cookie settings control missing")
+        if text.count('data-consent-category="marketing"') != 1 or text.count(
+            'data-consent-src="https://www.sortlist.de/api/badge-embed?'
+        ) != 1:
+            findings.append(f"{page.name}: Sortlist badge consent gate missing or duplicated")
+        if '<script src="https://www.sortlist.de/' in text:
+            findings.append(f"{page.name}: Sortlist badge bypasses consent")
 
         mobile_cta = re.search(
             r'<a class="mobile-nav__cta"[^>]*>.*?</a>', text, flags=re.S
@@ -212,6 +218,14 @@ def scan() -> list[str]:
             }
             if any(part not in text for part in required_awards):
                 findings.append(f"{page.name}: footer awards content inconsistent")
+        required_partners = {
+            'class="footer-partners"',
+            'assets/partners/designmade-in-germany.svg',
+            'https://www.designmadeingermany.de/verzeichnis/agenturen/#37172',
+            'https://www.sortlist.de/agency/concrete-brandbuilding',
+        }
+        if any(part not in text for part in required_partners):
+            findings.append(f"{page.name}: footer partner content inconsistent")
 
     for page, parser in parsed_pages.items():
         for _tag, href in parser.links:
@@ -249,24 +263,25 @@ def scan() -> list[str]:
             if source.startswith(("http://", "https://", "//")):
                 findings.append(f"{css_path.name}: external CSS resource bypasses consent: {source}")
 
-    consent = (ROOT / "consent-v1.js").read_text(encoding="utf-8")
+    consent = (ROOT / "consent-v2.js").read_text(encoding="utf-8")
     for required in (
         'var GTM_ID = "GTM-N8223FX"',
         'analytics_storage: "denied"',
         'ad_storage: "denied"',
         '"google-analytics", "microsoft-clarity"',
-        '"google-ads", "linkedininsighttag", "microsoft-advertising"',
+        '"google-ads", "linkedininsighttag", "microsoft-advertising", "sortlist-badge"',
+        "loadConsentEmbeds(consent)",
         "window.BorlabsCookie.checkCookieConsent = hasConsent",
         "window.BorlabsCookie.Consents.hasConsent = hasConsent",
     ):
         if required not in consent:
-            findings.append(f"consent-v1.js: missing consent safeguard: {required}")
+            findings.append(f"consent-v2.js: missing consent safeguard: {required}")
     for forbidden in ('"facebook-pixel"', '"hubspot-pixel"'):
         if forbidden in consent:
-            findings.append(f"consent-v1.js: obsolete service is consent-enabled: {forbidden}")
+            findings.append(f"consent-v2.js: obsolete service is consent-enabled: {forbidden}")
 
     privacy = (ROOT / "datenschutz.html").read_text(encoding="utf-8")
-    for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "Search Console und Sortlist"):
+    for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "Sortlist Trusted Partner Badge"):
         if required not in privacy:
             findings.append(f"datenschutz.html: current implementation missing: {required}")
     for obsolete in ("1&1 Internet", "concreten-designs.de", "EU-US Privacy Shield", "Google ReCaptcha"):

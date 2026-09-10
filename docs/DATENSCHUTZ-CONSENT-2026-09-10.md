@@ -25,7 +25,7 @@ genannten Konto- und Containerprüfungen bestätigt sind.
 | Microsoft Advertising | Anzeigenattribution | Marketing | wird nicht geladen |
 | Search Console | aggregierte Suchdaten | keine Browser-Einbindung | kein Script und kein Cookie |
 | Calendly | externe Terminbuchung | erst auf externer Seite | nur Link, kein Embed |
-| Sortlist | externer Lead-Herkunftskanal | keine Browser-Einbindung | kein Script, Widget oder Pixel |
+| Sortlist | Trusted Partner Badge und externer Lead-Herkunftskanal | Marketing & externe Inhalte | Badge-Script wird nicht geladen; Profil bleibt als normaler Link erreichbar |
 | YouTube | nicht verwendet | keine | keine Einbettung |
 | Facebook/Meta | nicht verwendet | keine | erhält nie eine Freigabe |
 | HubSpot | nicht verwendet | keine | erhält nie eine Freigabe |
@@ -40,6 +40,10 @@ genannten Konto- und Containerprüfungen bestätigt sind.
 - Gleichwertige Erstebenen-Aktionen „Nur notwendige“ und „Alle akzeptieren“.
 - Detailauswahl für Statistik und Marketing; Notwendig ist transparent als
   immer aktiv gekennzeichnet.
+- Das dynamische Sortlist Trusted Partner Badge lädt erst nach einer aktiven
+  Einwilligung in „Marketing & externe Inhalte“. Die Consent-Version wurde
+  deshalb auf 2 erhöht; frühere Auswahlstände werden nicht stillschweigend
+  auf den neu hinzugekommenen Dienst erweitert.
 - Bedienung per Tastatur, Escape, Fokusfalle im Einstellungsdialog,
   sichtbare Fokuszustände und reduzierte Animation bei
   `prefers-reduced-motion`.
@@ -76,8 +80,8 @@ verständlich und bleibt nicht von einer Alt-Sperrlogik abhängig.
 |---|---|
 | keine Entscheidung / alle abgelehnt | keine; selbst der GTM-Container wird nicht geladen |
 | nur Statistik | GA4 und Clarity; kein LinkedIn, Microsoft Ads, Facebook oder HubSpot |
-| nur Marketing | LinkedIn und Microsoft Ads; kein GA4, Clarity, Facebook oder HubSpot |
-| alle akzeptiert | GA4, Clarity, LinkedIn und Microsoft Ads; kein Facebook oder HubSpot |
+| nur Marketing | LinkedIn, Microsoft Ads und Sortlist-Badge; kein GA4, Clarity, Facebook oder HubSpot |
+| alle akzeptiert | GA4, Clarity, LinkedIn, Microsoft Ads und Sortlist-Badge; kein Facebook oder HubSpot |
 
 Google-Ads-Conversion-Tags sind ereignisgebunden und erscheinen erst bei den
 dafür vorgesehenen Kontaktklicks. Die Abnahme lief in einem frischen
@@ -93,7 +97,7 @@ Zuständen ohne Fehler.
 3. Mit Google Tag Assistant vier Zustände prüfen: keine Auswahl, Ablehnung,
    nur Statistik, nur Marketing sowie alle akzeptiert.
 4. Im Browser-Netzwerk prüfen, dass vor Zustimmung keine Requests an Google,
-   Microsoft, LinkedIn oder Meta stattfinden.
+   Microsoft, LinkedIn, Sortlist oder Meta stattfinden.
 5. In Clarity kontrollieren, dass Maskierung und Consent API V2 im Projekt
    wirksam sind.
 6. Aufbewahrungsfristen in GA4, Google Ads, Clarity, LinkedIn und Microsoft
