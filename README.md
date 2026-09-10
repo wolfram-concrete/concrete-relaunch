@@ -52,6 +52,10 @@ Fließtext. Freisteller aus PNG/WebP mit Alphakanal nur mit ffmpeg
 Schatten zu grauen Flächen. Details und Datum je Änderung in
 `docs/CHANGELOG.md`.
 
+Die vier im Footer geführten Awards gehören zum ergobag-Projekt. Auf
+`case-ergobag.html` weist deshalb eine kompakte Banderole direkt zwischen
+Projektüberblick und Herausforderung auf diese Auszeichnungen hin.
+
 ## Phasen und Leistungen
 
 `leistungen.html` zeigt je Phase ein Case-Bild mit Shortlink und einen

@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (28) – ergobag-Awards als Banderole vor der Herausforderung
+
+- Der bisherige große Award-Abschnitt nach der Bildwelt entfällt. Die vier
+  Auszeichnungen stehen jetzt als kompakte, dunkle Banderole direkt zwischen
+  Projektüberblick und „Die Herausforderung“.
+- „Vier Awards für ergobag“ ordnet die Logos weiterhin eindeutig diesem
+  Projekt zu; die Links und barrierearmen Beschriftungen bleiben erhalten.
+- Desktop zeigt alle vier Logos in einer Reihe, Mobile stapelt die Banderole
+  platzsparend und wechselt auf sehr schmalen Displays in ein 2x2-Raster.
+- Kein Cache-Buster nötig, weil nur seitenspezifisches Inline-CSS und HTML der
+  ergobag-Seite geändert wurden.
+
 ## 10.09.2026 (27) – Footer-Listen auf Wissen-Höhe verdichtet
 
 - Die Leistungs- und Branchenspalte zeigen initial nur so viele Einträge, dass
