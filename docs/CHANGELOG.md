@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (4) – Technische Optimierung: Bilddimensionen
+
+- Allen 5.859 bislang unbemaßten lokalen Bildern wurden ihre intrinsischen
+  `width`- und `height`-Werte hinzugefügt. Das reserviert den Platz vor dem
+  Download, ohne die bestehenden CSS-Größen oder Bildausschnitte zu ändern.
+- 4.859 bereits lazy-geladene Bilder tragen zusätzlich
+  `decoding="async"`. Die acht externen Video-Poster wurden anhand der
+  tatsächlichen CDN-Maße auf 1280 × 720 ergänzt.
+- Der statische Preflight meldet damit auf 129 Seiten kein einziges Bild
+  mehr ohne feste Dimensionen. Kein Cache-Buster nötig, da weder `site.css`
+  noch `site.js` geändert wurden.
+
 ## 10.09.2026 (3) – Technische Optimierung: Video-Teaser
 
 - Stumme Vorschauvideos mit `data-vteaser` werden erst 320 px vor dem
