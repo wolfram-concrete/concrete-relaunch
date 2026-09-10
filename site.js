@@ -87,6 +87,29 @@
     });
   });
 
+
+  // Gestapelte Karten (Situationen, Kompetenzen) brauchen auf dem Handy die gleiche
+  // Hoehe: sonst loest die hoechste Karte frueher vom Klebepunkt und schaut oben heraus.
+  (function(){
+    var stacks=[].slice.call(document.querySelectorAll(".scenario-list,.section--carrier .competence-grid,.eg-steps"));
+    if(!stacks.length)return;
+    var mq=matchMedia("(max-width:900px)"),t;
+    function apply(){
+      stacks.forEach(function(list){
+        var items=[].slice.call(list.children).filter(function(el){return el.matches(".scenario-link,.competence,.eg-step");});
+        if(!items.length)return;
+        items.forEach(function(el){el.style.minHeight="";});
+        if(!mq.matches)return;
+        var max=0;items.forEach(function(el){max=Math.max(max,el.offsetHeight);});
+        items.forEach(function(el){el.style.minHeight=max+"px";});
+      });
+    }
+    function later(){clearTimeout(t);t=setTimeout(apply,120);}
+    apply();
+    addEventListener("resize",later);
+    addEventListener("load",later);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(later);
+  })();
   // Hero-Intro: Wort (Arame) → Reel: je Frame anderes Bild + andere Schrift → ruhiges Schlussbild
   var hero=document.querySelector("[data-hero]");
   if(hero){
