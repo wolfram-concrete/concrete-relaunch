@@ -81,8 +81,9 @@ vom projektspezifischen SEO-Gauntlet geprüft.
 
 - Die drei im ersten Bildschirm benötigten lokalen WOFF2-Schnitte werden
   vorgeladen; `font-display: swap` war bereits korrekt.
-- Die 13 nur im Desktop-Intro verwendeten Google-Fonts blockieren den
-  mobilen Renderpfad nicht mehr.
+- Die 13 nur im Desktop-Intro verwendeten Google-Fonts-Schnitte blockieren
+  den mobilen Renderpfad nicht mehr und werden inzwischen vollständig lokal
+  ausgeliefert; der Browser kontaktiert Google Fonts nicht mehr.
 - Die lokalen Fonts wurden nicht weiter unterteilt: 16–24 KB je Schnitt
   rechtfertigen Zeichen-, Lizenz- und Wartungsrisiko nicht.
 - Kein Critical-CSS-Split: Eine zweite CSS-Quelle oder 129 Kopien von
@@ -105,7 +106,7 @@ vom projektspezifischen SEO-Gauntlet geprüft.
 
 ### Deployment und Prüfbarkeit
 
-- Einheitlicher Cache-Buster: `site.css?v=152` und `site.js?v=152` auf allen
+- Einheitlicher Cache-Buster: `site.css?v=154` und `site.js?v=154` auf allen
   129 Seiten.
 - `.vercelignore` verhindert, dass vier Entwurfsseiten, zwei HTML-Partials
   und interne Arbeitsordner als öffentliche URLs ausgeliefert werden.
@@ -147,6 +148,15 @@ vom projektspezifischen SEO-Gauntlet geprüft.
    der beabsichtigte `401` samt `noindex`-Header geprüft werden. Der komplette
    URL- und 404-Test muss einmal nach Aufhebung des Vorlaunch-Schutzes und
    beim Domainwechsel wiederholt werden.
+8. **Datenschutz-Erklärung und Implementierung:** Der frühere Befund meinte
+   keine einzelne Formulierung, sondern einen Widerspruch zwischen Text und
+   Technik: Die alte Erklärung nannte 1&1, Google Fonts, Maps, reCAPTCHA,
+   YouTube- und Facebook-Plugins sowie ein Kontaktformular, obwohl der Relaunch
+   über Vercel läuft, Schriften und Videos selbst ausliefert und diese
+   Einbindungen nicht besitzt. Der Text wurde deshalb vollständig am
+   tatsächlichen Relaunch ausgerichtet und ein Basic-Consent-System ergänzt.
+   Kontoebene, Verträge und die Veröffentlichung einer bereinigten GTM-Version
+   bleiben separat zu bestätigen.
 
 ## Empfohlene nächste Schritte
 
@@ -158,9 +168,12 @@ vom projektspezifischen SEO-Gauntlet geprüft.
    und 640/1280/1920-px-Derivate einführen, dann `srcset/sizes` je
    Seitentyp ergänzen.
 4. Eine freigegebene 404-Seite gestalten und umsetzen.
-5. Nach Datenschutzfreigabe Speed Insights oder ein bestehendes RUM-System
+5. Vor Livegang die zwei Facebook-Tags und den ungenutzten HubSpot-Tag im GTM
+   pausieren/entfernen, die übrigen Tags mit Tag Assistant je Consent-Kategorie
+   prüfen und Analytics-/Clarity-Aufbewahrung sowie AV-Verträge bestätigen.
+6. Nach Datenschutzfreigabe Speed Insights oder ein bestehendes RUM-System
    aktivieren und die Labordaten mit Feldwerten abgleichen.
-6. Am Launch-Tag den Ablauf im README exakt ausführen und anschließend beide
+7. Am Launch-Tag den Ablauf im README exakt ausführen und anschließend beide
    Gauntlets sowie externe Status-/Redirect-Checks wiederholen.
 
 ## Reproduzierbare Abnahme

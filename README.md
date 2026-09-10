@@ -29,7 +29,13 @@ transluzenter Papier-Träger mit Blur. Das Mega-Menü nutzt dieselbe Fläche.
 Bei offenem Menü trägt ein `::before` den Blur des Headers, damit auch das
 Menü selbst die Seite dahinter weichzeichnen kann.
 
-Videos kommen vom CDN `concrete-video-cdn.vercel.app` (siehe `docs/VIDEO-VERANKERUNG.md`).
+Die 26 Case-Videos liegen direkt unter `assets/cases/`; einige allgemeine
+Teaser werden weiterhin direkt vom eigenen Vercel-CDN
+`concrete-video-cdn.vercel.app` geladen (siehe `docs/VIDEO-VERANKERUNG.md`).
+YouTube wird nicht eingebettet.
+Die 13 dekorativen Schriften des Desktop-Intros liegen ebenfalls lokal unter
+`fonts/intro/`; `fonts/intro-fonts-v1.css` wird nur oberhalb von 700 px geladen.
+Die zugehörigen OFL-Lizenztexte liegen unter `fonts/intro/licenses/`.
 Originalbilder und der alte WordPress-Export liegen im Repository
 `wolfram-concrete/concrete-website`; hier gibt es bewusst keine Kopie davon.
 
@@ -172,6 +178,30 @@ globalen Cache-Buster in allen HTML-Dateien.
 
 Messwerte, Entscheidungen und verbleibende Grenzen des Optimierungspasses vom
 10.09.2026 stehen in `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md`.
+
+## Datenschutz und Consent
+
+`consent-v1.js` ist der eigene Consent-Manager der statischen Website. Er
+setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
+`GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
+Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
+jederzeit geändert werden.
+
+- Statistik: Google Analytics 4 und Microsoft Clarity
+- Marketing: Google Ads, LinkedIn Insight und Microsoft Advertising
+- Nicht freigeschaltet: Facebook/Meta, HubSpot, YouTube und Sortlist
+
+Die Kompatibilitäts-Cookie-Struktur hält die vorhandenen Borlabs-Sperrvariablen
+im GTM funktionsfähig. Facebook und HubSpot fehlen bewusst in jeder
+Freigabegruppe; ihre Alt-Tags müssen zusätzlich im GTM-Container pausiert und
+bei der nächsten Container-Version entfernt werden. Search Console ist keine
+Browser-Einbindung und gehört nicht in den Banner. Calendly ist nur extern
+verlinkt, nicht eingebettet.
+
+Änderungen an `consent-v1.js` erfordern wegen fehlender Medien-Querystrings
+einen neuen Dateinamen und eine Aktualisierung in allen Sitemap-Seiten. Die
+Implementierung, Prüffälle und noch nötigen Konto-/Vertragsprüfungen stehen in
+`docs/DATENSCHUTZ-CONSENT-2026-09-10.md`.
 
 ## Lokal ansehen
 

@@ -8,6 +8,7 @@ and SEO-specific rules remain covered by seo-gauntlet.py.
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from collections import Counter
@@ -18,7 +19,7 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CACHE_VERSION = "153"
+EXPECTED_CACHE_VERSION = "154"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
 
@@ -168,6 +169,20 @@ def scan() -> list[str]:
             findings.append(f"{page.name}: required prelaunch noindex missing")
         if "Fabian Lampert" in text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
+        if text.count('<script src="consent-v1.js"></script>') != 1:
+            findings.append(f"{page.name}: consent manager missing or duplicated")
+        elif text.index('<script src="consent-v1.js"></script>') > text.index(
+            f'<script src="site.js?v={EXPECTED_CACHE_VERSION}"></script>'
+        ):
+            findings.append(f"{page.name}: consent manager must load before site.js")
+        if any(domain in text for domain in (
+            "googletagmanager.com", "google-analytics.com", "clarity.ms",
+            "connect.facebook.net", "youtube.com/embed", "fonts.googleapis.com",
+            "fonts.gstatic.com",
+        )):
+            findings.append(f"{page.name}: direct third-party tracker or embed bypasses consent")
+        if text.count('data-consent-manage') < 1:
+            findings.append(f"{page.name}: cookie settings control missing")
 
         mobile_cta = re.search(
             r'<a class="mobile-nav__cta"[^>]*>.*?</a>', text, flags=re.S
@@ -225,11 +240,54 @@ def scan() -> list[str]:
             if target is not None and not target.is_file():
                 findings.append(f"{page.name}: missing inline CSS resource: {source}")
 
-    css = (ROOT / "site.css").read_text(encoding="utf-8")
-    for _quote, source in URL_RE.findall(css):
-        target, _fragment = local_path(source, ROOT / "site.css", link=False)
-        if target is not None and not target.is_file():
-            findings.append(f"site.css: missing resource: {source}")
+    for css_path in (ROOT / "site.css", ROOT / "fonts/intro-fonts-v1.css"):
+        css = css_path.read_text(encoding="utf-8")
+        for _quote, source in URL_RE.findall(css):
+            target, _fragment = local_path(source, css_path, link=False)
+            if target is not None and not target.is_file():
+                findings.append(f"{css_path.name}: missing resource: {source}")
+            if source.startswith(("http://", "https://", "//")):
+                findings.append(f"{css_path.name}: external CSS resource bypasses consent: {source}")
+
+    consent = (ROOT / "consent-v1.js").read_text(encoding="utf-8")
+    for required in (
+        'var GTM_ID = "GTM-N8223FX"',
+        'analytics_storage: "denied"',
+        'ad_storage: "denied"',
+        '"google-analytics", "microsoft-clarity"',
+        '"google-ads", "linkedininsighttag", "microsoft-advertising"',
+        "window.BorlabsCookie.checkCookieConsent = hasConsent",
+        "window.BorlabsCookie.Consents.hasConsent = hasConsent",
+    ):
+        if required not in consent:
+            findings.append(f"consent-v1.js: missing consent safeguard: {required}")
+    for forbidden in ('"facebook-pixel"', '"hubspot-pixel"'):
+        if forbidden in consent:
+            findings.append(f"consent-v1.js: obsolete service is consent-enabled: {forbidden}")
+
+    privacy = (ROOT / "datenschutz.html").read_text(encoding="utf-8")
+    for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "Search Console und Sortlist"):
+        if required not in privacy:
+            findings.append(f"datenschutz.html: current implementation missing: {required}")
+    for obsolete in ("1&1 Internet", "concreten-designs.de", "EU-US Privacy Shield", "Google ReCaptcha"):
+        if obsolete in privacy:
+            findings.append(f"datenschutz.html: obsolete implementation claim remains: {obsolete}")
+
+    vercel = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
+    global_headers = {
+        header["key"]: header["value"]
+        for rule in vercel.get("headers", [])
+        if rule.get("source") == "/(.*)"
+        for header in rule.get("headers", [])
+    }
+    for key, value in {
+        "X-Robots-Tag": "noindex, nofollow",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Content-Type-Options": "nosniff",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    }.items():
+        if global_headers.get(key) != value:
+            findings.append(f"vercel.json: missing or incorrect global header: {key}")
 
     return sorted(set(findings))
 

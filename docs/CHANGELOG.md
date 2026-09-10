@@ -1,5 +1,33 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (19) – Consent-System und Datenschutzerklärung
+
+- Ein eigener, barrierearm bedienbarer Consent-Dialog trennt notwendige,
+  statistische und Marketing-Dienste. Ablehnen und Akzeptieren sind auf der
+  ersten Ebene gleichwertig erreichbar; die Auswahl kann im Footer geändert
+  werden.
+- Google Consent Mode startet mit allen optionalen Signalen auf `denied`.
+  `GTM-N8223FX` wird im Basic Consent Mode erst nach Zustimmung geladen;
+  Microsoft Clarity erhält zusätzlich Consent API V2-Signale.
+- Die Datenschutzerklärung entspricht jetzt dem Relaunch: Vercel statt 1&1,
+  lokale Fonts und eigene Videos statt Google Fonts und YouTube, kein
+  Kontaktformular, keine Maps-, reCAPTCHA- oder Facebook-Plugins. Search
+  Console und Sortlist werden entsprechend ihrer tatsächlichen Rolle erklärt.
+- Die 13 Schriften des Desktop-Intros werden mit 26 Latin-/Latin-Extended-
+  WOFF2-Dateien selbst ausgeliefert. Die bisherigen Verbindungen zu
+  `fonts.googleapis.com` und `fonts.gstatic.com` entfallen ohne visuelle
+  Änderung.
+- Die vorhandenen Facebook- und HubSpot-Tags erhalten vom Relaunch keine
+  Freigabe. Ihr zusätzlicher Container-Cleanup bleibt als externer
+  Vorlaunch-Schritt dokumentiert.
+- Browser-Abnahme gegen den Live-GTM-Container bestätigt die Trennung:
+  Ablehnung lädt keine externen Tags, Statistik nur GA4/Clarity, Marketing nur
+  die vorgesehenen Kampagnendienste; Facebook und HubSpot bleiben in jedem
+  Zustand aus.
+- Der technische Preflight prüft Consent-Script, Ladereihenfolge,
+  Footer-Einstellungen und direkte Tracker-Bypässe auf allen 129 Seiten.
+- Cache-Buster für `site.css` und `site.js` auf `v=154` erhöht.
+
 ## 10.09.2026 (18) – CA’N-SORT-Quote korrekt zugeschrieben
 
 - Die Kundenstimme von CA’N SORT wird auf Startseite und Erstgespräch-Seite
