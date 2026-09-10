@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (15) – Über-uns-Seite mobil neu geordnet
+
+- „Wofür wir stehen" zeigt die vier Werte auf schmalen Viewports als
+  vollbreite Bild-Text-Blöcke untereinander statt als vier enge Spalten.
+- Die Module von Wolfram und Christian folgen mobil der Reihenfolge Portrait,
+  Coral-Textfläche und E-Mail-Button. Bild und Textfläche nutzen dieselbe
+  Rasterbreite; die Mail-Links sind mindestens 44 px hohe Touchziele.
+- „Unsere Methode: vier Phasen" läuft mobil als klar getrennte vertikale
+  Folge. Die Desktop-Raster mit vier Spalten bleiben unverändert.
+- Die Anpassung liegt ausschließlich im seitenspezifischen CSS von
+  `ueber-uns.html`; deshalb ist kein globaler Cache-Buster erforderlich.
+
 ## 10.09.2026 (14) – Technischer Abschlussbericht
 
 - `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` dokumentiert Scope,

@@ -57,6 +57,22 @@
 @media(max-width:860px){.fit-cols{grid-template-columns:1fr}}
 .value-img{margin:0 0 var(--s3);aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep)}
 .value-img img{width:100%;height:100%;object-fit:cover;display:block}
+.values-grid,.method-grid{grid-template-columns:repeat(4,1fr)}
+.person__mail.button{min-height:44px;border-color:var(--ink);color:var(--ink)}
+.person__mail.button::before{background:var(--ink)}
+.person__mail.button:hover,.person__mail.button:focus-visible{border-color:var(--ink);color:var(--coral)}
+@media(max-width:860px){
+  .values-grid,.method-grid{grid-template-columns:1fr;gap:0}
+  .values-grid article,.method-grid article{width:100%;padding:var(--s4) 0;border-top:1px solid var(--ink)}
+  .values-grid article:first-child,.method-grid article:first-child{padding-top:var(--s3)}
+  .values-grid article:last-child,.method-grid article:last-child{padding-bottom:0}
+  .values-grid .value-img{width:100%;margin-bottom:var(--s3)}
+  .values-grid h3,.method-grid h3{max-width:none}
+  .person{display:flex;flex-direction:column;align-items:stretch}
+  .person .person__media{order:1;width:100%;aspect-ratio:4/5}
+  .person .person__box{order:2;width:100%;margin:0;padding:clamp(28px,8vw,44px) var(--pad)}
+  .person__mail.button{width:100%;margin-top:var(--s1)}
+}
 </style>
 </head>
 <body>
@@ -135,7 +151,7 @@
 </section>
 <section class="sec sec--line" data-screen-label="Wofür wir stehen"><div class="container">
 <h2 class="rv">Wofür wir stehen</h2>
-<div class="team" style="grid-template-columns:repeat(4,1fr)">
+<div class="team values-grid">
 <article class="rv"><figure class="value-img rv-media"><img src="assets/team/werte-strategie.jpg" alt="Christian im Brainstorming mit zwei Kunden am Tisch" loading="lazy" decoding="async" width="1772" height="1330"></figure><h3>Strategie als Fundament</h3><p style="margin-top:var(--s3)">Jede Gestaltung beginnt mit einem klaren Verständnis für Markt, Zielgruppen und Ziele.</p></article>
 <article class="rv"><figure class="value-img rv-media"><img src="assets/team/werte-handwerk.jpg" alt="Wolfram und Christian arbeiten gemeinsam am Laptop" loading="lazy" decoding="async" width="1800" height="1350"></figure><h3>Handwerk seit über 20 Jahren</h3><p style="margin-top:var(--s3)">Über 20 Jahre Design-Erfahrung sorgen dafür, dass jede Idee präzise umgesetzt wird, digital wie analog.</p></article>
 <article class="rv"><figure class="value-img rv-media"><img src="assets/team/werte-individuell.jpg" alt="Das Team bespricht Entwürfe am Arbeitstisch" loading="lazy" decoding="async" width="1800" height="1350"></figure><h3>Individuell statt Standard</h3><p style="margin-top:var(--s3)">Wir entwickeln keine Schablonen, sondern Lösungen, die wirklich zu euch passen.</p></article>
@@ -151,7 +167,7 @@
     <h3>Wolfram Stratmann</h3>
     <span class="person__role">Markenbauer &amp; Design-Handwerker</span>
     <p>Wolfram hat sein Handwerk von Grund auf gelernt, erst als Gestalter, dann als Markenbauer. Er bringt über 20 Jahre Erfahrung aus Projekten mit Konzernen, Mittelständlern und Startups mit. Sein Anspruch: Marken so gestalten, dass sie im Alltag bestehen. Er verbindet Strategie und Design auf eine Weise, die Marken nicht nur „liebenswert“ macht, sondern funktional und belastbar. Dabei bleibt er immer präsent: vom ersten Gespräch bis zum letzten Entwurf.</p>
-    <a class="person__mail link-arrow" href="mailto:wolfram@concrete-designs.de">wolfram@concrete-designs.de</a>
+    <a class="person__mail button" href="mailto:wolfram@concrete-designs.de" aria-label="E-Mail an Wolfram Stratmann senden">wolfram@concrete-designs.de</a>
   </div>
   <figure class="person__media">
     <img src="assets/team/wolfram-portrait.jpg" alt="Wolfram Stratmann" loading="lazy" decoding="async" width="1095" height="1600">
@@ -163,7 +179,7 @@
     <h3>Christian Rosenberger</h3>
     <span class="person__role">Strategie &amp; Content-Architekt</span>
     <p>Christian denkt Marken aus der Tiefe: Strategie, Story, Struktur. Er übersetzt komplexe Themen so, dass sie für Zielgruppen klar, relevant und nutzbar werden. Seine Rolle ist es, den roten Faden zu halten, zwischen Analyse, Kreativität und Umsetzung. Mit klarer Sprache, präzisen Konzepten und einem Blick für Content sorgt er dafür, dass Marke und Kommunikation aus einem Guss sind.</p>
-    <a class="person__mail link-arrow" href="mailto:christian@concrete-designs.de">christian@concrete-designs.de</a>
+    <a class="person__mail button" href="mailto:christian@concrete-designs.de" aria-label="E-Mail an Christian Rosenberger senden">christian@concrete-designs.de</a>
   </div>
   <figure class="person__media">
     <img src="assets/team/christian-portrait.jpg" alt="Christian Rosenberger" loading="lazy" decoding="async" width="1021" height="1600">
@@ -206,7 +222,7 @@
 </div></section>
 <section class="sec sec--line" data-screen-label="Methode"><div class="container">
 <h2 class="rv">Unsere Methode: vier Phasen</h2>
-<div class="team" style="grid-template-columns:repeat(4,1fr)">
+<div class="team method-grid">
 <article class="rv"><span class="num">01</span><h3 style="margin-top:var(--s3)">Marke verstehen</h3><p style="margin-top:var(--s2)"><a class="link-arrow" href="phase-verstehen.html">Mehr zu Phase 1</a></p></article><article class="rv"><span class="num">02</span><h3 style="margin-top:var(--s3)">Marke definieren</h3><p style="margin-top:var(--s2)"><a class="link-arrow" href="phase-definieren.html">Mehr zu Phase 2</a></p></article><article class="rv"><span class="num">03</span><h3 style="margin-top:var(--s3)">Marke umsetzen</h3><p style="margin-top:var(--s2)"><a class="link-arrow" href="phase-umsetzen.html">Mehr zu Phase 3</a></p></article><article class="rv"><span class="num">04</span><h3 style="margin-top:var(--s3)">Marke begleiten</h3><p style="margin-top:var(--s2)"><a class="link-arrow" href="phase-begleiten.html">Mehr zu Phase 4</a></p></article>
 </div>
 </div></section>

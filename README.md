@@ -98,6 +98,11 @@ Headline; die Regel haengt an `.section-heading:has(+ .case-marquee)`. Die
 Beschriftung im Karussell ist zweifarbig: Markenname auf Ink, Branche im
 `<i>` in Coral.
 
+Auf der Ueber-uns-Seite laufen „Wofuer wir stehen" und „Unsere Methode"
+mobil als vier vollbreite Bloecke untereinander. Die Personenmodule zeigen
+zuerst das Portrait und darunter eine gleich breite Coral-Textflaeche; die
+E-Mail-Adresse ist als mindestens 44 px hohes Touchziel gestaltet.
+
 Headlines duerfen nie aus dem Schirm laufen: `h1,h2` haben global
 `overflow-wrap:break-word`, lange Komposita bekommen weiche Trennstellen
 (`&shy;`) an der sinnvollen Fuge, damit der Umbruch nicht mitten im Wort
