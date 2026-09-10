@@ -156,9 +156,19 @@ maschinen. Die alten WordPress-Adressen liegen als Weiterleitung in
 
 Der technische Gauntlet prüft alle Sitemap-Seiten auf interne Links,
 Fragmentziele, lokale Ressourcen, Bilddimensionen, doppelte IDs,
-Medien-Querystrings, Cache-Version und das verpflichtende Vorlaunch-`noindex`:
+Medien-Querystrings, Cache-Version, die einheitliche Award-Auszeichnung im
+Footer und das verpflichtende Vorlaunch-`noindex`:
 
     python3 tools/technical-preflight.py
+
+Der Footer wird zentral in `_footer.partial.html` gepflegt und anschließend
+auf alle Sitemap-Seiten synchronisiert:
+
+    python3 tools/sync-footer.py
+
+So bleiben Navigationsspalten, Awards und rechtliche Links auf allen Seiten
+identisch. Änderungen an `site.css` oder `site.js` erfordern weiterhin den
+globalen Cache-Buster in allen HTML-Dateien.
 
 Messwerte, Entscheidungen und verbleibende Grenzen des Optimierungspasses vom
 10.09.2026 stehen in `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md`.

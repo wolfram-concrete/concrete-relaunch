@@ -18,7 +18,7 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CACHE_VERSION = "152"
+EXPECTED_CACHE_VERSION = "153"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
 
@@ -60,6 +60,8 @@ class PageParser(HTMLParser):
             if data.get("srcset"):
                 for part in data["srcset"].split(","):
                     candidates.append(("source[srcset]", part.strip().split()[0]))
+        elif tag == "image" and data.get("href"):
+            candidates.append(("image[href]", data["href"]))
         elif tag == "script" and data.get("src"):
             candidates.append(("script[src]", data["src"]))
         elif tag == "link" and data.get("href"):
@@ -180,6 +182,19 @@ def scan() -> list[str]:
             }
             if any(part not in cta_markup for part in required_cta_parts):
                 findings.append(f"{page.name}: mobile navigation CTA content inconsistent")
+
+        if text.count('class="footer-awards"') != 1:
+            findings.append(f"{page.name}: footer awards missing or duplicated")
+        else:
+            required_awards = {
+                'assets/awards/concrete-awards-2026.png',
+                'aria-label="German Brand Award"',
+                'aria-label="Deutscher Gründerpreis"',
+                'aria-label="Marken Award"',
+                'aria-label="German Design Award"',
+            }
+            if any(part not in text for part in required_awards):
+                findings.append(f"{page.name}: footer awards content inconsistent")
 
     for page, parser in parsed_pages.items():
         for _tag, href in parser.links:

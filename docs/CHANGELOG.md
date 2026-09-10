@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (17) – Awards im Footer ergänzt
+
+- German Brand Award, Deutscher Gründerpreis, Marken Award und German Design
+  Award bilden einen eigenen Vertrauensblock neben den vier
+  Navigationsspalten. Unterhalb von 1100 px steht der Block oberhalb der
+  Navigation, mobil in einem kompakten 2×2-Raster.
+- Das angelieferte transparente Award-Asset wird als ein cache-sicher neu
+  benanntes Bild geladen und browserseitig verlustfrei in vier Logos
+  aufgeteilt. Ein externes Scraping war deshalb nicht nötig.
+- `_footer.partial.html` ist jetzt über `tools/sync-footer.py` reproduzierbar
+  auf alle 129 Sitemap-Seiten synchronisierbar; der technische Preflight
+  prüft künftig Vollständigkeit und Einheitlichkeit der Award-Auszeichnung.
+- Cache-Buster für `site.css` und `site.js` auf `v=153` erhöht.
+
 ## 10.09.2026 (16) – Mobiler Menü-CTA vereinheitlicht
 
 - Auf `erstgespraech.html` war „Projekt anfragen" im mobilen Menü als
