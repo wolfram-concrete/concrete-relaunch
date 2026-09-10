@@ -152,6 +152,28 @@
       });
     }
   }
+  // Autoplay-Medien unterhalb des ersten Bildschirms erst in Viewportnaehe laden.
+  // Ohne Quelle im initialen HTML erzwingt autoplay keinen verfruehten Download.
+  (function(){
+    var videos=[].slice.call(document.querySelectorAll("video[data-lazy-autoplay]"));if(!videos.length)return;
+    if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+    function activate(v){
+      if(v.dataset.lazyLoaded)return;
+      if(v.dataset.src){v.src=v.dataset.src;delete v.dataset.src;}
+      v.querySelectorAll("source[data-src]").forEach(function(source){source.src=source.dataset.src;delete source.dataset.src;});
+      v.dataset.lazyLoaded="1";v.preload="metadata";v.load();v.play().catch(function(){});
+    }
+    if(!("IntersectionObserver" in window)){videos.forEach(activate);return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var v=entry.target;
+        if(entry.isIntersecting){activate(v);v.play().catch(function(){});}
+        else if(v.dataset.lazyLoaded&&!v.paused)v.pause();
+      });
+    },{rootMargin:"320px 0px",threshold:.01});
+    videos.forEach(function(v){io.observe(v);});
+    document.addEventListener("visibilitychange",function(){if(document.hidden)videos.forEach(function(v){if(!v.paused)v.pause();});});
+  })();
   // __masonrysplit: Großformate (.span) aus dem Spaltenraster herauslösen — das Masonry wird
   // an dieser Stelle geteilt; jedes Segment balanciert sich selbst, keine großen Lücken.
   document.querySelectorAll(".case-masonry").forEach(function(m){

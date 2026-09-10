@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (6) – Technische Optimierung: Galerie-Videos
+
+- 29 Autoplay-Videos unterhalb des ersten Bildschirms tragen ihre Quelle
+  jetzt als `data-src` und laden erst 320 px vor dem Viewport. Außerhalb des
+  Viewports pausieren bereits geladene Clips; bei `prefers-reduced-motion`
+  bleiben die Poster stehen. Das Hero-Video der the-moc-Case-Seite bleibt
+  bewusst unverändert.
+- Die zwei Videos ohne Poster haben neue, cache-sichere Standbilder:
+  `assets/projects/agentur-reel-poster-opt.jpg` und
+  `assets/cases/nextbed/nextbed-pt2-poster-opt.jpg`.
+- Cache-Buster für `site.js` und `site.css` auf `v=148` erhöht.
+
 ## 10.09.2026 (5) – Technische Optimierung: mobiler Hero
 
 - Auf Viewports bis 700 px und bei aktiviertem Datensparmodus zeigt der
