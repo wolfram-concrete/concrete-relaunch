@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (21) – Firmierung auf der Kontaktseite korrigiert
+
+- Die Firmierung an den Standorten Hamburg und Frankfurt lautet jetzt
+  konsistent „CONCRETE – Brandbuilding GmbH“ statt „CONCRETE. Brandbuilding
+  GmbH“.
+- Kein Cache-Buster nötig, weil `site.css` und `site.js` unverändert bleiben.
+
 ## 10.09.2026 (20) – Supporter, Partner und Sortlist-Badge im Footer
 
 - Der Vertrauensbereich im Footer trennt jetzt sauber zwischen
