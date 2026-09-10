@@ -1,5 +1,15 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (3) – Technische Optimierung: Video-Teaser
+
+- Stumme Vorschauvideos mit `data-vteaser` werden erst 320 px vor dem
+  Viewport erzeugt. Zuvor lud jede Seite alle Teaser-MP4s unmittelbar beim
+  Start, auf der Homepage vier Videos mit zusammen rund 13,6 MB.
+- Das vorhandene Poster bleibt beim Wechsel zum Vorschauvideo erhalten;
+  `preload="metadata"` begrenzt die Vorladung. Bei `prefers-reduced-motion`
+  bleibt weiterhin ausschließlich das Standbild sichtbar.
+- Cache-Buster für `site.js` und `site.css` auf `v=146` erhöht.
+
 ## 10.09.2026 (2) – SEO- und GEO-Grundlagen
 
 - **Branchenseiten tragen wieder die alten Suchbegriffe.** Title und
