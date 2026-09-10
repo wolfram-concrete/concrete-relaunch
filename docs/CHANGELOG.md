@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (27) – Footer-Listen auf Wissen-Höhe verdichtet
+
+- Die Leistungs- und Branchenspalte zeigen initial nur so viele Einträge, dass
+  ihre optische Höhe die Wissen-Spalte nicht überschreitet.
+- „Weitere Leistungen“ beziehungsweise „Weitere Branchen“ öffnen die übrigen
+  Links direkt im Footer und wechseln danach zur jeweiligen
+  „Weniger“-Variante. Die Hub-Links bleiben dauerhaft sichtbar.
+- Die Lösung verzichtet bewusst auf einen verschachtelten Scrollbereich. Alle
+  Links bleiben im HTML, per Tastatur bedienbar und für Suchmaschinen
+  auffindbar.
+- `site.css` erhält deshalb den globalen Cache-Buster `v=157`.
+
 ## 10.09.2026 (26) – ergobag als Ursprung der Auszeichnungen belegt
 
 - Die ergobag-Projektseite enthält jetzt zwischen Bildwelt und Kundenstimme

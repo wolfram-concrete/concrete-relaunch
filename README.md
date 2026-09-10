@@ -175,6 +175,10 @@ auf alle Sitemap-Seiten synchronisiert:
 So bleiben Navigationsspalten, Awards, Supporter/Partner und rechtliche Links
 auf allen Seiten identisch. Design made in Germany wird mit einem lokal
 gespeicherten SVG auf den CONCRETE-Eintrag im Agenturverzeichnis verlinkt.
+Die langen Leistungs- und Branchenlisten sind initial auf die optische Höhe
+der Wissen-Spalte verdichtet; „Weitere Leistungen“ beziehungsweise „Weitere
+Branchen“ legen die übrigen, weiterhin im HTML vorhandenen Links ohne
+verschachtelten Scrollbereich frei.
 Das dynamische Sortlist Trusted Partner Badge liegt in derselben Vertrauensspalte,
 wird aber erst nach Einwilligung in „Marketing & externe Inhalte“ geladen.
 Änderungen an `site.css` oder `site.js` erfordern weiterhin den globalen
