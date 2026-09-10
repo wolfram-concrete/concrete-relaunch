@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (23) – Award-Logos mit offiziellen Seiten verlinkt
+
+- Die vier Logos im Bereich „Ausgezeichnet“ verlinken jetzt jeweils auf die
+  offizielle Website des German Brand Award, Deutschen Gründerpreises,
+  Marken-Award beziehungsweise German Design Award.
+- Alle Logo-Links sind per Tastatur erreichbar, haben eindeutige zugängliche
+  Namen und öffnen externe Ziele abgesichert in einem neuen Tab.
+- Der technische Preflight prüft die vier Zieladressen künftig auf allen 129
+  Seiten. Kein Cache-Buster nötig, weil `site.css` und `site.js` unverändert
+  bleiben.
+
 ## 10.09.2026 (22) – Bildfokus des Standorts Frankfurt angepasst
 
 - Der individuelle Fokus des Frankfurter Standortfotos liegt jetzt weiter

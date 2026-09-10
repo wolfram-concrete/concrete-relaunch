@@ -215,6 +215,10 @@ def scan() -> list[str]:
                 'aria-label="Deutscher Gründerpreis"',
                 'aria-label="Marken Award"',
                 'aria-label="German Design Award"',
+                'https://www.german-brand-award.com/',
+                'https://www.deutscher-gruenderpreis.de/',
+                'https://marken-award.de/',
+                'https://www.german-design-award.com/',
             }
             if any(part not in text for part in required_awards):
                 findings.append(f"{page.name}: footer awards content inconsistent")
