@@ -338,15 +338,9 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .scenario-link__copy{font-size:var(--fs-body);color:rgba(243,239,231,.62);max-width:44ch}
 .scenario-link:hover .scenario-link__title,.scenario-link:focus-visible .scenario-link__title{color:var(--coral-l)}
 @media(max-width:900px){.scenario-link{grid-template-columns:56px 1fr}.scenario-link__copy{grid-column:2}
-/* auf dem Handy fehlt der Hover: ein sichtbarer Hinweis zeigt, dass die Felder fuehren */
-.scenario-link__copy::after{content:"Situation ansehen";display:flex;align-items:center;gap:.5em;
-  margin-top:var(--s3);font-family:"Arame";font-weight:700;font-size:13px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--coral)}
-.scenario-link__copy::before{content:"";position:absolute;left:0;bottom:0;width:.62em;height:.76em;
-  background:var(--coral);-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;
-  mask:url("assets/arrow.svg") no-repeat center/contain;transform:translateY(-.18em)}
-.scenario-link__copy{position:relative;padding-bottom:0}
-.scenario-link__copy::after{padding-left:1.1em}
+/* auf dem Handy fehlt der Hover: ein echter Pfeil-Link zeigt, dass die Felder fuehren */
+.scenario-link__cta{display:none}
+@media(max-width:900px){.scenario-link__cta{display:inline-flex;grid-column:2;margin-top:var(--s3);color:var(--coral)}}
 .scenario-link:active .scenario-link__title{color:var(--coral-l)}
 }
 
