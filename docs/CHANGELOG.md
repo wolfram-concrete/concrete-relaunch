@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (24) – Consent-Banner kompakt und sachlich gestaltet
+
+- Der initiale Consent-Hinweis erscheint jetzt als kleine Karte am unteren
+  linken Rand statt als seitenbreites Element über dem Hero. Schwarze Kontur,
+  große Display-Headline und hervorgehobener Akzeptieren-Button entfallen.
+- Das Wording ist auf einen kurzen, faktischen Hinweis reduziert. Ablehnen und
+  Akzeptieren bleiben direkt erreichbar und visuell gleichwertig;
+  Detailauswahl und Datenschutzerklärung bleiben zugänglich.
+- Die ausführlichen Cookie-Einstellungen bleiben bewusst ein modaler Dialog,
+  da sie erst nach einer aktiven Auswahl geöffnet werden.
+- Das geänderte Consent-Script wird cache-sicher als `consent-v3.js`
+  ausgeliefert, ohne bestehende Einwilligungen erneut abzufragen. Cache-Buster
+  für `site.css` und `site.js` auf `v=156` erhöht.
+
 ## 10.09.2026 (23) – Award-Logos mit offiziellen Seiten verlinkt
 
 - Die vier Logos im Bereich „Ausgezeichnet“ verlinken jetzt jeweils auf die

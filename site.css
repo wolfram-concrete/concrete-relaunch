@@ -1062,11 +1062,13 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .footer-legal__links button:hover,.footer-legal__links button:focus-visible{color:var(--coral)}
 .consent-ui[hidden],.consent-ui [hidden]{display:none!important}
 .consent-ui{position:fixed;inset:0;z-index:10000;pointer-events:none;color:var(--ink)}
-.consent-banner,.consent-settings{pointer-events:auto;position:absolute;background:var(--paper);border:1px solid var(--ink);box-shadow:0 18px 50px rgba(23,21,19,.22)}
-.consent-banner{left:var(--pad);right:var(--pad);bottom:var(--pad);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,4vw,64px);align-items:end;padding:clamp(24px,3vw,44px)}
-.consent-banner__copy{max-width:760px}
-.consent-banner h2,.consent-settings h2{font-size:clamp(32px,4.5vw,64px);line-height:.94;margin:.08em 0 .28em}
-.consent-banner p:not(.eyebrow),.consent-settings>p{font-size:clamp(16px,1.5vw,20px);line-height:1.45;margin:0;max-width:68ch}
+.consent-banner,.consent-settings{pointer-events:auto;position:absolute;background:var(--paper);border:0;box-shadow:0 12px 38px rgba(23,21,19,.16)}
+.consent-banner{left:18px;bottom:18px;display:grid;width:min(460px,calc(100% - 36px));gap:14px;padding:18px}
+.consent-banner__copy{max-width:none}
+.consent-banner h2{font-size:15px;line-height:1.1;letter-spacing:.035em;text-transform:uppercase;margin:0 0 7px}
+.consent-settings h2{font-size:clamp(32px,4.5vw,64px);line-height:.94;margin:.08em 0 .28em}
+.consent-banner p:not(.eyebrow){font-size:13px;line-height:1.42;color:var(--ink-60);margin:0;max-width:48ch}
+.consent-settings>p{font-size:clamp(16px,1.5vw,20px);line-height:1.45;margin:0;max-width:68ch}
 .consent-banner a,.consent-settings a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em}
 .consent-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:10px}
 .consent-button,.consent-link{min-height:46px;cursor:pointer;font-family:"Arame";font-weight:700;text-transform:uppercase;letter-spacing:.035em}
@@ -1074,6 +1076,12 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .consent-button--solid{background:var(--coral)}
 .consent-button:hover,.consent-button:focus-visible{background:var(--ink);color:var(--paper)}
 .consent-link{border:0;background:none;color:var(--ink);padding:8px 4px;font-size:14px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}
+.consent-banner .consent-actions{justify-content:flex-start;gap:7px}
+.consent-banner .consent-button,.consent-banner .consent-link{min-height:36px;letter-spacing:.025em}
+.consent-banner .consent-button{border:0;border-radius:2px;padding:8px 11px;font-size:12px;background:rgba(23,21,19,.075);color:var(--ink)}
+.consent-banner .consent-button--solid{background:rgba(23,21,19,.075)}
+.consent-banner .consent-button:hover,.consent-banner .consent-button:focus-visible{background:rgba(23,21,19,.15);color:var(--ink)}
+.consent-banner .consent-link{color:var(--ink-60);padding:7px 6px;font-size:11px}
 .consent-settings{inset:50% auto auto 50%;transform:translate(-50%,-50%);width:min(720px,calc(100% - 2 * var(--pad)));max-height:calc(100svh - 2 * var(--pad));overflow:auto;overscroll-behavior:contain;padding:clamp(24px,4vw,48px)}
 .consent-settings::before{content:"";position:fixed;inset:-100vmax;background:rgba(23,21,19,.58);z-index:-1}
 .consent-settings__head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
@@ -1095,8 +1103,8 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .consent-switch input:focus-visible+i{outline:2px solid var(--ink);outline-offset:3px}
 .consent-actions--settings{justify-content:space-between}
 @media(max-width:760px){
-  .consent-banner{grid-template-columns:1fr;gap:20px;padding:22px;max-height:calc(100svh - 2 * var(--pad));overflow:auto;overscroll-behavior:contain}
-  .consent-banner h2,.consent-settings h2{font-size:clamp(30px,10vw,44px)}
+  .consent-banner{left:12px;bottom:12px;width:calc(100% - 24px);gap:12px;padding:16px;max-height:calc(100svh - 24px);overflow:auto;overscroll-behavior:contain}
+  .consent-settings h2{font-size:clamp(30px,10vw,44px)}
   .consent-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}
   .consent-button{width:100%}.consent-link{grid-column:1/-1}
   .consent-settings{padding:22px}.consent-actions--settings{grid-template-columns:1fr}

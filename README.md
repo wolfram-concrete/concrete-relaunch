@@ -185,7 +185,7 @@ Messwerte, Entscheidungen und verbleibende Grenzen des Optimierungspasses vom
 
 ## Datenschutz und Consent
 
-`consent-v2.js` ist der eigene Consent-Manager der statischen Website. Er
+`consent-v3.js` ist der eigene Consent-Manager der statischen Website. Er
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
@@ -203,7 +203,7 @@ bei der nächsten Container-Version entfernt werden. Search Console ist keine
 Browser-Einbindung und gehört nicht in den Banner. Calendly ist nur extern
 verlinkt, nicht eingebettet.
 
-Änderungen an `consent-v2.js` erfordern wegen fehlender Medien-Querystrings
+Änderungen an `consent-v3.js` erfordern wegen fehlender Medien-Querystrings
 einen neuen Dateinamen und eine Aktualisierung in allen Sitemap-Seiten. Die
 Implementierung, Prüffälle und noch nötigen Konto-/Vertragsprüfungen stehen in
 `docs/DATENSCHUTZ-CONSENT-2026-09-10.md`.

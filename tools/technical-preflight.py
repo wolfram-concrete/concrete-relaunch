@@ -19,7 +19,7 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CACHE_VERSION = "155"
+EXPECTED_CACHE_VERSION = "156"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
 
@@ -169,9 +169,9 @@ def scan() -> list[str]:
             findings.append(f"{page.name}: required prelaunch noindex missing")
         if "Fabian Lampert" in text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
-        if text.count('<script src="consent-v2.js"></script>') != 1:
+        if text.count('<script src="consent-v3.js"></script>') != 1:
             findings.append(f"{page.name}: consent manager missing or duplicated")
-        elif text.index('<script src="consent-v2.js"></script>') > text.index(
+        elif text.index('<script src="consent-v3.js"></script>') > text.index(
             f'<script src="site.js?v={EXPECTED_CACHE_VERSION}"></script>'
         ):
             findings.append(f"{page.name}: consent manager must load before site.js")
@@ -267,7 +267,7 @@ def scan() -> list[str]:
             if source.startswith(("http://", "https://", "//")):
                 findings.append(f"{css_path.name}: external CSS resource bypasses consent: {source}")
 
-    consent = (ROOT / "consent-v2.js").read_text(encoding="utf-8")
+    consent = (ROOT / "consent-v3.js").read_text(encoding="utf-8")
     for required in (
         'var GTM_ID = "GTM-N8223FX"',
         'analytics_storage: "denied"',
@@ -279,10 +279,10 @@ def scan() -> list[str]:
         "window.BorlabsCookie.Consents.hasConsent = hasConsent",
     ):
         if required not in consent:
-            findings.append(f"consent-v2.js: missing consent safeguard: {required}")
+            findings.append(f"consent-v3.js: missing consent safeguard: {required}")
     for forbidden in ('"facebook-pixel"', '"hubspot-pixel"'):
         if forbidden in consent:
-            findings.append(f"consent-v2.js: obsolete service is consent-enabled: {forbidden}")
+            findings.append(f"consent-v3.js: obsolete service is consent-enabled: {forbidden}")
 
     privacy = (ROOT / "datenschutz.html").read_text(encoding="utf-8")
     for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "Sortlist Trusted Partner Badge"):

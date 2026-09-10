@@ -191,13 +191,12 @@
     return '<div class="consent-ui" data-consent-ui hidden>' +
       '<section class="consent-banner" role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" data-consent-banner>' +
         '<div class="consent-banner__copy">' +
-          '<p class="eyebrow">Datenschutz</p>' +
-          '<h2 id="consent-title">Dürfen wir messen?</h2>' +
-          '<p id="consent-copy">Wir laden Analyse- und Marketingdienste erst nach deiner Zustimmung. Notwendige Technik funktioniert auch ohne Tracking. Details stehen im <a href="datenschutz.html">Datenschutz</a>.</p>' +
+          '<h2 id="consent-title">Datenschutzeinstellungen</h2>' +
+          '<p id="consent-copy">Optionale Statistik- und Marketingdienste laden wir nur mit deiner Zustimmung. <a href="datenschutz.html">Details</a></p>' +
         '</div>' +
         '<div class="consent-actions">' +
-          '<button class="consent-button consent-button--quiet" type="button" data-consent-reject>Nur notwendige</button>' +
-          '<button class="consent-button consent-button--solid" type="button" data-consent-accept>Alle akzeptieren</button>' +
+          '<button class="consent-button consent-button--quiet" type="button" data-consent-reject>Ablehnen</button>' +
+          '<button class="consent-button consent-button--solid" type="button" data-consent-accept>Akzeptieren</button>' +
           '<button class="consent-link" type="button" data-consent-settings>Einstellungen</button>' +
         '</div>' +
       '</section>' +
