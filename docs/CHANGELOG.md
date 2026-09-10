@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (11) – Dauerhafter technischer Preflight
+
+- `tools/technical-preflight.py` prüft alle 129 Sitemap-Seiten auf fehlende
+  interne Ziele und lokale Ressourcen, defekte Fragmentanker, doppelte IDs,
+  Bilddimensionen, unerlaubte Medien-Querystrings, einheitliche Cache-Version
+  und das verpflichtende Vorlaunch-`noindex`.
+- Der Check ergänzt den bestehenden SEO-Gauntlet und verändert keine Seite.
+
 ## 10.09.2026 (10) – Technische Optimierung: größte Bilddateien
 
 - Die 3,1-MB-Betontextur wurde bei identischem Seitenverhältnis und
