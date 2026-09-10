@@ -2,8 +2,824 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
-    { "source": "/(.*)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] },
-    { "source": "/assets/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" } ] },
-    { "source": "/fonts/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" } ] }
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/aconvia",
+      "destination": "/case-aconvia",
+      "permanent": true
+    },
+    {
+      "source": "/adsuits",
+      "destination": "/case-adsuits",
+      "permanent": true
+    },
+    {
+      "source": "/arbeiten-sie-auch-mit-mallorquinischen-unternehmen-mit-fokus-auf-deutsche-kunden",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/arbeitsweise",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/baked",
+      "destination": "/case-baked",
+      "permanent": true
+    },
+    {
+      "source": "/becare",
+      "destination": "/case-be-care",
+      "permanent": true
+    },
+    {
+      "source": "/begleiten",
+      "destination": "/phase-begleiten",
+      "permanent": true
+    },
+    {
+      "source": "/bekommen-wir-am-ende-der-brandvision-schon-ein-logo-oder-ein-komplettes-designsystem",
+      "destination": "/phase-definieren",
+      "permanent": true
+    },
+    {
+      "source": "/bekommen-wir-in-dieser-phase-schon-konkrete-seiten-designs-zu-sehen",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/bgf-architekten",
+      "destination": "/case-bgf",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/boness-euteneuer",
+      "destination": "/case-boness-euteneuer",
+      "permanent": true
+    },
+    {
+      "source": "/branchenuebersicht",
+      "destination": "/branchen",
+      "permanent": true
+    },
+    {
+      "source": "/brand-building-fuer-anspruchsvolle-b2b-marken-auf-mallorca",
+      "destination": "/b2b-marken-mallorca",
+      "permanent": true
+    },
+    {
+      "source": "/brauchen-wir-bei-einem-fotoshooting-professionelle-models-oder-funktioniert-es-besser-mit-unseren-eigenen-mitarbeitenden",
+      "destination": "/fotoproduktion",
+      "permanent": true
+    },
+    {
+      "source": "/brauchen-wir-eine-eigene-seo-agentur",
+      "destination": "/seo-und-ki-search",
+      "permanent": true
+    },
+    {
+      "source": "/brauchen-wir-eine-ganz-neue-marke-oder-reicht-es-unsere-bestehende-markenstrategie-um-employer-branding-zu-erweitern",
+      "destination": "/employer-branding",
+      "permanent": true
+    },
+    {
+      "source": "/braucht-brand-building-auf-mallorca-eine-andere-herangehensweise-als-in-deutschland",
+      "destination": "/b2b-marken-mallorca",
+      "permanent": true
+    },
+    {
+      "source": "/can-sort",
+      "destination": "/case-can-sort",
+      "permanent": true
+    },
+    {
+      "source": "/cases",
+      "destination": "/projekte",
+      "permanent": true
+    },
+    {
+      "source": "/category/branchen",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/cases",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/concrete",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/faqs",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/leistungen",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cologne-comedy-festival",
+      "destination": "/case-cologne-comedy",
+      "permanent": true
+    },
+    {
+      "source": "/conlivo",
+      "destination": "/case-conlivo",
+      "permanent": true
+    },
+    {
+      "source": "/das-erstgespraech",
+      "destination": "/erstgespraech",
+      "permanent": true
+    },
+    {
+      "source": "/definieren",
+      "destination": "/phase-definieren",
+      "permanent": true
+    },
+    {
+      "source": "/digital2gether",
+      "destination": "/case-digital2gether",
+      "permanent": true
+    },
+    {
+      "source": "/diversitaet-und-inklusion-im-design",
+      "destination": "/corporate-design",
+      "permanent": true
+    },
+    {
+      "source": "/early-adopter-innovative-marken",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/ergobag",
+      "destination": "/case-ergobag",
+      "permanent": true
+    },
+    {
+      "source": "/erstgespraech-cta",
+      "destination": "/erstgespraech",
+      "permanent": true
+    },
+    {
+      "source": "/familly-und-kids-brands",
+      "destination": "/family-und-kids-brands",
+      "permanent": true
+    },
+    {
+      "source": "/faqs",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/finaplus",
+      "destination": "/case-finaplus",
+      "permanent": true
+    },
+    {
+      "source": "/get-on",
+      "destination": "/case-get-on",
+      "permanent": true
+    },
+    {
+      "source": "/good-humor",
+      "destination": "/case-good-humor",
+      "permanent": true
+    },
+    {
+      "source": "/health-und-education-brands",
+      "destination": "/family-und-kids-brands",
+      "permanent": true
+    },
+    {
+      "source": "/highr",
+      "destination": "/case-highr",
+      "permanent": true
+    },
+    {
+      "source": "/hy-help-yourself",
+      "destination": "/case-hy",
+      "permanent": true
+    },
+    {
+      "source": "/illustrationen-im-markendesign",
+      "destination": "/icons-und-llustration-sets",
+      "permanent": true
+    },
+    {
+      "source": "/immofolia",
+      "destination": "/case-immofolia",
+      "permanent": true
+    },
+    {
+      "source": "/ist-brand-building-messbar",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/ist-lokales-marktverstaendnis-auf-mallorca-wichtiger-als-strategische-distanz",
+      "destination": "/b2b-marken-mallorca",
+      "permanent": true
+    },
+    {
+      "source": "/kann-ein-icon-set-auch-spaeter-erweitert-oder-auf-neue-formate-angepasst-werden",
+      "destination": "/icons-und-llustration-sets",
+      "permanent": true
+    },
+    {
+      "source": "/kann-ich-meine-brand-auch-mit-ki-aufbauen",
+      "destination": "/ki-tools-analyse-strategie",
+      "permanent": true
+    },
+    {
+      "source": "/kinderzahnarzt-wackelzahn",
+      "destination": "/case-wackelzahn",
+      "permanent": true
+    },
+    {
+      "source": "/klang2",
+      "destination": "/case-klang2",
+      "permanent": true
+    },
+    {
+      "source": "/koennen-nachhaltigkeit-und-premium-optik-zusammen-gedacht-werden",
+      "destination": "/package-design",
+      "permanent": true
+    },
+    {
+      "source": "/koennen-wir-bestehende-pos-flaechen-in-unser-markenbild-integrieren",
+      "destination": "/package-design",
+      "permanent": true
+    },
+    {
+      "source": "/koennen-wir-eine-brandvision-entwickeln-auch-wenn-der-finale-name-noch-nicht-steht",
+      "destination": "/phase-definieren",
+      "permanent": true
+    },
+    {
+      "source": "/koennen-wir-eine-starke-marke-entwickeln-obwohl-wir-parallel-das-tagesgeschaeft-am-limit-fahren",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/koennen-wir-mit-einer-fotoproduktion-mehrere-zwecke-gleichzeitig-abdecken-z-b-employer-branding-website-und-social-media",
+      "destination": "/fotoproduktion",
+      "permanent": true
+    },
+    {
+      "source": "/koennt-ihr-unsere-bestehenden-materialien-pruefen-bevor-wir-ein-grosses-projekt-starten",
+      "destination": "/marken-check",
+      "permanent": true
+    },
+    {
+      "source": "/leistungsuebersicht",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/lieblings-zahnarzt",
+      "destination": "/case-lieblings-zahnarzt",
+      "permanent": true
+    },
+    {
+      "source": "/little-big-pasta",
+      "destination": "/case-little-big-pasta",
+      "permanent": true
+    },
+    {
+      "source": "/luis-lea",
+      "destination": "/case-luis-lea",
+      "permanent": true
+    },
+    {
+      "source": "/maleco",
+      "destination": "/case-maleco",
+      "permanent": true
+    },
+    {
+      "source": "/markenstrategie-mit-ki",
+      "destination": "/ki-tools-analyse-strategie",
+      "permanent": true
+    },
+    {
+      "source": "/mdb-finance",
+      "destination": "/case-mdb-finance",
+      "permanent": true
+    },
+    {
+      "source": "/me-my-life-my-job",
+      "destination": "/case-me",
+      "permanent": true
+    },
+    {
+      "source": "/medium-architekten",
+      "destination": "/case-medium",
+      "permanent": true
+    },
+    {
+      "source": "/mine-mina",
+      "destination": "/case-mine-mina",
+      "permanent": true
+    },
+    {
+      "source": "/muss-ein-textkonzept-fuer-alle-kanaele-gleich-sein-oder-darf-es-unterschiede-geben",
+      "destination": "/headlines-und-textkonzept",
+      "permanent": true
+    },
+    {
+      "source": "/nextbed",
+      "destination": "/case-nextbed",
+      "permanent": true
+    },
+    {
+      "source": "/noey-solutions",
+      "destination": "/case-noey",
+      "permanent": true
+    },
+    {
+      "source": "/noveltea",
+      "destination": "/case-noveltea",
+      "permanent": true
+    },
+    {
+      "source": "/pause-and-play",
+      "destination": "/case-pause-play",
+      "permanent": true
+    },
+    {
+      "source": "/poodlewohl",
+      "destination": "/case-poodlewohl",
+      "permanent": true
+    },
+    {
+      "source": "/potatohead",
+      "destination": "/case-potatohead",
+      "permanent": true
+    },
+    {
+      "source": "/project-haya",
+      "destination": "/case-project-haya",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemaptest",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sknmetrics",
+      "destination": "/case-sknmetrics",
+      "permanent": true
+    },
+    {
+      "source": "/solit-marketing",
+      "destination": "/case-solit",
+      "permanent": true
+    },
+    {
+      "source": "/strategie",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/strategie-old",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/street-gourmet",
+      "destination": "/case-street-gourmet",
+      "permanent": true
+    },
+    {
+      "source": "/system-360",
+      "destination": "/case-system-360",
+      "permanent": true
+    },
+    {
+      "source": "/the-moc",
+      "destination": "/case-the-moc",
+      "permanent": true
+    },
+    {
+      "source": "/ueber-concrete",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
+      "source": "/umsetzen",
+      "destination": "/phase-umsetzen",
+      "permanent": true
+    },
+    {
+      "source": "/unser-handwerk",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/verstehen",
+      "destination": "/phase-verstehen",
+      "permanent": true
+    },
+    {
+      "source": "/warum-bei-concrete-verantwortung-nichtabgegeben-wird",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
+      "source": "/warum-brand-building-im-b2b-andersfunktioniert",
+      "destination": "/b2b-brands",
+      "permanent": true
+    },
+    {
+      "source": "/warum-ein-klarer-prozess-im-brand-buildingentscheidend-ist",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/warum-gutes-branding-mit-verstehen-beginnt-und-nicht-mit-design",
+      "destination": "/corporate-design",
+      "permanent": true
+    },
+    {
+      "source": "/warum-gutes-design-keine-geschmacksfrage-ist",
+      "destination": "/corporate-design",
+      "permanent": true
+    },
+    {
+      "source": "/warum-ist-beratung-im-markenaufbau-wichtig",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/warum-mit-concrete-arbeiten",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
+      "source": "/was-bedeutet-barrierefreiheit-im-design-und-warum-ist-sie-wichtig",
+      "destination": "/corporate-design",
+      "permanent": true
+    },
+    {
+      "source": "/was-ist-brand-building-eine-klaredefinition",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/was-ist-wichtig-beim-markendesign",
+      "destination": "/corporate-design",
+      "permanent": true
+    },
+    {
+      "source": "/was-passiert-nach-dem-launch",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/we-celebrate-streetfood",
+      "destination": "/case-we-celebrate",
+      "permanent": true
+    },
+    {
+      "source": "/welche-kanaele-sind-fuer-uns-wirklich-wichtig-und-welche-koennen-wir-weglassen",
+      "destination": "/marketing-und-media-brands",
+      "permanent": true
+    },
+    {
+      "source": "/welche-rolle-spielt-packaging-fuer-den-ersten-kaufmoment",
+      "destination": "/package-design",
+      "permanent": true
+    },
+    {
+      "source": "/welche-rolle-spielt-unsere-marke-bei-der-digitalisierung-von-gesundheit-und-bildung",
+      "destination": "/family-und-kids-brands",
+      "permanent": true
+    },
+    {
+      "source": "/welche-unternehmen-zu-concrete-passen-und-welche-nicht",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
+      "source": "/wie-anonym-koennen-kunden-und-mitarbeiterbefragungen-gestaltet-werden",
+      "destination": "/kunden-und-mitarbeiterbefragungen",
+      "permanent": true
+    },
+    {
+      "source": "/wie-bauen-wir-eine-marke-auf-die-kreative-begeistert-und-talente-anzieht",
+      "destination": "/employer-branding",
+      "permanent": true
+    },
+    {
+      "source": "/wie-bauen-wir-vertrauen-auf-wenn-unsere-leistungen-auf-den-ersten-blick-austauschbar-wirken",
+      "destination": "/markenpositionierung-brand-story",
+      "permanent": true
+    },
+    {
+      "source": "/wie-begeistern-wir-unsere-zielgruppe-emotional-ohne-an-professionalitaet-zu-verlieren",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/wie-binden-wir-interne-systeme-oder-externe-tools-ein-ohne-dass-der-prozess-stockt",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-bleiben-wir-relevant-wenn-trends-und-plattformen-sich-staendig-veraendern",
+      "destination": "/marketing-und-media-brands",
+      "permanent": true
+    },
+    {
+      "source": "/wie-detailliert-ist-die-brandvision-koennen-wir-damit-schon-arbeiten",
+      "destination": "/phase-definieren",
+      "permanent": true
+    },
+    {
+      "source": "/wie-digitalisiert-man-eine-designagentur",
+      "destination": "/corporate-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-eng-arbeiten-designer-und-entwickler-hier-wirklich-zusammen",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-finden-wir-eine-sprache-die-zu-uns-passt-ohne-austauschbar-zu-wirken",
+      "destination": "/headlines-und-textkonzept",
+      "permanent": true
+    },
+    {
+      "source": "/wie-gross-oder-klein-kann-retail-design-gedacht-werden-von-modul-bis-gesamtauftritt",
+      "destination": "/retail-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-koennen-wir-im-brandbuilding-prozess-sicherstellen-dass-alle-fachbereiche-die-veraenderung-mittragen",
+      "destination": "/internes-rollout",
+      "permanent": true
+    },
+    {
+      "source": "/wie-koennen-wir-in-einer-kampagnenentwicklung-auch-mit-kleinem-budget-eine-grosse-wirkung-erzielen",
+      "destination": "/kampagnen-design-key-visuals",
+      "permanent": true
+    },
+    {
+      "source": "/wie-koennen-wir-live-und-digital-erlebnisse-konsistent-verknuepfen",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/wie-koennen-wir-uns-als-agentur-oder-medium-im-ueberfuellten-markt-klar-differenzieren",
+      "destination": "/marketing-und-media-brands",
+      "permanent": true
+    },
+    {
+      "source": "/wie-koennen-wir-uns-im-fachkraeftemarkt-gegen-grosse-player-behaupten",
+      "destination": "/employer-branding",
+      "permanent": true
+    },
+    {
+      "source": "/wie-koennen-wir-unsere-geschichte-so-erzaehlen-dass-sie-nicht-wie-jede-andere-klingt",
+      "destination": "/headlines-und-textkonzept",
+      "permanent": true
+    },
+    {
+      "source": "/wie-koennen-wir-zeigen-dass-wir-mehr-sind-als-nur-ein-weiterer-personaldienstleister",
+      "destination": "/employer-branding",
+      "permanent": true
+    },
+    {
+      "source": "/wie-kommunizieren-wir-komplexe-inhalte-so-dass-sie-verstaendlich-und-serioes-wirken",
+      "destination": "/b2b-brands",
+      "permanent": true
+    },
+    {
+      "source": "/wie-nutzen-wir-social-listening-erkenntnisse-konkret-fuer-unsere-marke-oder-unser-employer-branding",
+      "destination": "/social-listening",
+      "permanent": true
+    },
+    {
+      "source": "/wie-schaffen-wir-es-dass-aus-vielen-ideen-am-ende-eine-klare-richtung-wird",
+      "destination": "/headlines-und-textkonzept",
+      "permanent": true
+    },
+    {
+      "source": "/wie-schaffen-wir-es-dass-unsere-kampagne-nicht-wie-jede-andere-aussieht",
+      "destination": "/kampagnen-design-key-visuals",
+      "permanent": true
+    },
+    {
+      "source": "/wie-schaffen-wir-es-im-regal-neben-grossen-marken-sichtbar-zu-werden",
+      "destination": "/package-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-schaffen-wir-es-uns-im-ueberfuellten-recruiting-markt-klar-von-wettbewerbern-abzugrenzen",
+      "destination": "/employer-branding",
+      "permanent": true
+    },
+    {
+      "source": "/wie-schaffen-wir-es-unsere-event-entertainment-brand-in-einem-ueberfuellten-markt-abzuheben",
+      "destination": "/event-und-entertainment-brands",
+      "permanent": true
+    },
+    {
+      "source": "/wie-schaffen-wir-es-unsere-komplexen-leistungen-so-zu-erklaeren-dass-entscheiderinnen-sofort-den-mehrwert-erkennen",
+      "destination": "/b2b-brands",
+      "permanent": true
+    },
+    {
+      "source": "/wie-schaffen-wir-es-vertrauen-in-einem-sensiblen-markt-aufzubauen",
+      "destination": "/markenpositionierung-brand-story",
+      "permanent": true
+    },
+    {
+      "source": "/wie-schaffen-wir-glaubwuerdigkeit-bei-kundinnen-partnerinnen-und-zielgruppen",
+      "destination": "/markenpositionierung-brand-story",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-alle-intern-wie-extern-in-einer-sprache-sprechen",
+      "destination": "/headlines-und-textkonzept",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-animationen-unsere-marke-verstaerken-und-nicht-ablenken",
+      "destination": "/animationen-motion-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-auch-intern-alle-dieselbe-sprache-sprechen",
+      "destination": "/headlines-und-textkonzept",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-das-design-nicht-nur-schoen-sondern-auch-funktional-ist",
+      "destination": "/corporate-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-der-name-nicht-schon-vergeben-oder-rechtlich-problematisch-ist",
+      "destination": "/namensentwicklung",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-die-kampagne-konsistent-zur-marke-passt",
+      "destination": "/kampagnen-design-key-visuals",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-die-marke-auf-desktop-tablet-und-mobile-gleich-wirkt",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-social-listening-daten-wirklich-relevant-fuer-uns-sind",
+      "destination": "/social-listening",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-unser-corporate-design-in-allen-kanaelen-konsistent-bleibt",
+      "destination": "/marketing-und-media-brands",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-unser-design-auch-in-der-produktion-umsetzbar-ist",
+      "destination": "/corporate-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-unser-messestand-wirklich-unsere-marke-repraesentiert",
+      "destination": "/retail-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-unsere-marke-nicht-nur-fuer-ein-event-wirkt-sondern-langfristig-traegt",
+      "destination": "/event-und-entertainment-brands",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-wir-auch-in-ki-suchen-sichtbar-sind",
+      "destination": "/wie-wird-sichergestellt-dass-die-website-bei-google-und-in-ki-suchen-auffindbar-ist",
+      "permanent": true
+    },
+    {
+      "source": "/wie-stellen-wir-sicher-dass-wir-nicht-nur-daten-haben-sondern-auch-klare-entscheidungen-treffen",
+      "destination": "/wissen",
+      "permanent": true
+    },
+    {
+      "source": "/wie-tief-muss-eine-zielgruppen%e2%80%91-markt-und-wettbewerberanalyse-analyse-gehen-damit-sie-wirklich-nuetzt",
+      "destination": "/wie-tief-muss-eine-zielgruppen-markt-und-wettbewerberanalyse-analyse-gehen-damit-sie-wirklich-nuetzt",
+      "permanent": true
+    },
+    {
+      "source": "/wie-transportieren-wir-herkunft-qualitaet-und-nachhaltigkeit-glaubwuerdig",
+      "destination": "/package-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-uebersetzen-wir-die-ergebnisse-von-kunden-und-mitarbeiterbefragungen-in-konkrete-massnahmen",
+      "destination": "/kunden-und-mitarbeiterbefragungen",
+      "permanent": true
+    },
+    {
+      "source": "/wie-verhindern-wir-dass-mitarbeiterbefragungen-nur-eine-pflichtuebung-ist",
+      "destination": "/kunden-und-mitarbeiterbefragungen",
+      "permanent": true
+    },
+    {
+      "source": "/wie-vermeiden-wir-dass-unsere-kommunikation-austauschbar-klingt",
+      "destination": "/headlines-und-textkonzept",
+      "permanent": true
+    },
+    {
+      "source": "/wie-viel-kostet-ein-marken-check-im-vergleich-zu-einer-kompletten-markenentwicklung",
+      "destination": "/marken-check",
+      "permanent": true
+    },
+    {
+      "source": "/wie-viele-illustrationen-und-icons-sollten-wir-fuer-den-anfang-entwickeln-lassen",
+      "destination": "/icons-und-llustration-sets",
+      "permanent": true
+    },
+    {
+      "source": "/wie-weit-ist-ki-im-layoutdesign",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/wie-wird-meine-marke-zu-lovebrand",
+      "destination": "/namensentwicklung",
+      "permanent": true
+    },
+    {
+      "source": "/wir-sind-schon-lange-am-markt-wie-schaffen-wir-ein-klares-profil-ohne-unsere-bestehenden-kunden-zu-irritieren",
+      "destination": "/markenpositionierung-brand-story",
+      "permanent": true
+    },
+    {
+      "source": "/work-in-progress",
+      "destination": "/projekte",
+      "permanent": true
+    },
+    {
+      "source": "/zielgruppen%e2%80%91-markt-und-wettbewerberanalyse",
+      "destination": "/zielgruppen-markt-und-wettbewerberanalyse",
+      "permanent": true
+    }
   ]
 }
