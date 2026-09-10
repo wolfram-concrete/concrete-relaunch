@@ -905,3 +905,28 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
   .reviews__head{gap:var(--s2) var(--s3);margin-bottom:var(--s3)}
   .reviews__score{font-size:clamp(24px,7vw,32px)}
 }
+
+/* --- Handy: die drei Kompetenzbloecke bleiben beim Scrollen stehen und
+   schieben sich nacheinander uebereinander (Scroll-Stopp ohne Hijacking) --- */
+@media(max-width:860px){
+  .section--carrier .competence-grid{display:block}
+  .section--carrier .competence{position:sticky;top:calc(var(--header-height) - 1px);
+    background:var(--coral);padding-block:clamp(24px,6vw,40px) clamp(36px,9vw,64px);
+    transition:opacity .5s ease}
+  /* die Blockflaeche reicht bis an den rechten Traegerrand */
+  .section--carrier .competence::before{content:"";position:absolute;inset:0 calc(-1 * var(--pad)) 0 calc(-1 * var(--pad));
+    background:var(--coral);z-index:-1}
+  .section--carrier .competence .eyebrow{margin-bottom:var(--s3)}
+  .section--carrier .competence:last-child{padding-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){.section--carrier .competence{position:static}}
+
+/* der nachrueckende Block blendet auf, wo der Browser scrollgesteuerte
+   Animationen kann; sonst schiebt er sich einfach darueber */
+@supports (animation-timeline: view()){
+  @media(max-width:860px){
+    .section--carrier .competence + .competence{animation:comp-fade linear both;
+      animation-timeline:view();animation-range:entry 5% entry 55%}
+    @keyframes comp-fade{from{opacity:0}to{opacity:1}}
+  }
+}
