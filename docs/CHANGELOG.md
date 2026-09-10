@@ -1,5 +1,26 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (2) – SEO- und GEO-Grundlagen
+
+- **Branchenseiten tragen wieder die alten Suchbegriffe.** Title und
+  Footer-Ankertext lauten „Strategie und Branding für …" beziehungsweise
+  „Brand Building für anspruchsvolle B2B-Marken auf Mallorca". Die URLs
+  bleiben unverändert, acht von zehn entsprechen dem alten Slug.
+- **Definitionssatz je Branche** (`.geo-def`) unter dem Lead, damit
+  Antwortmaschinen einen zitierbaren Satz zur Entität finden.
+- **meta description auf allen 129 Seiten**, eindeutig, 60 bis 170 Zeichen.
+  Die Branchenseiten übernehmen die Texte aus der WordPress-Fassung, die
+  übrigen werden aus Lead, Kurzantwort oder erstem Absatz abgeleitet;
+  `og:description` zieht mit.
+- **rel=canonical** auf allen Seiten, passend zu `cleanUrls` ohne `.html`.
+- **sitemap.xml** mit 129 URLs und **robots.txt** mit Sitemap-Verweis.
+- **158 Weiterleitungen** von den alten WordPress-Adressen in `vercel.json`,
+  abgeleitet aus der alten `sitemap_index.xml`. Case-Seiten, Phasen,
+  Übersichten und die alten FAQ-Seiten sind thematisch zugeordnet.
+- **`tools/seo-gauntlet.py`** prüft Description, Canonical, Title-Länge,
+  Eindeutigkeit, Sitemap, robots.txt, Redirects und Ankertexte und endet
+  mit Exit 1, sobald etwas fehlt.
+
 ## 10.09.2026 – Branchenseiten, Grounding Page, Mobile-Heros, Freisteller-Rückbau
 
 - **Zehn Branchen-Detailseiten** nach dem WordPress-Vorbild neu gebaut:

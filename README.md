@@ -123,6 +123,22 @@ Flood-Fill aus dem Bildrand hinterlaesst ausgefranste Schattenkanten; alle so
 erzeugten Bilder wurden auf ihre Originale zurueckgesetzt. Im Zweifel bleibt
 das Original mit weissem Grund.
 
+## SEO und GEO
+
+`tools/seo-gauntlet.py` prueft die Grundlagen und endet mit Exit 1, sobald
+etwas fehlt: meta description (eindeutig, 60 bis 170 Zeichen), `rel=canonical`
+passend zu `cleanUrls` ohne `.html`, Title-Laenge (70 Zeichen, 110 bei Frage-
+und Situationsseiten), `sitemap.xml`, `robots.txt`, die Weiterleitungen in
+`vercel.json` und die Footer-Ankertexte der Branchenseiten.
+
+    python3 tools/seo-gauntlet.py
+
+Die Branchenseiten tragen die Suchbegriffe der alten Seite: Title und
+Ankertext lauten „Strategie und Branding fuer …". Jede Branchenseite hat
+ausserdem einen zitierbaren Definitionssatz (`.geo-def`) fuer Antwort-
+maschinen. Die alten WordPress-Adressen liegen als Weiterleitung in
+`vercel.json`; die Zuordnung steht in `tools/redirects.json`.
+
 ## Lokal ansehen
 
     python3 -m http.server 4173
