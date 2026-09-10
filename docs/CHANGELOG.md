@@ -1,5 +1,21 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 10.09.2026 (9) – Technische Optimierung: Accessibility und Favicon
+
+- Die animierte „Aus der Praxis“-Zeile besitzt jetzt einen regulären,
+  visuell verborgenen Text statt eines für Absätze unzulässigen
+  `aria-label`. Ausgeblendete Marquee-Duplikate waren bereits im vorherigen
+  Schritt aus der Tab-Reihenfolge genommen worden.
+- Die beiden Desktop-Navigationspfeile erfüllen mit 24 px Breite die
+  Mindestgröße für Touch-Ziele; Typografie und übrige Abstände bleiben
+  unverändert.
+- Alle Seiten verweisen auf das vorhandene offizielle CONCRETE-Wortzeichen
+  als SVG-Favicon. Damit entfällt der bisherige `/favicon.ico`-404 im
+  Browserprotokoll.
+- Der bewusst abgenommene Coral-/Paper-Kontrast bleibt unverändert und wird
+  im Abschlussbericht als offene Einschränkung ausgewiesen.
+- Cache-Buster für `site.js` und `site.css` auf `v=150` erhöht.
+
 ## 10.09.2026 (8) – Technische Optimierung: JavaScript-Leerlauf
 
 - Parallax-Berechnungen laufen nur noch für Elemente im erweiterten

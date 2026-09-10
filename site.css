@@ -75,7 +75,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .nav-link--cta::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--coral);transform:scaleY(0);transform-origin:bottom;transition:transform .38s cubic-bezier(.2,.7,.2,1);border-radius:inherit}
 .nav-link--cta:hover,.nav-link--cta:focus-visible{color:#fff;border-color:var(--coral);background:var(--coral);transition:color .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,background 0s .38s}
 .nav-link--cta:hover::before,.nav-link--cta:focus-visible::before{transform:scaleY(1)}
-.nav-disclosure{display:inline-flex;width:22px;min-height:48px;align-items:center;justify-content:flex-start;border:0;background:transparent;color:#fff;mix-blend-mode:difference;cursor:pointer;line-height:1}
+.nav-disclosure{display:inline-flex;width:24px;min-height:48px;align-items:center;justify-content:flex-start;border:0;background:transparent;color:#fff;mix-blend-mode:difference;cursor:pointer;line-height:1}
 .nav-disclosure::before{display:block;width:7px;height:7px;content:"";border-right:1.25px solid currentColor;border-bottom:1.25px solid currentColor;margin-top:-4px;transform:rotate(45deg);transition:transform .18s ease}
 .nav-disclosure[aria-expanded="true"]::before{margin-top:2px;transform:rotate(-135deg)}
 .nav-disclosure:hover,.nav-disclosure:focus-visible{opacity:1}
