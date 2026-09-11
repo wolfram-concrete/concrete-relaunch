@@ -1,5 +1,10 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Julia und Concadia im Netzwerk getauscht
+
+- Julia Rosenberger übernimmt Concadias bisherige Position im Masonry-Raster;
+  Concadia rückt an Julias bisherige Stelle. Inhalte und Links unverändert.
+
 ## 11.09.2026 – Quadratische Netzwerkbilder auf Mobile
 
 - Bis 540 px erhalten alle Partnerbilder ein einheitliches 1:1-Format,
