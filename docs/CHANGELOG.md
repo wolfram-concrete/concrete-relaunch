@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Mobile Home: kompaktere Stapel und Hero-Intro
+
+- Den mobilen Nachlauf unter Punkt 05 der Situationsliste sowie unter Punkt 03
+  der Leistungsblöcke von bis zu 380 beziehungsweise 340 px auf 72 bis 112 px
+  reduziert. Der jeweils letzte Leistungsblock nutzt wieder seine natürliche Höhe.
+- Vollständigen Hero-Ablauf auch bis 700 px aktiviert: Intro-Schriften und Bildframes
+  werden vorgeladen, die Frame-Sequenz läuft und geht anschließend in das stumme
+  Loop-Video über. Reduced Motion und Datensparmodus behalten das statische Poster.
+- Globalen CSS-/JS-Cache-Buster auf `v=162` erhöht. JavaScript-Syntax und Diff geprüft;
+  mobile Abstände bei 390 und 465 px sowie laufendes Hero-Video bei 390 px verifiziert.
+
 ## 11.09.2026 – Redaktionelle mobile Netzwerk-Reihenfolge
 
 - Joana Haars und Thomas Meuter in der regulären Listenreihenfolge getauscht.

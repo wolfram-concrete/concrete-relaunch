@@ -2,6 +2,12 @@
 
 ## Letzte Iteration · 11.09.2026, Abend
 
+- Mobile Home verdichtet: Der künstliche Nachlauf unter Punkt 05 der schwarzen
+  Situationsliste und unter Punkt 03 der korallfarbenen Leistungsblöcke ist auf
+  72 bis 112 px reduziert; der letzte Leistungsblock bleibt auf natürlicher Höhe.
+- Der komplette Hero-Preloader mit 13 Bild-/Schriftframes und anschließendem
+  stummen Loop-Video läuft wieder auf Mobile. Reduced Motion und Datensparmodus
+  zeigen weiterhin direkt das statische Poster. Globaler Cache-Buster: `v=162`.
 - Netzwerk-Reihenfolge verfeinert: Joana Haars und Thomas Meuter getauscht.
   Mobil erscheinen zuerst gemischt die Einzelpersonen, danach Partner mit
   Unternehmen, Studio Golden und abschließend die Performance-Marketing-Agenturen.
@@ -34,8 +40,8 @@ Offen bleiben:
 - Startseite: BGF-Überlagerung und lange Statement-Scrollstrecke.
 - Mobile mit reduzierter Bewegung: 230svh-Statement-Fläche bleibt trotz deaktiviertem Pin.
 - Mobile-Parallax ist außerhalb des Netzwerks nicht einheitlich deaktiviert.
-- Stapelmodule für Kompetenzen, Situationen und Erstgespräch: Animation und
-  reservierten Nachlauf bei reduzierter Bewegung ebenfalls zurücksetzen.
+- Stapelmodule bei reduzierter Bewegung: verbleibenden Nachlauf insbesondere
+  beim Erstgespräch zurücksetzen; Situationen und Kompetenzen sind bereits gekürzt.
 - Projektliste: spätere CSS-Regeln überschreiben teilweise Reduced-Motion-Regeln.
 - Netzwerk: Parallax-Aktivierung wird nur beim Laden ermittelt, nicht bei
   nachträglichem Wechsel von Mobile auf Desktop.
@@ -79,8 +85,8 @@ Die 26 Case-Videos liegen direkt unter `assets/cases/`; einige allgemeine
 Teaser werden weiterhin direkt vom eigenen Vercel-CDN
 `concrete-video-cdn.vercel.app` geladen (siehe `docs/VIDEO-VERANKERUNG.md`).
 YouTube wird nicht eingebettet.
-Die 13 dekorativen Schriften des Desktop-Intros liegen ebenfalls lokal unter
-`fonts/intro/`; `fonts/intro-fonts-v1.css` wird nur oberhalb von 700 px geladen.
+Die 13 dekorativen Schriften des Hero-Intros liegen ebenfalls lokal unter
+`fonts/intro/`; `fonts/intro-fonts-v1.css` wird für Desktop und Mobile geladen.
 Die zugehörigen OFL-Lizenztexte liegen unter `fonts/intro/licenses/`.
 Originalbilder und der alte WordPress-Export liegen im Repository
 `wolfram-concrete/concrete-website`; hier gibt es bewusst keine Kopie davon.
@@ -219,6 +225,11 @@ ueberlappt, Situationsfelder tragen einen sichtbaren Pfeil-Link, weil es
 keinen Hover gibt. Das mobile Menue hat Burger und X, eine Kopfleiste auf
 Papier und den Coral-CTA. Auf- und Zuklappen animiert die Hoehe per JS
 (`site.js`, `[data-mnav-toggle]`), das Mega-Menue blendet weich ein.
+Auf der Startseite läuft der vollständige Hero-Preloader auch mobil: Nach den
+13 Bild-/Schriftframes übernimmt das stumme Loop-Video. Nur Reduced Motion und
+Datensparmodus wechseln ohne Intro direkt auf das Posterbild. Die mobilen
+Scroll-Stapel der Situationen und Kompetenzen behalten einen kurzen Nachlauf
+von 72 bis 112 px; der letzte Kompetenzblock bleibt auf natürlicher Höhe.
 Der Coral-CTA „Projekt anfragen" verwendet auf jeder Sitemap-Seite dieselbe
 Komponente mit den beiden Portraits; der technische Preflight prueft diese
 Konsistenz mit.

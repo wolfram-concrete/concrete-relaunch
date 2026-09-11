@@ -965,7 +965,7 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
     background:var(--coral);z-index:-1}
   .section--carrier .competence .eyebrow{margin-bottom:var(--s3)}
   .section--carrier .competence:last-child{padding-bottom:clamp(24px,6vw,40px)}
-  .section--carrier .competence-grid{padding-bottom:clamp(200px,36vh,340px)}
+  .section--carrier .competence-grid{padding-bottom:clamp(72px,12vh,112px)}
 }
 @media(prefers-reduced-motion:reduce){.section--carrier .competence{position:static}}
 
@@ -990,10 +990,10 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
   .scenario-link::before{content:"";position:absolute;inset:0 calc(-1 * var(--pad)) 0 calc(-1 * var(--pad));
     background:var(--ink);z-index:-1}
   .scenario-link:last-child{padding-bottom:clamp(20px,5vw,32px)}
-  /* Nachlauf, damit auch der letzte Punkt bis unter den Header wandert
-     und den vorherigen ganz verdeckt */
+  /* Kurzer Nachlauf fuer den letzten Sticky-Punkt, ohne eine grosse
+     schwarze Leerflaeche vor der folgenden Section zu erzeugen */
   /* Blocklayout, sonst klebt jede Karte nur in ihrer eigenen Rasterzeile */
-  .scenario-list{display:block;padding-bottom:clamp(240px,42vh,380px)}
+  .scenario-list{display:block;padding-bottom:clamp(72px,12vh,112px)}
 }
 @supports (animation-timeline: view()){
   @media(max-width:900px){

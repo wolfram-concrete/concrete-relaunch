@@ -102,6 +102,9 @@
         if(!mq.matches)return;
         var max=0;items.forEach(function(el){max=Math.max(max,el.offsetHeight);});
         items.forEach(function(el){el.style.minHeight=max+"px";});
+        // Der letzte Kompetenzblock wird von keinem weiteren Block ueberdeckt
+        // und darf deshalb auf seine natuerliche Inhaltshoehe zurueckfallen.
+        if(list.matches(".section--carrier .competence-grid"))items[items.length-1].style.minHeight="";
       });
     }
     function later(){clearTimeout(t);t=setTimeout(apply,120);}
@@ -119,9 +122,9 @@
     var word=hero.querySelector(".hero__word span");
     var seq=imgs.filter(function(i){return i!==finalImg});
     var reduceHero=matchMedia("(prefers-reduced-motion:reduce)").matches;
-    var staticHero=matchMedia("(max-width:700px)").matches||!!(navigator.connection&&navigator.connection.saveData);
-    function finish(){document.body.classList.remove("intro");seq.forEach(function(i){i.classList.remove("on");i.style.zIndex="";});word.className="";finalImg.classList.add("on");hero.classList.remove("reel");hero.classList.add("done");if(finalImg.tagName==="VIDEO"&&!reduceHero&&!staticHero){finalImg.play().catch(function(){});}}
-    if(reduceHero||staticHero){finish();}
+    var saveDataHero=!!(navigator.connection&&navigator.connection.saveData);
+    function finish(){document.body.classList.remove("intro");seq.forEach(function(i){i.classList.remove("on");i.style.zIndex="";});word.className="";finalImg.classList.add("on");hero.classList.remove("reel");hero.classList.add("done");if(finalImg.tagName==="VIDEO"&&!reduceHero&&!saveDataHero){finalImg.play().catch(function(){});}}
+    if(reduceHero||saveDataHero){finish();}
     else{
       if(finalImg.tagName==="VIDEO"){finalImg.preload="auto";finalImg.load();}
       imgs.forEach(function(i){if(i.dataset.src)i.src=i.dataset.src;});
