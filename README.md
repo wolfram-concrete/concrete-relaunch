@@ -63,7 +63,8 @@ links und die korallfarbene Kategorie rechts an den Bildkanten, ohne
 Mittelpunkt. Lange Angaben können innerhalb der Karten umbrechen. Diese
 Regeln liegen im Inline-CSS der Case-Seiten und gelten auch für die
 wiederholten Karten des Projektbands. Stand 11.09.2026: globaler
-Cache-Buster weiterhin `v=159`.
+Cache-Buster `v=160`. Die beiden Footer-Partner bleiben auf Mobile auch
+unter 460 px zweispaltig; Logo, Schrift und Abstand werden dafür verkleinert.
 
 ## Phasen und Leistungen
 

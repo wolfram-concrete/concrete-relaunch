@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Footer-Partner auf schmalen Smartphones zweispaltig
+
+- Der Wechsel auf eine Spalte unter 460 px entfällt. Design made in Germany
+  und Sortlist bleiben auch auf schmalen Smartphones nebeneinander.
+- Kleinere Logo-/Schriftgrößen und Abstände halten die Partner innerhalb
+  ihrer Spalten. Globaler Cache-Buster auf `v=160` erhöht.
+
 ## 11.09.2026 – Beschriftungen bei „Weitere Projekte“ getrennt
 
 - Auf allen 40 Projektseiten stehen Firmenname und Kategorie unter dem Bild
