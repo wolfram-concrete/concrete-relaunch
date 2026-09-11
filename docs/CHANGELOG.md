@@ -1,5 +1,10 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Julias Website ergänzt
+
+- Netzwerkprofil Julia Rosenberger mit `https://lieblingsbilder.net/`
+  verlinkt. Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Concadia im Netzwerk ergänzt
 
 - Firmenpartner Concadia mit „Marketing und Sales als ein System“ sowie

@@ -77,7 +77,8 @@ Bähr; „Marketing und Sales als ein System“) eingetragen. Für Concadia steh
 das Bild noch aus; der Eintrag wird bis dahin ohne Bild dargestellt.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
 unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
-Stefans Website ist `https://stefantrocha.com/`; für die anderen Partner
+Verlinkt sind `https://stefantrocha.com/` und Julias Website
+`https://lieblingsbilder.net/`; für die anderen Partner
 stehen Kontaktdaten noch aus. Weitere bestätigte Namen, Fachgebiete und Profil-Links
 werden als Einträge in `.network__list` ergänzt; Bilder liegen in
 `assets/partners/`. Für Firmenlogos zusätzlich `network__portrait--logo`
