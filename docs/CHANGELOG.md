@@ -1,5 +1,15 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Sechs weitere Firmenpartner im Netzwerk
+
+- Justaddsugar, SOLIT Marketing, AdSuits, Searchperts, planinja und moodmacher
+  mit lokalem Thumbnail, Kurzprofil und Website-CTA ergänzt (13 Partner).
+- Beschreibungen und Bilder stammen von den offiziellen Partnerseiten,
+  gesichtet am 11.09.2026. Quellen sind die jeweiligen CTA-URLs.
+- Firmen-Thumbnails bleiben vollständig sichtbar. planinja verlinkt auf
+  die Agentur statt auf den Podcast; Trackingparameter entfernt.
+- Inline-CSS; globaler Cache-Buster bleibt bei `v=160`.
+
 ## 11.09.2026 – Digital Naturals als Netzwerkpartner ergänzt
 
 - Firmenpartner mit offiziellem lokalem Logo-Thumbnail, Name, Kurzbeschreibung

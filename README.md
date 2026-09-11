@@ -76,6 +76,10 @@ Engineer), Stefan Trocha (Photographer & Creative) sowie Thomas Meuter
 Bähr; „Marketing und Sales als ein System“) sowie Digital Naturals
 (Social Media, Content-Produktion und Kampagnen) eingetragen. Alle sieben
 Netzwerkeinträge sind mit Bild beziehungsweise Logo hinterlegt.
+Ergänzt sind Justaddsugar, SOLIT Marketing, AdSuits, Searchperts, planinja
+und moodmacher: insgesamt 13 Partner mit lokalen Thumbnails. Leistungsprofile
+basieren auf den jeweiligen Websites (11.09.2026). Für planinja führt der CTA
+zur Agentur-Startseite; Werbeparameter werden nicht übernommen.
 Firmenpartner erhalten ein Thumbnail mit Name, kurzer Leistungsbeschreibung
 und Website-CTA daneben; Digital Naturals ist entsprechend verlinkt.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
