@@ -205,18 +205,18 @@ geprüft. Beide projektspezifischen Gauntlets enden mit Exit 0.
 Der Launchstatus bleibt trotzdem **GELB**, bis diese Punkte abgeschlossen und
 erneut geprüft sind:
 
-1. In `projekte.html` die beiden alten WordPress-Videoquellen ersetzen. Das
-   Nextbed-Vorschauvideo unter `/wp-content/uploads/2026/02/` liefert bereits
-   404; das 23,6-MB-Agentur-Reel unter `/wp-content/uploads/2023/10/` würde
-   nach einem vollständigen Domainwechsel ohne separate Migration ausfallen.
-2. Die `og:url`-Angaben von 128 Unterseiten an Canonical und Sitemap angleichen
+1. Die `og:url`-Angaben von 128 Unterseiten an Canonical und Sitemap angleichen
    und dort ebenfalls die Clean-URL ohne `.html` verwenden.
-3. Die aktuelle visuelle Gewichtung der Erstebenen-Consent-Aktionen rechtlich
+2. Die aktuelle visuelle Gewichtung der Erstebenen-Consent-Aktionen rechtlich
    freigeben oder die Ablehnung wieder als zur Zustimmung vergleichbare
    Schaltfläche darstellen. Zusätzlich Facebook- und HubSpot-Alt-Tags im GTM
    pausieren und eine bereinigte Container-Version veröffentlichen.
-4. Am Umschalttag Authentifizierung und beide `noindex`-Ebenen entfernen und
+3. Am Umschalttag Authentifizierung und beide `noindex`-Ebenen entfernen und
    anschließend die öffentliche Auslieferung auf der echten Domain prüfen.
+
+Die beiden alten WordPress-Videoquellen auf `projekte.html` sind seit dem
+11.09.2026 geschlossen: Nextbed lädt vom Video-CDN, das Agentur-Reel aus einer
+auf 720p und 9,0 MB optimierten Repository-Datei.
 
 Eine eigene `404.html`, zwei H1-zu-H3-Sprünge auf Kontakt und Erstgespräch,
 zwei unsichtbare Steuerzeichen in `kontakt.html`, strukturierte

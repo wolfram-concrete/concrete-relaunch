@@ -1,5 +1,18 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Projektübersicht von WordPress-Videos entkoppelt
+
+- Das Nextbed-Vorschauvideo auf `projekte.html` lädt jetzt von der bereits
+  produktiv erreichbaren CDN-Datei `nextbed-preview.mp4` statt von der alten,
+  mit 404 antwortenden WordPress-Adresse.
+- Das 74-sekündige Agentur-Reel wurde aus dem vorhandenen 1080p-Master als
+  1280×720-H.264-Webfassung mit Faststart neu ausgegeben. Die lokale Datei
+  `agentur-reel-720-v2.mp4` reduziert den Transfer von 23,6 auf 9,0 MB und
+  bleibt wie zuvor per Viewport-Nähe verzögert geladen.
+- Damit enthält `projekte.html` keine Videoabhängigkeit mehr vom bisherigen
+  `/wp-content/uploads/`-Pfad. Poster, Seitenaufbau und Gestaltung bleiben
+  unverändert; kein globaler Cache-Buster nötig.
+
 ## 11.09.2026 – Schaufenstermotiv im ergobag-Case hochwertiger ausgeliefert
 
 - Das großformatige Lead-Bild der ergobag-Galerie nutzt jetzt die deutlich
