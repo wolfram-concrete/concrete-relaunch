@@ -8,6 +8,9 @@
 - Lange Angaben können innerhalb der Kartenbreite umbrechen. Die Anpassung
   betrifft auch die Wiederholungen im laufenden Projektband.
 - Nur HTML und Inline-CSS geändert; globaler Cache-Buster weiterhin `v=159`.
+- README dokumentiert die Beschriftungsregeln und die begrenzte ergobag-
+  Awardfläche. SEO-Gauntlet und technischer Preflight: je 129 Seiten,
+  keine Befunde.
 
 ## 11.09.2026 – ergobag-Awardband auf das Seitenraster begrenzt
 

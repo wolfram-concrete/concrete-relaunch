@@ -55,6 +55,15 @@ Schatten zu grauen Flächen. Details und Datum je Änderung in
 Die vier im Footer geführten Awards gehören zum ergobag-Projekt. Auf
 `case-ergobag.html` weist deshalb eine kompakte Banderole direkt zwischen
 Projektüberblick und Herausforderung auf diese Auszeichnungen hin.
+Ihr dunkler Hintergrund ist auf die äußere Containerbreite von maximal
+1440 px begrenzt; die vier Logos stehen auf Desktop nebeneinander.
+
+Im Modul „Weitere Projekte“ stehen auf allen 40 Case-Seiten Firmenname
+links und die korallfarbene Kategorie rechts an den Bildkanten, ohne
+Mittelpunkt. Lange Angaben können innerhalb der Karten umbrechen. Diese
+Regeln liegen im Inline-CSS der Case-Seiten und gelten auch für die
+wiederholten Karten des Projektbands. Stand 11.09.2026: globaler
+Cache-Buster weiterhin `v=159`.
 
 ## Phasen und Leistungen
 
