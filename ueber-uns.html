@@ -59,6 +59,7 @@
 .value-img{margin:0 0 var(--s3);aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep)}
 .value-img img{width:100%;height:100%;object-fit:cover;display:block}
 .values-grid,.method-grid{grid-template-columns:repeat(4,1fr)}
+.person__box h3{font-size:clamp(20px,2vw,28px);line-height:1.1;letter-spacing:0;overflow-wrap:break-word;margin-bottom:8px}
 .person__mail.button{min-height:44px;border-color:var(--ink);color:var(--ink);margin:4px 8px 4px 0}
 .person__mail.button::before{background:var(--ink)}
 .person__mail.button:hover,.person__mail.button:focus-visible{border-color:var(--ink);color:var(--coral)}
@@ -73,6 +74,10 @@
   .person .person__media{order:1;width:100%;aspect-ratio:4/5}
   .person .person__box{order:2;width:100%;margin:0;padding:clamp(28px,8vw,44px) var(--pad)}
   .person__mail.button{width:100%;margin-top:var(--s1)}
+}
+@media(max-width:700px) and (prefers-reduced-motion:no-preference){
+  .values-grid{display:block;isolation:isolate}
+  .values-grid article,.values-grid article:first-child,.values-grid article:last-child{position:sticky;top:var(--values-stack-top,var(--header-height));min-height:var(--values-stack-height,auto);padding:var(--s3) 0 var(--s4);background:var(--paper);opacity:1;transform:none;transition:none}
 }
 .network__media{margin:0;width:100%;overflow:hidden;flex:none}
 .network--motion .network__partner.rv{transition-delay:var(--network-delay,0s)}
@@ -94,6 +99,9 @@
 .network__list{column-count:3;column-gap:32px;list-style:none;padding:0;margin:0}
 .network__partner{display:inline-flex;vertical-align:top;width:100%;break-inside:avoid;flex-direction:column;align-items:stretch;gap:18px;min-width:0;border-top:1px solid var(--rule);padding-top:20px;margin-bottom:40px}
 .network__portrait{width:100%;height:auto;aspect-ratio:3/4;flex:none;object-fit:cover;object-position:var(--portrait-focus,center top);display:block}
+.network__portrait-crop{margin:0;width:100%;overflow:hidden;flex:none}
+.network__portrait-crop--fabio .network__portrait{scale:1.3;transform-origin:50% 25%}
+.network__portrait-crop--stefan .network__portrait{scale:1.3;transform-origin:50% 20%}
 .network__partner>div{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
 .network__partner h3{font-size:16px;line-height:1.3;margin:0;overflow-wrap:anywhere}
 .network__partner p{font-size:14px;line-height:1.5;color:var(--ink-60);margin:6px 0 0}
@@ -121,7 +129,12 @@
 @media(max-width:860px){.network__list{column-count:2}}
 @media(max-width:540px){
   .network__list{column-count:1}
-  .network__partner .network__portrait{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center!important}
+  /* Keep portrait heads in frame; landscape agency images retain their centre crop. */
+  .network__partner .network__portrait{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:var(--portrait-focus-mobile,center top)!important}
+  .network__partner .network__portrait--thumbnail{--portrait-focus-mobile:center}
+  .network__portrait[src$="thomas-meuter-v1.jpg"]{--portrait-focus-mobile:center 12%}
+  .network__portrait[src$="leo-glomann-v1.jpg"]{--portrait-focus-mobile:center 50%}
+  .network__portrait[src$="jan-illmer-v1.jpg"]{--portrait-focus-mobile:center 30%}
 }
 </style>
 </head>
@@ -274,7 +287,7 @@
       <div><h3>Justaddsugar</h3><p>Social-Media-Strategie, Content-Produktion und Paid Media für Marken.</p><a class="network__contact" href="https://www.justaddsugar.de/de-de" target="_blank" rel="noopener noreferrer" aria-label="Justaddsugar kennenlernen (öffnet in neuem Tab)">Partner kennenlernen →</a></div>
     </li>
     <li class="network__partner">
-      <img class="network__portrait" src="assets/partners/stefan-trocha-v1.jpg" alt="Stefan Trocha" width="480" height="720" loading="lazy" decoding="async">
+      <figure class="network__portrait-crop network__portrait-crop--stefan"><img class="network__portrait" src="assets/partners/stefan-trocha-v1.jpg" alt="Stefan Trocha" width="480" height="720" loading="lazy" decoding="async"></figure>
       <div><h3>Stefan Trocha</h3><p>Photographer &amp; Creative</p><a class="network__contact" href="https://stefantrocha.com/" target="_blank" rel="noopener noreferrer" aria-label="Website von Stefan Trocha (öffnet in neuem Tab)">stefantrocha.com</a><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/stefan-trocha-72539a34/" target="_blank" rel="noopener noreferrer" aria-label="Stefan Trocha auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
     </li>
     <li class="network__partner">
@@ -302,7 +315,7 @@
       <div><h3>moodmacher</h3><p>Videoproduktion, Imagefilme und Social-Media-Videos für Unternehmen.</p><a class="network__contact" href="https://www.moodmacher.de/" target="_blank" rel="noopener noreferrer" aria-label="moodmacher kennenlernen (öffnet in neuem Tab)">Partner kennenlernen →</a></div>
     </li>
     <li class="network__partner">
-      <img class="network__portrait" src="assets/partners/fabio-nobile-v1.jpg" alt="Fabio Nobile" width="740" height="1200" loading="lazy" decoding="async">
+      <figure class="network__portrait-crop network__portrait-crop--fabio"><img class="network__portrait" src="assets/partners/fabio-nobile-v1.jpg" alt="Fabio Nobile" width="740" height="1200" loading="lazy" decoding="async"></figure>
       <div><h3>Fabio Nobile</h3><p>Brand Identity &amp; Web Designer</p><a class="network__contact" href="https://www.fabionobile.design/" target="_blank" rel="noopener noreferrer" aria-label="Website von Fabio Nobile (öffnet in neuem Tab)">fabionobile.design</a><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/roberto-fabio-nobile/" target="_blank" rel="noopener noreferrer" aria-label="Fabio Nobile auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
     </li>
     <li class="network__partner">
@@ -312,6 +325,26 @@
     <li class="network__partner">
       <img class="network__portrait network__portrait--thumbnail" src="assets/partners/adsuits-v1.jpg" alt="AdSuits" width="480" height="320" loading="lazy" decoding="async">
       <div><h3>AdSuits</h3><p>Suchmaschinenmarketing mit SEO und SEA für messbare digitale Ergebnisse.</p><a class="network__contact" href="https://www.adsuits.de/" target="_blank" rel="noopener noreferrer" aria-label="AdSuits kennenlernen (öffnet in neuem Tab)">Partner kennenlernen →</a></div>
+    </li>
+    <li class="network__partner">
+      <img class="network__portrait" src="assets/partners/daniel-fatemi-v1.jpg" alt="Daniel Fatemi" width="989" height="1280" loading="lazy" decoding="async">
+      <div><h3>Daniel Fatemi</h3><p>Art Director &amp; Illustrator</p><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/daniel-fatemi-22077925a/" target="_blank" rel="noopener noreferrer" aria-label="Daniel Fatemi auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
+    </li>
+    <li class="network__partner">
+      <img class="network__portrait" src="assets/partners/leo-glomann-v1.jpg" alt="Leo Glomann" width="721" height="1080" loading="lazy" decoding="async">
+      <div><h3>Leo Glomann</h3><p>Founder &amp; Managing Director<br>LINC Interaction Architects</p><a class="network__contact" href="https://linc-interaction.de/" target="_blank" rel="noopener noreferrer" aria-label="Website von LINC Interaction Architects (öffnet in neuem Tab)">linc-interaction.de</a><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/leoglomann/" target="_blank" rel="noopener noreferrer" aria-label="Leo Glomann auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
+    </li>
+    <li class="network__partner">
+      <img class="network__portrait" src="assets/partners/eric-schlottke-v1.jpg" alt="Eric Schlottke" width="1821" height="1968" loading="lazy" decoding="async">
+      <div><h3>Eric Schlottke</h3><p>CEO von muun.studio<br>E-Commerce-, Shopify- und Mobile-App-Agentur aus Hamburg</p><a class="network__contact" href="https://muun.studio/" target="_blank" rel="noopener noreferrer" aria-label="Website von muun.studio (öffnet in neuem Tab)">muun.studio</a><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/eric-schlottke-3446a85a/" target="_blank" rel="noopener noreferrer" aria-label="Eric Schlottke auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
+    </li>
+    <li class="network__partner">
+      <img class="network__portrait" src="assets/partners/jan-illmer-v1.jpg" alt="Jan Illmer" width="1145" height="1374" loading="lazy" decoding="async">
+      <div><h3>Jan Illmer</h3><p>Creative Director Copy &amp; Concept / Creative Consultant</p><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/jan-christopher-illmo-illmer-7b916384/" target="_blank" rel="noopener noreferrer" aria-label="Jan Illmer auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
+    </li>
+    <li class="network__partner">
+      <img class="network__portrait" style="object-position:center" src="assets/partners/joana-haars-v1.jpg" alt="Joana Haars" width="400" height="400" loading="lazy" decoding="async">
+      <div><h3>Joana Haars</h3><p>Art and Creative Direction, AI-Designer, KI-Designer, Konzeption, Lookfindung, AI-Art Specialist</p><a class="network__contact" href="https://www.instagram.com/aRttacksYOU/" target="_blank" rel="noopener noreferrer" aria-label="Joana Haars auf Instagram (öffnet in neuem Tab)">Instagram · @aRttacksYOU</a><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/joana-haars-13a75a37/" target="_blank" rel="noopener noreferrer" aria-label="Joana Haars auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
     </li>
   </ul>
 </div></section>
@@ -456,6 +489,7 @@
 </footer>
 <script src="consent-v3.js"></script>
 <script src="network-motion-v1.js"></script>
+<script src="values-stack-v1.js"></script>
 <script src="site.js?v=161"></script>
 </body>
 </html>

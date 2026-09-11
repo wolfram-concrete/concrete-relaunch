@@ -1,5 +1,91 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Abschluss der Abend-Iteration
+
+- Partnerergänzungen, mobile Bildausschnitte, Gründer-Headlines, neue Scroll-Stapel
+  und volle mobile Quote-Bildbreite zusammengeführt; README aktualisiert.
+- Abschlussprüfung: Diff-Whitespace, JavaScript-Syntax, SEO-Gauntlet und Technical
+  Preflight (129 Seiten, jeweils 0 Befunde). Kein vollständiger visueller Browser-Test.
+- Formularanbindung durch Kevin und zuvor dokumentierte Motion-Befunde bleiben offen.
+
+## 11.09.2026 – Quote-Bilder mobil über volle Rasterbreite
+
+- Auf allen 40 Projektseiten die 320-px-Begrenzung der Quote-Bilder bis 820 px
+  aufgehoben. Bilder füllen die Inhaltsspalte bei unverändertem Seitenverhältnis.
+- Desktop-Darstellung unverändert.
+
+## 11.09.2026 – Mobiler Prozessbereich auf Leistungen
+
+- Feste Inline-Spaltenvorgabe durch responsive Regel ersetzt: Erklärung und
+  Prozessschritte stehen mobil untereinander; unsichtbare Platzhalter-Headline entfällt.
+- Sechs Schritte bis 700 px als nativer Scroll-Stapel mit gleichen Höhen,
+  wiederverwendeter Größenberechnung und Reduced-Motion-Fallback.
+
+## 11.09.2026 – Mobile Wertekarten als Scroll-Stapel
+
+- Die vier Karten unter „Wofür wir stehen“ schieben sich bis 700 px beim
+  Scrollen übereinander. Gleiche Kartenhöhen verhindern hervorstehende Vorgänger.
+- Auf kurzen Displays wandert der Haltepunkt nach oben, sodass Text lesbar bleibt.
+- Ohne zusätzlichen Leerraum; Desktop und reduzierte Bewegung bleiben ungestapelt.
+
+## 11.09.2026 – Näherer Bildausschnitt für Stefan
+
+- Stefans Porträt wie Fabio um 30 % im bestehenden Container vergrößert,
+  mit Fokus auf Kopf und Oberkörper. Bildformate und Raster bleiben unverändert.
+
+## 11.09.2026 – Näherer Bildausschnitt für Fabio
+
+- Fabios Porträt innerhalb des unveränderten Containers um 30 % vergrößert,
+  mit oberem Fokuspunkt. Originalbild und Raster unverändert.
+
+## 11.09.2026 – Größere Namen in den Gründerprofilen
+
+- Wolfram Stratmann und Christian Rosenberger auf der Über-uns-Seite einheitlich
+  auf die bestehende 20–28-px-Headline-Stufe angehoben, mit passendem Zeilenabstand.
+- Rollen, Fließtexte und Netzwerkpartner unverändert.
+
+## 11.09.2026 – Mobile Porträt-Ausschnitte im Netzwerk
+
+- Quadratische Bildboxen bleiben erhalten, Porträts werden oben statt mittig
+  ausgerichtet, damit insbesondere Marleen, Concadia und Stefan nicht angeschnitten werden.
+- Individuelle mobile Fokuspunkte für Thomas, Leo und Jan; Agenturmotive weiterhin
+  zentriert. Desktop-Layout und Originalbilder unverändert.
+
+## 11.09.2026 – Joana Haars im Netzwerk
+
+- Joana Haars mit bereitgestelltem Porträt, ihren genannten Schwerpunkten,
+  Instagram-Link und LinkedIn-Icon-Button ergänzt.
+- Insgesamt 21 Netzwerkpartner mit Bildern; bestehendes Layout und Motion übernommen.
+
+## 11.09.2026 – Porträt für Eric Schlottke
+
+- Bereitgestelltes Foto in Erics bestehender Netzwerk-Karte ergänzt.
+- Reguläre Bildformate und Netzwerk-Motion aktiviert; alle 20 Partner mit Bild.
+
+## 11.09.2026 – Jan Illmer im Netzwerk
+
+- Jan Illmer als Creative Director Copy & Concept / Creative Consultant mit
+  bereitgestelltem Porträt und LinkedIn-Icon-Button ergänzt.
+- Insgesamt 20 Netzwerkpartner; bestehende Bildformate und Motion übernommen.
+
+## 11.09.2026 – Eric Schlottke im Netzwerk
+
+- Eric Schlottke als CEO von muun.studio mit Agenturbeschreibung, Website
+  und LinkedIn-Icon-Button ergänzt; insgesamt 19 Netzwerkpartner.
+- Eintrag vorerst ohne Foto, da noch kein Porträt im Partnerordner vorliegt.
+
+## 11.09.2026 – Leo Glomann im Netzwerk
+
+- Leo Glomann als Founder & Managing Director bei LINC Interaction Architects
+  mit bereitgestelltem Porträt, Website und LinkedIn-Icon-Button ergänzt.
+- Insgesamt 18 Netzwerkpartner; bestehendes responsives Layout übernommen.
+
+## 11.09.2026 – Daniel Fatemi im Netzwerk
+
+- Daniel Fatemi als Art Director & Illustrator mit bereitgestelltem Porträt
+  und LinkedIn-Icon-Button ergänzt; insgesamt 17 Netzwerkpartner.
+- Bestehende Bildformate, mobile Quadratansicht und Netzwerk-Motion übernommen.
+
 ## 11.09.2026 – Seitenübergreifender Motion-Codecheck
 
 - Gemeinsame Motion-Einbindung auf allen 129 Seiten geprüft; kein neuer

@@ -59,6 +59,17 @@
 .next-band .container{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s4);padding-block:clamp(40px,5vw,72px)}
 .next-band h2{font-family:"Arame";font-weight:700;font-size:clamp(26px,3.4vw,48px);line-height:1;margin:0;max-width:18ch}
 
+.process-layout{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+@media(max-width:860px){
+  .process-layout{grid-template-columns:minmax(0,1fr)}
+  .process-layout>div{min-width:0}
+  .process-layout h2[aria-hidden="true"]{display:none}
+}
+@media(max-width:700px) and (prefers-reduced-motion:no-preference){
+  .process-layout>.rv{opacity:1;transform:none;transition:none}
+  .process-layout .sym--num{display:block;isolation:isolate}
+  .process-layout .sym--num li{--sym-pt:24px;position:sticky;top:var(--values-stack-top,var(--header-height));min-height:var(--values-stack-height,180px);padding-top:24px;padding-bottom:28px;background:var(--paper);border-top:1px solid var(--rule)}
+}
 </style>
 </head>
 <body>
@@ -174,7 +185,7 @@
     <a class="link-arrow" href="phase-begleiten.html">Mehr zur Phase Begleiten</a>
     <a class="phase-case rv-media" href="case-wackelzahn.html"><span class="phase-case__img"><img src="assets/cases/wackelzahn/patienten.jpg" alt="Wackelzahn, Empfang der Kinderzahnarztpraxis" loading="lazy" width="1920" height="1277" decoding="async"></span><span class="phase-case__link">Wackelzahn <i>Zum Projekt</i></span></a>
   </div>
-</div></section><section class="sec sec--line" data-screen-label="Prozess"><div class="container pair" style="grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)">
+</div></section><section class="sec sec--line" data-screen-label="Prozess"><div class="container pair process-layout">
 <div class="rv">
 <h2 style="max-width:16ch;text-wrap:balance">Warum ein klarer Prozess so wichtig ist.</h2>
 <p style="max-width:58ch">Ein Markenprojekt berührt viele Menschen im Unternehmen: Geschäftsführung, Marketing, Vertrieb, oft auch Gesellschafter. Damit alle dieselbe Sprache sprechen, arbeiten wir in vier Phasen mit klaren Übergaben. Jede Phase endet mit einer Entscheidung, die festgehalten ist und auf der die nächste aufbaut.</p>
@@ -294,6 +305,7 @@
   </div>
 </footer>
 <script src="consent-v3.js"></script>
+<script src="values-stack-v1.js"></script>
 <script src="site.js?v=161"></script>
 </body>
 </html>

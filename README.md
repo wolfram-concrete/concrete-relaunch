@@ -1,5 +1,22 @@
 # CONCRETE Relaunch
 
+## Letzte Iteration · 11.09.2026, Abend
+
+- Netzwerk auf 21 Partner mit lokalen Bildern erweitert: Daniel Fatemi, Leo Glomann,
+  Eric Schlottke, Jan Illmer und Joana Haars inklusive der gelieferten Kontaktlinks.
+- Mobile Porträt-Fokuspunkte angepasst; Fabio und Stefan im Container um 30 % vergrößert.
+- Gründer-Namen auf der Über-uns-Seite in der bestehenden 20–28-px-Headline-Stufe.
+- Vier Wertekarten und sechs Prozessschritte auf Leistungen als mobile Scroll-Stapel
+  bis 700 px. Größenberechnung in `values-stack-v1.js`, statischer Reduced-Motion-Fallback.
+- Prozessbereich auf Leistungen bis 860 px einspaltig; Quote-Bilder auf allen
+  40 Projektseiten bis 820 px über volle Rasterbreite.
+
+Abschlussprüfungen: `git diff --check`, JavaScript-Syntaxprüfung sowie SEO-Gauntlet
+und Technical Preflight (129 Seiten, jeweils 0 Befunde). Kein vollständiger neuer
+visueller Browserdurchlauf und keine Produktionsfreigabe.
+Kevin muss weiterhin das Formular unten auf der Startseite anbinden.
+Die folgenden bereits dokumentierten Motion-Befunde bleiben offen.
+
 ## Motion-Prüfstand vom 11.09.2026
 
 Die Motion-Einbindung aller 129 Seiten und die gemeinsamen CSS-/JS-Regeln
@@ -102,7 +119,16 @@ Netzwerkeinträge sind mit Bildern hinterlegt. Agenturpartner verwenden
 eigene Social-/Website-Bildmotive oder Teamfotos statt reiner Logos.
 Ergänzt sind Justaddsugar, AdSuits, Searchperts, planinja
 und moodmacher sowie Diemo Barz (Senior Art Director Motion & 3D Artist):
-insgesamt 16 Partner mit lokalen Bildern. Fabio Nobile ist als Brand Identity
+insgesamt 21 Partner mit lokalen Bildern. Joana Haars ist mit ihren Schwerpunkten
+in Art/Creative Direction, AI/KI-Design, Konzeption und Lookfindung sowie Porträt,
+Instagram und LinkedIn ergänzt. Jan Illmer ist als Creative
+Director Copy & Concept / Creative Consultant mit Porträt und LinkedIn ergänzt.
+Eric Schlottke ist als CEO von
+muun.studio (E-Commerce, Shopify und Mobile Apps aus Hamburg) mit Website und
+LinkedIn und bereitgestelltem Porträt ergänzt. Leo Glomann ist als Founder & Managing
+Director bei LINC Interaction Architects mit Porträt, Website und LinkedIn ergänzt.
+Daniel Fatemi ist als Art Director
+& Illustrator mit bereitgestelltem Porträt und LinkedIn ergänzt. Fabio Nobile ist als Brand Identity
 & Web Designer mit Porträt, Website und LinkedIn ergänzt. planinja verwendet
 das ausgewählte Beratungsfoto statt des bisherigen Meeting-Motivs.
 Studio Golden ergänzt das Netzwerk
@@ -122,7 +148,10 @@ Porträts sind oben fokussiert. Das Netzwerk nutzt ein CSS-Masonry-Spaltenlayout
 Karten folgen spaltenweise in natürlicher Höhe mit 40 px Abstand, ohne
 gestreckte Textbereiche. Mobil bleibt die ursprüngliche Listenreihenfolge erhalten.
 Bis 540 px sind alle Netzwerkbilder quadratisch (1:1), mit `object-fit:cover`
-und mittigem Fokus. So bleiben ihre Container bei gleicher Breite gleich hoch.
+und porträtgerechtem Fokus: oben ausgerichtet, mit individuellen mobilen
+Fokuspunkten für Thomas, Leo und Jan. Agenturmotive bleiben zentriert.
+So bleiben die Container gleich hoch, ohne hochformatige Porträts mittig
+auf Kosten der Köpfe zu beschneiden. Desktop-Ausschnitte bleiben unverändert.
 `network-motion-v1.js` übernimmt Bild-Reveal und Textaufbau der Projektliste.
 Desktop-Parallax nutzt den bestehenden Scroll-Handler; auf Touch/Mobile bleibt
 das Bild ruhig. Bei reduzierter Bewegung bleibt das Netzwerk ohne Animation.

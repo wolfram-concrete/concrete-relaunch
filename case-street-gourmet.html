@@ -78,7 +78,7 @@
 .case-quote blockquote{margin:0;font-family:"Arame";font-weight:700;font-size:clamp(22px,2.6vw,38px);line-height:1.05}
 .case-quote figcaption{margin-top:var(--s3);font-size:var(--fs-meta);color:rgba(23,21,19,.6)}
 .case-quote figcaption{color:var(--case-ink);opacity:.7}
-@media(max-width:820px){.case-quote .container{grid-template-columns:1fr}}
+@media(max-width:820px){.case-quote .container{grid-template-columns:1fr}.case-quote .qimg{width:100%;max-width:none;height:auto}}
 /* Relevanz + weitere Projekte */
 .case-marquee{overflow:hidden;margin-right:calc(-1 * max(var(--pad), (100vw - var(--max)) / 2 + var(--pad)));margin-left:calc(-1 * max(var(--pad), (100vw - var(--max)) / 2 + var(--pad)))}
 .case-marquee__track{display:flex;gap:clamp(12px,1.4vw,22px);width:max-content;will-change:transform;cursor:grab;user-select:none}.case-marquee__row{display:flex;gap:clamp(12px,1.4vw,22px);flex:0 0 auto}.case-marquee.dragging .case-marquee__track{cursor:grabbing}.case-marquee img{-webkit-user-drag:none;pointer-events:none}
