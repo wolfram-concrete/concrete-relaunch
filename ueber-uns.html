@@ -86,9 +86,11 @@
 .network__contact{display:flex;width:fit-content;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
 .linkedin-profile.button{gap:0;width:36px;min-width:36px;min-height:36px;height:36px;padding:8px;flex:none}
 .linkedin-profile__icon{display:block;width:20px;height:20px;flex:0 0 20px;background:currentColor;-webkit-mask:url("assets/social/linkedin.svg") center/contain no-repeat;mask:url("assets/social/linkedin.svg") center/contain no-repeat}
-.network__linkedin{margin-top:auto;text-decoration:none}
+.network__partner>div:has(>.network__linkedin){display:grid;grid-template-columns:minmax(0,1fr) 36px;column-gap:16px;align-content:start;align-items:start}
+.network__partner>div:has(>.network__linkedin)>:not(.network__linkedin){grid-column:1}
+.network__partner>div>.network__linkedin{grid-column:2;grid-row:1 / span 2;justify-self:end;align-self:start;margin-top:0;text-decoration:none}
 .network__partner>div>p:last-of-type{margin-bottom:12px}
-.network__partner>div>.network__contact:has(+.network__linkedin){margin-bottom:8px}
+.network__partner>div>.network__contact:has(+.network__linkedin){margin-bottom:0}
 .network__linkedin:hover,.network__linkedin:focus-visible{color:var(--ink);border-color:var(--ink)}
 /* Firmenpartner können mit network__portrait--logo statt Porträt ergänzt werden. */
 .network__portrait--logo{object-fit:contain;object-position:center}

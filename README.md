@@ -95,7 +95,8 @@ Verlinkt sind `https://stefantrocha.com/` und Julias Website
 Marleen, Julia, Kevin, Stefan und Thomas. Wolfram und Christian haben auf
 ihren Profilkarten ebenfalls LinkedIn-Buttons. Alle sieben Profilbuttons
 zeigen nur das LinkedIn-Icon aus dem Burger-Menü in einem 36-px-Button.
-Im Netzwerk stehen die Aktionen je Kartenreihe auf gemeinsamer unterer Achse.
+Im Netzwerk stehen LinkedIn-Buttons rechtsbündig unter dem Bild, mit der
+Oberkante auf Höhe des Namens links. Rolle und Website bleiben darunter links.
 Für Concadia stehen
 Kontaktdaten noch aus. Weitere bestätigte Namen, Fachgebiete und Profil-Links
 werden als Einträge in `.network__list` ergänzt; Bilder liegen in

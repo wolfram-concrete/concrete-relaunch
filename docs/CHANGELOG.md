@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – LinkedIn rechts neben dem Partnernamen
+
+- Netzwerk-Buttons rechtsbündig unter den Bildern auf Höhe der Namen platziert.
+  Namen, Rollen und Websites erhalten eine eigene linke Spalte ohne Überlappung.
+- Bestehende Icon-Buttons und Bildformate unverändert; Inline-CSS, Cache `v=160`.
+
 ## 11.09.2026 – Agenturbilder ohne leere Containerflächen
 
 - Agenturmotive füllen die Kartenbreite mit natürlicher Bildhöhe. Die bisher
