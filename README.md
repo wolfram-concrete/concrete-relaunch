@@ -83,10 +83,11 @@ insgesamt 14 Partner mit lokalen Bildern. Diemo ist mit Website und LinkedIn
 verlinkt. Leistungsprofile
 basieren auf den jeweiligen Websites (11.09.2026). Für planinja führt der CTA
 zur Agentur-Startseite; Werbeparameter werden nicht übernommen.
-Alle Partner erhalten einen großen 3:4-Bildcontainer mit Name, kurzer
+Personen erhalten einen großen 3:4-Bildcontainer mit Name, kurzer
 Leistungsbeschreibung und Kontaktlinks darunter. Das Raster nutzt drei
 Spalten auf Desktop, zwei auf Tablet und eine auf Mobile. Agenturmotive
-werden vollständig dargestellt; Porträts sind oben fokussiert.
+füllen die Kartenbreite in ihrem natürlichen Seitenverhältnis, ohne Balken;
+Porträts sind oben fokussiert. Die Kontaktaktionen bleiben je Reihe ausgerichtet.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
 unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
 Verlinkt sind `https://stefantrocha.com/` und Julias Website

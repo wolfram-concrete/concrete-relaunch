@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Agenturbilder ohne leere Containerflächen
+
+- Agenturmotive füllen die Kartenbreite mit natürlicher Bildhöhe. Die bisher
+  durch `object-fit:contain` entstandenen Hintergrundbalken entfallen.
+- Personen behalten ihre 3:4-Porträts. Kontaktaktionen bleiben je Reihe auf
+  gemeinsamer Achse. Inline-CSS; Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Hochformat und ausgerichtete LinkedIn-Icons
 
 - Netzwerkbilder auf 3:4 umgestellt, Porträts oben beziehungsweise individuell
