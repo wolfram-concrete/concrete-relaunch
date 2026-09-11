@@ -1,5 +1,10 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Concadia-Bild ergänzt
+
+- Gemeinsames Foto von Fabian Lampert und Christopher Bähr im Netzwerk
+  eingebunden, als lokale JPEG-Webfassung mit 542 × 720 px und Lazy Loading.
+
 ## 11.09.2026 – LinkedIn-Profile auf Über uns ergänzt
 
 - Marleen, Julia, Kevin, Stefan und Thomas erhalten ihre bestätigten

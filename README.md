@@ -73,8 +73,8 @@ geplanten 12–13 Personen- und Firmenpartner erweiterbar. Aktuell sind Marleen
 Zepp, Julia Rosenberger (Fotografin) und Kevin Eulenberg (Principal & Agentic
 Engineer), Stefan Trocha (Photographer & Creative) sowie Thomas Meuter
 (Videoeditor & Motion Designer) sowie Concadia (Fabian Lampert & Christopher
-Bähr; „Marketing und Sales als ein System“) eingetragen. Für Concadia steht
-das Bild noch aus; der Eintrag wird bis dahin ohne Bild dargestellt.
+Bähr; „Marketing und Sales als ein System“) eingetragen. Alle sechs
+Netzwerkeinträge sind mit Bild hinterlegt.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
 unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
 Verlinkt sind `https://stefantrocha.com/` und Julias Website
