@@ -1,5 +1,10 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Kevin Eulenberg im Netzwerk ergänzt
+
+- Kevin Eulenberg mit lokalem WebP-Porträt und „Principal & Agentic Engineer“
+  aufgenommen. Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Julia Rosenberger im Netzwerk ergänzt
 
 - Julia Rosenberger mit Porträt und Fachgebiet „Fotografin“ aufgenommen.

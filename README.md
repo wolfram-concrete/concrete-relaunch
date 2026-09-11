@@ -70,7 +70,8 @@ unter 460 px zweispaltig; Logo, Schrift und Abstand werden dafür verkleinert.
 
 Die Sektion `#netzwerk` zwischen Christian und Projekt-Fit ist für die
 geplanten 12–13 Personen- und Firmenpartner erweiterbar. Aktuell sind Marleen
-Zepp und Julia Rosenberger (Fotografin) eingetragen. Weitere bestätigte Namen, Fachgebiete und Profil-Links
+Zepp, Julia Rosenberger (Fotografin) und Kevin Eulenberg (Principal & Agentic
+Engineer) eingetragen. Weitere bestätigte Namen, Fachgebiete und Profil-Links
 werden als Einträge in `.network__list` ergänzt; Bilder liegen in
 `assets/partners/`. Für Firmenlogos zusätzlich `network__portrait--logo`
 verwenden. Keine unbestätigten Rollen oder Platzhalterpartner veröffentlichen.
