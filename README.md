@@ -71,7 +71,11 @@ unter 460 px zweispaltig; Logo, Schrift und Abstand werden dafür verkleinert.
 Die Sektion `#netzwerk` zwischen Christian und Projekt-Fit ist für die
 geplanten 12–13 Personen- und Firmenpartner erweiterbar. Aktuell sind Marleen
 Zepp, Julia Rosenberger (Fotografin) und Kevin Eulenberg (Principal & Agentic
-Engineer) eingetragen. Weitere bestätigte Namen, Fachgebiete und Profil-Links
+Engineer) sowie Stefan Trocha (Photographer & Creative) eingetragen.
+Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
+unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
+Stefans Website ist `https://stefantrocha.com/`; für die anderen Partner
+stehen Kontaktdaten noch aus. Weitere bestätigte Namen, Fachgebiete und Profil-Links
 werden als Einträge in `.network__list` ergänzt; Bilder liegen in
 `assets/partners/`. Für Firmenlogos zusätzlich `network__portrait--logo`
 verwenden. Keine unbestätigten Rollen oder Platzhalterpartner veröffentlichen.

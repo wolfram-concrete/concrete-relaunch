@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Stefan Trocha und Partnerkontakte ergänzt
+
+- Stefan Trocha mit Web-Porträt, „Photographer & Creative“ und Link zu
+  `https://stefantrocha.com/` aufgenommen.
+- Netzwerkprofile erhalten vorhandene, bestätigte Kontaktdaten als Links
+  unter der Rolle. Für die bisherigen Partner liegen noch keine vor.
+- Inline-CSS; Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Kevin Eulenberg im Netzwerk ergänzt
 
 - Kevin Eulenberg mit lokalem WebP-Porträt und „Principal & Agentic Engineer“
