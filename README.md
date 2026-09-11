@@ -1,5 +1,9 @@
 # CONCRETE Relaunch
 
+Browser-Favicon: originales C auf Schwarz der bisherigen Website, lokal unter
+`assets/favicon-concrete-v1.jpg`; Apple-Touch-Icon unter
+`assets/apple-touch-icon-concrete-v1.jpg`. In allen HTML-Seiten eingebunden.
+
 Die neue Website von CONCRETE Brandbuilding im Magazin-Look. Entstanden in
 Claude Design, fortgeführt in Claude Code. Statisches HTML/CSS/JS, kein Build.
 

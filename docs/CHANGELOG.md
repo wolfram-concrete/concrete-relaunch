@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Originales CONCRETE-Favicon
+
+- Wortmarke im Browser-Tab durch das originale korallfarbene C auf Schwarz ersetzt.
+- Favicon und Apple-Touch-Icon der bisherigen Website lokal übernommen und
+  in allen HTML-Seiten verlinkt, unabhängig vom alten WordPress-Uploadpfad.
+
 ## 11.09.2026 – Ausgewogener Motivmix im Netzwerk
 
 - Hohe Porträts und flache Agenturmotive wechseln sich in der redaktionellen
