@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Diemo Barz im Netzwerk ergänzt
+
+- Porträt, Website und LinkedIn-Button ergänzt. Rolle laut seiner Website:
+  Senior Art Director Motion & 3D Artist (diemobarz.com, 11.09.2026).
+- Insgesamt 14 Partner; Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Größere Netzwerkbilder mit Text darunter
 
 - Alle 13 Partner stehen als Bildkarten im Raster: großflächiger

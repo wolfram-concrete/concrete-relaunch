@@ -78,7 +78,9 @@ Bähr; „Marketing und Sales als ein System“) sowie Digital Naturals
 Netzwerkeinträge sind mit Bildern hinterlegt. Agenturpartner verwenden
 eigene Social-/Website-Bildmotive oder Teamfotos statt reiner Logos.
 Ergänzt sind Justaddsugar, SOLIT Marketing, AdSuits, Searchperts, planinja
-und moodmacher: insgesamt 13 Partner mit lokalen Thumbnails. Leistungsprofile
+und moodmacher sowie Diemo Barz (Senior Art Director Motion & 3D Artist):
+insgesamt 14 Partner mit lokalen Bildern. Diemo ist mit Website und LinkedIn
+verlinkt. Leistungsprofile
 basieren auf den jeweiligen Websites (11.09.2026). Für planinja führt der CTA
 zur Agentur-Startseite; Werbeparameter werden nicht übernommen.
 Alle Partner erhalten einen großen 4:3-Bildcontainer mit Name, kurzer
