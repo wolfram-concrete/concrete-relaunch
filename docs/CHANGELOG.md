@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – LinkedIn-Buttons mit Icon
+
+- Die fünf Netzwerkprofile erhalten kompakte LinkedIn-Buttons mit dem
+  bestehenden Icon aus dem Burger-Menü. Auch die Buttons bei Wolfram und
+  Christian nutzen dieses Icon. Mindesthöhe 44 px für Touch-Bedienung.
+- Inline-CSS; Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Bildmotive statt Agenturlogos
 
 - Digital Naturals und planinja erhalten offizielle Team-/Agenturfotos

@@ -88,7 +88,9 @@ unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
 Verlinkt sind `https://stefantrocha.com/` und Julias Website
 `https://lieblingsbilder.net/` sowie die bestätigten LinkedIn-Profile von
 Marleen, Julia, Kevin, Stefan und Thomas. Wolfram und Christian haben auf
-ihren Profilkarten ebenfalls LinkedIn-Buttons. Für Concadia stehen
+ihren Profilkarten ebenfalls LinkedIn-Buttons. Alle sieben Profilbuttons
+nutzen das LinkedIn-Icon aus dem Burger-Menü und mindestens 44 px Höhe.
+Für Concadia stehen
 Kontaktdaten noch aus. Weitere bestätigte Namen, Fachgebiete und Profil-Links
 werden als Einträge in `.network__list` ergänzt; Bilder liegen in
 `assets/partners/`. Für Firmenlogos zusätzlich `network__portrait--logo`

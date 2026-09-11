@@ -82,6 +82,10 @@
 .network__partner h3{font-size:16px;line-height:1.3;margin:0;overflow-wrap:anywhere}
 .network__partner p{font-size:14px;line-height:1.5;color:var(--ink-60);margin:6px 0 0}
 .network__contact{display:flex;width:fit-content;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
+.linkedin-profile{gap:8px;min-height:44px}
+.linkedin-profile__icon{display:block;width:20px;height:20px;flex:0 0 20px;background:currentColor;-webkit-mask:url("assets/social/linkedin.svg") center/contain no-repeat;mask:url("assets/social/linkedin.svg") center/contain no-repeat}
+.network__linkedin{margin-top:8px;padding:8px 12px;text-decoration:none}
+.network__linkedin:hover,.network__linkedin:focus-visible{color:var(--ink);border-color:var(--ink)}
 /* Firmenpartner können mit network__portrait--logo statt Porträt ergänzt werden. */
 .network__portrait--logo{object-fit:contain;object-position:center}
 .network__portrait--dark{background:var(--ink);padding:10px}
@@ -183,7 +187,7 @@
     <span class="person__role">Markenbauer &amp; Design-Handwerker</span>
     <p>Wolfram hat sein Handwerk von Grund auf gelernt, erst als Gestalter, dann als Markenbauer. Er bringt über 20 Jahre Erfahrung aus Projekten mit Konzernen, Mittelständlern und Startups mit. Sein Anspruch: Marken so gestalten, dass sie im Alltag bestehen. Er verbindet Strategie und Design auf eine Weise, die Marken nicht nur „liebenswert“ macht, sondern funktional und belastbar. Dabei bleibt er immer präsent: vom ersten Gespräch bis zum letzten Entwurf.</p>
     <a class="person__mail button" href="mailto:wolfram@concrete-designs.de" aria-label="E-Mail an Wolfram Stratmann senden">wolfram@concrete-designs.de</a>
-    <a class="person__mail button" href="https://www.linkedin.com/in/wolfram-stratmann-1a756216a/" target="_blank" rel="noopener noreferrer" aria-label="Wolfram Stratmann auf LinkedIn (öffnet in neuem Tab)">LinkedIn</a>
+    <a class="person__mail button linkedin-profile" href="https://www.linkedin.com/in/wolfram-stratmann-1a756216a/" target="_blank" rel="noopener noreferrer" aria-label="Wolfram Stratmann auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span>LinkedIn</a>
   </div>
   <figure class="person__media">
     <img src="assets/team/wolfram-portrait.jpg" alt="Wolfram Stratmann" loading="lazy" decoding="async" width="1095" height="1600">
@@ -196,7 +200,7 @@
     <span class="person__role">Strategie &amp; Content-Architekt</span>
     <p>Christian denkt Marken aus der Tiefe: Strategie, Story, Struktur. Er übersetzt komplexe Themen so, dass sie für Zielgruppen klar, relevant und nutzbar werden. Seine Rolle ist es, den roten Faden zu halten, zwischen Analyse, Kreativität und Umsetzung. Mit klarer Sprache, präzisen Konzepten und einem Blick für Content sorgt er dafür, dass Marke und Kommunikation aus einem Guss sind.</p>
     <a class="person__mail button" href="mailto:christian@concrete-designs.de" aria-label="E-Mail an Christian Rosenberger senden">christian@concrete-designs.de</a>
-    <a class="person__mail button" href="https://www.linkedin.com/in/christianrosenberger/" target="_blank" rel="noopener noreferrer" aria-label="Christian Rosenberger auf LinkedIn (öffnet in neuem Tab)">LinkedIn</a>
+    <a class="person__mail button linkedin-profile" href="https://www.linkedin.com/in/christianrosenberger/" target="_blank" rel="noopener noreferrer" aria-label="Christian Rosenberger auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span>LinkedIn</a>
   </div>
   <figure class="person__media">
     <img src="assets/team/christian-portrait.jpg" alt="Christian Rosenberger" loading="lazy" decoding="async" width="1021" height="1600">
@@ -214,23 +218,23 @@
   <ul class="network__list" aria-label="Unsere Netzwerkpartner">
     <li class="network__partner">
       <img class="network__portrait" src="assets/partners/marleen-zepp-v1.jpg" alt="Marleen Zepp" width="1066" height="1600" loading="lazy" decoding="async">
-      <div><h3>Marleen Zepp</h3><p>Markenentwicklung, Text, Konzepte.</p><a class="network__contact" href="https://www.linkedin.com/in/marleen-zepp-29764b84/?skipRedirect=true" target="_blank" rel="noopener noreferrer" aria-label="Marleen Zepp auf LinkedIn (öffnet in neuem Tab)">LinkedIn</a></div>
+      <div><h3>Marleen Zepp</h3><p>Markenentwicklung, Text, Konzepte.</p><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/marleen-zepp-29764b84/?skipRedirect=true" target="_blank" rel="noopener noreferrer" aria-label="Marleen Zepp auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span>LinkedIn</a></div>
     </li>
     <li class="network__partner">
       <img class="network__portrait" src="assets/partners/julia-rosenberger-v1.jpg" alt="Julia Rosenberger" width="480" height="720" loading="lazy" decoding="async">
-      <div><h3>Julia Rosenberger</h3><p>Fotografin</p><a class="network__contact" href="https://lieblingsbilder.net/" target="_blank" rel="noopener noreferrer" aria-label="Website von Julia Rosenberger (öffnet in neuem Tab)">lieblingsbilder.net</a><a class="network__contact" href="https://www.linkedin.com/in/julia-rosenberger-8b2b71223/" target="_blank" rel="noopener noreferrer" aria-label="Julia Rosenberger auf LinkedIn (öffnet in neuem Tab)">LinkedIn</a></div>
+      <div><h3>Julia Rosenberger</h3><p>Fotografin</p><a class="network__contact" href="https://lieblingsbilder.net/" target="_blank" rel="noopener noreferrer" aria-label="Website von Julia Rosenberger (öffnet in neuem Tab)">lieblingsbilder.net</a><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/julia-rosenberger-8b2b71223/" target="_blank" rel="noopener noreferrer" aria-label="Julia Rosenberger auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span>LinkedIn</a></div>
     </li>
     <li class="network__partner">
       <img class="network__portrait" src="assets/partners/kevin-eulenberg-v1.webp" alt="Kevin Eulenberg" width="600" height="600" loading="lazy" decoding="async">
-      <div><h3>Kevin Eulenberg</h3><p>Principal &amp; Agentic Engineer</p><a class="network__contact" href="https://www.linkedin.com/in/kevin-eulenberg/" target="_blank" rel="noopener noreferrer" aria-label="Kevin Eulenberg auf LinkedIn (öffnet in neuem Tab)">LinkedIn</a></div>
+      <div><h3>Kevin Eulenberg</h3><p>Principal &amp; Agentic Engineer</p><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/kevin-eulenberg/" target="_blank" rel="noopener noreferrer" aria-label="Kevin Eulenberg auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span>LinkedIn</a></div>
     </li>
     <li class="network__partner">
       <img class="network__portrait" src="assets/partners/stefan-trocha-v1.jpg" alt="Stefan Trocha" width="480" height="720" loading="lazy" decoding="async">
-      <div><h3>Stefan Trocha</h3><p>Photographer &amp; Creative</p><a class="network__contact" href="https://stefantrocha.com/" target="_blank" rel="noopener noreferrer" aria-label="Website von Stefan Trocha (öffnet in neuem Tab)">stefantrocha.com</a><a class="network__contact" href="https://www.linkedin.com/in/stefan-trocha-72539a34/" target="_blank" rel="noopener noreferrer" aria-label="Stefan Trocha auf LinkedIn (öffnet in neuem Tab)">LinkedIn</a></div>
+      <div><h3>Stefan Trocha</h3><p>Photographer &amp; Creative</p><a class="network__contact" href="https://stefantrocha.com/" target="_blank" rel="noopener noreferrer" aria-label="Website von Stefan Trocha (öffnet in neuem Tab)">stefantrocha.com</a><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/stefan-trocha-72539a34/" target="_blank" rel="noopener noreferrer" aria-label="Stefan Trocha auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span>LinkedIn</a></div>
     </li>
     <li class="network__partner">
       <img class="network__portrait" src="assets/partners/thomas-meuter-v1.jpg" alt="Thomas Meuter" width="480" height="720" loading="lazy" decoding="async">
-      <div><h3>Thomas Meuter</h3><p>Videoeditor &amp; Motion Designer</p><a class="network__contact" href="https://www.linkedin.com/in/thomas-meuter-6439681aa/" target="_blank" rel="noopener noreferrer" aria-label="Thomas Meuter auf LinkedIn (öffnet in neuem Tab)">LinkedIn</a></div>
+      <div><h3>Thomas Meuter</h3><p>Videoeditor &amp; Motion Designer</p><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/thomas-meuter-6439681aa/" target="_blank" rel="noopener noreferrer" aria-label="Thomas Meuter auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span>LinkedIn</a></div>
     </li>
     <li class="network__partner">
       <img class="network__portrait" src="assets/partners/concadia-v1.jpg" alt="Fabian Lampert und Christopher Bähr von Concadia" width="542" height="720" loading="lazy" decoding="async">
