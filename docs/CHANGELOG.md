@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Trennlinie oberhalb der ergobag-Awards entfernt
+
+- Die durchgehende untere Rahmenlinie der Leistungsübersicht entfällt auf
+  der ergobag-Seite, damit sie nicht seitlich neben dem Awardband herausragt.
+- Änderung nur im Inline-CSS; globaler Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Footer-Partner auf schmalen Smartphones zweispaltig
 
 - Der Wechsel auf eine Spalte unter 460 px entfällt. Design made in Germany
