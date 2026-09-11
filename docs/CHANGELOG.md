@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Schaufenstermotiv im ergobag-Case hochwertiger ausgeliefert
+
+- Das großformatige Lead-Bild der ergobag-Galerie nutzt jetzt die deutlich
+  weniger komprimierte 1600×1056-WebP-Fassung des identischen
+  Schaufenstermotivs statt der sichtbar weichen 132-KB-JPEG-Datei.
+- Der neue Dateiname `schaufenster-hq.webp` verhindert, dass Browser die alte
+  Medienfassung aus dem Cache verwenden. Ausschnitt, Bildreihenfolge,
+  Alternativtext und Galerie-Layout bleiben unverändert.
+- Das unterhalb des sichtbaren Bereichs liegende Bild lädt nun zusätzlich mit
+  `loading="lazy"` und `decoding="async"`. Kein globaler Cache-Buster nötig,
+  weil `site.css` und `site.js` unverändert bleiben.
+
 ## 10.09.2026 (31) – Finaler Desktop-/Mobile-Preflight dokumentiert
 
 - Alle 129 Sitemap-Seiten wurden auf Desktop, Mobile und 320 px geprüft. Die
