@@ -1,5 +1,10 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Marleens Fachgebiete ergänzt
+
+- Netzwerkprofil Marleen Zepp: „Markenentwicklung, Text, Konzepte.“
+  unter dem Namen ergänzt. Inline-CSS; Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Netzwerk auf der Über-uns-Seite
 
 - Neue kompakte Sektion zwischen Christian und Projekt-Fit mit kurzem
