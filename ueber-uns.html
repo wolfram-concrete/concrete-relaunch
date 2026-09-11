@@ -84,6 +84,7 @@
 .network__contact{display:flex;width:fit-content;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
 /* Firmenpartner können mit network__portrait--logo statt Porträt ergänzt werden. */
 .network__portrait--logo{object-fit:contain;object-position:center}
+.network__portrait--dark{background:var(--ink);padding:10px}
 @media(max-width:860px){.network__list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){.network__list{grid-template-columns:1fr}}
 </style>
@@ -233,6 +234,10 @@
     <li class="network__partner">
       <img class="network__portrait" src="assets/partners/concadia-v1.jpg" alt="Fabian Lampert und Christopher Bähr von Concadia" width="542" height="720" loading="lazy" decoding="async">
       <div><h3>Concadia</h3><p>Marketing und Sales als ein System</p><p>Fabian Lampert &amp; Christopher Bähr</p></div>
+    </li>
+    <li class="network__partner">
+      <img class="network__portrait network__portrait--logo network__portrait--dark" src="assets/partners/digital-naturals-v1.png" alt="Digital Naturals – dn*" width="149" height="118" loading="lazy" decoding="async">
+      <div><h3>Digital Naturals</h3><p>Social Media, Content-Produktion und Kampagnen für mehr Reichweite.</p><a class="network__contact" href="https://www.digital-naturals.de/" target="_blank" rel="noopener noreferrer" aria-label="Digital Naturals kennenlernen (öffnet in neuem Tab)">Partner kennenlernen →</a></div>
     </li>
   </ul>
 </div></section>

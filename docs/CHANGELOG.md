@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Digital Naturals als Netzwerkpartner ergänzt
+
+- Firmenpartner mit offiziellem lokalem Logo-Thumbnail, Name, Kurzbeschreibung
+  und Website-CTA aufgenommen. Beschreibung anhand der Partner-Startseite:
+  `https://www.digital-naturals.de/` (11.09.2026).
+- Schwerpunkt: Social Media, Content-Produktion und Kampagnen.
+- Inline-CSS; globaler Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Concadia-Bild ergänzt
 
 - Gemeinsames Foto von Fabian Lampert und Christopher Bähr im Netzwerk

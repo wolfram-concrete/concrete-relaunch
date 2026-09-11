@@ -73,8 +73,11 @@ geplanten 12–13 Personen- und Firmenpartner erweiterbar. Aktuell sind Marleen
 Zepp, Julia Rosenberger (Fotografin) und Kevin Eulenberg (Principal & Agentic
 Engineer), Stefan Trocha (Photographer & Creative) sowie Thomas Meuter
 (Videoeditor & Motion Designer) sowie Concadia (Fabian Lampert & Christopher
-Bähr; „Marketing und Sales als ein System“) eingetragen. Alle sechs
-Netzwerkeinträge sind mit Bild hinterlegt.
+Bähr; „Marketing und Sales als ein System“) sowie Digital Naturals
+(Social Media, Content-Produktion und Kampagnen) eingetragen. Alle sieben
+Netzwerkeinträge sind mit Bild beziehungsweise Logo hinterlegt.
+Firmenpartner erhalten ein Thumbnail mit Name, kurzer Leistungsbeschreibung
+und Website-CTA daneben; Digital Naturals ist entsprechend verlinkt.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
 unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
 Verlinkt sind `https://stefantrocha.com/` und Julias Website
