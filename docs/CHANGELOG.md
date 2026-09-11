@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Netzwerk als Masonry-Spaltenlayout
+
+- Karten folgen in drei, zwei beziehungsweise einer Spalte direkt untereinander.
+  Unterschiedliche Bildhöhen erzeugen keine gestreckten Karten oder Leerflächen mehr.
+- CSS-Spalten ohne JavaScript; zusammenhängende Karten und LinkedIn-Position bleiben
+  erhalten. Inline-CSS, Cache `v=160` unverändert.
+
 ## 11.09.2026 – LinkedIn rechts neben dem Partnernamen
 
 - Netzwerk-Buttons rechtsbündig unter den Bildern auf Höhe der Namen platziert.

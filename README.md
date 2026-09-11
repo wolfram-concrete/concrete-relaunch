@@ -87,7 +87,9 @@ Personen erhalten einen großen 3:4-Bildcontainer mit Name, kurzer
 Leistungsbeschreibung und Kontaktlinks darunter. Das Raster nutzt drei
 Spalten auf Desktop, zwei auf Tablet und eine auf Mobile. Agenturmotive
 füllen die Kartenbreite in ihrem natürlichen Seitenverhältnis, ohne Balken;
-Porträts sind oben fokussiert. Die Kontaktaktionen bleiben je Reihe ausgerichtet.
+Porträts sind oben fokussiert. Das Netzwerk nutzt ein CSS-Masonry-Spaltenlayout:
+Karten folgen spaltenweise in natürlicher Höhe mit 40 px Abstand, ohne
+gestreckte Textbereiche. Mobil bleibt die ursprüngliche Listenreihenfolge erhalten.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
 unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
 Verlinkt sind `https://stefantrocha.com/` und Julias Website
