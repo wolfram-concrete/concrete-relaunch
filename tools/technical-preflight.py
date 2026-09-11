@@ -288,7 +288,14 @@ def scan() -> list[str]:
     for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "Sortlist Trusted Partner Badge"):
         if required not in privacy:
             findings.append(f"datenschutz.html: current implementation missing: {required}")
-    for obsolete in ("1&1 Internet", "concreten-designs.de", "EU-US Privacy Shield", "Google ReCaptcha"):
+    for obsolete in (
+        "1&1 Internet",
+        "concreten-designs.de",
+        "EU-US Privacy Shield",
+        "Google ReCaptcha",
+        "Facebook-/Meta-Pixel",
+        "HubSpot",
+    ):
         if obsolete in privacy:
             findings.append(f"datenschutz.html: obsolete implementation claim remains: {obsolete}")
 

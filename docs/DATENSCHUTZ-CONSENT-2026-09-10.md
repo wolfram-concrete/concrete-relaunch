@@ -27,8 +27,6 @@ genannten Konto- und Containerprüfungen bestätigt sind.
 | Calendly | externe Terminbuchung | erst auf externer Seite | nur Link, kein Embed |
 | Sortlist | Trusted Partner Badge und externer Lead-Herkunftskanal | Marketing & externe Inhalte | Badge-Script wird nicht geladen; Profil bleibt als normaler Link erreichbar |
 | YouTube | nicht verwendet | keine | keine Einbettung |
-| Facebook/Meta | nicht verwendet | keine | erhält nie eine Freigabe |
-| HubSpot | nicht verwendet | keine | erhält nie eine Freigabe |
 
 ## Implementiert
 
@@ -61,43 +59,44 @@ genannten Konto- und Containerprüfungen bestätigt sind.
 
 ## GTM-Gauntlet
 
-Der per API gelesene Live-Container `GTM-N8223FX`, Version 38, enthält 28 Tags,
-davon 22 aktiv. Die aktiven Tags sind noch über Borlabs-Cookie-Variablen
+Der per API gelesene Live-Container `GTM-N8223FX`, Version 39, enthält 28 Tags,
+davon 19 aktiv. Die aktiven Tags sind noch über Borlabs-Cookie-Variablen
 gesperrt und haben überwiegend keine nativen Consent-Anforderungen gesetzt.
 Der Relaunch schreibt deshalb eine kompatible Consent-Struktur und stellt die
 beiden von der alten GTM-Vorlage erwarteten Borlabs-API-Abfragen bereit, gibt
 darüber aber ausschließlich die oben benannten Dienste frei.
 
-Wichtig: Zwei Facebook-Tags und ein HubSpot-Tag sind im Container weiterhin
-als aktiv markiert. Sie werden im Relaunch durch die fehlende Servicefreigabe
-blockiert, sollten aber trotzdem vor dem Domainwechsel im Container pausiert
-und in einer neuen Version veröffentlicht werden. So wird die Konfiguration
-verständlich und bleibt nicht von einer Alt-Sperrlogik abhängig.
+Am 11.09.2026 wurden die nicht mehr verwendeten Tags `fb_main_tag`,
+`fb_contact_tag` und `hs_main_tag` in einem separaten Arbeitsbereich pausiert
+und als Version 39 veröffentlicht. Der API-Vergleich gegen Version 38 bestätigt,
+dass sich dabei kein anderer Tagstatus verändert hat.
 
-### Browser-Abnahme gegen GTM-Version 38
+### Consent-Verhalten nach GTM-Version 39
 
 | Auswahl | Beobachtete externe Tags |
 |---|---|
 | keine Entscheidung / alle abgelehnt | keine; selbst der GTM-Container wird nicht geladen |
-| nur Statistik | GA4 und Clarity; kein LinkedIn, Microsoft Ads, Facebook oder HubSpot |
-| nur Marketing | LinkedIn, Microsoft Ads und Sortlist-Badge; kein GA4, Clarity, Facebook oder HubSpot |
-| alle akzeptiert | GA4, Clarity, LinkedIn, Microsoft Ads und Sortlist-Badge; kein Facebook oder HubSpot |
+| nur Statistik | GA4 und Clarity; kein LinkedIn oder Microsoft Ads |
+| nur Marketing | LinkedIn, Microsoft Ads und Sortlist-Badge; kein GA4 oder Clarity |
+| alle akzeptiert | GA4, Clarity, LinkedIn, Microsoft Ads und Sortlist-Badge |
 
 Google-Ads-Conversion-Tags sind ereignisgebunden und erscheinen erst bei den
-dafür vorgesehenen Kontaktklicks. Die Abnahme lief in einem frischen
-Browser-Origin ohne vorhandene Einwilligung; die Browserkonsole blieb in allen
-Zuständen ohne Fehler.
+dafür vorgesehenen Kontaktklicks. Die Browser-Abnahme der vier Zustände lief
+gegen Version 38 in einem frischen Browser-Origin ohne vorhandene Einwilligung;
+die Browserkonsole blieb ohne Fehler. Für Version 39 weist der API-Diff
+ausschließlich die drei Pausierungen aus, weshalb das Verhalten der übrigen
+Tags unverändert ist. Ein abschließender Tag-Assistant-Lauf bleibt Teil der
+Livegang-Abnahme.
 
 ## Vor Livegang extern bestätigen
 
-1. Facebook- und HubSpot-Tags im GTM pausieren/entfernen; alte Universal-
-   Analytics-Tags dauerhaft pausiert lassen.
+1. Alte Universal-Analytics-Tags dauerhaft pausiert lassen.
 2. Übrige Tags auf native Consent Checks umstellen oder die bestehende
    Sperrlogik bewusst dokumentiert beibehalten.
 3. Mit Google Tag Assistant vier Zustände prüfen: keine Auswahl, Ablehnung,
    nur Statistik, nur Marketing sowie alle akzeptiert.
 4. Im Browser-Netzwerk prüfen, dass vor Zustimmung keine Requests an Google,
-   Microsoft, LinkedIn, Sortlist oder Meta stattfinden.
+   Microsoft, LinkedIn oder Sortlist stattfinden.
 5. In Clarity kontrollieren, dass Maskierung und Consent API V2 im Projekt
    wirksam sind.
 6. Aufbewahrungsfristen in GA4, Google Ads, Clarity, LinkedIn und Microsoft

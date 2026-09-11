@@ -1,5 +1,18 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Nicht mehr verwendete GTM-Tags pausiert
+
+- Im Live-Container `GTM-N8223FX` wurden ausschließlich `fb_main_tag`,
+  `fb_contact_tag` und `hs_main_tag` pausiert und als Version 39 veröffentlicht.
+  Der API-Vergleich bestätigt: Die übrigen 25 Tagstatus blieben unverändert.
+- Facebook/Meta und HubSpot erscheinen nicht länger als verwendete oder noch
+  zu bereinigende Dienste in Datenschutzerklärung, README und Consent-Audit.
+- Der technische Preflight behandelt erneute Facebook-/HubSpot-Angaben in der
+  Datenschutzerklärung künftig als veralteten Implementierungsbefund.
+- Das Consent-System selbst blieb unverändert: Es gibt weiterhin nur Statistik
+  sowie Marketing & externe Inhalte für die tatsächlich eingesetzten Dienste.
+  Deshalb ist kein globaler Cache-Buster erforderlich.
+
 ## 11.09.2026 – Projektübersicht von WordPress-Videos entkoppelt
 
 - Das Nextbed-Vorschauvideo auf `projekte.html` lädt jetzt von der bereits

@@ -155,8 +155,9 @@ vom projektspezifischen SEO-Gauntlet geprüft.
    über Vercel läuft, Schriften und Videos selbst ausliefert und diese
    Einbindungen nicht besitzt. Der Text wurde deshalb vollständig am
    tatsächlichen Relaunch ausgerichtet und ein Basic-Consent-System ergänzt.
-   Kontoebene, Verträge und die Veröffentlichung einer bereinigten GTM-Version
-   bleiben separat zu bestätigen.
+   Kontoebene und Verträge bleiben separat zu bestätigen. Die nicht mehr
+   verwendeten Facebook- und HubSpot-Alt-Tags wurden am 11.09.2026 in
+   GTM-Live-Version 39 pausiert.
 
 ## Empfohlene nächste Schritte
 
@@ -168,9 +169,8 @@ vom projektspezifischen SEO-Gauntlet geprüft.
    und 640/1280/1920-px-Derivate einführen, dann `srcset/sizes` je
    Seitentyp ergänzen.
 4. Eine freigegebene 404-Seite gestalten und umsetzen.
-5. Vor Livegang die zwei Facebook-Tags und den ungenutzten HubSpot-Tag im GTM
-   pausieren/entfernen, die übrigen Tags mit Tag Assistant je Consent-Kategorie
-   prüfen und Analytics-/Clarity-Aufbewahrung sowie AV-Verträge bestätigen.
+5. Die übrigen Tags mit Tag Assistant je Consent-Kategorie prüfen und
+   Analytics-/Clarity-Aufbewahrung sowie AV-Verträge bestätigen.
 6. Nach Datenschutzfreigabe Speed Insights oder ein bestehendes RUM-System
    aktivieren und die Labordaten mit Feldwerten abgleichen.
 7. Am Launch-Tag den Ablauf im README exakt ausführen und anschließend beide

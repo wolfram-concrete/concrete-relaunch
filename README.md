@@ -209,8 +209,7 @@ erneut geprüft sind:
    und dort ebenfalls die Clean-URL ohne `.html` verwenden.
 2. Die aktuelle visuelle Gewichtung der Erstebenen-Consent-Aktionen rechtlich
    freigeben oder die Ablehnung wieder als zur Zustimmung vergleichbare
-   Schaltfläche darstellen. Zusätzlich Facebook- und HubSpot-Alt-Tags im GTM
-   pausieren und eine bereinigte Container-Version veröffentlichen.
+   Schaltfläche darstellen.
 3. Am Umschalttag Authentifizierung und beide `noindex`-Ebenen entfernen und
    anschließend die öffentliche Auslieferung auf der echten Domain prüfen.
 
@@ -245,14 +244,13 @@ erreichbare Textaktionen in der rechten Hälfte sichtbar.
 - Statistik: Google Analytics 4 und Microsoft Clarity
 - Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising
   und das dynamische Sortlist Trusted Partner Badge
-- Nicht freigeschaltet: Facebook/Meta, HubSpot und YouTube
+- Nicht eingesetzt: YouTube-Einbettungen
 
 Die Kompatibilitäts-Cookie-Struktur hält die vorhandenen Borlabs-Sperrvariablen
-im GTM funktionsfähig. Facebook und HubSpot fehlen bewusst in jeder
-Freigabegruppe; ihre Alt-Tags müssen zusätzlich im GTM-Container pausiert und
-bei der nächsten Container-Version entfernt werden. Search Console ist keine
-Browser-Einbindung und gehört nicht in den Banner. Calendly ist nur extern
-verlinkt, nicht eingebettet.
+im GTM funktionsfähig. Die nicht mehr verwendeten Alt-Tags `fb_main_tag`,
+`fb_contact_tag` und `hs_main_tag` sind seit GTM-Live-Version 39 vom
+11.09.2026 pausiert. Search Console ist keine Browser-Einbindung und gehört
+nicht in den Banner. Calendly ist nur extern verlinkt, nicht eingebettet.
 
 Änderungen an `consent-v3.js` erfordern wegen fehlender Medien-Querystrings
 einen neuen Dateinamen und eine Aktualisierung in allen Sitemap-Seiten. Die
