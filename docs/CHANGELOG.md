@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Redaktionelle mobile Netzwerk-Reihenfolge
+
+- Joana Haars und Thomas Meuter in der regulären Listenreihenfolge getauscht.
+- Bis 540 px werden zuerst Einzelpersonen in gemischter Frauen-/Männerfolge gezeigt,
+  danach Partner mit Unternehmen, anschließend Studio Golden und zuletzt die
+  Performance-Marketing-Agenturen.
+- Desktop-Masonry bleibt abgesehen vom angeforderten Tausch unverändert; die mobile
+  Reihenfolge wird breakpointabhängig wiederhergestellt und ist kein Ranking.
+- Im lokalen Browser bei 390 × 844 px und 1440 × 900 px geprüft: 21 Karten in
+  korrekter Reihenfolge, ein beziehungsweise drei Spalten, keine Konsolenfehler.
+
 ## 11.09.2026 – Abschluss der Abend-Iteration
 
 - Partnerergänzungen, mobile Bildausschnitte, Gründer-Headlines, neue Scroll-Stapel

@@ -2,6 +2,12 @@
 
 ## Letzte Iteration · 11.09.2026, Abend
 
+- Netzwerk-Reihenfolge verfeinert: Joana Haars und Thomas Meuter getauscht.
+  Mobil erscheinen zuerst gemischt die Einzelpersonen, danach Partner mit
+  Unternehmen, Studio Golden und abschließend die Performance-Marketing-Agenturen.
+  Desktop behält abgesehen vom gewünschten Joana/Thomas-Tausch sein Masonry-Raster.
+  Laufzeitprüfung bei 390 px und 1440 px: 21 Einträge vollständig, mobile Reihenfolge
+  korrekt, Desktop mit drei Spalten, keine Konsolenfehler.
 - Netzwerk auf 21 Partner mit lokalen Bildern erweitert: Daniel Fatemi, Leo Glomann,
   Eric Schlottke, Jan Illmer und Joana Haars inklusive der gelieferten Kontaktlinks.
 - Mobile Porträt-Fokuspunkte angepasst; Fabio und Stefan im Container um 30 % vergrößert.
