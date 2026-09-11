@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Julia Rosenberger im Netzwerk ergänzt
+
+- Julia Rosenberger mit Porträt und Fachgebiet „Fotografin“ aufgenommen.
+- Das Original wurde für die kompakte Darstellung auf 720 px Höhe
+  verkleinert und als lokale JPEG-Webfassung mit Lazy Loading eingebunden.
+
 ## 11.09.2026 – Marleens Fachgebiete ergänzt
 
 - Netzwerkprofil Marleen Zepp: „Markenentwicklung, Text, Konzepte.“
