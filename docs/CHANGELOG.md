@@ -1,5 +1,22 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Beschriftungen bei „Weitere Projekte“ getrennt
+
+- Auf allen 40 Projektseiten stehen Firmenname und Kategorie unter dem Bild
+  links- beziehungsweise rechtsbündig. Der sichtbare Mittelpunkt entfällt;
+  die korallfarbene Kategorie bleibt erhalten.
+- Lange Angaben können innerhalb der Kartenbreite umbrechen. Die Anpassung
+  betrifft auch die Wiederholungen im laufenden Projektband.
+- Nur HTML und Inline-CSS geändert; globaler Cache-Buster weiterhin `v=159`.
+
+## 11.09.2026 – ergobag-Awardband auf das Seitenraster begrenzt
+
+- Der dunkle Hintergrund der Award-Banderole endet auf großen Screens jetzt
+  an den Außenkanten des zentralen 1440-px-Seitenrasters statt am Viewport.
+- Inhalt, Innenabstände, Logoanordnung und mobile Darstellung bleiben
+  unverändert. Die Anpassung liegt ausschließlich im Inline-CSS der
+  ergobag-Projektseite; der globale Cache-Buster bleibt deshalb bei `v=159`.
+
 ## 11.09.2026 – Nicht mehr verwendete GTM-Tags pausiert
 
 - Im Live-Container `GTM-N8223FX` wurden ausschließlich `fb_main_tag`,
