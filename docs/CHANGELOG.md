@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Ausgewogener Motivmix im Netzwerk
+
+- Hohe Porträts und flache Agenturmotive wechseln sich in der redaktionellen
+  Reihenfolge ab, damit keine ausschließlich hohen oder flachen Spalten entstehen.
+- Alle 14 Karten, Bildausschnitte und Links unverändert erhalten.
+
 ## 11.09.2026 – Netzwerk als Masonry-Spaltenlayout
 
 - Karten folgen in drei, zwei beziehungsweise einer Spalte direkt untereinander.
