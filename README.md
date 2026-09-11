@@ -83,7 +83,7 @@ insgesamt 14 Partner mit lokalen Bildern. Diemo ist mit Website und LinkedIn
 verlinkt. Leistungsprofile
 basieren auf den jeweiligen Websites (11.09.2026). Für planinja führt der CTA
 zur Agentur-Startseite; Werbeparameter werden nicht übernommen.
-Alle Partner erhalten einen großen 4:3-Bildcontainer mit Name, kurzer
+Alle Partner erhalten einen großen 3:4-Bildcontainer mit Name, kurzer
 Leistungsbeschreibung und Kontaktlinks darunter. Das Raster nutzt drei
 Spalten auf Desktop, zwei auf Tablet und eine auf Mobile. Agenturmotive
 werden vollständig dargestellt; Porträts sind oben fokussiert.
@@ -93,7 +93,8 @@ Verlinkt sind `https://stefantrocha.com/` und Julias Website
 `https://lieblingsbilder.net/` sowie die bestätigten LinkedIn-Profile von
 Marleen, Julia, Kevin, Stefan und Thomas. Wolfram und Christian haben auf
 ihren Profilkarten ebenfalls LinkedIn-Buttons. Alle sieben Profilbuttons
-nutzen das LinkedIn-Icon aus dem Burger-Menü und mindestens 44 px Höhe.
+zeigen nur das LinkedIn-Icon aus dem Burger-Menü in einem 36-px-Button.
+Im Netzwerk stehen die Aktionen je Kartenreihe auf gemeinsamer unterer Achse.
 Für Concadia stehen
 Kontaktdaten noch aus. Weitere bestätigte Namen, Fachgebiete und Profil-Links
 werden als Einträge in `.network__list` ergänzt; Bilder liegen in

@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Hochformat und ausgerichtete LinkedIn-Icons
+
+- Netzwerkbilder auf 3:4 umgestellt, Porträts oben beziehungsweise individuell
+  mittig fokussiert. Agenturmotive bleiben vollständig im Container sichtbar.
+- LinkedIn zeigt nur das Icon in einem 36-px-Button; zugängliche Namen bleiben.
+  Flexible Textbereiche richten die Kontaktaktionen je Kartenreihe unten aus.
+- Inline-CSS; Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Diemo Barz im Netzwerk ergänzt
 
 - Porträt, Website und LinkedIn-Button ergänzt. Rolle laut seiner Website:
