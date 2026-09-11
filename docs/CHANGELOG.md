@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Concadia im Netzwerk ergänzt
+
+- Firmenpartner Concadia mit „Marketing und Sales als ein System“ sowie
+  Fabian Lampert & Christopher Bähr aufgenommen.
+- Bild und Kontaktdaten stehen noch aus; vorerst reiner Texteintrag.
+- Der Check zur falschen CA’N-SORT-Zitatzuordnung nimmt die Netzwerksektion
+  aus: Fabian Lampert ist dort ein bestätigter Partner, kein Zitatgeber.
+
 ## 11.09.2026 – Thomas Meuter im Netzwerk ergänzt
 
 - Thomas Meuter mit Porträt und „Videoeditor & Motion Designer“ aufgenommen.

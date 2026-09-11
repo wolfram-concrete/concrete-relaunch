@@ -167,7 +167,12 @@ def scan() -> list[str]:
             )
         if '<meta name="robots" content="noindex,nofollow">' not in text:
             findings.append(f"{page.name}: required prelaunch noindex missing")
-        if "Fabian Lampert" in text:
+        # Confirmed partner names in the network are not quote attributions.
+        attribution_text = re.sub(
+            r'<section\b[^>]*\bid="netzwerk"[^>]*>.*?</section>',
+            '', text, flags=re.S,
+        )
+        if "Fabian Lampert" in attribution_text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
         if text.count('<script src="consent-v3.js"></script>') != 1:
             findings.append(f"{page.name}: consent manager missing or duplicated")

@@ -72,7 +72,9 @@ Die Sektion `#netzwerk` zwischen Christian und Projekt-Fit ist für die
 geplanten 12–13 Personen- und Firmenpartner erweiterbar. Aktuell sind Marleen
 Zepp, Julia Rosenberger (Fotografin) und Kevin Eulenberg (Principal & Agentic
 Engineer), Stefan Trocha (Photographer & Creative) sowie Thomas Meuter
-(Videoeditor & Motion Designer) eingetragen.
+(Videoeditor & Motion Designer) sowie Concadia (Fabian Lampert & Christopher
+Bähr; „Marketing und Sales als ein System“) eingetragen. Für Concadia steht
+das Bild noch aus; der Eintrag wird bis dahin ohne Bild dargestellt.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
 unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
 Stefans Website ist `https://stefantrocha.com/`; für die anderen Partner
