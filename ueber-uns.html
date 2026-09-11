@@ -86,6 +86,14 @@
 .network__contact{display:flex;width:fit-content;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
 .linkedin-profile.button{gap:0;width:36px;min-width:36px;min-height:36px;height:36px;padding:8px;flex:none}
 .linkedin-profile__icon{display:block;width:20px;height:20px;flex:0 0 20px;background:currentColor;-webkit-mask:url("assets/social/linkedin.svg") center/contain no-repeat;mask:url("assets/social/linkedin.svg") center/contain no-repeat}
+.person__mail.linkedin-profile.button{width:44px;min-width:44px;height:44px;min-height:44px;background:var(--coral);vertical-align:middle}
+.person__linkedin-mobile.button{display:none}
+@media(max-width:860px){
+  .person__box .person__mail.linkedin-profile{display:none}
+  .person__linkedin-mobile.button{display:inline-flex;position:absolute;left:var(--pad);bottom:24px;z-index:2;width:44px;min-width:44px;height:44px;min-height:44px;margin:0;background:var(--coral);color:var(--ink);border-color:var(--coral)}
+  .person__linkedin-mobile.button::before{background:var(--ink)}
+  .person__linkedin-mobile.button:hover,.person__linkedin-mobile.button:focus-visible{color:var(--coral);border-color:var(--ink)}
+}
 .network__partner>div:has(>.network__linkedin){display:grid;grid-template-columns:minmax(0,1fr) 36px;column-gap:16px;align-content:start;align-items:start}
 .network__partner>div:has(>.network__linkedin)>:not(.network__linkedin){grid-column:1}
 .network__partner>div>.network__linkedin{grid-column:2;grid-row:1 / span 2;justify-self:end;align-self:start;margin-top:0;text-decoration:none}
@@ -197,6 +205,7 @@
   </div>
   <figure class="person__media">
     <img src="assets/team/wolfram-portrait.jpg" alt="Wolfram Stratmann" loading="lazy" decoding="async" width="1095" height="1600">
+    <a class="person__linkedin-mobile button linkedin-profile" href="https://www.linkedin.com/in/wolfram-stratmann-1a756216a/" target="_blank" rel="noopener noreferrer" aria-label="Wolfram Stratmann auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a>
     <span class="person__tex" aria-hidden="true"></span>
   </figure>
 </article>
@@ -210,6 +219,7 @@
   </div>
   <figure class="person__media">
     <img src="assets/team/christian-portrait.jpg" alt="Christian Rosenberger" loading="lazy" decoding="async" width="1021" height="1600">
+    <a class="person__linkedin-mobile button linkedin-profile" href="https://www.linkedin.com/in/christianrosenberger/" target="_blank" rel="noopener noreferrer" aria-label="Christian Rosenberger auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a>
     <span class="person__tex" aria-hidden="true"></span>
   </figure>
 </article>

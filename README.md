@@ -105,6 +105,9 @@ ihren Profilkarten ebenfalls LinkedIn-Buttons. Alle sieben Profilbuttons
 zeigen nur das LinkedIn-Icon aus dem Burger-Menü in einem 36-px-Button.
 Im Netzwerk stehen LinkedIn-Buttons rechtsbündig unter dem Bild, mit der
 Oberkante auf Höhe des Namens links. Rolle und Website bleiben darunter links.
+Auf den Gründerkarten stehen LinkedIn-Buttons auf Desktop bei der E-Mail
+(44 px hoch), mobil korallfarben unten links im Porträt. Je Bildschirmgröße
+ist nur der passende Link sichtbar und per Tastatur erreichbar.
 Für Concadia stehen
 Kontaktdaten noch aus. Weitere bestätigte Namen, Fachgebiete und Profil-Links
 werden als Einträge in `.network__list` ergänzt; Bilder liegen in

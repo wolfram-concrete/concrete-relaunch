@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – LinkedIn auf den Gründer-Profilkarten
+
+- Mobile: LinkedIn für Wolfram und Christian als korallfarbener 44-px-Button
+  unten links im Porträt. Der bisherige Button im Textbereich wird ausgeblendet.
+- Desktop: LinkedIn bleibt bei der E-Mail und erhält dieselbe Button-Höhe (44 px).
+  Netzwerk-Buttons bleiben unverändert. Inline-CSS, Cache `v=160` unverändert.
+
 ## 11.09.2026 – Originales CONCRETE-Favicon
 
 - Wortmarke im Browser-Tab durch das originale korallfarbene C auf Schwarz ersetzt.
