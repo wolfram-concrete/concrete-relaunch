@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Thomas Meuter im Netzwerk ergänzt
+
+- Thomas Meuter mit Porträt und „Videoeditor & Motion Designer“ aufgenommen.
+- Lokale JPEG-Webfassung mit 480 × 720 px und Lazy Loading; Kontaktdaten
+  stehen noch aus. Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Stefan Trocha und Partnerkontakte ergänzt
 
 - Stefan Trocha mit Web-Porträt, „Photographer & Creative“ und Link zu
