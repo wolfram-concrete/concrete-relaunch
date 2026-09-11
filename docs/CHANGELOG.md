@@ -1,5 +1,26 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Studio Golden im Netzwerk
+
+- Tageslicht-Mietstudio in Frankfurt-Rödelheim mit lokalem Studiofoto,
+  Kurzbeschreibung und Website-CTA ergänzt. Insgesamt 15 Partner.
+- Quelle: https://studiogolden.de/ (11.09.2026), Bild: `StudioGolden_Titel-768x513.jpg`.
+  Nutzungsfreigabe für die Partnerdarstellung vor Veröffentlichung bestätigen.
+
+## 11.09.2026 – Carolina Santos statt SOLIT im Netzwerk
+
+- Bestätigtes LinkedIn-Profil als Icon-Button rechts neben dem Namen ergänzt.
+- Carolina Santos mit Porträt, Website und Schwerpunkten Social Media,
+  Content Creation und Influencer Marketing ergänzt. Wieder insgesamt 14 Partner.
+- Quelle: https://carolinasantos.de/, abgerufen am 11.09.2026.
+  Porträt lokal unter `assets/partners/carolina-santos-v1.jpg`; Bildfreigabe
+  für die Partnerdarstellung vor Veröffentlichung bestätigen lassen.
+
+## 11.09.2026 – SOLIT aus dem Netzwerk entfernt
+
+- SOLIT Marketing aus der Partnerliste auf Über uns entfernt; verbleibend 13 Partner.
+- Projektseite, Projektverweise und Bilddatei bleiben unverändert erhalten.
+
 ## 11.09.2026 – LinkedIn auf den Gründer-Profilkarten
 
 - Mobile: LinkedIn für Wolfram und Christian als korallfarbener 44-px-Button

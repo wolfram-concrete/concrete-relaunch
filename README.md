@@ -78,12 +78,17 @@ Zepp, Julia Rosenberger (Fotografin) und Kevin Eulenberg (Principal & Agentic
 Engineer), Stefan Trocha (Photographer & Creative) sowie Thomas Meuter
 (Videoeditor & Motion Designer) sowie Concadia (Fabian Lampert & Christopher
 Bähr; „Marketing und Sales als ein System“) sowie Digital Naturals
-(Social Media, Content-Produktion und Kampagnen) eingetragen. Alle sieben
+(Social Media, Content-Produktion und Kampagnen) eingetragen. Alle
 Netzwerkeinträge sind mit Bildern hinterlegt. Agenturpartner verwenden
 eigene Social-/Website-Bildmotive oder Teamfotos statt reiner Logos.
-Ergänzt sind Justaddsugar, SOLIT Marketing, AdSuits, Searchperts, planinja
+Ergänzt sind Justaddsugar, AdSuits, Searchperts, planinja
 und moodmacher sowie Diemo Barz (Senior Art Director Motion & 3D Artist):
-insgesamt 14 Partner mit lokalen Bildern. Diemo ist mit Website und LinkedIn
+insgesamt 15 Partner mit lokalen Bildern. Studio Golden ergänzt das Netzwerk
+als Tageslicht-Mietstudio in Frankfurt-Rödelheim (studiogolden.de).
+Carolina Santos ersetzt SOLIT im
+Netzwerk mit Porträt, Website carolinasantos.de und bestätigtem LinkedIn-Profil.
+Ihr Schwerpunkt ist Social
+Media, Content Creation und Influencer Marketing. Diemo ist mit Website und LinkedIn
 verlinkt. Leistungsprofile
 basieren auf den jeweiligen Websites (11.09.2026). Für planinja führt der CTA
 zur Agentur-Startseite; Werbeparameter werden nicht übernommen.
