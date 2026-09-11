@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Netzwerk auf der Über-uns-Seite
+
+- Neue kompakte Sektion zwischen Christian und Projekt-Fit mit kurzem
+  Einstieg und erweiterbarer Partnerliste. Erster Eintrag: Marleen Zepp.
+- Desktop drei, Tablet zwei, Mobile eine Listenspalte; Firmenlogos können
+  alternativ zu Porträts eingebunden werden. Weitere Partnerdaten folgen.
+- Lokales Porträt mit Lazy Loading; Inline-CSS, Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Trennlinie oberhalb der ergobag-Awards entfernt
 
 - Die durchgehende untere Rahmenlinie der Leistungsübersicht entfällt auf
