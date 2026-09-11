@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Größere Netzwerkbilder mit Text darunter
+
+- Alle 13 Partner stehen als Bildkarten im Raster: großflächiger
+  4:3-Bildcontainer, darunter Name, Kurzprofil und Kontaktlinks.
+- Drei Spalten auf Desktop, zwei auf Tablet und eine auf Mobile.
+  Agenturmotive bleiben vollständig sichtbar, Porträts sind oben fokussiert.
+- Inline-CSS; Cache-Buster bleibt `v=160`.
+
+- Bei der Sichtprüfung schwarze Concadia-Webfassung entdeckt und durch
+  das intakte Original unter neuem Dateinamen ersetzt; Kevin mittig fokussiert.
+
 ## 11.09.2026 – LinkedIn-Buttons mit Icon
 
 - Die fünf Netzwerkprofile erhalten kompakte LinkedIn-Buttons mit dem

@@ -81,8 +81,10 @@ Ergänzt sind Justaddsugar, SOLIT Marketing, AdSuits, Searchperts, planinja
 und moodmacher: insgesamt 13 Partner mit lokalen Thumbnails. Leistungsprofile
 basieren auf den jeweiligen Websites (11.09.2026). Für planinja führt der CTA
 zur Agentur-Startseite; Werbeparameter werden nicht übernommen.
-Firmenpartner erhalten ein Thumbnail mit Name, kurzer Leistungsbeschreibung
-und Website-CTA daneben; Digital Naturals ist entsprechend verlinkt.
+Alle Partner erhalten einen großen 4:3-Bildcontainer mit Name, kurzer
+Leistungsbeschreibung und Kontaktlinks darunter. Das Raster nutzt drei
+Spalten auf Desktop, zwei auf Tablet und eine auf Mobile. Agenturmotive
+werden vollständig dargestellt; Porträts sind oben fokussiert.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
 unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
 Verlinkt sind `https://stefantrocha.com/` und Julias Website
