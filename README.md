@@ -75,7 +75,8 @@ Engineer), Stefan Trocha (Photographer & Creative) sowie Thomas Meuter
 (Videoeditor & Motion Designer) sowie Concadia (Fabian Lampert & Christopher
 Bähr; „Marketing und Sales als ein System“) sowie Digital Naturals
 (Social Media, Content-Produktion und Kampagnen) eingetragen. Alle sieben
-Netzwerkeinträge sind mit Bild beziehungsweise Logo hinterlegt.
+Netzwerkeinträge sind mit Bildern hinterlegt. Agenturpartner verwenden
+eigene Social-/Website-Bildmotive oder Teamfotos statt reiner Logos.
 Ergänzt sind Justaddsugar, SOLIT Marketing, AdSuits, Searchperts, planinja
 und moodmacher: insgesamt 13 Partner mit lokalen Thumbnails. Leistungsprofile
 basieren auf den jeweiligen Websites (11.09.2026). Für planinja führt der CTA

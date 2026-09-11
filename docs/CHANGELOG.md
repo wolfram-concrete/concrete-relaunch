@@ -1,5 +1,14 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Bildmotive statt Agenturlogos
+
+- Digital Naturals und planinja erhalten offizielle Team-/Agenturfotos
+  statt reiner Logos. Alle Agentur-Thumbnails zeigen damit Bildmotive.
+- Quellen: Digital Naturals, Medienbibliothek, Datei
+  `20240708_DN_Offsite_Teamfoto-2-2048x1365-2.png`; planinja-Startseite,
+  Datei `planinja-agency-agentur-1.png`, abgerufen am 11.09.2026.
+- Neue lokale Dateinamen, maximal 480 px Breite, Lazy Loading.
+
 ## 11.09.2026 – Sechs weitere Firmenpartner im Netzwerk
 
 - Justaddsugar, SOLIT Marketing, AdSuits, Searchperts, planinja und moodmacher
