@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Seitenübergreifender Motion-Codecheck
+
+- Gemeinsame Motion-Einbindung auf allen 129 Seiten geprüft; kein neuer
+  vollständiger visueller Browserdurchlauf.
+- Offene Befunde zu Startseiten-Überlagerung/Leerraum, Mobile-Parallax,
+  Reduced-Motion-Ausnahmen und Netzwerk-Breakpointwechsel in README dokumentiert.
+- Keine Behebung dieser Befunde im Rahmen des Checks; keine Motion-Livefreigabe.
+
+## 11.09.2026 – Netzwerk-Motion wie in der Projektliste
+
+- Bild-Reveal und verzögerter Textaufbau mit bestehenden Reveal-Beobachtern.
+- Dezenter Bild-Parallax auf Desktop, ausgeschaltet auf Touch/Mobile und bei
+  reduzierter Bewegung. Bildformate und Masonry-Reihenfolge bleiben erhalten.
+- Seitenspezifische Initialisierung in `network-motion-v1.js`; keine neue Library.
+
 ## 11.09.2026 – Julia und Concadia im Netzwerk getauscht
 
 - Julia Rosenberger übernimmt Concadias bisherige Position im Masonry-Raster;

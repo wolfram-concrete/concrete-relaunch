@@ -1,5 +1,24 @@
 # CONCRETE Relaunch
 
+## Motion-Prüfstand vom 11.09.2026
+
+Die Motion-Einbindung aller 129 Seiten und die gemeinsamen CSS-/JS-Regeln
+wurden statisch geprüft. Dies ist kein erneuter vollständiger Browserdurchlauf
+und keine Motion-Livefreigabe. Netzwerk-Motion ist implementiert; visuelle
+Abnahme und responsive Laufzeitprüfung stehen noch aus.
+
+Offen bleiben:
+- Startseite: BGF-Überlagerung und lange Statement-Scrollstrecke.
+- Mobile mit reduzierter Bewegung: 230svh-Statement-Fläche bleibt trotz deaktiviertem Pin.
+- Mobile-Parallax ist außerhalb des Netzwerks nicht einheitlich deaktiviert.
+- Stapelmodule für Kompetenzen, Situationen und Erstgespräch: Animation und
+  reservierten Nachlauf bei reduzierter Bewegung ebenfalls zurücksetzen.
+- Projektliste: spätere CSS-Regeln überschreiben teilweise Reduced-Motion-Regeln.
+- Netzwerk: Parallax-Aktivierung wird nur beim Laden ermittelt, nicht bei
+  nachträglichem Wechsel von Mobile auf Desktop.
+
+Diese Befunde sind dokumentiert, nicht behoben. Vor Launch im Browser prüfen.
+
 Browser-Favicon: originales C auf Schwarz der bisherigen Website, lokal unter
 `assets/favicon-concrete-v1.jpg`; Apple-Touch-Icon unter
 `assets/apple-touch-icon-concrete-v1.jpg`. In allen HTML-Seiten eingebunden.
@@ -104,6 +123,9 @@ Karten folgen spaltenweise in natürlicher Höhe mit 40 px Abstand, ohne
 gestreckte Textbereiche. Mobil bleibt die ursprüngliche Listenreihenfolge erhalten.
 Bis 540 px sind alle Netzwerkbilder quadratisch (1:1), mit `object-fit:cover`
 und mittigem Fokus. So bleiben ihre Container bei gleicher Breite gleich hoch.
+`network-motion-v1.js` übernimmt Bild-Reveal und Textaufbau der Projektliste.
+Desktop-Parallax nutzt den bestehenden Scroll-Handler; auf Touch/Mobile bleibt
+das Bild ruhig. Bei reduzierter Bewegung bleibt das Netzwerk ohne Animation.
 Die redaktionelle Reihenfolge mischt abwechselnd hohe Porträts und flache
 Agenturmotive für einen ausgeglichenen Bildrhythmus.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden

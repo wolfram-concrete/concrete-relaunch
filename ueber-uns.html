@@ -74,6 +74,20 @@
   .person .person__box{order:2;width:100%;margin:0;padding:clamp(28px,8vw,44px) var(--pad)}
   .person__mail.button{width:100%;margin-top:var(--s1)}
 }
+.network__media{margin:0;width:100%;overflow:hidden;flex:none}
+.network--motion .network__partner.rv{transition-delay:var(--network-delay,0s)}
+.network--motion .network__media{clip-path:inset(0);transition:clip-path 1.1s cubic-bezier(.2,.7,.2,1) var(--network-delay,0s)}
+.network--motion .network__partner:not(.in) .network__media{clip-path:inset(0 0 100% 0)}
+.network--motion .network__partner>div{transition:opacity .6s ease calc(var(--network-delay,0s) + .32s),transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--network-delay,0s) + .32s)}
+.network--motion .network__partner:not(.in)>div{opacity:0;transform:translateY(10px)}
+.network--motion .network__partner:focus-within{opacity:1;transform:none}
+.network--motion .network__partner:focus-within .network__media{clip-path:inset(0)}
+.network--motion .network__partner:focus-within>div{opacity:1;transform:none}
+@media(max-width:900px),(hover:none),(pointer:coarse){.network__media.img-plx img{transform:none;will-change:auto}}
+@media(prefers-reduced-motion:reduce){
+  .network--motion .network__partner.rv,.network--motion .network__partner>div{opacity:1;transform:none;transition:none}
+  .network--motion .network__media{clip-path:inset(0)!important;transition:none}
+}
 .network__intro{max-width:56ch;margin-bottom:var(--s4)}
 .network h2{font-size:clamp(22px,2vw,28px);margin-bottom:var(--s2)}
 .network__intro p{font-size:15px;line-height:1.6;color:var(--ink-60);margin:0}
@@ -441,6 +455,7 @@
   </div>
 </footer>
 <script src="consent-v3.js"></script>
+<script src="network-motion-v1.js"></script>
 <script src="site.js?v=161"></script>
 </body>
 </html>
