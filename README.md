@@ -67,7 +67,7 @@ links und die korallfarbene Kategorie rechts an den Bildkanten, ohne
 Mittelpunkt. Lange Angaben können innerhalb der Karten umbrechen. Diese
 Regeln liegen im Inline-CSS der Case-Seiten und gelten auch für die
 wiederholten Karten des Projektbands. Stand 11.09.2026: globaler
-Cache-Buster `v=160`. Die beiden Footer-Partner bleiben auf Mobile auch
+Cache-Buster `v=161`. Die beiden Footer-Partner bleiben auf Mobile auch
 unter 460 px zweispaltig; Logo, Schrift und Abstand werden dafür verkleinert.
 
 ## Netzwerk auf der Über-uns-Seite
@@ -83,7 +83,10 @@ Netzwerkeinträge sind mit Bildern hinterlegt. Agenturpartner verwenden
 eigene Social-/Website-Bildmotive oder Teamfotos statt reiner Logos.
 Ergänzt sind Justaddsugar, AdSuits, Searchperts, planinja
 und moodmacher sowie Diemo Barz (Senior Art Director Motion & 3D Artist):
-insgesamt 15 Partner mit lokalen Bildern. Studio Golden ergänzt das Netzwerk
+insgesamt 16 Partner mit lokalen Bildern. Fabio Nobile ist als Brand Identity
+& Web Designer mit Porträt, Website und LinkedIn ergänzt. planinja verwendet
+das ausgewählte Beratungsfoto statt des bisherigen Meeting-Motivs.
+Studio Golden ergänzt das Netzwerk
 als Tageslicht-Mietstudio in Frankfurt-Rödelheim (studiogolden.de).
 Carolina Santos ersetzt SOLIT im
 Netzwerk mit Porträt, Website carolinasantos.de und bestätigtem LinkedIn-Profil.
@@ -99,6 +102,8 @@ füllen die Kartenbreite in ihrem natürlichen Seitenverhältnis, ohne Balken;
 Porträts sind oben fokussiert. Das Netzwerk nutzt ein CSS-Masonry-Spaltenlayout:
 Karten folgen spaltenweise in natürlicher Höhe mit 40 px Abstand, ohne
 gestreckte Textbereiche. Mobil bleibt die ursprüngliche Listenreihenfolge erhalten.
+Bis 540 px sind alle Netzwerkbilder quadratisch (1:1), mit `object-fit:cover`
+und mittigem Fokus. So bleiben ihre Container bei gleicher Breite gleich hoch.
 Die redaktionelle Reihenfolge mischt abwechselnd hohe Porträts und flache
 Agenturmotive für einen ausgeglichenen Bildrhythmus.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden

@@ -830,7 +830,7 @@ img.case-wide,.img-plx.case-wide img{width:100%;height:auto}
 /* Situationsseiten: „Woran ihr es merkt“ als nummerierte Liste */
 .sym--num{--sym-fs:clamp(20px,1.8vw,28px);--sym-lh:1.6;list-style:none;margin:0;padding:0;counter-reset:sym}
 .sym--num li{--sym-pt:clamp(12px,1.4vw,18px);position:relative;counter-increment:sym;padding-left:clamp(48px,4.4vw,72px);padding-block:var(--sym-pt);margin:0;line-height:var(--sym-lh);border-top:1px solid var(--rule)}
-.sym--num li:first-child{--sym-pt:0px;border-top:0;padding-top:0}
+.sym--num li:first-child{--sym-pt:0px;border-top:0;padding-top:0;padding-bottom:clamp(12px,1.4vw,18px)}
 .sym--num li:last-child{padding-bottom:0}
 /* Ziffer auf Oberlaenge mit der ersten Textzeile: Versalhoehe beider Schriften ist .7em */
 .sym--num li::before{content:counter(sym,decimal-leading-zero);position:absolute;left:0;top:calc(var(--sym-pt) + .489rem - .1844 * var(--sym-fs));font-family:"Arame";font-weight:700;font-size:var(--sym-fs);line-height:1;color:var(--coral)}

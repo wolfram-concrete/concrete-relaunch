@@ -23,7 +23,7 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=160">
+<link rel="stylesheet" href="site.css?v=161">
 <style>
 .page-head{padding-block:clamp(120px,18vw,260px) clamp(48px,6vw,88px);position:relative}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(38px,6.8vw,104px);line-height:.9;margin:0;max-width:16ch;font-kerning:normal}
@@ -105,7 +105,10 @@
 .network__portrait--dark{background:var(--ink);padding:10px}
 .network__portrait--thumbnail{height:auto;aspect-ratio:auto;object-fit:cover;object-position:center;background:none}
 @media(max-width:860px){.network__list{column-count:2}}
-@media(max-width:540px){.network__list{column-count:1}}
+@media(max-width:540px){
+  .network__list{column-count:1}
+  .network__partner .network__portrait{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center!important}
+}
 </style>
 </head>
 <body>
@@ -273,7 +276,7 @@
       <div><h3>Thomas Meuter</h3><p>Videoeditor &amp; Motion Designer</p><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/thomas-meuter-6439681aa/" target="_blank" rel="noopener noreferrer" aria-label="Thomas Meuter auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
     </li>
     <li class="network__partner">
-      <img class="network__portrait network__portrait--thumbnail" src="assets/partners/planinja-team-v2.jpg" alt="Das planinja-Team im Austausch" width="480" height="411" loading="lazy" decoding="async">
+      <img class="network__portrait network__portrait--thumbnail" src="assets/partners/planinja-consulting-v3.jpg" alt="Beratungsgespräch bei planinja" width="700" height="600" loading="lazy" decoding="async">
       <div><h3>planinja</h3><p>Marketingstrategie, KI-Beratung und Umsetzung für Mittelstand und Marken.</p><a class="network__contact" href="https://www.planinja.de/" target="_blank" rel="noopener noreferrer" aria-label="planinja kennenlernen (öffnet in neuem Tab)">Partner kennenlernen →</a></div>
     </li>
     <li class="network__partner">
@@ -283,6 +286,10 @@
     <li class="network__partner">
       <img class="network__portrait network__portrait--thumbnail" src="assets/partners/moodmacher-v1.jpg" alt="moodmacher" width="480" height="252" loading="lazy" decoding="async">
       <div><h3>moodmacher</h3><p>Videoproduktion, Imagefilme und Social-Media-Videos für Unternehmen.</p><a class="network__contact" href="https://www.moodmacher.de/" target="_blank" rel="noopener noreferrer" aria-label="moodmacher kennenlernen (öffnet in neuem Tab)">Partner kennenlernen →</a></div>
+    </li>
+    <li class="network__partner">
+      <img class="network__portrait" src="assets/partners/fabio-nobile-v1.jpg" alt="Fabio Nobile" width="740" height="1200" loading="lazy" decoding="async">
+      <div><h3>Fabio Nobile</h3><p>Brand Identity &amp; Web Designer</p><a class="network__contact" href="https://www.fabionobile.design/" target="_blank" rel="noopener noreferrer" aria-label="Website von Fabio Nobile (öffnet in neuem Tab)">fabionobile.design</a><a class="button network__linkedin linkedin-profile" href="https://www.linkedin.com/in/roberto-fabio-nobile/" target="_blank" rel="noopener noreferrer" aria-label="Fabio Nobile auf LinkedIn (öffnet in neuem Tab)"><span class="linkedin-profile__icon" aria-hidden="true"></span></a></div>
     </li>
     <li class="network__partner">
       <img class="network__portrait" style="object-position:center" src="assets/partners/diemo-barz-v1.jpg" alt="Diemo Barz" width="576" height="576" loading="lazy" decoding="async">
@@ -434,6 +441,6 @@
   </div>
 </footer>
 <script src="consent-v3.js"></script>
-<script src="site.js?v=160"></script>
+<script src="site.js?v=161"></script>
 </body>
 </html>

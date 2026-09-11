@@ -1,5 +1,25 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – Quadratische Netzwerkbilder auf Mobile
+
+- Bis 540 px erhalten alle Partnerbilder ein einheitliches 1:1-Format,
+  füllen den Container vollständig und werden mittig fokussiert.
+- Desktop- und Tablet-Masonry sowie deren Bildformate bleiben unverändert.
+
+## 11.09.2026 – Linienabstand bei nummerierten Situationslisten
+
+- Unteren Innenabstand beim ersten Eintrag wiederhergestellt. Der bisherige
+  Nullwert für die obere Ziffernausrichtung hatte zugleich den unteren Abstand entfernt.
+- Gemeinsame Regel für alle Situationsseiten; CSS/JS-Cache auf `v=161` erhöht.
+
+## 11.09.2026 – Fabio Nobile und neues planinja-Motiv
+
+- Fabio Nobile als Brand Identity & Web Designer mit bereitgestelltem Porträt,
+  Website und LinkedIn-Icon ergänzt. Insgesamt 16 Partner.
+- Das vom Nutzer ausgewählte planinja-Beratungsfoto ersetzt das Meeting-Motiv.
+  Quelle: https://www.planinja.de/wp-content/uploads/planinja-consulting-beratung.png.
+- Beide Fotos als lokale JPEGs optimiert; bisherige Bilddateien bleiben erhalten.
+
 ## 11.09.2026 – Studio Golden im Netzwerk
 
 - Tageslicht-Mietstudio in Frankfurt-Rödelheim mit lokalem Studiofoto,
