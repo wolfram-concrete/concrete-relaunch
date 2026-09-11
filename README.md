@@ -78,8 +78,10 @@ das Bild noch aus; der Eintrag wird bis dahin ohne Bild dargestellt.
 Vorhandene, bestätigte Websites, E-Mail-Adressen oder Telefonnummern werden
 unter der Rolle als `.network__contact` verlinkt (HTTPS, `mailto:` bzw. `tel:`).
 Verlinkt sind `https://stefantrocha.com/` und Julias Website
-`https://lieblingsbilder.net/`; für die anderen Partner
-stehen Kontaktdaten noch aus. Weitere bestätigte Namen, Fachgebiete und Profil-Links
+`https://lieblingsbilder.net/` sowie die bestätigten LinkedIn-Profile von
+Marleen, Julia, Kevin, Stefan und Thomas. Wolfram und Christian haben auf
+ihren Profilkarten ebenfalls LinkedIn-Buttons. Für Concadia stehen
+Kontaktdaten noch aus. Weitere bestätigte Namen, Fachgebiete und Profil-Links
 werden als Einträge in `.network__list` ergänzt; Bilder liegen in
 `assets/partners/`. Für Firmenlogos zusätzlich `network__portrait--logo`
 verwenden. Keine unbestätigten Rollen oder Platzhalterpartner veröffentlichen.

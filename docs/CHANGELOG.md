@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 11.09.2026 – LinkedIn-Profile auf Über uns ergänzt
+
+- Marleen, Julia, Kevin, Stefan und Thomas erhalten ihre bestätigten
+  LinkedIn-Links im Netzwerk; bestehende Websites bleiben zusätzlich sichtbar.
+- Wolfram und Christian erhalten LinkedIn-Buttons neben ihren E-Mail-Buttons,
+  auf Mobile untereinander. Externe Links öffnen beschriftet in einem neuen Tab.
+- Inline-CSS; globaler Cache-Buster bleibt `v=160`.
+
 ## 11.09.2026 – Julias Website ergänzt
 
 - Netzwerkprofil Julia Rosenberger mit `https://lieblingsbilder.net/`
