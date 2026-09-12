@@ -81,10 +81,12 @@ transluzenter Papier-Träger mit Blur. Das Mega-Menü nutzt dieselbe Fläche.
 Bei offenem Menü trägt ein `::before` den Blur des Headers, damit auch das
 Menü selbst die Seite dahinter weichzeichnen kann.
 
-Die 26 Case-Videos liegen direkt unter `assets/cases/`; einige allgemeine
-Teaser werden weiterhin direkt vom eigenen Vercel-CDN
-`concrete-video-cdn.vercel.app` geladen (siehe `docs/VIDEO-VERANKERUNG.md`).
-YouTube wird nicht eingebettet.
+Die 26 Case-Videos liegen direkt unter `assets/cases/`. Die acht redaktionellen
+CONCRETE-Teaser werden als adaptive Streams über Mux ausgeliefert und laden den
+Mux-Player erst nach einem bewussten Klick. Hero-, Nextbed- und Poster-Assets
+bleiben vorerst auf `concrete-video-cdn.vercel.app` (siehe
+`docs/VIDEO-VERANKERUNG.md` und `docs/MUX-VIDEO-MIGRATION.md`). YouTube wird
+nicht eingebettet.
 Die 13 dekorativen Schriften des Hero-Intros liegen ebenfalls lokal unter
 `fonts/intro/`; `fonts/intro-fonts-v1.css` wird für Desktop und Mobile geladen.
 Die zugehörigen OFL-Lizenztexte liegen unter `fonts/intro/licenses/`.

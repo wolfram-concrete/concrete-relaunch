@@ -1,5 +1,22 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Redaktionelle Videos auf Mux migriert
+
+- Zwölf Gesprächsvideos aus dem freigegebenen Google-Drive-Ordner für Mux
+  vorbereitet; wegen des Limits von zehn Assets im kostenlosen Tarif sind die
+  acht eingebundenen Clips sowie zwei Zusatzclips im Mux-Account verfügbar.
+- Alle acht auf der Website verwendeten Video-Themen mit ihren öffentlichen
+  Playback-IDs verknüpft: Verstehen, Prozess, Verantwortung, Erstgespräch,
+  Projekt-Fit, Definieren, Begleiten und Messbarkeit.
+- Der Mux-Player wird erst nach einem bewussten Klick geladen. Bis dahin bleibt
+  das vorhandene Poster sichtbar; dadurch entstehen beim Seitenaufruf keine
+  konkurrierenden Video-Downloads.
+- Mux Data, Mux-Cookies und gespeicherte Player-Präferenzen im Embed deaktiviert,
+  damit die Videoauslieferung kein zusätzliches optionales Tracking startet.
+- Öffnen und Schließen des Players lokal im Browser geprüft und alle acht
+  HLS-Streams mit HTTP 200 verifiziert.
+- Globalen CSS-/JavaScript-Cache-Buster auf `v=165` erhöht.
+
 ## 12.09.2026 – Unteren Homepage-CTA lokal robust verlinkt
 
 - Den Button „Projekt anfragen“ im abschließenden Coral-Modul auf die

@@ -409,7 +409,7 @@
   // Video-Teaser: Thumb spielt stumm; Klick vergrößert + Ton — nur EIN aktives Video sitewide
   window.__closeActiveTeaser=null;
   document.querySelectorAll("[data-vteaser]").forEach(function(t){
-    var src=t.getAttribute("data-src"), thumb=t.querySelector(".vteaser__thumb");
+    var src=t.getAttribute("data-src"),muxId=t.getAttribute("data-mux-playback-id"),thumb=t.querySelector(".vteaser__thumb");
     var saveData=!!(navigator.connection&&navigator.connection.saveData),previewVisible=false;
     function mountPreview(){
       if(!src||!thumb||thumb.querySelector("video")||matchMedia("(prefers-reduced-motion:reduce)").matches||saveData)return;
@@ -418,7 +418,7 @@
       if(im){pv.poster=im.currentSrc||im.src;im.replaceWith(pv);}
       if(previewVisible)pv.play().catch(function(){});
     }
-    if(src&&!matchMedia("(prefers-reduced-motion:reduce)").matches&&!saveData){
+    if(src&&!muxId&&!matchMedia("(prefers-reduced-motion:reduce)").matches&&!saveData){
       if("IntersectionObserver" in window){
         var previewIo=new IntersectionObserver(function(entries){
           entries.forEach(function(entry){
@@ -436,6 +436,29 @@
     t.addEventListener("click",function(){
       if(t.classList.contains("open"))return;
       t.classList.add("open");
+      if(muxId){
+        if(window.__closeActiveTeaser)window.__closeActiveTeaser();
+        var im=thumb&&thumb.querySelector("img"),frame=document.createElement("iframe");
+        var title=t.getAttribute("data-video-title")||im&&im.alt||"CONCRETE Video";
+        frame.src="https://player.mux.com/"+encodeURIComponent(muxId)+"?autoplay=true&disable-tracking=true&disable-cookies=true&no-volume-pref=true&no-muted-pref=true&metadata-video-title="+encodeURIComponent(title)+"&video-title="+encodeURIComponent(title);
+        frame.title=title;frame.allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen";frame.allowFullscreen=true;
+        if(im)im.hidden=true;
+        thumb.insertBefore(frame,thumb.firstChild);
+        window.__activeTeaserEl=t;
+        if(!thumb.querySelector(".vteaser__close")){
+          var mx=document.createElement("span");mx.className="vteaser__close";mx.setAttribute("role","button");mx.setAttribute("tabindex","0");mx.setAttribute("aria-label","Video schließen");mx.textContent="×";
+          function closeMuxTeaser(ev){
+            if(ev)ev.stopPropagation();
+            frame.remove();if(im)im.hidden=false;mx.remove();t.classList.remove("open");
+            if(window.__closeActiveTeaser===closeMuxTeaser){window.__closeActiveTeaser=null;window.__activeTeaserEl=null;}
+          }
+          window.__closeActiveTeaser=closeMuxTeaser;
+          mx.addEventListener("click",closeMuxTeaser);
+          mx.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" ")closeMuxTeaser(ev);});
+          thumb.appendChild(mx);
+        }
+        return;
+      }
       if(!src)return;
       setTimeout(function(){
         var v=thumb.querySelector("video");
