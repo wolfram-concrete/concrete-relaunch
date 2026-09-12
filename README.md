@@ -234,6 +234,11 @@ Der Coral-CTA „Projekt anfragen" verwendet auf jeder Sitemap-Seite dieselbe
 Komponente mit den beiden Portraits; der technische Preflight prueft diese
 Konsistenz mit.
 
+Das Coral-Anfragemodul am Ende der Startseite ist bewusst kein Formular: Es
+zeigt den Erstgespräch-Videoteaser und führt über „Projekt anfragen“ zur
+eigenen Erstgespräch-Seite. Nicht absendbare Vorqualifizierungsfelder wurden
+entfernt; Termin, Telefon und E-Mail werden auf der Zielseite angeboten.
+
 Projektseiten haben mobil einen Hero ueber den ganzen Schirm (`100svh`,
 `object-fit: cover`); der Inhalt beginnt darunter. Der Bildausschnitt wird je
 Case ueber `style="--hero-pos:78% 50%"` auf der `.case-hero` gesteuert. Wo ein

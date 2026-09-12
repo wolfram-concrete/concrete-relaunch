@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Homepage-Anfragemodul vereinfacht
+
+- Die vier nicht absendbaren Auswahl-/Textfelder aus dem Coral-Modul am Ende
+  der Startseite entfernt. Dadurch entsteht nicht länger der Eindruck eines
+  Formulars, obwohl keine E-Mail-Adresse abgefragt und nichts versendet wird.
+- Videoteaser zum Erstgespräch und der direkte CTA zur Projektanfragen-Seite
+  bleiben erhalten; der CTA heißt nun konsistent „Projekt anfragen“.
+
 ## 12.09.2026 – Redirect- und Canonical-Bereinigung
 
 - Neun klar belegte historische Aliasse direkt auf ihre finalen Case-,
