@@ -463,3 +463,12 @@ Hero-Animation der Startseite bleibt aktiv; das große Schlussvideo wird erst
 mit Beginn der Intro-Frame-Sequenz angefordert. Die aktuell eingebundenen
 Vercel-CDN-Dateien werden erst nach Lieferung eines geprüften, eindeutigen
 Cloudflare-URL-Mappings ersetzt.
+
+### Strukturierte Unternehmensdaten
+
+Die Startseite veröffentlicht einen verbundenen Schema.org-Graphen aus
+`Organization` und `WebSite`; die Faktenseite ergänzt einen zugehörigen
+`WebPage`-Knoten. Alle Knoten verwenden stabile `@id`-Werte. Bis der exakte
+Registerwortlaut bestätigt ist, wird bewusst kein `legalName` ausgezeichnet.
+Als technisch gültige Zwischenlösung verweist `logo` auf das vorhandene
+quadratische 150×150-Markenasset.

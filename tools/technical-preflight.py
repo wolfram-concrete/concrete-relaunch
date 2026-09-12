@@ -24,6 +24,21 @@ ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_CACHE_VERSION = "164"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
+JSON_LD_RE = re.compile(
+    r'<script\b[^>]*\btype=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+    re.I | re.S,
+)
+
+
+def nested_json_values(value: object):
+    """Yield all nested JSON values for small schema regression checks."""
+    yield value
+    if isinstance(value, dict):
+        for child in value.values():
+            yield from nested_json_values(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from nested_json_values(child)
 
 
 class PageParser(HTMLParser):
@@ -152,6 +167,40 @@ def scan() -> list[str]:
         text = page.read_text(encoding="utf-8")
         parser.feed(text)
         parsed_pages[page.resolve()] = parser
+
+        schema_values: list[object] = []
+        for block_number, block in enumerate(JSON_LD_RE.findall(text), start=1):
+            try:
+                schema_values.append(json.loads(block))
+            except json.JSONDecodeError as error:
+                findings.append(
+                    f"{page.name}: invalid JSON-LD block {block_number}: {error.msg}"
+                )
+        nested_schema = [
+            value
+            for schema in schema_values
+            for value in nested_json_values(schema)
+        ]
+        if page.name == "index.html":
+            schema_ids = {
+                value.get("@id")
+                for value in nested_schema
+                if isinstance(value, dict) and value.get("@id")
+            }
+            for required_id in (
+                "https://www.concrete-designs.de/#organization",
+                "https://www.concrete-designs.de/#website",
+            ):
+                if required_id not in schema_ids:
+                    findings.append(f"index.html: missing schema entity: {required_id}")
+        for value in nested_schema:
+            if not isinstance(value, str) or not value.startswith(
+                ("https://concrete-designs.de/assets/", "https://www.concrete-designs.de/assets/")
+            ):
+                continue
+            target = ROOT / unquote(urlparse(value).path).lstrip("/")
+            if not target.is_file():
+                findings.append(f"{page.name}: missing local JSON-LD resource: {value}")
 
         duplicates = sorted(key for key, count in Counter(parser.ids).items() if count > 1)
         if duplicates:

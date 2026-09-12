@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Unternehmensschema und Faktenseite bereinigt
+
+- Auf der Startseite einen verbundenen `Organization`-/`WebSite`-Graphen mit
+  stabilen IDs, öffentlicher Hamburger Kontaktadresse, Telefon, E-Mail und
+  Social-Profilen ergänzt.
+- Den nicht existierenden Schema-Logo-Pfad durch das vorhandene quadratische
+  150×150-Markenasset ersetzt und den Graphen der Faktenseite mit Homepage und
+  Organisation verbunden.
+- Unbelegte Selbstauszeichnungen zum „Grounding Page Standard“, KI-Systemen und
+  Vektordatenbanken entfernt und die Seite als lesbare Unternehmensfakten-Seite
+  formuliert.
+- Die bisher verwaiste Faktenseite von der Über-uns-Seite intern verlinkt.
+- Einen unbestätigten `legalName` und generische `alternateName`-Varianten nicht
+  länger strukturiert ausgezeichnet; der exakte Registername bleibt zu klären.
+
 ## 12.09.2026 – Canonical-Slug für Illustrations-Sets korrigiert
 
 - Den fehlerhaften Produktionspfad `icons-und-llustration-sets` auf
