@@ -211,7 +211,7 @@ Mit `cleanUrls: true` wird Vercel `.html` künftig permanent auf die extensionle
 - alle internen Links direkt auf extensionless Canonical-Pfade setzen;
 - `og:url` und JSON-LD-URLs auf exakt dieselbe Canonical-URL setzen;
 - XML-Sitemap, Navigation, Breadcrumbs, Share-Tags und Schema in einem Corpus-Test vergleichen;
-- fehlerhaften Slug `/icons-und-llustration-sets` in `/icons-und-illustration-sets` korrigieren und permanent weiterleiten.
+- fehlerhaften Slug `/icons-und-illustration-sets` in `/icons-und-illustration-sets` korrigieren und permanent weiterleiten.
 
 ### P1 – Homepage-Performance und Stabilität beheben
 
@@ -442,7 +442,7 @@ Normale kurzfristige Ranking-Schwankungen sind bei einer Migration möglich. Ein
 - [ ] Unicode-Encoding-, Slash-, Query- und Hostvarianten auf dem echten Vercel-Deployment testen.
 - [ ] Alle internen `.html`-Links auf Canonical-Pfade umstellen.
 - [ ] 128 abweichende `og:url`-Werte und WebPage-Schema-URL korrigieren.
-- [ ] Tippfehler-Slug `icons-und-llustration-sets` korrigieren und weiterleiten.
+- [ ] Tippfehler-Slug `icons-und-illustration-sets` korrigieren und weiterleiten.
 - [ ] Homepage-Sequenz und Video aus dem kritischen Ladepfad entfernen.
 - [ ] Desktop-LCP und CLS sowie mobile Payload erneut messen.
 - [ ] Organization/WebSite-Schema mit existentem Logo auf der Homepage implementieren.

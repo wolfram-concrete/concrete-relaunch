@@ -435,6 +435,10 @@ existiert. Interne Links, Canonicals, `og:url`, JSON-LD und Sitemap verwenden
 direkt die extensionless Produktions-URLs; `.html` bleibt ausschließlich eine
 von Vercel normalisierte externe Altvariante.
 
+Der anfangs versehentlich veröffentlichte Pfad
+`/icons-und-llustration-sets` wird dauerhaft auf den korrigierten Canonical
+`/icons-und-illustration-sets` weitergeleitet.
+
 Der erste Postlaunch-Batch vom 12.09.2026 ergänzt verlorene Case-Aliasse,
 ordnet Kategoriearchive passenden Hubs zu und entfernt unpassende
 Homepage-Redirects. Bewusst entfernte oder nicht gleichwertig ersetzte Inhalte

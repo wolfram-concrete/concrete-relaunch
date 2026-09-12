@@ -1,5 +1,14 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Canonical-Slug für Illustrations-Sets korrigiert
+
+- Den fehlerhaften Produktionspfad `icons-und-llustration-sets` auf
+  `icons-und-illustration-sets` korrigiert und die Datei entsprechend umbenannt.
+- Alle internen Links, Canonicals, Open-Graph-URLs, Sitemap- und Redirect-Ziele
+  auf die korrekte Schreibweise umgestellt.
+- Der bisherige Tippfehler-Pfad bleibt als permanente Weiterleitung auf die
+  neue Canonical-URL erhalten.
+
 ## 12.09.2026 – Video-Ladestrategie nach Kevin-Audit gehärtet
 
 - Die gewünschte mobile Hero-Animation bleibt aktiv; ihr 13–18 MiB großes

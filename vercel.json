@@ -275,8 +275,13 @@
       "permanent": true
     },
     {
+      "source": "/icons-und-llustration-sets",
+      "destination": "/icons-und-illustration-sets",
+      "permanent": true
+    },
+    {
       "source": "/illustrationen-im-markendesign",
-      "destination": "/icons-und-llustration-sets",
+      "destination": "/icons-und-illustration-sets",
       "permanent": true
     },
     {
@@ -296,7 +301,7 @@
     },
     {
       "source": "/kann-ein-icon-set-auch-spaeter-erweitert-oder-auf-neue-formate-angepasst-werden",
-      "destination": "/icons-und-llustration-sets",
+      "destination": "/icons-und-illustration-sets",
       "permanent": true
     },
     {
@@ -831,7 +836,7 @@
     },
     {
       "source": "/wie-viele-illustrationen-und-icons-sollten-wir-fuer-den-anfang-entwickeln-lassen",
-      "destination": "/icons-und-llustration-sets",
+      "destination": "/icons-und-illustration-sets",
       "permanent": true
     },
     {
