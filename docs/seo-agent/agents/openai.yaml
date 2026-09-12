@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Benchmark Agent"
+  short_description: "Audits SEO, AEO, GEO and migrations"
+  default_prompt: "Use $seo-agent to benchmark this website and produce an evidence-based, prioritized SEO report."
