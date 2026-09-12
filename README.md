@@ -404,6 +404,10 @@ Implementierung, Prüffälle und noch nötigen Konto-/Vertragsprüfungen stehen 
 
 Dann `http://localhost:4174/`.
 
+Hinweis: Der einfache Python-Server löst Vercels extensionless `cleanUrls`
+nicht allgemein auf. Der abschließende Homepage-CTA zur Projektanfrage nutzt
+deshalb die vollständige kanonische Produktions-URL.
+
 ## Livebetrieb: Indexierbarkeit schützen
 
 `www.concrete-designs.de` liefert seit dem 12.09.2026 diese Vercel-Fassung als

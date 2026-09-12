@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Unteren Homepage-CTA lokal robust verlinkt
+
+- Den Button „Projekt anfragen“ im abschließenden Coral-Modul auf die
+  vollständige kanonische URL `https://www.concrete-designs.de/erstgespraech`
+  umgestellt. Damit funktioniert er auch in einfachen lokalen Previewservern,
+  die Vercels extensionless `cleanUrls` nicht nachbilden.
+
 ## 12.09.2026 – Unternehmensschema und Faktenseite bereinigt
 
 - Auf der Startseite einen verbundenen `Organization`-/`WebSite`-Graphen mit
