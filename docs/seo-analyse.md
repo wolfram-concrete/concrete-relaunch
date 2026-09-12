@@ -90,7 +90,7 @@ Technical preflight: 129 pages, 0 findings
 
 **Auswirkung:** Wird der Cutover so ausgeführt, können Google und andere Suchsysteme den Relaunch nicht indexieren. Das ist ein harter Launch-Blocker.
 
-**Empfehlung:** Meta-Tags, globalen Header und eventuell aktive Preview-Passwort-Middleware im selben Produktionsrelease entfernen. `robots.txt` weiterhin crawlbar halten.
+**Empfehlung:** Meta-Tags und globalen Header im selben Produktionsrelease entfernen. `robots.txt` weiterhin crawlbar halten. Der zuvor aktive HTTP-Basic-Auth-Schutz über `middleware.js` und `PREVIEW_PASSWORD` wurde am 12. September 2026 bereits entfernt.
 
 **Erledigt wenn:** Öffentliche Requests auf Homepage, alle Seitentypen, Sitemap und ein Asset enthalten keinen unbeabsichtigten `noindex`-/`nofollow`-Header oder Meta-Tag; der vollständige lokale und externe Crawl bestätigt die Indexierbarkeit.
 
@@ -379,7 +379,7 @@ Der daraus entstandene wiederverwendbare Skill liegt unter `docs/seo-agent/`.
 
 - [ ] Alle 129 Meta-`noindex`-Tags entfernen.
 - [ ] Globalen `X-Robots-Tag: noindex, nofollow` entfernen.
-- [ ] Preview-Passwort/Middleware von der Produktionsdomain entfernen.
+- [x] Preview-Passwort/Middleware von der Vercel-Produktionsdomain entfernen (12.09.2026).
 - [ ] Redirects und neue Seiten atomar deployen.
 - [ ] Korrigierte Canonical-/interne-/OG-/Schema-URLs deployen.
 - [ ] Neue Sitemap und robots.txt deployen.

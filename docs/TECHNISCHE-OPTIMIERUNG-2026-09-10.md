@@ -16,9 +16,10 @@ weiterhin an beiden vorgesehenen Stellen aktiv.
 - Bilddimensionen: **0 fehlende `width`/`height`-Paare** auf Sitemap-Seiten
 - Browserkonsole in den geprüften Interaktionen: **0 Warnungen/Fehler**
 - Vercel Production Deployment: Die finale Seitenrevision `98c6870` wurde
-  als **Ready** auf `main` verifiziert. Der öffentliche Zugriff antwortet im
-  Vorlaunch erwartungsgemäß mit Basic Auth (`401`) und
-  `X-Robots-Tag: noindex, nofollow`.
+  als **Ready** auf `main` verifiziert. Zum damaligen Prüfzeitpunkt antwortete
+  der öffentliche Zugriff mit Basic Auth (`401`) und
+  `X-Robots-Tag: noindex, nofollow`. Der Basic-Auth-Schutz wurde am 12.09.2026
+  entfernt; das eigenständige Vorlaunch-`noindex` bleibt aktiv.
 
 ## Lighthouse vorher / nachher
 
@@ -143,11 +144,11 @@ vom projektspezifischen SEO-Gauntlet geprüft.
    nicht aktiviert. Lighthouse belegt Laboreffekte, nicht reale
    Nutzerverteilungen. Aktivierung sollte gemeinsam mit Datenschutz- und
    Consent-Entscheidung erfolgen.
-7. **Produktionsprüfung:** Basic Auth schützt aktuell alle Routen, auch
-   `robots.txt`, `sitemap.xml` und unbekannte URLs. Daher konnte extern nur
-   der beabsichtigte `401` samt `noindex`-Header geprüft werden. Der komplette
-   URL- und 404-Test muss einmal nach Aufhebung des Vorlaunch-Schutzes und
-   beim Domainwechsel wiederholt werden.
+7. **Produktionsprüfung:** Basic Auth schützte bei diesem Audit alle Routen,
+   auch `robots.txt`, `sitemap.xml` und unbekannte URLs. Der Schutz wurde am
+   12.09.2026 entfernt. Nach dem folgenden Vercel-Deployment sind öffentlicher
+   Status 200, Sitemap, robots.txt und echter 404 erneut zu prüfen; beim
+   Domainwechsel muss der vollständige URL-Test wiederholt werden.
 8. **Datenschutz-Erklärung und Implementierung:** Der frühere Befund meinte
    keine einzelne Formulierung, sondern einen Widerspruch zwischen Text und
    Technik: Die alte Erklärung nannte 1&1, Google Fonts, Maps, reCAPTCHA,

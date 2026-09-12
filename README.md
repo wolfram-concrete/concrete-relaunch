@@ -421,12 +421,16 @@ Am Launch-Tag:
     # 1) Meta-Tag aus allen Seiten nehmen
     sed -i '' '/<meta name="robots" content="noindex,nofollow">/d' *.html
     # 2) Header-Block aus vercel.json loeschen (Eintrag mit X-Robots-Tag)
-    # 3) middleware.js entfernen und PREVIEW_PASSWORD nicht mehr verwenden
-    # 4) Cache-Buster erhoehen, committen, pushen
-    # 5) Pruefen
+    # 3) Cache-Buster erhoehen, committen, pushen
+    # 4) Pruefen
     python3 tools/seo-gauntlet.py
     python3 tools/technical-preflight.py
     curl -sI https://www.concrete-designs.de/ | grep -i x-robots-tag   # darf nichts liefern
+
+Der separate HTTP-Basic-Auth-Vorlaunch-Schutz wurde am 12.09.2026 bereits
+entfernt: `middleware.js` ist gelöscht und `PREVIEW_PASSWORD` ist nicht mehr
+als Production-Variable im Vercel-Projekt hinterlegt. Das verpflichtende
+Vorlaunch-`noindex` bleibt bis zur Domainumschaltung unverändert aktiv.
 
 Die `robots.txt` bleibt unveraendert auf `Allow: /`. Eine Sperre dort waere
 falsch, weil Suchmaschinen die Seiten crawlen muessen, um ein `noindex`
@@ -441,7 +445,7 @@ Bing Webmaster Tools einreichen beziehungsweise erneut anstoßen.
 ## Status
 
 Vorlaunch, Status **GELB**. Der vollständige technische Preflight ist
-abgeschlossen; die vier oben genannten Launch-Gates sind vor der
+abgeschlossen; die verbliebenen Launch-Gates sind vor der
 Domainumschaltung zu schließen. Weitere Entscheidungen stehen in
 `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` und
 `docs/UEBERGABE-CLAUDE-CODE.md`.

@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Vercel Basic Auth entfernt, Formularanbindung geplant
+
+- Den eigenen HTTP-Basic-Auth-Schutz aus `middleware.js` entfernt und die
+  Production-Variable `PREVIEW_PASSWORD` im Vercel-Projekt gelöscht.
+- Vercel-Team-SSO für individuelle Deployment-URLs unverändert gelassen; es
+  ist von der öffentlichen Production-Alias-URL und der gelöschten Basic Auth
+  getrennt.
+- Die spätere serverseitige E-Mail-Anbindung des Homepage-Fit-Checks inklusive
+  Vercel-Variablen, Validierung, Spam-Schutz, Datenschutz und Abnahmekriterien
+  in `docs/KONTAKTFORMULAR-VERCEL-PLAN.md` geplant, aber nicht implementiert.
+- Das Vorlaunch-`noindex` bleibt auf beiden vorgesehenen Ebenen aktiv.
+
 ## 11.09.2026 – Mobile Home: kompaktere Stapel und Hero-Intro
 
 - Den mobilen Nachlauf unter Punkt 05 der Situationsliste sowie unter Punkt 03
