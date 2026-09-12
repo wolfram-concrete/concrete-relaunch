@@ -1,5 +1,15 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Produktionsindexierung freigeschaltet
+
+- Nach der Umschaltung von `www.concrete-designs.de` auf den Relaunch das
+  Vorlaunch-`noindex` aus allen öffentlichen HTML-Seiten und dem globalen
+  Vercel-Header entfernt.
+- Den Technical Preflight von einer Vorlaunch-Anforderung auf ein
+  Production-Gate umgestellt: Robots-Meta-`noindex` und entsprechende
+  `X-Robots-Tag`-Header führen nun zu einem Fehler.
+- Preview-Deployments bleiben unabhängig davon durch Vercel-SSO geschützt.
+
 ## 12.09.2026 – Vercel Basic Auth entfernt, Formularanbindung geplant
 
 - Den eigenen HTTP-Basic-Auth-Schutz aus `middleware.js` entfernt und die

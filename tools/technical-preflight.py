@@ -2,8 +2,10 @@
 """Static technical preflight for the CONCRETE relaunch.
 
 The script only reads the repository. It validates the URLs declared in the
-sitemap and the local dependencies referenced by those pages. Vercel routing
-and SEO-specific rules remain covered by seo-gauntlet.py.
+sitemap and the local dependencies referenced by those pages. The repository
+is the production source, so accidental ``noindex`` directives are a hard
+failure. Vercel routing and further SEO-specific rules remain covered by
+seo-gauntlet.py.
 """
 
 from __future__ import annotations
@@ -165,8 +167,13 @@ def scan() -> list[str]:
             findings.append(
                 f"{page.name}: cache version mismatch css={sorted(css_versions)} js={sorted(js_versions)}"
             )
-        if '<meta name="robots" content="noindex,nofollow">' not in text:
-            findings.append(f"{page.name}: required prelaunch noindex missing")
+        if re.search(
+            r'<meta\b(?=[^>]*\bname=["\']robots["\'])'
+            r'(?=[^>]*\bcontent=["\'][^"\']*\bnoindex\b[^"\']*["\'])[^>]*>',
+            text,
+            flags=re.I,
+        ):
+            findings.append(f"{page.name}: production page contains robots noindex")
         # Confirmed partner names in the network are not quote attributions.
         attribution_text = re.sub(
             r'<section\b[^>]*\bid="netzwerk"[^>]*>.*?</section>',
@@ -311,8 +318,16 @@ def scan() -> list[str]:
         if rule.get("source") == "/(.*)"
         for header in rule.get("headers", [])
     }
+    for rule in vercel.get("headers", []):
+        for header in rule.get("headers", []):
+            if (
+                header.get("key", "").lower() == "x-robots-tag"
+                and "noindex" in header.get("value", "").lower()
+            ):
+                findings.append(
+                    f"vercel.json: production X-Robots-Tag contains noindex for {rule.get('source')}"
+                )
     for key, value in {
-        "X-Robots-Tag": "noindex, nofollow",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "X-Content-Type-Options": "nosniff",
         "Permissions-Policy": "camera=(), microphone=(), geolocation=()",

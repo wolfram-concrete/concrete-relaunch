@@ -271,9 +271,9 @@ Footer zeigt direkt auf die Detailseiten.
 
 `fakten-zu-concrete-brandbuilding-gmbh.html` ist die faktische Referenz fuer
 KI-Systeme (Grounding Page Standard v1.4) mit Organization- und
-WebPage-Schema. Sie ist bewusst nicht in der Hauptnavigation verlinkt.
-Ohne die Umstellung von `noindex` auf `index,follow` hat sie keine Wirkung,
-siehe „Vor dem Livegang".
+WebPage-Schema. Sie ist nicht in der Hauptnavigation verlinkt und seit dem
+Livegang wie die übrigen Sitemap-Seiten indexierbar. Kontextuelle interne
+Links und die fachliche Überarbeitung bleiben Teil des SEO-Folgepasses.
 
 ## Freisteller
 
@@ -303,7 +303,7 @@ maschinen. Die alten WordPress-Adressen liegen als Weiterleitung in
 Der technische Gauntlet prüft alle Sitemap-Seiten auf interne Links,
 Fragmentziele, lokale Ressourcen, Bilddimensionen, doppelte IDs,
 Medien-Querystrings, Cache-Version, die einheitliche Award-Auszeichnung im
-Footer und das verpflichtende Vorlaunch-`noindex`:
+Footer und seit dem Livegang auf versehentliches Production-`noindex`:
 
     python3 tools/technical-preflight.py
 
@@ -399,53 +399,32 @@ Implementierung, Prüffälle und noch nötigen Konto-/Vertragsprüfungen stehen 
 
 Dann `http://localhost:4174/`.
 
-## Vor dem Livegang: noindex entfernen
+## Livebetrieb: Indexierbarkeit schützen
 
-**Die Seite ist vollstaendig auf `noindex` gestellt und darf so nicht live
-gehen.** Das ist Absicht, solange `www.concrete-designs.de` noch die alte
-WordPress-Fassung ausliefert: Zwei Fassungen derselben Inhalte im Index
-wuerden sich gegenseitig schaden, und alle `rel=canonical` zeigen bereits auf
-die spaetere Live-Adresse. Entfernt wird es genau in dem Moment, in dem die
-Domain auf dieses Projekt zeigt, nicht frueher.
+`www.concrete-designs.de` liefert seit dem 12.09.2026 diese Vercel-Fassung als
+Produktionsseite aus. Das frühere Vorlaunch-`noindex` wurde deshalb sowohl aus
+den HTML-Seiten als auch aus dem globalen Vercel-Header entfernt.
 
-`noindex` steht an zwei Stellen, beide muessen weg:
+Die `robots.txt` bleibt auf `Allow: /`. `tools/technical-preflight.py` behandelt
+seit dem Livegang jedes Robots-Meta-`noindex` auf einer Sitemap-Seite und jeden
+`X-Robots-Tag` mit `noindex` in `vercel.json` als Produktionsfehler.
 
-1. Als HTTP-Header fuer die ganze Domain in `vercel.json`, der Block mit
-   `X-Robots-Tag: noindex, nofollow` fuer `source: "/(.*)"`. Er erfasst auch
-   Bilder, PDFs und die `sitemap.xml`.
-2. Als Meta-Tag in Zeile 8 jeder Seite,
-   `<meta name="robots" content="noindex,nofollow">`, aktuell in 129 Dateien.
+Vor und nach jedem Production-Deployment prüfen:
 
-Am Launch-Tag:
-
-    # 1) Meta-Tag aus allen Seiten nehmen
-    sed -i '' '/<meta name="robots" content="noindex,nofollow">/d' *.html
-    # 2) Header-Block aus vercel.json loeschen (Eintrag mit X-Robots-Tag)
-    # 3) Cache-Buster erhoehen, committen, pushen
-    # 4) Pruefen
     python3 tools/seo-gauntlet.py
     python3 tools/technical-preflight.py
-    curl -sI https://www.concrete-designs.de/ | grep -i x-robots-tag   # darf nichts liefern
+    curl -sI https://www.concrete-designs.de/ | grep -i x-robots-tag   # darf kein noindex liefern
 
-Der separate HTTP-Basic-Auth-Vorlaunch-Schutz wurde am 12.09.2026 bereits
-entfernt: `middleware.js` ist gelöscht und `PREVIEW_PASSWORD` ist nicht mehr
-als Production-Variable im Vercel-Projekt hinterlegt. Das verpflichtende
-Vorlaunch-`noindex` bleibt bis zur Domainumschaltung unverändert aktiv.
-
-Die `robots.txt` bleibt unveraendert auf `Allow: /`. Eine Sperre dort waere
-falsch, weil Suchmaschinen die Seiten crawlen muessen, um ein `noindex`
-ueberhaupt zu sehen.
-
-Danach öffentlich prüfen: Startseite und zentrale Seitentypen mit Status 200,
-eine unbekannte URL mit Status 404, `robots.txt`, `sitemap.xml`, ausgewählte
-alte Weiterleitungen, Canonicals, Calendly, Consent-Zustände und die
-Browserkonsole. Anschließend die `sitemap.xml` in Google Search Console und
-Bing Webmaster Tools einreichen beziehungsweise erneut anstoßen.
+Zusätzlich Startseite und zentrale Seitentypen mit Status 200, eine unbekannte
+URL mit Status 404 sowie `robots.txt`, `sitemap.xml`, ausgewählte alte
+Weiterleitungen, Canonicals, Calendly, Consent-Zustände und Browserkonsole
+kontrollieren. Individuelle Preview-Deployment-URLs bleiben über Vercel-SSO
+geschützt und sind von dieser Production-Regel getrennt.
 
 ## Status
 
-Vorlaunch, Status **GELB**. Der vollständige technische Preflight ist
-abgeschlossen; die verbliebenen Launch-Gates sind vor der
-Domainumschaltung zu schließen. Weitere Entscheidungen stehen in
+Live auf `https://www.concrete-designs.de/`. Der vollständige technische
+Preflight ist eingerichtet; verbliebene SEO-, Migrations- und
+Performance-Aufgaben werden nach Priorität abgearbeitet. Weitere Entscheidungen stehen in
 `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` und
 `docs/UEBERGABE-CLAUDE-CODE.md`.
