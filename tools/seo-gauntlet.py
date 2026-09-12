@@ -37,6 +37,11 @@ def main():
         soll=BASE+"/"+("" if slug=="index" else slug)
         if not c: fehler.append(f"{f}: kein canonical")
         elif c.group(1)!=soll: fehler.append(f"{f}: canonical {c.group(1)} statt {soll}")
+        og=re.search(r'<meta property="og:url" content="([^"]*)"',s)
+        if not og: fehler.append(f"{f}: kein og:url")
+        elif og.group(1)!=soll: fehler.append(f"{f}: og:url {og.group(1)} statt {soll}")
+        html_links=re.findall(r'href=["\']([^"\']+\.html(?:[?#][^"\']*)?)["\']',s,re.I)
+        if html_links: fehler.append(f"{f}: {len(html_links)} interne .html-Links, z.B. {html_links[:2]}")
         # 3 title
         t=re.search(r"<title>(.*?)</title>",s,re.S)
         if not t: fehler.append(f"{f}: kein title")
@@ -69,13 +74,28 @@ def main():
     # 7 Redirects
     red=json.load(open(S+"/redirects.json"))
     vj=json.load(open("vercel.json"))
-    have={r["source"].lstrip("/") for r in vj.get("redirects",[])}
-    fehlend=[u for u in red if u not in have]
+    vrows=vj.get("redirects",[])
+    vsources=[r["source"].lstrip("/") for r in vrows]
+    doppelt=sorted({s for s in vsources if vsources.count(s)>1})
+    if doppelt: fehler.append(f"vercel.json: doppelte Redirect-Sources, z.B. {doppelt[:3]}")
+    vpairs={
+        r["source"].lstrip("/"):
+        ("/" if r["destination"]=="/" else r["destination"].lstrip("/"))
+        for r in vrows
+    }
+    fehlend=sorted(set(red)-set(vpairs))
     if fehlend: fehler.append(f"vercel.json: {len(fehlend)} Redirects fehlen, z.B. {fehlend[:3]}")
+    extra=sorted(set(vpairs)-set(red))
+    if extra: fehler.append(f"redirects.json: {len(extra)} Redirects fehlen, z.B. {extra[:3]}")
+    falsch=sorted(s for s in set(red)&set(vpairs) if red[s]!=vpairs[s])
+    if falsch: fehler.append(f"vercel.json: {len(falsch)} Redirect-Ziele weichen ab, z.B. {falsch[:3]}")
+    for source,target in red.items():
+        if target!="/" and not os.path.exists(target+".html"):
+            fehler.append(f"Redirect {source}: Ziel {target} existiert nicht lokal")
     # 8 Footer-Ankertexte
     idx=io.open("index.html",encoding="utf-8").read()
     for slug,label in BRANCHEN.items():
-        if f'href="{slug}.html">{label.replace("&","&amp;")}</a>' not in idx:
+        if f'href="{slug}">{label.replace("&","&amp;")}</a>' not in idx:
             fehler.append(f"Footer: Ankertext fuer {slug} nicht '{label}'")
     print(f"{len(seiten)} Seiten geprueft, {len(fehler)} Befunde")
     for x in fehler[:60]: print("  -",x)

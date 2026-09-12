@@ -131,6 +131,14 @@ Vor Launch zusätzlich exportieren und in die Matrix aufnehmen:
 
 **Erledigt wenn:** Jede wertvolle Alt-URL besitzt eine dokumentierte Entscheidung `preserve`, `redirect`, `404/410` oder `investigate`, und jede Zeile wurde gegen den öffentlich deployten Release ohne automatisches Redirect-Following geprüft.
 
+#### Bewusst entfernte Altseite: Generation X, Y und Z
+
+| Altpfad | Entscheidung | Begruendung | Technische Behandlung |
+|---|---|---|---|
+| `/generationx-y-z-so-unterscheiden-sie-sich/` | bewusst entfernen | Vom Auftraggeber auf Basis seiner eigenen Search-Console-/Analytics-Auswertung bestaetigt: hohe organische Reichweite, aber praktisch keine messbare Geschaeftswirkung; die pauschale Generationenlogik passt zudem nicht hinreichend zur heutigen Positionierung und Suchintention | kein Nachbau und kein inhaltlich unpassender Redirect; echter `404` bleibt bestehen, optional spaeter `410` |
+
+Die Entscheidung wurde nach dem Relaunch am 12.09.2026 bestaetigt. Die zugrunde liegenden Roh-Exporte liegen nicht im Repository; die Aussage ist deshalb als dokumentierte Stakeholder-Entscheidung und nicht als im Audit reproduzierte Messung zu lesen. Die URL darf nicht auf Homepage oder Employer Branding umgeleitet werden, solange dort kein fachlich gleichwertiger Ersatzinhalt existiert. Eine neue Seite unter diesem Pfad kommt nur infrage, wenn das Thema strategisch neu, kritisch und auf ein konkretes Angebot ausgerichtet entwickelt wird.
+
 ### P1 – Zusätzliche WordPress-Aliasse direkt abfangen
 
 Der vollständige Live-Linkgraph enthält 31 intern verlinkte Pfade außerhalb der XML-Sitemaps: acht Kategorie-Paginierungen, acht Tag-Archive, zwei Pfade mit geschütztem Unicode-Bindestrich, historische Kurz-/Alias-URLs und fünf bereits heute tote interne Ziele.
@@ -148,6 +156,8 @@ Besonders relevante, heute von WordPress weitergeleitete Aliasse fehlen als eige
 | `/warum-beratung-im-markenaufbau-immer-wichtiger-wird` | `/warum-ist-beratung-im-markenaufbau-wichtig/` | `/wissen` |
 
 Nach der WordPress-Abschaltung existiert die Zwischenstufe nicht mehr. Jeder Alias muss deshalb direkt auf das endgültige, indexierbare statische Ziel zeigen.
+
+**Umsetzungsstand 12.09.2026:** Die ersten sechs Aliasse wurden in `tools/redirects.json` und `vercel.json` direkt auf ihre jeweilige Case-Seite gemappt. Der Beratungsartikel bleibt vorerst ein echter `404`, weil `/wissen` nur ein Hub und kein inhaltlich gleichwertiger Ersatz ist. Zusätzlich wurden die klaren Aliasse `/bgfplus`, `/headlines-textkonzept` und `/seo-und-sea` ergänzt. Die Produktionsprüfung folgt nach dem Deployment.
 
 Zwei bestehende Regeln verwenden den geschützten Bindestrich `%e2%80%91`. Gegen Vercel sind lowercase- und uppercase-Encoding, das dekodierte Unicode-Zeichen sowie die ASCII-Bindestrichvariante separat zu testen.
 
@@ -185,6 +195,8 @@ Für die Kategoriearchive bestehen bessere Direktziele als `/`:
 - `/category/leistungen` → `/leistungen`;
 - `/category/concrete` → `/ueber-uns`;
 - `/category/uncategorized` nur weiterleiten, wenn ein tatsächlich äquivalentes Ziel existiert.
+
+**Umsetzungsstand 12.09.2026:** Die fünf fachlich eindeutigen Kategoriearchive zeigen im Arbeitsstand auf diese Hubs. Der bisherige Homepage-Redirect für `/category/uncategorized`, `/sitemap` und `/sitemaptest` wurde entfernt; diese technisch beziehungsweise inhaltlich nicht ersetzten Pfade sollen echte `404` liefern.
 
 Für wertvolle Seiten gilt: Inhalt erhalten oder in ein klar äquivalentes Ziel integrieren; andernfalls lieber echter 404/410 als ein irrelevanter Redirect.
 

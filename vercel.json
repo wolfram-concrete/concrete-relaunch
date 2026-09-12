@@ -51,7 +51,7 @@
     },
     {
       "source": "/arbeiten-sie-auch-mit-mallorquinischen-unternehmen-mit-fokus-auf-deutsche-kunden",
-      "destination": "/wissen",
+      "destination": "/b2b-marken-mallorca",
       "permanent": true
     },
     {
@@ -76,7 +76,7 @@
     },
     {
       "source": "/bekommen-wir-am-ende-der-brandvision-schon-ein-logo-oder-ein-komplettes-designsystem",
-      "destination": "/phase-definieren",
+      "destination": "/brandvision",
       "permanent": true
     },
     {
@@ -86,6 +86,11 @@
     },
     {
       "source": "/bgf-architekten",
+      "destination": "/case-bgf",
+      "permanent": true
+    },
+    {
+      "source": "/bgfplus",
       "destination": "/case-bgf",
       "permanent": true
     },
@@ -140,33 +145,43 @@
       "permanent": true
     },
     {
+      "source": "/cases/conlivo",
+      "destination": "/case-conlivo",
+      "permanent": true
+    },
+    {
+      "source": "/cases/mdb-finance",
+      "destination": "/case-mdb-finance",
+      "permanent": true
+    },
+    {
+      "source": "/cases/street-gourmet",
+      "destination": "/case-street-gourmet",
+      "permanent": true
+    },
+    {
       "source": "/category/branchen",
-      "destination": "/",
+      "destination": "/branchen",
       "permanent": true
     },
     {
       "source": "/category/cases",
-      "destination": "/",
+      "destination": "/projekte",
       "permanent": true
     },
     {
       "source": "/category/concrete",
-      "destination": "/",
+      "destination": "/ueber-uns",
       "permanent": true
     },
     {
       "source": "/category/faqs",
-      "destination": "/",
+      "destination": "/wissen",
       "permanent": true
     },
     {
       "source": "/category/leistungen",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/category/uncategorized",
-      "destination": "/",
+      "destination": "/leistungen",
       "permanent": true
     },
     {
@@ -245,6 +260,11 @@
       "permanent": true
     },
     {
+      "source": "/headlines-textkonzept",
+      "destination": "/headlines-und-textkonzept",
+      "permanent": true
+    },
+    {
       "source": "/highr",
       "destination": "/case-highr",
       "permanent": true
@@ -266,7 +286,7 @@
     },
     {
       "source": "/ist-brand-building-messbar",
-      "destination": "/wissen",
+      "destination": "/evaluierung-optimierung",
       "permanent": true
     },
     {
@@ -301,12 +321,12 @@
     },
     {
       "source": "/koennen-wir-bestehende-pos-flaechen-in-unser-markenbild-integrieren",
-      "destination": "/package-design",
+      "destination": "/retail-design",
       "permanent": true
     },
     {
       "source": "/koennen-wir-eine-brandvision-entwickeln-auch-wenn-der-finale-name-noch-nicht-steht",
-      "destination": "/phase-definieren",
+      "destination": "/brandvision",
       "permanent": true
     },
     {
@@ -357,6 +377,11 @@
     {
       "source": "/mdb-finance",
       "destination": "/case-mdb-finance",
+      "permanent": true
+    },
+    {
+      "source": "/me",
+      "destination": "/case-me",
       "permanent": true
     },
     {
@@ -415,18 +440,18 @@
       "permanent": true
     },
     {
-      "source": "/sitemap",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/sitemaptest",
-      "destination": "/",
+      "source": "/seo-und-sea",
+      "destination": "/seo-und-ki-search",
       "permanent": true
     },
     {
       "source": "/sknmetrics",
       "destination": "/case-sknmetrics",
+      "permanent": true
+    },
+    {
+      "source": "/solit",
+      "destination": "/case-solit",
       "permanent": true
     },
     {
@@ -491,7 +516,7 @@
     },
     {
       "source": "/warum-ein-klarer-prozess-im-brand-buildingentscheidend-ist",
-      "destination": "/wissen",
+      "destination": "/leistungen",
       "permanent": true
     },
     {
@@ -531,7 +556,12 @@
     },
     {
       "source": "/was-passiert-nach-dem-launch",
-      "destination": "/wissen",
+      "destination": "/phase-begleiten",
+      "permanent": true
+    },
+    {
+      "source": "/we-celebrate",
+      "destination": "/case-we-celebrate",
       "permanent": true
     },
     {
@@ -591,7 +621,7 @@
     },
     {
       "source": "/wie-detailliert-ist-die-brandvision-koennen-wir-damit-schon-arbeiten",
-      "destination": "/phase-definieren",
+      "destination": "/brandvision",
       "permanent": true
     },
     {
@@ -621,7 +651,7 @@
     },
     {
       "source": "/wie-koennen-wir-in-einer-kampagnenentwicklung-auch-mit-kleinem-budget-eine-grosse-wirkung-erzielen",
-      "destination": "/kampagnen-design-key-visuals",
+      "destination": "/kampagnenentwicklung",
       "permanent": true
     },
     {
@@ -741,7 +771,7 @@
     },
     {
       "source": "/wie-stellen-wir-sicher-dass-unser-corporate-design-in-allen-kanaelen-konsistent-bleibt",
-      "destination": "/marketing-und-media-brands",
+      "destination": "/corporate-design",
       "permanent": true
     },
     {
@@ -766,7 +796,7 @@
     },
     {
       "source": "/wie-stellen-wir-sicher-dass-wir-nicht-nur-daten-haben-sondern-auch-klare-entscheidungen-treffen",
-      "destination": "/wissen",
+      "destination": "/zielgruppen-markt-und-wettbewerberanalyse",
       "permanent": true
     },
     {
@@ -811,7 +841,7 @@
     },
     {
       "source": "/wie-wird-meine-marke-zu-lovebrand",
-      "destination": "/namensentwicklung",
+      "destination": "/markenpositionierung-brand-story",
       "permanent": true
     },
     {

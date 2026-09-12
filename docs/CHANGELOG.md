@@ -1,5 +1,34 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Redirect- und Canonical-Bereinigung
+
+- Neun klar belegte historische Aliasse direkt auf ihre finalen Case-,
+  Leistungs- oder Branchenseiten gemappt; sechs davon waren nach der
+  WordPress-Abschaltung echte 404-Pfade.
+- Fünf Kategoriearchive von der pauschalen Homepage-Weiterleitung auf
+  `/branchen`, `/projekte`, `/ueber-uns`, `/wissen` und `/leistungen`
+  umgestellt. Nicht ersetzte Test-/Sammelpfade bleiben bewusst 404.
+- Zwölf fachlich unpassende Sammelziele präzisiert, unter anderem für
+  Brandvision, Evaluation, Retail Design, Kampagnenentwicklung und den
+  Projektprozess.
+- 16.243 interne `.html`-Links, 128 abweichende `og:url`-Werte und eine
+  JSON-LD-URL auf die direkten extensionless Canonicals umgestellt.
+- Den SEO-Gauntlet um exakte Zielgleichheit, doppelte Redirect-Quellen,
+  fehlende Zielseiten, Canonical-/Open-Graph-Gleichheit und `.html`-Links
+  erweitert. Beide Preflights enden mit 129 Seiten und 0 Befunden.
+- Sitemap-`lastmod` für die in diesem Release tatsächlich geänderten 129
+  Seiten auf den 12.09.2026 gesetzt. Live-Abnahme und erneute Einreichung in
+  der Google Search Console folgen nach dem Production-Deployment.
+
+## 12.09.2026 – Mobile Kompetenzsektion und Netzwerkcopy
+
+- Den letzten mobilen Kompetenzblock auf der Startseite aus dem Sticky-Lauf
+  gelöst. Phase 01 und 02 stapeln weiterhin; Phase 03 endet nun mit ihrer
+  natürlichen Inhaltshöhe ohne langen Coral-Nachlauf.
+- Leo Glomanns Rollenangabe auf der Netzwerkseite zu „Managing Director at
+  LINC“ aktualisiert.
+- Globalen CSS-/JS-Cache-Buster auf `v=163` erhöht.
+
 ## 12.09.2026 – Produktionsindexierung freigeschaltet
 
 - Nach der Umschaltung von `www.concrete-designs.de` auf den Relaunch das

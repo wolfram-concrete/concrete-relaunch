@@ -421,6 +421,22 @@ Weiterleitungen, Canonicals, Calendly, Consent-Zustände und Browserkonsole
 kontrollieren. Individuelle Preview-Deployment-URLs bleiben über Vercel-SSO
 geschützt und sind von dieser Production-Regel getrennt.
 
+### URL-Migration nach dem Livegang
+
+Die Redirect-Konfiguration wird parallel in `tools/redirects.json` und
+`vercel.json` gepflegt. `tools/seo-gauntlet.py` prüft, dass beide Quellen
+dieselben eindeutigen Sources und Ziele enthalten und dass jedes lokale Ziel
+existiert. Interne Links, Canonicals, `og:url`, JSON-LD und Sitemap verwenden
+direkt die extensionless Produktions-URLs; `.html` bleibt ausschließlich eine
+von Vercel normalisierte externe Altvariante.
+
+Der erste Postlaunch-Batch vom 12.09.2026 ergänzt verlorene Case-Aliasse,
+ordnet Kategoriearchive passenden Hubs zu und entfernt unpassende
+Homepage-Redirects. Bewusst entfernte oder nicht gleichwertig ersetzte Inhalte
+bleiben echte 404 statt auf einen thematisch zu breiten Hub zu zeigen. Die
+Einzelfallentscheidungen und noch benötigten GSC-/Analytics-/Logdaten stehen in
+`docs/seo-analyse.md`.
+
 ## Status
 
 Live auf `https://www.concrete-designs.de/`. Der vollständige technische
