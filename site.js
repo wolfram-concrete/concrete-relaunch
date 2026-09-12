@@ -126,7 +126,6 @@
     function finish(){document.body.classList.remove("intro");seq.forEach(function(i){i.classList.remove("on");i.style.zIndex="";});word.className="";finalImg.classList.add("on");hero.classList.remove("reel");hero.classList.add("done");if(finalImg.tagName==="VIDEO"&&!reduceHero&&!saveDataHero){finalImg.play().catch(function(){});}}
     if(reduceHero||saveDataHero){finish();}
     else{
-      if(finalImg.tagName==="VIDEO"){finalImg.preload="auto";finalImg.load();}
       imgs.forEach(function(i){if(i.dataset.src)i.src=i.dataset.src;});
       var arame=(document.fonts&&document.fonts.load)?document.fonts.load('700 100px Arame').catch(function(){}):Promise.resolve();
       arame.then(function(){hero.classList.add("word")});
@@ -135,6 +134,10 @@
       var fontsReady=(document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve();
       var minWord=new Promise(function(r){setTimeout(r,1400)});
       Promise.all([ready,fontsReady,minWord]).then(function(){
+        // Das Schlussvideo erst parallel zur Reel-Sequenz laden. So bleibt die
+        // gewuenschte Intro-Animation erhalten, ohne den kritischen Startpfad
+        // direkt mit 13–18 MiB Videotransfer zu belasten.
+        if(finalImg.tagName==="VIDEO"){finalImg.preload="auto";finalImg.load();}
         hero.classList.add("reel");
         var n=0,frameMs=210,last=0;
         function step(ts){
@@ -159,7 +162,8 @@
   // Ohne Quelle im initialen HTML erzwingt autoplay keinen verfruehten Download.
   (function(){
     var videos=[].slice.call(document.querySelectorAll("video[data-lazy-autoplay]"));if(!videos.length)return;
-    if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+    var saveData=!!(navigator.connection&&navigator.connection.saveData);
+    if(matchMedia("(prefers-reduced-motion:reduce)").matches||saveData)return;
     function activate(v){
       if(v.dataset.lazyLoaded)return;
       if(v.dataset.src){v.src=v.dataset.src;delete v.dataset.src;}
@@ -406,19 +410,28 @@
   window.__closeActiveTeaser=null;
   document.querySelectorAll("[data-vteaser]").forEach(function(t){
     var src=t.getAttribute("data-src"), thumb=t.querySelector(".vteaser__thumb");
+    var saveData=!!(navigator.connection&&navigator.connection.saveData),previewVisible=false;
     function mountPreview(){
-      if(!src||!thumb||thumb.querySelector("video")||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+      if(!src||!thumb||thumb.querySelector("video")||matchMedia("(prefers-reduced-motion:reduce)").matches||saveData)return;
       var im=thumb.querySelector("img"),pv=document.createElement("video");
-      pv.src=src;pv.defaultMuted=true;pv.muted=true;pv.setAttribute("muted","");pv.loop=true;pv.autoplay=true;pv.playsInline=true;pv.preload="metadata";
+      pv.src=src;pv.defaultMuted=true;pv.muted=true;pv.setAttribute("muted","");pv.loop=true;pv.autoplay=false;pv.playsInline=true;pv.preload="metadata";
       if(im){pv.poster=im.currentSrc||im.src;im.replaceWith(pv);}
+      if(previewVisible)pv.play().catch(function(){});
     }
-    if(src&&!matchMedia("(prefers-reduced-motion:reduce)").matches){
+    if(src&&!matchMedia("(prefers-reduced-motion:reduce)").matches&&!saveData){
       if("IntersectionObserver" in window){
         var previewIo=new IntersectionObserver(function(entries){
-          if(entries.some(function(entry){return entry.isIntersecting;})){mountPreview();previewIo.disconnect();}
-        },{rootMargin:"320px 0px"});
+          entries.forEach(function(entry){
+            if(entry.target!==t)return;
+            previewVisible=entry.isIntersecting;
+            if(previewVisible)mountPreview();
+            var pv=thumb&&thumb.querySelector("video");
+            if(!pv||t.classList.contains("open"))return;
+            if(previewVisible)pv.play().catch(function(){});else if(!pv.paused)pv.pause();
+          });
+        },{rootMargin:"160px 0px",threshold:.01});
         previewIo.observe(t);
-      }else mountPreview();
+      }else{previewVisible=true;mountPreview();}
     }
     t.addEventListener("click",function(){
       if(t.classList.contains("open"))return;
@@ -436,7 +449,8 @@
           var x=document.createElement("span");x.className="vteaser__close";x.setAttribute("role","button");x.setAttribute("tabindex","0");x.setAttribute("aria-label","Video schließen");x.textContent="×";
           function closeTeaser(ev){
             if(ev)ev.stopPropagation();
-            v.pause();v.controls=false;v.muted=true;v.loop=true;v.play().catch(function(){});
+            v.pause();v.controls=false;v.muted=true;v.loop=true;
+            if(previewVisible&&!document.hidden)v.play().catch(function(){});
             x.remove();t.classList.remove("open");
             if(window.__closeActiveTeaser===closeTeaser){window.__closeActiveTeaser=null;window.__activeTeaserEl=null;}
           }

@@ -23,7 +23,7 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=163">
+<link rel="stylesheet" href="site.css?v=164">
 <style>
 /* ===== Projekt-Seite (Muster) ===== */
 .case-hero{overflow:hidden}
@@ -159,7 +159,7 @@
 </nav>
 <main id="main">
   <section class="case-hero" data-screen-label="Case-Hero">
-    <video class="plx" data-plx="7" src="assets/cases/the-moc/hero-reel.mp4" poster="assets/cases/the-moc/hero-reel-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="the moc, Markenfilm mit Kiosk, Becher und App"></video>
+    <video class="plx" data-plx="7" data-lazy-autoplay data-src="assets/cases/the-moc/hero-reel.mp4" poster="assets/cases/the-moc/hero-reel-poster.jpg" muted loop playsinline preload="none" aria-label="the moc, Markenfilm mit Kiosk, Becher und App"></video>
   </section>
   <div class="container" style="padding-block:clamp(28px,4vw,56px) 0">
     <h1 style="font-family:'Arame';font-weight:700;font-size:clamp(40px,7vw,110px);line-height:.88;letter-spacing:0;margin:0;max-width:18ch;text-wrap:balance;font-kerning:normal">Die neue Robotic Coffee Brand.</h1>
@@ -376,7 +376,7 @@
   </div>
 </footer>
 <script src="consent-v3.js"></script>
-<script src="site.js?v=163"></script>
+<script src="site.js?v=164"></script>
 <script>
 document.querySelectorAll("video[data-fallback]").forEach(function(v){
   v.addEventListener("error",function(){

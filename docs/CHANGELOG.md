@@ -1,5 +1,22 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 12.09.2026 – Video-Ladestrategie nach Kevin-Audit gehärtet
+
+- Die gewünschte mobile Hero-Animation bleibt aktiv; ihr 13–18 MiB großes
+  Schlussvideo lädt nun erst mit Beginn der Frame-Sequenz statt parallel zu
+  Poster, Fonts und den Intro-Bildern.
+- Lazy-Videos und automatisch laufende Videoteaser respektieren zusätzlich den
+  Datensparmodus und bleiben dort beim Poster.
+- Videoteaser pausieren außerhalb des Viewports und laufen nur in Sichtnähe
+  weiter. Der Vorladebereich wurde von 320 auf 160 px reduziert.
+- Den direkt ladenden Video-Hero des Cases „the moc“ auf die kontrollierte
+  Lazy-Strategie umgestellt; Reduced Motion und Datensparmodus verhindern dort
+  jetzt Download und Autoplay.
+- Globalen CSS-/JavaScript-Cache-Buster auf `v=164` erhöht und die
+  Preflight-Erwartung entsprechend aktualisiert.
+- Die bestehenden Vercel-CDN-URLs bleiben bis zur Lieferung und Prüfung von
+  Kevins eindeutigem Cloudflare-Mapping unverändert.
+
 ## 12.09.2026 – Homepage-Anfragemodul vereinfacht
 
 - Die vier nicht absendbaren Auswahl-/Textfelder aus dem Coral-Modul am Ende

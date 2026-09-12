@@ -449,3 +449,13 @@ Preflight ist eingerichtet; verbliebene SEO-, Migrations- und
 Performance-Aufgaben werden nach Priorität abgearbeitet. Weitere Entscheidungen stehen in
 `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` und
 `docs/UEBERGABE-CLAUDE-CODE.md`.
+
+### Video-Performance
+
+Autoplay-Videos unterhalb des ersten Bildschirms werden erst in Sichtnähe
+geladen, außerhalb des Viewports pausiert und bei aktiviertem Datensparmodus
+oder „Bewegung reduzieren“ nicht automatisch geladen. Die mobile und desktop
+Hero-Animation der Startseite bleibt aktiv; das große Schlussvideo wird erst
+mit Beginn der Intro-Frame-Sequenz angefordert. Die aktuell eingebundenen
+Vercel-CDN-Dateien werden erst nach Lieferung eines geprüften, eindeutigen
+Cloudflare-URL-Mappings ersetzt.
