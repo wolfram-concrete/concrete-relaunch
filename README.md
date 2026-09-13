@@ -1,5 +1,13 @@
 # CONCRETE Relaunch
 
+## Aktueller Produktionsstand · 13.09.2026
+
+- Im ersten Inhaltsmodul der Startseite unterhalb des Hero-Videos beginnen die
+  linke Headline und der rechte Fließtext auf derselben Oberkante. Der zuvor aus
+  der allgemeinen Split-Regel übernommene 24-px-Headline-Abstand ist nur in
+  diesem Modul aufgehoben; mobile Stapelung und alle anderen Splits bleiben
+  unverändert.
+
 ## Letzte Iteration · 11.09.2026, Abend
 
 - Mobile Home verdichtet: Der künstliche Nachlauf unter Punkt 05 der schwarzen

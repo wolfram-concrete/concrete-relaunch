@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.09.2026 – Home-Intro auf gemeinsamer Oberkante ausgerichtet
+
+- Im Modul direkt unterhalb des Home-Heros den zusätzlichen oberen Abstand der
+  linken Headline entfernt. Headline und rechter Body beginnen im zweispaltigen
+  Desktop-Raster nun exakt auf derselben Oberkante.
+- Die Anpassung ist bewusst auf dieses eine Modul begrenzt. Mobile Stapelung,
+  Typografie, Spaltenbreiten, Video-Teaser und andere Split-Module bleiben
+  unverändert.
+- Desktop visuell geprüft sowie SEO-Gauntlet und technischer Preflight erneut
+  für alle 129 Seiten ohne Befund ausgeführt.
+
 ## 13.09.2026 – Relaunch-Tracking und Search Console verifiziert
 
 - Die neue `sitemap.xml` ist in der Google Search Console erfolgreich
