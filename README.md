@@ -2,11 +2,17 @@
 
 ## Aktueller Produktionsstand · 13.09.2026
 
+- Der Übergang von der BGF-Praxis-Sektion in das korallfarbene Statement ist
+  gegen Reloads und Wechsel zwischen Mobile und Desktop stabilisiert. Die
+  Statement-Fläche bleibt jetzt per CSS-Sticky in ihrer natürlichen Position;
+  GSAP steuert ausschließlich den Wortaufbau. Dadurch bleibt die bestehende
+  Bildüberlagerung erhalten, ohne dass davor eine große Papier-Leerfläche
+  entstehen kann. Globale Asset-Version: `v=170`.
 - Die redaktionellen Mux-Videoteaser zeigen nach dem Öffnen ausschließlich den
   Mux-Player. Vorschaubild und Play-Badge werden während der Wiedergabe aus dem
   Container genommen und beim Schließen vollständig wiederhergestellt. Die
   gemeinsame Logik deckt alle 14 Einbauorte der zehn Mux-Videos auf elf Seiten
-  ab; globale Asset-Version: `v=168`.
+  ab.
 - Im ersten Inhaltsmodul der Startseite unterhalb des Hero-Videos beginnen die
   linke Headline und der rechte Fließtext auf derselben Oberkante. Der zuvor aus
   der allgemeinen Split-Regel übernommene 24-px-Headline-Abstand ist nur in

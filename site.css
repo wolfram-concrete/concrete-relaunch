@@ -353,7 +353,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 
 /* Pause: Coral-Beton komponiert (Vollton + Alpha-Textur) + Statement-Übergröße */
 .pause-wrap{position:relative;z-index:3;padding-bottom:clamp(48px,7vw,104px)}
-@media(prefers-reduced-motion:no-preference){.pause-wrap{height:280vh}.pause-wrap .pause{display:flex;align-items:center;min-height:72vh}}
+@media(prefers-reduced-motion:no-preference){.pause-wrap{height:280vh}.pause-wrap .pause{display:flex;align-items:center;min-height:72vh;position:sticky;top:0}}
 .pause__statement .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em}
 .pause__statement .w>i{display:inline-block;font-style:normal;will-change:transform}
 .pause{position:relative;overflow:visible;background:var(--coral);margin-right:clamp(20px,7vw,110px);margin-top:calc(-1 * clamp(40px,6vw,96px));z-index:2}

@@ -20,9 +20,9 @@
     if(matchMedia("(prefers-reduced-motion:reduce)").matches){
       gsap.set(inners,{yPercent:0});
     }else{
-      var wrap=st.closest(".pause-wrap"), stage=st.closest(".pause");
+      var wrap=st.closest(".pause-wrap");
       gsap.set(inners,{yPercent:115});
-      var tl=gsap.timeline({scrollTrigger:{trigger:wrap,start:"top top",end:"bottom bottom",pin:stage,scrub:0.8}});
+      var tl=gsap.timeline({scrollTrigger:{trigger:wrap,start:"top top",end:"bottom bottom",scrub:0.8,invalidateOnRefresh:true}});
       tl.to(inners,{yPercent:0,ease:"power3.out",duration:1,stagger:0.35});
       tl.to({},{duration:1.5});
     }
@@ -524,8 +524,13 @@
   // Pin-Positionen nach spaetem Layout (Fonts, Logoband-Bilder) neu messen
   (function(){
     if(!window.ScrollTrigger)return;
-    var t=null; function rf(){clearTimeout(t);t=setTimeout(function(){ScrollTrigger.refresh();},80);}
+    var t=null; function rf(){clearTimeout(t);t=setTimeout(function(){ScrollTrigger.refresh();ScrollTrigger.update();},80);}
     window.addEventListener("load",rf);
+    window.addEventListener("resize",rf);
+    window.addEventListener("orientationchange",rf);
+    window.addEventListener("pageshow",rf);
+    var statementBreakpoint=matchMedia("(max-width:900px)");
+    if(statementBreakpoint.addEventListener)statementBreakpoint.addEventListener("change",rf);
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(rf);
     var imgs=document.querySelectorAll(".logo-band img"); var left=imgs.length;
     imgs.forEach(function(i){ if(i.complete){if(--left===0)rf();} else i.addEventListener("load",function(){if(--left===0)rf();},{once:true}); });

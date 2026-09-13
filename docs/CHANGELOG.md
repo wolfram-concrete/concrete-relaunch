@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.09.2026 – BGF-Übergang zum Coral-Statement stabilisiert
+
+- Eine sporadische große Papier-Leerfläche zwischen der BGF-Praxis-Sektion und
+  dem korallfarbenen Statement reproduziert. Sie entstand, wenn der bisherige
+  GSAP-Pin nach Reload oder Viewport-Wechsel seinen Endversatz vorzeitig auf
+  das Statement übertrug.
+- Die Positionierung des Statement-Moduls auf natives CSS-Sticky umgestellt;
+  GSAP bleibt für den gescrubbten Wortaufbau zuständig. Die bestehende
+  Überlagerung des BGF-Bildes in die Coral-Fläche bleibt unverändert erhalten.
+- Neuberechnung bei Resize, Orientierung, Seitenwiederherstellung und am
+  900-px-Breakpoint ergänzt. Einstieg, Sticky-Phase und Ausstieg wurden im
+  Desktop-Browser geprüft.
+- Globalen CSS-/JavaScript-Cache-Buster auf `v=170` erhöht. SEO-Gauntlet und
+  technischer Preflight liefen für alle 129 Seiten ohne Befund.
+
 ## 13.09.2026 – Doppelte Darstellung der Mux-Player beseitigt
 
 - Die gemeinsame Videoteaser-Logik so korrigiert, dass der Mux-iframe beim
