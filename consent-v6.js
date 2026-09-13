@@ -7,6 +7,7 @@
   var MAX_AGE_DAYS = 180;
   var GTM_ID = "GTM-N8223FX";
   var SALESVIEWER_ACCOUNT_ID = "o9H9o8a1U5l3";
+  var PRODUCTION_TRACKING_HOST = "www.concrete-designs.de";
   var gtmLoaded = false;
   var salesViewerLoaded = false;
   var clarityAttempts = 0;
@@ -23,6 +24,10 @@
     security_storage: "granted",
     wait_for_update: 500
   });
+
+  function isProductionTrackingHost() {
+    return window.location.hostname.toLowerCase() === PRODUCTION_TRACKING_HOST;
+  }
 
   function safeParse(value) {
     try { return JSON.parse(value); } catch (_error) { return null; }
@@ -114,7 +119,7 @@
   }
 
   function loadGtm(consent) {
-    if (gtmLoaded || (!consent.statistics && !consent.marketing)) return;
+    if (!isProductionTrackingHost() || gtmLoaded || (!consent.statistics && !consent.marketing)) return;
     gtmLoaded = true;
     window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
     var script = document.createElement("script");
@@ -125,7 +130,7 @@
   }
 
   function loadSalesViewer(consent) {
-    if (salesViewerLoaded || !consent.marketing) return;
+    if (!isProductionTrackingHost() || salesViewerLoaded || !consent.marketing) return;
     salesViewerLoaded = true;
     (function (s, a, l, e, sv, i, ew, er) {
       try {

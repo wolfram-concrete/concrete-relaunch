@@ -395,7 +395,7 @@ aktuellen Stand von `origin/main` auschecken.
 
 ## Datenschutz und Consent
 
-`consent-v5.js` ist der eigene Consent-Manager der statischen Website. Er
+`consent-v6.js` ist der eigene Consent-Manager der statischen Website. Er
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
@@ -422,8 +422,12 @@ nicht in den Banner. Calendly ist nur extern verlinkt, nicht eingebettet.
 Die Konto- und Live-Prüfung vom 13.09.2026 bestätigt GA4, Clarity, Sortlist und
 den veröffentlichten GTM-Container. SalesViewer wird ab Consent-Version 3 nach
 Einwilligung in „Marketing & externe Inhalte“ direkt auf allen Sitemap-Seiten
-geladen. Die SalesViewer-API bleibt davon getrennt: Ihr geheimer Schlüssel liegt
-nicht im Repository und wird nur vom Audit-Workflow zum Abruf der Unternehmens-
+geladen. GTM und SalesViewer werden ausschließlich auf dem kanonischen Produktionshost
+`www.concrete-designs.de` geladen. Lokale Entwicklungsserver und Vercel-Previews
+erzeugen deshalb auch nach einer Einwilligung keine Clarity-, Analytics-, Ads-
+oder SalesViewer-Sitzungen. Das schützt die operative Auswertung vor Testtraffic.
+Die SalesViewer-API bleibt davon getrennt: Ihr geheimer Schlüssel liegt nicht
+im Repository und wird nur vom Audit-Workflow zum Abruf der Unternehmens-
 und Sitzungsdaten verwendet. Im Google-Ads-Konto sind die Conversion-Tags vorhanden, mehrere
 alte Zielvorhaben werden dort jedoch als inaktiv oder falsch konfiguriert
 geführt und müssen kontoseitig bereinigt werden. In der Search Console ist die

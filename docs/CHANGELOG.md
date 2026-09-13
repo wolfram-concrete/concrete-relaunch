@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.09.2026 – Produktionstracking von Preview-Traffic getrennt
+
+- GTM und SalesViewer auf den kanonischen Host `www.concrete-designs.de`
+  begrenzt;
+- Vercel-Previews und lokale Entwicklungsserver laden auch nach Einwilligung
+  keine Analytics-, Ads-, Clarity- oder SalesViewer-Tags mehr;
+- Consent-Skript als `consent-v6.js` veröffentlicht, damit bestehende Browser
+  die Host-Sperre ohne veraltete Cache-Kopie erhalten;
+- damit können interne Design- und Browserprüfungen die operative
+  Lead-Auswertung künftig nicht mehr verfälschen.
+
 ## 13.09.2026 – SalesViewer im Relaunch aktiviert
 
 - SalesViewer auf allen 129 Sitemap-Seiten über den zentralen Consent-Manager
