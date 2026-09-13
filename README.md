@@ -2,6 +2,11 @@
 
 ## Aktueller Produktionsstand · 13.09.2026
 
+- Die redaktionellen Mux-Videoteaser zeigen nach dem Öffnen ausschließlich den
+  Mux-Player. Vorschaubild und Play-Badge werden während der Wiedergabe aus dem
+  Container genommen und beim Schließen vollständig wiederhergestellt. Die
+  gemeinsame Logik deckt alle 14 Einbauorte der zehn Mux-Videos auf elf Seiten
+  ab; globale Asset-Version: `v=168`.
 - Im ersten Inhaltsmodul der Startseite unterhalb des Hero-Videos beginnen die
   linke Headline und der rechte Fließtext auf derselben Oberkante. Der zuvor aus
   der allgemeinen Split-Regel übernommene 24-px-Headline-Abstand ist nur in
@@ -91,7 +96,9 @@ Menü selbst die Seite dahinter weichzeichnen kann.
 
 Die 26 Case-Videos liegen direkt unter `assets/cases/`. Die zehn redaktionellen
 CONCRETE-Teaser werden als adaptive Streams über Mux ausgeliefert und laden den
-Mux-Player erst nach einem bewussten Klick. Hero-, Nextbed- und Poster-Assets
+Mux-Player erst nach einem bewussten Klick. Beim Öffnen ersetzt der Player den
+kompletten Poster-Inhalt, sodass Vorschaubild und Stream nie doppelt untereinander
+erscheinen. Hero-, Nextbed- und Poster-Assets
 bleiben vorerst auf `concrete-video-cdn.vercel.app` (siehe
 `docs/VIDEO-VERANKERUNG.md` und `docs/MUX-VIDEO-MIGRATION.md`). YouTube wird
 nicht eingebettet. Zwei ungenutzte Reserveassets wurden zugunsten der

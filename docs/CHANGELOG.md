@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.09.2026 – Doppelte Darstellung der Mux-Player beseitigt
+
+- Die gemeinsame Videoteaser-Logik so korrigiert, dass der Mux-iframe beim
+  Öffnen den gesamten Poster-Inhalt inklusive Play-Badge ersetzt, statt vor das
+  Vorschaubild gesetzt zu werden.
+- Beim Schließen wird der ursprüngliche Teaser vollständig wiederhergestellt;
+  Tastaturbedienung und die Begrenzung auf ein gleichzeitig aktives Video
+  bleiben erhalten.
+- Alle 14 Mux-Einbauorte auf elf Seiten gegen die zehn eindeutigen Playback-IDs
+  geprüft. Kein Mux-Teaser enthält mehr eine parallele Legacy-Videoquelle.
+- Öffnen und Schließen am Prozessvideo der Startseite im Browser verifiziert.
+  SEO-Gauntlet und technischer Preflight liefen für alle 129 Seiten ohne Befund.
+- Globalen CSS-/JavaScript-Cache-Buster auf `v=168` erhöht.
+
 ## 13.09.2026 – Home-Intro auf gemeinsamer Oberkante ausgerichtet
 
 - Im Modul direkt unterhalb des Home-Heros den zusätzlichen oberen Abstand der
