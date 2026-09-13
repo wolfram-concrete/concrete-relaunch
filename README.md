@@ -369,27 +369,14 @@ Cache-Buster in allen HTML-Dateien.
 Messwerte, Entscheidungen und verbleibende Grenzen des Optimierungspasses vom
 10.09.2026 stehen in `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md`.
 
-### Finaler Preflight vom 10.09.2026
+### Produktions-Preflight vom 13.09.2026
 
-Der vollständige Desktop-/Mobile-Gauntlet gegen `main` auf Commit `4796c84`
-umfasste alle 129 Sitemap-Seiten bei 1440 px, 390 px und 320 px. Die daraus
-entstandenen 387 Seiten-/Viewport-Prüfungen meldeten keine defekten internen
-Links oder lokalen Ressourcen, keine Konsolenfehler, keine fehlenden
-Alt-Attribute, keine H1-Fehler und keinen horizontal bedienbaren Überlauf.
-Navigation, Mega-Menü, mobiles Untermenü, Projektfilter, Case- und
-Footer-Akkordeons sowie die Consent-Zustände wurden zusätzlich interaktiv
-geprüft. Beide projektspezifischen Gauntlets enden mit Exit 0.
-
-Der Launchstatus bleibt trotzdem **GELB**, bis diese Punkte abgeschlossen und
-erneut geprüft sind:
-
-1. Die `og:url`-Angaben von 128 Unterseiten an Canonical und Sitemap angleichen
-   und dort ebenfalls die Clean-URL ohne `.html` verwenden.
-2. Die aktuelle visuelle Gewichtung der Erstebenen-Consent-Aktionen rechtlich
-   freigeben oder die Ablehnung wieder als zur Zustimmung vergleichbare
-   Schaltfläche darstellen.
-3. Am Umschalttag Authentifizierung und beide `noindex`-Ebenen entfernen und
-   anschließend die öffentliche Auslieferung auf der echten Domain prüfen.
+Der GitHub-Stand von `main` ist die maßgebliche Produktionsquelle. Alle 129
+Sitemap-Seiten bestehen den SEO-Gauntlet und den technischen Preflight ohne
+Befund. Canonicals und `og:url` verwenden die produktiven Clean-URLs; Robots-
+Meta-Tags und Vercel-Header enthalten kein `noindex`. Die Website ist auf
+`www.concrete-designs.de` öffentlich erreichbar und die Sitemap ist in der
+Search Console verarbeitet.
 
 Die beiden alten WordPress-Videoquellen auf `projekte.html` sind seit dem
 11.09.2026 geschlossen: Nextbed lädt vom Video-CDN, das Agentur-Reel aus einer
@@ -402,14 +389,13 @@ keine harten Launchblocker, bleiben aber dokumentierte Qualitätsaufgaben. Der
 Desktop-LCP der Startseite und der Coral-/Paper-Kontrast sind weiterhin die
 bekannten, gestalterisch abhängigen Abweichungen aus dem Technikbericht.
 
-Die lokale Arbeitskopie unter `/Users/wolfram/web-projekte/concrete-relaunch`
-stand beim finalen Audit noch auf `5fb524d`. Für Abnahme und weitere Arbeit
-zuerst mit `origin/main` synchronisieren; die Vercel-Revision von `4796c84`
-ist erfolgreich deployed.
+Die ältere Arbeitskopie unter `/Users/wolfram/web-projekte/concrete-relaunch`
+ist nicht die maßgebliche Quelle. Vor weiterer lokaler Arbeit immer den
+aktuellen Stand von `origin/main` auschecken.
 
 ## Datenschutz und Consent
 
-`consent-v4.js` ist der eigene Consent-Manager der statischen Website. Er
+`consent-v5.js` ist der eigene Consent-Manager der statischen Website. Er
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
@@ -423,8 +409,8 @@ als Button links; „Ablehnen“ und „Einstellungen“ bleiben als direkt
 erreichbare Textaktionen in der rechten Hälfte sichtbar.
 
 - Statistik: Google Analytics 4 und Microsoft Clarity
-- Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising
-  und das dynamische Sortlist Trusted Partner Badge
+- Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising,
+  SalesViewer und das dynamische Sortlist Trusted Partner Badge
 - Nicht eingesetzt: YouTube-Einbettungen
 
 Die Kompatibilitäts-Cookie-Struktur hält die vorhandenen Borlabs-Sperrvariablen
@@ -434,8 +420,11 @@ im GTM funktionsfähig. Die nicht mehr verwendeten Alt-Tags `fb_main_tag`,
 nicht in den Banner. Calendly ist nur extern verlinkt, nicht eingebettet.
 
 Die Konto- und Live-Prüfung vom 13.09.2026 bestätigt GA4, Clarity, Sortlist und
-den veröffentlichten GTM-Container. SalesViewer ist im Relaunch noch nicht
-eingebunden. Im Google-Ads-Konto sind die Conversion-Tags vorhanden, mehrere
+den veröffentlichten GTM-Container. SalesViewer wird ab Consent-Version 3 nach
+Einwilligung in „Marketing & externe Inhalte“ direkt auf allen Sitemap-Seiten
+geladen. Die SalesViewer-API bleibt davon getrennt: Ihr geheimer Schlüssel liegt
+nicht im Repository und wird nur vom Audit-Workflow zum Abruf der Unternehmens-
+und Sitzungsdaten verwendet. Im Google-Ads-Konto sind die Conversion-Tags vorhanden, mehrere
 alte Zielvorhaben werden dort jedoch als inaktiv oder falsch konfiguriert
 geführt und müssen kontoseitig bereinigt werden. In der Search Console ist die
 neue Sitemap mit 129 erkannten Seiten erfolgreich verarbeitet; die zwei alten

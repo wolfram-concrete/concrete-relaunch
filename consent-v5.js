@@ -1,12 +1,14 @@
 (function () {
   "use strict";
 
-  var STORAGE_KEY = "concrete-consent-v2";
+  var STORAGE_KEY = "concrete-consent-v3";
   var COOKIE_NAME = "borlabs-cookie";
-  var CONSENT_VERSION = 2;
+  var CONSENT_VERSION = 3;
   var MAX_AGE_DAYS = 180;
   var GTM_ID = "GTM-N8223FX";
+  var SALESVIEWER_ACCOUNT_ID = "o9H9o8a1U5l3";
   var gtmLoaded = false;
+  var salesViewerLoaded = false;
   var clarityAttempts = 0;
   var lastFocused = null;
 
@@ -63,7 +65,7 @@
     var groups = {
       essential: ["concrete-consent"],
       statistics: consent.statistics ? ["google-analytics", "microsoft-clarity"] : [],
-      marketing: consent.marketing ? ["google-ads", "linkedininsighttag", "microsoft-advertising", "sortlist-badge"] : []
+      marketing: consent.marketing ? ["google-ads", "linkedininsighttag", "microsoft-advertising", "salesviewer", "sortlist-badge"] : []
     };
     var expires = new Date(Date.now() + MAX_AGE_DAYS * 86400000);
     var payload = encodeURIComponent(JSON.stringify({
@@ -103,7 +105,7 @@
   function installBorlabsBridge(consent) {
     var allowed = ["concrete-consent"];
     if (consent.statistics) allowed.push("google-analytics", "microsoft-clarity");
-    if (consent.marketing) allowed.push("google-ads", "linkedininsighttag", "microsoft-advertising");
+    if (consent.marketing) allowed.push("google-ads", "linkedininsighttag", "microsoft-advertising", "salesviewer", "sortlist-badge");
     function hasConsent(serviceName) { return allowed.indexOf(serviceName) !== -1; }
     window.BorlabsCookie = window.BorlabsCookie || {};
     window.BorlabsCookie.checkCookieConsent = hasConsent;
@@ -120,6 +122,43 @@
     script.src = "https://www.googletagmanager.com/gtm.js?id=" + encodeURIComponent(GTM_ID);
     script.addEventListener("load", function () { updateClarityConsent(consent); });
     document.head.appendChild(script);
+  }
+
+  function loadSalesViewer(consent) {
+    if (salesViewerLoaded || !consent.marketing) return;
+    salesViewerLoaded = true;
+    (function (s, a, l, e, sv, i, ew, er) {
+      try {
+        a = s[a] || s[l] || function () { throw "no_xhr"; };
+        sv = i = "https://salesviewer.org";
+        ew = function (x) {
+          s = new Image();
+          s.src = "https://salesviewer.org/tle.gif?sva=" + e +
+            "&u=" + encodeURIComponent(window.location) + "&e=" + encodeURIComponent(x);
+        };
+        l = s.SV_XHR = function (d) {
+          er = new a();
+          er.onerror = function () {
+            if (sv !== i) return ew("load_err");
+            sv = "https://www.salesviewer.com/t";
+            window.setTimeout(l.bind(null, d), 0);
+          };
+          er.onload = function () {
+            (s.execScript || s.eval).call(er, er.responseText);
+          };
+          er.open("POST", sv, true);
+          er.withCredentials = true;
+          er.send(d);
+          return er;
+        };
+        l(
+          "h_json=" + Number("JSON" in s && typeof JSON.parse !== "undefined") +
+          "&h_wc=1&h_event=" + Number("addEventListener" in s) + "&sva=" + e
+        );
+      } catch (x) {
+        ew(x);
+      }
+    })(window, "XDomainRequest", "XMLHttpRequest", SALESVIEWER_ACCOUNT_ID);
   }
 
   function loadConsentEmbeds(consent) {
@@ -156,6 +195,7 @@
       concrete_marketing_consent: consent.marketing
     });
     loadGtm(consent);
+    loadSalesViewer(consent);
     loadConsentEmbeds(consent);
     updateClarityConsent(consent);
   }
@@ -209,7 +249,7 @@
         '<div class="consent-options">' +
           '<div class="consent-option"><div><h3>Notwendig</h3><p>Speichert ausschließlich deine Auswahl und stellt die Website bereit.</p></div><span class="consent-fixed" aria-label="Immer aktiv">Immer aktiv</span></div>' +
           '<label class="consent-option" for="consent-statistics"><span><strong>Statistik</strong><small>Google Analytics und Microsoft Clarity</small></span><span class="consent-switch"><input id="consent-statistics" type="checkbox" data-consent-statistics><i aria-hidden="true"></i></span></label>' +
-          '<label class="consent-option" for="consent-marketing"><span><strong>Marketing &amp; externe Inhalte</strong><small>Google Ads, LinkedIn Insight, Microsoft Advertising und Sortlist-Badge</small></span><span class="consent-switch"><input id="consent-marketing" type="checkbox" data-consent-marketing><i aria-hidden="true"></i></span></label>' +
+          '<label class="consent-option" for="consent-marketing"><span><strong>Marketing &amp; externe Inhalte</strong><small>Google Ads, LinkedIn Insight, Microsoft Advertising, SalesViewer und Sortlist-Badge</small></span><span class="consent-switch"><input id="consent-marketing" type="checkbox" data-consent-marketing><i aria-hidden="true"></i></span></label>' +
         '</div>' +
         '<div class="consent-actions consent-actions--settings">' +
           '<button class="consent-button consent-button--quiet" type="button" data-consent-reject>Alle ablehnen</button>' +

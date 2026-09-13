@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.09.2026 – SalesViewer im Relaunch aktiviert
+
+- SalesViewer auf allen 129 Sitemap-Seiten über den zentralen Consent-Manager
+  eingebunden; der öffentliche Tracker startet ausschließlich nach Einwilligung
+  in „Marketing & externe Inhalte“.
+- Consent-Version auf 3 und die cache-sichere Datei auf `consent-v5.js` erhöht,
+  damit bestehende Entscheidungen die neue Datenkategorie nicht automatisch
+  freigeben.
+- Datenschutzerklärung um Verarbeitung, Anbieterhinweis und Opt-out ergänzt.
+- Geheimen SalesViewer-API-Schlüssel weiterhin vom öffentlichen Website-Code
+  und vom Repository getrennt; der API-Abruf bleibt Aufgabe des Audit-Workflows.
+- Historisches Ads-Ziel `/tag/package-design` dauerhaft auf `/package-design`
+  umgeleitet.
+- Automatischen GitHub-Preflight für SEO- und Technikprüfungen ergänzt.
+
 ## 13.09.2026 – Phasenvideos auf der Leistungsübersicht ergänzt
 
 - Die vier vorhandenen Mux-Videos für Verstehen, Definieren, Umsetzen und

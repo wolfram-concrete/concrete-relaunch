@@ -485,6 +485,11 @@
       "permanent": true
     },
     {
+      "source": "/tag/package-design",
+      "destination": "/package-design",
+      "permanent": true
+    },
+    {
       "source": "/the-moc",
       "destination": "/case-the-moc",
       "permanent": true

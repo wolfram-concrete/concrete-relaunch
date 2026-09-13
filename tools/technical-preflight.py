@@ -230,9 +230,9 @@ def scan() -> list[str]:
         )
         if "Fabian Lampert" in attribution_text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
-        if text.count('<script src="consent-v4.js"></script>') != 1:
+        if text.count('<script src="consent-v5.js"></script>') != 1:
             findings.append(f"{page.name}: consent manager missing or duplicated")
-        elif text.index('<script src="consent-v4.js"></script>') > text.index(
+        elif text.index('<script src="consent-v5.js"></script>') > text.index(
             f'<script src="site.js?v={EXPECTED_CACHE_VERSION}"></script>'
         ):
             findings.append(f"{page.name}: consent manager must load before site.js")
@@ -328,25 +328,27 @@ def scan() -> list[str]:
             if source.startswith(("http://", "https://", "//")):
                 findings.append(f"{css_path.name}: external CSS resource bypasses consent: {source}")
 
-    consent = (ROOT / "consent-v4.js").read_text(encoding="utf-8")
+    consent = (ROOT / "consent-v5.js").read_text(encoding="utf-8")
     for required in (
         'var GTM_ID = "GTM-N8223FX"',
         'analytics_storage: "denied"',
         'ad_storage: "denied"',
         '"google-analytics", "microsoft-clarity"',
-        '"google-ads", "linkedininsighttag", "microsoft-advertising", "sortlist-badge"',
+        '"google-ads", "linkedininsighttag", "microsoft-advertising", "salesviewer", "sortlist-badge"',
+        'var SALESVIEWER_ACCOUNT_ID = "o9H9o8a1U5l3"',
+        "loadSalesViewer(consent)",
         "loadConsentEmbeds(consent)",
         "window.BorlabsCookie.checkCookieConsent = hasConsent",
         "window.BorlabsCookie.Consents.hasConsent = hasConsent",
     ):
         if required not in consent:
-            findings.append(f"consent-v4.js: missing consent safeguard: {required}")
+            findings.append(f"consent-v5.js: missing consent safeguard: {required}")
     for forbidden in ('"facebook-pixel"', '"hubspot-pixel"'):
         if forbidden in consent:
-            findings.append(f"consent-v4.js: obsolete service is consent-enabled: {forbidden}")
+            findings.append(f"consent-v5.js: obsolete service is consent-enabled: {forbidden}")
 
     privacy = (ROOT / "datenschutz.html").read_text(encoding="utf-8")
-    for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "Sortlist Trusted Partner Badge"):
+    for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "SalesViewer", "Sortlist Trusted Partner Badge"):
         if required not in privacy:
             findings.append(f"datenschutz.html: current implementation missing: {required}")
     for obsolete in (
