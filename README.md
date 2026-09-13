@@ -2,12 +2,17 @@
 
 ## Aktueller Produktionsstand · 13.09.2026
 
+- Im mobilen Coral-Leistungsstapel der Startseite überdeckt Karte 03 „Websites“
+  Karte 02 „Branding“ jetzt ebenso bündig wie zuvor 02 die Karte 01. Alle drei
+  Karten teilen wieder Höhe und Sticky-Oberkante; ihre Z-Ebenen folgen sicher
+  der Reihenfolge 01–03. Der frühere künstliche Nachlauf unter Karte 03 bleibt
+  entfernt. Mobile Messung bei 390 × 844 px; globale Asset-Version: `v=171`.
 - Der Übergang von der BGF-Praxis-Sektion in das korallfarbene Statement ist
   gegen Reloads und Wechsel zwischen Mobile und Desktop stabilisiert. Die
   Statement-Fläche bleibt jetzt per CSS-Sticky in ihrer natürlichen Position;
   GSAP steuert ausschließlich den Wortaufbau. Dadurch bleibt die bestehende
   Bildüberlagerung erhalten, ohne dass davor eine große Papier-Leerfläche
-  entstehen kann. Globale Asset-Version: `v=170`.
+  entstehen kann.
 - Die redaktionellen Mux-Videoteaser zeigen nach dem Öffnen ausschließlich den
   Mux-Player. Vorschaubild und Play-Badge werden während der Wiedergabe aus dem
   Container genommen und beim Schließen vollständig wiederhergestellt. Die

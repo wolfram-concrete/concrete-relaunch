@@ -102,9 +102,6 @@
         if(!mq.matches)return;
         var max=0;items.forEach(function(el){max=Math.max(max,el.offsetHeight);});
         items.forEach(function(el){el.style.minHeight=max+"px";});
-        // Der letzte Kompetenzblock wird von keinem weiteren Block ueberdeckt
-        // und darf deshalb auf seine natuerliche Inhaltshoehe zurueckfallen.
-        if(list.matches(".section--carrier .competence-grid"))items[items.length-1].style.minHeight="";
       });
     }
     function later(){clearTimeout(t);t=setTimeout(apply,120);}

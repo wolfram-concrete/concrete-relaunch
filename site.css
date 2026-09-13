@@ -962,14 +962,16 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
   .section--carrier .competence{position:sticky;top:calc(var(--header-height) - 1px);
     background:var(--coral);padding-block:clamp(24px,6vw,40px) clamp(36px,9vw,64px);
     transition:opacity .5s ease}
+  .section--carrier .competence:nth-child(1){z-index:1}
+  .section--carrier .competence:nth-child(2){z-index:2}
+  .section--carrier .competence:nth-child(3){z-index:3}
   /* die Blockflaeche reicht bis an den rechten Traegerrand */
   .section--carrier .competence::before{content:"";position:absolute;inset:0 calc(-1 * var(--pad)) 0 calc(-1 * var(--pad));
     background:var(--coral);z-index:-1}
   .section--carrier .competence .eyebrow{margin-bottom:var(--s3)}
-  /* Der letzte Block muss nichts mehr ueberdecken: Er laeuft normal aus,
-     damit direkt nach seinem Inhalt die folgende Section nachrueckt. */
-  .section--carrier .competence:last-child{position:relative;top:auto;z-index:1;
-    padding-bottom:clamp(24px,6vw,40px)}
+  /* Der letzte Block bleibt ebenfalls sticky und gleich hoch, damit er sich
+     buendig ueber 02 legt. Der fruehere kuenstliche Nachlauf bleibt entfernt. */
+  .section--carrier .competence:last-child{padding-bottom:clamp(24px,6vw,40px)}
   .section--carrier .competence-grid{padding-bottom:0}
 }
 @media(prefers-reduced-motion:reduce){.section--carrier .competence{position:static}}

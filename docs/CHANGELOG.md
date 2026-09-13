@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.09.2026 – Mobiler Leistungsstapel 02 → 03 bündig geschlossen
+
+- Die Sonderbehandlung der letzten Kompetenzkarte entfernt: „Websites“ nutzt
+  wieder dieselbe berechnete Höhe und Sticky-Oberkante wie „Strategie“ und
+  „Branding“.
+- Explizite Z-Ebenen für 01, 02 und 03 ergänzt, damit jede nachfolgende Karte
+  die vorherige vollständig und in der richtigen Reihenfolge überdeckt.
+- Den früheren zusätzlichen 200–340-px-Nachlauf nicht wieder eingeführt; nach
+  Karte 03 schließt die folgende Sektion weiterhin ohne künstliche Coral-Fläche
+  an.
+- Beide Übergänge in einer echten 390 × 844-px-Browseremulation vermessen:
+  01/02 und 02/03 liegen jeweils bündig auf der 87-px-Sticky-Oberkante.
+- Globalen CSS-/JavaScript-Cache-Buster auf `v=171` erhöht.
+
 ## 13.09.2026 – BGF-Übergang zum Coral-Statement stabilisiert
 
 - Eine sporadische große Papier-Leerfläche zwischen der BGF-Praxis-Sektion und
