@@ -2,14 +2,18 @@
 
 Vollständige Inventur aus dem WordPress-Export, Stand 01.09.2026.
 
-## Produktionsstand 12.09.2026
+## Produktionsstand 13.09.2026
 
-Die acht im neuen Auftritt tatsächlich verwendeten redaktionellen Teaser sind
+Die zehn im neuen Auftritt verwendeten redaktionellen Teaser sind
 auf Mux migriert. Die Seiten halten bis zum Klick nur das vorhandene Poster im
 DOM; danach wird der adaptive Mux-Player mit dem jeweiligen öffentlichen
 Playback-ID geladen. Dadurch konkurrieren die Gesprächsvideos nicht mehr beim
 Erstaufruf mit Fonts, Bildern und dem mobilen Hero. Das exakte Mapping steht in
 `docs/MUX-VIDEO-MIGRATION.md`.
+
+Die beiden zunächst freien Kontingentplätze tragen nun die Videos „Kann ich
+meine Brand auch mit KI aufbauen?“ auf der KI-Leistungsseite und „Warum
+Brandbuilding im B2B anders funktioniert“ auf der B2B-Branchenseite.
 
 Das stumme Home-Hero-Video, die beiden Nextbed-Videos sowie die Poster bleiben
 vorerst auf dem bestehenden Vercel-CDN. Sie gehören nicht zum gelieferten

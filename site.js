@@ -116,6 +116,7 @@
   // Hero-Intro: Wort (Arame) → Reel: je Frame anderes Bild + andere Schrift → ruhiges Schlussbild
   var hero=document.querySelector("[data-hero]");
   if(hero){
+    document.documentElement.setAttribute("data-hero-intro-state","waiting");
     document.body.classList.add("intro");
     var imgs=[].slice.call(hero.querySelectorAll(".hero__reel img"));
     var finalImg=hero.querySelector(".hero__reel .final");
@@ -123,7 +124,23 @@
     var seq=imgs.filter(function(i){return i!==finalImg});
     var reduceHero=matchMedia("(prefers-reduced-motion:reduce)").matches;
     var saveDataHero=!!(navigator.connection&&navigator.connection.saveData);
-    function finish(){document.body.classList.remove("intro");seq.forEach(function(i){i.classList.remove("on");i.style.zIndex="";});word.className="";finalImg.classList.add("on");hero.classList.remove("reel");hero.classList.add("done");if(finalImg.tagName==="VIDEO"&&!reduceHero&&!saveDataHero){finalImg.play().catch(function(){});}}
+    var introCompleteSent=false,introFallback=0;
+    function announceIntroComplete(){
+      if(introCompleteSent)return;introCompleteSent=true;clearTimeout(introFallback);
+      document.documentElement.setAttribute("data-hero-intro-state","complete");
+      window.dispatchEvent(new CustomEvent("concrete:hero-intro-complete"));
+    }
+    function finish(){
+      document.body.classList.remove("intro");seq.forEach(function(i){i.classList.remove("on");i.style.zIndex="";});word.className="";finalImg.classList.add("on");hero.classList.remove("reel");hero.classList.add("done");
+      if(finalImg.tagName==="VIDEO"&&!reduceHero&&!saveDataHero){
+        var lastVideoTime=0;
+        function firstLoopComplete(){finalImg.removeEventListener("timeupdate",watchFirstLoop);finalImg.removeEventListener("ended",firstLoopComplete);finalImg.removeEventListener("error",firstLoopComplete);announceIntroComplete();}
+        function watchFirstLoop(){var now=finalImg.currentTime||0,duration=finalImg.duration||0;if(duration&&now>=duration-.45||lastVideoTime>1&&now<lastVideoTime)firstLoopComplete();lastVideoTime=now;}
+        finalImg.addEventListener("timeupdate",watchFirstLoop);finalImg.addEventListener("ended",firstLoopComplete);finalImg.addEventListener("error",firstLoopComplete);
+        introFallback=setTimeout(firstLoopComplete,36000);
+        var playResult=finalImg.play();if(playResult&&playResult.catch)playResult.catch(firstLoopComplete);
+      }else announceIntroComplete();
+    }
     if(reduceHero||saveDataHero){finish();}
     else{
       imgs.forEach(function(i){if(i.dataset.src)i.src=i.dataset.src;});

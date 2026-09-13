@@ -1079,6 +1079,8 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .consent-ui{position:fixed;inset:0;z-index:10000;pointer-events:none;color:var(--ink)}
 .consent-banner,.consent-settings{pointer-events:auto;position:absolute;background:var(--paper);border:0;box-shadow:0 12px 38px rgba(23,21,19,.16)}
 .consent-banner{right:18px;bottom:18px;display:grid;width:min(460px,calc(100% - 36px));gap:14px;padding:18px}
+.consent-banner--enter{animation:consent-banner-in .7s cubic-bezier(.2,.7,.2,1) both}
+@keyframes consent-banner-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .consent-banner__copy{max-width:none}
 .consent-banner h2{font-size:15px;line-height:1.1;letter-spacing:.035em;text-transform:uppercase;margin:0 0 7px}
 .consent-settings h2{font-size:clamp(32px,4.5vw,64px);line-height:.94;margin:.08em 0 .28em}
@@ -1130,4 +1132,4 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
   .consent-settings{padding:22px}.consent-actions--settings{grid-template-columns:1fr}
   .consent-option{gap:14px}.footer-legal__links{flex-wrap:wrap;gap:12px 22px}
 }
-@media(prefers-reduced-motion:reduce){.consent-switch i,.consent-switch i::after{transition:none}}
+@media(prefers-reduced-motion:reduce){.consent-switch i,.consent-switch i::after{transition:none}.consent-banner--enter{animation:none}}

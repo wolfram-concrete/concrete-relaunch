@@ -298,9 +298,20 @@
     var banner = document.querySelector("[data-consent-banner]");
     var dialog = document.querySelector("[data-consent-dialog]");
     var stored = readConsent();
-    if (!stored) {
+    if (!stored && banner) banner.hidden = true;
+    function revealBanner() {
+      if (readConsent() || !ui || !banner || !banner.hidden) return;
+      banner.classList.add("consent-banner--enter");
       ui.hidden = false;
       banner.hidden = false;
+      banner.addEventListener("animationend", function () { banner.classList.remove("consent-banner--enter"); }, { once: true });
+    }
+    if (!stored) {
+      var waitsForHero = !!document.querySelector("[data-hero]") && document.documentElement.getAttribute("data-hero-intro-state") === "waiting";
+      if (waitsForHero) {
+        window.addEventListener("concrete:hero-intro-complete", revealBanner, { once: true });
+        window.setTimeout(revealBanner, 42000);
+      } else revealBanner();
     }
     document.querySelectorAll("[data-consent-settings], [data-consent-manage]").forEach(function (button) {
       button.addEventListener("click", openSettings);

@@ -81,12 +81,15 @@ transluzenter Papier-Träger mit Blur. Das Mega-Menü nutzt dieselbe Fläche.
 Bei offenem Menü trägt ein `::before` den Blur des Headers, damit auch das
 Menü selbst die Seite dahinter weichzeichnen kann.
 
-Die 26 Case-Videos liegen direkt unter `assets/cases/`. Die acht redaktionellen
+Die 26 Case-Videos liegen direkt unter `assets/cases/`. Die zehn redaktionellen
 CONCRETE-Teaser werden als adaptive Streams über Mux ausgeliefert und laden den
 Mux-Player erst nach einem bewussten Klick. Hero-, Nextbed- und Poster-Assets
 bleiben vorerst auf `concrete-video-cdn.vercel.app` (siehe
 `docs/VIDEO-VERANKERUNG.md` und `docs/MUX-VIDEO-MIGRATION.md`). YouTube wird
-nicht eingebettet.
+nicht eingebettet. Zwei ungenutzte Reserveassets wurden zugunsten der
+priorisierten Themen KI-gestützter Markenaufbau und B2B-Brandbuilding aus dem
+Mux-Kontingent entfernt. Beide Ersatzvideos sind eingebunden; damit werden alle
+zehn verfügbaren Mux-Plätze produktiv genutzt.
 Die 13 dekorativen Schriften des Hero-Intros liegen ebenfalls lokal unter
 `fonts/intro/`; `fonts/intro-fonts-v1.css` wird für Desktop und Mobile geladen.
 Die zugehörigen OFL-Lizenztexte liegen unter `fonts/intro/licenses/`.
@@ -374,12 +377,15 @@ ist erfolgreich deployed.
 
 ## Datenschutz und Consent
 
-`consent-v3.js` ist der eigene Consent-Manager der statischen Website. Er
+`consent-v4.js` ist der eigene Consent-Manager der statischen Website. Er
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
 jederzeit geändert werden. Der initiale kompakte Hinweis sitzt mit sicherem
-Rand in der rechten unteren Bildschirmecke; der ausführliche
+Rand in der rechten unteren Bildschirmecke. Auf der Startseite wartet er beim
+ersten Besuch den ersten vollständigen Durchlauf des rund 30 Sekunden langen
+Hero-Videos ab und fadet danach ein; bei Reduced Motion, Datensparmodus,
+Videofehlern und auf Unterseiten erscheint er ohne diese Wartezeit. Der ausführliche
 Einstellungsdialog bleibt zentriert. In der ersten Ebene steht „Akzeptieren“
 als Button links; „Ablehnen“ und „Einstellungen“ bleiben als direkt
 erreichbare Textaktionen in der rechten Hälfte sichtbar.
@@ -395,8 +401,16 @@ im GTM funktionsfähig. Die nicht mehr verwendeten Alt-Tags `fb_main_tag`,
 11.09.2026 pausiert. Search Console ist keine Browser-Einbindung und gehört
 nicht in den Banner. Calendly ist nur extern verlinkt, nicht eingebettet.
 
-Änderungen an `consent-v3.js` erfordern wegen fehlender Medien-Querystrings
-einen neuen Dateinamen und eine Aktualisierung in allen Sitemap-Seiten. Die
+Die Konto- und Live-Prüfung vom 13.09.2026 bestätigt GA4, Clarity, Sortlist und
+den veröffentlichten GTM-Container. SalesViewer ist im Relaunch noch nicht
+eingebunden. Im Google-Ads-Konto sind die Conversion-Tags vorhanden, mehrere
+alte Zielvorhaben werden dort jedoch als inaktiv oder falsch konfiguriert
+geführt und müssen kontoseitig bereinigt werden. In der Search Console ist die
+neue Sitemap mit 129 erkannten Seiten erfolgreich verarbeitet; die zwei alten
+WordPress-Sitemap-Einträge können zur besseren Übersicht entfernt werden.
+
+Änderungen am Consent-Manager erfordern eine neue, cache-sichere Dateiversion
+und eine Aktualisierung in allen Sitemap-Seiten. Die
 Implementierung, Prüffälle und noch nötigen Konto-/Vertragsprüfungen stehen in
 `docs/DATENSCHUTZ-CONSENT-2026-09-10.md`.
 

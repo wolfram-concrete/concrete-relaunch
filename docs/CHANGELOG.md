@@ -1,5 +1,54 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.09.2026 – Relaunch-Tracking und Search Console verifiziert
+
+- Die neue `sitemap.xml` ist in der Google Search Console erfolgreich
+  verarbeitet und weist 129 erkannte Seiten aus. Die zwei alten
+  WordPress-Sitemap-Einträge bleiben als Aufräumaufgabe dokumentiert.
+- Den veröffentlichten GTM-Container `GTM-N8223FX` als Live-Version 39
+  bestätigt. GA4, Google Ads, Microsoft Clarity, LinkedIn und Microsoft UET
+  sind darin weiterhin enthalten und werden durch den Consent-Manager erst
+  nach der passenden Einwilligung geladen.
+- Microsoft Clarity mit dem richtigen Projekt `wi4ewsyrmw` abgeglichen und den
+  Live-Empfang durch einen Testbesuch bestätigt. Das dynamische Sortlist-Badge
+  ersetzt nach Marketing-Einwilligung erfolgreich den lokalen Fallback-Link.
+- SalesViewer ist weder im Relaunch-Code noch im Live-GTM vorhanden; die
+  sichtbare Erfassung endet vor dem Relaunch. Die datenschutzkonforme
+  Neuverknüpfung bleibt ausdrücklich offen.
+- Im Google-Ads-Konto sind die technischen Conversion-Tags vorhanden, die
+  Zielvorhaben melden jedoch weiterhin inaktive beziehungsweise falsch
+  konfigurierte Aktionen. Diese Konto-Bereinigung bleibt eine externe Aufgabe.
+
+## 13.09.2026 – Mux-Kontingent fachlich priorisiert und vollständig genutzt
+
+- Den Mux-Bestand mit den tatsächlich im HTML verwendeten Playback-IDs
+  abgeglichen: zehn aktive redaktionelle Videos sind vollständig und in Mux
+  auf `Ready`.
+- Die nicht eingebundenen, inhaltlich überlappenden Reserveassets `Was ist
+  eigentlich Brand Building?` und `Warum mit CONCRETE arbeiten?` entfernt.
+- Die beiden freien Plätze mit `Kann ich meine Brand auch mit KI aufbauen?`
+  und `Warum Brandbuilding im B2B anders funktioniert` belegt. Beide
+  Quelldateien wurden im freigegebenen Drive eindeutig verifiziert, zu Mux
+  übertragen und mit eigenen lokalen Postern auf der KI-Leistungsseite und der
+  B2B-Branchenseite eingebunden.
+- Beide neuen HLS-Streams antworten mit HTTP 200. Die für die Übertragung
+  temporär angelegten Mux-Zugänge wurden nach Abschluss widerrufen; im
+  Environment verbleibt kein aktiver Access Token.
+
+## 12.09.2026 – Consent-Banner an das Home-Intro gekoppelt
+
+- Den initialen Consent-Hinweis auf der Startseite bis zum ersten vollständigen
+  Durchlauf des rund 30 Sekunden langen Hero-Videos zurückgehalten.
+- Nach dem Intro fadet die Karte mit einer kurzen, zur bestehenden Motion-Sprache
+  passenden Bewegung ein; Reduced Motion deaktiviert diese Animation.
+- Reduced Motion, Datensparmodus, blockierte Wiedergabe und Videofehler umgehen
+  die Wartezeit. Ein 36-/42-Sekunden-Fallback verhindert, dass der Banner bei
+  einem technischen Ausfall dauerhaft verborgen bleibt.
+- Unterseiten und der manuell geöffnete Einstellungsdialog bleiben unmittelbar
+  erreichbar; gespeicherte Consent-Entscheidungen werden unverändert angewendet.
+- Globale Asset-Version auf `v=167` und Consent-Manager cache-sicher auf
+  `consent-v4.js` erhöht.
+
 ## 12.09.2026 – Redaktionelle Videos auf Mux migriert
 
 - Zwölf Gesprächsvideos aus dem freigegebenen Google-Drive-Ordner für Mux
