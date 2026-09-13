@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.09.2026 – Phasenvideos auf der Leistungsübersicht ergänzt
+
+- Die vier vorhandenen Mux-Videos für Verstehen, Definieren, Umsetzen und
+  Begleiten in die jeweiligen Phasen der Leistungsübersicht eingebaut.
+- Die bestehenden Poster, Playback-IDs und das gemeinsame Videoteaser-Muster
+  übernommen: „Persönlich erklärt“, kompakte 16:9-Vorschau, Titel und
+  korallfarbene Kennzeichnung im gewohnten CONCRETE-Look.
+- Die Module jeweils zwischen dem Link zur Phasendetailseite und dem passenden
+  Praxisbeispiel platziert; das vorhandene Prozessvideo bleibt unverändert.
+- Alle fünf Videomodule auf Desktop und bei 390 × 844 px geprüft. Jeder Klick
+  öffnet genau einen Mux-iframe, ersetzt das Poster vollständig und schließt
+  einen zuvor aktiven Player. Damit umfasst die Website jetzt 18 Mux-Einbauorte
+  für zehn eindeutige Videos auf elf Seiten.
+- SEO-Gauntlet und technischer Preflight liefen für alle 129 Seiten ohne Befund.
+
 ## 13.09.2026 – Mobiler Leistungsstapel 02 → 03 bündig geschlossen
 
 - Die Sonderbehandlung der letzten Kompetenzkarte entfernt: „Websites“ nutzt

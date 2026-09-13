@@ -2,6 +2,12 @@
 
 ## Aktueller Produktionsstand · 13.09.2026
 
+- Auf der Leistungsübersicht ergänzen jetzt vier redaktionelle Mux-Videos die
+  Phasen Verstehen, Definieren, Umsetzen und Begleiten. Die Teaser stehen im
+  bestehenden CONCRETE-Look jeweils zwischen Phasen-Link und Praxisbeispiel;
+  das übergreifende Prozessvideo bleibt als fünftes Modul erhalten. Alle fünf
+  Player wurden auf Desktop und Mobile geöffnet und auf eindeutige
+  Poster-Ersetzung geprüft.
 - Im mobilen Coral-Leistungsstapel der Startseite überdeckt Karte 03 „Websites“
   Karte 02 „Branding“ jetzt ebenso bündig wie zuvor 02 die Karte 01. Alle drei
   Karten teilen wieder Höhe und Sticky-Oberkante; ihre Z-Ebenen folgen sicher
@@ -16,7 +22,7 @@
 - Die redaktionellen Mux-Videoteaser zeigen nach dem Öffnen ausschließlich den
   Mux-Player. Vorschaubild und Play-Badge werden während der Wiedergabe aus dem
   Container genommen und beim Schließen vollständig wiederhergestellt. Die
-  gemeinsame Logik deckt alle 14 Einbauorte der zehn Mux-Videos auf elf Seiten
+  gemeinsame Logik deckt alle 18 Einbauorte der zehn Mux-Videos auf elf Seiten
   ab.
 - Im ersten Inhaltsmodul der Startseite unterhalb des Hero-Videos beginnen die
   linke Headline und der rechte Fließtext auf derselben Oberkante. Der zuvor aus
