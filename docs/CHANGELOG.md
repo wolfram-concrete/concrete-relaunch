@@ -8,15 +8,25 @@
 - SEO-Titel auf „Branding- & Designagentur Hamburg | CONCRETE“, H1 auf
   „Branding- & Designagentur in Hamburg“ und den Einstieg auf das Zusammenspiel
   von Markenstrategie, Design und digitalen Anwendungen ausgerichtet.
-- Reale Cases für Conlivo, Little Big Pasta, medium Architekten, NOEY, Baked und
-  Immofolia in einem responsiven Masonry-Raster mit variierenden Bildformaten
-  und ohne starre Rasterlücken angeordnet.
-- Hamburger Kundenstimmen aus dem bestehenden Rezensionskarussell übernommen
-  und auf Conlivo, Little Big Pasta und goodBytz begrenzt.
+- Reale Cases für Conlivo, Little Big Pasta, medium Architekten, NOEY, Baked,
+  Immofolia und Poodlewohl in einem responsiven Masonry-Raster mit variierenden
+  Bildformaten und ohne starre Rasterlücken angeordnet. Den weißen Rand des
+  abgerundeten Conlivo-Originalbildes innerhalb des Containers sauber beschnitten.
+- Das Rezensionskarussell auf zehn eindeutige Kundenstimmen erweitert: Conlivo,
+  goodBytz, NOEY, Little Big Pasta, SKNMETRICS, Poodlewohl, Immofolia, Baked,
+  Noveltea und LINK. Wiederholungen erscheinen erst nach einem vollständigen
+  Karusselldurchlauf.
 - Standortsektion im Schrammsweg mit gleich hoher Hausdarstellung und kompakter
-  Ansprechpartner-Zeile umgesetzt. Wolfram Stratmann und Christian Rosenberger
-  stehen nebeneinander mit Porträt, Funktion, direkter E-Mail und LinkedIn;
+  Ansprechpartner-Zeile umgesetzt. Die beiden gleich formatierten Karten für
+  Wolfram Stratmann und Christian Rosenberger stehen bündig nebeneinander direkt
+  unter dem Hausfoto und nehmen gemeinsam exakt dessen Breite ein. Sie enthalten
+  Porträt, Funktion, direkte E-Mail und LinkedIn mit funktionierendem Hover;
   ausführliche Biografietexte wurden auf dieser Seite bewusst entfernt.
+- Hero-Aufbau an die bestehende Leistungsseite angeglichen, Hauptheadline auf
+  maximal zwei Zeilen begrenzt und die Inhaltsüberschriften sowie Ziffern an die
+  vorhandenen Typografiestufen angepasst. Projekt-Oberzeile auf „Ausgewählte
+  Hamburger Projekte“ präzisiert und den Abstand zwischen Standort-Eyebrow und
+  Headline auf den vertikalen Rhythmus des Designsystems gesetzt.
 - Lokale Seite ausschließlich im Footer unter „Agentur“ verlinkt, in die
   `sitemap.xml` aufgenommen und die zentrale Footer-Fassung auf alle Seiten
   synchronisiert.

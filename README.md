@@ -9,13 +9,16 @@
   hinterlegt; die Hauptnavigation und laufende Ads-Ziele bleiben unverändert.
 - Die Seite nutzt den SEO-Titel „Branding- & Designagentur Hamburg | CONCRETE“
   und die H1 „Branding- & Designagentur in Hamburg“. Reale Arbeiten für
-  Conlivo, Little Big Pasta, medium Architekten, NOEY, Baked und Immofolia
-  stehen in einem verdichteten Masonry-Raster ohne künstliche Leerräume.
-- Der lokale Vertrauensaufbau umfasst Hamburger Kundenstimmen, den Standort im
-  Schrammsweg sowie zwei kompakte Ansprechpartner-Karten für Wolfram Stratmann
-  und Christian Rosenberger. Die Karten zeigen ausschließlich Porträt, Rolle,
-  direkte E-Mail und LinkedIn; ausführliche Persona-Texte werden bewusst nicht
-  wiederholt.
+  Conlivo, Little Big Pasta, medium Architekten, NOEY, Baked, Immofolia und
+  Poodlewohl stehen unter „Ausgewählte Hamburger Projekte“ in einem verdichteten
+  Masonry-Raster ohne künstliche Leerräume. Die große Projektüberschrift bleibt
+  auf Desktop maximal zweizeilig.
+- Der lokale Vertrauensaufbau umfasst zehn eindeutige Kundenstimmen, den Standort
+  im Schrammsweg sowie zwei kompakte Ansprechpartner-Karten für Wolfram Stratmann
+  und Christian Rosenberger. Beide Karten stehen bündig nebeneinander unter dem
+  Hausfoto und nehmen gemeinsam exakt dessen Breite ein. Sie zeigen ausschließlich
+  Porträt, Rolle, direkte E-Mail und LinkedIn; ausführliche Persona-Texte werden
+  bewusst nicht wiederholt.
 - SEO-Gauntlet und technischer Preflight prüfen jetzt 130 Sitemap-Seiten und
   laufen ohne Befund.
 
