@@ -1,5 +1,28 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 14.09.2026 – Lokale Entscheidungsseite für Hamburg ergänzt
+
+- Neue Unterseite `/branding-designagentur-hamburg/` als hochwertige lokale
+  Entscheidungsseite für organische Suche und passende Google-Ads-Anzeigengruppen
+  umgesetzt, ohne die Hauptnavigation oder bestehende Ads-Ziele zu verändern.
+- SEO-Titel auf „Branding- & Designagentur Hamburg | CONCRETE“, H1 auf
+  „Branding- & Designagentur in Hamburg“ und den Einstieg auf das Zusammenspiel
+  von Markenstrategie, Design und digitalen Anwendungen ausgerichtet.
+- Reale Cases für Conlivo, Little Big Pasta, medium Architekten, NOEY, Baked und
+  Immofolia in einem responsiven Masonry-Raster mit variierenden Bildformaten
+  und ohne starre Rasterlücken angeordnet.
+- Hamburger Kundenstimmen aus dem bestehenden Rezensionskarussell übernommen
+  und auf Conlivo, Little Big Pasta und goodBytz begrenzt.
+- Standortsektion im Schrammsweg mit gleich hoher Hausdarstellung und kompakter
+  Ansprechpartner-Zeile umgesetzt. Wolfram Stratmann und Christian Rosenberger
+  stehen nebeneinander mit Porträt, Funktion, direkter E-Mail und LinkedIn;
+  ausführliche Biografietexte wurden auf dieser Seite bewusst entfernt.
+- Lokale Seite ausschließlich im Footer unter „Agentur“ verlinkt, in die
+  `sitemap.xml` aufgenommen und die zentrale Footer-Fassung auf alle Seiten
+  synchronisiert.
+- Technischen Preflight auf 130 erwartete Sitemap-Seiten aktualisiert. SEO-
+  Gauntlet und technischer Preflight: 130 Seiten, jeweils 0 Befunde.
+
 ## 13.09.2026 – Produktionstracking von Preview-Traffic getrennt
 
 - GTM und SalesViewer auf den kanonischen Host `www.concrete-designs.de`

@@ -1,6 +1,23 @@
 # CONCRETE Relaunch
 
-## Aktueller Produktionsstand · 13.09.2026
+## Aktueller Produktionsstand · 14.09.2026
+
+- Die neue lokale Entscheidungsseite
+  `/branding-designagentur-hamburg/` verbindet Markenstrategie, Corporate
+  Design und digitale Anwendungen im bestehenden CONCRETE-Look. Sie ist nur
+  über den Footer unter „Agentur“ erreichbar und als 130. URL in der Sitemap
+  hinterlegt; die Hauptnavigation und laufende Ads-Ziele bleiben unverändert.
+- Die Seite nutzt den SEO-Titel „Branding- & Designagentur Hamburg | CONCRETE“
+  und die H1 „Branding- & Designagentur in Hamburg“. Reale Arbeiten für
+  Conlivo, Little Big Pasta, medium Architekten, NOEY, Baked und Immofolia
+  stehen in einem verdichteten Masonry-Raster ohne künstliche Leerräume.
+- Der lokale Vertrauensaufbau umfasst Hamburger Kundenstimmen, den Standort im
+  Schrammsweg sowie zwei kompakte Ansprechpartner-Karten für Wolfram Stratmann
+  und Christian Rosenberger. Die Karten zeigen ausschließlich Porträt, Rolle,
+  direkte E-Mail und LinkedIn; ausführliche Persona-Texte werden bewusst nicht
+  wiederholt.
+- SEO-Gauntlet und technischer Preflight prüfen jetzt 130 Sitemap-Seiten und
+  laufen ohne Befund.
 
 - Auf der Leistungsübersicht ergänzen jetzt vier redaktionelle Mux-Videos die
   Phasen Verstehen, Definieren, Umsetzen und Begleiten. Die Teaser stehen im
