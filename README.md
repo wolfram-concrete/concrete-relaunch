@@ -420,7 +420,7 @@ aktuellen Stand von `origin/main` auschecken.
 
 ## Datenschutz und Consent
 
-`consent-v7.js` ist der eigene Consent-Manager der statischen Website. Er
+`consent-v8.js` ist der eigene Consent-Manager der statischen Website. Er
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
@@ -434,8 +434,8 @@ als Button links; „Ablehnen“ und „Einstellungen“ bleiben als direkt
 erreichbare Textaktionen in der rechten Hälfte sichtbar.
 
 - Statistik: Google Analytics 4 und Microsoft Clarity
-- Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising
-  und das dynamische Sortlist Trusted Partner Badge
+- Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising,
+  Sortlist Radar und das dynamische Sortlist Trusted Partner Badge
 - Bannerunabhängig: SalesViewer-Unternehmenstracking auf Grundlage des
   dokumentierten berechtigten Interesses; ohne Cookies, Local Storage oder
   Fingerprinting nach Anbieterangaben und mit verlinktem Opt-out
@@ -453,7 +453,14 @@ bannerunabhängig auf allen Sitemap-Seiten geladen, jedoch weiterhin ausschließ
 auf dem kanonischen Produktionshost `www.concrete-designs.de`. GTM bleibt an eine
 aktive Statistik- oder Marketingauswahl gebunden. Lokale Entwicklungsserver und
 Vercel-Previews erzeugen deshalb keine Clarity-, Analytics-, Ads- oder
-SalesViewer-Sitzungen. Das schützt die operative Auswertung vor Testtraffic.
+SalesViewer- oder Radar-Sitzungen. Das schützt die operative Auswertung vor Testtraffic.
+Sortlist Radar ist seit `consent-v8.js` mit dem Profil `roNBkiXpHEc` auf allen
+130 Sitemap-Seiten vorbereitet. Das Radar-Script startet ausschließlich auf dem
+kanonischen Produktionshost und erst nach Einwilligung in „Marketing & externe
+Inhalte“. Die vier vom bereitgestellten Snippet vorgesehenen Module für Sitzungen,
+Formulare, Klicks und Downloads sind aktiv. Sortlist-seitige Profilbesucher und
+Radar-Websitebesucher bleiben im Audit zwei getrennte Signale; beides sind
+Unternehmenssignale und nicht automatisch personenbezogene Leads.
 Die SalesViewer-API bleibt davon getrennt: Ihr geheimer Schlüssel liegt nicht
 im Repository und wird nur vom Audit-Workflow zum Abruf der Unternehmens-
 und Sitzungsdaten verwendet. Im Google-Ads-Konto sind die Conversion-Tags vorhanden, mehrere

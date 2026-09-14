@@ -27,7 +27,8 @@ genannten Konto- und Containerprüfungen bestätigt sind.
 | SalesViewer | Unternehmens- und Besuchserkennung | keine Bannerkategorie; Art. 6 Abs. 1 lit. f DSGVO laut Datenschutzerklärung | Trackingcode lädt auf dem kanonischen Produktionshost |
 | Search Console | aggregierte Suchdaten | keine Browser-Einbindung | kein Script und kein Cookie |
 | Calendly | externe Terminbuchung | erst auf externer Seite | nur Link, kein Embed |
-| Sortlist | Trusted Partner Badge und externer Lead-Herkunftskanal | Marketing & externe Inhalte | Badge-Script wird nicht geladen; Profil bleibt als normaler Link erreichbar |
+| Sortlist Radar | Unternehmens- und Besuchssignale aus Sortlist und von der eigenen Website | Marketing & externe Inhalte | Radar-Script wird nicht geladen; Sortlist-Profilbesucher entstehen unabhängig davon im Sortlist-Konto |
+| Sortlist Badge | Trusted Partner Badge und externer Lead-Herkunftskanal | Marketing & externe Inhalte | Badge-Script wird nicht geladen; Profil bleibt als normaler Link erreichbar |
 | YouTube | nicht verwendet | keine | keine Einbettung |
 
 ## Implementiert
@@ -47,6 +48,10 @@ genannten Konto- und Containerprüfungen bestätigt sind.
   Audit-Workflows bleiben technisch getrennt.
 - Das dynamische Sortlist Trusted Partner Badge lädt weiterhin erst nach einer
   aktiven Einwilligung in „Marketing & externe Inhalte“.
+- Sortlist Radar lädt mit Profil `roNBkiXpHEc` nur auf dem kanonischen
+  Produktionshost und nach Marketing-Einwilligung. Sitzungs-, Formular-, Klick-
+  und Downloadtracking sind aktiviert. Sortlist-Profilbesucher und
+  Radar-Websitebesucher werden in der Auswertung getrennt geführt.
 - Bedienung per Tastatur, Escape, Fokusfalle im Einstellungsdialog,
   sichtbare Fokuszustände und reduzierte Animation bei
   `prefers-reduced-motion`.
@@ -80,10 +85,10 @@ dass sich dabei kein anderer Tagstatus verändert hat.
 
 | Auswahl | Beobachtete externe Tags |
 |---|---|
-| keine Entscheidung / alle abgelehnt | SalesViewer; der GTM-Container wird nicht geladen |
+| keine Entscheidung / alle abgelehnt | SalesViewer; GTM und Sortlist Radar werden nicht geladen |
 | nur Statistik | SalesViewer, GA4 und Clarity; kein LinkedIn oder Microsoft Ads |
-| nur Marketing | SalesViewer, LinkedIn, Microsoft Ads und Sortlist-Badge; kein GA4 oder Clarity |
-| alle akzeptiert | SalesViewer, GA4, Clarity, LinkedIn, Microsoft Ads und Sortlist-Badge |
+| nur Marketing | SalesViewer, LinkedIn, Microsoft Ads, Sortlist Radar und Sortlist-Badge; kein GA4 oder Clarity |
+| alle akzeptiert | SalesViewer, GA4, Clarity, LinkedIn, Microsoft Ads, Sortlist Radar und Sortlist-Badge |
 
 Google-Ads-Conversion-Tags sind ereignisgebunden und erscheinen erst bei den
 dafür vorgesehenen Kontaktklicks. Die Browser-Abnahme der vier Zustände lief
@@ -102,14 +107,17 @@ Livegang-Abnahme.
    nur Statistik, nur Marketing sowie alle akzeptiert.
 4. Im Browser-Netzwerk prüfen, dass SalesViewer auf dem Produktionshost bereits
    vor einer Bannerentscheidung lädt, während keine Requests an Google,
-   Microsoft, LinkedIn oder das Sortlist-Badge stattfinden.
+   Microsoft, LinkedIn, Sortlist Radar oder das Sortlist-Badge stattfinden.
+   Nach Marketing-Einwilligung müssen Requests an `collector.sortlist.com` und
+   `radar.sortlist.com` sichtbar sein.
 5. In Clarity kontrollieren, dass Maskierung und Consent API V2 im Projekt
    wirksam sind.
 6. Aufbewahrungsfristen in GA4, Google Ads, Clarity, LinkedIn und Microsoft
    Ads festlegen und mit der Datenschutzerklärung abstimmen.
 7. Auftragsverarbeitungsverträge, Verantwortlichkeiten und internationale
    Übermittlungsmechanismen für Vercel, Google und Microsoft dokumentieren;
-   bei Nutzung zusätzlich LinkedIn, Microsoft Advertising und SalesViewer.
+   bei Nutzung zusätzlich LinkedIn, Microsoft Advertising, SalesViewer und
+   Sortlist Radar.
 8. Datenschutzerklärung juristisch final prüfen lassen, insbesondere
    Dienstumfang, Speicherdauern und Drittlandübermittlungen.
 
@@ -120,5 +128,5 @@ python3 tools/seo-gauntlet.py
 python3 tools/technical-preflight.py
 ```
 
-Der technische Preflight prüft alle 129 Sitemap-Seiten. Die Konto- und
+Der technische Preflight prüft alle 130 Sitemap-Seiten. Die Konto- und
 Vertragsprüfungen sind dagegen nicht aus dem Repository automatisierbar.

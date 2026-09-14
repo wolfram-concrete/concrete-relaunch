@@ -230,12 +230,14 @@ def scan() -> list[str]:
         )
         if "Fabian Lampert" in attribution_text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
-        if text.count('<script src="consent-v7.js"></script>') != 1:
+        if text.count('<script src="consent-v8.js"></script>') != 1:
             findings.append(f"{page.name}: consent manager missing or duplicated")
-        elif text.index('<script src="consent-v7.js"></script>') > text.index(
-            f'<script src="site.js?v={EXPECTED_CACHE_VERSION}"></script>'
-        ):
-            findings.append(f"{page.name}: consent manager must load before site.js")
+        else:
+            consent_position = text.index('<script src="consent-v8.js"></script>')
+            if consent_position > text.index(f'<script src="site.js?v={EXPECTED_CACHE_VERSION}"></script>'):
+                findings.append(f"{page.name}: consent manager must load before site.js")
+            if consent_position > text.index("</head>"):
+                findings.append(f"{page.name}: consent manager must load in document head")
         if any(domain in text for domain in (
             "googletagmanager.com", "google-analytics.com", "clarity.ms",
             "connect.facebook.net", "youtube.com/embed", "fonts.googleapis.com",
@@ -328,25 +330,33 @@ def scan() -> list[str]:
             if source.startswith(("http://", "https://", "//")):
                 findings.append(f"{css_path.name}: external CSS resource bypasses consent: {source}")
 
-    consent = (ROOT / "consent-v7.js").read_text(encoding="utf-8")
+    consent = (ROOT / "consent-v8.js").read_text(encoding="utf-8")
     for required in (
+        'var STORAGE_KEY = "concrete-consent-v4"',
+        "var CONSENT_VERSION = 4",
         'var GTM_ID = "GTM-N8223FX"',
         'analytics_storage: "denied"',
         'ad_storage: "denied"',
         '"google-analytics", "microsoft-clarity"',
-        '"google-ads", "linkedininsighttag", "microsoft-advertising", "sortlist-badge"',
+        '"google-ads", "linkedininsighttag", "microsoft-advertising", "sortlist-radar", "sortlist-badge"',
         'var SALESVIEWER_ACCOUNT_ID = "o9H9o8a1U5l3"',
+        'profileId: "roNBkiXpHEc"',
+        'cdn: "collector.sortlist.com"',
+        'apiEndpoint: "radar.sortlist.com"',
         'var PRODUCTION_TRACKING_HOST = "www.concrete-designs.de"',
         "if (!isProductionTrackingHost() || gtmLoaded",
         "if (!isProductionTrackingHost() || salesViewerLoaded",
         "function loadSalesViewer()",
+        "function loadSortlistRadar(consent)",
+        "if (!isProductionTrackingHost() || sortlistRadarLoaded || !consent.marketing) return;",
+        "loadSortlistRadar(consent)",
         "loadSalesViewer();\n  var storedConsent = readConsent();",
         "loadConsentEmbeds(consent)",
         "window.BorlabsCookie.checkCookieConsent = hasConsent",
         "window.BorlabsCookie.Consents.hasConsent = hasConsent",
     ):
         if required not in consent:
-            findings.append(f"consent-v7.js: missing consent safeguard: {required}")
+            findings.append(f"consent-v8.js: missing consent safeguard: {required}")
     for forbidden in (
         '"facebook-pixel"',
         '"hubspot-pixel"',
@@ -354,10 +364,10 @@ def scan() -> list[str]:
         "loadSalesViewer(consent)",
     ):
         if forbidden in consent:
-            findings.append(f"consent-v7.js: obsolete or consent-gated service found: {forbidden}")
+            findings.append(f"consent-v8.js: obsolete or consent-gated service found: {forbidden}")
 
     privacy = (ROOT / "datenschutz.html").read_text(encoding="utf-8")
-    for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "SalesViewer", "Sortlist Trusted Partner Badge"):
+    for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "SalesViewer", "Sortlist Radar", "Sortlist Trusted Partner Badge"):
         if required not in privacy:
             findings.append(f"datenschutz.html: current implementation missing: {required}")
     for required in ("unabhängig von der Auswahl im Consent-Banner", "SalesViewer Opt-out"):

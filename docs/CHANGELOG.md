@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 14.09.2026 – Sortlist Radar integriert
+
+- Das bereitgestellte Sortlist-Radar-Profil `roNBkiXpHEc` auf allen 130
+  Sitemap-Seiten eingebunden; Sitzungs-, Formular-, Klick- und Downloadtracking
+  sind entsprechend der Radar-Konfiguration aktiviert.
+- Radar nur auf dem kanonischen Produktionshost und nach Einwilligung in
+  „Marketing & externe Inhalte“ laden lassen. SalesViewer bleibt bis zum
+  geplanten Wechsel parallel und weiterhin bannerunabhängig aktiv.
+- Consent-Version auf 4 und die cache-sichere Datei auf `consent-v8.js`
+  angehoben. Der Loader liegt im Dokument-Head; UI-Bindung erfolgt weiterhin
+  erst nach aufgebautem DOM.
+- Consent-Text, Datenschutzerklärung, README, technische Dokumentation und
+  Preflight-Regeln um Sortlist Radar erweitert.
+
 ## 14.09.2026 – SalesViewer bannerunabhängig aktiviert
 
 - SalesViewer auf dem kanonischen Produktionshost `www.concrete-designs.de`
