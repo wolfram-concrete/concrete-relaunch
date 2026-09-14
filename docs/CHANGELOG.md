@@ -22,6 +22,13 @@
   unter dem Hausfoto und nehmen gemeinsam exakt dessen Breite ein. Sie enthalten
   Porträt, Funktion, direkte E-Mail und LinkedIn mit funktionierendem Hover;
   ausführliche Biografietexte wurden auf dieser Seite bewusst entfernt.
+- Die rechte Standort-Copy folgt auf Desktop per Sticky-Verhalten den links
+  angeordneten Bild- und Ansprechpartner-Modulen innerhalb der Sektion. Bei
+  reduzierter Bewegung sowie auf Tablet und Mobile bleibt das Layout statisch.
+- Das Porträt von Alexander Stade durch das aktuelle Querformat am Telefon
+  ersetzt – sowohl in der Immofolia-Rezension der Hamburg-Seite als auch im
+  Zitatmodul des Immofolia-Cases. Ein neuer Dateiname verhindert, dass Browser
+  an dieser Stelle noch die alte Bildfassung aus dem Cache anzeigen.
 - Hero-Aufbau an die bestehende Leistungsseite angeglichen, Hauptheadline auf
   maximal zwei Zeilen begrenzt und die Inhaltsüberschriften sowie Ziffern an die
   vorhandenen Typografiestufen angepasst. Projekt-Oberzeile auf „Ausgewählte

@@ -18,7 +18,12 @@
   und Christian Rosenberger. Beide Karten stehen bündig nebeneinander unter dem
   Hausfoto und nehmen gemeinsam exakt dessen Breite ein. Sie zeigen ausschließlich
   Porträt, Rolle, direkte E-Mail und LinkedIn; ausführliche Persona-Texte werden
-  bewusst nicht wiederholt.
+  bewusst nicht wiederholt. Auf Desktop begleitet die rechte Standort-Copy die
+  linke Bildspalte sticky innerhalb der Sektion; bei Reduced Motion und auf
+  kleineren Viewports bleibt sie statisch.
+- Das aktuelle Querformat von Alexander Stade am Telefon wird cache-sicher in
+  der Immofolia-Kundenstimme dieser Seite und im Zitatmodul des Immofolia-Cases
+  verwendet.
 - SEO-Gauntlet und technischer Preflight prüfen jetzt 130 Sitemap-Seiten und
   laufen ohne Befund.
 
