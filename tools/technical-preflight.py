@@ -230,9 +230,9 @@ def scan() -> list[str]:
         )
         if "Fabian Lampert" in attribution_text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
-        if text.count('<script src="consent-v6.js"></script>') != 1:
+        if text.count('<script src="consent-v7.js"></script>') != 1:
             findings.append(f"{page.name}: consent manager missing or duplicated")
-        elif text.index('<script src="consent-v6.js"></script>') > text.index(
+        elif text.index('<script src="consent-v7.js"></script>') > text.index(
             f'<script src="site.js?v={EXPECTED_CACHE_VERSION}"></script>'
         ):
             findings.append(f"{page.name}: consent manager must load before site.js")
@@ -328,32 +328,41 @@ def scan() -> list[str]:
             if source.startswith(("http://", "https://", "//")):
                 findings.append(f"{css_path.name}: external CSS resource bypasses consent: {source}")
 
-    consent = (ROOT / "consent-v6.js").read_text(encoding="utf-8")
+    consent = (ROOT / "consent-v7.js").read_text(encoding="utf-8")
     for required in (
         'var GTM_ID = "GTM-N8223FX"',
         'analytics_storage: "denied"',
         'ad_storage: "denied"',
         '"google-analytics", "microsoft-clarity"',
-        '"google-ads", "linkedininsighttag", "microsoft-advertising", "salesviewer", "sortlist-badge"',
+        '"google-ads", "linkedininsighttag", "microsoft-advertising", "sortlist-badge"',
         'var SALESVIEWER_ACCOUNT_ID = "o9H9o8a1U5l3"',
         'var PRODUCTION_TRACKING_HOST = "www.concrete-designs.de"',
         "if (!isProductionTrackingHost() || gtmLoaded",
         "if (!isProductionTrackingHost() || salesViewerLoaded",
-        "loadSalesViewer(consent)",
+        "function loadSalesViewer()",
+        "loadSalesViewer();\n  var storedConsent = readConsent();",
         "loadConsentEmbeds(consent)",
         "window.BorlabsCookie.checkCookieConsent = hasConsent",
         "window.BorlabsCookie.Consents.hasConsent = hasConsent",
     ):
         if required not in consent:
-            findings.append(f"consent-v6.js: missing consent safeguard: {required}")
-    for forbidden in ('"facebook-pixel"', '"hubspot-pixel"'):
+            findings.append(f"consent-v7.js: missing consent safeguard: {required}")
+    for forbidden in (
+        '"facebook-pixel"',
+        '"hubspot-pixel"',
+        '"microsoft-advertising", "salesviewer", "sortlist-badge"',
+        "loadSalesViewer(consent)",
+    ):
         if forbidden in consent:
-            findings.append(f"consent-v6.js: obsolete service is consent-enabled: {forbidden}")
+            findings.append(f"consent-v7.js: obsolete or consent-gated service found: {forbidden}")
 
     privacy = (ROOT / "datenschutz.html").read_text(encoding="utf-8")
     for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "SalesViewer", "Sortlist Trusted Partner Badge"):
         if required not in privacy:
             findings.append(f"datenschutz.html: current implementation missing: {required}")
+    for required in ("unabhängig von der Auswahl im Consent-Banner", "SalesViewer Opt-out"):
+        if required not in privacy:
+            findings.append(f"datenschutz.html: SalesViewer disclosure missing: {required}")
     for obsolete in (
         "1&1 Internet",
         "concreten-designs.de",

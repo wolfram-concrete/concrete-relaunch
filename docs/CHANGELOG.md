@@ -1,5 +1,24 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 14.09.2026 – SalesViewer bannerunabhängig aktiviert
+
+- SalesViewer auf dem kanonischen Produktionshost `www.concrete-designs.de`
+  aus der Marketing-Einwilligungsschranke gelöst; der Tracker startet nun bei
+  jedem Seitenaufruf unabhängig von einer Cookie-Banner-Entscheidung.
+- Google Analytics, Clarity, Google Ads, LinkedIn, Microsoft Advertising und
+  das dynamische Sortlist-Badge bleiben unverändert consent-gesteuert.
+- SalesViewer aus der Borlabs-Kompatibilitätsgruppe und der sichtbaren
+  Marketing-Auswahl entfernt, damit der Banner keine irreführende Sperrwirkung
+  mehr behauptet.
+- Datenschutzerklärung um einen eigenen SalesViewer-Abschnitt mit der
+  dokumentierten Rechtsgrundlage, den cookiefreien Anbieterangaben und dem
+  Opt-out ergänzt. Eine juristische Einzelfallprüfung wird dadurch nicht
+  ersetzt.
+- Consent-Skript cache-sicher von `consent-v6.js` auf `consent-v7.js`
+  versioniert und auf allen 130 Sitemap-Seiten aktualisiert.
+- README, Consent-Dokumentation und technischer Preflight an die neue
+  Integrationslogik angepasst.
+
 ## 14.09.2026 – Lokale Entscheidungsseite für Hamburg ergänzt
 
 - Neue Unterseite `/branding-designagentur-hamburg/` als hochwertige lokale

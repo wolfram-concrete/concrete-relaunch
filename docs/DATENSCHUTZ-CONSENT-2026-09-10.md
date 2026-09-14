@@ -1,10 +1,11 @@
-# Datenschutz- und Consent-Abgleich · 10.09.2026, aktualisiert 13.09.2026
+# Datenschutz- und Consent-Abgleich · 10.09.2026, aktualisiert 14.09.2026
 
 ## Ergebnis
 
-Die Relaunch-Website besitzt jetzt eine technische Einwilligungsschranke im
-Basic Consent Mode. Ohne Zustimmung wird kein externer Analyse- oder
-Marketingdienst aus dem Browser geladen. Die Datenschutzerklärung wurde gegen
+Die Relaunch-Website besitzt eine technische Einwilligungsschranke im Basic
+Consent Mode. Ohne Zustimmung wird kein einwilligungspflichtiger Analyse- oder
+Marketingdienst aus dem Browser geladen. SalesViewer ist als dokumentierte
+Ausnahme bannerunabhängig eingebunden. Die Datenschutzerklärung wurde gegen
 den tatsächlichen Code, das Vercel-Deployment und den bestehenden
 GTM-Container abgeglichen.
 
@@ -23,7 +24,7 @@ genannten Konto- und Containerprüfungen bestätigt sind.
 | Google Ads | Anzeigenattribution und Kontaktklicks | Marketing | wird nicht geladen |
 | LinkedIn Insight | Kampagnenattribution | Marketing | wird nicht geladen |
 | Microsoft Advertising | Anzeigenattribution | Marketing | wird nicht geladen |
-| SalesViewer | Unternehmens- und Besuchserkennung | Marketing & externe Inhalte | Trackingcode wird nicht geladen |
+| SalesViewer | Unternehmens- und Besuchserkennung | keine Bannerkategorie; Art. 6 Abs. 1 lit. f DSGVO laut Datenschutzerklärung | Trackingcode lädt auf dem kanonischen Produktionshost |
 | Search Console | aggregierte Suchdaten | keine Browser-Einbindung | kein Script und kein Cookie |
 | Calendly | externe Terminbuchung | erst auf externer Seite | nur Link, kein Embed |
 | Sortlist | Trusted Partner Badge und externer Lead-Herkunftskanal | Marketing & externe Inhalte | Badge-Script wird nicht geladen; Profil bleibt als normaler Link erreichbar |
@@ -39,12 +40,13 @@ genannten Konto- und Containerprüfungen bestätigt sind.
 - Gleichwertige Erstebenen-Aktionen „Nur notwendige“ und „Alle akzeptieren“.
 - Detailauswahl für Statistik und Marketing; Notwendig ist transparent als
   immer aktiv gekennzeichnet.
-- SalesViewer und das dynamische Sortlist Trusted Partner Badge laden erst nach
-  einer aktiven Einwilligung in „Marketing & externe Inhalte“. Die Consent-
-  Version wurde deshalb auf 3 erhöht; frühere Auswahlstände werden nicht
-  stillschweigend auf den neu hinzugekommenen Dienst erweitert. Der öffentliche
-  SalesViewer-Tracker und der private API-Schlüssel des Audit-Workflows bleiben
-  technisch getrennt.
+- SalesViewer lädt auf dem kanonischen Produktionshost unabhängig von der
+  Bannerauswahl. Der Anbieter beschreibt die Technologie als cookiefrei, ohne
+  Local Storage und ohne Fingerprinting. Datenschutzerklärung und Opt-out sind
+  verlinkt. Der öffentliche Tracker und der private API-Schlüssel des
+  Audit-Workflows bleiben technisch getrennt.
+- Das dynamische Sortlist Trusted Partner Badge lädt weiterhin erst nach einer
+  aktiven Einwilligung in „Marketing & externe Inhalte“.
 - Bedienung per Tastatur, Escape, Fokusfalle im Einstellungsdialog,
   sichtbare Fokuszustände und reduzierte Animation bei
   `prefers-reduced-motion`.
@@ -78,10 +80,10 @@ dass sich dabei kein anderer Tagstatus verändert hat.
 
 | Auswahl | Beobachtete externe Tags |
 |---|---|
-| keine Entscheidung / alle abgelehnt | keine; selbst der GTM-Container wird nicht geladen |
-| nur Statistik | GA4 und Clarity; kein LinkedIn oder Microsoft Ads |
-| nur Marketing | LinkedIn, Microsoft Ads, SalesViewer und Sortlist-Badge; kein GA4 oder Clarity |
-| alle akzeptiert | GA4, Clarity, LinkedIn, Microsoft Ads, SalesViewer und Sortlist-Badge |
+| keine Entscheidung / alle abgelehnt | SalesViewer; der GTM-Container wird nicht geladen |
+| nur Statistik | SalesViewer, GA4 und Clarity; kein LinkedIn oder Microsoft Ads |
+| nur Marketing | SalesViewer, LinkedIn, Microsoft Ads und Sortlist-Badge; kein GA4 oder Clarity |
+| alle akzeptiert | SalesViewer, GA4, Clarity, LinkedIn, Microsoft Ads und Sortlist-Badge |
 
 Google-Ads-Conversion-Tags sind ereignisgebunden und erscheinen erst bei den
 dafür vorgesehenen Kontaktklicks. Die Browser-Abnahme der vier Zustände lief
@@ -98,8 +100,9 @@ Livegang-Abnahme.
    Sperrlogik bewusst dokumentiert beibehalten.
 3. Mit Google Tag Assistant vier Zustände prüfen: keine Auswahl, Ablehnung,
    nur Statistik, nur Marketing sowie alle akzeptiert.
-4. Im Browser-Netzwerk prüfen, dass vor Zustimmung keine Requests an Google,
-   Microsoft, LinkedIn, SalesViewer oder Sortlist stattfinden.
+4. Im Browser-Netzwerk prüfen, dass SalesViewer auf dem Produktionshost bereits
+   vor einer Bannerentscheidung lädt, während keine Requests an Google,
+   Microsoft, LinkedIn oder das Sortlist-Badge stattfinden.
 5. In Clarity kontrollieren, dass Maskierung und Consent API V2 im Projekt
    wirksam sind.
 6. Aufbewahrungsfristen in GA4, Google Ads, Clarity, LinkedIn und Microsoft
