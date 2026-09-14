@@ -33,6 +33,27 @@
 - README, Consent-Dokumentation und technischer Preflight an die neue
   Integrationslogik angepasst.
 
+## 14.09.2026 – Lokale Entscheidungsseite für Frankfurt ergänzt
+
+- Neue Unterseite `/branding-designagentur-frankfurt/` als gestalterische und
+  funktionale Dublette der Hamburger Standortseite angelegt. SEO-Titel, H1,
+  Meta-Daten, strukturierte Service-Daten, FAQ und lokale Copy beziehen sich
+  auf Frankfurt am Main und die Rhein-Main-Region.
+- Eigenes dokumentarisches Team-Hero aus dem CONCRETE-Shooting eingesetzt, als
+  performantes WebP aufbereitet und den Bildfokus auf die Köpfe gelegt;
+  Standortfoto und Anschrift auf Westerbachstraße 47, 60489 Frankfurt a. M.
+  umgestellt.
+- Das Masonry-Raster zeigt BGF+, FinaPlus, be.care, Boneß & Euteneuer,
+  we:celebrate Streetfood, MDB Finance und CA'N SORT mit ihren realen Case-
+  Bildern und Detailseiten.
+- Kundenstimmen-Karussell der Frankfurt-Seite auf die realen Statements von
+  Boneß & Euteneuer, BGF+, be.care, CA'N SORT und MDB Finance umgestellt.
+- Frankfurt direkt nach Hamburg ausschließlich in der Footer-Navigation unter
+  „Agentur“ ergänzt und den zentralen Footer auf alle 131 produktiven Seiten
+  synchronisiert; die Hauptnavigation bleibt unverändert.
+- Frankfurt-Seite als 131. URL in die Sitemap aufgenommen und den technischen
+  Preflight auf 131 erwartete Seiten aktualisiert.
+
 ## 14.09.2026 – Lokale Entscheidungsseite für Hamburg ergänzt
 
 - Neue Unterseite `/branding-designagentur-hamburg/` als hochwertige lokale

@@ -2,6 +2,19 @@
 
 ## Aktueller Produktionsstand · 14.09.2026
 
+- Die zweite lokale Entscheidungsseite
+  `/branding-designagentur-frankfurt/` übernimmt Dramaturgie, Komponenten und
+  Motion-Konzept der Hamburger Vorlage. Frankfurt-spezifische Meta-Daten,
+  Headline, FAQ und Standort-Copy, ein eigenes dokumentarisches Team-Herobild mit
+  Fokus auf die Gesprächspartner sowie das
+  Standortfoto und die Adresse Westerbachstraße 47 verankern die Seite in der
+  Rhein-Main-Region. BGF+, FinaPlus, be.care, Boneß & Euteneuer, we:celebrate
+  Streetfood, MDB Finance und CA'N SORT bilden das lokale Case-Raster. Das
+  Kundenstimmen-Karussell ist auf Boneß & Euteneuer, BGF+, be.care, CA'N SORT
+  und MDB Finance zugeschnitten.
+- Beide Standortseiten sind ausschließlich im Footer unter „Agentur“ verlinkt.
+  Die Frankfurter Seite ist als 131. URL in der Sitemap enthalten; die
+  Hauptnavigation bleibt unverändert.
 - Die neue lokale Entscheidungsseite
   `/branding-designagentur-hamburg/` verbindet Markenstrategie, Corporate
   Design und digitale Anwendungen im bestehenden CONCRETE-Look. Sie ist nur
@@ -24,7 +37,7 @@
 - Das aktuelle Querformat von Alexander Stade am Telefon wird cache-sicher in
   der Immofolia-Kundenstimme dieser Seite und im Zitatmodul des Immofolia-Cases
   verwendet.
-- SEO-Gauntlet und technischer Preflight prüfen jetzt 130 Sitemap-Seiten und
+- SEO-Gauntlet und technischer Preflight prüfen jetzt 131 Sitemap-Seiten und
   laufen ohne Befund.
 
 - Auf der Leistungsübersicht ergänzen jetzt vier redaktionelle Mux-Videos die
