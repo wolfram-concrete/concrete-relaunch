@@ -1,5 +1,21 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 15.09.2026 – Headline-Spalten auf allen Projektseiten verbreitert
+
+- Gemeinsame Headline-Spalte aller 40 Case-Seiten auf mindestens 300 px bzw.
+  25 % des Desktop-Rasters verbreitert und den Spaltenabstand reduziert.
+- Abschnittsüberschriften umbrechen nur noch an Wortgrenzen; insbesondere
+  „Ausgangslage“ und „Markenführung“ verlieren keine einzelnen Endbuchstaben
+  mehr an eine zusätzliche Zeile. Das einspaltige Layout bis 820 px bleibt.
+- Die Layout-Regel zentral in `site.css` verankert und deren Cache-Version auf
+  allen Case-Seiten auf `v=172` erhöht.
+- Technische Versionsprüfung für Cases gezielt auf `v=172` angepasst; alle
+  übrigen Seiten bleiben bei `v=171`. CSS und JS müssen weiterhin dieselbe
+  erwartete Version verwenden, der Consent-Loader bleibt im Dokument-Head.
+- Browserprüfung: alle 40 Cases mit 89 Abschnittsüberschriften bei 1440, 1024,
+  821, 820, 390 und 320 px ohne Überlauf oder Wortzerlegung. Technischer
+  Preflight und SEO-Gauntlet: 131 Seiten, jeweils 0 Befunde.
+
 ## 14.09.2026 – Sortlist Radar integriert
 
 - Das bereitgestellte Sortlist-Radar-Profil `roNBkiXpHEc` auf allen 130

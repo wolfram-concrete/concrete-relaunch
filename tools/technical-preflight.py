@@ -22,6 +22,7 @@ from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_CACHE_VERSION = "171"
+EXPECTED_CASE_CACHE_VERSION = "172"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
 JSON_LD_RE = re.compile(
@@ -212,7 +213,10 @@ def scan() -> list[str]:
 
         css_versions = set(re.findall(r"site\.css\?v=(\d+)", text))
         js_versions = set(re.findall(r"site\.js\?v=(\d+)", text))
-        if css_versions != {EXPECTED_CACHE_VERSION} or js_versions != {EXPECTED_CACHE_VERSION}:
+        expected_cache_version = (
+            EXPECTED_CASE_CACHE_VERSION if page.name.startswith("case-") else EXPECTED_CACHE_VERSION
+        )
+        if css_versions != {expected_cache_version} or js_versions != {expected_cache_version}:
             findings.append(
                 f"{page.name}: cache version mismatch css={sorted(css_versions)} js={sorted(js_versions)}"
             )
@@ -234,7 +238,8 @@ def scan() -> list[str]:
             findings.append(f"{page.name}: consent manager missing or duplicated")
         else:
             consent_position = text.index('<script src="consent-v8.js"></script>')
-            if consent_position > text.index(f'<script src="site.js?v={EXPECTED_CACHE_VERSION}"></script>'):
+            site_script_position = text.find(f'<script src="site.js?v={expected_cache_version}"></script>')
+            if site_script_position >= 0 and consent_position > site_script_position:
                 findings.append(f"{page.name}: consent manager must load before site.js")
             if consent_position > text.index("</head>"):
                 findings.append(f"{page.name}: consent manager must load in document head")

@@ -1,6 +1,13 @@
 # CONCRETE Relaunch
 
-## Aktueller Produktionsstand · 14.09.2026
+## Aktueller Produktionsstand · 15.09.2026
+
+- Alle 40 Projektseiten nutzen eine gemeinsame, breitere Headline-Spalte:
+  mindestens 300 px bzw. 25 % des Desktop-Rasters mit kompakterem Spaltenabstand.
+  Abschnittsüberschriften brechen nur zwischen ganzen Wörtern um; einzelne
+  abgetrennte Endbuchstaben entfallen. Bis 820 px bleibt das Layout einspaltig.
+  Die gemeinsame Regel liegt in `site.css`; die Case-Seiten laden sie mit der
+  cache-sicheren Version `v=172`.
 
 - Die zweite lokale Entscheidungsseite
   `/branding-designagentur-frankfurt/` übernimmt Dramaturgie, Komponenten und
