@@ -624,16 +624,15 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .case-challenge{padding-block:clamp(56px,8vw,128px)}
 .case-challenge .eyebrow{display:block;margin-bottom:var(--s4)}
 .case-challenge .case-challenge__claim{font-family:"Arame";font-weight:700;font-size:clamp(34px,5.4vw,84px);line-height:.96;letter-spacing:-.01em;max-width:18ch;margin:0}
-.case-challenge__row{display:grid;grid-template-columns:minmax(160px,var(--indent)) minmax(0,1fr);gap:var(--s3) clamp(40px,7vw,120px);align-items:start;margin-top:var(--s5)}
+.case-challenge__row{display:grid;align-items:start;margin-top:var(--s5)}
 .case-challenge__logo img{width:100%;max-width:none;height:auto;display:block}
-@media(max-width:900px){.case-challenge__logo img{width:min(100%,260px)}}
+@media(max-width:820px){.case-challenge__logo img{width:min(100%,260px)}}
 .case-challenge__copy{margin:0;max-width:62ch;font-size:var(--fs-body);line-height:1.6;color:var(--ink)}
 .case-sec .body .big-copy{font-size:var(--fs-body);line-height:1.6;max-width:62ch}
-/* Shared case heading rail: preserve whole words instead of orphaned letters. */
-.case-sec .container.grid{grid-template-columns:minmax(300px,25%) minmax(0,1fr);column-gap:clamp(32px,4vw,64px)}
+/* Shared case rail: align intro copy and section copy; give logos room to grow. */
+.case-challenge__row,.case-sec .container.grid{grid-template-columns:minmax(300px,25%) minmax(0,1fr);gap:var(--s3) clamp(32px,4vw,64px)}
 .case-sec .container.grid>h2{min-width:0;overflow-wrap:normal;word-break:normal;hyphens:none}
-@media(max-width:820px){.case-sec .container.grid{grid-template-columns:1fr}}
-@media(max-width:900px){.case-challenge__row{grid-template-columns:1fr}}
+@media(max-width:820px){.case-challenge__row,.case-sec .container.grid{grid-template-columns:1fr}}
 .case-shift{position:relative;z-index:2;padding-block:clamp(56px,8vw,128px)}
 .case-shift .eyebrow{display:block;margin-bottom:var(--s3)}
 .case-shift .case-shift__title{font-family:"Arame";font-weight:700;font-size:clamp(22px,2.3vw,32px);line-height:1;margin:0}

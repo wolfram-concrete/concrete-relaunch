@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 15.09.2026 – Case-Intro am gemeinsamen Textraster ausgerichtet
+
+- Intro-Copy aller 40 Projektseiten bündig an der rechten Abschnitts-Copy
+  ausgerichtet: beide Module nutzen dieselbe Spaltenbreite und denselben Gap.
+- Logos füllen auf Desktop die breitere linke Spalte und erscheinen dadurch
+  größer. Bis 820 px werden beide Module einspaltig; Logos bleiben kompakt.
+- Gemeinsame CSS-Regel und erwartete Case-Asset-Version auf `v=173` gebracht.
+- Alle 40 Cases bei 1440, 1024, 821, 820, 390 und 320 px geprüft: Intro und
+  Abschnittstexte bündig, Logos innerhalb ihrer Spalte und keine Überläufe.
+  Technischer Preflight und SEO-Gauntlet: 131 Seiten, jeweils 0 Befunde.
+
 ## 15.09.2026 – Nextbed und NOEY in der Projektübersicht getauscht
 
 - Die vollständigen Projektkacheln für Nextbed und NOEY in `projekte.html`

@@ -2,6 +2,11 @@
 
 ## Aktueller Produktionsstand · 15.09.2026
 
+- Intro-Copy und Abschnitts-Copy aller 40 Cases teilen dieselbe rechte
+  Rasterkante. Die Logos nutzen links die breitere Spalte vollständig;
+  Intro und Abschnittsraster wechseln gemeinsam bis 820 px auf eine Spalte.
+  Aktuelle Asset-Version der Case-Seiten: `v=173`.
+
 - In der Projektübersicht steht Nextbed jetzt auf Position 1 und NOEY auf
   Position 3. Wackelzahn bleibt auf Position 2; Bilder, Videos, Case-Links und
   Branchenfilter bleiben jeweils dem richtigen Projekt zugeordnet.
@@ -11,7 +16,7 @@
   Abschnittsüberschriften brechen nur zwischen ganzen Wörtern um; einzelne
   abgetrennte Endbuchstaben entfallen. Bis 820 px bleibt das Layout einspaltig.
   Die gemeinsame Regel liegt in `site.css`; die Case-Seiten laden sie mit der
-  cache-sicheren Version `v=172`.
+  cache-sicheren Version `v=173`.
 
 - Die zweite lokale Entscheidungsseite
   `/branding-designagentur-frankfurt/` übernimmt Dramaturgie, Komponenten und
