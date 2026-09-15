@@ -2,6 +2,10 @@
 
 ## Aktueller Produktionsstand · 15.09.2026
 
+- In der Projektübersicht steht Nextbed jetzt auf Position 1 und NOEY auf
+  Position 3. Wackelzahn bleibt auf Position 2; Bilder, Videos, Case-Links und
+  Branchenfilter bleiben jeweils dem richtigen Projekt zugeordnet.
+
 - Alle 40 Projektseiten nutzen eine gemeinsame, breitere Headline-Spalte:
   mindestens 300 px bzw. 25 % des Desktop-Rasters mit kompakterem Spaltenabstand.
   Abschnittsüberschriften brechen nur zwischen ganzen Wörtern um; einzelne

@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 15.09.2026 – Nextbed und NOEY in der Projektübersicht getauscht
+
+- Die vollständigen Projektkacheln für Nextbed und NOEY in `projekte.html`
+  miteinander getauscht: Nextbed auf Position 1, NOEY auf Position 3.
+- Wackelzahn bleibt auf Position 2. Medien, Beschriftungen, Case-Links und
+  Branchenfilter wurden unverändert mit den jeweiligen Kacheln verschoben.
+- Technischer Preflight und SEO-Gauntlet: 131 Seiten, jeweils 0 Befunde.
+
 ## 15.09.2026 – Headline-Spalten auf allen Projektseiten verbreitert
 
 - Gemeinsame Headline-Spalte aller 40 Case-Seiten auf mindestens 300 px bzw.
