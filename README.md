@@ -2,6 +2,10 @@
 
 ## Aktueller Produktionsstand · 15.09.2026
 
+- Das Netzwerk auf der Über-uns-Seite umfasst jetzt auch Eugen Regehr als
+  Full-Stack Developer, mit Porträt und direktem Kontakt `mail@eugen.work`.
+  Seine Karte steht unterhalb der ersten Reihe im bestehenden Masonry-Raster.
+
 - Intro-Copy und Abschnitts-Copy aller 40 Cases teilen dieselbe rechte
   Rasterkante. Die Logos nutzen links die breitere Spalte vollständig;
   Intro und Abschnittsraster wechseln gemeinsam bis 820 px auf eine Spalte.

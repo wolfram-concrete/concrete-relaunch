@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 15.09.2026 – Eugen Regehr im Über-uns-Netzwerk ergänzt
+
+- Eugen Regehr mit eigenem Porträt, Rolle „Full-Stack Developer“ und direktem
+  E-Mail-Link `mail@eugen.work` in der vorhandenen Netzwerkkartengestaltung ergänzt.
+- Platzierung unterhalb der ersten Reihe im bestehenden Masonry-Raster;
+  keine Änderungen an den beiden Inhaberprofilen.
+- Browserprüfung der Platzierung und technischer Preflight: 131 Seiten, 0 Befunde.
+
 ## 15.09.2026 – Case-Intro am gemeinsamen Textraster ausgerichtet
 
 - Intro-Copy aller 40 Projektseiten bündig an der rechten Abschnitts-Copy
