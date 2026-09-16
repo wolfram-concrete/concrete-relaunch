@@ -1,5 +1,26 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 16.09.2026 – Consent-Modal und Signalvorbereitung für ADSUITS
+
+- Kompakten Eckhinweis durch ein zentriertes Modal mit dunkelgrauem Overlay
+  ersetzt; gleichwertige Akzeptieren-/Ablehnen-Buttons und direkte Einstellungen.
+- Hero-Reel-Ende separat signalisiert: Auswahl nach 200 ms statt erst nach dem
+  vollständigen Video-Loop; Fallback von 42 auf 8 Sekunden verkürzt.
+- Fokusführung, beidseitige Tab-Schleife, Escape, Footer-Wiederöffnung und
+  Wiederherstellung bestehender `inert`-Zustände getestet und stabilisiert.
+- Beschädigte Cookies, abgelaufene/zukünftige Auswahl, Cookie-Fallback bei
+  blockiertem Local Storage sowie verzögerte Clarity-Rückmeldungen abgesichert.
+- Kategoriebezogene Cookie-Bereinigung bei Teilwiderruf und Neustart bereits
+  geladener optionaler Dienste; GTM-Borlabs-Brücke und Consent Mode erhalten.
+- Neuer Loader `consent-v9.js`, CSS/JS aller Seiten `v=174`; Speicherversion 4
+  bleibt kompatibel. SalesViewer, Ads-Kampagnen und Budgets unverändert.
+- Reproduzierbarer Browser-Gauntlet unter `tools/consent-gauntlet.cjs`: 15
+  Testgruppen erfolgreich, Tracking-Endpunkte dort isoliert. Technischer
+  Preflight und SEO-Gauntlet: 131 Seiten, jeweils 0 Befunde.
+- Übergabe und Live-Prüfmatrix unter `docs/CONSENT-ABNAHME-2026-09-16.md`.
+  GTM-Preview und echte Erstgespräch-Buchung sind keine durch diese isolierten
+  Tests ersetzte Abnahme.
+
 ## 15.09.2026 – Eugen Regehr im Über-uns-Netzwerk ergänzt
 
 - Eugen Regehr mit eigenem Porträt, Rolle „Full-Stack Developer“ und direktem

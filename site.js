@@ -129,6 +129,8 @@
     }
     function finish(){
       document.body.classList.remove("intro");seq.forEach(function(i){i.classList.remove("on");i.style.zIndex="";});word.className="";finalImg.classList.add("on");hero.classList.remove("reel");hero.classList.add("done");
+      document.documentElement.setAttribute("data-hero-consent-ready","true");
+      window.dispatchEvent(new CustomEvent("concrete:hero-reel-complete"));
       if(finalImg.tagName==="VIDEO"&&!reduceHero&&!saveDataHero){
         var lastVideoTime=0;
         function firstLoopComplete(){finalImg.removeEventListener("timeupdate",watchFirstLoop);finalImg.removeEventListener("ended",firstLoopComplete);finalImg.removeEventListener("error",firstLoopComplete);announceIntroComplete();}
