@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – PARQ-Galerie: ruhige Slider und kompakter Screencast
+
+- Die vier PARQ-Styleguide-Module wechseln jetzt automatisch als seitlicher Durchlauf von rechts nach links, ohne sichtbare Steuerungselemente. Reduced Motion und Sichtbarkeit bleiben berücksichtigt.
+- Der Website-Screencast sitzt nach dem großen Galerie-Einstieg rechts in einem kleineren Container; die zusätzliche Textbeschriftung wurde entfernt.
+
+
 ## 17.09.2026 – Website-Screencasts erneut aktualisiert
 
 - Die neu abgelegten Website-Videos für PARQ Energy, System 360, medium, LINK, BGF+, NOEY, Conlivo, Banijay, MDB Finance, CA’N SORT und goSchneider in allen Case- und Leistungsdetailseiten ersetzt.

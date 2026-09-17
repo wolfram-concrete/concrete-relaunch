@@ -2,6 +2,9 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- PARQ-Galerie verfeinert: Styleguide-Slider laufen automatisch als seitlicher Bildwechsel ohne sichtbare Steuerung; der Website-Screencast steht kompakt rechts unter dem großen Galerie-Einstieg.
+
+
 - Website-Screencasts erneut mit den aktuellen Dateien ausgetauscht: PARQ Energy, System 360, medium, LINK, BGF+, NOEY, Conlivo, Banijay, MDB Finance, CA’N SORT und goSchneider. Alle bestehenden Case- und Leistungsdetail-Verwendungen zeigen weiterhin dieselben Poster und Lazy-Loading-Pfade.
 
 
