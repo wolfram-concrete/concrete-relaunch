@@ -2,6 +2,10 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Consent-Beschriftungen vereinheitlicht: „Alle akzeptieren“, „Nur notwendige“
+  und „Einstellungen“ auf der ersten Ebene; „Auswahl speichern“ nur im
+  Einstellungsdialog. „Nur notwendige“ ersetzt dort ebenfalls „Alle ablehnen“.
+  Kategorien, gespeicherte Auswahl, Darstellung und Tracker-Freigaben unverändert.
 - Alle zwölf Leistungseinträge im goSchneider-Projektüberblick sind mit den
   passenden Leistungsseiten verlinkt, im bestehenden Case-Linkstil.
 - Hero–Headline-Abstand auf allen 41 Projektseiten global verdoppelt:
@@ -526,11 +530,13 @@ Modal mit dunkelgrauem Overlay: auf der Startseite 200 ms nach dem kurzen
 Hero-Reel, spätestens 8 Sekunden nach DOM-Aufbau; auf Unterseiten sofort.
 Der folgende Hero-Video-Loop verzögert die Auswahl nicht mehr. Reduced Motion
 und Datensparmodus erhalten weiterhin den verkürzten Hero. „Alle akzeptieren“
-und „Alle ablehnen“ sind gleichwertige Buttons; „Einstellungen“ ist direkt
+und „Nur notwendige“ sind gleichwertige Buttons; „Einstellungen“ ist direkt
 erreichbar. Beide Entscheidungen geben die Seite frei. Fokus bleibt im Modal,
 Escape lehnt auf der ersten Ebene ab, und bereits vorhandene `inert`-Zustände
 werden beim Schließen erhalten. Widerruf stoppt neue Freigaben und lädt bei
 bereits geladenen optionalen Diensten die Seite mit der neuen Auswahl neu.
+Im Einstellungsdialog bestätigt „Auswahl speichern“ die individuell gewählten
+Kategorien; „Nur notwendige“ schaltet beide optionalen Kategorien aus.
 
 - Statistik: Google Analytics 4 und Microsoft Clarity
 - Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising,

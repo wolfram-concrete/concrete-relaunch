@@ -43,6 +43,11 @@ async function run(){
   for(const [name,statistics,marketing] of [['accept',true,true],['reject',false,false],['statistics',true,false],['marketing',false,true]]){
    const {page,context,requests}=await fixture();
    await page.locator('[data-consent-banner]').waitFor({state:'visible'});
+   assert.equal(await page.locator('[data-consent-accept]').textContent(),'Alle akzeptieren');
+   assert.equal(await page.locator('[data-consent-banner] [data-consent-reject]').textContent(),'Nur notwendige');
+   assert.equal(await page.locator('[data-consent-settings]').textContent(),'Einstellungen');
+   assert.equal(await page.locator('[data-consent-dialog] [data-consent-reject]').textContent(),'Nur notwendige');
+   assert.equal(await page.locator('[data-consent-save]').textContent(),'Auswahl speichern');
    assert.equal((await state(page)).inert,true);
    assert.equal(requests.some(x=>x.includes('googletagmanager.com')),false);
    assert.equal(requests.some(x=>x.includes('collector.sortlist.com')),false);
