@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – goSchneider-Gallery-Intro ausgetauscht
+
+- Das große Dennis-Werkstattmotiv am Gallery-Anfang durch `GoSchneider80.jpg`
+  mit Einlage in den Händen ersetzt; optimiertes WebP, unveränderter Modultyp.
+- Hero und Projektteaser nicht verändert.
+- Abschließender technischer Preflight und SEO-Gauntlet einschließlich des
+  ergänzten Passformmotivs: jeweils 133 Seiten, 0 Befunde.
+
+## 17.09.2026 – Weiteres goSchneider-Passformmotiv
+
+- `GoSchneider91.jpg` aus dem Originalshooting als optimiertes WebP-Hochformat
+  in das bestehende Case-Mosaic aufgenommen; Raster und Formatierungsregeln
+  unverändert beibehalten.
+
 ## 17.09.2026 – goSchneider, Case-Module und verbindliche Duplizierungsregeln
 
 - goSchneider-Projektseite mit Christians Briefing, finalem Hero, Branding-,

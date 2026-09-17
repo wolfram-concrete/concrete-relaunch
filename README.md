@@ -2,6 +2,14 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Großes Gallery-Intro bei goSchneider auf `GoSchneider80.jpg` (Einlage in den
+  Händen) ausgetauscht; Projekt-Hero und zugehörige Teaser bleiben unverändert.
+
+- Shootingmotiv `GoSchneider91.jpg` als optimiertes Hochformat zur Passform
+  der Einlage im Schuh in der goSchneider-Gallery ergänzt.
+- Technischer Preflight und SEO-Gauntlet nach den letzten Gallery-Änderungen:
+  jeweils 133 Seiten, keine Befunde.
+
 - goSchneider als 41. Projektseite ergänzt: vollständige Case-Copy vor dem
   großen Introbild, gemischte Case-Gallery mit Branding, Packaging, Einlagen,
   Werkstattfotos, Markenfigur-Videos und vier Regenbogen-Loops ohne weißen Fade.
