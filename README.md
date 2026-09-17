@@ -2,6 +2,8 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Alle zwölf Leistungseinträge im goSchneider-Projektüberblick sind mit den
+  passenden Leistungsseiten verlinkt, im bestehenden Case-Linkstil.
 - Hero–Headline-Abstand auf allen 41 Projektseiten global verdoppelt:
   Desktop `clamp(56px,8vw,112px)`, mobil `clamp(64px,18vw,112px)`.
   Aktuelle Case-Cache-Version: `v=177`.

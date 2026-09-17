@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – goSchneider-Leistungslinks aktiviert
+
+- Alle zwölf Einträge unter „Was wir gemacht haben“ mit den passenden
+  vorhandenen Leistungsseiten verknüpft; bestehende Typografie und Linkstile
+  beibehalten.
+- Im Browser alle zwölf Links geprüft; technischer Preflight und SEO-Gauntlet:
+  jeweils 133 Seiten, 0 Befunde.
+
 ## 17.09.2026 – Doppelter Abstand zwischen Case-Hero und Headline
 
 - Gemeinsamen oberen Abstand der ersten Headline auf allen 41 Projektseiten
