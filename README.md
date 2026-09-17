@@ -2,6 +2,8 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- PARQ-Galerie finalisiert: Sonnenaufgang als Hero, Screencast kompakt im Raster ab Sekunde 2, Messewand und Briefpapier weiter unten sowie getrennte Bauzaun-Motive. Technische Preflight- und SEO-Prüfung bleiben ohne Befunde.
+
 - Der medium-Website-Screencast ist auf 38,5 MB komprimiert und bleibt damit unter GitHubs empfohlener 50-MB-Grenze; Auflösung, Format und Laufzeit bleiben unverändert.
 
 

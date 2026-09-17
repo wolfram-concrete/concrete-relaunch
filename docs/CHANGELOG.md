@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – PARQ-Galerie final geordnet
+
+- Sonnenaufgang als großer Galerie-Einstieg gesetzt; Messewand, Briefpapier und Bauzaun-Mockup ins Raster weiter unten verteilt.
+- Website-Screencast in einen bestehenden kleinen Bildcontainer integriert und ab Sekunde 2 gestartet; fehlerhafte Zwischen-Tags bereinigt.
+- Bauzaun-Mockup vom querformatigen Bauzaun-Layout getrennt, damit die Motive nicht direkt nebeneinander kollidieren.
+
 ## 17.09.2026 – medium-Screencast komprimiert
 
 - `medium-v2.mp4` von 55,7 MB auf 38,5 MB reduziert, bei unverändertem 1920×1080-Format und 46,6 Sekunden Laufzeit. Damit bleibt die Datei unter GitHubs empfohlener 50-MB-Grenze.
