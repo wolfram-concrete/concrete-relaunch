@@ -1,5 +1,18 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Neue Website-Aufnahmen für beide Referenzlisten
+
+- Gelieferte Aufnahmen für NOEY, CA’N SORT, MDB Finance und LINK ersetzt;
+  BGF+ Architekten, Conlivo und medium Architekten als neue Website-Teaser ergänzt.
+- Website Design und Website-Konzept verwenden dieselben neun Referenzen;
+  goSchneider und System 360 samt bestehender Poster bleiben unverändert.
+- Sieben neue Videos als H.264 in 1280 × 720 mit Faststart ohne Ton und ohne
+  Tempoänderung aufbereitet, passende WebP-Poster generiert. Neue Asset-Namen
+  verhindern veraltete Cache-Versionen; bestehende Aufnahmen bleiben erhalten.
+- Direktlinks zur Kundenwebsite, Masonry, ARAME, Hoverzoom und Parallax erhalten.
+- Neue Videodateien zusammen 42,2 MiB statt 80,9 MiB (rund 48 Prozent weniger);
+  Laufzeiten identisch zu den gelieferten Aufnahmen. Desktop/Mobil geprüft.
+
 ## 17.09.2026 – Verbindlicher Farbwechsel bei jedem Reel-Frame
 
 - Vorherige Logo-Farbe bei jeder Auswahl ausgeschlossen, inklusive weißer

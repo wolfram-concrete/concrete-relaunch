@@ -2,6 +2,11 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Website Design und Website-Konzept: neue Aufnahmen aus „Desktop/neue videos“
+  für NOEY, CA’N SORT, MDB und LINK; ergänzt um BGF+, Conlivo und medium.
+  Beide Listen zeigen neun Websites. goSchneider und System 360 unverändert;
+  neue H.264-Faststart-Dateien in 1280 × 720, WebP-Poster und Lazy-Autoplay.
+
 - Preloader: deckungsgleiche Schrift-/Textur-Metrik, Beton bis zum Ausblenden;
   bei jedem Bildframe eine andere Farbe aus Weiß, Off-White, Coral, Soft Coral
   und Dunkelgrau, kontrastabhängig und synchron; NextBed ohne Dunkelgrau. Leichte
