@@ -320,6 +320,7 @@
         '</div>' +
         '<p class="consent-note">SalesViewer läuft unabhängig von dieser Auswahl. Informationen zu allen Diensten: <a href="datenschutz">Datenschutz</a>.</p>' +
         '<div class="consent-actions consent-actions--settings">' +
+          '<button class="consent-button" type="button" data-consent-accept>Alle akzeptieren</button>' +
           '<button class="consent-button consent-button--quiet" type="button" data-consent-reject>Nur notwendige</button>' +
           '<button class="consent-button consent-button--solid" type="button" data-consent-save>Auswahl speichern</button>' +
         '</div>' +
@@ -448,7 +449,9 @@
     document.querySelectorAll("[data-consent-reject]").forEach(function (button) {
       button.addEventListener("click", function () { saveConsent(false, false); });
     });
-    document.querySelector("[data-consent-accept]").addEventListener("click", function () { saveConsent(true, true); });
+    document.querySelectorAll("[data-consent-accept]").forEach(function (button) {
+      button.addEventListener("click", function () { saveConsent(true, true); });
+    });
     document.querySelector("[data-consent-save]").addEventListener("click", function () {
       saveConsent(
         dialog.querySelector("[data-consent-statistics]").checked,

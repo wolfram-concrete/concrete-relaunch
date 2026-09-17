@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Nachprüfung von ADSUITS: Zustimmung auch in den Einstellungen
+
+- Direkten „Alle akzeptieren“-Button im Einstellungsdialog ergänzt; beide
+  Zustimmungsbuttons verwenden denselben vorhandenen Consent-Speicherpfad.
+- „Nur notwendige“ und individuelles „Auswahl speichern“ bleiben verfügbar.
+  Keine neue Tracking-Freigabe ohne Auswahl, kein Zurücksetzen bestehender
+  Entscheidungen und keine GTM-/Ads-Kontoänderung.
+- Erstbesuch und Wiederbesuch über den Einstellungsdialog sowie identische
+  Zeitstempel in Local Storage und Kompatibilitätscookie als Tests ergänzt.
+- Kein paralleles Arbeiten am GTM während der Agenturabnahme dokumentiert.
+- Consent-Gauntlet: 17 Szenariogruppen bestanden; technischer Preflight
+  und SEO-Gauntlet jeweils 133 Seiten, 0 Befunde. Externe GTM-Tags und
+  tatsächliche Buchungs-Conversions sind damit nicht separat abgenommen.
+
 ## 17.09.2026 – Dennis-Preloaderbild scharf darstellen
 
 - Ursache der Pixeligkeit korrigiert: Reel-Bild hatte versehentlich die
