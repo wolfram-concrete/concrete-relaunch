@@ -1,5 +1,25 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Die Haftpflichtkasse: Veränderung verständlich machen
+
+- Neue Case-Seite aus dem Briefing „Case-Haftpflichtkasse“, mit bestehender
+  NextBed/NOEY-Formatierung. Kommunikationsstrategie, Change-Kommunikation
+  und Rollout vor der Galerie, Ergebnisvergleich und Relevanz-Modul mit CTA.
+- Alle 13 Rastermotive responsive aufbereitet, Original-SVG-Logo übernommen.
+  Wallgraphic mit großem Schriftzug als Hero; Mitarbeiter-Kit als Galerie-Lead.
+  Keine persönliche oder Kundenstimme erfunden; interne Redaktionshinweise
+  nicht veröffentlicht, bestehende Leistungsseiten direkt verlinkt.
+- Projektliste: LINK auf Position 4, Haftpflichtkasse auf Position 7.
+- Mega-Menüs und beide Reihen der weiteren-Projekte-Karussells ergänzt;
+  auf dem eigenen Case keinen Selbstverweis aufgenommen.
+- Referenzen für Kommunikationsstrategie, internes Rollout, Change-Kommunikation,
+  Textkonzept, Icons und Bildwelten ergänzt. Vorhandenes Haftpflichtkasse-
+  Praxisbeispiel auf Change-Kommunikation direkt zum Case verlinkt.
+- Sitemap und Medien-Quellenverzeichnis ergänzt.
+- Finance-Branchenauswahl ergänzt. Desktop, Tablet und Mobil ohne horizontalen
+  Überlauf geprüft; 43 Karussells mit synchronen Reihen validiert. Technischer
+  Preflight und SEO-Gauntlet: 135 Seiten ohne Befunde.
+
 ## 17.09.2026 – LINK vernetzt und im oberen Drittel eingeordnet
 
 - LINK auf Position 7 von 41 in der Projektübersicht einsortiert.

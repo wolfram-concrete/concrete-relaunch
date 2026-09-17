@@ -1,0 +1,150 @@
+{
+  "document": "https://docs.google.com/document/d/1FjnYOGrqK5xYSjQQOVAVvYBV1pzaVVfsjWqtoMUUWSE/edit",
+  "hero": "Visual-Schwarm-Wallgraphic 2.jpg",
+  "lead": "HK-Mitarbeiter-Kit.jpg",
+  "media": [
+    {
+      "name": "Bewegung-Kreisel_RGB.png",
+      "slug": "bewegung-kreisel-rgb",
+      "w": 573,
+      "h": 642,
+      "widths": [
+        573
+      ],
+      "hero": false
+    },
+    {
+      "name": "Grußkarte.jpg",
+      "slug": "grusskarte",
+      "w": 1456,
+      "h": 816,
+      "widths": [
+        800,
+        1456
+      ],
+      "hero": false
+    },
+    {
+      "name": "HK-Mitarbeiter-Kit.jpg",
+      "slug": "hk-mitarbeiter-kit",
+      "w": 2467,
+      "h": 1800,
+      "widths": [
+        800,
+        1600
+      ],
+      "hero": false
+    },
+    {
+      "name": "HK_Logo_RGB.png",
+      "slug": "hk-logo-rgb",
+      "w": 3653,
+      "h": 1644,
+      "widths": [
+        800,
+        1600
+      ],
+      "hero": false
+    },
+    {
+      "name": "HK_swarm_icon_final.png",
+      "slug": "hk-swarm-icon-final",
+      "w": 11175,
+      "h": 11175,
+      "widths": [
+        800,
+        1600
+      ],
+      "hero": false
+    },
+    {
+      "name": "Journal.jpg",
+      "slug": "journal",
+      "w": 5000,
+      "h": 3000,
+      "widths": [
+        800,
+        1600
+      ],
+      "hero": false
+    },
+    {
+      "name": "Leuchtbänder.jpg",
+      "slug": "leuchtbander",
+      "w": 1024,
+      "h": 1024,
+      "widths": [
+        800,
+        1024
+      ],
+      "hero": false
+    },
+    {
+      "name": "Post-IT-Visual.jpg",
+      "slug": "post-it-visual",
+      "w": 1456,
+      "h": 816,
+      "widths": [
+        800,
+        1456
+      ],
+      "hero": false
+    },
+    {
+      "name": "Post-It.jpg",
+      "slug": "post-it",
+      "w": 1920,
+      "h": 1080,
+      "widths": [
+        800,
+        1600
+      ],
+      "hero": false
+    },
+    {
+      "name": "Teilstrategien.png",
+      "slug": "teilstrategien",
+      "w": 4380,
+      "h": 2338,
+      "widths": [
+        800,
+        1600
+      ],
+      "hero": false
+    },
+    {
+      "name": "Visual Schwarm.png",
+      "slug": "visual-schwarm",
+      "w": 9983,
+      "h": 5637,
+      "widths": [
+        800,
+        1600
+      ],
+      "hero": false
+    },
+    {
+      "name": "Visual-Schwarm-Wallgraphic 2.jpg",
+      "slug": "visual-schwarm-wallgraphic-2",
+      "w": 2912,
+      "h": 1632,
+      "widths": [
+        640,
+        1280,
+        2400
+      ],
+      "hero": true
+    },
+    {
+      "name": "Visual-Schwarm-Wallgraphic.jpg",
+      "slug": "visual-schwarm-wallgraphic",
+      "w": 2912,
+      "h": 1632,
+      "widths": [
+        800,
+        1600
+      ],
+      "hero": false
+    }
+  ]
+}

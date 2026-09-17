@@ -2,6 +2,14 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Neuer Haftpflichtkasse-Case aus Christians Briefing, im bestehenden
+  Case-Raster mit 13 gelieferten Bildmotiven, Schwarm-Wallgraphic als Hero,
+  Mitarbeiter-Kit als Galerie-Einstieg und Ergebnisvergleich. Keine
+  ungelieferte Projektstimme ergänzt. LINK auf Position 4, Haftpflichtkasse
+  auf Position 7; globale Karussells und passende Leistungsreferenzen ergänzt.
+  Finance-Branchenauswahl ergänzt; Desktop/Tablet/Mobil, 43 Karussells und
+  technische/SEO-Prüfungen für 135 Seiten ohne Befunde.
+
 - LINK ORTHO auf Position 7 der Projektliste (oberes Drittel). Konkrete
   Referenzen für Employer Branding, Mitarbeiterbefragungen, Kommunikationsstrategie,
   internes Rollout und Markenverständnis ergänzt. Christians vorhandenes
