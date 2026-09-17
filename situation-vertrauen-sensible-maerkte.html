@@ -40,6 +40,7 @@
 .next-band{background:var(--coral);color:var(--ink)}
 .next-band .container{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s4);padding-block:clamp(40px,5vw,72px)}
 .next-band h2{font-family:"Arame";font-weight:700;font-size:clamp(26px,3.4vw,48px);line-height:1;margin:0;max-width:18ch}
+.crefs{grid-template-columns:repeat(var(--crefs-columns,3),1fr)}@media(max-width:520px){.crefs{grid-template-columns:1fr}}
 </style>
 <script src="consent-v9.js"></script>
 </head>
@@ -233,4 +234,3 @@
 <script src="site.js?v=174"></script>
 </body>
 </html>
-.crefs{grid-template-columns:repeat(var(--crefs-columns,3),1fr)}@media(max-width:520px){.crefs{grid-template-columns:1fr}}

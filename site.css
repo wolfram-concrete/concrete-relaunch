@@ -148,22 +148,14 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .hero__scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(23,21,19,.86),rgba(23,21,19,.42) 34%,rgba(23,21,19,0) 60%);opacity:0;transition:opacity 1s ease}
 .hero.done .hero__scrim{opacity:1}
 .hero__word{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:visible}
-.hero__word span{font-family:"Arame";font-weight:700;font-size:17.5vw;white-space:nowrap;letter-spacing:-.02em;line-height:1;color:#fff;mix-blend-mode:difference;opacity:0;transform:scale(.96);transition:opacity .9s ease,transform 1.1s ease;will-change:transform,opacity}
-/* je Frame eine andere stilistische Stimme */
+.hero__word span{font-family:"Arame";font-weight:700;font-size:17.5vw;white-space:nowrap;letter-spacing:-.02em;line-height:1;color:#fff;mix-blend-mode:normal;opacity:0;transform:scale(.96);transition:opacity .9s ease,transform 1.1s ease;will-change:transform,opacity}
+/* Erst normale weiße Wortmarke. Im Reel bleibt die Vollfüllung sichtbar;
+   eine separate HD-Betonebene wird innerhalb derselben Glyphen maskiert. */
+.hero__word span{position:relative}
+.hero__word span::after{content:attr(data-word);position:absolute;inset:0;color:transparent;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") center/min(800px,100vw) auto repeat;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:brightness(0);opacity:0;pointer-events:none}
+.hero.reel .hero__word span::after{opacity:.32}
+.hero__word span[data-logo-fill="black"]::after{filter:brightness(0) invert(1)}
 .hero__word span{text-transform:uppercase}
-.hero__word span.f0{font-family:"Playfair Display",serif;font-style:italic;font-weight:800;letter-spacing:-.01em}
-.hero__word span.f1{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.06em}
-.hero__word span.f2{font-family:"Space Mono",monospace;font-weight:700;letter-spacing:-.06em}
-.hero__word span.f3{font-family:"Bungee",cursive;font-weight:400;letter-spacing:0;font-size:14vw}
-.hero__word span.f4{font-family:"Cormorant Garamond",serif;font-weight:300;letter-spacing:.04em}
-.hero__word span.f5{font-family:"Saira Stencil One",cursive;font-weight:400}
-.hero__word span.f6{font-family:"Caveat",cursive;font-weight:700;letter-spacing:0;font-size:20vw}
-.hero__word span.f7{font-family:"Zilla Slab",serif;font-weight:600;letter-spacing:-.01em}
-.hero__word span.f8{font-family:"Libre Caslon Text",serif;font-weight:400;letter-spacing:-.01em}
-.hero__word span.f9{font-family:"Unica One",cursive;font-weight:400;letter-spacing:.1em}
-.hero__word span.f10{font-family:"Rubik Glitch",cursive;font-weight:400;letter-spacing:.02em;font-size:15vw}
-.hero__word span.f11{font-family:"Monoton",cursive;font-weight:400;letter-spacing:.06em;font-size:15vw}
-.hero__word span.f12{font-family:"Nabla",cursive;font-weight:400;letter-spacing:.02em;font-size:16vw;mix-blend-mode:normal}
 .hero.reel .hero__word span{transition:none}
 .hero.word .hero__word span{opacity:1;transform:none}
 .hero.done .hero__word span{opacity:0;transform:scale(1.03);transition:opacity .6s ease,transform .8s ease}
@@ -459,8 +451,11 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .reviews__track::-webkit-scrollbar{display:none}
 .reviews__track.dragging{cursor:grabbing;scroll-snap-type:none}
 .review{flex:0 0 clamp(300px,31vw,430px);display:flex;flex-direction:column}
-.review__media{aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep);margin-bottom:var(--s3)}
+.review__media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep);margin-bottom:var(--s3)}
 .review__media img{width:100%;height:100%;object-fit:cover}
+.review-portrait{position:relative;overflow:hidden}
+.review-portrait > img:first-child{display:block;width:100%;height:auto}
+:is(.review__media,.review-portrait) > .review__brand{position:absolute;right:14px;bottom:14px;z-index:2;width:clamp(56px,20%,88px);height:32px;object-fit:contain;object-position:right bottom;filter:brightness(0) invert(1) drop-shadow(0 1px 3px rgba(0,0,0,.5));opacity:.92;pointer-events:none}
 .review__media--tex{background:var(--coral)}
 .review__media--tex .tex{width:100%;height:100%;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") center/cover;mix-blend-mode:multiply;opacity:.85}
 .review blockquote{margin:0;font-size:var(--fs-body);line-height:1.6;color:var(--ink-60)}

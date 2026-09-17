@@ -110,7 +110,7 @@
     addEventListener("load",later);
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(later);
   })();
-  // Hero-Intro: Wort (Arame) → Reel: je Frame anderes Bild + andere Schrift → ruhiges Schlussbild
+  // Hero-Intro: weiße Original-Wortmarke, dann kontrastoptimierte Füllung + Beton.
   var hero=document.querySelector("[data-hero]");
   if(hero){
     document.documentElement.setAttribute("data-hero-intro-state","waiting");
@@ -119,6 +119,33 @@
     var finalImg=hero.querySelector(".hero__reel .final");
     var word=hero.querySelector(".hero__word span");
     var seq=imgs.filter(function(i){return i!==finalImg});
+    var contrastCanvas=document.createElement("canvas");contrastCanvas.width=96;contrastCanvas.height=32;
+    var contrastCtx=contrastCanvas.getContext("2d",{willReadFrequently:true});
+    function luminance(r,g,b){
+      function linear(v){v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4);}
+      return .2126*linear(r)+.7152*linear(g)+.0722*linear(b);
+    }
+    function bestLogoFill(img){
+      var candidates=[{color:"#ffffff",l:1},{color:"#000000",l:0},{color:"#fe7e5e",l:luminance(254,126,94)}];
+      try{
+        if(!contrastCtx||!img.naturalWidth) return "#ffffff";
+        var hb=hero.getBoundingClientRect(),wb=word.getBoundingClientRect();
+        var scale=Math.max(hb.width/img.naturalWidth,hb.height/img.naturalHeight);
+        var ox=(hb.width-img.naturalWidth*scale)/2,oy=(hb.height-img.naturalHeight*scale)/2;
+        // Derselbe mittige object-fit:cover-Ausschnitt wie das sichtbare Reel.
+        contrastCtx.clearRect(0,0,96,32);
+        contrastCtx.drawImage(img,(wb.left-hb.left-ox)/scale,(wb.top-hb.top-oy)/scale,wb.width/scale,wb.height/scale,0,0,96,32);
+        var pixels=contrastCtx.getImageData(0,0,96,32).data;
+        candidates.forEach(function(c){c.score=0;});
+        for(var p=0;p<pixels.length;p+=4){
+          var l=luminance(pixels[p],pixels[p+1],pixels[p+2]);
+          candidates.forEach(function(c){var ratio=(Math.max(l,c.l)+.05)/(Math.min(l,c.l)+.05);c.score+=Math.log(ratio);});
+        }
+        candidates.sort(function(a,b){return b.score-a.score;});
+        img.dataset.logoFill=candidates[0].color;
+        return candidates[0].color;
+      }catch(e){return "#ffffff";}
+    }
     var reduceHero=matchMedia("(prefers-reduced-motion:reduce)").matches;
     var saveDataHero=!!(navigator.connection&&navigator.connection.saveData);
     var introCompleteSent=false,introFallback=0;
@@ -145,7 +172,7 @@
       imgs.forEach(function(i){if(i.dataset.src)i.src=i.dataset.src;});
       var arame=(document.fonts&&document.fonts.load)?document.fonts.load('700 100px Arame').catch(function(){}):Promise.resolve();
       arame.then(function(){hero.classList.add("word")});
-      // Bilder + Schriften VOR dem Reel fertig laden — kein Ruckeln
+      // Bilder vor dem Reel fertig laden; die Wortmarke bleibt immer Arame.
       var ready=Promise.race([Promise.all(imgs.map(function(i){return i.decode?i.decode().catch(function(){}):Promise.resolve()})),new Promise(function(r){setTimeout(r,2500)})]);
       var fontsReady=(document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve();
       var minWord=new Promise(function(r){setTimeout(r,1400)});
@@ -164,7 +191,8 @@
             var cur=seq[n];
             cur.style.zIndex=String(10+n);      // neuer Frame legt sich OBEN drauf
             cur.classList.add("on");             // alter bleibt sichtbar darunter — kein Schwarzblitz
-            word.className=cur.getAttribute("data-font")||("f"+(n%13));
+            var fill=bestLogoFill(cur);word.style.color=fill;
+            word.dataset.logoFill=fill==="#000000"?"black":fill==="#ffffff"?"white":"coral";
             if(n>1){seq[n-2].classList.remove("on");seq[n-2].style.zIndex="";}
             n++;
           }

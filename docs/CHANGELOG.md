@@ -1,5 +1,113 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Kontrastoptimierter Preloader mit Betonstruktur
+
+- Füllfarbe anhand der relativen Bildluminanz im tatsächlich sichtbaren Bereich
+  hinter der Wortmarke ausgewählt; höchster mittlerer logarithmischer Kontrast
+  aus Weiß, Schwarz und Coral statt fester Farbreihenfolge.
+- Separate HD-Betontextur innerhalb der Glyphen über der Vollfüllung;
+  Helligkeit zur Füllung angepasst, maximal 800 CSS-px pro 1600px-Texturkachel.
+- Erste Sequenz bleibt das normale weiße Logo ohne Textur; ARAME unverändert.
+
+## 17.09.2026 – Markenlogos auf Kundenbildern
+
+- Alle vier Rezensionskarussells und 32 Case-Kundenstimmen mit passendem
+  Markenlogo unten rechts im Bildcontainer ergänzt.
+- Bestehende Logos weiß dargestellt, maximal 88 × 32px, mit leichtem Schatten.
+- Portrait-Zuschnitt, Reveal und Parallax erhalten; Logos dekorativ und lazy geladen.
+
+## 17.09.2026 – Footer-Artefakte bereinigt
+
+- Vier versehentlich nach dem HTML-Ende eingefügte goSchneider-Logo-Links
+  auf der Startseite entfernt; reguläre Projektlogos bleiben erhalten.
+- CSS nach dem HTML-Ende auf zwei Situationsseiten in den Styleblock verschoben.
+- Regressionstest: Technical Preflight meldet Inhalte nach dem HTML-Ende.
+
+## 17.09.2026 – Solide Logo-Füllung statt Betonmaske
+
+- Erste Preloader-Sequenz wieder mit der normalen weißen Wortmarke.
+- Folgeframes verwenden solide Weiß-, Coral- oder Schwarzfüllungen,
+  passend zum jeweiligen Bild, bei unveränderter ARAME-Wortmarke.
+- Texturmaskierung und zusätzlicher Textur-Preload entfernt.
+
+## 17.09.2026 – Betontextur-Maske im Hero-Preloader
+
+- Farbige Vollflächen durch HD-Betontextur in der originalen ARAME-Wortmaske ersetzt.
+- Tonwechsel pro Frame: Coral, Weiß, Grau, Schwarz; Form und Schrift unverändert.
+- Transparente Textur lässt die Motive durchscheinen; 1600px-Quelle wird
+  maximal auf 800 CSS-px gekachelt statt hochskaliert.
+
+## 17.09.2026 – Hover und Markenpfeile in Leistungsreferenzen
+
+- Alle Leistungs-Referenzlisten: Bild-/Videozoom bei Hover um 5 Prozent,
+  entsprechend der großen Projektliste, unabhängig vom Container-Parallax.
+- Diagonale Pfeile durch den bestehenden SVG-Markenpfeil ersetzt.
+- Touch und reduzierte Bewegung ohne Hoverzoom.
+
+## 17.09.2026 – Einheitliche Wortmarke im Hero-Preloader
+
+- Ursprüngliche ARAME-Wortmarke durch alle 13 Bildframes beibehalten.
+- Nur die pro Motiv abgestimmte komplementäre Kontrastfarbe wechseln;
+  Schrift, Größe und Laufweite bleiben konstant.
+- Alte Schriftvarianten und Intro-Font-Stylesheet aus der Startseite entfernt.
+
+## 17.09.2026 – Container-Parallax für Leistungsreferenzen
+
+- Alle dreizehn bestehenden Leistungs-Referenzlisten verwenden Parallax
+  am gesamten Teasercontainer: Motiv, Titel und Copy bewegen sich gemeinsam.
+- Verschiebung auf 16px begrenzt; kein zusätzlicher Bild-Parallax. Reveal
+  bleibt erhalten. Touch/Mobile und reduzierte Bewegung ohne Parallax.
+- Gemeinsame Formatierung auch auf Website Design eingebunden;
+  verbindliche Regel für künftige Referenzlisten in AGENTS dokumentiert.
+
+## 17.09.2026 – Mindestens fünf Projekte je Referenzliste
+
+- Die elf bislang dreiteiligen Leistungs-Referenzlisten um je zwei passende
+  Projekte erweitert. Website Design und Website-Konzept behalten sechs.
+- Corporate Design verwendet weiterhin Case-Heros; übrige Leistungen zeigen
+  konkrete Anwendungen, Motion Design ergänzt medium und pause and play.
+- Responsive 480/960px-WebPs, Lazy-Loading, ARAME und bestehende Bewegung
+  bleiben erhalten; keine zusätzlichen Logos.
+
+## 17.09.2026 – Case-Heros für Corporate-Design-Referenzen
+
+- Die drei Teaser auf Corporate Design zeigen die Hero-Motive der jeweiligen
+  Projektseiten statt Anwendungsmockup bzw. Styleguide-Seiten.
+- Responsive 480/960px-WebPs mit Lazy-Loading; Texte, Links und Motion erhalten.
+
+## 17.09.2026 – Copygestaltung der Sektion 01 vereinheitlicht
+
+- Aufzählungen unter 01 auf den Leistungsdetailseiten in semantische Listen
+  mit korallfarbenen Pfeilen, Trennlinien und fett gesetzten Leitbegriffen
+  überführt, nach der bestehenden Website-Design-Vorlage.
+- Einleitung und Abschluss bleiben Absätze; sechs erklärende Langtexte
+  erhalten gezielte Hervorhebungen ohne Umwandlung in künstliche Listen.
+- Nur Sektion 01 angepasst; Referenzlisten, übrige Sections und FAQ unverändert.
+- Formatierungsvorlage als verbindliche Arbeitsregel in AGENTS dokumentiert.
+
+## 17.09.2026 – Leistungsreferenzen ohne zusätzliche Logos
+
+- Zusätzliche Markenlogos aus allen Leistungs-Referenzlisten entfernt,
+  einschließlich Website Design und Website-Konzept. Titel, Copy und Motion bleiben.
+- Packaging: Noveltea durch das gewünschte Rum-Tea-Motiv mit Shaker ersetzt;
+  responsive WebPs in 480/960px, Lazy-Loading und vollständiger Bildausschnitt.
+- Poodlewohl bleibt bis zur Auswahl eines neuen Motivs unverändert.
+
+## 17.09.2026 – Referenzen auf visuellen Leistungsdetailseiten
+
+- Referenzlisten nach Sektion 01 auf Corporate Design, Bildwelten, Motion
+  Design, Icons/Illustrationen, Fotoproduktion, Packaging, Key Visuals,
+  Kampagnenentwicklung, Retail Design, Headlines/Textkonzept und Social Media.
+- Leistungsspezifische Anwendungen mit Case-Links und kleinen Original-Logos;
+  gemeinsame Formatierung nach Website Design: ARAME, Dreier-Masonry,
+  Reveal/Parallax sowie zwei bzw. eine Spalte auf kleineren Bildschirmen.
+- Responsive WebPs in 480/960px mit Lazy-Loading; natürliche Bildproportionen
+  für Plakate und Verpackungen. Motion Design nutzt echte Logo-Animationen.
+- Website-Konzept erhält dieselben sechs Referenzen und 0,5-fachen
+  Scroll-Videos wie Website Design, ebenfalls direkt nach Sektion 01.
+- Desktop und Mobile geprüft, alle zwölf Module ohne horizontalen Überlauf;
+  technischer Preflight und SEO-Gauntlet: 133 Seiten, jeweils 0 Befunde.
+
 ## 17.09.2026 – Dennis-Preloaderbild scharf darstellen
 
 - Ursache der Pixeligkeit korrigiert: Reel-Bild hatte versehentlich die

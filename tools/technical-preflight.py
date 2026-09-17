@@ -166,6 +166,9 @@ def scan() -> list[str]:
             continue
         parser = PageParser()
         text = page.read_text(encoding="utf-8")
+        document_end = re.search(r"</html\s*>", text, re.IGNORECASE)
+        if document_end and text[document_end.end():].strip():
+            findings.append(f"{page.name}: content after closing HTML tag")
         parser.feed(text)
         parsed_pages[page.resolve()] = parser
 

@@ -2,6 +2,42 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Kundenstimmen: dezente weiße Markenlogos rechts unten innerhalb der
+  Kundenbilder, in allen vier Karussells und den 32 Case-Kundenstimmen.
+- Footer bereinigt: versehentliche goSchneider-Logos nach dem HTML-Ende
+  entfernt, ausgelagerten CSS-Code auf zwei Situationsseiten korrekt eingeordnet.
+  Technical Preflight erkennt jetzt Inhalte nach dem schließenden HTML-Tag.
+- Preloader: erste Sequenz mit normaler weißer ARAME-Wortmarke.
+  Für Bildframes wird die kontrastreichste Füllung aus Weiß, Schwarz und Coral
+  anhand des sichtbaren Bildausschnitts hinter dem Logo berechnet.
+  Dezente HD-Betontextur separat innerhalb der Glyphen, über der soliden Füllung;
+  keine Schriftwechsel und keine Hochskalierung der Textur.
+- Leistungs-Referenzlisten übernehmen den Bild-Hover der Projektliste
+  (1,05-facher Zoom, gleiche Übergangskurve) und verwenden den Markenpfeil
+  aus `assets/arrow.svg` statt diagonaler Pfeile. Container-Parallax bleibt erhalten.
+- Hero-Preloader: ursprüngliche ARAME-Wortmarke in allen Frames unverändert;
+  zusätzliche Intro-Schriften werden nicht mehr geladen.
+
+- Leistungs-Referenzlisten: Parallax am gesamten Teasercontainer; Bild, Titel
+  und Copy scrollen gemeinsam. Touch/Mobile und reduzierte Bewegung bleiben
+  ohne Parallax. Verbindlich in AGENTS festgehalten.
+- Alle bestehenden Leistungs-Referenzlisten zeigen mindestens fünf Projekte:
+  elf visuelle Leistungen je fünf, Website Design und Website-Konzept je sechs.
+  Neue Motive als responsive WebPs; Motion Design mit fünf echten Animationen.
+- Corporate-Design-Referenzen verwenden die tatsächlichen Case-Hero-Motive
+  von goSchneider, NOEY und NextBed, als responsive 480/960px-WebPs.
+- Sektion 01 der Leistungsdetailseiten folgt Website Design: echte
+  Aufzählungen mit Pfeilen, Trennlinien und fett gesetzten Leitbegriffen;
+  Einleitung/Abschluss als Fließtext. Erklärende Langtexte mit gezielten
+  Hervorhebungen statt künstlicher Aufzählungen. Vorlage in AGENTS festgehalten.
+- Leistungs-Referenzlisten jetzt ohne zusätzliche Markenlogos; Noveltea zeigt
+  auf Packaging das Rum-Tea-Motiv mit Shaker statt der isolierten Whisky-Flasche.
+- Zwölf visuelle Leistungsdetailseiten zeigen direkt nach Sektion 01 passende
+  Projektreferenzen im bestehenden Dreier-Masonry mit ARAME,
+  Reveal und Parallax. Motive zeigen die jeweilige Leistung; responsive,
+  lazy geladene WebPs statt allgemeiner Case-Heros.
+- Website-Konzept übernimmt die sechs Website-Design-Referenzen inklusive
+  Scroll-Videos mit halbem Tempo. Motion Design zeigt echte Logo-Animationen.
 - Dennis-Preloaderbild: fehlerhafte 400px-Teaser-Satzbreite durch viewport-
   und Cover-gerechte Bildauswahl ersetzt; zusätzliche 3840px-WebP-Fassung
   aus dem Original für große und hochauflösende Displays.
