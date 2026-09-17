@@ -1,5 +1,82 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Gesammelte Website- und Performance-Änderungen
+
+- Website-Referenzen, Leistungsdetail-Copy und goSchneider-Bildoptimierung
+  gemeinsam zur Veröffentlichung vorbereitet; README auf Endstand korrigiert.
+- Technischer Preflight und SEO-Gauntlet: 133 Seiten, jeweils 0 Befunde.
+- Der Audit der übrigen Copy-Hierarchien ist eine Empfehlung; noch keine
+  Umstellung ihrer Absätze in Listen oder ihrer FAQ-Bullets erfolgt.
+
+## 17.09.2026 – Website-Projekttitel an Projektliste angeglichen
+
+- ARAME, Schriftgröße, Gewicht, Zeilenhöhe und Bildabstand der Projektliste
+  für alle sechs Website-Referenzen übernommen; Kurzcopy unverändert.
+
+## 17.09.2026 – Drei weitere Website-Referenzen
+
+- MDB Finance, LINK Karriere und System 360 in „Website-Projekte“ ergänzt.
+- Gelieferte Videos als 1280×720-H.264 mit Faststart und WebP-Postern optimiert;
+  stumme Loops ohne Steuerung, Lazy-Autoplay und bestehendes Parallax/Reveal.
+- MDB und System 360 führen zu ihren Cases; LINK ohne erfundenen Case-Link.
+
+## 17.09.2026 – Breitere Copy-Spalten auf Leistungsdetailseiten
+
+- Auf allen 30 Leistungsdetailseiten Body von 62ch auf 72ch, FAQ von 66ch
+  auf 76ch und Intro von 52ch auf 58ch verbreitert; Website-Design-Aspektliste
+  ebenfalls auf 72ch angeglichen.
+- `text-wrap:pretty` unterstützt natürliche Umbrüche ohne einzelne Schlusswörter;
+  das responsive Raster, Schriftgrößen und Headline-Satzbreiten bleiben erhalten.
+
+## 17.09.2026 – Website-Design-Einordnung und Listenhierarchie
+
+- „Phase Website Design“ vor „Website-Projekte“ verschoben.
+- Drei Leistungsaspekte als semantische Liste mit hervorgehobenen Begriffen
+  und bestehendem Pfeil-Symbol aufbereitet; FAQ-Quadrate ebenfalls ersetzt.
+- Inhaltslisten auf der gesamten Website-Design-Seite geprüft; Projektteaser
+  und Navigation behalten ihre jeweiligen Link-Pfeile und Darstellungsregeln.
+
+## 17.09.2026 – Einheitliche Copy-Farbe auf Leistungsdetailseiten
+
+- Fließtext und FAQ-Listen auf allen 30 Leistungsdetailseiten von `--ink-60`
+  auf `--ink` umgestellt, entsprechend der Leistungsübersicht.
+- Sekundäre Beschriftungen und Website-Projekt-Teaser bleiben abgestuft;
+  Typografie, Raster und Abstände unverändert.
+
+## 17.09.2026 – Website-Projekte auf der Leistungsseite Website Design
+
+- Direkt unter dem Intro eine Website-Referenzsection ergänzt: NOEY Solutions,
+  CA’N SORT und goSchneider mit den drei markierten Scroll-Videos aus Downloads.
+- Bestehenden Netzwerk-/Projektlistenstil mit Trennlinien, Titel, Kurzcopy und
+  Case-Link übernommen; zweispaltiges Masonry mit variierenden Videoformaten,
+  mobil eine Spalte. Gestaffelter Reveal und vorhandener Parallax-Loop; Touch
+  und Reduced Motion ohne Parallax, Reduced Motion ohne Reveal/Autoplay.
+- Videos auf 1280×720 H.264 optimiert, ohne Ton mit Faststart; lokale WebP-Poster.
+  Bestehendes Lazy-Autoplay lädt in Sichtnähe und pausiert außerhalb, keine Controls.
+- Desktop- und Mobile-Prüfung sowie technischer Preflight und SEO-Gauntlet:
+  133 Seiten, jeweils 0 Befunde.
+
+## 17.09.2026 – goSchneider-Medien responsiv optimiert
+
+- Kleinere WebP-Varianten mit 480/960/1600 px ergänzt; passende Auswahl über
+  `srcset`/`sizes` in Case und allen 134 Root-HTML-Seiten mit goSchneider-Bildern.
+  Teaser nutzen zusätzlich eine kleinere Fallback-Datei, große Original-WebPs
+  bleiben erhalten. Keine Änderung des Layouts oder der Bildmotive.
+- Drei Gallery-Videos auf bestehendes `data-lazy-autoplay`, `data-src` und
+  `preload="none"` umgestellt: keine initiale Videoquelle, automatischer stummer
+  Loop in Sichtnähe, Pause außerhalb und bestehende Save-Data-/Reduced-Motion-Regeln.
+- Regenbogen-Poster von PNG (194 KiB) auf WebP (25 KiB) umgestellt.
+- Browserprüfung: mobile Auswahl der 480-px-Variante, keine Videoquellen am
+  Seitenanfang, Website-Video in Sichtnähe spielend im Loop ohne Controls.
+- Technischer Preflight und SEO-Gauntlet: 133 Seiten, jeweils 0 Befunde.
+
+## 17.09.2026 – Dennis Schneider im Startseiten-Hero-Reel
+
+- FinaPlus-Shootingmotiv im Preloader-/Hero-Reel durch das bestehende
+  optimierte Werkstattmotiv von Dennis Schneider (`GoSchneider18.jpg`) ersetzt.
+- Reihenfolge, Schriftwechsel, Animations-Timing und abschließendes Video
+  unverändert beibehalten.
+
 ## 17.09.2026 – goSchneider-Leistungslinks aktiviert
 
 - Alle zwölf Einträge unter „Was wir gemacht haben“ mit den passenden

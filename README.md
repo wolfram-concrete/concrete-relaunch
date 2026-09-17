@@ -2,6 +2,31 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Website-Projektunterschriften folgen der Projektliste: ARAME-Titel
+  (18–22px, bold, Zeilenhöhe 1), 12px Bildabstand und bestehende Kurzcopy.
+- Website-Projekte um MDB Finance, LINK Karriere und System 360 erweitert;
+  sechs optimierte Scroll-Videos im bestehenden Masonry-/Motion-Format.
+  LINK vorerst ohne Case-Link, da keine Projektseite im Bestand vorhanden ist.
+- Leistungsdetailseiten: breitere Copy-Satzbreiten (Body 72ch, FAQ 76ch,
+  Intro 58ch) und `text-wrap:pretty` gegen einzelne Schlusswörter.
+  Mobile Satzbreiten bleiben durch das vorhandene Raster begrenzt.
+- Website Design: Phasen-Einordnung vor den Projektbeispielen; Leistungsaspekte
+  mit fett gesetzten Begriffen und Pfeil-Bullets. FAQ ebenfalls mit Pfeilen
+  statt Quadraten, im vorhandenen Listenstil.
+- Fließtext und FAQ-Listen auf allen 30 Leistungsdetailseiten verwenden wie
+  die Leistungsübersicht `var(--ink)`; sekundäre Teaser-Metadaten bleiben grau.
+- `website-design` zeigt nach der Phasen-Einordnung die neue Section
+  „Website-Projekte“ mit sechs Referenzen: Teaser im
+  bestehenden Listenstil, zweispaltiges Masonry mit unterschiedlichen Medienhöhen,
+  Reveal und dezentes Parallax. Mobil einspaltig; reduzierte Bewegung berücksichtigt.
+  Gelieferte Scroll-Videos als 1280-px-H.264-Fassung mit Faststart, WebP-Postern
+  und Lazy-Autoplay, stumm im Loop ohne Steuerung.
+- goSchneider-Webperformance: responsive WebP-Varianten (480/960/1600 px)
+  per `srcset`/`sizes` in Case und allen Root-Teasern; Originalgrößen bleiben
+  für große Ansichten erhalten. Drei Gallery-Videos laden erst in Sichtnähe
+  über die bestehende Lazy-Autoplay-Logik; Regenbogen-Poster jetzt als WebP.
+- FinaPlus-Motiv in der Startseiten-Hero-Bildserie durch Dennis Schneider
+  am Arbeitstisch (`GoSchneider18.jpg`) ersetzt; Timing und Schriftfolge bleiben.
 - Alle zwölf Leistungseinträge im goSchneider-Projektüberblick sind mit den
   passenden Leistungsseiten verlinkt, im bestehenden Case-Linkstil.
 - Hero–Headline-Abstand auf allen 41 Projektseiten global verdoppelt:
