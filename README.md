@@ -38,6 +38,16 @@
   lazy geladene WebPs statt allgemeiner Case-Heros.
 - Website-Konzept übernimmt die sechs Website-Design-Referenzen inklusive
   Scroll-Videos mit halbem Tempo. Motion Design zeigt echte Logo-Animationen.
+- Nachprüfung zur ADSUITS-Sprachnachricht: direkte Option „Alle akzeptieren“
+  zusätzlich im Einstellungsdialog ergänzt. Dort bleiben „Nur notwendige“
+  und „Auswahl speichern“ für individuelle Kategorien verfügbar.
+  Auswahl und Zeitstempel bleiben in Local Storage / Kompatibilitätscookie;
+  gespeicherte Entscheidungen werden nicht zurückgesetzt. Keine GTM-Änderung.
+  GTM-Prüfung und Veröffentlichung künftig nicht parallel bearbeiten.
+- Consent-Gauntlet: 17 Szenariogruppen bestanden, einschließlich Erst- und
+  Wiederbesuch, Zeitstempel, Cookie-Fallback und Widerruf. Technischer
+  Preflight und SEO-Gauntlet: jeweils 133 Seiten, 0 Befunde. Die Ausführung
+  externer GTM-Tags bleibt eine separate Live-Abnahme durch ADSUITS.
 - Dennis-Preloaderbild: fehlerhafte 400px-Teaser-Satzbreite durch viewport-
   und Cover-gerechte Bildauswahl ersetzt; zusätzliche 3840px-WebP-Fassung
   aus dem Original für große und hochauflösende Displays.
@@ -609,6 +619,9 @@ werden beim Schließen erhalten. Widerruf stoppt neue Freigaben und lädt bei
 bereits geladenen optionalen Diensten die Seite mit der neuen Auswahl neu.
 Im Einstellungsdialog bestätigt „Auswahl speichern“ die individuell gewählten
 Kategorien; „Nur notwendige“ schaltet beide optionalen Kategorien aus.
+„Alle akzeptieren“ ist auf beiden Ebenen direkt erreichbar und gibt beide
+optionalen Kategorien frei. Der Zeitstempel `savedAt` wird bei der Entscheidung
+gesetzt, im Kompatibilitätscookie gespiegelt und beim Wiederbesuch erhalten.
 
 - Statistik: Google Analytics 4 und Microsoft Clarity
 - Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising,

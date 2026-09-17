@@ -15,7 +15,10 @@ async function fixture({hero=false,stored=null,viewport={width:1440,height:1000}
   const requests=[];
   if(cookie) await context.addCookies([{name:'borlabs-cookie',value:cookie,url:origin}]);
   await context.addInitScript(({key,stored,blockedStorage})=>{
-    if(stored) localStorage.setItem(key,JSON.stringify(stored));
+    if(stored&&!sessionStorage.getItem('__consent_fixture_seeded')) {
+      localStorage.setItem(key,JSON.stringify(stored));
+      sessionStorage.setItem('__consent_fixture_seeded','1');
+    }
     if(blockedStorage) Object.defineProperty(window,'localStorage',{get(){throw Error('disabled')}});
     window.__clarity=[];
     window.clarity=(...args)=>window.__clarity.push(args);
@@ -43,7 +46,8 @@ async function run(){
   for(const [name,statistics,marketing] of [['accept',true,true],['reject',false,false],['statistics',true,false],['marketing',false,true]]){
    const {page,context,requests}=await fixture();
    await page.locator('[data-consent-banner]').waitFor({state:'visible'});
-   assert.equal(await page.locator('[data-consent-accept]').textContent(),'Alle akzeptieren');
+   assert.equal(await page.locator('[data-consent-banner] [data-consent-accept]').textContent(),'Alle akzeptieren');
+   assert.equal(await page.locator('[data-consent-dialog] [data-consent-accept]').textContent(),'Alle akzeptieren');
    assert.equal(await page.locator('[data-consent-banner] [data-consent-reject]').textContent(),'Nur notwendige');
    assert.equal(await page.locator('[data-consent-settings]').textContent(),'Einstellungen');
    assert.equal(await page.locator('[data-consent-dialog] [data-consent-reject]').textContent(),'Nur notwendige');
@@ -52,11 +56,13 @@ async function run(){
    assert.equal(requests.some(x=>x.includes('googletagmanager.com')),false);
    assert.equal(requests.some(x=>x.includes('collector.sortlist.com')),false);
    assert.equal(requests.some(x=>x.includes('salesviewer.org')),true);
-   if(name==='accept') await page.click('[data-consent-accept]');
+   if(name==='accept') await page.click('[data-consent-banner] [data-consent-accept]');
    else if(name==='reject') await page.locator('[data-consent-banner] [data-consent-reject]').click();
    else {await page.click('[data-consent-settings]');await page.locator(statistics?'[data-consent-statistics]':'[data-consent-marketing]').check();await page.click('[data-consent-save]');}
    await page.waitForTimeout(100);
    const s=await state(page);assert.equal(s.saved.statistics,statistics);assert.equal(s.saved.marketing,marketing);
+   assert.equal(s.saved.version,4);assert.equal(typeof s.saved.savedAt,'string');
+   assert(Number.isFinite(Date.parse(s.saved.savedAt))&&Math.abs(Date.now()-Date.parse(s.saved.savedAt))<120000);
    assert.equal(s.ga,statistics);assert.equal(s.ads,marketing);assert.equal(s.inert,false);
    assert.equal(s.updates.at(-1)[2].analytics_storage,statistics?'granted':'denied');
    assert.equal(s.updates.at(-1)[2].ad_user_data,marketing?'granted':'denied');
@@ -66,12 +72,28 @@ async function run(){
    assert.equal(await page.locator('#already-inert').evaluate(x=>x.inert),true);
    const cookie=(await context.cookies()).find(x=>x.name==='borlabs-cookie');assert(cookie);
    const payload=JSON.parse(decodeURIComponent(cookie.value));assert.equal(payload.consents.statistics.includes('google-analytics'),statistics);
+   assert.equal(payload.savedAt,s.saved.savedAt);
    await page.goto(origin+'/next');assert.equal(await page.locator('[data-consent-ui]').isVisible(),false);
    await page.click('[data-consent-manage]');await page.locator('[data-consent-dialog]').waitFor({state:'visible'});
    assert.equal(await page.locator('[data-consent-statistics]').isChecked(),statistics);
    await page.keyboard.press('Escape');assert.equal(await page.locator('[data-consent-ui]').isVisible(),false);
    assert.equal(await page.locator('[data-consent-manage]').evaluate(x=>x===document.activeElement),true);
    ok(name+': defaults, category contract, loaders, persistence, reopen, focus/inert');await context.close();
+  }
+  for(const stored of [null,record(false,false)]){
+   const {page,context,requests}=await fixture({stored});
+   if(stored)await page.click('[data-consent-manage]');else await page.click('[data-consent-settings]');
+   await page.locator('[data-consent-dialog] [data-consent-accept]').click();
+   const s=await state(page);assert.equal(s.saved.statistics,true);assert.equal(s.saved.marketing,true);
+   assert.equal(s.ga,true);assert.equal(s.ads,true);assert.equal(s.inert,false);
+   assert(Number.isFinite(Date.parse(s.saved.savedAt))&&Math.abs(Date.now()-Date.parse(s.saved.savedAt))<120000);
+   const payload=JSON.parse(decodeURIComponent((await context.cookies()).find(x=>x.name==='borlabs-cookie').value));
+   assert.equal(payload.savedAt,s.saved.savedAt);
+   assert.equal(requests.filter(x=>x.includes('googletagmanager.com')).length,1);
+   assert.equal(requests.filter(x=>x.includes('collector.sortlist.com')).length,1);
+   await page.goto(origin+'/next');assert.equal(await page.locator('[data-consent-ui]').isVisible(),false);
+   assert.equal((await state(page)).saved.savedAt,s.saved.savedAt);
+   ok((stored?'return':'fresh')+' settings accept-all, timestamp consistency and persistence');await context.close();
   }
   { 
    const {page,context}=await fixture();await page.click('[data-consent-settings]');await page.keyboard.press('Escape');
@@ -89,7 +111,7 @@ async function run(){
    const {page,context}=await fixture({cookie:'%not-decodable'});assert.equal(await page.locator('[data-consent-banner]').isVisible(),true);await context.close();ok('malformed compatibility cookie cannot crash consent');
   }
   {
-   const {page,context}=await fixture({blockedStorage:true});await page.click('[data-consent-accept]');await page.goto(origin+'/next');assert.equal(await page.locator('[data-consent-ui]').isVisible(),false);await context.close();ok('cookie fallback when localStorage unavailable');
+   const {page,context}=await fixture({blockedStorage:true});await page.click('[data-consent-banner] [data-consent-accept]');await page.goto(origin+'/next');assert.equal(await page.locator('[data-consent-ui]').isVisible(),false);await context.close();ok('cookie fallback when localStorage unavailable');
   }
   {
    const {page,context}=await fixture({hero:true});assert.equal(await page.locator('[data-consent-ui]').isVisible(),false);
@@ -110,7 +132,7 @@ async function run(){
    await context.close();ok(`mobile/reflow/reduced-motion ${viewport.width}x${viewport.height}`);
   }
   {
-   const {page,context}=await fixture();await page.click('[data-consent-accept]');
+   const {page,context}=await fixture();await page.click('[data-consent-banner] [data-consent-accept]');
    await page.evaluate(()=>{document.cookie='_ga=demo;Path=/';document.cookie='_gcl_au=demo;Path=/'});
    await page.click('[data-consent-manage]');await page.locator('[data-consent-statistics]').uncheck();
    await Promise.all([page.waitForEvent('domcontentloaded'),page.click('[data-consent-save]')]);
@@ -123,7 +145,7 @@ async function run(){
   {
    const {page,context}=await fixture({blockedStorage:true});
    await page.evaluate(()=>{delete window.clarity;Object.defineProperty(document,'cookie',{get:()=>'',set:()=>{}})});
-   await page.click('[data-consent-accept]');await page.click('[data-consent-manage]');await page.click('[data-consent-save]');
+   await page.click('[data-consent-banner] [data-consent-accept]');await page.click('[data-consent-manage]');await page.click('[data-consent-save]');
    await page.evaluate(()=>{window.clarity=(...args)=>window.__clarity.push(args)});await page.waitForTimeout(600);
    const latest=await page.evaluate(()=>window.__clarity.at(-1));assert.equal(latest[1].analytics_Storage,'denied');assert.equal(latest[1].ad_Storage,'denied');
    await context.close();ok('delayed Clarity retry uses latest choice even when all persistence is blocked');
