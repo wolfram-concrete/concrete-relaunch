@@ -21,7 +21,7 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CACHE_VERSION = "171"
+EXPECTED_CACHE_VERSION = "174"
 EXPECTED_CASE_CACHE_VERSION = "176"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
@@ -234,10 +234,10 @@ def scan() -> list[str]:
         )
         if "Fabian Lampert" in attribution_text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
-        if text.count('<script src="consent-v8.js"></script>') != 1:
+        if text.count('<script src="consent-v9.js"></script>') != 1:
             findings.append(f"{page.name}: consent manager missing or duplicated")
         else:
-            consent_position = text.index('<script src="consent-v8.js"></script>')
+            consent_position = text.index('<script src="consent-v9.js"></script>')
             site_script_position = text.find(f'<script src="site.js?v={expected_cache_version}"></script>')
             if site_script_position >= 0 and consent_position > site_script_position:
                 findings.append(f"{page.name}: consent manager must load before site.js")
@@ -335,7 +335,7 @@ def scan() -> list[str]:
             if source.startswith(("http://", "https://", "//")):
                 findings.append(f"{css_path.name}: external CSS resource bypasses consent: {source}")
 
-    consent = (ROOT / "consent-v8.js").read_text(encoding="utf-8")
+    consent = (ROOT / "consent-v9.js").read_text(encoding="utf-8")
     for required in (
         'var STORAGE_KEY = "concrete-consent-v4"',
         "var CONSENT_VERSION = 4",
@@ -355,13 +355,17 @@ def scan() -> list[str]:
         "function loadSortlistRadar(consent)",
         "if (!isProductionTrackingHost() || sortlistRadarLoaded || !consent.marketing) return;",
         "loadSortlistRadar(consent)",
-        "loadSalesViewer();\n  var storedConsent = readConsent();",
+        "loadSalesViewer();\n  installBorlabsBridge(activeConsent);\n  var storedConsent = readConsent();",
+        'aria-modal="true"',
+        'concrete:hero-reel-complete',
+        'window.setTimeout(revealBanner, 8000)',
+        'window.clearTimeout(clarityTimer)',
         "loadConsentEmbeds(consent)",
         "window.BorlabsCookie.checkCookieConsent = hasConsent",
         "window.BorlabsCookie.Consents.hasConsent = hasConsent",
     ):
         if required not in consent:
-            findings.append(f"consent-v8.js: missing consent safeguard: {required}")
+            findings.append(f"consent-v9.js: missing consent safeguard: {required}")
     for forbidden in (
         '"facebook-pixel"',
         '"hubspot-pixel"',
@@ -369,7 +373,7 @@ def scan() -> list[str]:
         "loadSalesViewer(consent)",
     ):
         if forbidden in consent:
-            findings.append(f"consent-v8.js: obsolete or consent-gated service found: {forbidden}")
+            findings.append(f"consent-v9.js: obsolete or consent-gated service found: {forbidden}")
 
     privacy = (ROOT / "datenschutz.html").read_text(encoding="utf-8")
     for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "SalesViewer", "Sortlist Radar", "Sortlist Trusted Partner Badge"):

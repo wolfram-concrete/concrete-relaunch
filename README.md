@@ -2,6 +2,9 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Remote-Stand zur Consent-/GTM-Vorbereitung integriert; die beiden neuen
+  Seiten verwenden ebenfalls `consent-v9.js`. Case-Cache `v=176`, übrige Seiten
+  `v=174`; gemeinsame Abschlussprüfungen ohne Befund.
 - Großes Gallery-Intro bei goSchneider auf `GoSchneider80.jpg` (Einlage in den
   Händen) ausgetauscht; Projekt-Hero und zugehörige Teaser bleiben unverändert.
 
@@ -30,6 +33,23 @@
   keine eigenständige Neuinterpretation beim Duplizieren.
 - Ältere Einträge unten dokumentieren historische Stände und Cache-Versionen.
 
+## Aktueller Produktionsstand · 16.09.2026
+
+- Consent-Vorbereitung für ADSUITS: zentriertes CONCRETE-Modal mit dunkelgrauem
+  Hintergrund und gleichwertigen Buttons „Alle akzeptieren“ / „Alle ablehnen“.
+  Auf der Startseite erscheint es 200 ms nach der kurzen Hero-Reel-Sequenz,
+  unabhängig vom folgenden Video-Loop; Sicherheitsfallback nach 8 Sekunden.
+  Direkte Unterseiten zeigen es ohne Hero-Wartezeit. Eine gespeicherte Auswahl
+  wird wiederverwendet; Cookie-Einstellungen bleiben im Footer zugänglich.
+- Cache-sicherer Loader `consent-v9.js`, globales CSS/JS `v=174`, unveränderte
+  Consent-Speicherversion 4. Statistik und Marketing bleiben getrennt;
+  keine optionalen Google-/Radar-Dienste vor entsprechender Zustimmung.
+  SalesViewer bleibt wie bisher separat aktiv. Kampagnen und Budgets unverändert.
+- 15 isolierte Browser-Testgruppen bestanden; SEO-Gauntlet und technischer
+  Preflight: jeweils 131 Sitemap-Seiten ohne Befund. Abnahmeplan und Grenzen:
+  `docs/CONSENT-ABNAHME-2026-09-16.md`. Marcel prüft anschließend live im GTM;
+  eine echte Erstgespräch-Testbuchung bleibt separat erforderlich.
+
 ## Aktueller Produktionsstand · 15.09.2026
 
 - Das Netzwerk auf der Über-uns-Seite umfasst jetzt auch Eugen Regehr als
@@ -39,7 +59,7 @@
 - Intro-Copy und Abschnitts-Copy aller 40 Cases teilen dieselbe rechte
   Rasterkante. Die Logos nutzen links die breitere Spalte vollständig;
   Intro und Abschnittsraster wechseln gemeinsam bis 820 px auf eine Spalte.
-  Aktuelle Asset-Version der Case-Seiten: `v=173`.
+  Aktuelle Asset-Version aller Seiten: `v=174`.
 
 - In der Projektübersicht steht Nextbed jetzt auf Position 1 und NOEY auf
   Position 3. Wackelzahn bleibt auf Position 2; Bilder, Videos, Case-Links und
@@ -50,7 +70,7 @@
   Abschnittsüberschriften brechen nur zwischen ganzen Wörtern um; einzelne
   abgetrennte Endbuchstaben entfallen. Bis 820 px bleibt das Layout einspaltig.
   Die gemeinsame Regel liegt in `site.css`; die Case-Seiten laden sie mit der
-  cache-sicheren Version `v=173`.
+  cache-sicheren Version `v=174`.
 
 - Die zweite lokale Entscheidungsseite
   `/branding-designagentur-frankfurt/` übernimmt Dramaturgie, Komponenten und
@@ -483,18 +503,20 @@ aktuellen Stand von `origin/main` auschecken.
 
 ## Datenschutz und Consent
 
-`consent-v8.js` ist der eigene Consent-Manager der statischen Website. Er
+`consent-v9.js` ist der eigene Consent-Manager der statischen Website. Er
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
-jederzeit geändert werden. Der initiale kompakte Hinweis sitzt mit sicherem
-Rand in der rechten unteren Bildschirmecke. Auf der Startseite wartet er beim
-ersten Besuch den ersten vollständigen Durchlauf des rund 30 Sekunden langen
-Hero-Videos ab und fadet danach ein; bei Reduced Motion, Datensparmodus,
-Videofehlern und auf Unterseiten erscheint er ohne diese Wartezeit. Der ausführliche
-Einstellungsdialog bleibt zentriert. In der ersten Ebene steht „Akzeptieren“
-als Button links; „Ablehnen“ und „Einstellungen“ bleiben als direkt
-erreichbare Textaktionen in der rechten Hälfte sichtbar.
+jederzeit geändert werden. Ohne gespeicherte Auswahl erscheint ein zentriertes
+Modal mit dunkelgrauem Overlay: auf der Startseite 200 ms nach dem kurzen
+Hero-Reel, spätestens 8 Sekunden nach DOM-Aufbau; auf Unterseiten sofort.
+Der folgende Hero-Video-Loop verzögert die Auswahl nicht mehr. Reduced Motion
+und Datensparmodus erhalten weiterhin den verkürzten Hero. „Alle akzeptieren“
+und „Alle ablehnen“ sind gleichwertige Buttons; „Einstellungen“ ist direkt
+erreichbar. Beide Entscheidungen geben die Seite frei. Fokus bleibt im Modal,
+Escape lehnt auf der ersten Ebene ab, und bereits vorhandene `inert`-Zustände
+werden beim Schließen erhalten. Widerruf stoppt neue Freigaben und lädt bei
+bereits geladenen optionalen Diensten die Seite mit der neuen Auswahl neu.
 
 - Statistik: Google Analytics 4 und Microsoft Clarity
 - Marketing & externe Inhalte: Google Ads, LinkedIn Insight, Microsoft Advertising,
@@ -518,7 +540,7 @@ aktive Statistik- oder Marketingauswahl gebunden. Lokale Entwicklungsserver und
 Vercel-Previews erzeugen deshalb keine Clarity-, Analytics-, Ads- oder
 SalesViewer- oder Radar-Sitzungen. Das schützt die operative Auswertung vor Testtraffic.
 Sortlist Radar ist seit `consent-v8.js` mit dem Profil `roNBkiXpHEc` auf allen
-130 Sitemap-Seiten vorbereitet. Das Radar-Script startet ausschließlich auf dem
+131 Sitemap-Seiten vorbereitet. Das Radar-Script startet ausschließlich auf dem
 kanonischen Produktionshost und erst nach Einwilligung in „Marketing & externe
 Inhalte“. Die vier vom bereitgestellten Snippet vorgesehenen Module für Sitzungen,
 Formulare, Klicks und Downloads sind aktiv. Sortlist-seitige Profilbesucher und
