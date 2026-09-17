@@ -125,10 +125,13 @@
       function linear(v){v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4);}
       return .2126*linear(r)+.7152*linear(g)+.0722*linear(b);
     }
-    function bestLogoFill(img){
+    function bestLogoFill(img,frame){
+      // Bewusster Coral/Weiß-Rhythmus: pro Bildframe ein harter Farbwechsel.
+      // Schwarz nur optional für das besonders helle NextBed-Motiv (Frame 2).
+      var preferred=frame%2?"#ffffff":"#fe7e5e";
       var candidates=[{color:"#ffffff",l:1},{color:"#000000",l:0},{color:"#fe7e5e",l:luminance(254,126,94)}];
       try{
-        if(!contrastCtx||!img.naturalWidth) return "#ffffff";
+        if(!contrastCtx||!img.naturalWidth) return preferred;
         var hb=hero.getBoundingClientRect(),wb=word.getBoundingClientRect();
         var scale=Math.max(hb.width/img.naturalWidth,hb.height/img.naturalHeight);
         var ox=(hb.width-img.naturalWidth*scale)/2,oy=(hb.height-img.naturalHeight*scale)/2;
@@ -142,9 +145,10 @@
           candidates.forEach(function(c){var ratio=(Math.max(l,c.l)+.05)/(Math.min(l,c.l)+.05);c.score+=Math.log(ratio);});
         }
         candidates.sort(function(a,b){return b.score-a.score;});
-        img.dataset.logoFill=candidates[0].color;
-        return candidates[0].color;
-      }catch(e){return "#ffffff";}
+        var fill=frame===2&&candidates[0].color==="#000000"?"#000000":preferred;
+        img.dataset.logoFill=fill;
+        return fill;
+      }catch(e){return preferred;}
     }
     var reduceHero=matchMedia("(prefers-reduced-motion:reduce)").matches;
     var saveDataHero=!!(navigator.connection&&navigator.connection.saveData);
@@ -191,7 +195,7 @@
             var cur=seq[n];
             cur.style.zIndex=String(10+n);      // neuer Frame legt sich OBEN drauf
             cur.classList.add("on");             // alter bleibt sichtbar darunter — kein Schwarzblitz
-            var fill=bestLogoFill(cur);word.style.color=fill;
+            var fill=bestLogoFill(cur,n);word.style.color=fill;
             word.dataset.logoFill=fill==="#000000"?"black":fill==="#ffffff"?"white":"coral";
             if(n>1){seq[n-2].classList.remove("on");seq[n-2].style.zIndex="";}
             n++;

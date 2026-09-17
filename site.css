@@ -152,8 +152,8 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* Erst normale weiße Wortmarke. Im Reel bleibt die Vollfüllung sichtbar;
    eine separate HD-Betonebene wird innerhalb derselben Glyphen maskiert. */
 .hero__word span{position:relative}
-.hero__word span::after{content:attr(data-word);position:absolute;inset:0;color:transparent;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") center/min(800px,100vw) auto repeat;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:brightness(0);opacity:0;pointer-events:none}
-.hero.reel .hero__word span::after{opacity:.32}
+.hero__word span::after{content:attr(data-word);position:absolute;inset:0;color:transparent;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") center/min(500px,100vw) auto repeat;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:brightness(0);opacity:0;pointer-events:none;transition:none}
+.hero.reel .hero__word span::after{opacity:.46}
 .hero__word span[data-logo-fill="black"]::after{filter:brightness(0) invert(1)}
 .hero__word span{text-transform:uppercase}
 .hero.reel .hero__word span{transition:none}

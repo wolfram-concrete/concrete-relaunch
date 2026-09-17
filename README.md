@@ -8,10 +8,11 @@
   entfernt, ausgelagerten CSS-Code auf zwei Situationsseiten korrekt eingeordnet.
   Technical Preflight erkennt jetzt Inhalte nach dem schließenden HTML-Tag.
 - Preloader: erste Sequenz mit normaler weißer ARAME-Wortmarke.
-  Für Bildframes wird die kontrastreichste Füllung aus Weiß, Schwarz und Coral
-  anhand des sichtbaren Bildausschnitts hinter dem Logo berechnet.
+  Jeder Bildwechsel erhält synchron einen harten Coral-/Weiß-Farbwechsel;
+  Schwarz bleibt optional auf das helle NextBed-Motiv beschränkt.
   Dezente HD-Betontextur separat innerhalb der Glyphen, über der soliden Füllung;
-  keine Schriftwechsel und keine Hochskalierung der Textur.
+  keine Schriftwechsel; 1600px-Textur auf maximal 500 CSS-px, auch für 3×-Displays
+  ohne Hochskalierung, mit stärker sichtbaren feinen Details.
 - Leistungs-Referenzlisten übernehmen den Bild-Hover der Projektliste
   (1,05-facher Zoom, gleiche Übergangskurve) und verwenden den Markenpfeil
   aus `assets/arrow.svg` statt diagonaler Pfeile. Container-Parallax bleibt erhalten.

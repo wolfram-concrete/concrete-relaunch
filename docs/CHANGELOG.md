@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Synchroner Coral-/Weiß-Rhythmus im Preloader
+
+- Logo-Farbe springt bei jedem Bildwechsel in derselben Animation-Frame-Ausführung.
+- Coral und Weiß alternieren; Schwarz nur optional beim hellen NextBed-Motiv.
+- Betontextur deutlicher sichtbar und feiner: 1600px-Quelle auf maximal
+  500 CSS-px pro Kachel, scharf bis 3×-Pixeldichte ohne Hochskalierung.
+- Erste Sequenz bleibt normales weißes Logo ohne Textur.
+
 ## 17.09.2026 – Kontrastoptimierter Preloader mit Betonstruktur
 
 - Füllfarbe anhand der relativen Bildluminanz im tatsächlich sichtbaren Bereich
