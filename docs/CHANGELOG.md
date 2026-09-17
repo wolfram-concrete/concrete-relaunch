@@ -1,5 +1,9 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – PARQ-Galerie ohne Hoodie
+
+- Hoodie-Mockup aus der PARQ-Energy-Galerie entfernt; die übrigen Galerie-Motive bleiben erhalten.
+
 ## 17.09.2026 – PARQ-Galerie final geordnet
 
 - Sonnenaufgang als großer Galerie-Einstieg gesetzt; Messewand, Briefpapier und Bauzaun-Mockup ins Raster weiter unten verteilt.
