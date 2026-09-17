@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Website-Referenzen direkt verlinkt
+
+- Alle sechs Website-Teaser auf Website Design und Website-Konzept öffnen
+  die tatsächliche Kundenwebsite in einem neuen Tab statt interner Case-Seiten.
+- LINK-Karriere-Teaser ebenfalls verlinkt und um den Markenpfeil ergänzt.
+
 ## 17.09.2026 – LINK-Kundenlogo in Originalfarben
 
 - LINK-Logo in sämtlichen Rezensionsmodulen ohne Weißfilter dargestellt;

@@ -2,6 +2,9 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Website-Teaser auf Website Design und Website-Konzept öffnen direkt die
+  jeweilige Kundenwebsite in einem neuen Tab statt der internen Case-Seite.
+
 - Kundenstimmen: dezente weiße Markenlogos rechts unten innerhalb der
   Kundenbilder, in allen vier Karussells und den 32 Case-Kundenstimmen.
   CA’N SORT verwendet bis zur weißen Cutout-Fassung das farbige Original-Logo.
