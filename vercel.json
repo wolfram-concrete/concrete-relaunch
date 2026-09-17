@@ -115,6 +115,11 @@
       "permanent": true
     },
     {
+      "source": "/brandbuilding-good-humor",
+      "destination": "/case-good-humor",
+      "permanent": true
+    },
+    {
       "source": "/brauchen-wir-bei-einem-fotoshooting-professionelle-models-oder-funktioniert-es-besser-mit-unseren-eigenen-mitarbeitenden",
       "destination": "/fotoproduktion",
       "permanent": true

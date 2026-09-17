@@ -2,6 +2,13 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Alte Good-Humor-Adresse `/brandbuilding-good-humor` dauerhaft auf
+  `/case-good-humor` weiterleiten (Vercel 308). Die vorhandene Weiterleitung
+  von `/good-humor` bleibt erhalten. Die neue Case-URL bleibt kanonisch und
+  in der Sitemap; keine pauschale `/brandbuilding-*`-Regel.
+- Redirect in `vercel.json` und `tools/redirects.json` synchron hinterlegt;
+  README und Changelog dokumentieren die Nachpflege der historischen GSC-URL.
+
 - Remote-Stand zur Consent-/GTM-Vorbereitung integriert; die beiden neuen
   Seiten verwenden ebenfalls `consent-v9.js`. Case-Cache `v=176`, übrige Seiten
   `v=174`; gemeinsame Abschlussprüfungen ohne Befund.
