@@ -2,6 +2,10 @@
 
 ## Leistungsdetailseiten: Sektion 01
 
+Projektteaser auf Leistungsdetailseiten verwenden immer das Heromotiv der
+jeweiligen Case-Seite und dessen Seitenverhältnis. Ausnahme: Website-Referenzen
+auf Website Design und Website-Konzept behalten die Website-Screencasts.
+
 Projekt-Referenzlisten aller Leistungsdetailseiten verwenden Reveal und
 das bestehende Parallax-System: `data-plx` am Teasercontainer, sodass Motiv,
 Titel und Copy gemeinsam scrollen. `service-references.css` einbinden.

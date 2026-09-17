@@ -1,5 +1,62 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – LINK ORTHO: Employer Branding, das innen beginnt
+
+- Neue Case-Seite `case-link.html` mit Texten und Ergebnisvergleich aus
+  „Case_LINK ORTHO“. NextBed/NOEY-Struktur, Typografie, Satzbreiten, Accordion,
+  Mosaic-Galerie, Relevanz-CTA, persönliche Stimme und Footer übernommen.
+- „Hero LINK.jpg“ als responsive Wort-/Bildmarken-Hero verwendet. Alle 41
+  Bilddateien aus dem gelieferten LINK-Ordner berücksichtigt: Hero, 27 weitere
+  Motive und 13 unveränderte Einzelicons in einer gemeinsamen SVG-Übersicht.
+  InDesign-Datei und temporäre Sperrdatei nicht als Webmedien importiert.
+- Bestehenden optimierten LINK-Karriere-Screencast eingebunden, stumm und lazy,
+  mit Poster sowie bestehender Reduced-Motion-/Save-Data-Logik.
+- Christians gelieferte Projektstimme mit korrektem Portrait unter Relevanztext
+  und CTA platziert. Keine zusätzliche Kundenstimme erfunden.
+- LINK in Projektübersicht, Branchenfilter, Mega-Menüs, beide Karussellreihen
+  der anderen Cases und passende Text-/Icon-Referenzen integriert. Recruiting-
+  Branchenauswahl aktualisiert, Website-Referenzen behalten externe Website-Links.
+- Sitemap und Quellen-/Medienverzeichnis ergänzt.
+- Desktop-, Tablet- und Mobilansicht sowie Karrierevideo geprüft. Technischer
+  Preflight und SEO-Gauntlet: 134 Seiten ohne Befunde; Diff ohne Formatfehler.
+- Gemeinsam mit den akzeptierten Korrekturen an Preloader-Betonfüllung,
+  Projektstimmen-Reihenfolge, goSchneider-Karussells und Referenz-Heromotiven
+  für die Git-Veröffentlichung dokumentiert.
+
+## 17.09.2026 – Case-Heromotive für Leistungsreferenzen
+
+- Alle 55 Projektteaser der elf nicht websitebezogenen Leistungsreferenzlisten
+  auf das jeweilige Heromotiv der Case-Seite umgestellt, inklusive Bildbeschreibung
+  und Original-Seitenverhältnis. Vorhandene responsive Hero-Quellen übernommen.
+- Website Design und Website-Konzept mit Screencasts unverändert gelassen.
+- Branchenangaben, Case-Links, Copy, Reveal, Parallax und Hoverzoom erhalten;
+  Motivregel für künftige Ergänzungen in AGENTS.md festgehalten.
+
+## 17.09.2026 – goSchneider im vollständigen Projekte-Karussell
+
+- Fehlenden goSchneider-Teaser in den Wiederholungsreihen von 39 Case-Seiten
+  ergänzt: bestehendes Heromotiv, Case-Link und „Handwerk & Digital“ übernommen.
+- Beide Karussellreihen auf identische Projektfolge geprüft; dadurch erscheint
+  goSchneider in jedem Umlauf ohne Versatz an der Schleifengrenze.
+- Auf der goSchneider-Seite bleibt der eigene Case wie bisher ausgespart.
+
+## 17.09.2026 – Persönliche Projektstimmen nach dem Relevanzmodul
+
+- Alle Projektseiten auf die Position der persönlichen Stimme geprüft.
+  medium, BGF+ und Wackelzahn hatten diese vor dem Relevanzmodul.
+- Vorhandene Stimmen mit unveränderter Copy und Porträt unter Relevanztext
+  und CTA versetzt, im gemeinsamen Modul wie bei NextBed und NOEY.
+- Reihenfolge aller 13 Cases mit persönlicher Stimme vereinheitlicht:
+  Relevanztext/CTA → persönliche Stimme → weitere Projekte.
+  Kundenstimmen bleiben ein separater Modultyp und wurden nicht verschoben.
+
+## 17.09.2026 – Durchgehende Betonfüllung im Preloader
+
+- Wiederholung der 500-Pixel-Betonkacheln entfernt; eine einzige HD-Textur
+  füllt die vollständige Breite und Höhe der Wortmarken-Malfläche.
+- Keine zusätzlichen Texturlayer. Erweiterte Malfläche für die unteren
+  Arame-Glyphenkanten erhalten; erste weiße Sequenz und Frame-Farblogik unverändert.
+
 ## 17.09.2026 – Gridbreite Sektionstrenner auf allen Leistungsdetailseiten
 
 - Alle 29 Leistungsdetailseiten auf die bestehende `sec--line`-Formatierung

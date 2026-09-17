@@ -2,6 +2,29 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Neuer LINK-ORTHO-Case aus dem freigegebenen Google-Dokument, mit unveränderter
+  NextBed/NOEY-Formatierung. „Hero LINK“ als Hero, alle 41 gelieferten Bilddateien
+  aufgenommen (13 Icons in einer Gesamtübersicht), aktueller Karriere-Screencast
+  und Christians persönliche Stimme unter dem Relevanzmodul. Responsive WebP-
+  Medien; Projektübersicht, Mega-Menü, Karussells und passende Referenzen ergänzt.
+  Desktop, Tablet, Mobil und Videowiedergabe geprüft; technischer Preflight
+  und SEO-Prüfung für alle 134 Seiten ohne Befunde.
+
+- 55 Projektteaser auf elf Leistungsdetailseiten verwenden die jeweiligen
+  Case-Heromotive samt Original-Seitenverhältnis. Website Design und
+  Website-Konzept behalten ihre Website-Screencasts als bewusste Ausnahme.
+
+- goSchneider erscheint auch in der Wiederholungsreihe aller „Weitere Projekte“-
+  Karussells. Beide Reihen haben dieselbe Projektfolge für einen nahtlosen
+  Endloslauf; der eigene Case bleibt auf der goSchneider-Seite ausgespart.
+
+- Persönliche Projektstimmen stehen einheitlich unter Relevanztext und CTA,
+  vor „Weitere Projekte“. Reihenfolge bei medium, BGF+ und Wackelzahn korrigiert;
+  alle Case-Seiten mit vorhandener persönlicher Stimme geprüft.
+
+- Preloader-Wortmarke mit einer einzigen durchgehenden HD-Betontextur über
+  die gesamte Glyphen-Malfläche, ohne wiederholte Kacheln oder sichtbare Nähte.
+
 - Alle 29 Leistungsdetailseiten verwenden für Sektionstrenner die gemeinsame
   `sec--line`-Regel von „Über uns“: Linien nur innerhalb der Content-Gridbreite,
   mit responsiven Außenabständen. Zitatband und anschließende Einordnung

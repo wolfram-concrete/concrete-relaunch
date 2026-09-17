@@ -1,0 +1,530 @@
+{
+  "document": "https://docs.google.com/document/d/1wm0mRoF4fB318tMxhKOhmdgSwJJq6nMyTvZIOxpPTRM/edit",
+  "hero": "Hero LINK.jpg",
+  "lead": "Wir-Wall-v2.jpg",
+  "iconsOverview": "icons-overview.svg",
+  "websiteVideo": "assets/website-projects/linkortho-v2.mp4",
+  "files": [
+    {
+      "name": "11.jpg",
+      "slug": "11",
+      "w": 5760,
+      "h": 3240,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "11-w1600.webp"
+    },
+    {
+      "name": "12.jpg",
+      "slug": "12",
+      "w": 5760,
+      "h": 3240,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "12-w1600.webp"
+    },
+    {
+      "name": "13.jpg",
+      "slug": "13",
+      "w": 5760,
+      "h": 3240,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "13-w1600.webp"
+    },
+    {
+      "name": "14.jpg",
+      "slug": "14",
+      "w": 5760,
+      "h": 3240,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "14-w1600.webp"
+    },
+    {
+      "name": "15.jpg",
+      "slug": "15",
+      "w": 5760,
+      "h": 3240,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "15-w1600.webp"
+    },
+    {
+      "name": "16.jpg",
+      "slug": "16",
+      "w": 5760,
+      "h": 3240,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "16-w1600.webp"
+    },
+    {
+      "name": "17.jpg",
+      "slug": "17",
+      "w": 5760,
+      "h": 3240,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "17-w1600.webp"
+    },
+    {
+      "name": "37.jpg",
+      "slug": "37",
+      "w": 3840,
+      "h": 2160,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "37-w1600.webp"
+    },
+    {
+      "name": "cap.png",
+      "slug": "cap",
+      "w": 4500,
+      "h": 3000,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "cap-w1600.webp"
+    },
+    {
+      "name": "DSC06408.png",
+      "slug": "dsc06408",
+      "w": 7008,
+      "h": 4672,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "dsc06408-w1600.webp"
+    },
+    {
+      "name": "DSC06419.png",
+      "slug": "dsc06419",
+      "w": 7008,
+      "h": 4672,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "dsc06419-w1600.webp"
+    },
+    {
+      "name": "DSC06509.png",
+      "slug": "dsc06509",
+      "w": 7008,
+      "h": 4672,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "dsc06509-w1600.webp"
+    },
+    {
+      "name": "Element 70@4x.png",
+      "slug": "element-70-4x",
+      "w": 954,
+      "h": 878,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 71@4x.png",
+      "slug": "element-71-4x",
+      "w": 873,
+      "h": 874,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 73@4x.png",
+      "slug": "element-73-4x",
+      "w": 904,
+      "h": 1317,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 74@4x.png",
+      "slug": "element-74-4x",
+      "w": 1069,
+      "h": 1151,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 75@4x.png",
+      "slug": "element-75-4x",
+      "w": 904,
+      "h": 1317,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 76@4x.png",
+      "slug": "element-76-4x",
+      "w": 1147,
+      "h": 1301,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 77@4x.png",
+      "slug": "element-77-4x",
+      "w": 753,
+      "h": 478,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 78@4x.png",
+      "slug": "element-78-4x",
+      "w": 624,
+      "h": 623,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 81@4x.png",
+      "slug": "element-81-4x",
+      "w": 912,
+      "h": 1050,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 82@4x.png",
+      "slug": "element-82-4x",
+      "w": 1074,
+      "h": 901,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 83@4x.png",
+      "slug": "element-83-4x",
+      "w": 856,
+      "h": 1089,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 84@4x.png",
+      "slug": "element-84-4x",
+      "w": 1138,
+      "h": 2678,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Element 85@4x.png",
+      "slug": "element-85-4x",
+      "w": 892,
+      "h": 907,
+      "icon": true,
+      "hero": false,
+      "widths": [
+        512
+      ],
+      "destination": "icons-overview.svg"
+    },
+    {
+      "name": "Hero LINK.jpg",
+      "slug": "hero",
+      "w": 8000,
+      "h": 4500,
+      "icon": false,
+      "hero": true,
+      "widths": [
+        640,
+        1280,
+        2400
+      ],
+      "destination": "hero-w2400.webp"
+    },
+    {
+      "name": "Hoodie-mockup-cover.png",
+      "slug": "hoodie-mockup-cover",
+      "w": 3333,
+      "h": 5000,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "hoodie-mockup-cover-w1600.webp"
+    },
+    {
+      "name": "Hoodie-mockup.png",
+      "slug": "hoodie-mockup",
+      "w": 3333,
+      "h": 5000,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "hoodie-mockup-w1600.webp"
+    },
+    {
+      "name": "Plakat-konkrete Werte.jpg",
+      "slug": "plakat-konkrete-werte",
+      "w": 2480,
+      "h": 3508,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "plakat-konkrete-werte-w1600.webp"
+    },
+    {
+      "name": "Plakat-konkrete Werte2.jpg",
+      "slug": "plakat-konkrete-werte2",
+      "w": 2480,
+      "h": 3508,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "plakat-konkrete-werte2-w1600.webp"
+    },
+    {
+      "name": "Plakat-konkrete Werte3.jpg",
+      "slug": "plakat-konkrete-werte3",
+      "w": 2480,
+      "h": 3508,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "plakat-konkrete-werte3-w1600.webp"
+    },
+    {
+      "name": "Plakat-konkrete Werte4.jpg",
+      "slug": "plakat-konkrete-werte4",
+      "w": 2480,
+      "h": 3508,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "plakat-konkrete-werte4-w1600.webp"
+    },
+    {
+      "name": "Plakat-konkrete Werte5.jpg",
+      "slug": "plakat-konkrete-werte5",
+      "w": 2480,
+      "h": 3508,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "plakat-konkrete-werte5-w1600.webp"
+    },
+    {
+      "name": "plakat-wall.jpg",
+      "slug": "plakat-wall",
+      "w": 5138,
+      "h": 3426,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "plakat-wall-w1600.webp"
+    },
+    {
+      "name": "poster-foyer.jpg",
+      "slug": "poster-foyer",
+      "w": 5000,
+      "h": 3750,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "poster-foyer-w1600.webp"
+    },
+    {
+      "name": "psd_04.jpg",
+      "slug": "psd-04",
+      "w": 4500,
+      "h": 3000,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "psd-04-w1600.webp"
+    },
+    {
+      "name": "psd_41.jpg",
+      "slug": "psd-41",
+      "w": 3000,
+      "h": 2000,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "psd-41-w1600.webp"
+    },
+    {
+      "name": "psd_791.jpg",
+      "slug": "psd-791",
+      "w": 4500,
+      "h": 3000,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "psd-791-w1600.webp"
+    },
+    {
+      "name": "Sport_Tumbler_Mockup_Changable_Color_Realistic_Render.jpg",
+      "slug": "sport-tumbler-mockup-changable-color-realistic-render",
+      "w": 4300,
+      "h": 2865,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "sport-tumbler-mockup-changable-color-realistic-render-w1600.webp"
+    },
+    {
+      "name": "t_shirt_mockup.jpg",
+      "slug": "t-shirt-mockup",
+      "w": 1280,
+      "h": 896,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1280
+      ],
+      "destination": "t-shirt-mockup-w1280.webp"
+    },
+    {
+      "name": "Wir-Wall-v2.jpg",
+      "slug": "wir-wall-v2",
+      "w": 6133,
+      "h": 4000,
+      "icon": false,
+      "hero": false,
+      "widths": [
+        800,
+        1600
+      ],
+      "destination": "wir-wall-v2-w1600.webp"
+    }
+  ]
+}
