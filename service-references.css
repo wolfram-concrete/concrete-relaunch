@@ -18,6 +18,7 @@
 .website-project__head span{display:inline-block;flex-shrink:0;width:.55em;height:.7em;font-size:18px;background:var(--coral);-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .website-project__link:is(:hover,:focus-visible) .website-project__head span{transform:translateX(2px)}
 .website-project__copy{display:block;font-size:14px;line-height:1.5;color:var(--ink-60);margin-top:6px;max-width:40ch}
+.website-project__industry{display:block;font-family:"Grotesk",Arial,sans-serif;font-size:11px;font-weight:700;line-height:1.45;letter-spacing:.035em;text-transform:uppercase;color:var(--coral);margin-top:8px}
 .website-project__link:hover h3{color:var(--coral)}
 .website-project.rv{transition-delay:var(--project-delay,0s)}
 .website-project:not(.in) .website-project__media{clip-path:inset(0 0 100% 0)}

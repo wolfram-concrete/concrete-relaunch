@@ -96,7 +96,7 @@ class PageParser(HTMLParser):
                 and not value.startswith("//")
                 and parsed.query
                 and parsed.path
-                and not parsed.path.endswith(("site.css", "site.js"))
+                and not parsed.path.endswith(("site.css", "site.js", "service-references.css"))
             ):
                 self.asset_queries.append(value)
 

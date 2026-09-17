@@ -2,6 +2,25 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Alle 29 Leistungsdetailseiten verwenden für Sektionstrenner die gemeinsame
+  `sec--line`-Regel von „Über uns“: Linien nur innerhalb der Content-Gridbreite,
+  mit responsiven Außenabständen. Zitatband und anschließende Einordnung
+  behalten ihre bewusst linienlose Gestaltung.
+
+- Website-Screencasts auf den Cases BGF+, CA’N SORT, Conlivo, MDB Finance,
+  medium und System 360 durch die heutigen Aufnahmen ersetzt, mit passenden
+  Postern und Originaltempo. Je Case ein vollständiger Durchlauf statt
+  doppelter alter Ausschnitte; goSchneider und NextBed unverändert.
+
+- Alle 13 Leistungsdetail-Referenzmodule zeigen die Branche unter dem
+  Projekttitel, konsistent zur Projektübersicht; Website-Teaser mit kürzerer Copy.
+- Persönliche Stimmen aus dem WordPress-Export bei CA’N SORT und Little Big
+  Pasta ergänzt, mit Wolfram statt Daniel und Wolframs Porträt. NOEY ebenfalls
+  korrekt Wolfram zugeordnet; bei CA’N SORT zusätzlich Julias Fotografie-Stimme.
+
+- Poodlewohl: neues 5120 × 2880-Motiv „Ein Rudel. Eine Familie.“ vollständig
+  ohne 74-vh-Beschnitt, responsive WebP-Fassungen für 1280, 2560 und 5120 Pixel.
+
 - Preloader-Textur: Malfläche unterhalb des Arame-Zeilenkastens erweitert;
   kein glatter Streifen mehr an der unteren Glyphenkante. Größe, Position
   und Frame-Farblogik unverändert, Desktop und Mobil geprüft.

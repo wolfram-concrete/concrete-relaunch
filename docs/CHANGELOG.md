@@ -1,5 +1,54 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Gridbreite Sektionstrenner auf allen Leistungsdetailseiten
+
+- Alle 29 Leistungsdetailseiten auf die bestehende `sec--line`-Formatierung
+  der Über-uns-Seite umgestellt: dünne Sektionstrenner laufen nur von der
+  linken bis zur rechten Content-Gridkante, nicht mehr randabfallend.
+- Gemeinsame Maximalbreite und responsive Container-Abstände übernehmen
+  die Ausrichtung auf Desktop, Tablet und Mobil automatisch.
+- Keine Änderung an Copy, Kartenlinien, Raster, Hover oder Parallax.
+  Dunkles Zitatband und nachfolgende Einordnung weiterhin ohne Trennlinie.
+- Veröffentlichung zusammen mit den zuvor akzeptierten Änderungen an
+  Poodlewohl-Bildqualität, Case-Stimmen, Branchenzeilen und Website-Screencasts.
+
+## 17.09.2026 – Neue Website-Screencasts auch auf den Projektseiten
+
+- Alle Projektseiten mit vorhandenen Website-Videos geprüft. Bei BGF+,
+  CA’N SORT, Conlivo, MDB Finance, medium und System 360 die heutigen
+  Aufnahmen aus „Desktop/neue videos“ eingebunden, mit passenden Postern
+  und Fallbacks im korrekten 16:9-Seitenverhältnis.
+- Bereits optimierte gemeinsame Videodateien wiederverwendet; aktualisierte
+  CA’N-SORT- und neu gelieferte System-360-Aufnahme als neue Webfassungen.
+- Zwei frühere Teilaufnahmen bei Conlivo, MDB Finance, medium und System 360
+  durch jeweils einen vollständigen aktuellen Screencast ersetzt.
+- Stumme Lazy-Autoplay-Loops, Originaltempo und Reduced-Motion-/Save-Data-Logik
+  bleiben erhalten. Logoanimationen, Markenfilme und Standbilder unverändert.
+- goSchneider und NextBed behalten ihre Screencasts: keine neue Aufnahme
+  im gelieferten Ordner. LINK und NOEY haben aktuell keinen Website-Videoplatz
+  auf einer Case-Seite; daher dort keine bestehenden Videos auszutauschen.
+
+## 17.09.2026 – Persönliche Case-Stimmen und Branchen in Leistungsreferenzen
+
+- Fehlende Designstimmen bei CA’N SORT und Little Big Pasta aus dem alten
+  WordPress-Export wiederhergestellt; auf Wunsch mit Wolframs Namen, Rolle und
+  Porträt statt Daniel. NOEY-Zuordnung und Foto von Christian auf Wolfram korrigiert.
+- CA’N SORT zusätzlich mit Julias originaler Stimme zur Fotoproduktion.
+- Alle 13 heute ergänzten Leistungsdetail-Referenzmodule mit Branchenzeile
+  unter dem Brandtitel, Kategorien aus der bestehenden Projektübersicht.
+- Website Design und Website-Konzept mit identischer, gekürzter Teasercopy;
+  externe Website-Links, Markenpfeile, Hoverzoom und Parallax bleiben erhalten.
+- Gemeinsames Referenzstylesheet auf Cache-Version 2 aktualisiert.
+
+## 17.09.2026 – Poodlewohl-Motiv hochaufgelöst und unbeschnitten
+
+- Gelieferte „slide 335.jpg“ (5120 × 2880) als neue responsive WebP-Bildquelle
+  eingesetzt, inklusive 1280-/2560-Pixel-Fassungen und Lazy Loading.
+- Bestehenden `data-full`-Modus verwendet: Galerie-Leitmotiv ohne begrenzte
+  Höhe, vollständig im Original-Seitenverhältnis statt abgeschnittener Ränder.
+- Parallax-Vergrößerung bei Vollformat-Leitmotiven deaktiviert, damit auch der
+  zusätzliche 14-Prozent-Zoom keinen Beschnitt erzeugt. Desktop/Mobil geprüft.
+
 ## 17.09.2026 – Unteren Textur-Abbruch im Preloader behoben
 
 - Hintergrund-Malfläche der maskierten Betonebene um 0,2 em nach unten
