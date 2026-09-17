@@ -2,6 +2,8 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Finale Sitemap live veröffentlicht und in Google Search Console erneut erfolgreich eingereicht. GA4/GTM decken neue Cases über das bestehende All-Pages-Tracking ab. Messwerte und offene Medienoptimierungen: [Performance- und Indexierungsbericht](docs/PERFORMANCE-INDEXIERUNG-2026-09-17.md).
+
 - Sitemap mit 136 kanonischen, indexierbaren URLs und Änderungsdaten aus Git final abgeglichen. Vollständiger Live-Crawl: 136 HTTP-200-Seiten ohne Canonical- oder Indexierungsfehler. Performance-Messungen auf sechs Seitentypen, jeweils Mobil und Desktop, dokumentieren weiteren Optimierungsbedarf auf der Startseite.
 
 - Hoodie-Mockup aus der PARQ-Energy-Galerie entfernt.

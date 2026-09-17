@@ -2,6 +2,9 @@
 
 ## 17.09.2026 – Sitemap-Abgleich und Live-Performance-Prüfung
 
+- Finale Live-Sitemap bytegleich geprüft und am 17.09.2026 in der Domain-Property erfolgreich erneut eingereicht. GA4-Webstream und GTM-Live-Version 41 geprüft; neue Cases benötigen keine zusätzlichen Seitentrigger.
+- 13 Lighthouse-Messungen einschließlich Startseiten-Wiederholung dokumentiert: Mobil 54–79 auf der Startseite, 86–98 auf den geprüften Case-/Leistungsseiten. Bericht: `PERFORMANCE-INDEXIERUNG-2026-09-17.md`.
+
 - Sitemap für alle 136 kanonischen und indexierbaren Seiten regeneriert; `lastmod` stammt aus den tatsächlichen Git-Änderungsdaten.
 - Vollständiger Live-Crawl aller 136 URLs: HTTP 200, selbstreferenzielle Canonicals und keine Indexierungsblockaden.
 - Lighthouse-Messungen für Startseite, Website Design, PARQ Energy, LINK, medium und Haftpflichtkasse auf Mobil und Desktop durchgeführt. Startseiten-Medienlast als wesentlichen Performance-Engpass identifiziert.
