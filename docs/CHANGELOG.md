@@ -1,5 +1,22 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Markenlogos an Website-Referenzen
+
+- Original-Logos für NOEY, CA’N SORT, goSchneider, MDB Finance, LINK und
+  System 360 zwischen Video und ARAME-Titel ergänzt (maximal 88×32px).
+- Vorhandene SVGs wiederverwendet, PNG-Logos als kleine WebPs optimiert;
+  Lazy-Loading und leere Alt-Texte vermeiden doppelte Namensansagen.
+- Browserprüfung der Logos und des 3/2/1-Spaltenrasters bestanden;
+  technischer Preflight und SEO-Gauntlet: 133 Seiten, jeweils 0 Befunde.
+
+## 17.09.2026 – Ruhigere Website-Videos und dritte Referenzspalte
+
+- Sechs Website-Referenzvideos auf 0,5-fache Wiedergabegeschwindigkeit gesetzt;
+  Einstellung auch nach dem Lazy-Laden der Metadaten beibehalten.
+- Desktop-Masonry auf drei Spalten erweitert, bis 1000px zwei, bis 540px eine.
+  Unterschiedliche Medienhöhen, ARAME, Motion und stumme Loops ohne Controls
+  bleiben erhalten; keine Änderung am Tempo der Case-Videos.
+
 ## 17.09.2026 – Gesammelte Website- und Performance-Änderungen
 
 - Website-Referenzen, Leistungsdetail-Copy und goSchneider-Bildoptimierung

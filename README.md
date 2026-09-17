@@ -2,6 +2,12 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Alle sechs Website-Referenzen mit kleinen Original-Markenlogos unter dem Video;
+  vier SVGs, zwei verkleinerte WebPs, lazy geladen ohne zusätzliche Namensansage.
+- Website-Referenzen laufen mit halbem Tempo im dreispaltigen Masonry;
+  bis 1000px zwei Spalten, bis 540px eine. Case-Videos unverändert.
+- Referenzliste auf Desktop, Tablet und Mobile geprüft: 3/2/1 Spalten,
+  alle sechs Logos geladen, Video-Tempo 0,5 und kein horizontaler Überlauf.
 - Website-Projektunterschriften folgen der Projektliste: ARAME-Titel
   (18–22px, bold, Zeilenhöhe 1), 12px Bildabstand und bestehende Kurzcopy.
 - Website-Projekte um MDB Finance, LINK Karriere und System 360 erweitert;
@@ -17,7 +23,7 @@
   die Leistungsübersicht `var(--ink)`; sekundäre Teaser-Metadaten bleiben grau.
 - `website-design` zeigt nach der Phasen-Einordnung die neue Section
   „Website-Projekte“ mit sechs Referenzen: Teaser im
-  bestehenden Listenstil, zweispaltiges Masonry mit unterschiedlichen Medienhöhen,
+  bestehenden Listenstil, dreispaltiges Masonry mit unterschiedlichen Medienhöhen,
   Reveal und dezentes Parallax. Mobil einspaltig; reduzierte Bewegung berücksichtigt.
   Gelieferte Scroll-Videos als 1280-px-H.264-Fassung mit Faststart, WebP-Postern
   und Lazy-Autoplay, stumm im Loop ohne Steuerung.
