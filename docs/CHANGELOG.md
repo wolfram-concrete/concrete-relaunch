@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Schwarmmotiv als großer Galerie-Einstieg
+
+- „Gemeinsam in Bewegung“ direkt unter der Slideshow großflächig eingesetzt,
+  responsive bis 2400 Pixel. Mitarbeiter-Kit ins bestehende Galerieraster
+  verschoben; Fischschwarm bleibt der Case-Hero ganz oben.
+
 ## 17.09.2026 – Einblick in die strategische Arbeit
 
 - Auf ausdrücklichen Wunsch Strategie-Slider vor der Haftpflichtkasse-Galerie

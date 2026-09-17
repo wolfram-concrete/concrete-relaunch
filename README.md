@@ -2,6 +2,9 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Unter dem Strategie-Slider startet die Haftpflichtkasse-Galerie mit dem
+  großen „Gemeinsam in Bewegung“-Schwarmmotiv; Mitarbeiter-Kit im Bildraster.
+
 - Haftpflichtkasse: manuelles Strategie-Folienkarussell vor der Bildgalerie
   (09, 10, 18, 21, 31, 38), mit Einordnung, Swipe und Vergrößerung.
 
@@ -16,7 +19,7 @@
 
 - Neuer Haftpflichtkasse-Case aus Christians Briefing, im bestehenden
   Case-Raster mit gelieferten Bildmotiven, Fischschwarm als Hero,
-  Mitarbeiter-Kit als Galerie-Einstieg und Ergebnisvergleich. Keine
+  Schwarmmotiv als Galerie-Einstieg und Ergebnisvergleich. Keine
   ungelieferte Projektstimme ergänzt. LINK auf Position 4, Haftpflichtkasse
   auf Position 7; globale Karussells und passende Leistungsreferenzen ergänzt.
   Finance-Branchenauswahl ergänzt; Desktop/Tablet/Mobil, 43 Karussells und

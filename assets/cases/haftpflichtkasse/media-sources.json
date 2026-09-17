@@ -1,7 +1,7 @@
 {
   "document": "https://docs.google.com/document/d/1FjnYOGrqK5xYSjQQOVAVvYBV1pzaVVfsjWqtoMUUWSE/edit",
   "hero": "wolle6071_large_school_of_fish_swimming_gracefully_in_crystal_6fbb741a-82db-40bb-a5ce-665f6a663a85_3.png",
-  "lead": "HK-Mitarbeiter-Kit.jpg",
+  "lead": "Visual Schwarm.png",
   "media": [
     {
       "name": "Bewegung-Kreisel_RGB.png",
@@ -122,7 +122,8 @@
       "h": 5637,
       "widths": [
         800,
-        1600
+        1600,
+        2400
       ],
       "hero": false
     },
