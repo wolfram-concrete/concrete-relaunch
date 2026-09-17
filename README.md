@@ -2,6 +2,9 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Der medium-Website-Screencast ist auf 38,5 MB komprimiert und bleibt damit unter GitHubs empfohlener 50-MB-Grenze; Auflösung, Format und Laufzeit bleiben unverändert.
+
+
 - PARQ-Galerie verfeinert: Styleguide-Slider laufen automatisch als seitlicher Bildwechsel ohne sichtbare Steuerung; der Website-Screencast steht kompakt rechts unter dem großen Galerie-Einstieg.
 
 
