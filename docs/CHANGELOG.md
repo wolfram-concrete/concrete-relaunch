@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – LINK vernetzt und im oberen Drittel eingeordnet
+
+- LINK auf Position 7 von 41 in der Projektübersicht einsortiert.
+- Leistungsreferenzen für Employer Branding, Mitarbeiterbefragungen,
+  Kommunikationsstrategie und internes Rollout mit Case-Hero, Branchenzeile,
+  Markenpfeil, Hoverzoom und bestehendem Parallax ergänzt.
+- Konkretes LINK-Beispiel auf Interne Kommunikation & Change-Kommunikation
+  identifiziert und zur Case-Seite verlinkt. Praxisverknüpfung auf
+  Markenverständnis im Team ergänzt; B2B-Auswahl um LINK erweitert.
+- Recruiting, Text-/Icon-Referenzen, Mega-Menüs und die beiden Reihen aller
+  Case-Karussells enthalten LINK bereits. Keine doppelten Karten ergänzt;
+  Website-Referenzen verlinken weiterhin die tatsächliche Karrierewebsite.
+- Desktop und Mobil geprüft; 42 Case-Karussells mit beiden Reihen validiert.
+  Technischer Preflight und SEO-Gauntlet: 134 Seiten ohne Befunde.
+
 ## 17.09.2026 – LINK ORTHO: Employer Branding, das innen beginnt
 
 - Neue Case-Seite `case-link.html` mit Texten und Ergebnisvergleich aus

@@ -2,6 +2,13 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- LINK ORTHO auf Position 7 der Projektliste (oberes Drittel). Konkrete
+  Referenzen für Employer Branding, Mitarbeiterbefragungen, Kommunikationsstrategie,
+  internes Rollout und Markenverständnis ergänzt. Christians vorhandenes
+  LINK-Beispiel auf Interne Kommunikation & Change-Kommunikation direkt verlinkt;
+  Recruiting-/B2B-Verknüpfungen und alle Case-Karussells berücksichtigt.
+  Desktop/Mobil sowie 42 Karussells geprüft; Preflight und SEO ohne Befunde.
+
 - Neuer LINK-ORTHO-Case aus dem freigegebenen Google-Dokument, mit unveränderter
   NextBed/NOEY-Formatierung. „Hero LINK“ als Hero, alle 41 gelieferten Bilddateien
   aufgenommen (13 Icons in einer Gesamtübersicht), aktueller Karriere-Screencast
