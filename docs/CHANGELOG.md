@@ -8,6 +8,15 @@
 - Responsive Browserprüfung bestanden; technischer Preflight und SEO-Gauntlet:
   jeweils 133 Seiten, 0 Befunde. `git diff --check` ohne Befund.
 
+## 17.09.2026 – Alte Good-Humor-Adresse dauerhaft weitergeleitet
+
+- `/brandbuilding-good-humor` als permanente Vercel-Weiterleitung (308) auf
+  den bestehenden Case `/case-good-humor` ergänzt.
+- Redirect-Liste und Vercel-Konfiguration synchron gehalten; vorhandene
+  `/good-humor`-Weiterleitung, Case-Inhalte, Canonical und Sitemap unverändert.
+- Keine pauschale Weiterleitung für andere alte Brandbuilding-Adressen;
+  deren jeweilige fachliche Nachfolger müssen separat abgeglichen werden.
+
 ## 17.09.2026 – Git-Stand und Consent-Vorbereitung zusammengeführt
 
 - Bestehenden Remote-Commit zur Consent-/GTM-Vorbereitung ohne Überschreiben
