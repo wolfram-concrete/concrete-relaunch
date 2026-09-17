@@ -4,6 +4,8 @@
 
 - Kundenstimmen: dezente weiße Markenlogos rechts unten innerhalb der
   Kundenbilder, in allen vier Karussells und den 32 Case-Kundenstimmen.
+  CA’N SORT verwendet bis zur weißen Cutout-Fassung das farbige Original-Logo.
+  Auch LINK bleibt in den Originalfarben, ohne Weißfilter.
 - Footer bereinigt: versehentliche goSchneider-Logos nach dem HTML-Ende
   entfernt, ausgelagerten CSS-Code auf zwei Situationsseiten korrekt eingeordnet.
   Technical Preflight erkennt jetzt Inhalte nach dem schließenden HTML-Tag.

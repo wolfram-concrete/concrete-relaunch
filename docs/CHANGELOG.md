@@ -1,5 +1,15 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – LINK-Kundenlogo in Originalfarben
+
+- LINK-Logo in sämtlichen Rezensionsmodulen ohne Weißfilter dargestellt;
+  Originalfarben, kleine Größe und Position unten rechts beibehalten.
+
+## 17.09.2026 – CA’N SORT-Kundenlogo in Originalfarben
+
+- CA’N SORT-Logo auf allen Kundenbildern ohne Weißfilter in Originalfarben;
+  Größe und Position bleiben unverändert. Keine neue Cutout-Datei erforderlich.
+
 ## 17.09.2026 – Synchroner Coral-/Weiß-Rhythmus im Preloader
 
 - Logo-Farbe springt bei jedem Bildwechsel in derselben Animation-Frame-Ausführung.

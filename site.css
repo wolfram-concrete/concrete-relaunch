@@ -457,6 +457,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .review-portrait > img:first-child{display:block;width:100%;height:auto}
 :is(.review__media,.review-portrait) > .review__brand{position:absolute;right:14px;bottom:14px;z-index:2;width:clamp(56px,20%,88px);height:32px;object-fit:contain;object-position:right bottom;filter:brightness(0) invert(1) drop-shadow(0 1px 3px rgba(0,0,0,.5));opacity:.92;pointer-events:none}
 .review__media--tex{background:var(--coral)}
+:is(.review__media,.review-portrait) > .review__brand:is([src="assets/clients/cansort.svg"],[src="assets/clients/link.svg"]){filter:drop-shadow(0 1px 2px rgba(0,0,0,.2));opacity:1}
 .review__media--tex .tex{width:100%;height:100%;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") center/cover;mix-blend-mode:multiply;opacity:.85}
 .review blockquote{margin:0;font-size:var(--fs-body);line-height:1.6;color:var(--ink-60)}
 .review blockquote b{color:var(--ink);font-weight:400}
