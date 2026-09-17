@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Unteren Textur-Abbruch im Preloader behoben
+
+- Hintergrund-Malfläche der maskierten Betonebene um 0,2 em nach unten
+  erweitert. Arame-Glyphen werden bis zur Unterkante texturiert, ohne glatten
+  Füllstreifen. Schriftgröße, Baseline, Logo-Position und Farblogik erhalten.
+- Den gemeldeten Coral-/Cologne-Comedy-Frame auf Desktop und Mobil geprüft.
+- Startseiten-Asset-Version erhöht, damit Browser die Korrektur neu laden.
+
 ## 17.09.2026 – Neue Website-Aufnahmen für beide Referenzlisten
 
 - Gelieferte Aufnahmen für NOEY, CA’N SORT, MDB Finance und LINK ersetzt;

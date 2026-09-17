@@ -2,6 +2,10 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Preloader-Textur: Malfläche unterhalb des Arame-Zeilenkastens erweitert;
+  kein glatter Streifen mehr an der unteren Glyphenkante. Größe, Position
+  und Frame-Farblogik unverändert, Desktop und Mobil geprüft.
+
 - Website Design und Website-Konzept: neue Aufnahmen aus „Desktop/neue videos“
   für NOEY, CA’N SORT, MDB und LINK; ergänzt um BGF+, Conlivo und medium.
   Beide Listen zeigen neun Websites. goSchneider und System 360 unverändert;
