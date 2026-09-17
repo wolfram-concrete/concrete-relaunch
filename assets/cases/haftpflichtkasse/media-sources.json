@@ -1,6 +1,6 @@
 {
   "document": "https://docs.google.com/document/d/1FjnYOGrqK5xYSjQQOVAVvYBV1pzaVVfsjWqtoMUUWSE/edit",
-  "hero": "Visual-Schwarm-Wallgraphic 2.jpg",
+  "hero": "wolle6071_large_school_of_fish_swimming_gracefully_in_crystal_6fbb741a-82db-40bb-a5ce-665f6a663a85_3.png",
   "lead": "HK-Mitarbeiter-Kit.jpg",
   "media": [
     {
@@ -96,8 +96,11 @@
       "w": 1920,
       "h": 1080,
       "widths": [
+        640,
         800,
-        1600
+        1280,
+        1600,
+        1920
       ],
       "hero": false
     },
@@ -133,7 +136,7 @@
         1280,
         2400
       ],
-      "hero": true
+      "hero": false
     },
     {
       "name": "Visual-Schwarm-Wallgraphic.jpg",
@@ -145,6 +148,18 @@
         1600
       ],
       "hero": false
+    },
+    {
+      "name": "wolle6071_large_school_of_fish_swimming_gracefully_in_crystal_6fbb741a-82db-40bb-a5ce-665f6a663a85_3.png",
+      "slug": "fischschwarm",
+      "w": 1456,
+      "h": 816,
+      "widths": [
+        640,
+        1280,
+        1456
+      ],
+      "hero": true
     }
   ]
 }

@@ -2,8 +2,20 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Haftpflichtkasse: manuelles Strategie-Folienkarussell vor der Bildgalerie
+  (09, 10, 18, 21, 31, 38), mit Einordnung, Swipe und Vergrößerung.
+
+- Haftpflichtkasse-Galerie ohne separates Logo; Bewegungskreisel und
+  Schwarm-Pfeilschild gemeinsam in einem Bildcontainer.
+
+- Haftpflichtkasse verwendet das blaue Fischschwarm-Motiv als Hero und in allen
+  Projektteasern. Kommunikationsstrategie ist zweizeilig ohne Spaltenkollision.
+
+- Haftpflichtkasse steht in den Projekt-Mega-Menüs an letzter Stelle;
+  die Reihenfolge der Projektübersicht bleibt unverändert.
+
 - Neuer Haftpflichtkasse-Case aus Christians Briefing, im bestehenden
-  Case-Raster mit 13 gelieferten Bildmotiven, Schwarm-Wallgraphic als Hero,
+  Case-Raster mit gelieferten Bildmotiven, Fischschwarm als Hero,
   Mitarbeiter-Kit als Galerie-Einstieg und Ergebnisvergleich. Keine
   ungelieferte Projektstimme ergänzt. LINK auf Position 4, Haftpflichtkasse
   auf Position 7; globale Karussells und passende Leistungsreferenzen ergänzt.

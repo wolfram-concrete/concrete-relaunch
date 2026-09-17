@@ -1,5 +1,38 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Einblick in die strategische Arbeit
+
+- Auf ausdrücklichen Wunsch Strategie-Slider vor der Haftpflichtkasse-Galerie
+  ergänzt: sechs Präsentationsfolien, ohne Titelblätter oder Outros.
+- Manuelle Originalpfeile, Zähler, Swipe und Tastaturbedienung; kein Autoplay.
+  Vollständige Folien ohne Beschnitt, mit kurzer redaktioneller Einordnung.
+- Vergrößerungsdialog mit Originalgrößenansicht für kleine Texte; Reduced
+  Motion berücksichtigt. Übrige Case-Module und globales Raster unverändert.
+
+## 17.09.2026 – Haftpflichtkasse: Fischschwarm als finales Heromotiv
+
+- Ausgewähltes Unterwasser-Fischschwarm-Visual ersetzt das Post-it als Hero
+  und in allen verknüpften Projektteasern; Post-it bleibt in der Galerie.
+- Responsive WebP-Dateien bis zur Originalauflösung von 1456 × 816 Pixeln;
+  helle Navigation über dem dunklen Heromotiv.
+
+## 17.09.2026 – Haftpflichtkasse: Galerie aufgeräumt
+
+- Separates Markenlogo aus der Galerie entfernt; Logo im Projektintro bleibt.
+- Bewegungskreisel und Schwarm-Pfeilschild in einem gemeinsamen Container
+  nebeneinander ohne Beschnitt zusammengefasst.
+
+## 17.09.2026 – Haftpflichtkasse: Post-it als Heromotiv
+
+- Gelbes Post-it-Motiv als Case-Hero sowie in Projektliste, Mega-Menüs,
+  Leistungsreferenzen und weiteren Projektkarussells eingesetzt.
+- Kommunikationsstrategie im Case zweizeilig umbrochen, ohne Spaltenkollision.
+
+## 17.09.2026 – Haftpflichtkasse am Ende des Mega-Menüs
+
+- Haftpflichtkasse in allen Projekt-Mega-Menüs an die letzte Stelle verschoben.
+  Projektliste (Position 7) und LINK (Position 4) unverändert.
+
 ## 17.09.2026 – Die Haftpflichtkasse: Veränderung verständlich machen
 
 - Neue Case-Seite aus dem Briefing „Case-Haftpflichtkasse“, mit bestehender
