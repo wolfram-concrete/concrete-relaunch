@@ -2,6 +2,11 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Dennis-Preloaderbild: fehlerhafte 400px-Teaser-Satzbreite durch viewport-
+  und Cover-gerechte Bildauswahl ersetzt; zusätzliche 3840px-WebP-Fassung
+  aus dem Original für große und hochauflösende Displays.
+- Dennis-Bildauswahl auf großem Bildschirm und mobil geprüft;
+  technischer Preflight und SEO-Gauntlet: 133 Seiten, 0 Befunde.
 - Alle sechs Website-Referenzen mit kleinen Original-Markenlogos unter dem Video;
   vier SVGs, zwei verkleinerte WebPs, lazy geladen ohne zusätzliche Namensansage.
 - Website-Referenzen laufen mit halbem Tempo im dreispaltigen Masonry;

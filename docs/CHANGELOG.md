@@ -1,5 +1,14 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Dennis-Preloaderbild scharf darstellen
+
+- Ursache der Pixeligkeit korrigiert: Reel-Bild hatte versehentlich die
+  `sizes`-Angabe kleiner Teaser und wählte deshalb zu geringe Auflösungen.
+- Cover-gerechte `sizes` und zusätzliche 3840px-WebP-Fassung aus dem
+  Original; responsive Varianten bleiben erhalten, Timing unverändert.
+- Browserauswahl bei 2560px bestätigt die 3840px-Fassung; mobile Prüfung
+  ohne Überlauf. Technischer Preflight und SEO-Gauntlet jeweils ohne Befunde.
+
 ## 17.09.2026 – Markenlogos an Website-Referenzen
 
 - Original-Logos für NOEY, CA’N SORT, goSchneider, MDB Finance, LINK und
