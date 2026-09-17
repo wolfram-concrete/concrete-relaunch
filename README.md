@@ -2,6 +2,8 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Sitemap mit 136 kanonischen, indexierbaren URLs und Änderungsdaten aus Git final abgeglichen. Vollständiger Live-Crawl: 136 HTTP-200-Seiten ohne Canonical- oder Indexierungsfehler. Performance-Messungen auf sechs Seitentypen, jeweils Mobil und Desktop, dokumentieren weiteren Optimierungsbedarf auf der Startseite.
+
 - Hoodie-Mockup aus der PARQ-Energy-Galerie entfernt.
 
 - PARQ-Galerie finalisiert: Sonnenaufgang als Hero, Screencast kompakt im Raster ab Sekunde 2, Messewand und Briefpapier weiter unten sowie getrennte Bauzaun-Motive. Technische Preflight- und SEO-Prüfung bleiben ohne Befunde.

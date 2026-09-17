@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Sitemap-Abgleich und Live-Performance-Prüfung
+
+- Sitemap für alle 136 kanonischen und indexierbaren Seiten regeneriert; `lastmod` stammt aus den tatsächlichen Git-Änderungsdaten.
+- Vollständiger Live-Crawl aller 136 URLs: HTTP 200, selbstreferenzielle Canonicals und keine Indexierungsblockaden.
+- Lighthouse-Messungen für Startseite, Website Design, PARQ Energy, LINK, medium und Haftpflichtkasse auf Mobil und Desktop durchgeführt. Startseiten-Medienlast als wesentlichen Performance-Engpass identifiziert.
+- Wiederverwendbare Werkzeuge für Sitemap-Generierung und Live-Crawl ergänzt.
+
 ## 17.09.2026 – PARQ-Galerie ohne Hoodie
 
 - Hoodie-Mockup aus der PARQ-Energy-Galerie entfernt; die übrigen Galerie-Motive bleiben erhalten.
