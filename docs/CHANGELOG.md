@@ -1,5 +1,11 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Website-Screencasts erneut aktualisiert
+
+- Die neu abgelegten Website-Videos für PARQ Energy, System 360, medium, LINK, BGF+, NOEY, Conlivo, Banijay, MDB Finance, CA’N SORT und goSchneider in allen Case- und Leistungsdetailseiten ersetzt.
+- Bestehende Poster, Lazy-Loading-Logik und stumme Endlosschleifen beibehalten; die neuen Dateien liegen unter den bisher verknüpften Pfaden.
+
+
 ## 17.09.2026 – PARQ Energy: Vertrauen als Marke für Solarpark-Projekte
 
 - Neuer PARQ-Energy-Case im bestehenden Projektseiten-Raster: Briefing-Inhalte, Hero-Motiv, Ergebnisvergleich, Relevanzmodul und Christians Projektstimme.

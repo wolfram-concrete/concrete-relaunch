@@ -2,6 +2,9 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Website-Screencasts erneut mit den aktuellen Dateien ausgetauscht: PARQ Energy, System 360, medium, LINK, BGF+, NOEY, Conlivo, Banijay, MDB Finance, CA’N SORT und goSchneider. Alle bestehenden Case- und Leistungsdetail-Verwendungen zeigen weiterhin dieselben Poster und Lazy-Loading-Pfade.
+
+
 - Neuer PARQ-Energy-Case auf Position 4: Solarpark-Projektentwicklung als Vertrauensaufgabe, mit gelieferten Mockups, vier rotierenden Styleguide-Gruppen und Website-Screencast ab Sekunde 2. In passende „Weitere Projekte“-Karussells, Projektmenü und Leistungsreferenzen integriert; Preflight und SEO für 136 Seiten ohne Befunde.
 
 
