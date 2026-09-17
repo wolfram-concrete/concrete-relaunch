@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Doppelter Abstand zwischen Case-Hero und Headline
+
+- Gemeinsamen oberen Abstand der ersten Headline auf allen 41 Projektseiten
+  um 100 % erhöht; Desktop und mobile Clamp-Werte jeweils exakt verdoppelt.
+- Case-Cache-Version und technische Erwartung auf `v=177` angehoben.
+- Responsive Browserprüfung bestanden; technischer Preflight und SEO-Gauntlet:
+  jeweils 133 Seiten, 0 Befunde. `git diff --check` ohne Befund.
+
 ## 17.09.2026 – Git-Stand und Consent-Vorbereitung zusammengeführt
 
 - Bestehenden Remote-Commit zur Consent-/GTM-Vorbereitung ohne Überschreiben

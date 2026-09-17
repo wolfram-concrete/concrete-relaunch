@@ -2,8 +2,13 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Hero–Headline-Abstand auf allen 41 Projektseiten global verdoppelt:
+  Desktop `clamp(56px,8vw,112px)`, mobil `clamp(64px,18vw,112px)`.
+  Aktuelle Case-Cache-Version: `v=177`.
+- Responsive Browserprüfung mit NextBed, NOEY und goSchneider bestanden;
+  technischer Preflight und SEO-Gauntlet: 133 Seiten, jeweils 0 Befunde.
 - Remote-Stand zur Consent-/GTM-Vorbereitung integriert; die beiden neuen
-  Seiten verwenden ebenfalls `consent-v9.js`. Case-Cache `v=176`, übrige Seiten
+  Seiten verwenden ebenfalls `consent-v9.js`. Case-Cache jetzt `v=177`, übrige Seiten
   `v=174`; gemeinsame Abschlussprüfungen ohne Befund.
 - Großes Gallery-Intro bei goSchneider auf `GoSchneider80.jpg` (Einlage in den
   Händen) ausgetauscht; Projekt-Hero und zugehörige Teaser bleiben unverändert.

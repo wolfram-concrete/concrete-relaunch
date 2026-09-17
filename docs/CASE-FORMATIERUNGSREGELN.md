@@ -15,6 +15,8 @@ Formatierung muss schon bei der ersten Umsetzung mit der Referenz übereinstimme
 ## Aufbau und Module
 
 1. Bestehender Header, Hero, Projekttitel und Leistungsmetadaten.
+   Hero–Headline-Abstand zentral in `site.css`: Desktop
+   `clamp(56px,8vw,112px)`, bis 820 px `clamp(64px,18vw,112px)`.
 2. Herausforderung und sämtliche Case-Texte einschließlich Strategie,
    Designsystem und Ergebnis **vor** der Gallery. Vertiefungen im vorhandenen
    Accordion; keine einzelnen Packaging-/Website-Bildtext-Rubriken dazwischen.

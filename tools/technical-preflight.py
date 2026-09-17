@@ -22,7 +22,7 @@ from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_CACHE_VERSION = "174"
-EXPECTED_CASE_CACHE_VERSION = "176"
+EXPECTED_CASE_CACHE_VERSION = "177"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
 JSON_LD_RE = re.compile(
