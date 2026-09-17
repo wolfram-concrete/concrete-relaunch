@@ -303,7 +303,7 @@
         '</div>' +
         '<div class="consent-actions">' +
           '<button class="consent-button" type="button" data-consent-accept>Alle akzeptieren</button>' +
-          '<button class="consent-button" type="button" data-consent-reject>Alle ablehnen</button>' +
+          '<button class="consent-button" type="button" data-consent-reject>Nur notwendige</button>' +
           '<button class="consent-link" type="button" data-consent-settings>Einstellungen</button>' +
         '</div>' +
       '</section>' +
@@ -320,7 +320,7 @@
         '</div>' +
         '<p class="consent-note">SalesViewer läuft unabhängig von dieser Auswahl. Informationen zu allen Diensten: <a href="datenschutz">Datenschutz</a>.</p>' +
         '<div class="consent-actions consent-actions--settings">' +
-          '<button class="consent-button consent-button--quiet" type="button" data-consent-reject>Alle ablehnen</button>' +
+          '<button class="consent-button consent-button--quiet" type="button" data-consent-reject>Nur notwendige</button>' +
           '<button class="consent-button consent-button--solid" type="button" data-consent-save>Auswahl speichern</button>' +
         '</div>' +
       '</section>' +

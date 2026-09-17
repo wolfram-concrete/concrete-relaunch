@@ -77,6 +77,17 @@
 - Reihenfolge, Schriftwechsel, Animations-Timing und abschließendes Video
   unverändert beibehalten.
 
+## 17.09.2026 – Klarere Consent-Beschriftungen
+
+- Ablehnungsbutton auf beiden Ebenen von „Alle ablehnen“ in „Nur notwendige“
+  umbenannt. „Alle akzeptieren“ und „Einstellungen“ bleiben die direkten
+  Optionen; „Auswahl speichern“ bleibt dem Einstellungsdialog vorbehalten.
+- Keine Änderung an Kategorieauswahl, Speicherlaufzeit, Overlay, Freigaben
+  oder GTM. Bestehende Entscheidungen bleiben gültig.
+- Beschriftungen als Assertions in den isolierten Consent-Gauntlet aufgenommen.
+- Alle 15 Consent-Testgruppen bestanden; technischer Preflight und SEO-Gauntlet:
+  jeweils 133 Seiten, 0 Befunde. `git diff --check` ohne Befund.
+
 ## 17.09.2026 – goSchneider-Leistungslinks aktiviert
 
 - Alle zwölf Einträge unter „Was wir gemacht haben“ mit den passenden
