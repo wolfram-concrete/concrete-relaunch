@@ -22,7 +22,7 @@ from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_CACHE_VERSION = "171"
-EXPECTED_CASE_CACHE_VERSION = "173"
+EXPECTED_CASE_CACHE_VERSION = "176"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
 JSON_LD_RE = re.compile(
@@ -156,8 +156,8 @@ def scan() -> list[str]:
         findings.append(f".vercelignore: missing deployment exclusion: {missing}")
 
     pages = sitemap_pages()
-    if len(pages) != 131:
-        findings.append(f"sitemap.xml: expected 131 URLs, found {len(pages)}")
+    if len(pages) != 133:
+        findings.append(f"sitemap.xml: expected 133 URLs, found {len(pages)}")
 
     parsed_pages: dict[Path, PageParser] = {}
     for page in pages:
@@ -423,7 +423,7 @@ def main() -> int:
         for finding in findings:
             print(f"- {finding}")
         return 1
-    print("Technical preflight: 131 pages, 0 findings")
+    print("Technical preflight: 133 pages, 0 findings")
     return 0
 
 

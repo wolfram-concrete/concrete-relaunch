@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="assets/favicon-concrete-v1.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon-concrete-v1.jpg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="goSchneider: Handwerk, das online funktioniert. Markenstrategie, Corporate Design, Packaging und Website für einen neuen digitalen Zugang zu individuellen Einlagen.">
+<link rel="canonical" href="https://www.concrete-designs.de/case-goschneider">
+
+<title>goSchneider · Projekt · CONCRETE Brandbuilding</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CONCRETE Brandbuilding">
+<meta property="og:title" content="goSchneider · Projekt · CONCRETE Brandbuilding">
+<meta property="og:description" content="goSchneider: Handwerk, das online funktioniert. Markenstrategie, Corporate Design, Packaging und Website für einen neuen digitalen Zugang zu individuellen Einlagen.">
+<meta property="og:url" content="https://www.concrete-designs.de/case-goschneider">
+<meta property="og:image" content="https://www.concrete-designs.de/assets/og/concrete-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Das CONCRETE-Team im Gespräch">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.concrete-designs.de/assets/og/concrete-og.jpg">
+<link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css?v=176">
+<style>
+/* ===== Projekt-Seite (Muster) ===== */
+.case-hero{overflow:hidden}
+.case-hero img{width:100%;height:auto;display:block}
+.case-hero img.plx{transform:translateY(calc(var(--py,0) * 1px)) scale(1.12);will-change:transform}
+.case-masonry img,.case-masonry video{opacity:0;transform:translateY(26px) scale(1.02);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.case-masonry.in img,.case-masonry.in video{opacity:1;transform:none}
+.img-plx{overflow:hidden}
+.img-plx img{transform:translateY(calc(var(--py,0) * 1px)) scale(1.14);will-change:transform}
+@media(prefers-reduced-motion:reduce){.case-hero img.plx,.img-plx img{transform:none}.case-masonry img{opacity:1;transform:none;transition:none}}
+.case-meta{border-bottom:1px solid var(--rule)}
+.case-meta .container{display:grid;grid-template-columns:minmax(160px,var(--indent)) 1fr auto;gap:var(--s2) clamp(40px,7vw,120px);align-items:start;padding-block:clamp(18px,2.4vw,32px)}
+.case-meta .lbl{font-weight:700;font-size:var(--fs-meta);letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.case-meta .svc{font-size:14px;line-height:1.6;color:var(--ink-60);max-width:88ch}
+.case-meta .svc a{text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:.18em}
+.case-meta .svc a:hover{color:var(--coral);text-decoration-color:var(--coral)}
+.case-meta img{height:clamp(22px,2.4vw,32px);width:auto;justify-self:end}
+@media(max-width:820px){.case-meta .container{grid-template-columns:1fr}.case-meta img{justify-self:start}}
+.case-sec{padding-block:clamp(40px,5.5vw,80px)}
+.case-sec .grid{display:grid;grid-template-columns:minmax(160px,var(--indent)) minmax(0,1fr);gap:var(--s3) clamp(40px,7vw,120px)}
+.case-sec h2{font-family:"Arame";font-weight:700;font-size:clamp(22px,2.3vw,32px);line-height:1;margin:0}
+.case-sec .body{max-width:62ch}
+.case-sec .body>p{margin-bottom:var(--s3)}
+@media(max-width:820px){.case-sec .grid{grid-template-columns:1fr}}
+/* Akkordeon */
+.acc{border-top:1px solid var(--rule);margin-top:var(--s3)}
+.acc details{border-bottom:1px solid var(--rule)}
+.acc summary{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:14px 0;cursor:pointer;list-style:none;font-weight:700;font-size:var(--fs-body)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-family:"Arame";font-weight:700;font-size:20px;color:var(--coral);flex:none;transition:transform .25s ease}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc .acc-body{padding:0 0 var(--s3);color:var(--ink-60);max-width:62ch}
+.acc .acc-body p{margin:0 0 .8em}
+.acc .acc-body ul{margin:0;padding-left:18px}
+/* Bildraster */
+.case-masonry{columns:3;column-gap:clamp(12px,1.4vw,22px)}
+.case-masonry img,.case-masonry video{width:100%;height:auto;display:block;margin-bottom:clamp(12px,1.4vw,22px);break-inside:avoid}
+.case-masonry.two{columns:2}
+.case-masonry .span{column-span:all;margin-block:clamp(12px,1.4vw,22px) clamp(12px,1.4vw,22px)}
+.case-masonry .img-plx.span{margin-bottom:clamp(12px,1.4vw,22px)}
+.case-masonry .span:first-child{margin-top:0}
+@media(max-width:700px){.case-masonry{columns:2}.case-masonry.two{columns:1}}
+.case-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,22px);align-items:start}
+.case-imgs img{width:100%;height:auto;display:block}
+.case-imgs .wide{grid-column:span 3}
+@media(max-width:700px){.case-imgs{grid-template-columns:1fr 1fr}.case-imgs .wide{grid-column:span 2}}
+/* Zitat */
+.case-quote{background:var(--coral);color:var(--ink);position:relative;overflow:visible}
+.case-quote .qtex{position:absolute;top:-14%;right:-2%;width:clamp(340px,46vw,900px);height:118%;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") top right/contain no-repeat;mix-blend-mode:multiply;opacity:.85;pointer-events:none;z-index:0}
+.case-quote .container{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,4vw,64px);align-items:center;padding-block:clamp(52px,7vw,104px)}
+.case-quote .qimg{width:100%;max-width:320px;display:block;box-shadow:0 22px 60px rgba(23,21,19,.28)}
+.case-quote blockquote{margin:0;font-family:"Arame";font-weight:700;font-size:clamp(22px,2.6vw,38px);line-height:1.05}
+.case-quote figcaption{margin-top:var(--s3);font-size:var(--fs-meta);color:rgba(23,21,19,.6)}
+@media(max-width:820px){.case-quote .container{grid-template-columns:1fr}.case-quote .qimg{width:100%;max-width:none;height:auto}}
+/* Relevanz + weitere Projekte */
+.case-marquee{overflow:hidden;margin-right:calc(-1 * max(var(--pad), (100vw - var(--max)) / 2 + var(--pad)));margin-left:calc(-1 * max(var(--pad), (100vw - var(--max)) / 2 + var(--pad)))}
+.case-marquee__track{display:flex;gap:clamp(12px,1.4vw,22px);width:max-content;will-change:transform;cursor:grab;user-select:none}.case-marquee__row{display:flex;gap:clamp(12px,1.4vw,22px);flex:0 0 auto}.case-marquee.dragging .case-marquee__track{cursor:grabbing}.case-marquee img{-webkit-user-drag:none;pointer-events:none}
+
+.case-marquee a{display:block;flex:0 0 clamp(240px,26vw,380px)}
+.case-marquee img{width:100%;aspect-ratio:64/42;object-fit:cover;display:block}
+.case-marquee span{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:10px;font-weight:700;font-size:var(--fs-meta);letter-spacing:.06em;text-transform:uppercase}
+.case-marquee span b{min-width:0;font-weight:inherit;overflow-wrap:anywhere}
+.case-marquee span i{flex:0 1 auto;max-width:55%;margin-left:auto;font-style:normal;color:var(--coral);text-align:right;overflow-wrap:anywhere}
+
+@media(prefers-reduced-motion:reduce){.case-marquee__track{animation:none}}
+.go-title{font-family:Arame;font-weight:700;font-size:clamp(40px,7vw,110px);line-height:.9;margin:0;max-width:20ch;text-wrap:balance}.go-quote-pending{font-family:Arame;font-size:clamp(26px,3vw,44px);line-height:1.1}.go-perspective{margin:0;font-size:clamp(18px,1.7vw,25px);line-height:1.5}
+.go-hill-scene{position:relative;overflow:hidden;background:#fff}
+.go-hill-scene img{position:absolute;bottom:-1px;left:0;height:88%;width:auto;max-width:none;display:block;animation:go-hill-drift 32s linear infinite;animation-delay:var(--hill-delay,0s)}
+@keyframes go-hill-drift{0%{transform:translateX(-1%)}100%{transform:translateX(-40%)}}
+@media(prefers-reduced-motion:reduce){.go-hill-scene img{animation:none;transform:translateX(-12%)}}
+</style>
+<script src="consent-v8.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#f3efe7"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#f3efe7"/><text x="600" y="430" text-anchor="middle" font-family="Arial Black" font-size="110" font-weight="900" fill="#171513">GOSCHNEIDER</text><text x="600" y="520" text-anchor="middle" font-family="Arial" font-size="36" letter-spacing="10" fill="#fe7e5e">CASE</text></svg></template>
+<a class="skip-link" href="#main">Zum Inhalt</a>
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="brand" href="./" aria-label="CONCRETE Brandbuilding, zur Startseite"><img src="assets/concrete-paper.svg" width="194" height="53" alt="CONCRETE"></a>
+    <nav class="desktop-nav" aria-label="Hauptnavigation">
+      <div class="nav-item" data-nav-item>
+        <a class="nav-link" aria-current="page" href="projekte">Projekte</a>
+        <button class="nav-disclosure" type="button" aria-expanded="false" aria-controls="mega-projekte" data-nav-toggle><span class="visually-hidden">Untermenü „Projekte" öffnen</span></button>
+        <div class="mega-menu" id="mega-projekte" data-mega>
+          <div class="mega-menu__inner container">
+            <div class="mega-menu__intro">
+              <span class="concept-label">Ausgewählt</span>
+              <p>Ein Blick in aktuelle Projekte, von der Vision zur Brand.</p>
+              <a class="button button--solid mega-menu__cta" href="projekte">Alle Projekte</a>
+            </div>
+            <div class="mega-cases"><a href="case-goschneider"><span class="mc-img"><img src="assets/cases/goschneider/brand-hero.webp" alt="goSchneider – Handwerk, das online funktioniert" loading="lazy" width="2400" height="1597" decoding="async"></span><b>goSchneider</b><i>Handwerk &amp; Digital</i></a>
+              <a href="case-nextbed"><span class="mc-img"><img src="assets/cases/nextbed/header-opt.webp" alt="Nextbed" loading="lazy" width="1920" height="1080" decoding="async"></span><b>Nextbed</b><i>Neue Produktmarke</i></a>
+              <a href="case-noey"><span class="mc-img"><img src="assets/cases/noey/header.jpg" alt="NOEY" loading="lazy" width="1920" height="1080" decoding="async"></span><b>NOEY</b><i>Robotik</i></a>
+              <a href="case-bgf"><span class="mc-img"><img src="assets/cases/bgf/header.jpg" alt="BGF+" loading="lazy" width="1536" height="864" decoding="async"></span><b>BGF+</b><i>Rebranding</i></a>
+              <a href="case-cologne-comedy"><span class="mc-img"><img src="assets/cases/cologne-comedy.webp" alt="Cologne Comedy Festival" loading="lazy" width="640" height="359" decoding="async"></span><b>Cologne Comedy</b><i>Kultur</i></a>
+              <a href="case-conlivo"><span class="mc-img"><img src="assets/cases/conlivo.webp" alt="Conlivo" loading="lazy" width="640" height="427" decoding="async"></span><b>Conlivo</b><i>Markteinführung</i></a>
+              <a href="case-wackelzahn"><span class="mc-img"><img src="assets/cases/wackelzahn/header.jpg" alt="Wackelzahn" loading="lazy" width="1920" height="1278" decoding="async"></span><b>Wackelzahn</b><i>Kinderzahnarzt</i></a>
+              <a href="case-medium"><span class="mc-img"><img src="assets/cases/medium/header.jpg" alt="medium Architekten" loading="lazy" width="1653" height="1100" decoding="async"></span><b>medium</b><i>Architektur</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item" data-nav-item>
+        <a class="nav-link" href="situation-marke-nicht-mitgewachsen">Wo wir helfen können</a>
+        <button class="nav-disclosure" type="button" aria-expanded="false" aria-controls="mega-hilfe" data-nav-toggle><span class="visually-hidden">Untermenü „Wo wir helfen können" öffnen</span></button>
+        <div class="mega-menu" id="mega-hilfe" data-mega>
+          <div class="mega-menu__inner container">
+            <div class="mega-menu__intro">
+              <span class="concept-label">Relevanz</span>
+              <p>Unternehmerische Anlässe, bei denen Marke und Kommunikation etwas bewegen müssen.</p>
+            </div>
+            <div class="mega-menu__grid">
+              <a class="mega-link" href="situation-marke-nicht-mitgewachsen"><span class="mega-num">01</span>Repositionierung und Rebranding<small>Unternehmen entwickelt. Marke nicht.</small></a>
+              <a class="mega-link" href="situation-angebot-schwer-verstaendlich"><span class="mega-num">02</span>B2B, Technologie und Beratung<small>Starkes Angebot. Schwer verständlich.</small></a>
+              <a class="mega-link" href="situation-neues-in-den-markt"><span class="mega-num">03</span>Geschäftsfeld, Angebot oder Produktmarke<small>Etwas Neues in den Markt bringen.</small></a>
+              <a class="mega-link" href="situation-veraenderung-sichtbar"><span class="mega-num">04</span>Marke muss Entwicklung mittragen<small>Veränderung sichtbar machen.</small></a>
+              <a class="mega-link" href="situation-vertrauen-sensible-maerkte"><span class="mega-num">05</span>Finance, Versicherung, Healthcare<small>Vertrauen in sensiblen Märkten.</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link" href="leistungen">Leistungen</a>
+      <a class="nav-link" href="ueber-uns">Über uns</a>
+      <a class="nav-link nav-link--cta" href="erstgespraech"><span class="cta-avas" aria-hidden="true"><img src="assets/team/wolfram.jpg" alt="" width="400" height="400"><img src="assets/team/christian.jpg" alt="" width="160" height="160"></span>Projekt anfragen</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" data-menu-toggle></button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-menu" aria-label="Mobile Navigation" data-mobile-menu>
+  <a href="projekte">Projekte</a>
+  <div class="mobile-nav__group"><a href="situation-marke-nicht-mitgewachsen">Wo wir helfen können</a><button class="mobile-nav__disclosure" type="button" aria-expanded="false" aria-controls="mnav-hilfe" data-mnav-toggle><span class="visually-hidden">Untermenü öffnen</span></button></div>
+  <div class="mobile-nav__sub" id="mnav-hilfe" hidden><a href="situation-marke-nicht-mitgewachsen">Unternehmen entwickelt. Marke nicht.<small>Repositionierung und Rebranding</small></a><a href="situation-angebot-schwer-verstaendlich">Starkes Angebot. Schwer verständlich.<small>B2B, Technologie und Beratung</small></a><a href="situation-neues-in-den-markt">Etwas Neues in den Markt bringen.<small>Geschäftsfeld, Angebot oder Produktmarke</small></a><a href="situation-veraenderung-sichtbar">Veränderung sichtbar machen.<small>Marke muss Entwicklung mittragen</small></a>
+              </div>
+  <a href="leistungen">Leistungen</a>
+  <a href="ueber-uns">Über uns</a>
+  <small>Nächster Schritt</small>
+  <a class="mobile-nav__cta" href="erstgespraech"><span class="cta-avas" aria-hidden="true"><img src="assets/team/wolfram.jpg" alt="" width="400" height="400"><img src="assets/team/christian.jpg" alt="" width="160" height="160"></span>Projekt anfragen</a>
+  <ul class="social-links"><li><a class="li" href="https://www.linkedin.com/company/concrete-brandbuilding/" target="_blank" rel="noopener noreferrer" aria-label="CONCRETE auf LinkedIn"></a></li><li><a class="ig" href="https://www.instagram.com/concrete.brandbuilding/" target="_blank" rel="noopener noreferrer" aria-label="CONCRETE auf Instagram"></a></li></ul>
+</nav>
+<main id="main">
+<section class="case-hero" data-screen-label="goSchneider Brand-Hero" style="--hero-pos:50% 50%"><img src="assets/cases/goschneider/brand-hero.webp" alt="Dennis Schneider fertigt Einlagen – goSchneider Key Visual mit farbiger Markenwelle und Logo" width="2400" height="1597" fetchpriority="high" decoding="async"></section>
+<div class="container" style="padding-block:clamp(28px,4vw,56px) 0"><h1 class="go-title">Handwerk, das online funktioniert.</h1></div>
+<div class="case-meta" data-screen-label="Projektüberblick"><div class="container"><span class="lbl">Was wir gemacht haben</span><span class="svc">Markt- &amp; Wettbewerbsanalyse · Zielgruppenanalyse · Geschäftsmodell- und Markenstrategie · Markenpositionierung · Namensentwicklung · Brandvision · Corporate Design · Illustrationssystem · Packaging · Website-Konzept · Website-Design · Textkonzept &amp; Tonalität</span></div></div>
+<section class="case-sec case-challenge" data-screen-label="Die Herausforderung"><div class="container"><p class="eyebrow rv">Die Herausforderung</p><h2 class="case-challenge__claim rv rv-d1">Handwerk digital machen, ohne Vertrauen zu verlieren.</h2><div class="case-challenge__row"><div class="case-challenge__logo rv rv-d2"><img src="assets/cases/goschneider/logo.svg" alt="goSchneider Logo" width="335" height="176"></div><p class="case-challenge__copy rv rv-d2">Dennis Schneider verfügt als Orthopädieschuhmachermeister über langjährige Erfahrung und ein funktionierendes stationäres Geschäft. Mit goSchneider sollte daraus ein neues, unabhängigeres Geschäftsmodell entstehen: individuell gefertigte orthopädische Einlagen, die eine jüngere Zielgruppe einfach online bestellen kann. Die zentrale Herausforderung war, den digitalen Zugang maximal einfach zu machen, ohne dass das Produkt dadurch standardisiert oder beliebig wirkt.</p></div></div></section>
+<section class="case-sec" data-screen-label="Ausgangslage"><div class="container grid"><h2 class="rv">Ausgangslage</h2><div class="body rv"><p class="big-copy">Das bestehende Geschäft funktionierte – war aber stark an klassische Strukturen gebunden: Rezept, Krankenkasse, Termin und Sanitätshaus.</p><div class="acc"><details><summary>Mehr zur Ausgangslage</summary><div class="acc-body"><p>Gleichzeitig verändert sich das Verhalten jüngerer Zielgruppen. Sie informieren sich selbst, suchen bei Beschwerden zunächst digital und erwarten Angebote, die sich einfacher in ihren Alltag integrieren lassen.</p><p>Für Dennis kam eine zweite Perspektive hinzu: Das neue Modell sollte das Unternehmen breiter aufstellen und langfristig auch neue Perspektiven für das bestehende Team schaffen.</p><p>Die Aufgabe war deshalb größer als ein neuer Vertriebskanal. Es musste ein eigenständiges digitales Geschäftsmodell entstehen, ohne die Qualität des bestehenden Handwerks aufzugeben.</p></div></details></div></div></div></section>
+<section class="case-sec" style="padding-top:0" data-screen-label="Strategie &amp; Positionierung"><div class="container grid"><h2 class="rv">Strategie &amp; Positionierung</h2><div class="body rv"><p class="big-copy">Einfacher Zugang. Echte Fertigung.</p><p>Im Online-Markt fanden wir zwei Extreme: klassische Anbieter mit viel fachlicher Kompetenz, aber wenig digitaler Zugänglichkeit – und moderne Online-Angebote mit einfachen Prozessen, bei denen die handwerkliche Tiefe häufig kaum sichtbar wird.</p><p>goSchneider sollte genau diese Lücke besetzen.</p><p>Der Kunde bestellt online, macht seinen Abdruck zu Hause und beschreibt Beschwerden, Nutzung und Schuhe. Die Bewertung und Fertigung bleiben aber dort, wo sie hingehören: beim Orthopädieschuhmachermeister und seinem Team.</p><p>Die heute live umgesetzte Website bringt diesen Gedanken sehr direkt auf den Punkt: <b>„Deine Einlagen. Vom Meister gemacht. Online bestellt.“</b> Sie reduziert die Produktauswahl bewusst auf ein verständliches Angebot und erklärt den Weg von Bestellung und Abdruck bis zur handwerklichen Fertigung Schritt für Schritt.</p></div></div></section>
+<section class="case-sec" style="padding-top:0" data-screen-label="Designsystem"><div class="container grid"><h2 class="rv">Designsystem &amp; Anwendung</h2><div class="body rv"><p class="big-copy"><strong>Craft trifft Digital Native.</strong></p><p>Die Marke musste dieselbe Balance schaffen wie das Geschäftsmodell. Handwerk, Erfahrung und Verantwortung sollten sichtbar bleiben. Gleichzeitig durfte goSchneider nicht wie ein klassisches Sanitätshaus auftreten.</p><p>Daraus entstand ein visuelles System, das beide Welten verbindet: eine charakteristische Figur als Verbindung zwischen Kunde und Handwerker, eine Bildmarke in Bewegung, eine farbige Formensprache, die sich aus der Silhouette einer Einlage entwickelt, und eine Kommunikation, die komplexe gesundheitliche Themen klar und unkompliziert erklärt.</p><p>Auch die Bildwelt folgt diesem Prinzip: nicht nur fertige Produkte, sondern Hände, Materialien, Werkstatt und echte Arbeitsschritte. Die heutige Website macht diese handwerkliche Herkunft sehr sichtbar und zeigt Dennis und das Team ausdrücklich als Menschen hinter der Leistung.</p><div class="acc"><details><summary>Packaging &amp; Produkt</summary><div class="acc-body"><p class="big-copy">Ein kuratierter Prozess. Bis nach Hause.</p><p>Die Marke begleitet nicht nur die Bestellung, sondern auch den Abdruck zu Hause. Das Versandset macht den digitalen Zugang greifbar; die Einlagen bleiben das Ergebnis individueller handwerklicher Fertigung.</p></div></details><details><summary>Website &amp; digitaler Markenraum</summary><div class="acc-body"><p class="big-copy">Vom Meister gemacht. Online zugänglich.</p><p>Die gelaunchte Website verbindet die finale Werkstatt-Bildwelt mit einer klaren Customer Journey: online bestellen, Abdruckset erhalten, Fußabdruck und Angaben zurücksenden – individuell gefertigte Einlagen bekommen.</p><p><a class="link-arrow" href="https://www.goschneider.de/" target="_blank" rel="noopener noreferrer">Website ansehen</a></p></div></details></div></div></div></section>
+<section class="case-sec case-shift" data-screen-label="Ergebnis der Veränderung"><div class="container"><div class="case-shift__head"><div><p class="eyebrow rv">Ergebnis der Veränderung</p><h2 class="case-shift__title rv rv-d1">Was entstanden ist</h2></div></div><div class="case-shift__box"><table class="shift rv"><thead><tr><th scope="col">Ausgangspunkt</th><th aria-hidden="true"></th><th scope="col">Ergebnis</th></tr></thead><tbody><tr class="rv"><td class="shift__from">Stationäre Versorgung im Sanitätshaus</td><td class="shift__arrow" aria-hidden="true"><span></span></td><td class="shift__to">Eigenständiger digitaler Zugang zu einer neuen Zielgruppe</td></tr><tr class="rv"><td class="shift__from">Abhängigkeit von Rezept- und Kassenlogik</td><td class="shift__arrow" aria-hidden="true"><span></span></td><td class="shift__to">Direktes Geschäftsmodell mit eigenem Kundenzugang</td></tr><tr class="rv"><td class="shift__from">Individuelles Handwerk vor Ort</td><td class="shift__arrow" aria-hidden="true"><span></span></td><td class="shift__to">Digital zugänglicher Prozess mit weiterhin handwerklicher Fertigung</td></tr><tr class="rv"><td class="shift__from">Erklärungsbedürftiges Gesundheitsprodukt</td><td class="shift__arrow" aria-hidden="true"><span></span></td><td class="shift__to">Klare Customer Journey vom Problem bis zur fertigen Einlage</td></tr><tr class="rv"><td class="shift__from">Bestehender Meisterbetrieb</td><td class="shift__arrow" aria-hidden="true"><span></span></td><td class="shift__to">Eigenständige Marke mit Name, Positionierung, Design, Packaging und Website</td></tr><tr class="rv"><td class="shift__from">Gefahr eines anonymen Online-Shops</td><td class="shift__arrow" aria-hidden="true"><span></span></td><td class="shift__to">Sichtbare Menschen, Werkstatt und fachliche Verantwortung</td></tr></tbody></table></div></div></section>
+<section class="case-sec case-gallery" data-screen-label="Bildwelt"><figure class="case-gallery__lead"><img class="case-wide" src="assets/cases/goschneider/hero.webp" alt="Dennis Schneider fertigt Einlagen in der Werkstatt" width="2200" height="1464" loading="lazy" decoding="async"></figure><div class="case-mosaic rv" data-mosaic>
+<img style="--ar:1.792" loading="lazy" src="assets/cases/goschneider/mailing.webp" alt="Finales goSchneider Mailing und Abdruckset" width="2200" height="1228" decoding="async">
+<video id="website" style="--ar:1.778" src="assets/cases/goschneider/website-scroll-v2.mp4" poster="assets/cases/goschneider/website-scroll-v2-poster.webp" width="1920" height="1080" autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Scroll-Durchlauf der goSchneider Website – stummer Endlosloop"></video>
+<video id="markenfigur" style="--ar:1.778" src="assets/cases/goschneider/brand-character.mp4" data-fallback="assets/cases/goschneider/brand-character-poster.webp" poster="assets/cases/goschneider/brand-character-poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Animierte goSchneider Markenfigur – ohne Ton"></video>
+<img style="--ar:2" loading="lazy" src="assets/cases/goschneider/insoles-purple.webp" alt="goSchneider Einlagen als schwebendes Produktpaar vor violettem Hintergrund" width="2200" height="1100" decoding="async">
+<img style="--ar:1.504" loading="lazy" src="assets/cases/goschneider/workshop-storage.webp" alt="Werkstattlager mit individuell zugeordneten Einlagen und Arbeitsmaterial" width="1024" height="681" decoding="async">
+<figure id="huegelteppich" class="go-hill-scene" style="--ar:1.778;--hill-delay:-8s"><img src="assets/cases/goschneider/hill-figure.svg" width="4029" height="1127" alt="Markenfigur auf dem langsam vorbeiziehenden Regenbogenberg" decoding="async"></figure>
+<img id="homekit-mockup" style="--ar:1.792" loading="lazy" src="assets/cases/goschneider/branding-mockup-4.webp" alt="goSchneider Homekit-Mockup: geöffnete Verpackung mit farbiger Anleitung für Fußabdruck und Passform" width="2200" height="1228" decoding="async">
+<img style="--ar:1.504" loading="lazy" src="assets/cases/goschneider/team.webp" alt="Das Team hinter goSchneider" width="1024" height="681" decoding="async">
+<img style="--ar:1.778" loading="lazy" src="assets/cases/goschneider/character-family.webp" alt="goSchneider Figurenfamilie mit verschiedenen Posen und Anwendungen" width="1920" height="1080" decoding="async">
+<figure class="go-card-mockup" style="--ar:1.778;overflow:hidden;background:#d4cebe"><img style="width:100%;height:100%;object-fit:cover;transform:scale(1.01);display:block" loading="lazy" src="assets/cases/goschneider/brand-card.webp" alt="goSchneider Karte mit Regenbogen-Bodenform und Markenfigur" width="1920" height="1080" decoding="async"></figure>
+<img style="--ar:1.778" loading="lazy" src="assets/cases/goschneider/homekit-use.webp" alt="Fußabdruck im goSchneider Homekit neben Verpackung und Anleitung" width="1920" height="1080" decoding="async">
+<video style="--ar:1.714" src="assets/cases/goschneider/rainbow-climb.mp4" poster="assets/cases/goschneider/rainbow-climb-poster.png" width="1280" height="746" autoplay muted loop playsinline preload="metadata" aria-label="goSchneider Markenfigur auf dem Regenbogenberg – stummer Loop"></video>
+<img style="--ar:1.504" loading="lazy" src="assets/cases/goschneider/material-colours.webp" alt="Farbiges Materialsortiment für die handwerkliche Einlagenfertigung" width="1024" height="681" decoding="async">
+<img id="branding-visuals" style="--ar:1.778" loading="lazy" src="assets/cases/goschneider/character-closeup.webp" alt="Detail der goSchneider Markenfigur mit Smartphone" width="1920" height="1080" decoding="async">
+<img style="--ar:0.665" loading="lazy" src="assets/cases/goschneider/workshop.webp" alt="Einlage wird an der Schleifmaschine bearbeitet" width="1024" height="1539" decoding="async">
+<img style="--ar:1.792" loading="lazy" src="assets/cases/goschneider/packaging-orange.webp" alt="goSchneider Abdruckset-Verpackung mit Markenfigur und farbiger Bodenform auf orangefarbenem Hintergrund" width="2200" height="1228" decoding="async">
+<figure class="go-hill-scene" style="--ar:1.778;--hill-delay:-16s"><img src="assets/cases/goschneider/hill-peaks.svg" width="4895" height="852" alt="Spitze Regenbogenhügel im langsamen Animationsloop" loading="lazy" decoding="async"></figure>
+<img style="--ar:1.504" loading="lazy" src="assets/cases/goschneider/digital-collaboration.webp" alt="Dennis und Kollegin stimmen den digitalen Ablauf am Computer ab" width="1024" height="681" decoding="async">
+<img style="--ar:1.024" loading="lazy" src="assets/cases/goschneider/insole.webp" alt="Finales Produktmotiv der goSchneider Einlagen" width="2048" height="2000" decoding="async">
+<img style="--ar:1.778" loading="lazy" src="assets/cases/goschneider/brand-cap.webp" alt="Schwarze goSchneider Cap mit gestickter Markenfigur und Stickdetail" width="1920" height="1080" decoding="async">
+<img style="--ar:1.778" loading="lazy" src="assets/cases/goschneider/character-construction.webp" alt="Gestaltungsprinzip der goSchneider Figur mit Einlagen-Bodenform" width="1920" height="1080" decoding="async">
+<img id="werkstatt-maschine" style="--ar:1.503" loading="lazy" src="assets/cases/goschneider/workshop-machine.webp" alt="Handwerkliche Bearbeitung einer Einlage an der Werkstattmaschine mit Gehörschutz" width="2200" height="1464" decoding="async">
+<img style="--ar:0.665" loading="lazy" src="assets/cases/goschneider/hands.webp" alt="Präzise Handarbeit an der Werkbank" width="1024" height="1539" decoding="async">
+<img style="--ar:1.792" loading="lazy" src="assets/cases/goschneider/branding-mockup-8.webp" alt="goSchneider Verpackungs-Mockup mit Einlagen im transparenten Beutel und farbiger Regenbogen-Bodenform" width="2200" height="1228" decoding="async">
+<img style="--ar:1.778" loading="lazy" src="assets/cases/goschneider/logo-detail.webp" alt="Typografisches Detail der goSchneider Wortmarke" width="1920" height="1080" decoding="async">
+<img style="--ar:1.778" loading="lazy" src="assets/cases/goschneider/homekit-form.webp" alt="Ausfüllen der goSchneider Homekit-Anleitung zur individuellen Passform" width="1920" height="1080" decoding="async">
+<img style="--ar:1.504" loading="lazy" src="assets/cases/goschneider/production-overhead.webp" alt="Einlagenfertigung aus der Vogelperspektive an der Werkbank" width="1024" height="681" decoding="async">
+<figure class="go-hill-scene" style="--ar:1.778;--hill-delay:-24s"><img src="assets/cases/goschneider/hill-valleys.svg" width="4788" height="413" alt="Sanfte Regenbogentäler im langsamen Animationsloop" loading="lazy" decoding="async"></figure>
+<img style="--ar:2" loading="lazy" src="assets/cases/goschneider/insoles-green.webp" alt="goSchneider Einlagen in perspektivischer Ansicht vor grünem Hintergrund" width="2200" height="1100" decoding="async">
+<img style="--ar:1.504" loading="lazy" src="assets/cases/goschneider/insole-brand-detail.webp" alt="Detailaufnahme einer fertigen Einlage mit goSchneider Branding" width="1024" height="681" decoding="async">
+<img style="--ar:1.339" loading="lazy" src="assets/cases/goschneider/mailing-open.webp" alt="Finales Mailing mit Anleitung und Markenfigur" width="2200" height="1643" decoding="async">
+<img style="--ar:1.501" loading="lazy" src="assets/cases/goschneider/quality-review.webp" alt="Gemeinsame Qualitätskontrolle einer individuell gefertigten Einlage" width="1024" height="682" decoding="async">
+<img style="--ar:1.500" loading="lazy" src="assets/cases/goschneider/shoe.webp" alt="Finales Einlagen-Mockup im Herrenschuh" width="2016" height="1344" decoding="async">
+<img style="--ar:2" loading="lazy" src="assets/cases/goschneider/insoles-yellow.webp" alt="goSchneider Einlagen im flachen Seitenprofil vor gelbem Hintergrund" width="2200" height="1100" decoding="async">
+<figure class="go-hill-scene" style="--ar:1.778;--hill-delay:-12s"><img src="assets/cases/goschneider/hill-main.svg" width="1856" height="413" alt="Geschwungener Regenbogenberg im langsamen Animationsloop" loading="lazy" decoding="async"></figure>
+<img style="--ar:1.504" loading="lazy" src="assets/cases/goschneider/process.webp" alt="Fußabdruck und Unterlagen als Basis individueller Fertigung" width="1024" height="681" decoding="async">
+<img style="--ar:0.721" loading="lazy" src="assets/cases/goschneider/insoles-purple-portrait.webp" alt="Vertikales goSchneider Produktmotiv mit Einlagen vor violettem Hintergrund" width="1400" height="1942" decoding="async">
+<span class="fill" aria-hidden="true"></span></div></section>
+<!-- Erst mit Dennis' freigegebenem Zitat aktivieren: Section aus dieser Vorlage übernehmen. -->
+<template id="dennis-quote-pending">
+  <section id="dennis" class="case-quote" style="--case-color:#7bbf82;--case-ink:#171513" data-screen-label="Zitat">
+    <div class="qtex plx" data-plx="-6" aria-hidden="true"></div>
+    <div class="container">
+      <img class="rv-media plx qimg" data-plx="-10" src="assets/cases/goschneider/dennis.webp" alt="Dennis Schneider, Orthopädieschuhmachermeister" width="1024" height="682" loading="lazy" decoding="async">
+      <figure style="margin:0" class="rv">
+        <blockquote style="font-size:clamp(17px,1.6vw,24px);line-height:1.4;font-family:'Grotesk',Arial,sans-serif;font-weight:400"><!-- Dennis' freigegebenes Zitat hier einsetzen. --></blockquote>
+        <figcaption>Dennis Schneider<br><b>Orthopädieschuhmachermeister · goSchneider</b></figcaption>
+      </figure>
+    </div>
+  </section>
+</template>
+<section class="case-sec" id="relevanz" data-screen-label="Relevanz">
+    <div class="container" style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--s4) clamp(40px,7vw,120px);align-items:start">
+      <div><h2 class="rv" style="font-family:'Arame';font-weight:700;font-size:clamp(30px,3.6vw,52px);line-height:1.02;margin:0;max-width:14ch">Warum dieses Projekt auch für eure Brand relevant sein könnte:</h2><svg class="brand-arrow" style="margin-top:var(--s4);width:clamp(96px,9vw,160px)" viewBox="0 0 300 52" aria-hidden="true"><path d="M6 8 L22 25.95 H284" stroke="currentColor" stroke-width="11.3" fill="none"/><g transform="translate(259.32,0)"><path fill="currentColor" d="M40.39,20.29h-6.82l.03-.03C27.49,14.1,21.37,7.95,15.24,1.82,14.25,.73,12.86,.09,11.39,.03c-3.79-.03-7.58-.03-11.39-.03V11.31c2.59,0,5.17,0,7.76,.02,.49,0,.96,.18,1.33,.5,4.73,4.68,9.45,9.38,14.15,14.1-4.71,4.71-9.43,9.41-14.15,14.1-.37,.32-.84,.5-1.33,.5-2.59,.02-5.17,.02-7.76,.02v11.3c3.81,0,7.6,0,11.39-.03,1.47-.05,2.86-.7,3.85-1.79,6.12-6.14,12.23-12.28,18.33-18.42h7.11v-11.32h-.29Z"/></g></svg></div>
+      <div class="body rv"><p>goSchneider zeigt, dass eine neue Marke nicht zwingend bei null anfangen muss.</p><p>Manchmal liegt die stärkste Grundlage bereits im bestehenden Unternehmen: Wissen, Erfahrung, Prozesse und echte Qualität. Die Aufgabe besteht dann darin, diese Substanz in ein neues Geschäftsmodell, eine neue Zielgruppe und eine neue Form der Kommunikation zu übersetzen.</p><p>Genau das war hier der Fall. Die eigentliche Innovation war nicht, orthopädische Einlagen neu zu erfinden. Sie bestand darin, den Zugang neu zu denken – und dabei bewusst das zu erhalten, was das Produkt wertvoll macht.</p><p><b>Ihr wollt aus bestehender Kompetenz ein neues Geschäftsfeld entwickeln?</b><br>Dann sprechen wir darüber, wie daraus Positionierung, Marke und ein tragfähiger neuer Marktauftritt entstehen können.</p><div class="button-row" style="margin-top:var(--s4)"><a class="button button--solid" href="erstgespraech">Zum Projektgespräch mit Concrete</a></div></div>
+    </div>
+    <div class="container" id="christian-perspektive" style="margin-top:clamp(36px,5vw,72px)">
+      <div class="personal-voice rv-media" id="persoenliche-stimme">
+        <div class="personal-voice__text">
+          <blockquote>„Bei goSchneider war die entscheidende Frage nicht, wie ein moderner Onlineshop für Einlagen aussehen könnte. Spannend war, wie wir etwas sehr Analoges und Handwerkliches ins Digitale übertragen, ohne dabei genau das zu verlieren, was es wertvoll macht. Die Marke musste deshalb gleichzeitig leicht und zugänglich wirken – und jederzeit zeigen, dass hinter jeder Einlage Menschen stehen, die ihr Handwerk beherrschen.“</blockquote>
+          <p class="personal-voice__author">Christian Rosenberger<br><b>Geschäftsführer Strategie<i class="attr-br"> · </i>CONCRETE – Brandbuilding GmbH</b></p>
+        </div>
+        <div class="stimme-media"><img src="assets/team/christian-portrait.jpg" alt="Christian Rosenberger, Geschäftsführer Strategie bei CONCRETE" loading="lazy" width="1021" height="1600" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+  <section class="case-sec" data-screen-label="Weitere Cases">
+    <div class="container">
+      <div class="section-heading rv"><h2>Weitere Projekte</h2><div style="justify-self:end;text-align:right"><a class="link-arrow" href="projekte">Zu allen Projekten</a></div></div>
+      <div class="case-marquee rv-media" data-marquee>
+        <div class="case-marquee__track">
+          <div class="case-marquee__row"><a href="case-noey"><img src="assets/cases/noey.webp" alt="NOEY Solutions · Robotik" loading="lazy" width="640" height="360" decoding="async"><span><b>NOEY Solutions</b> <i>Robotik</i></span></a><a href="case-wackelzahn"><img src="assets/cases/wackelzahn-shooting.jpg" alt="Wackelzahn · Kinderzahnarzt" loading="lazy" width="1200" height="788" decoding="async"><span><b>Wackelzahn</b> <i>Kinderzahnarzt</i></span></a><a href="case-little-big-pasta"><img src="assets/cases/little-big-pasta-shooting.jpg" alt="Little Big Pasta · Gastronomie" loading="lazy" width="1200" height="788" decoding="async"><span><b>Little Big Pasta</b> <i>Gastronomie</i></span></a><a href="case-medium"><img src="assets/cases/medium.webp" alt="medium Architekten · Architektur" loading="lazy" width="640" height="426" decoding="async"><span><b>medium Architekten</b> <i>Architektur</i></span></a><a href="case-conlivo"><img src="assets/cases/conlivo.webp" alt="Conlivo · PropTech" loading="lazy" width="640" height="427" decoding="async"><span><b>Conlivo</b> <i>PropTech</i></span></a><a href="case-can-sort"><img src="assets/cases/can-sort-shooting.jpg" alt="CA'N SORT · Wein" loading="lazy" width="1200" height="788" decoding="async"><span><b>CA'N SORT</b> <i>Wein</i></span></a><a href="case-street-gourmet"><img src="assets/cases/street-gourmet.webp" alt="Street Gourmet · Food" loading="lazy" width="640" height="361" decoding="async"><span><b>Street Gourmet</b> <i>Food</i></span></a><a href="case-mdb-finance"><img src="assets/cases/mdb-finance.webp" alt="MDB Finance · Finance" loading="lazy" width="640" height="360" decoding="async"><span><b>MDB Finance</b> <i>Finance</i></span></a><a href="case-bgf"><img src="assets/cases/bgf.webp" alt="BGF+ Architekten · Architektur" loading="lazy" width="640" height="360" decoding="async"><span><b>BGF+ Architekten</b> <i>Architektur</i></span></a><a href="case-sknmetrics"><img src="assets/cases/sknm-shooting.jpg" alt="SKNMETRICS · KI & Kosmetik" loading="lazy" width="1200" height="788" decoding="async"><span><b>SKNMETRICS</b> <i>KI & Kosmetik</i></span></a><a href="case-hy"><img src="assets/cases/hy.t.png" alt="hy helpyourself · Gesundheit" loading="lazy" width="868" height="533" decoding="async"><span><b>hy helpyourself</b> <i>Gesundheit</i></span></a><a href="case-solit"><img src="assets/cases/solit.webp" alt="SOLIT Marketing · Marketing" loading="lazy" width="640" height="426" decoding="async"><span><b>SOLIT Marketing</b> <i>Marketing</i></span></a><a href="case-poodlewohl"><img src="assets/cases/poodlewohl-keyvisual.jpg" alt="Poodlewohl · Hundefutter" loading="lazy" width="1200" height="788" decoding="async"><span><b>Poodlewohl</b> <i>Hundefutter</i></span></a><a href="case-immofolia"><img src="assets/cases/immofolia.webp" alt="Immofolia · PropTech" loading="lazy" width="640" height="360" decoding="async"><span><b>Immofolia</b> <i>PropTech</i></span></a><a href="case-cologne-comedy"><img src="assets/cases/cologne-comedy.webp" alt="Cologne Comedy Festival · Kultur" loading="lazy" width="640" height="359" decoding="async"><span><b>Cologne Comedy Festival</b> <i>Kultur</i></span></a><a href="case-baked"><img src="assets/cases/baked-thumb.webp" alt="Baked · Food" loading="lazy" width="1400" height="778" decoding="async"><span><b>Baked</b> <i>Food</i></span></a><a href="case-finaplus"><img src="assets/cases/finaplus.webp" alt="FinaPlus · WealthTech" loading="lazy" width="640" height="426" decoding="async"><span><b>FinaPlus</b> <i>WealthTech</i></span></a><a href="case-highr"><img src="assets/cases/highr-shooting.jpg" alt="Highr · Recruiting" loading="lazy" width="1024" height="681" decoding="async"><span><b>Highr</b> <i>Recruiting</i></span></a><a href="case-digital2gether"><img src="assets/cases/d2g-shooting.jpg" alt="Digital2gether · IT-Beratung" loading="lazy" width="1200" height="788" decoding="async"><span><b>Digital2gether</b> <i>IT-Beratung</i></span></a><a href="case-aconvia"><img src="assets/cases/aconvia.webp" alt="Aconvia · IT-Consulting" loading="lazy" width="640" height="525" decoding="async"><span><b>Aconvia</b> <i>IT-Consulting</i></span></a><a href="case-system-360"><img src="assets/cases/system-360-shooting.jpg" alt="System 360 · Security & Investigation" loading="lazy" width="1200" height="788" decoding="async"><span><b>System 360</b> <i>Security & Investigation</i></span></a><a href="case-noveltea"><img src="assets/cases/noveltea-shooting.jpg" alt="Noveltea · Beverage" loading="lazy" width="1200" height="788" decoding="async"><span><b>Noveltea</b> <i>Beverage</i></span></a><a href="case-potatohead"><img src="assets/cases/potatohead-shooting.jpg" alt="Potatohead Pictures · Entertainment" loading="lazy" width="1200" height="788" decoding="async"><span><b>Potatohead Pictures</b> <i>Entertainment</i></span></a><a href="case-be-care"><img src="assets/cases/be-care-shooting.jpg" alt="be.care · IT" loading="lazy" width="1200" height="788" decoding="async"><span><b>be.care</b> <i>IT</i></span></a><a href="case-me"><img src="assets/cases/me-shooting.jpg" alt="me, my life, my job · Recruiting" loading="lazy" width="812" height="532" decoding="async"><span><b>me, my life, my job</b> <i>Recruiting</i></span></a><a href="case-pause-play"><img src="assets/cases/pause-play-shooting.jpg" alt="pause and play · Events" loading="lazy" width="1200" height="788" decoding="async"><span><b>pause and play</b> <i>Events</i></span></a><a href="case-project-haya"><img src="assets/cases/project-haya-shooting.jpg" alt="Project Haya · Community" loading="lazy" width="1200" height="788" decoding="async"><span><b>Project Haya</b> <i>Community</i></span></a><a href="case-the-moc"><img src="assets/cases/the-moc-kampagne.jpg" alt="the moc · Coffee & Robotik" loading="lazy" width="1200" height="788" decoding="async"><span><b>the moc</b> <i>Coffee & Robotik</i></span></a><a href="case-maleco"><img src="assets/cases/maleco-shooting.jpg" alt="Maleco · Industrie" loading="lazy" width="1200" height="788" decoding="async"><span><b>Maleco</b> <i>Industrie</i></span></a><a href="case-klang2"><img src="assets/cases/klang-keyvisual.jpg" alt="Klang2 · Spiel & Bildung" loading="lazy" width="1200" height="788" decoding="async"><span><b>Klang2</b> <i>Spiel & Bildung</i></span></a><a href="case-boness-euteneuer"><img src="assets/cases/boness-shooting.jpg" alt="Boneß & Euteneuer · Steuerberatung" loading="lazy" width="1600" height="1068" decoding="async"><span><b>Boneß & Euteneuer</b> <i>Steuerberatung</i></span></a><a href="case-good-humor"><img src="assets/cases/good-humor-shooting.jpg" alt="Good Humor · Entertainment" loading="lazy" width="1200" height="788" decoding="async"><span><b>Good Humor</b> <i>Entertainment</i></span></a><a href="case-lieblings-zahnarzt"><img src="assets/cases/lieblings-zahnarzt-shooting.jpg" alt="Lieblings-Zahnarzt · Zahnmedizin" loading="lazy" width="1200" height="788" decoding="async"><span><b>Lieblings-Zahnarzt</b> <i>Zahnmedizin</i></span></a><a href="case-adsuits"><img src="assets/cases/adsuits-shooting.jpg" alt="AdSuits · Media" loading="lazy" width="1600" height="1068" decoding="async"><span><b>AdSuits</b> <i>Media</i></span></a><a href="case-mine-mina"><img src="assets/cases/mine-mina-shooting.jpg" alt="Mine Mina · Fashion" loading="lazy" width="1066" height="1600" decoding="async"><span><b>Mine Mina</b> <i>Fashion</i></span></a><a href="case-ergobag"><img src="assets/cases/ergobag-shooting.jpg" alt="ergobag · Consumer" loading="lazy" width="1200" height="788" decoding="async"><span><b>ergobag</b> <i>Consumer</i></span></a><a href="case-we-celebrate"><img src="assets/cases/we-celebrate-shooting.jpg" alt="we:celebrate Streetfood · Catering" loading="lazy" width="1600" height="1066" decoding="async"><span><b>we:celebrate Streetfood</b> <i>Catering</i></span></a><a href="case-get-on"><img src="assets/cases/geton-shooting.jpg" alt="GET.ON · E-Mental-Health" loading="lazy" width="1200" height="788" decoding="async"><span><b>GET.ON</b> <i>E-Mental-Health</i></span></a><a href="case-luis-lea"><img src="assets/cases/luisundlea-shooting.jpg" alt="Luis + Lea · Bildung" loading="lazy" width="1600" height="1064" decoding="async"><span><b>Luis + Lea</b> <i>Bildung</i></span></a></div>
+          <div class="case-marquee__row" aria-hidden="true"><a href="case-noey"><img src="assets/cases/noey.webp" alt="NOEY Solutions · Robotik" loading="lazy" width="640" height="360" decoding="async"><span><b>NOEY Solutions</b> <i>Robotik</i></span></a><a href="case-wackelzahn"><img src="assets/cases/wackelzahn-shooting.jpg" alt="Wackelzahn · Kinderzahnarzt" loading="lazy" width="1200" height="788" decoding="async"><span><b>Wackelzahn</b> <i>Kinderzahnarzt</i></span></a><a href="case-little-big-pasta"><img src="assets/cases/little-big-pasta-shooting.jpg" alt="Little Big Pasta · Gastronomie" loading="lazy" width="1200" height="788" decoding="async"><span><b>Little Big Pasta</b> <i>Gastronomie</i></span></a><a href="case-medium"><img src="assets/cases/medium.webp" alt="medium Architekten · Architektur" loading="lazy" width="640" height="426" decoding="async"><span><b>medium Architekten</b> <i>Architektur</i></span></a><a href="case-conlivo"><img src="assets/cases/conlivo.webp" alt="Conlivo · PropTech" loading="lazy" width="640" height="427" decoding="async"><span><b>Conlivo</b> <i>PropTech</i></span></a><a href="case-can-sort"><img src="assets/cases/can-sort-shooting.jpg" alt="CA'N SORT · Wein" loading="lazy" width="1200" height="788" decoding="async"><span><b>CA'N SORT</b> <i>Wein</i></span></a><a href="case-street-gourmet"><img src="assets/cases/street-gourmet.webp" alt="Street Gourmet · Food" loading="lazy" width="640" height="361" decoding="async"><span><b>Street Gourmet</b> <i>Food</i></span></a><a href="case-mdb-finance"><img src="assets/cases/mdb-finance.webp" alt="MDB Finance · Finance" loading="lazy" width="640" height="360" decoding="async"><span><b>MDB Finance</b> <i>Finance</i></span></a><a href="case-bgf"><img src="assets/cases/bgf.webp" alt="BGF+ Architekten · Architektur" loading="lazy" width="640" height="360" decoding="async"><span><b>BGF+ Architekten</b> <i>Architektur</i></span></a><a href="case-sknmetrics"><img src="assets/cases/sknm-shooting.jpg" alt="SKNMETRICS · KI & Kosmetik" loading="lazy" width="1200" height="788" decoding="async"><span><b>SKNMETRICS</b> <i>KI & Kosmetik</i></span></a><a href="case-hy"><img src="assets/cases/hy.t.png" alt="hy helpyourself · Gesundheit" loading="lazy" width="868" height="533" decoding="async"><span><b>hy helpyourself</b> <i>Gesundheit</i></span></a><a href="case-solit"><img src="assets/cases/solit.webp" alt="SOLIT Marketing · Marketing" loading="lazy" width="640" height="426" decoding="async"><span><b>SOLIT Marketing</b> <i>Marketing</i></span></a><a href="case-poodlewohl"><img src="assets/cases/poodlewohl-keyvisual.jpg" alt="Poodlewohl · Hundefutter" loading="lazy" width="1200" height="788" decoding="async"><span><b>Poodlewohl</b> <i>Hundefutter</i></span></a><a href="case-immofolia"><img src="assets/cases/immofolia.webp" alt="Immofolia · PropTech" loading="lazy" width="640" height="360" decoding="async"><span><b>Immofolia</b> <i>PropTech</i></span></a><a href="case-cologne-comedy"><img src="assets/cases/cologne-comedy.webp" alt="Cologne Comedy Festival · Kultur" loading="lazy" width="640" height="359" decoding="async"><span><b>Cologne Comedy Festival</b> <i>Kultur</i></span></a><a href="case-baked"><img src="assets/cases/baked-thumb.webp" alt="Baked · Food" loading="lazy" width="1400" height="778" decoding="async"><span><b>Baked</b> <i>Food</i></span></a><a href="case-finaplus"><img src="assets/cases/finaplus.webp" alt="FinaPlus · WealthTech" loading="lazy" width="640" height="426" decoding="async"><span><b>FinaPlus</b> <i>WealthTech</i></span></a><a href="case-highr"><img src="assets/cases/highr-shooting.jpg" alt="Highr · Recruiting" loading="lazy" width="1024" height="681" decoding="async"><span><b>Highr</b> <i>Recruiting</i></span></a><a href="case-digital2gether"><img src="assets/cases/d2g-shooting.jpg" alt="Digital2gether · IT-Beratung" loading="lazy" width="1200" height="788" decoding="async"><span><b>Digital2gether</b> <i>IT-Beratung</i></span></a><a href="case-aconvia"><img src="assets/cases/aconvia.webp" alt="Aconvia · IT-Consulting" loading="lazy" width="640" height="525" decoding="async"><span><b>Aconvia</b> <i>IT-Consulting</i></span></a><a href="case-system-360"><img src="assets/cases/system-360-shooting.jpg" alt="System 360 · Security & Investigation" loading="lazy" width="1200" height="788" decoding="async"><span><b>System 360</b> <i>Security & Investigation</i></span></a><a href="case-noveltea"><img src="assets/cases/noveltea-shooting.jpg" alt="Noveltea · Beverage" loading="lazy" width="1200" height="788" decoding="async"><span><b>Noveltea</b> <i>Beverage</i></span></a><a href="case-potatohead"><img src="assets/cases/potatohead-shooting.jpg" alt="Potatohead Pictures · Entertainment" loading="lazy" width="1200" height="788" decoding="async"><span><b>Potatohead Pictures</b> <i>Entertainment</i></span></a><a href="case-be-care"><img src="assets/cases/be-care-shooting.jpg" alt="be.care · IT" loading="lazy" width="1200" height="788" decoding="async"><span><b>be.care</b> <i>IT</i></span></a><a href="case-me"><img src="assets/cases/me-shooting.jpg" alt="me, my life, my job · Recruiting" loading="lazy" width="812" height="532" decoding="async"><span><b>me, my life, my job</b> <i>Recruiting</i></span></a><a href="case-pause-play"><img src="assets/cases/pause-play-shooting.jpg" alt="pause and play · Events" loading="lazy" width="1200" height="788" decoding="async"><span><b>pause and play</b> <i>Events</i></span></a><a href="case-project-haya"><img src="assets/cases/project-haya-shooting.jpg" alt="Project Haya · Community" loading="lazy" width="1200" height="788" decoding="async"><span><b>Project Haya</b> <i>Community</i></span></a><a href="case-the-moc"><img src="assets/cases/the-moc-kampagne.jpg" alt="the moc · Coffee & Robotik" loading="lazy" width="1200" height="788" decoding="async"><span><b>the moc</b> <i>Coffee & Robotik</i></span></a><a href="case-maleco"><img src="assets/cases/maleco-shooting.jpg" alt="Maleco · Industrie" loading="lazy" width="1200" height="788" decoding="async"><span><b>Maleco</b> <i>Industrie</i></span></a><a href="case-klang2"><img src="assets/cases/klang-keyvisual.jpg" alt="Klang2 · Spiel & Bildung" loading="lazy" width="1200" height="788" decoding="async"><span><b>Klang2</b> <i>Spiel & Bildung</i></span></a><a href="case-boness-euteneuer"><img src="assets/cases/boness-shooting.jpg" alt="Boneß & Euteneuer · Steuerberatung" loading="lazy" width="1600" height="1068" decoding="async"><span><b>Boneß & Euteneuer</b> <i>Steuerberatung</i></span></a><a href="case-good-humor"><img src="assets/cases/good-humor-shooting.jpg" alt="Good Humor · Entertainment" loading="lazy" width="1200" height="788" decoding="async"><span><b>Good Humor</b> <i>Entertainment</i></span></a><a href="case-lieblings-zahnarzt"><img src="assets/cases/lieblings-zahnarzt-shooting.jpg" alt="Lieblings-Zahnarzt · Zahnmedizin" loading="lazy" width="1200" height="788" decoding="async"><span><b>Lieblings-Zahnarzt</b> <i>Zahnmedizin</i></span></a><a href="case-adsuits"><img src="assets/cases/adsuits-shooting.jpg" alt="AdSuits · Media" loading="lazy" width="1600" height="1068" decoding="async"><span><b>AdSuits</b> <i>Media</i></span></a><a href="case-mine-mina"><img src="assets/cases/mine-mina-shooting.jpg" alt="Mine Mina · Fashion" loading="lazy" width="1066" height="1600" decoding="async"><span><b>Mine Mina</b> <i>Fashion</i></span></a><a href="case-ergobag"><img src="assets/cases/ergobag-shooting.jpg" alt="ergobag · Consumer" loading="lazy" width="1200" height="788" decoding="async"><span><b>ergobag</b> <i>Consumer</i></span></a><a href="case-we-celebrate"><img src="assets/cases/we-celebrate-shooting.jpg" alt="we:celebrate Streetfood · Catering" loading="lazy" width="1600" height="1066" decoding="async"><span><b>we:celebrate Streetfood</b> <i>Catering</i></span></a><a href="case-get-on"><img src="assets/cases/geton-shooting.jpg" alt="GET.ON · E-Mental-Health" loading="lazy" width="1200" height="788" decoding="async"><span><b>GET.ON</b> <i>E-Mental-Health</i></span></a><a href="case-luis-lea"><img src="assets/cases/luisundlea-shooting.jpg" alt="Luis + Lea · Bildung" loading="lazy" width="1600" height="1064" decoding="async"><span><b>Luis + Lea</b> <i>Bildung</i></span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</main>
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="container footer-brand"><a href="./" aria-label="CONCRETE Brandbuilding, zur Startseite"><img src="assets/concrete-paper.svg" alt="CONCRETE" width="340" height="50"></a></div>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-trust">
+        <section class="footer-awards" aria-labelledby="footer-awards-title">
+          <h2 class="footer-trust__label" id="footer-awards-title">Ausgezeichnet</h2>
+          <ul class="footer-awards__grid">
+            <li><a class="footer-award footer-award--brand" href="https://www.german-brand-award.com/" target="_blank" rel="noopener noreferrer" aria-label="German Brand Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></a></li>
+            <li><a class="footer-award footer-award--gruender" href="https://www.deutscher-gruenderpreis.de/" target="_blank" rel="noopener noreferrer" aria-label="Deutscher Gründerpreis"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></a></li>
+            <li><a class="footer-award footer-award--marken" href="https://marken-award.de/" target="_blank" rel="noopener noreferrer" aria-label="Marken Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></a></li>
+            <li><a class="footer-award footer-award--design" href="https://www.german-design-award.com/" target="_blank" rel="noopener noreferrer" aria-label="German Design Award"><img src="assets/awards/concrete-awards-2026.png" alt="" width="1128" height="191"></a></li>
+          </ul>
+        </section>
+        <section class="footer-partners" aria-labelledby="footer-partners-title">
+          <h2 class="footer-trust__label" id="footer-partners-title">Supporter &amp; Partner</h2>
+          <div class="footer-partners__grid">
+            <a class="footer-partner footer-partner--dmig" href="https://www.designmadeingermany.de/verzeichnis/agenturen/#37172" target="_blank" rel="noopener noreferrer" aria-label="CONCRETE im Agenturverzeichnis von Design made in Germany">
+              <img src="assets/partners/designmade-in-germany.svg" alt="Design made in Germany" width="512" height="512">
+              <span class="footer-partner__copy"><strong>Design made<br>in Germany</strong><small>Supporter</small></span>
+            </a>
+            <div class="footer-partner footer-partner--sortlist">
+              <div class="sortlist-badge"><a class="footer-partner__fallback" href="https://www.sortlist.de/agency/concrete-brandbuilding" target="_blank" rel="noopener noreferrer">Sortlist<br>Trusted Partner</a></div>
+              <script type="text/plain" data-consent-src="https://www.sortlist.de/api/badge-embed?agencySlug=concrete-brandbuilding&amp;agencyUuid=d98ebc67-bad3-45cc-9481-8b547ff930f7&amp;color=neutral&amp;hue=900&amp;type=trusted-partner&amp;country=DE&amp;locale=de" data-consent-category="marketing"></script>
+            </div>
+          </div>
+        </section>
+      </div>
+      <nav class="footer-index" aria-label="Alle Seiten">
+      <details class="footer-col" open>
+        <summary class="footer-col__label"><span>Leistungen</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
+        <ul class="footer-col__list">
+          <li><a href="marken-check">Marken-Check</a></li><li><a href="zielgruppen-markt-und-wettbewerberanalyse">Zielgruppen-, Markt- &amp; Wettbewerbsanalyse</a></li><li><a href="kunden-und-mitarbeiterbefragungen">Kunden- &amp; Mitarbeiterbefragungen</a></li><li><a href="social-listening">Social Listening</a></li><li><a href="ki-tools-analyse-strategie">KI-gestützte Analyse- &amp; Strategietools</a></li><li><a href="brand-workshop">Brand-Workshop</a></li><li><a href="brandvision">Brandvision</a></li><li><a href="markenpositionierung-brand-story">Markenpositionierung &amp; Brand Story</a></li><li><a href="namensentwicklung">Namensentwicklung</a></li>
+          <li class="footer-col__more">
+            <details>
+              <summary><span class="footer-col__more-closed">Weitere Leistungen</span><span class="footer-col__more-open">Weniger Leistungen</span></summary>
+              <ul class="footer-col__more-list">
+                <li><a href="headlines-und-textkonzept">Headlines &amp; Textkonzept</a></li><li><a href="kommunikationsstrategie">Kommunikationsstrategie</a></li><li><a href="kampagnenentwicklung">Kampagnenentwicklung</a></li><li><a href="corporate-design">Corporate Design</a></li><li><a href="reinzeichnung">Reinzeichnung</a></li><li><a href="design-kick-off-fuer-corporate-design">Design-Kick-off</a></li><li><a href="website-konzept">Website-Konzept</a></li><li><a href="website-design">Website-Design</a></li><li><a href="seo-und-ki-search">SEO &amp; KI-Search</a></li><li><a href="fotoproduktion">Fotoproduktion</a></li><li><a href="bildwelten-artworks-visual-looks">Bildwelten &amp; Artworks</a></li><li><a href="kampagnen-design-key-visuals">Kampagnen-Design &amp; Key Visuals</a></li><li><a href="animationen-motion-design">Animationen &amp; Motion Design</a></li><li><a href="icons-und-illustration-sets">Icons &amp; Illustration-Sets</a></li><li><a href="package-design">Package Design</a></li><li><a href="retail-design">Retail Design</a></li><li><a href="employer-branding">Employer Branding</a></li><li><a href="internes-rollout">Internes Rollout</a></li><li><a href="social-media">Social Media</a></li><li><a href="evaluierung-optimierung">Evaluierung &amp; Optimierung</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="footer-col__hub"><a class="link-arrow" href="leistungen">Alle Leistungen</a></li>
+        </ul>
+      </details>
+      <details class="footer-col" open>
+        <summary class="footer-col__label"><span>Branchen</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
+        <ul class="footer-col__list">
+          <li><a href="b2b-brands">Strategie und Branding für B2B-Marken</a></li><li><a href="event-und-entertainment-brands">Strategie und Branding für Event und Entertainment</a></li><li><a href="recruiting-brands">Strategie und Branding für Recruiting</a></li><li><a href="startups">Strategie und Branding für Startups</a></li><li><a href="food-und-beverage-brands">Strategie und Branding für Food &amp; Beverage</a></li><li><a href="consulting-it-und-finance-brands">Strategie und Branding für Consulting, IT und Finance</a></li><li><a href="family-und-kids-brands">Strategie und Branding für Family und Kids</a></li>
+          <li class="footer-col__more">
+            <details>
+              <summary><span class="footer-col__more-closed">Weitere Branchen</span><span class="footer-col__more-open">Weniger Branchen</span></summary>
+              <ul class="footer-col__more-list">
+                <li><a href="architektur-und-immobilien-brands">Strategie und Branding für Architekten und Real Estate</a></li><li><a href="b2b-marken-mallorca">Brand Building für anspruchsvolle B2B-Marken auf Mallorca</a></li><li><a href="marketing-und-media-brands">Strategie und Branding für Marketing und Media</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="footer-col__hub"><a class="link-arrow" href="branchen">Alle Branchen</a></li>
+        </ul>
+      </details>
+      <details class="footer-col" open>
+        <summary class="footer-col__label"><span>Wissen</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
+        <ul class="footer-col__list">
+          <li><a href="was-kostet-ein-logo-design">Was kostet ein Logo-Design?</a></li><li><a href="wissen">Was ist wichtig beim Markendesign?</a></li><li><a href="wissen">Warum Early Adopter wichtig sind</a></li><li><a href="wissen">Wie wird meine Marke zur Lovebrand?</a></li><li><a href="wissen">Illustrationen im Markendesign</a></li><li><a href="wissen">KI im Layoutdesign</a></li><li><a href="wissen">Markenstrategie mit KI</a></li><li><a href="wissen">Diversität &amp; Inklusion im Design</a></li><li><a href="wissen">Beratung im Markenaufbau</a></li><li><a href="wissen">Designagentur digitalisieren</a></li><li><a href="wissen">Alle FAQs</a></li>
+          <li class="footer-col__hub"><a class="link-arrow" href="wissen">Zum Blog</a></li>
+        </ul>
+      </details>
+      <details class="footer-col" open>
+        <summary class="footer-col__label"><span>Agentur</span><span class="footer-col__icon" aria-hidden="true"></span></summary>
+        <ul class="footer-col__list">
+          <li><a href="./">Home</a></li><li><a href="projekte">Projekte</a></li><li><a href="situation-marke-nicht-mitgewachsen">Wo wir helfen können</a></li><li><a href="leistungen">Leistungen</a></li><li><a href="ueber-uns">Über CONCRETE</a></li><li><a href="branding-designagentur-hamburg">Branding- &amp; Designagentur Hamburg</a></li><li><a href="branding-designagentur-frankfurt">Branding- &amp; Designagentur Frankfurt</a></li><li><a href="leistungen">Unser Handwerk</a></li><li><a href="phase-verstehen">Verstehen</a></li><li><a href="phase-definieren">Definieren</a></li><li><a href="phase-umsetzen">Umsetzen</a></li><li><a href="phase-begleiten">Begleiten</a></li><li><a href="erstgespraech">Projekt anfragen</a></li>
+        </ul>
+      </details>
+      </nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-legal">
+      <a class="footer-legal__logo" href="./" aria-label="CONCRETE, zur Startseite"><img src="assets/concrete-brandbuilding-paper.svg" alt="CONCRETE Brandbuilding" width="200" height="55"></a>
+      <ul class="footer-legal__links"><li><a href="kontakt">Kontakt</a></li><li><a href="impressum">Impressum</a></li><li><a href="datenschutz">Datenschutz</a></li><li><button type="button" data-consent-manage>Cookie-Einstellungen</button></li></ul>
+      <ul class="social-links"><li><a class="li" href="https://www.linkedin.com/company/concrete-brandbuilding/" target="_blank" rel="noopener noreferrer" aria-label="CONCRETE auf LinkedIn"></a></li><li><a class="ig" href="https://www.instagram.com/concrete.brandbuilding/" target="_blank" rel="noopener noreferrer" aria-label="CONCRETE auf Instagram"></a></li></ul>
+      <small>© 2026 CONCRETE Brandbuilding · Hamburg &amp; Frankfurt</small>
+    </div>
+  </div>
+</footer>
+<script src="site.js?v=176"></script>
+<script>
+document.querySelectorAll("video[data-fallback]").forEach(function(v){
+  v.addEventListener("error",function(){
+    var fb=v.getAttribute("data-fallback");if(v.parentNode&&v.parentNode.querySelector('img[src="'+fb+'"]')){v.remove();return;}var im=document.createElement("img");im.src=fb;im.alt="Nextbed";
+    im.style.cssText=v.style.cssText;v.replaceWith(im);
+  });
+  if(v.error){var fb=v.getAttribute("data-fallback");if(v.parentNode&&v.parentNode.querySelector('img[src="'+fb+'"]')){v.remove();return;}var im=document.createElement("img");im.src=fb;im.alt="Nextbed";im.style.cssText=v.style.cssText;v.replaceWith(im);}
+});
+document.querySelectorAll(".case-masonry").forEach(function(m){
+  [].forEach.call(m.querySelectorAll("img"),function(im,i){im.style.transitionDelay=(i*90)+"ms";});
+});
+</script>
+</body>
+</html>

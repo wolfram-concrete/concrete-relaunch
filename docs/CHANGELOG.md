@@ -1,5 +1,25 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – goSchneider, Case-Module und verbindliche Duplizierungsregeln
+
+- goSchneider-Projektseite mit Christians Briefing, finalem Hero, Branding-,
+  Packaging-, Produkt- und Shootingmaterial aufgebaut; Texte oben, großes
+  Introbild und gemischtes gemeinsames Gallery-Raster darunter.
+- Gelieferte Website-Aufnahme `goschneider-scroll.mp4` als stummer 29,63-s-Loop
+  ohne Controls integriert. Markenfigur-Videos laufen ebenfalls stumm im Loop;
+  vier verteilte Regenbogenflächen bewegen sich ohne weißen Vorlauf/Soft-Fade.
+- Christian-Perspektive unten ergänzt; Dennis-Kundenquote bis zur Lieferung
+  unsichtbar vorbereitet. Alle elf persönlichen Stimmen nach NextBed vereinheitlicht.
+- goSchneider-Relevanzbereich mit Originalpfeil, Referenz-Headline, Copy-Raster
+  und CTA-Abständen korrigiert. Alle 178 goSchneider-Bildteaser auf Hero umgestellt.
+- Gemeinsame Mosaic-Medienhöhen stabilisiert und Herausforderung-Headlines auf
+  die volle verfügbare Breite erweitert; Case-Cache-Version `v=176`.
+- Neue Leistungsseite Interne Kommunikation / Change-Kommunikation vorbereitet;
+  die ergänzenden LINK- und Haftpflichtkasse-Cases stehen noch aus.
+- `AGENTS.md` und `CASE-FORMATIERUNGSREGELN.md` machen die 1:1-Übernahme der
+  bestehenden Case-Formatierungen verbindlich; NextBed als Hauptreferenz,
+  NOEY als zweite Kontrolle. Abweichungen nur nach ausdrücklicher Freigabe.
+
 ## 15.09.2026 – Eugen Regehr im Über-uns-Netzwerk ergänzt
 
 - Eugen Regehr mit eigenem Porträt, Rolle „Full-Stack Developer“ und direktem

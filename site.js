@@ -612,7 +612,7 @@
         var used=0;
         els.forEach(function(el,k){
           var w=k===els.length-1&&!(isLast&&rowH<h(els.length,sumAr))?W-gap*(els.length-1)-used:Math.floor(ar(el)*rowH);
-          used+=w;el.style.width=w+"px";
+          used+=w;el.style.width=w+"px";el.style.height=rowH+"px";
         });
       });
     }

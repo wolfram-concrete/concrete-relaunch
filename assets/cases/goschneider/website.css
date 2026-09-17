@@ -1,0 +1,4109 @@
+/* =====================================================
+   Go Schneider — Homepage Design System
+   Figma Reference: colorful, bold, illustration-based
+   ===================================================== */
+
+/* === LOCAL FONTS === */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('../Visuals/Font/Fraunces/fraunces-variablefont_softwonkopszwght-webfont.woff2') format('woff2'),
+       url('../Visuals/Font/Fraunces/fraunces-variablefont_softwonkopszwght-webfont.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../Visuals/Font/Montserrat/Montserrat-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../Visuals/Font/Montserrat/Montserrat-Italic-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* === DESIGN TOKENS === */
+:root {
+  --white:       #FFFFFF;
+  --black:       #181818;
+  --brand-purple: #6250FF;
+  --brand-orange: #FF8426;
+  --brand-green:  #77C282;
+  --brand-pink:   #FF5066;
+  --brand-yellow: #FFD900;
+  --orange:      #FF8426;
+  --off-white:   #FCFAF6;
+  --gray-100:    #EFEFEB;
+  --gray-200:    #E0DFDA;
+  --gray-500:    #686864;
+  --gray-700:    #3C3C3A;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Montserrat', system-ui, sans-serif;
+
+  --max-w:        1200px;
+  --pad-x:        48px;
+  --nav-h:        92px;
+
+  --r-sm:   6px;
+  --r-md:   8px;
+  --r-lg:   9px;    /* Modulkanten an die Nav-Kerbung (.nav__bar 9px) angeglichen */
+  --r-xl:   10px;   /* grosse Modul-/Kartenkanten – knapp ueber Nav-Radius */
+  --r-pill: 100px;
+
+  --ease: 180ms ease;
+
+  /* Motion system (Briefing) */
+  --ease-smooth:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-editorial: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.4, 0.64, 1);
+  --dur-xs: 160ms;
+  --dur-sm: 260ms;
+  --dur-md: 520ms;
+  --dur-lg: 850ms;
+  --dur-xl: 1200ms;
+
+  /* Vertical breathing room between section edge and content */
+  --section-pad-y: clamp(96px, 8.5vw, 144px);
+
+  /* Outline system — every content box uses the SAME contour weight */
+  --border-w: 3px;      /* cards, frames, boxes */
+  --border-w-sm: 2px;   /* small pills, chips, labels, buttons */
+
+  /* Every small interactive glyph (arrows, chevrons, plus/minus, burger)
+     renders at this exact stroke width, regardless of SVG scaling. */
+  --icon-stroke: 2px;
+
+  /* ---- Global CTA colour coding ----
+     Primary   = the ordering action. Black on light surfaces, yellow on dark.
+     Secondary = outlined, never competes with primary.
+     Price     = yellow pill, so the price reads the same wherever it appears. */
+  --cta-bg:            var(--black);
+  --cta-fg:            var(--white);
+  --cta-bg-hover:      #2e2e2e;
+  --cta-bg-invert:     var(--brand-yellow);   /* primary on dark surfaces */
+  --cta-fg-invert:     var(--black);
+  --cta-bg-invert-hover: #e6c400;
+  --cta-price-bg:      var(--brand-yellow);
+  --cta-price-fg:      var(--black);
+
+  /* How far the product card lifts up to straddle the orange wave. The
+     trustbar (above) reserves the same amount of clearance. */
+  --product-lift:      clamp(160px, 29vw, 440px);
+}
+
+/* === RESET === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black);
+  background: var(--off-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keyboard users can bypass the repeated navigation on every page. */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10000;
+  padding: 10px 16px;
+  border: 2px solid var(--black);
+  border-radius: var(--r-sm);
+  color: var(--black);
+  background: var(--brand-yellow);
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform var(--dur-xs) var(--ease-smooth);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { list-style: none; }
+
+/* === CONTAINER === */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+/* =====================================================
+   ICON STROKE — one weight for every small interactive glyph.
+   non-scaling-stroke makes the rendered width independent of the
+   SVG's display size, so a 24-viewBox and a 48-viewBox icon match.
+   (Large illustrative icons like .step-card__icon stay proportional.)
+   ===================================================== */
+.btn__arrow svg,
+.trust-item__icon svg,
+.nav__mega-card-arrow svg,
+.cat-card__arrow svg {
+  stroke-width: var(--icon-stroke);
+}
+.btn__arrow svg *,
+.trust-item__icon svg *,
+.nav__mega-card-arrow svg *,
+.cat-card__arrow svg * {
+  vector-effect: non-scaling-stroke;
+}
+/* these two replaced text glyphs (› / →) — they need an explicit size now */
+.nav__mega-card-arrow svg { width: 20px; height: 20px; display: block; }
+.cat-card__arrow { display: inline-flex; }
+.cat-card__arrow svg { width: 19px; height: 19px; display: block; }
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  --btn-py: 13px;
+  --btn-px: 26px;
+  padding: var(--btn-py) var(--btn-px);
+  border-radius: var(--r-pill);
+  overflow: hidden;   /* lets the price segment reach the pill edge */
+  border: var(--border-w-sm) solid transparent;
+  transition: background var(--ease), color var(--ease), border-color var(--ease),
+              transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow var(--ease);
+  white-space: nowrap;
+  max-width: 100%;
+  cursor: pointer;
+}
+/* a price segment sits flush right — the button gives up its right padding */
+.btn:has(.btn__price) { padding-right: 0; }
+.btn-lg { font-size: 16px; --btn-py: 15px; --btn-px: 30px; }
+.btn-block { width: 100%; justify-content: center; display: flex; }
+
+/* Price sits as a full-height segment on the right of the CTA:
+   black link on the left, yellow price block on the right. */
+.btn__price {
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  /* Vertical padding is cancelled so the block spans the full inner height.
+     Horizontally the button drops its right padding instead — a negative
+     margin would shrink the button and get the segment clipped.
+     Left margin completes the gap to a full --btn-px, so the label sits
+     optically centred inside the dark field. */
+  margin-block: calc(-1 * var(--btn-py));
+  margin-left: calc(var(--btn-px) - 8px);
+  padding-inline: calc(var(--btn-px) * 0.85);
+  background: var(--cta-price-bg);
+  color: var(--cta-price-fg);
+  font-size: 1em;   /* gleiche Groesse wie das CTA-Label */
+  font-weight: 700;
+}
+
+/* Action cue — marks the primary CTA as something you click */
+.btn__arrow {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.15em;
+  height: 1.15em;
+  transition: transform var(--dur-sm) var(--ease-spring);
+}
+.btn__arrow svg { width: 100%; height: auto; display: block; }
+.btn:hover .btn__arrow { transform: translateX(4px); }
+@media (prefers-reduced-motion: reduce) {
+  .btn__arrow { transition: none; }
+  .btn:hover .btn__arrow { transform: none; }
+}
+/* On a yellow/outlined button the yellow pill would vanish — invert it there */
+.btn-lime .btn__price,
+.btn-outline .btn__price,
+.btn-order .btn__price { background: var(--black); color: var(--white); }
+/* Hero CTA: price segment in off-white */
+.hero__card .btn__price { background: var(--off-white); color: var(--black); }
+/* Preisfeld bei allen Breiten sichtbar: In schmaleren Breiten (2-spaltiger Hero /
+   engere CTA-Container) wuerde das Preissegment am rechten Pill-Ende durch
+   overflow:hidden abgeschnitten. Dort wird der Preis-CTA voll breit, das
+   Preisfeld rechts angedockt (margin-left:auto) — Label links, Preis rechts. */
+@media (max-width: 1024px) {
+  .hero__actions .btn:has(.btn__price),
+  .zoomcta__actions .btn:has(.btn__price) {
+    width: 100%;
+    --btn-px: 15px;         /* schmaleres Padding, damit der Inhalt in die Card passt */
+    font-size: 14px;        /* etwas kleiner, sonst ragt das Preissegment ueber die Kante */
+  }
+  .hero__actions .btn:has(.btn__price) .btn__price,
+  .zoomcta__actions .btn:has(.btn__price) .btn__price { margin-left: auto; }
+}
+
+/* Primary CTA — light surfaces */
+.btn-dark {
+  position: relative;
+  z-index: 0;
+  background: var(--cta-bg);
+  color: var(--cta-fg);
+  border-color: var(--cta-bg);
+}
+/* Hover: a brand-purple layer rises from the bottom with a domed leading edge
+   that settles into the box (derived from the MindMarket fill hover). Text stays
+   white — readable on both black and purple. */
+.btn-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--brand-purple);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+  transition: transform 0.42s cubic-bezier(0.45, 0, 0.15, 1),
+              border-radius 0.42s cubic-bezier(0.45, 0, 0.15, 1);
+  pointer-events: none;
+}
+.btn-dark:hover::before,
+.btn-dark:focus-visible::before { transform: scaleY(1); border-radius: 0; }
+.btn-dark:hover { border-color: var(--brand-purple); transform: translateY(-1px); }
+
+/* Bestellen / order action on DARK/coloured surfaces (e.g. the black closing
+   card): rests off-white, then the brand-purple fill rises on hover. Purple is
+   the "Bestellen" signal — always the hover colour, never the resting colour. */
+.btn-order {
+  position: relative;
+  z-index: 0;
+  background: var(--off-white);
+  color: var(--black);
+  border-color: var(--off-white);
+}
+.btn-order::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--brand-purple);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+  transition: transform 0.42s cubic-bezier(0.45, 0, 0.15, 1),
+              border-radius 0.42s cubic-bezier(0.45, 0, 0.15, 1);
+  pointer-events: none;
+}
+.btn-order:hover::before,
+.btn-order:focus-visible::before { transform: scaleY(1); border-radius: 0; }
+.btn-order:hover,
+.btn-order:focus-visible { color: var(--white); border-color: var(--brand-purple); transform: translateY(-1px); }
+
+.btn:active { transform: translateY(0); }
+
+/* Temporärer Bestellstopp: Die zugehörigen Links besitzen bewusst kein href.
+   Der Zustand bleibt auch ohne JavaScript sicher und ist visuell eindeutig. */
+a[data-order-disabled] {
+  pointer-events: none !important;
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(0.35);
+  transform: none !important;
+  box-shadow: none !important;
+  user-select: none;
+}
+a[data-order-disabled]::before { display: none !important; }
+a[data-order-disabled] .btn__arrow,
+a[data-order-disabled] .nav__quote-mark { opacity: 0.55; }
+
+/* Eyebrow label — small caps section kicker */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.eyebrow--dark { color: var(--black); }
+
+/* Crosslink buttons — contoured, neutral. Same rising fill as the order button,
+   but neutralised to black (on light) / white (on coloured & dark surfaces),
+   so purple stays reserved for "Bestellen". */
+.btn-outline,
+.btn-outline-white {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  background: transparent;
+}
+.btn-outline::before,
+.btn-outline-white::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+  transition: transform 0.42s cubic-bezier(0.45, 0, 0.15, 1),
+              border-radius 0.42s cubic-bezier(0.45, 0, 0.15, 1);
+  pointer-events: none;
+}
+.btn-outline:hover::before,
+.btn-outline:focus-visible::before,
+.btn-outline-white:hover::before,
+.btn-outline-white:focus-visible::before { transform: scaleY(1); border-radius: 0; }
+
+.btn-outline {
+  color: var(--black);
+  border-color: var(--black);
+}
+.btn-outline::before { background: var(--black); }
+.btn-outline:hover,
+.btn-outline:focus-visible { color: var(--white); }
+
+.btn-outline-white {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.6);
+}
+.btn-outline-white::before { background: var(--white); }
+.btn-outline-white:hover,
+.btn-outline-white:focus-visible { color: var(--black); border-color: var(--white); }
+
+/* Filled light CTA — off-white body with a black contour, for coloured surfaces */
+.btn-light {
+  background: var(--off-white);
+  color: var(--black);
+  border-color: var(--black);
+}
+.btn-light:hover { background: var(--white); transform: translateY(-1px); }
+.btn-light .btn__price { background: var(--black); color: var(--white); }
+
+/* Primary CTA — dark surfaces (inverted) */
+.btn-lime {
+  background: var(--cta-bg-invert);
+  color: var(--cta-fg-invert);
+  border-color: var(--cta-bg-invert);
+}
+.btn-lime:hover { background: var(--cta-bg-invert-hover); border-color: var(--cta-bg-invert-hover); }
+
+/* =====================================================
+   NAV
+   ===================================================== */
+/* Full-Bleed-Module rechnen mit 100vw — das schliesst die Scrollbar mit ein und
+   schiebt die Seite ein paar Pixel nach rechts. clip statt hidden, weil hidden
+   die vielen position:sticky-Module ausschaltet. */
+html, body { overflow-x: clip; }
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: auto;
+  padding: 12px clamp(18px, 3.9vw, 63px) 10px;
+  background: transparent;   /* nav modules float over the page */
+  transition: padding var(--ease);
+}
+/* Bei offenem Mobile-Menue wird der Body gesperrt — dabei verliert die
+   sticky-Nav ihren Halt und faellt auf die Dokument-Oben-Position zurueck.
+   Fixed pinnt sie stabil an den Viewport (ueber dem z-150-Overlay). */
+body.menu-open .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+/* No band, no divider on the nav level — the modules carry their own shadow */
+.nav.scrolled {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.nav.scrolled .nav__logo img { width: 100px; }
+.nav.scrolled .nav__bar { padding-top: 7px; padding-bottom: 7px; }
+.nav.scrolled .nav__bar,
+.nav.scrolled .nav__quote { min-height: 50px; }
+.nav__shell {
+  width: 100%;
+  max-width: 1320px;   /* a touch wider than the content so the mega-menu breathes */
+  margin-inline: auto;
+  display: flex;
+  align-items: stretch;   /* bar + CTA module share one height */
+  gap: 20px;
+}
+.nav__main {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.nav__bar,
+.nav__quote {
+  background: var(--off-white);
+  /* soft lift so the off-white modules read against any section colour */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow var(--dur-sm) var(--ease-smooth);
+}
+.nav.scrolled .nav__bar,
+.nav.scrolled .nav__quote {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.14), 0 1px 3px rgba(0,0,0,0.08);
+}
+.nav__bar {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 30px);
+  /* vertical padding = Schutzraum around the logo */
+  padding: 8px 20px 8px 26px;
+  border-radius: 9px;
+  transition: min-height var(--dur-sm) var(--ease-smooth), padding var(--dur-sm) var(--ease-smooth);
+}
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.nav__logo img {
+  transition: width var(--dur-sm) var(--ease-smooth),
+              transform var(--dur-sm) var(--ease-spring);
+}
+.nav__logo:hover img { transform: scale(1.03); }
+.nav__logo img { width: 112px; height: auto; }
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+}
+.nav__link {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--r-pill);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--black);
+  white-space: nowrap;
+  transition: transform var(--dur-xs) var(--ease-smooth),
+              color var(--dur-xs) var(--ease-smooth);
+}
+/* Hover: the grey field slides up from the bottom (same cue as the CTAs). */
+.nav__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gray-100);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+  transition: transform 0.34s cubic-bezier(0.45, 0, 0.15, 1),
+              border-radius 0.34s cubic-bezier(0.45, 0, 0.15, 1);
+  pointer-events: none;
+}
+.nav__link:hover::before,
+.nav__dropdown.is-open .nav__dropdown-toggle::before { transform: scaleY(1); border-radius: 0; }
+.nav__link:hover,
+.nav__dropdown.is-open .nav__dropdown-toggle { transform: translateY(-1px); }
+.nav__link--active::before { content: none; }   /* active stays solid black */
+.nav__link:active { transform: translateY(0); }
+.nav__link--active,
+.nav__link--active:hover,
+.nav__dropdown.is-open .nav__dropdown-toggle.nav__link--active {
+  background: var(--black);
+  color: var(--white);
+}
+/* Keyboard focus — visible without hijacking the hover look */
+.nav__link:focus-visible,
+.nav__toggle:focus-visible,
+.nav__quote:focus-visible,
+.nav__mega-col a:focus-visible,
+.nav__mega-card:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+  border-radius: var(--r-pill);
+}
+.nav__mega-card:focus-visible { border-radius: 8px; }
+.nav__dropdown {
+  position: static;
+}
+.nav__dropdown-toggle {
+  cursor: pointer;
+}
+.nav__chevron {
+  width: 8px;
+  height: 8px;
+  border-right: var(--icon-stroke) solid currentColor;
+  border-bottom: var(--icon-stroke) solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--ease);
+}
+.nav__dropdown.is-open .nav__chevron,
+.nav__dropdown:hover .nav__chevron {
+  transform: rotate(225deg) translateY(-2px);
+}
+.nav__mega {
+  position: absolute;
+  top: calc(100% + 11px);
+  left: 0;
+  right: 0;
+  padding: 18px;
+  border-radius: 8px;
+  background: var(--off-white);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  display: grid;
+  grid-template-columns: minmax(300px, 360px) 1fr;
+  gap: 36px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px) scaleY(0.98);
+  transform-origin: top;
+  transition: opacity var(--dur-sm) var(--ease-smooth),
+              visibility var(--dur-sm) var(--ease-smooth),
+              transform var(--dur-sm) var(--ease-smooth);
+}
+.nav__mega::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px;
+  height: 12px;
+}
+.nav__dropdown:hover .nav__mega,
+.nav__dropdown.is-open .nav__mega,
+.nav__dropdown:focus-within .nav__mega {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scaleY(1);
+}
+/* Eine zusammenhaengende Karte: Label + Arrow oben, Foto darunter eingefasst.
+   Kein Rahmen — durch eine leichte Farbabstufung (gray-100 auf weissem Panel)
+   abgesetzt; fuellt beim Hover komplett lila wie die uebrigen Nav-CTAs. */
+.nav__mega-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 372px;
+  color: var(--black);
+  background: var(--gray-100);
+  border-radius: 14px;
+  padding: 14px;
+  transition: background var(--dur-sm) var(--ease-smooth);
+}
+.nav__mega-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 4px 12px;
+  margin-bottom: 12px;
+}
+.nav__mega-card-label {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--black);
+  transition: color var(--dur-sm) var(--ease-smooth);
+}
+.nav__mega-card-arrow {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  border: 2px solid var(--black);
+  transition: transform var(--dur-sm) var(--ease-spring),
+              background var(--dur-sm) var(--ease-smooth),
+              border-color var(--dur-sm) var(--ease-smooth),
+              color var(--dur-sm) var(--ease-smooth);
+}
+.nav__mega-card-media {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.nav__mega-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  display: block;
+}
+/* Hover: Hintergrund bleibt gleich — nur Schrift + Pfeil-Button werden lila */
+.nav__mega-card:hover .nav__mega-card-label { color: var(--brand-purple); }
+.nav__mega-card:hover .nav__mega-card-arrow {
+  background: var(--brand-purple);
+  border-color: var(--brand-purple);
+  color: var(--white);
+  transform: translateX(3px);
+}
+.nav__mega-card:hover img { transform: scale(1.06); }
+.nav__mega-links {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
+  column-gap: clamp(24px, 2.6vw, 44px);
+  align-content: center;
+  padding: 8px 12px 8px 0;
+}
+.nav__mega-col {
+  display: flex;
+  flex-direction: column;
+}
+/* Each category (an SEO landing page) is a group: a heading link for the pillar
+   page + its sub-pages below, so the panel mirrors the site's IA. */
+.nav__mega-group { display: flex; flex-direction: column; }
+.nav__mega-group + .nav__mega-group { margin-top: clamp(16px, 1.6vw, 24px); }
+/* Category heading — the pillar landing page, styled as a clear group TITLE
+   (bold, black, with a rule under it) so it reads as an Oberbegriff. */
+.nav__mega-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 10px 11px 10px;
+  margin-inline: -10px;
+  margin-bottom: 8px;
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+  border-bottom: 2px solid var(--black);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--black);
+  transition: color var(--dur-xs) var(--ease-smooth),
+              background var(--dur-xs) var(--ease-smooth);
+}
+/* Sub-pages: indented list under the heading, separated by fine horizontal
+   rules → clearly Unterbegriffe without a vertical rail */
+.nav__mega-sublist {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+.nav__mega-sublist a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 10px 9px 8px;
+  margin-inline: -6px;
+  border-radius: var(--r-sm);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--gray-700);
+  transition: color var(--dur-xs) var(--ease-smooth),
+              background var(--dur-xs) var(--ease-smooth);
+}
+.nav__mega-sublist a:last-child { border-bottom: 0; }
+/* chevron marks each link as something you can follow */
+.nav__mega-heading::after,
+.nav__mega-sublist a::after {
+  content: "";
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-right: var(--icon-stroke) solid currentColor;
+  border-top: var(--icon-stroke) solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.35;
+  transition: opacity var(--dur-xs) var(--ease-smooth),
+              transform var(--dur-sm) var(--ease-smooth);
+}
+.nav__mega-sublist a::after { width: 6px; height: 6px; }
+.nav__mega-heading:hover,
+.nav__mega-sublist a:hover {
+  color: var(--brand-purple);
+  background: var(--gray-100);
+}
+.nav__mega-heading:hover::after,
+.nav__mega-sublist a:hover::after {
+  opacity: 1;
+  transform: rotate(45deg) translate(2px, -2px);
+}
+.nav__quote {
+  min-height: 56px;
+  flex: 0 0 209px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 14px 0 24px;
+  border-radius: 9px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--white);
+  background: var(--black);
+  white-space: nowrap;
+  transition: transform 260ms var(--ease-spring),
+              min-height var(--dur-sm) var(--ease-smooth),
+              background var(--ease), box-shadow var(--ease);
+}
+.nav__quote {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+/* Hover fill: brand-purple rises from the bottom (domed edge → box); text stays
+   white, the logo mark stays light so it keeps popping. Purple = Bestellen. */
+.nav__quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--brand-purple);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+  transition: transform 0.42s cubic-bezier(0.45, 0, 0.15, 1),
+              border-radius 0.42s cubic-bezier(0.45, 0, 0.15, 1);
+  pointer-events: none;
+}
+.nav__quote:hover::before,
+.nav__quote:focus-visible::before { transform: scaleY(1); border-radius: 0; }
+.nav__quote:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.11);
+}
+.nav__quote:active { transform: translateY(0) scale(0.99); }
+.nav__quote-mark { transition: transform 260ms var(--ease-spring), background var(--ease); }
+.nav__quote:hover .nav__quote-mark { transform: rotate(-8deg) scale(1.06); background: var(--white); }
+.nav__quote-mark {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--off-white);
+}
+.nav__quote-mark img {
+  width: 27px;
+  height: auto;
+}
+.nav__toggle {
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
+  /* Desktop: hidden — every nav item is already reachable in the bar.
+     Only shown once the link row collapses (see 1200px breakpoint). */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: 50%;
+  padding: 0;
+  margin-left: 8px;
+  background: var(--black);
+  color: var(--white);
+  transition: transform 220ms var(--ease-spring), background var(--ease);
+}
+.nav__toggle:hover {
+  transform: scale(1.04);
+  background: #2e2e2e;
+}
+.nav__toggle span {
+  display: block;
+  width: 18px;
+  height: var(--icon-stroke);
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--ease), opacity var(--ease);
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile nav — full-screen opaque overlay */
+.nav__mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  height: 100svh;
+  background: var(--off-white);
+  padding: 116px clamp(22px, 6vw, 42px) 32px;
+  flex-direction: column;
+  z-index: 150;
+  overflow-y: auto;
+}
+.nav__mobile.open { display: flex; }
+/* CTA im Mobile-Menue: sichtbar, volle Breite, unter den Links. Die generische
+   .nav__mobile a-Regel (schwarze 28px-Display-Schrift, Trennlinie) wuerde sonst
+   greifen und schwarze Schrift auf den schwarzen Button legen (sah aus wie ein
+   leerer Block). Darum hier alle betroffenen Eigenschaften explizit setzen. */
+/* Gestaltung wie der Desktop-Bestellen-Button (.nav__quote): schwarzer Pill,
+   Lila-Fill, der bei Hover/Tap von unten aufsteigt. Sitzt unter FAQ, abgerueckt. */
+.nav__mobile .btn {
+  display: inline-flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  padding: 18px 24px;
+  border-radius: 9px;
+  border-bottom: none;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.nav__mobile .btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--brand-purple);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+  transition: transform 0.42s cubic-bezier(0.45, 0, 0.15, 1),
+              border-radius 0.42s cubic-bezier(0.45, 0, 0.15, 1);
+  pointer-events: none;
+}
+.nav__mobile .btn:hover::before,
+.nav__mobile .btn:active::before,
+.nav__mobile .btn:focus-visible::before { transform: scaleY(1); border-radius: 0; }
+.nav__mobile a {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--black);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+/* Staggered entrance for mobile menu items */
+.nav__mobile a { opacity: 0; transform: translateY(16px); }
+.nav__mobile.open a { animation: navItemIn var(--dur-sm) var(--ease-smooth) both; }
+.nav__mobile.open a:nth-child(1) { animation-delay: 40ms; }
+.nav__mobile.open a:nth-child(2) { animation-delay: 90ms; }
+.nav__mobile.open a:nth-child(3) { animation-delay: 140ms; }
+.nav__mobile.open a:nth-child(4) { animation-delay: 190ms; }
+.nav__mobile.open a:nth-child(5) { animation-delay: 240ms; }
+.nav__mobile.open a:nth-child(6) { animation-delay: 300ms; }
+
+/* --- Mobile-Nav: Einlagen-Akkordeon mit allen Unterseiten --- */
+.nav__macc { border-bottom: 1px solid var(--gray-200); }
+.nav__macc-toggle {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  font-family: var(--font-display); font-size: 28px; font-weight: 700;
+  color: var(--black); padding: 16px 0; background: none; text-align: left;
+}
+.nav__macc-chevron {
+  width: 11px; height: 11px; flex: none; margin-right: 6px;
+  border-right: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--dur-sm, .25s) var(--ease-smooth, ease);
+}
+.nav__macc.open .nav__macc-chevron { transform: rotate(-135deg); }
+.nav__macc-panel {
+  overflow: hidden; max-height: 0;
+  transition: max-height var(--dur-md, .4s) var(--ease-smooth, ease);
+}
+.nav__macc.open .nav__macc-panel { max-height: 900px; }
+/* Panel-Links: immer sichtbar (die Stagger-Animation der Top-Level-Items nicht erben) */
+.nav__macc-panel a {
+  display: block; border-bottom: none; font-family: var(--font-body);
+  opacity: 1 !important; transform: none !important; animation: none !important;
+}
+.nav__macc-panel .nav__mcat { font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--black); padding: 18px 0 4px; }
+.nav__macc-panel .nav__msub { font-size: 16px; font-weight: 500; color: var(--gray-700); padding: 9px 0 9px 16px; }
+.nav__macc-panel .nav__msub--all { font-size: 16px; padding: 4px 0 10px; font-weight: 600; color: var(--black); }
+@keyframes navItemIn { to { opacity: 1; transform: none; } }
+
+@media (max-width: 1400px) {
+  .nav__link { font-size: 15px; padding-inline: 11px; }
+  .nav__logo img { width: 104px; }
+  .nav.scrolled .nav__logo img { width: 94px; }
+  .nav__quote { flex-basis: 186px; font-size: 17px; }
+  .nav__mega { grid-template-columns: minmax(280px, 360px) 1fr; gap: 36px; }
+}
+
+/* Collapse to the round menu button while the full link row still fits */
+@media (max-width: 1200px) {
+  .nav { padding: 12px 16px 10px; }
+  .nav__shell { gap: 0; }
+  .nav__bar { width: 100%; min-height: 52px; border-radius: 10px; padding: 8px 14px 8px 20px; }
+  .nav__links { display: none; }
+  .nav__quote { display: none; }
+  .nav__logo img { width: 140px; }
+  .nav__toggle { display: inline-flex; margin-left: auto; }
+}
+
+@media (max-width: 480px) {
+  .nav__logo img { width: 122px; }
+  .nav__bar { min-height: 62px; padding: 10px 12px 10px 16px; }
+  .nav__toggle { width: 44px; height: 44px; flex-basis: 44px; }
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+.hero {
+  /* KV full-bleed: split into explicit properties so background-size is reliable */
+  background-color: var(--off-white);
+  background-image: url('../Visuals/Grafiken/Keyvisual/KV_Main.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  /* 160% width = 30% blast-over on each side */
+  background-size: 160% auto;
+  /* fill the whole viewport and slide up behind the floating nav so the hero
+     image scales into the background under it */
+  min-height: 100svh;
+  margin-top: calc(-1 * var(--nav-h));
+  padding-top: var(--nav-h);
+  display: grid;
+  grid-template-columns: 54% 46%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* --- Looping product motif slideshow --- */
+.hero__slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+/* <picture> soll das Layout des absolut positionierten .hero__slide nicht
+   stoeren — es liefert nur die passende Quelle (Mobile-Zuschnitt). */
+.hero__slideshow picture { display: contents; }
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.2s var(--ease-smooth), transform 6s var(--ease-smooth);
+  will-change: opacity, transform;
+}
+.hero__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Slideshow variant: hide the KV illustration background and character */
+.hero--slideshow {
+  background-image: none;
+}
+.hero--slideshow .hero__visual { visibility: hidden; }
+.hero--slideshow .hero__cards { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide { transition: opacity 0.4s linear; transform: none; }
+  .hero__slide.is-active { transform: none; }
+}
+
+/* --- Left column: illustration only — stripes come from hero background --- */
+.hero__visual {
+  position: relative;
+  overflow: visible; /* allow rotated character to bleed slightly if needed */
+  background: none;
+}
+
+/* No separate stripes element */
+.hero__stripes { display: none; }
+
+/* Character: rotated ~21° to walk along the diagonal purple stripe.
+   The KV stripe angle ≈ arctan(201/512) ≈ 21° from horizontal.
+   Positioned in the lower-left of the visual column, feet on the purple line. */
+.hero__character {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  /* padding-bottom aligns feet to the purple stripe at the character's x-position.
+     The diagonal stripe top at char x ≈ (stripeH × 165/413) from hero bottom.
+     Solving: P% = (1 - 165/413) × (160%/54%) × (413/1856) ≈ 26% of column width */
+  padding: 0 0 26% 4%;
+}
+
+.hero__character img {
+  display: block;
+  width: 72%;
+  height: auto;
+  transform: rotate(-21deg);
+  transform-origin: center bottom;
+}
+
+/* --- Right column: two stacked cards --- */
+.hero__cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px 64px 64px 32px;
+}
+
+.hero__card {
+  background: var(--off-white);
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-xl);
+}
+
+.hero__card--headline {
+  padding: 36px 40px;
+}
+
+.hero__card--cta {
+  padding: 32px 40px;
+  /* keeps the stepped look but leaves room for the CTA incl. price segment */
+  margin-right: 7%;
+  /* Gefuellt statt transparent — auf allen Motiven bleibt der Text lesbar.
+     Gilt als Standard fuer JEDEN Header, nicht nur ueber .hero--cta-filled. */
+  background: var(--off-white);
+}
+/* On the subpages the motifs are busier — give the CTA card a solid off-white
+   fill so the copy stays legible */
+.subhero .hero__card--cta { background: var(--off-white); }
+
+/* =====================================================
+   HERO-TEXTCONTAINER — GRUNDREGEL (von der Home uebernommen)
+   Textcontainer rechtsbuendig und unten in der Ecke, randlos mit weichem
+   Schatten. Das Bildmodul im Container gilt NUR fuer die Home (.hero--craft).
+   ===================================================== */
+.hero--slideshow .hero__cards {
+  justify-content: flex-end;   /* Boxen nach unten */
+  align-items: flex-end;       /* Boxen nach rechts, hugging statt Vollbreite */
+  gap: clamp(12px, 1.4vw, 18px);
+  padding: var(--nav-h) clamp(24px, 3vw, 56px) clamp(28px, 5vh, 64px) 32px;
+  text-align: left;
+}
+/* H1 auf die neue Home-/Einlagen-Referenz angleichen — die Basis-.hero__title
+   (bis 4.2rem) wirkte auf so-funktionierts/warum zu gross. */
+.hero--slideshow .hero__title {
+  /* Referenz = Home-Craft-Headline (.hero__craft-headline .hero__title):
+     gleiche Groesse und Laufweite, damit die Textcontainer #1 aller Heroes
+     mit denselben Modulen identisch formatiert sind und die Box gleich huggt. */
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.05;
+}
+.hero--slideshow .hero__card {
+  border: none;               /* auf dem Foto-Motiv ohne Kontur */
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+  max-width: 100%;
+}
+/* Die gestufte Verschiebung der CTA-Karte entfaellt — beide Boxen sitzen
+   rechtsbuendig untereinander. */
+.hero--slideshow .hero__card--cta { margin-right: 0; }
+
+/* Vermaßung wie im Home-Hero fuer ALLE Slideshow-Heroes: einspaltig, Stack bis
+   zur Home-Breite und rechtsbuendig. So passen kurze Headlines in eine Zeile
+   und die Boxen hugen ihren Inhalt (Treppen-Aufbau) statt auf die schmale
+   46%-Spalte zu cappen und rechts Leerraum zu lassen. */
+.hero--slideshow { grid-template-columns: 1fr; }
+.hero--slideshow .hero__cards {
+  width: min(760px, 100%);
+  margin-left: auto;
+}
+/* Hero mit Packshot-Modul: der Stack waechst etwas weiter nach links, damit die
+   Copy neben dem Packshot hoechstens vierzeilig laeuft. */
+.hero--slideshow:has(.hero__craft-shot--wide) .hero__cards { width: min(860px, 100%); }
+/* Copy-Box mit Packshot-Modul fuellt den Stack voll (wie Home); die reinen
+   CTA-Boxen ohne Packshot hugen ihren Inhalt. */
+.hero--slideshow .hero__card--cta.hero__craft-copy { align-self: stretch; }
+/* Ab Desktop stehen zwei CTAs nebeneinander, SOLANGE sie in die Copy-Box
+   passen. Passen sie nicht (z. B. langes zweites Label wie „Mehr ueber unser
+   Handwerk"), bricht der zweite Button in Zeile 2 um — statt dass die Buttons
+   schrumpfen und ihre Schrift abgeschnitten wird (overflow:hidden der .btn).
+   Darum: umbrechen erlaubt + Buttons schrumpfen nicht unter ihre Textbreite. */
+@media (min-width: 700px) {
+  .hero--slideshow .hero__actions { flex-wrap: wrap; }
+  .hero--slideshow .hero__actions > .btn { flex-shrink: 0; }
+}
+
+/* Hero-Modifier — liegen bewusst in home.css, weil die Startseite pages.css
+   nicht laedt und die Varianten auf ALLEN Seiten greifen sollen. */
+/* CTA-Karte gefuellt statt transparent: auf den Motiven bleibt der Text lesbar */
+.hero--cta-filled .hero__card--cta { background: var(--off-white); }
+/* Motiv horizontal spiegeln; der Zoom der Slideshow bleibt erhalten, deshalb
+   muss scaleX(-1) mit dem vorhandenen scale kombiniert werden */
+.hero--mirror .hero__slide { transform: scaleX(-1) scale(1.06); }
+.hero--mirror .hero__slide.is-active { transform: scaleX(-1) scale(1); }
+@media (prefers-reduced-motion: reduce) {
+  .hero--mirror .hero__slide,
+  .hero--mirror .hero__slide.is-active { transform: scaleX(-1); }
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 3.6vw, 4.2rem);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 54, "WONK" 0, "opsz" 128;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin: 0;
+}
+/* Mobil-only-Umbruch in Headlines (Default: aus; im Mobile-Block wieder an). */
+.br-m { display: none; }
+
+.hero__sub {
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* =====================================================
+   HERO-VARIANTE „craft": Handwerks-Motiv vollflaechig (Prio 1),
+   Text + kleiner Packshot (Prio 2) als ein Modul, unten platziert.
+   ===================================================== */
+.hero--craft {
+  position: relative;
+  min-height: 100svh;
+  margin-top: calc(-1 * var(--nav-h));
+  padding-top: var(--nav-h);
+  display: flex;
+  align-items: flex-end;   /* Modul sitzt unten */
+  overflow: hidden;
+  background: var(--black);
+}
+.hero--craft .hero__bg { position: absolute; inset: 0; z-index: 0; }
+.hero--craft .hero__bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  display: block;
+}
+/* leichte Abdunklung unten fuer Kontrast, falls das Modul mal transparenter wird */
+.hero--craft .hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,0.28) 100%);
+}
+.hero__craft-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  /* nicht auf die zentrierte Container-Breite begrenzen -> Boxen ruecken bis
+     nah an die rechte Viewport-Kante */
+  max-width: none;
+  margin-inline: 0;
+  padding-right: clamp(24px, 3vw, 56px);
+  display: flex;
+  justify-content: flex-end;   /* Boxen so weit rechts wie moeglich */
+  padding-bottom: clamp(28px, 5vh, 64px);
+}
+/* Zwei getrennte Boxen, rechtsbuendig gestapelt */
+.hero__craft-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: clamp(12px, 1.4vw, 18px);
+  width: min(760px, 100%);
+}
+.hero__craft-headline,
+.hero__craft-copy {
+  background: var(--off-white);
+  border: none;   /* schwarze Kontur der Basis .hero__card aufheben */
+  border-radius: var(--r-xl);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+}
+/* Headline-Box umschliesst die Headline */
+.hero__craft-headline {
+  padding: clamp(22px, 2.4vw, 36px) clamp(24px, 2.6vw, 40px);
+  width: fit-content;
+  max-width: 100%;
+}
+.hero__craft-headline .hero__title {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.05;
+  margin: 0;
+}
+/* Copy-Box: Packshot links, Copy + CTAs rechts */
+.hero__craft-copy {
+  width: 100%;
+  padding: clamp(18px, 2vw, 28px);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(16px, 1.8vw, 26px);
+  align-items: stretch;   /* Copy-Spalte auf Packshot-Hoehe dehnen */
+}
+/* Copy-Spalte als Flex-Column: Text oben, CTA per margin-top:auto nach unten —
+   so schliesst die CTA-Unterkante buendig mit der Unterlaenge des Packshots ab. */
+.hero__craft-copytext {
+  display: flex;
+  flex-direction: column;
+}
+.hero__craft-copytext .hero__actions { margin-top: auto; }
+.hero__craft-shot {
+  margin: 0;
+  width: clamp(180px, 20vw, 260px);
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  flex: none;
+}
+.hero__craft-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Packshot-Modul wie auf der Home: spannt ueber die volle Copy-Hoehe (von der
+   Copy-Oberkante bis zur CTA-Unterkante) statt fixer Landscape-Ratio. Das Bild
+   hat links viel leeren Raum -> nach rechts ausrichten (links wird beschnitten). */
+.hero__craft-shot--wide {
+  width: clamp(190px, 20vw, 260px);
+  align-self: stretch;
+  aspect-ratio: auto;
+}
+.hero__craft-shot--wide img { object-position: 58% center; }
+.hero__craft-copytext .hero__sub { margin: 0 0 16px; }
+@media (max-width: 820px) {
+  .hero--craft { align-items: stretch; }
+  .hero__craft-inner { justify-content: center; }
+  .hero__craft-stack { width: min(520px, 100%); align-items: stretch; }
+  .hero__craft-headline { width: 100%; }
+  .hero__craft-copy { grid-template-columns: 1fr; }
+  .hero__craft-shot { width: 100%; aspect-ratio: 16 / 9; order: -1; }
+}
+
+/* =====================================================
+   BENEFITS ("Was du bekommst")
+   ===================================================== */
+.benefits {
+  position: relative;
+  background: var(--off-white);
+  padding: clamp(72px, 8vw, 112px) 0;
+  overflow: hidden;
+}
+
+/* Label chip */
+.benefits__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 100px;
+  padding: 4px 14px;
+  margin-bottom: 24px;
+}
+
+/* Header */
+.benefits__header {
+  margin-bottom: 48px;
+}
+
+.benefits__title {
+  font-family: var(--font-display);
+  /* one step down — matches the hero h1 measure */
+  font-size: clamp(2.4rem, 3.6vw, 4.2rem);
+  font-weight: 800;
+  font-variation-settings: "SOFT" 54, "WONK" 0, "opsz" 128;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin: 0;
+}
+
+/* 4-column grid */
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards */
+.benefits__card {
+  border: var(--border-w) solid var(--black);
+  border-radius: 16px;
+  padding: 28px 28px 32px;
+  background: var(--off-white);
+  font-family: var(--font-body);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefits__card strong {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--black);
+}
+
+.benefits__card p {
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #000;
+  margin: 0;
+}
+
+.benefits__card {
+  transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+}
+
+.benefits__card:hover {
+  background: var(--brand-pink);
+  border-color: var(--brand-pink);
+  box-shadow: 0 6px 16px rgba(255, 80, 102, 0.28);
+}
+
+.benefits__card:hover strong,
+.benefits__card:hover p {
+  color: var(--white);
+}
+
+/* Blob background — Element 11.svg as color mask */
+.benefits__blob {
+  display: none; /* superseded by the symmetric wave-divider system */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 420px;
+  background-color: var(--brand-orange);
+  -webkit-mask: url('../Visuals/Grafiken/SVG/Element 11.svg') no-repeat bottom left / 100% auto;
+  mask: url('../Visuals/Grafiken/SVG/Element 11.svg') no-repeat bottom left / 100% auto;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .benefits__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .benefits__grid { grid-template-columns: 1fr; }
+}
+
+/* =====================================================
+   FULL-WIDTH IMAGE
+   ===================================================== */
+.fullwidth-image {
+  width: 100%;
+  height: clamp(320px, 50vw, 720px);
+  overflow: hidden;
+  position: relative;
+}
+.fullwidth-image img {
+  display: block;
+  width: 100%;
+  height: 140%;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: -20%;
+  left: 0;
+  will-change: transform;
+}
+
+/* =====================================================
+   PROBLEM SECTION — purple, single column, all cases visible
+   ===================================================== */
+.problem {
+  background: var(--brand-purple);
+  /* small gap to the detailed themes below — the two are one blue section */
+  padding-bottom: clamp(36px, 4vw, 60px);
+  /* #kategorien below is the same blue — overlap 1px so no body seam shows */
+  margin-bottom: -1px;
+}
+.problem__head {
+  max-width: 68ch;
+  margin: 0 auto clamp(40px, 5vw, 72px);
+  text-align: center;
+}
+.problem__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  font-weight: 800;
+  font-variation-settings: "SOFT" 54, "WONK" 0, "opsz" 128;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.problem__body {
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.92);
+  max-width: 62ch;
+  margin-inline: auto;
+}
+
+/* Three cases side by side — all readable at a glance */
+.problem__cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 1.8vw, 24px);
+}
+.case-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-xl);
+  background: var(--off-white);
+  padding: clamp(22px, 2.2vw, 30px);
+  transition: transform var(--dur-sm) var(--ease-smooth), box-shadow var(--dur-sm) var(--ease-smooth);
+}
+.case-card:hover { transform: translateY(-4px); box-shadow: 8px 8px 0 var(--black); }
+.case-card__illus {
+  /* uniform-height box so the three figures read at the same size despite
+     different aspect ratios; contained + centred */
+  width: 100%;
+  height: clamp(160px, 16vw, 200px);
+  margin-bottom: 18px;
+}
+.case-card__illus img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+.case-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 8px;
+  text-wrap: balance;   /* even line lengths around the centre axis */
+}
+.case-card__body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gray-700);
+  text-wrap: pretty;
+  max-width: 34ch;
+}
+
+.problem__cta {
+  margin-top: clamp(36px, 4vw, 60px);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-card { transition: none; }
+  .case-card:hover { transform: none; box-shadow: none; }
+}
+@media (max-width: 900px) {
+  .problem__cases { grid-template-columns: 1fr; }
+  .case-card__illus { height: clamp(150px, 34vw, 190px); }
+}
+
+/* =====================================================
+   PRODUCT SECTION — orange background (set in the colour rotation below)
+   ===================================================== */
+/* =====================================================
+   PRODUCT MODULE — one card, shop-detail-page anatomy
+   Visual and buy block sit inside the same contour so they read as one
+   product rather than "illustration next to info box".
+   ===================================================== */
+.product-buy {
+  /* lifts up to straddle the orange wave; z-index clears the wave mask (z 1) */
+  position: relative;
+  z-index: 2;
+  margin-top: calc(-1 * var(--product-lift));
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: stretch;
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-xl);
+  background: var(--off-white);
+  overflow: hidden;   /* clips the media panel to the rounded corners */
+}
+/* Neutral stage: the insoles are white/purple, so a saturated backdrop
+   would compete with the product itself. */
+.product-buy__media {
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /* the photo carries its own off-white studio background — match the stage */
+  background: var(--off-white);
+  border-right: var(--border-w-sm) solid var(--black);
+  overflow: hidden;
+}
+/* Main stage — takes its height from the buy block; the photo fills it */
+.product-gallery__stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+.product-gallery__main {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;   /* vertikal mittig statt am oberen Rand */
+  transform: scale(1.2);            /* Produkt 20% groesser im Container */
+  display: block;
+  transition: opacity var(--dur-sm) var(--ease-smooth), transform 0.3s var(--ease-smooth);
+}
+/* ---- Lupe/Zoom: Klick/Tap zoomt das Bild an der Pointer-Position rein ---- */
+.product-gallery__stage { cursor: zoom-in; touch-action: pan-y; }
+.product-gallery__stage.is-zoomed { cursor: zoom-out; }
+.product-gallery__stage.is-zoomed .product-gallery__main { transform: scale(2.6); }
+/* dezenter Lupen-Hinweis in der Ecke */
+.product-gallery__stage::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(24, 24, 24, 0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M21 21l-4.3-4.3M11 8v6M8 11h6'/%3E%3C/svg%3E") no-repeat center / 18px 18px;
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity var(--dur-xs, 160ms) var(--ease-smooth);
+  z-index: 2;
+}
+.product-gallery__stage.is-zoomed::after { opacity: 0; }
+/* Handwork thumbnails */
+.product-gallery__thumbs {
+  --thumb-gap: clamp(6px, 0.7vw, 10px);
+  display: flex;
+  gap: var(--thumb-gap);
+  padding: clamp(10px, 1.1vw, 16px);
+  border-top: var(--border-w-sm) solid var(--black);
+  background: var(--off-white);
+}
+.product-gallery__thumb {
+  flex: 1 1 0;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--gray-100);
+  transition: border-color var(--dur-xs) var(--ease-smooth), transform var(--dur-xs) var(--ease-smooth);
+}
+.product-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.product-gallery__thumb:hover { transform: translateY(-2px); }
+.product-gallery__thumb.is-active { border-color: var(--black); }
+.product-gallery__thumb:focus-visible { outline: 2px solid var(--brand-purple); outline-offset: 2px; }
+
+.product-buy__panel {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(28px, 3.2vw, 48px);
+}
+.product-buy__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin: 6px 0 10px;
+}
+.product-buy__lede {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray-700);
+  margin-bottom: clamp(20px, 2.4vw, 30px);
+  max-width: 42ch;
+}
+/* Price first in the eye-path of the buy column — the single most
+   important fact on a shop surface. */
+.product-buy__price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding-bottom: clamp(20px, 2.4vw, 28px);
+  border-bottom: 1px solid var(--gray-200);
+}
+.product-buy__price {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--black);
+}
+.product-buy__price-note {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--gray-500);
+}
+.product-buy__features {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  list-style: none;
+  margin: 0;
+  padding: clamp(20px, 2.4vw, 28px) 0 clamp(24px, 2.8vw, 32px);
+}
+.product-buy__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--black);
+}
+.product-buy__check {
+  position: relative;
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  margin-top: 1px;
+  background: var(--black);
+  border-radius: 50%;
+}
+.product-buy__check::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 4.5px;
+  height: 8.5px;
+  border: solid var(--off-white);
+  border-width: 0 var(--icon-stroke) var(--icon-stroke) 0;
+  transform: translate(-50%, -55%) rotate(45deg);
+}
+/* Second price shown plainly — burying it in a footnote is the kind of
+   surprise that costs trust at checkout. */
+.product-buy__variant {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 13px 16px;
+  border: var(--border-w-sm) solid var(--gray-200);
+  border-radius: var(--r-md);
+  font-size: 14.5px;
+  color: var(--gray-700);
+}
+.product-buy__variant-price {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--black);
+  white-space: nowrap;
+}
+.product-buy__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  list-style: none;
+  margin: auto 0 0;   /* pinned to the bottom of the panel */
+  padding-top: clamp(20px, 2.4vw, 28px);
+  font-size: 13px;
+  color: var(--gray-500);
+}
+.product-buy__trust li { display: flex; align-items: center; gap: 8px; }
+.product-buy__trust li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gray-500);
+}
+
+/* Intro entry — headline + copy. Positioned in the trustbar (see below). */
+.product-intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin: 6px 0 16px;
+  text-wrap: balance;
+}
+.product-intro__body {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--black);
+  opacity: 0.78;
+  margin: 0;
+}
+
+/* Social proof below the card — three static voices side by side, black
+   type centred directly on the orange, no cards. */
+.product-proof {
+  margin-top: clamp(36px, 4.2vw, 60px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 3.4vw, 64px);
+  color: var(--black);
+}
+.product-proof__item {
+  margin: 0;
+  text-align: center;
+}
+/* Prev/Next fuer die Reviews — nur mobil, wo die Stimmen als Slider laufen.
+   Die Pfeile flankieren die Stimme (absolut im .proof-wrap). */
+.proof-wrap { position: relative; }
+.proof-nav__btn { display: none; }
+.product-proof__stars {
+  font-size: 16px;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.product-proof__quote {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.05vw, 1.1rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  text-wrap: pretty;
+  /* Auf farbigem Section-Hintergrund (orange) keine Kontur mehr –
+     nur noch das Zitat, kompakter gesetzt. */
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+.product-proof__author {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .product-proof { grid-template-columns: 1fr; gap: clamp(28px, 6vw, 44px); }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-pad-y: clamp(58px, 14vw, 88px);
+  }
+
+  /* clip statt hidden: hidden macht body zum Scroll-Container und bricht die
+     sticky-Pins (Teamshop) auf Mobile; clip verhindert H-Scroll ohne das. */
+  body { overflow-x: clip; }
+
+  /* Mobile-Produktmodul: moderater Straddle wie auf dem Desktop — der orange
+     Fond steigt (mit Welle) hinter den unteren Teil der Karte, der Kopf mit
+     Titel/Preis bleibt oben auf Off-White. Der Lift wird ueber das
+     padding-bottom der Trustbar (2806) reserviert, sodass der Kartenkopf nicht
+     von der Section darueber verschluckt wird. Reihenfolge Titel/Preis -> Bild
+     -> Features/CTA; display:contents am Panel macht Head/Media/Body sortierbar. */
+  :root { --product-lift: clamp(120px, 30vw, 180px); }
+  .product-section { padding-top: clamp(28px, 6vw, 48px); }
+  .product-buy {
+    display: flex;
+    flex-direction: column;
+  }
+  .product-buy__panel { display: contents; }
+  .product-buy__head  { order: 1; padding: 22px 20px 4px; }
+  .product-buy__media {
+    order: 2;
+    /* mobil ohne die schwarzen Trennlinien: nur das grosse Bild bleibt, die
+       Galerie-Thumbs entfallen (siehe unten) — dann wirken die Konturen falsch. */
+    border: 0;
+    max-width: 100%;
+    min-width: 0;
+  }
+  /* Bildergalerie (Thumbnail-Reihe) mobil ausblenden — nur das Hauptbild. */
+  .product-gallery__thumbs { display: none; }
+  .product-buy__body { order: 3; display: flex; flex-direction: column; padding: 20px; }
+  /* stacked single column has no side panel to set the height — give the stage
+     its own aspect ratio so the photo has somewhere to fill */
+  .product-gallery__stage {
+    aspect-ratio: 4 / 3;
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+  .product-gallery__main { max-width: 100%; }
+  /* Gallery-Thumbs etwas mehr Abstand zu den Modulkanten */
+  .product-gallery__thumbs { padding: 16px; }
+  .product-gallery__thumbs,
+  .product-proof {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Legacy framed variant (kept for other pages) */
+.product-photo {
+  position: relative;
+  margin: 0;
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--black);
+  min-height: 320px;
+}
+.product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 320px;
+}
+.product-photo__tag {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background: var(--off-white);
+  border: 2px solid var(--black);
+  border-radius: var(--r-pill);
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* =====================================================
+   STEPS ("Bestellen. Abdruck machen. Einlagen bekommen.")
+   ===================================================== */
+.steps-section {
+  padding: 96px 0;
+  /* the purple scoop of #problem rises tall in the outer corners of this
+     section — clear it so the left column and last cards never sit on it */
+  padding-bottom: calc(96px + clamp(64px, 8.5vw, 150px));
+  background: var(--off-white);
+}
+/* Sticky intro left, cards pile up on the right as you scroll.
+   Pure CSS sticky — no scroll listener, and it degrades to a plain
+   list when position:sticky is unavailable or motion is reduced. */
+.steps-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.92fr) 1.08fr;
+  gap: clamp(32px, 4vw, 80px);
+  align-items: start;
+  /* height of the eyebrow block above the headline — the card column is
+     pushed down by this so its first card sits level with the headline,
+     not the eyebrow. Used in flow (stack padding) and stuck (card top). */
+  --stack-headline-offset: 38px;
+  /* Feste Kartenhoehe: alle Karten eines Stapels sind exakt gleich hoch und
+     dient zugleich als Bezug fuer die vertikale Zentrierung. Stapel mit
+     laengeren Texten koennen den Wert pro Section hochsetzen. */
+  --stack-card-h: 310px;
+}
+/* Intro und Karten stehen mittig im Viewport. Beide nutzen denselben
+   Sticky-Offset und dieselbe Mindesthoehe wie eine Karte — nur so kleben
+   und loesen sie im Gleichschritt. Ein 100vh hohes Intro haette einen viel
+   kuerzeren Klebeweg und wuerde weglaufen, waehrend die Karten noch stehen. */
+.steps-intro {
+  position: sticky;
+  top: calc((100vh - var(--stack-card-h, 310px)) / 2);
+  min-height: var(--stack-card-h, 310px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;   /* Kinder nicht auf Spaltenbreite strecken */
+}
+/* Button hugt seinen Inhalt statt auf volle Spaltenbreite zu skalieren */
+.steps-intro .btn { align-self: flex-start; }
+.steps-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.4vw, 34px);
+  list-style: none;
+  margin: 0;
+  /* start the first card level with the headline, not the eyebrow above it */
+  padding: var(--stack-headline-offset) 0 0;
+}
+/* Wrapper um den Stack. Desktop/Tablet: transparent (display:contents), damit
+   .steps-stack Grid-Kind von .steps-layout bleibt und die Karten wie gehabt
+   sticky stapeln. Mobil (<=640) wird er zum gepinnten Fenster, in dem
+   .steps-stack horizontal pant — siehe Mobile-Block. */
+.steps-pin { display: contents; }
+/* Scroll runway as a real flex item — padding on the container does NOT
+   extend a flex item's sticky range (the content box bounds it). */
+.steps-stack__runway {
+  flex: 0 0 auto;
+  height: clamp(220px, 58vh, 600px);
+  pointer-events: none;
+}
+.step-card {
+  position: sticky;
+  /* mittig im Viewport; jede Karte stoppt 14px tiefer als die vorherige,
+     damit der Stapel sichtbar bleibt */
+  top: calc((100vh - var(--stack-card-h, 310px)) / 2 + var(--i) * 14px);
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-xl);
+  background: var(--off-white);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+  /* text block left, tinted symbol panel right — padding lives on the
+     children so the panel can bleed to the card edge */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(150px, 18vw, 220px);
+  align-items: stretch;
+  overflow: hidden;   /* clips the panel to the rounded corners */
+  /* feste Hoehe: alle Karten im Stapel sind exakt gleich hoch */
+  height: var(--stack-card-h, 310px);
+  /* set per card below; the fade is driven by JS on scroll */
+  opacity: var(--card-fade, 1);
+}
+.step-card__text {
+  padding: clamp(24px, 2.6vw, 36px);
+  align-self: center;
+}
+.step-card__icon {
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 1.8vw, 24px);
+  /* colour removed — the illustration sits on the plain card, vertically
+     centred on the same axis as the text block */
+  background: transparent;
+}
+/* Uniform bounding box so every illustration reads at roughly the same size,
+   regardless of its intrinsic aspect ratio; contained + centred. */
+.step-card__icon img {
+  width: 100%;
+  height: clamp(140px, 16vw, 184px);
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+/* Card 04 (Zurückschicken) is a wide landscape motif → give it more width and
+   less padding so it reads at the same visual weight as the taller ones. */
+.step-card:nth-child(4) { grid-template-columns: minmax(0, 1fr) clamp(190px, 24vw, 285px); }
+.step-card:nth-child(4) .step-card__icon { padding: clamp(8px, 1vw, 14px); }
+.step-card:nth-child(4) .step-card__icon img { height: clamp(150px, 18vw, 205px); }
+.step-card__num {
+  display: inline-grid;
+  place-items: center;
+  height: 34px;
+  min-width: 46px;
+  padding-inline: 12px;
+  margin-bottom: 16px;
+  border-radius: var(--r-md);
+  background: var(--black);
+  color: var(--off-white);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+}
+.step-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+.step-card__body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--gray-700);
+  /* narrow enough to break onto two lines — keeps the text block a
+     compact column against the icon panel instead of a long single line */
+  max-width: 30ch;
+}
+
+@media (max-width: 900px) {
+  .steps-layout { grid-template-columns: 1fr; gap: 36px; }
+  /* einspaltig gibt es keinen Stapel: Intro normal im Fluss, Karten wachsen
+     mit ihrem Inhalt statt auf feste Hoehe */
+  .steps-intro { position: static; min-height: 0; display: block; }
+  .steps-stack { padding-top: 0; }   /* single column — no headline to align to */
+  .step-card { position: static; box-shadow: none; height: auto; min-height: 0; opacity: 1; }
+  .steps-stack__runway { display: none; }   /* no stacking → no runway needed */
+}
+@media (prefers-reduced-motion: reduce) {
+  .steps-intro, .step-card { position: static; }
+  .steps-intro { min-height: 0; display: block; }
+  .step-card { box-shadow: none; height: auto; min-height: 0; opacity: 1; }
+  .steps-stack__runway { display: none; }
+}
+
+.steps-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+.steps-section__intro {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin-bottom: 40px;
+}
+.steps-list {
+  border-top: 1px solid var(--gray-200);
+  margin-bottom: 40px;
+}
+.step-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+.step-row__num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-500);
+  padding-top: 2px;
+}
+.step-row__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 3px;
+}
+.step-row__body {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--gray-700);
+}
+.steps-section__visual {
+  margin: 0;
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--black);
+}
+.steps-section__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.illus-placeholder {
+  font-size: 13px;
+  color: var(--gray-500);
+  font-style: italic;
+  text-align: center;
+  padding: 24px;
+}
+
+/* =====================================================
+   HANDWERK ("Einfach bestellt...")
+   ===================================================== */
+.handwerk-section {
+  padding: 96px 0;
+  background: var(--off-white);
+}
+.handwerk-section__grid {
+  display: grid;
+  /* text is the SECOND column here — it carries the large two-line
+     headline and needs the wider half */
+  grid-template-columns: 1fr 1.6fr;
+  gap: 56px;
+  align-items: center;
+}
+.handwerk-section__text h2 {
+  font-family: var(--font-display);
+  /* cap at 2.9rem: the column stops growing at 645px (container max-width),
+     so a larger size pushes the headline onto a third line */
+  font-size: clamp(2.05rem, 3.6vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.028em;
+  color: var(--black);
+  margin-bottom: 20px;
+  text-align: left;
+  text-wrap: balance;   /* holds the two lines at an even length */
+}
+.handwerk-section__text p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin-bottom: 16px;
+}
+.handwerk-section__text p:last-of-type { margin-bottom: 36px; }
+.handwerk-section__visual {
+  position: relative;
+  margin: 0;
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--black);
+}
+.handwerk-section__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.handwerk-section__cap {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  right: 16px;
+  background: var(--off-white);
+  border: 2px solid var(--black);
+  border-radius: var(--r-pill);
+  padding: 6px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--black);
+  text-align: center;
+}
+
+/* =====================================================
+   CATEGORIES ("Was trifft auf dich zu?")
+   ===================================================== */
+.categories-section {
+  padding: 96px 0;
+  /* same blue as #problem above — the two read as one big section, coarse on
+     top (the cases) then detailed here (the themed entries) */
+  background: var(--brand-purple);
+}
+.categories-section .eyebrow { color: var(--white); }
+.categories-section__header {
+  margin-bottom: 40px;
+}
+.categories-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.categories-section__intro {
+  font-size: 17px;
+  color: rgba(255,255,255,0.85);
+  max-width: 60ch;
+}
+.cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+.cat-tab {
+  display: inline-flex;
+  padding: 10px 22px;
+  border-radius: var(--r-pill);
+  border: 2px solid rgba(255,255,255,0.45);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  cursor: pointer;
+  transition: all var(--ease);
+  background: transparent;
+  font-family: var(--font-body);
+}
+.cat-tab:hover { border-color: var(--white); color: var(--white); }
+.cat-tab.active {
+  background: var(--off-white);
+  border-color: var(--off-white);
+  color: var(--black);
+}
+.cat-cards-group { display: none; }
+.cat-cards-group.visible { display: block; }
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.cat-card {
+  position: relative;
+  /* Titel und Pfeil teilen sich die erste Zeile, der Fliesstext laeuft darunter
+     ueber die volle Breite. Der Pfeil sass frueher absolut am unteren Rand —
+     daher auch das grosse Bottom-Padding, das jetzt entfaellt. */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 12px;
+  align-items: start;
+  padding: 24px;
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-lg);
+  transition: background var(--ease), color var(--ease),
+              transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow var(--ease);
+  background: var(--off-white);
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+.cat-card__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.cat-card__body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray-700);
+}
+.cat-card__title { grid-column: 1; grid-row: 1; }
+.cat-card__body  { grid-column: 1 / -1; grid-row: 2; }
+.cat-card__arrow {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  transition: transform var(--ease);
+}
+.cat-card:hover .cat-card__arrow { transform: translateX(6px); }
+.cat-group-more {
+  margin-top: 8px;
+}
+
+/* =====================================================
+   TESTIMONIALS
+   ===================================================== */
+.testimonials-section {
+  padding: 96px 0;
+  background: var(--off-white);
+}
+.testimonials-section__header {
+  margin-bottom: 48px;
+}
+.testimonials-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+.testimonials-section__intro {
+  font-size: 17px;
+  color: var(--gray-700);
+  max-width: 60ch;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.testimonial-card {
+  background: var(--off-white);
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow var(--ease);
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 0 var(--black);
+}
+.testimonial-card__stars {
+  display: flex;
+  gap: 3px;
+  color: var(--black);
+  font-size: 16px;
+}
+.testimonial-card__quote {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--black);
+  flex: 1;
+}
+.testimonial-card__quote::before { content: '„'; }
+.testimonial-card__quote::after  { content: '"'; }
+.testimonial-card__author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-500);
+}
+
+/* =====================================================
+   FAQ
+   ===================================================== */
+.faq-section {
+  padding: 96px 0;
+  background: var(--off-white);
+}
+.faq-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+.faq-section__header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+.faq-section__header p {
+  font-size: 17px;
+  color: var(--gray-700);
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+.faq-list { border-top: 1px solid var(--gray-200); }
+.faq-item { border-bottom: 1px solid var(--gray-200); }
+.faq-item__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  padding: 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+}
+.faq-item__icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--ease), background var(--ease);
+}
+.faq-item__icon::before,
+.faq-item__icon::after {
+  content: '';
+  display: block;
+  width: 9px;
+  height: var(--icon-stroke);
+  background: var(--black);
+  position: absolute;
+  border-radius: 2px;
+}
+.faq-item__icon::after {
+  transform: rotate(90deg);
+  transition: transform var(--ease), opacity var(--ease);
+}
+.faq-item.open .faq-item__icon { background: var(--black); border-color: var(--black); }
+.faq-item.open .faq-item__icon::before,
+.faq-item.open .faq-item__icon::after { background: var(--white); }
+.faq-item.open .faq-item__icon::after { transform: rotate(0deg); opacity: 0; }
+.faq-item__a-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-md) var(--ease-smooth);
+}
+.faq-item.open .faq-item__a-wrap { grid-template-rows: 1fr; }
+.faq-item__a {
+  overflow: hidden;
+  min-height: 0;
+  padding-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-700);
+  max-width: 68ch;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--dur-sm) var(--ease-smooth),
+              transform var(--dur-sm) var(--ease-smooth);
+}
+.faq-item.open .faq-item__a { opacity: 1; transform: none; }
+/* Question row hover — subtle indent + accent */
+.faq-item__q { transition: color var(--dur-xs) var(--ease-smooth); }
+.faq-item__q:hover { color: var(--brand-purple); }
+.faq-item__icon { transition: transform var(--dur-xs) var(--ease-smooth), background var(--dur-xs) var(--ease-smooth), border-color var(--dur-xs) var(--ease-smooth); }
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.site-footer {
+  position: relative;
+  background: var(--brand-purple);
+  padding: clamp(64px, 7vw, 104px) 0 clamp(18px, 2.4vw, 30px);
+  /* the artwork rises out of the top edge into the section above — this margin
+     keeps the rising hill clear of the CTA card above it */
+  margin-top: clamp(96px, 13vw, 220px);
+  overflow: visible;
+}
+.site-footer > .container { position: relative; z-index: 1; }
+/* Character artwork forms the transition ONTO the footer: its full-width
+   #6250FF base flows straight into the purple body, while the rainbow hill and
+   the running figure rise up over the top edge into the light section above. */
+.footer__art {
+  position: absolute;
+  left: 0;
+  bottom: 100%;          /* base sits on the footer's top edge, art extends upward */
+  margin-bottom: -1px;   /* seal the seam */
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+/* Build-up: the coloured hills grow up out of the footer edge (staggered),
+   then the running figure rises in. Idle state only while JS is present and the
+   footer hasn't scrolled into view yet. */
+.footer__art .hf-grow {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition: transform 0.85s cubic-bezier(0.34, 1.28, 0.5, 1), opacity 0.5s ease;
+  transition-delay: calc(var(--i, 0) * 0.11s);
+}
+.footer__art .hf-figure {
+  transform-box: fill-box;
+  transition: transform 0.7s var(--ease-smooth) 0.8s, opacity 0.55s ease 0.8s;
+}
+html.js .site-footer:not(.is-visible) .footer__art .hf-grow {
+  transform: scaleY(0.008);
+  opacity: 0;
+}
+html.js .site-footer:not(.is-visible) .footer__art .hf-figure {
+  transform: translateY(70px);
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .site-footer:not(.is-visible) .footer__art .hf-grow,
+  html.js .site-footer:not(.is-visible) .footer__art .hf-figure {
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* --- Lead: pitch left, four SEO columns right --- */
+.footer__lead {
+  padding: clamp(28px, 3.2vw, 48px) 0 clamp(28px, 3.2vw, 48px);
+  border-top: 1px solid rgba(255,255,255,0.22);
+}
+.footer__pitch-text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.72);
+  max-width: 34ch;
+  margin-bottom: 28px;
+  text-wrap: pretty;
+}
+.footer__nav {
+  display: grid;
+  /* four columns that collapse gracefully — the SEO list is the part
+     that has to keep growing, so it gets the wider half */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(20px, 2vw, 40px);
+}
+.footer__col-heading {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 18px;
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  list-style: none;
+  margin: 0;
+  /* indent the links a step under the section heading */
+  padding: 0 0 0 14px;
+}
+.footer__links a {
+  display: inline-flex;
+  align-items: flex-start;   /* two-line items keep the arrow on the first line */
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--white);
+  transition: color var(--dur-xs) var(--ease-smooth), opacity var(--dur-xs) var(--ease-smooth);
+}
+/* arrow with a shaft coming from the left, aligned flush to the first text line */
+.footer__links a::before {
+  content: "";
+  flex: 0 0 20px;
+  width: 20px;
+  height: 1.4em;             /* = first line box → arrow sits on the top line */
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12h14M12 6l6 6-6 6'/%3E%3C/svg%3E") no-repeat left center / 20px 20px;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12h14M12 6l6 6-6 6'/%3E%3C/svg%3E") no-repeat left center / 20px 20px;
+  opacity: 0.6;
+  transition: transform var(--dur-xs) var(--ease-smooth), opacity var(--dur-xs) var(--ease-smooth);
+}
+.footer__links a:hover { opacity: 0.85; color: var(--white); }
+.footer__links a:hover::before { transform: translateX(3px); opacity: 1; }
+
+/* --- Signature: oversized wordmark + where we are --- */
+.footer__signature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(32px, 4vw, 72px);
+  padding: 0 0 clamp(40px, 4vw, 64px);
+}
+.footer__wordmark {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+}
+.footer__contact-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+}
+.footer__contact-body {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.footer__contact-body:last-child { margin-bottom: 0; }
+.footer__contact-body a { color: inherit; border-bottom: 1px solid rgba(255,255,255,0.5); }
+.footer__contact-body a:hover { color: var(--white); border-bottom-color: var(--white); }
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.22);
+  padding-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgba(255,255,255,0.72);
+}
+.footer__bottom-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.footer__bottom-links a { color: rgba(255,255,255,0.72); transition: color var(--dur-xs) var(--ease-smooth); }
+.footer__bottom-links a:hover { color: var(--white); }
+
+@media (max-width: 1100px) {
+  .footer__lead { grid-template-columns: 1fr; }
+  .footer__nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px; }
+  .footer__signature { grid-template-columns: 1fr; align-items: start; }
+}
+@media (max-width: 620px) {
+  .footer__nav { grid-template-columns: 1fr; }
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1024px) {
+  :root { --pad-x: 32px; }
+  .hero { grid-template-columns: 1fr 1fr; min-height: auto; }
+  .hero__cards { padding: 48px 32px 48px 24px; }
+  .hero__title { font-size: clamp(2rem, 4vw, 3.2rem); }
+}
+
+@media (max-width: 768px) {
+  :root { --pad-x: 24px; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero__visual { min-height: 300px; order: -1; }
+  .hero__cards { padding: 32px var(--pad-x) 48px; }
+
+  /* Mobile-Hero: die Slideshow-Boxen sollen NICHT hugend/schmal sein, sondern
+     full-width am selben Gutter wie die Navigation (16px) sitzen; Inhalt oben
+     statt nach unten gedrueckt. Sonst wird die Headline zu einem Fuenfzeiler. */
+  .hero--slideshow .hero__cards,
+  .hero--slideshow:has(.hero__craft-shot--wide) .hero__cards {
+    width: 100%;
+    margin-left: 0;
+    align-items: flex-end;      /* Boxen hugen den Inhalt (schmaler je Umbruch) */
+    justify-content: flex-start;
+    padding: 16px 16px 36px;
+  }
+  /* Headline mobil auf die Home-Craft-Referenz angeglichen (gleiche Groesse
+     und Zeilenhoehe wie .hero__craft-headline .hero__title mobil). */
+  .hero--slideshow .hero__title { font-size: clamp(1.85rem, 7.7vw, 2.18rem); line-height: 0.98; }
+
+  /* Mobile-Reorder der Body-Box: CTA nach oben, dann das Bild, dann die Copy —
+     so bleibt der CTA immer sichtbar. display:contents hebt die copytext-
+     Verschachtelung auf, damit alle drei als Flex-Items sortierbar sind. */
+  .hero__craft-copy { display: flex; flex-direction: column; gap: 12px; }
+  .hero__craft-copytext { display: contents; }
+  .hero__craft-copy .hero__actions { order: 1; margin-top: 0; }
+  .hero__craft-shot,
+  .hero__craft-shot--wide { order: 2; width: 100%; aspect-ratio: 16 / 9; align-self: auto; }
+  .hero__craft-copy .hero__sub { order: 3; margin: 0; }
+
+  /* Mobile-Grundregel: Hero-Motiv full-size (cover), Fokuspunkt zentriert und
+     eher oben platziert, weil unten das Textmodul sitzt. Gilt fuer alle
+     Mobile-Heroes mit diesen Komponenten. */
+  .hero--craft .hero__bg img { object-position: 50% 18%; }
+  .hero--slideshow .hero__slide { object-position: 50% 24%; }
+  /* Warum-Hero-Team.jpg ist Querformat ohne Mobile-Zuschnitt; der schmale
+     Cover-Ausschnitt zeigt bei 50% nur den Mann. Beide Personen sitzen links
+     (~15-45%), darum den Fokus nach links holen. Hoehere Spezifitaet (Attribut)
+     schlaegt die generischen 50%-Regeln in allen Mobile-Bloecken. */
+  .hero--slideshow .hero__slide[src*="Warum-Hero-Team"] { object-position: 30% 50%; }
+
+  /* Motiv IMMER full-bleed (cover) im Hero-Background — kein Fond-Letterbox.
+     Die dedizierten Hochformat-Mobile-Motive (<source>) sind dafuer gebaut. */
+  .hero--slideshow .hero__slide { object-fit: cover; }
+
+  /* CTA im zweiten Textkasten sitzt mobil ganz oben (ragt als einzige Info
+     oben herein), Copy darunter. Fuer die reinen CTA-Kaesten ohne Packshot-
+     Modul (einlagen, warum, FAQ, Kategorien). so-funktionierts/Home mit
+     Packshot werden weiter oben ueber .hero__craft-copy umsortiert. */
+  .hero--slideshow .hero__card--cta:not(.hero__craft-copy) {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero--slideshow .hero__card--cta:not(.hero__craft-copy) .hero__actions {
+    order: -1;
+    margin-bottom: 14px;
+  }
+  /* Der Body ist die letzte Zeile im Kasten -> sein Default-margin-bottom (24px)
+     plus Card-Padding ergibt zu viel Luft unter dem Text. Margin raus, das
+     Card-Padding traegt den Abstand (symmetrisch zum oberen Rand). */
+  .hero--slideshow .hero__card--cta:not(.hero__craft-copy) .hero__sub { margin-bottom: 0; }
+
+  /* ALLE Slideshow-Heroes folgen der Home-Craft-Mechanik (einlagen, warum, faq,
+     so-funktionierts, Kategorien): Das Motiv fuellt nur den ersten Viewport, der
+     Karten-Stack sitzt absolut am unteren Viewport-Ende — die H1-Box huggt
+     (Breite = Textlaufweite) und sitzt rechtsbuendig unten im Motiv, die Copy-/
+     CTA-Box liegt unter dem Fold und ragt nur mit dem CTA herein. So bleibt das
+     Motiv oben komplett sichtbar. */
+  /* +~56px extra Bodenraum, damit der weiche Schatten der Copy-Box nicht vom
+     Hero-overflow:hidden am Unterrand hart abgeschnitten wird. */
+  .hero--slideshow {
+    min-height: calc(100svh + clamp(316px, 74vw, 452px));
+    align-items: flex-start;
+  }
+  /* Packshot-Copy-Box (so-funktionierts) ist hoeher -> mehr Runway. */
+  .hero--slideshow:has(.hero__craft-shot--wide) {
+    min-height: calc(100svh + clamp(426px, 102vw, 612px));
+  }
+  .hero--slideshow .hero__slideshow { height: 100svh; }
+  .hero--slideshow .hero__visual { display: none; }
+  .hero--slideshow .hero__cards {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: calc(100svh - clamp(250px, 33svh, 290px));
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;       /* Boxen rechtsbuendig unten im Motiv */
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .hero--slideshow .hero__card--headline {
+    width: fit-content;
+    max-width: 100%;
+  }
+  .hero--slideshow .hero__card--cta {
+    width: 100%;
+  }
+  /* Der Desktop-Base-Regel `.hero--slideshow:has(.hero__craft-shot--wide)
+     .hero__cards { width: min(860px,100%) }` mobil die Breite wieder entziehen
+     (hoehere Spezifitaet als die generische Regel oben) — sonst wird der Stack
+     breiter als das Grid und schiebt sich mit align-items:flex-end rechts raus. */
+  .hero--slideshow:has(.hero__craft-shot--wide) .hero__cards {
+    width: auto;
+    margin: 0;
+  }
+
+  /* Home: Abstand zwischen der Hero-Copy-Box und dem lila Trust-Modul —
+     der Craft-Hero endet direkt an der Copy-Box, sonst klebt die Trust-Section
+     ohne Luft daran. */
+  .trustbar { margin-top: clamp(40px, 9vw, 64px); }
+
+  /* Home-Ablauf: der „Ablauf ansehen"-CTA entfaellt mobil (redundant zur
+     Section, die direkt darunter den kompletten Ablauf zeigt). */
+  #ablauf .steps-intro .btn { display: none; }
+
+  /* Footer-Welle + Maennchen mobil groesser skaliert; waechst nach oben aus der
+     Footer-Oberkante heraus (Breite hoch -> Hoehe waechst proportional mit).
+     max-width: none hebt den globalen svg/img-Reset auf. */
+  .footer__art { width: 152%; max-width: none; left: -26%; }
+
+  .problem__grid,
+  .steps-section__grid,
+  .handwerk-section__grid,
+  .faq-section__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .testimonials-grid,
+  .cat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .testimonials-grid,
+  .cat-grid { grid-template-columns: 1fr; }
+  .hero__illus-placeholder { width: 100%; height: 220px; }
+}
+
+/* =====================================================
+   BENEFIT LIST — numbered, expandable box modules
+   ===================================================== */
+/* Two columns: headline left, list right — list flush with the headline cap */
+.benefits__layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) 1.1fr;
+  gap: clamp(32px, 4vw, 76px);
+  align-items: start;
+}
+.benefits__layout .benefits__header { margin-bottom: 0; }
+
+.benefit-list {
+  --benefit-row-h: clamp(54px, 4.4vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  /* nudge the first card down so it lines up with the headline, not the label */
+  margin-top: var(--benefit-list-offset, clamp(64px, 6.6vw, 96px));
+}
+/* row = number block + gap + content box */
+.benefit-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+}
+/* Number lives in its own black block */
+.benefit-item__num {
+  display: grid;
+  place-items: center;
+  height: var(--benefit-row-h);
+  min-width: 58px;
+  padding-inline: 14px;
+  border-radius: var(--r-lg);
+  background: var(--black);
+  color: var(--off-white);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.benefit-item__box {
+  border: var(--border-w) solid var(--black);
+  border-radius: var(--r-lg);
+  background: var(--off-white);
+  overflow: hidden;
+  transition: box-shadow var(--dur-sm) var(--ease-smooth);
+}
+.benefit-item:hover .benefit-item__box { box-shadow: 5px 5px 0 var(--black); }
+.benefit-item__q {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  height: var(--benefit-row-h);   /* collapsed card = exactly one row */
+  text-align: left;
+  padding: 0 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.benefit-item__title {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--black);
+}
+.benefit-item__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: var(--border-w-sm) solid var(--black);
+  transition: background var(--dur-xs) var(--ease-smooth);
+}
+.benefit-item__icon::before,
+.benefit-item__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: var(--icon-stroke);
+  background: var(--black);
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform var(--dur-sm) var(--ease-smooth), background var(--dur-xs) var(--ease-smooth);
+}
+.benefit-item__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+.benefit-item.open .benefit-item__icon { background: var(--black); }
+.benefit-item.open .benefit-item__icon::before,
+.benefit-item.open .benefit-item__icon::after { background: var(--white); }
+.benefit-item.open .benefit-item__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+
+.benefit-item__a-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-md) var(--ease-smooth);
+}
+.benefit-item.open .benefit-item__a-wrap { grid-template-rows: 1fr; }
+.benefit-item__a {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 20px 20px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--gray-700);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--dur-sm) var(--ease-smooth), transform var(--dur-sm) var(--ease-smooth);
+}
+.benefit-item.open .benefit-item__a { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .benefit-item__box, .benefit-item__a-wrap, .benefit-item__a,
+  .benefit-item__icon, .benefit-item__icon::before, .benefit-item__icon::after { transition: none !important; }
+}
+@media (max-width: 900px) {
+  .benefits__layout { grid-template-columns: 1fr; gap: 36px; }
+  .benefit-list { margin-top: 0; }
+}
+@media (max-width: 560px) {
+  .benefit-item__num { min-width: 48px; padding-inline: 10px; }
+  .benefit-item__q { padding: 0 14px; gap: 12px; }
+  .benefit-item__a { padding: 0 14px 16px; }
+}
+
+/* =====================================================
+   TRUST BAR
+   ===================================================== */
+/* Sits inside the grid as a rounded purple module — the section itself carries
+   the page background so there is no seam under the hero. */
+.trustbar {
+  background: var(--off-white);
+  /* holds the offer intro and reserves the room the product card lifts into */
+  padding: clamp(34px, 4.5vw, 76px) 0 calc(clamp(24px, 3vw, 40px) + var(--product-lift));
+}
+/* Offer intro sits on the trustbar's off-white, above the orange wave */
+.product-intro {
+  max-width: 60ch;
+  margin-top: clamp(36px, 4.5vw, 64px);
+}
+.trustbar__inner {
+  background: var(--brand-purple);
+  color: var(--white);
+  border-radius: var(--r-xl);
+  padding: 22px clamp(22px, 2.6vw, 38px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+}
+.trust-item strong { color: var(--white); font-weight: 700; }
+.trust-item__icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--off-white);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trust-item__icon svg { width: 17px; height: 17px; }
+
+@media (max-width: 900px) {
+  .trustbar__inner { justify-content: flex-start; }
+  .trust-item { font-size: 13px; }
+}
+
+/* =====================================================
+   WORKSHOP STRIP
+   ===================================================== */
+/* Full-bleed image rail: a contiguous row of full-height photos. When pinned,
+   page scroll pans the row sideways; the heading stays centred over it. */
+.workshop-strip {
+  position: relative;
+  isolation: isolate;
+  /* Green like the Team section above — the aperture opens out of that field. */
+  background: var(--brand-green);
+  color: var(--white);
+}
+/* --- Scroll pinning ---
+   JS gives the section extra height equal to the rail's sideways travel; the
+   pin holds the viewport still while that height is consumed, and the rail is
+   translated. Height is only applied once JS measures, so without JS the rail
+   just scrolls natively. */
+.workshop-strip__pin {
+  --bloom: 1;                 /* 0 = clipped to a centred square, 1 = full-bleed */
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--black);
+  /* Aperture: opens from a centred (rounded) square to full-bleed as --bloom → 1 */
+  clip-path: inset(
+    calc(42% * (1 - var(--bloom)))
+    calc(42% * (1 - var(--bloom)))
+    calc(42% * (1 - var(--bloom)))
+    calc(42% * (1 - var(--bloom)))
+    round calc(clamp(20px, 2.4vw, 40px) * (1 - var(--bloom)))
+  );
+}
+/* The rail — a horizontal filmstrip. Native swipe until JS pins it. */
+.workshop-rail {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.workshop-rail::-webkit-scrollbar { display: none; }
+.workshop-rail:focus-visible { outline: 2px solid var(--white); outline-offset: -4px; }
+/* Pinned: the page scroll drives the rail, so it must not scroll itself. */
+.workshop-strip.is-pinned .workshop-rail {
+  width: max-content;
+  overflow-x: hidden;
+  scroll-snap-type: none;
+  transform: translate3d(var(--track-x, 0px), 0, 0);
+  will-change: transform;
+}
+.workshop-slide {
+  flex: 0 0 auto;
+  height: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+  background: var(--black);
+}
+.workshop-slide img {
+  display: block;
+  height: 100%;
+  width: auto;            /* whole frame visible — width follows the aspect ratio */
+  object-fit: contain;
+}
+
+/* Heading sits centred over the images and never moves while they pan. */
+.workshop-strip__head {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: var(--head-o, 1);   /* fades in as the aperture finishes opening */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+  padding: var(--pad-x);
+  pointer-events: none;
+}
+/* Soft central scrim so the type reads on any frame without dimming the whole image. */
+.workshop-strip__head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse 62% 46% at 50% 50%, rgba(0,0,0,0.62), rgba(0,0,0,0) 72%);
+}
+.workshop-strip__head .eyebrow {
+  color: var(--white);
+  text-shadow: 0 1px 14px rgba(0,0,0,0.6);
+}
+.workshop-strip__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.2vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.6);
+  text-wrap: balance;
+  margin: 0;
+}
+
+/* Below the pin threshold (or reduced motion): a normal-height swipe gallery,
+   heading stacked above it instead of overlaid. */
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .workshop-strip__pin {
+    position: static;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    padding-block: clamp(48px, 10vw, 88px);
+  }
+  .workshop-strip__head {
+    position: relative;
+    inset: auto;
+    order: -1;
+    padding: 0 var(--pad-x);
+    margin-bottom: clamp(28px, 5vw, 48px);
+  }
+  .workshop-strip__head::before { display: none; }
+  .workshop-strip__title { text-shadow: none; }
+  .workshop-strip__head .eyebrow { text-shadow: none; color: var(--white); }
+  .workshop-rail {
+    height: clamp(340px, 64svh, 560px);
+    gap: 10px;
+    padding-inline: var(--pad-x);
+    scroll-padding-inline: var(--pad-x);
+  }
+}
+
+/* =====================================================
+   TEAM → WERKSTATT — one pinned block.
+   Dennis' portrait (left) scales out of its cell to full-bleed as the text
+   fades, then the same stage pans sideways through the workshop frames.
+   Insets/opacity are driven by JS from scroll progress.
+   ===================================================== */
+.teamshop {
+  position: relative;
+  isolation: isolate;
+  background: var(--brand-green);
+  color: var(--white);
+}
+.teamshop__pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+/* Intro — the normal Team layout; fades out as the photo takes over. */
+.teamshop__intro {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  opacity: var(--intro-o, 1);
+}
+.teamshop__intro .container { width: 100%; }
+/* Stage — Dennis (cover) + the rail. Clipped to the portrait cell at bloom 0,
+   opens to full-bleed, then translates sideways for the pan. */
+.teamshop__stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--black);
+  opacity: var(--stage-o, 1);   /* crossfades in over the Dennis card as the bloom starts */
+  clip-path: inset(
+    var(--ct, 0px) var(--cr, 0px) var(--cb, 0px) var(--cl, 0px)
+    round var(--crad, 0px)
+  );
+  pointer-events: none;
+}
+.teamshop__stage .workshop-rail {
+  display: flex;
+  height: 100%;
+  width: max-content;
+  transform: translate3d(var(--track-x, 0px), 0, 0);
+  will-change: transform;
+}
+.teamshop__stage .workshop-slide {
+  flex: 0 0 auto;
+  height: 100%;
+  margin: 0;
+  background: var(--black);
+}
+.teamshop__stage .workshop-slide img {
+  display: block;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+/* First frame is Dennis, shown as a full-bleed cover so it fills the area the
+   moment the aperture is open; it then slides off as the pan begins. */
+.teamshop__stage .workshop-slide--cover { width: 100vw; }
+.teamshop__stage .workshop-slide--cover img { width: 100%; object-fit: cover; }
+.teamshop__stage .workshop-strip__head { opacity: var(--head-o, 1); }
+
+/* Mobile nutzt jetzt (wie Desktop) den gepinnten Bloom+Pan — nur bei
+   reduced-motion faellt der Teamshop auf die statische Swipe-Galerie zurueck. */
+@media (max-width: 900px) {
+  /* Frames full-viewport (cover) statt hoehenbasiert-breit -> sinnvolle
+     Pan-Laenge und formatfuellendes Motiv auf Hochkant. */
+  .teamshop__stage .workshop-slide { width: 100vw; }
+  .teamshop__stage .workshop-slide img { width: 100%; object-fit: cover; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .teamshop__pin { position: static; height: auto; overflow: visible; }
+  .teamshop__intro {
+    position: static;
+    padding-block: clamp(48px, 10vw, 88px);
+  }
+  .teamshop__stage {
+    position: static;
+    clip-path: none;
+    padding-bottom: clamp(48px, 10vw, 88px);
+    display: flex;
+    flex-direction: column;
+  }
+  .teamshop__stage .workshop-rail {
+    width: auto;
+    overflow-x: auto;
+    transform: none;
+    scroll-snap-type: x mandatory;
+    height: clamp(340px, 64svh, 560px);
+    gap: 10px;
+    padding-inline: var(--pad-x);
+    scroll-padding-inline: var(--pad-x);
+  }
+  .teamshop__stage .workshop-slide { scroll-snap-align: start; }
+  .teamshop__stage .workshop-slide--cover { display: none; } /* Dennis already in the intro */
+  .teamshop__stage .workshop-strip__head {
+    position: relative;
+    inset: auto;
+    order: -1;
+    padding: 0 var(--pad-x);
+    margin-bottom: clamp(28px, 5vw, 48px);
+  }
+  .teamshop__stage .workshop-strip__head::before { display: none; }
+}
+
+/* =====================================================
+   RAINBOW ARC FAN — scroll-driven bloom + scale to full-bleed.
+   Vanilla + pinned (like the workshop), driven by CSS vars from JS.
+   ===================================================== */
+.arcfan {
+  position: relative;
+  background: var(--off-white);
+  isolation: isolate;
+}
+.arcfan__pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+/* Fan arcs share a pivot near the stage centre and spread outward. */
+.arcfan__arcs {
+  position: absolute;
+  left: 50%;
+  top: 80%;                 /* pivot sits low so the arcs rise as a crown */
+  width: 0;
+  height: 0;
+  z-index: 0;
+}
+.arcfan__arc {
+  position: absolute;
+  left: 0;
+  bottom: 0;                /* bottom edge meets the pivot point */
+  width: clamp(140px, 14vw, 220px);
+  height: clamp(300px, 52vh, 560px);
+  background: var(--arc-color);
+  /* rounded top — each fanned layer shows a clean rounded colour band */
+  border-radius: clamp(70px, 8vw, 150px) clamp(70px, 8vw, 150px) clamp(22px, 2.6vw, 40px) clamp(22px, 2.6vw, 40px);
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) rotate(var(--a, 0deg));
+  opacity: var(--arc-o, 0);
+  will-change: transform, opacity;
+}
+/* Central module — full-pin element clipped down to a centred card, then the
+   clip opens to full-bleed (radius → 0) as it scales up. */
+.arcfan__module {
+  --clip-p: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--module-bg, var(--black));
+  display: grid;
+  place-items: center;
+  clip-path: inset(
+    calc(50% * (1 - var(--clip-p)))
+    calc(50% * (1 - var(--clip-p)))
+    calc(50% * (1 - var(--clip-p)))
+    calc(50% * (1 - var(--clip-p)))
+    round calc(clamp(20px, 2.2vw, 34px) * (1 - var(--clip-p)))
+  );
+}
+.arcfan__module img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.arcfan__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
+}
+.arcfan__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  padding: clamp(24px, 4vw, 56px);
+  opacity: var(--content-o, 1);
+}
+.arcfan__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin: 12px 0 32px;
+}
+.arcfan__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* No-JS / reduced-motion: show the bloom static and the module open. */
+.arcfan:not(.is-live) .arcfan__module { --clip-p: 1; }
+.arcfan:not(.is-live) .arcfan__content { --content-o: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .arcfan__pin { position: relative; height: auto; min-height: 100svh; }
+}
+
+/* Aperture-Variante ohne Fächer: die Blende öffnet sich aus der grünen
+   Team-Section heraus zum Werkstatt-Foto (grüner Grund statt Off-White). */
+.arcfan--aperture { background: var(--brand-green); }
+
+/* =====================================================
+   ABSCHLUSS-CTA — FARB-KARTEN-ZOOM
+   Auf hellem Grund bauen sich aus der Mitte gestaffelte Farb-Karten auf
+   (gleiche Eckenrundung wie die übrigen Module) und formen eine kleine
+   CTA-Karte. Kein Full-Bleed, kein schwarzer Hintergrund.
+   ===================================================== */
+.zoomcta {
+  position: relative;
+  background: var(--off-white);
+  isolation: isolate;
+}
+.zoomcta__pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+/* The CTA is a centred, module-sized card — not the whole viewport. */
+.zoomcta__card {
+  position: relative;
+  width: min(92vw, 760px);
+  height: min(58vh, 440px);
+  border-radius: var(--r-xl);
+}
+.zoomcta__layer {
+  --z: 0;
+  position: absolute;
+  inset: 0;
+  background: var(--layer-color);
+  display: grid;
+  place-items: center;
+  /* rounded zoom out of the centre — corners match the site's soft modules */
+  clip-path: inset(calc(50% * (1 - var(--z))) round var(--r-xl));
+  will-change: clip-path;
+}
+.zoomcta__content {
+  text-align: center;
+  color: var(--white);
+  padding: clamp(20px, 3vw, 40px);
+  opacity: var(--content-o, 1);
+}
+.zoomcta__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin: 10px 0 24px;
+}
+.zoomcta__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* No-JS / reduced-motion: final card formed, content visible. */
+.zoomcta:not(.is-live) .zoomcta__layer { --z: 1; }
+.zoomcta:not(.is-live) .zoomcta__content { --content-o: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .zoomcta__pin { position: relative; height: auto; min-height: 100svh; }
+}
+
+/* =====================================================
+   STICKY MOBILE CTA
+   ===================================================== */
+.sticky-cta {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 90;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 22px;
+  border-radius: var(--r-pill);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+  transform: translateY(140%);
+  transition: transform 320ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+.sticky-cta.show { transform: translateY(0); }
+/* Der mitscrollende Bottom-CTA wird bewusst NICHT genutzt (Entscheidung: der
+   Bestell-CTA sitzt stattdessen im aufgeklappten Burger-Menue). .sticky-cta
+   bleibt daher display:none (Basisregel) und erscheint nirgends. */
+.sticky-cta__price {
+  background: var(--brand-yellow);
+  color: var(--black);
+  border-radius: var(--r-pill);
+  padding: 3px 10px;
+  font-size: 13px;
+}
+/* Sticky-CTA global entfernt (wird nicht mehr eingeblendet). */
+
+/* =====================================================
+   MOTION — scroll reveal
+   ===================================================== */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+/* Stagger children within a grid */
+.benefits__grid .reveal.in-view:nth-child(2) { transition-delay: 80ms; }
+.benefits__grid .reveal.in-view:nth-child(3) { transition-delay: 160ms; }
+.benefits__grid .reveal.in-view:nth-child(4) { transition-delay: 240ms; }
+.workshop-strip__grid .reveal.in-view:nth-child(2) { transition-delay: 90ms; }
+.workshop-strip__grid .reveal.in-view:nth-child(3) { transition-delay: 180ms; }
+.workshop-strip__grid .reveal.in-view:nth-child(4) { transition-delay: 270ms; }
+.testimonials-grid .reveal.in-view:nth-child(2) { transition-delay: 100ms; }
+.testimonials-grid .reveal.in-view:nth-child(3) { transition-delay: 200ms; }
+/* Case cards build up one after another, left to right */
+.problem__cases .reveal.in-view:nth-child(2) { transition-delay: 130ms; }
+.problem__cases .reveal.in-view:nth-child(3) { transition-delay: 260ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .btn, .cat-card, .testimonial-card { transition: none !important; }
+  .btn-dark::before, .nav__quote::before { transition: none !important; }
+  .sticky-cta { transition: none; }
+  /* Nav & FAQ: keep function, drop spatial motion */
+  .nav__mega { transition: opacity var(--dur-sm) linear, visibility var(--dur-sm) linear; transform: none !important; }
+  .nav__mega-card img,
+  .nav__quote, .nav__quote-mark, .nav__toggle,
+  .nav__logo img, .nav__bar, .nav__link,
+  .nav__mega-col a, .nav__mega-card-arrow, .nav__mega-card-label { transition: none !important; }
+  .nav__quote:hover, .nav__quote:hover .nav__quote-mark,
+  .nav__logo:hover img, .nav__link:hover,
+  .nav__mega-col a:hover,
+  .nav__mega-card:hover .nav__mega-card-arrow,
+  .nav__mega-card:hover .nav__mega-card-label { transform: none !important; }
+  .nav__mobile a { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .faq-item__a-wrap { transition: none !important; }
+  .faq-item__a { transition: none !important; }
+}
+
+/* =====================================================
+   WAVE DIVIDER SYSTEM
+   Brand "Schwingung" — abgeleitet aus dem Figma-Wellen-Pfad
+   (Markenentwicklung 69:228) + der gesprungenen Blob-Form.
+   Eine Sektion mit .wave-in bekommt oben eine organische Kurve
+   in der Farbe der vorherigen Sektion (--wave-prev).
+   ===================================================== */
+/* A .wave-in section renders its OWN colour (--wave-fill) rising symmetrically
+   up over the boundary into the previous section. The mask shapes are clean,
+   mathematically symmetric sine waves (no clipping, both colours interlock). */
+.wave-in { position: relative; }
+.wave-in::before {
+  content: "";
+  position: absolute;
+  left: -1px; right: -1px;
+  bottom: 100%;                 /* directly above the section; base sits on the boundary */
+  margin-bottom: -1px;          /* seal hairline seam */
+  height: var(--wave-h, clamp(26px, 3.2vw, 48px));
+  background: var(--wave-fill, var(--off-white));
+  -webkit-mask: var(--wave-img, url('../Visuals/Grafiken/wave-small.svg')) no-repeat center bottom / 100% 100%;
+  mask: var(--wave-img, url('../Visuals/Grafiken/wave-small.svg')) no-repeat center bottom / 100% 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+/* Size variants — the "Durchmischung": große Welle · kleine Welle · radialer Bogen */
+.wave--small::before { --wave-img: url('../Visuals/Grafiken/wave-small.svg'); --wave-h: clamp(24px, 3vw, 46px); }
+.wave--large::before { --wave-img: url('../Visuals/Grafiken/wave-large.svg'); --wave-h: clamp(56px, 7.5vw, 118px); }
+.wave--arc::before   { --wave-img: url('../Visuals/Grafiken/wave-arc.svg');   --wave-h: clamp(46px, 6vw, 104px); }
+/* Deep radial scoop — the boundary bellies down in the centre and rises into
+   the outer corners, edge to edge. Used for the Ablauf → Problem transition. */
+/* --wave-h lives on the element so both ::before (the wave) and ::after
+   (the backdrop) can read it */
+.wave--scoop { --wave-h: clamp(44px, 5.6vw, 98px); }
+.wave--scoop::before {
+  --wave-img: url('../Visuals/Grafiken/wave-scoop.svg');
+  /* slide the arc down by half its height so its crest sits centred on the
+     boundary between the sections, rather than fully inside the upper one */
+  margin-bottom: calc(var(--wave-h) * -0.5 - 1px);
+}
+/* The shift pushes the arc's lower half over THIS (lower) section, so its
+   dipping flanks would lose their orange backing left and right. Paint the
+   upper section's colour (--wave-under) behind that band; the wave's fill
+   reaches the band's bottom edge across the full width, so it seals cleanly. */
+.wave--scoop::after {
+  content: "";
+  position: absolute;
+  left: -1px; right: -1px;
+  top: 0;
+  height: calc(var(--wave-h) * 0.5);
+  background: var(--wave-under, transparent);
+  z-index: 0;
+  pointer-events: none;
+}
+/* Mirror for rhythm */
+.wave--flip::before  { transform: scaleX(-1); }
+
+/* Scroll-animated "ground": the terrain drifts and swells as the section
+   passes through the viewport (der Boden verändert sich beim Scrollen).
+   Driven by JS via --wave-x (horizontal drift) and --wave-sy (amplitude). */
+.wave--anim::before {
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-position-x: var(--wave-x, 0px);
+  mask-position-x: var(--wave-x, 0px);
+  transform: scaleY(var(--wave-sy, 1));
+  transform-origin: bottom;
+  will-change: mask-position, transform;
+}
+.wave--anim.wave--flip::before {
+  transform: scaleX(-1) scaleY(var(--wave-sy, 1));
+}
+@media (prefers-reduced-motion: reduce) {
+  .wave--anim::before { transform: none; -webkit-mask-position-x: 0; mask-position-x: 0; }
+}
+
+/* =====================================================
+   SECTION RHYTHM — content must not crowd the section edge,
+   especially where a wave caps the boundary.
+   ===================================================== */
+.product-section,
+.steps-section,
+.handwerk-section,
+.workshop-strip,
+.categories-section,
+.testimonials-section,
+.faq-section {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+/* Themes are the second level of the blue section above — sit them close
+   under the cases instead of a full section gap. */
+.categories-section { padding-top: clamp(36px, 4vw, 60px); }
+/* The green wave of the teamshop block below rises into this section — extra
+   bottom padding keeps its content clear of the crest. */
+.categories-section { padding-bottom: calc(var(--section-pad-y) + clamp(48px, 7vw, 104px)); }
+/* A large wave eats into the top edge — give it extra headroom */
+.wave--large { padding-top: calc(var(--section-pad-y) + 28px); }
+.wave--arc   { padding-top: calc(var(--section-pad-y) + 16px); }
+.wave--scoop { padding-top: calc(var(--section-pad-y) + 24px); }
+
+/* The product card is lifted up across the top boundary rather than padded
+   away from it, so the section adds no headroom of its own. Must come after
+   .wave--large. flow-root: without a BFC the card's negative margin-top
+   collapses through and drags the whole section up. */
+.product-section {
+  padding-top: 0;
+  display: flow-root;
+  /* Ablauf below is the same orange — overlap 1px so no warm-white body seam
+     shows through at fractional sub-pixel positions. */
+  margin-bottom: -1px;
+}
+
+/* Handwerk: the tall centred portrait column dips low; extra bottom padding
+   keeps the Dennis card from sitting tight against the workshop section below. */
+.handwerk-section { padding-bottom: calc(var(--section-pad-y) + 72px); }
+
+
+/* The full-bleed rail must reach both section edges — section padding is 0.
+   Bottom especially: the sticky pin is confined to the section's CONTENT box,
+   so any bottom padding leaves the pin short of the border edge and the black
+   section background shows as a band before the next section. */
+.workshop-strip {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* =====================================================
+   SECTION COLOR ROTATION (Figma "Durchmischung")
+   ===================================================== */
+.product-section { background: var(--brand-orange); }
+/* Card stays monochrome — the section background carries the colour */
+.product-section .eyebrow { color: var(--black); }
+
+.steps-section { background: var(--brand-orange); }
+.steps-section .step-row,
+.steps-section .steps-list { border-color: rgba(0,0,0,0.16); }
+.steps-section .step-row__num { color: rgba(0,0,0,0.55); }
+.steps-section .steps-section__intro { color: var(--black); }
+
+/* Problem = purple; colours live in the section rule above */
+.eyebrow--light { color: var(--white); }
+
+.handwerk-section { background: var(--brand-green); }
+.handwerk-section__text .eyebrow { color: var(--black); }
+.handwerk-section__text p { color: var(--black); }
+
+.testimonials-section { background: var(--brand-pink); }
+.testimonials-section .eyebrow { color: var(--white); }
+.testimonials-section__title { color: var(--white); }
+.testimonials-section__intro { color: rgba(255,255,255,0.9); }
+.testimonials-section .testimonial-card { border-color: var(--black); }
+
+/* =====================================================
+   KONTUREN-TEST: Karten auf farbig gefuellten Sections
+   Karten mit eigener Fuellflaeche brauchen auf einem ausreichend
+   kontrastierten (farbigen) Section-Hintergrund keine schwarze Kontur.
+   Ausgenommen: das Produktmodul (.product-buy / .product-proof), das ueber
+   die weisse obere Kante ragt und dort seine Kontur zur Abgrenzung braucht.
+   ===================================================== */
+.problem .case-card,
+.steps-section .step-card,
+.steps-section .steps-section__visual,
+.categories-section .cat-card,
+.teamshop .handwerk-section__visual,
+.teamshop .handwerk-section__cap,
+.testimonials-section .testimonial-card {
+  border: none;
+}
+/* Die harte schwarze Offset-Schatten-Kante der Case-Cards gehoerte zur
+   Kontur-Optik — ohne Border auf einen weichen Schatten umstellen. */
+.problem .case-card:hover {
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
+}
+
+/* =====================================================
+   RESPONSIVE — new modules
+   ===================================================== */
+@media (max-width: 768px) {
+  .product-photo, .product-photo img { min-height: 260px; }
+  .handwerk-section__visual { aspect-ratio: 4/3; max-width: 460px; }
+  .steps-section { padding-bottom: 72px; }
+
+  /* Team-Intro mobil: erst Eyebrow + Headline, dann das Dennis-Portrait,
+     dann Body + CTA. display:contents loest den Text-Block auf, sodass seine
+     Kinder als direkte Flex-Items per order() um das Bild herum sortiert werden.
+     Der Pin (#teamPortrait) bleibt im DOM unveraendert -> JS unberuehrt. */
+  .teamshop__intro .handwerk-section__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .teamshop__intro .handwerk-section__text { display: contents; }
+  .teamshop__intro .handwerk-section__text .eyebrow { order: 1; }
+  .teamshop__intro .handwerk-section__text h2 { order: 2; }
+  .teamshop__intro .handwerk-section__visual { order: 3; margin: 6px 0 26px; max-width: none; }
+  .teamshop__intro .handwerk-section__text p { order: 4; }
+  .teamshop__intro .handwerk-section__text .btn { order: 5; }
+}
+
+/* Hero CTAs must never outgrow their card */
+@media (max-width: 620px) {
+  .hero__card--headline { padding: 26px 22px; }
+  .hero__card--cta { padding: 24px 22px; margin-right: 0; }
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   MOBILE & TABLET — Anpassungen ab 2026-08-03, Desktop bleibt
+   ============================================================ */
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  /* Die Nav ist hier flacher als auf dem Desktop — --nav-h mitziehen, sonst
+     rutscht der Hero um die Differenz nach unten und oben blitzt die
+     Seitenfarbe durch. */
+  :root { --nav-h: 116px; }   /* JS korrigiert den Wert auf die echte Hoehe */
+
+  /* Abstand nach oben identisch zu den Seitenabstaenden. Der scrolled-State
+     muss mit, sonst gewinnt er ueber die hoehere Spezifitaet. */
+  .nav { padding: 16px; }
+  .nav.scrolled { padding: 10px; }
+
+  /* Karten-Stapel auch einspaltig animieren: Intro laeuft normal im Fluss,
+     die Karten pinnen und stapeln sich wie im Desktop. */
+  /* pages.css laedt NACH home.css und setzt per :has() eigene Kartenhoehen.
+     Das html-Praefix hebt die Spezifitaet an, sonst gewinnen jene Regeln und
+     der Kartentext wird geclippt. */
+  html .steps-layout,
+  html .steps-layout:has(.steps-stack) { --stack-card-h: 400px; }
+  .steps-stack__runway { display: block; }
+  .step-card {
+    position: sticky;
+    top: calc((100vh - var(--stack-card-h)) / 2 + var(--i) * 12px);
+    height: var(--stack-card-h);
+    min-height: var(--stack-card-h);
+    box-shadow: 0 18px 40px rgba(24, 24, 24, 0.14);
+  }
+
+  /* Hero-Motiv: der schmale Cover-Ausschnitt soll auf den Sohlen sitzen.
+     Die Sohlen liegen im Quellbild bei x 18-52%, y 30-67% — Mitte ~35%/45%. */
+  .hero--slideshow .hero__slide { object-position: 50% 45%; }
+
+  /* Thumbnail-Reihe: drei Stueck sichtbar, das vierte angeschnitten als
+     Swipe-Hinweis. flex-basis statt 1fr, damit die Reihe ueberlaeuft. */
+  .product-gallery__thumbs {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .product-gallery__thumbs::-webkit-scrollbar { display: none; }
+  .product-gallery__thumb {
+    flex: 0 0 calc((100% - var(--thumb-gap) * 3) / 3.4);
+    scroll-snap-align: start;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  /* Die Nav ist hier flacher als auf dem Desktop — --nav-h mitziehen, sonst
+     rutscht der Hero um die Differenz nach unten und oben blitzt die
+     Seitenfarbe durch. */
+  :root { --nav-h: 116px; }   /* JS korrigiert den Wert auf die echte Hoehe */
+
+  .nav { padding: 16px; }
+  .nav.scrolled { padding: 10px; }
+
+  /* ---- Natives horizontales Swipe (statt scroll-gekoppeltem Pin) ----
+     Auf echten Geraeten ist der scroll-gekoppelte Pin instabil (die dynamische
+     Mobile-Adressleiste aendert die Viewport-Hoehe mitten im Scrollen -> es
+     liefen nur 1-2 Karten durch und es fuehlte sich "laggy" an). Mobil liegen
+     die Karten daher in einem horizontal scrollbaren Streifen mit Scroll-Snap,
+     den man mit dem Finger durchwischt. Kein Pin, kein JS-Pan (das Steps-Skript
+     setzt mobil nichts mehr). Der Streifen scrollt intern und erzeugt keinen
+     echten horizontalen Seitenscroll. */
+  .steps-section { position: relative; }
+  .steps-layout { display: block; }
+  .steps-pin {
+    display: block;
+    overflow-x: auto;
+    /* overflow-y wird bei overflow-x:auto implizit ebenfalls auto und wuerde den
+       Karten-Schatten (0 18px 40px) oben/unten kappen -> genug vertikales
+       Padding, damit der Schatten im Scrollbereich Platz hat. */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--pad-x));
+    scroll-padding-inline: var(--pad-x);
+    margin-top: clamp(8px, 2vw, 14px);
+    padding-block: 18px 56px;
+  }
+  .steps-pin::-webkit-scrollbar { display: none; }
+  .steps-stack {
+    flex-direction: row;
+    align-items: stretch;   /* alle Karten auf gleiche Hoehe */
+    gap: 12px;
+    width: max-content;
+    padding: 0 var(--pad-x);
+  }
+  .steps-stack__runway { display: none !important; }
+
+  .step-card,
+  .step-card:nth-child(4) {
+    flex: 0 0 min(86vw, 360px);
+    scroll-snap-align: start;   /* jede Karte rastet beim Swipen ein */
+    position: relative;
+    top: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    /* Text oben, Illustration unten in die Ecke — Zwischenraum verteilt sich */
+    align-content: stretch;
+    /* Hug: die Karte waechst mit ihrem Inhalt statt auf fester Hoehe zu stehen */
+    height: auto;
+    min-height: clamp(330px, 84vw, 390px);
+  }
+  /* Vertikales Padding 32px — oben am Text, unten unter der Illustration */
+  .step-card__text { align-self: start; padding: 32px clamp(24px, 2.6vw, 36px) 0; }
+  /* Illustration nach rechts unten in den Bildcontainer ziehen */
+  .step-card__icon,
+  .step-card:nth-child(4) .step-card__icon {
+    place-items: end;                       /* unten + rechts */
+    padding: 8px clamp(24px, 2.6vw, 36px) 26px;
+  }
+  /* groesser und rechtsbuendig unten eingefasst */
+  .step-card__icon img,
+  .step-card:nth-child(4) .step-card__icon img {
+    width: auto;
+    max-width: 100%;
+    height: clamp(150px, 46vw, 224px);
+    margin-left: auto;
+    object-position: right bottom;
+  }
+
+  /* ---- Kategorien als Akkordeon ----
+     Im Markup stehen erst alle drei Buttons, dann die drei Kartengruppen.
+     display:contents loest die Button-Leiste auf, sodass die Buttons direkte
+     Flex-Kinder des Containers werden — danach laesst sich per order() Button
+     und zugehoerige Gruppe abwechselnd anordnen. Kein HTML-Umbau noetig.
+     Das Oeffnen/Schliessen uebernimmt die vorhandene Tab-Logik: sie zeigt
+     ohnehin immer genau eine Gruppe. */
+  .categories-section > .container { display: flex; flex-direction: column; }
+  .categories-section__header { order: 0; }
+  .cat-tabs { display: contents; }
+
+  .cat-tab[data-category="beschwerden"]         { order: 1; }
+  .cat-cards-group[data-category="beschwerden"] { order: 2; }
+  .cat-tab[data-category="fehlstellungen"]         { order: 3; }
+  .cat-cards-group[data-category="fehlstellungen"] { order: 4; }
+  .cat-tab[data-category="sport"]         { order: 5; }
+  .cat-cards-group[data-category="sport"] { order: 6; }
+
+  /* Button + Panel bilden EINE umrandete Card. Weil beide durch die
+     order()-Verzahnung getrennte Flex-Items sind, koennen sie sich keine Box
+     teilen — stattdessen traegt der Button die obere, das Panel die untere
+     Haelfte des Rahmens, und im offenen Zustand entfaellt die Naht dazwischen. */
+  .cat-tab {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    font-size: 15px;
+    border: var(--border-w) solid var(--black);
+    border-radius: var(--r-lg);
+    background: var(--off-white);
+    color: var(--black);
+    margin-bottom: 10px;
+    transition: border-radius var(--dur-xs) var(--ease-smooth),
+                margin-bottom var(--dur-xs) var(--ease-smooth);
+  }
+  /* .cat-tab.active faerbt den Rahmen off-white — auf off-white Grund waere er
+     unsichtbar. Mit gleicher Spezifitaet zurueckholen. */
+  .cat-tab:hover,
+  .cat-tab.active { border-color: var(--black); color: var(--black); background: var(--off-white); }
+  .cat-tab[aria-selected="true"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    /* Unterrand komplett entfernen (nicht nur transparent): ein transparenter
+       Rand wird an den Ecken diagonal gegen die schwarzen Seitenraender gemitert
+       und liess dort den lila Section-Grund als Kerbe durchblitzen. */
+    border-bottom-width: 0;
+    margin-bottom: 0;
+  }
+  .cat-tab::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 320ms var(--ease-smooth);
+  }
+  .cat-tab[aria-selected="true"]::after { transform: rotate(-135deg) translateY(2px); }
+
+  /* Panel: die Hoehe wird in js/home.js gemessen und animiert. Der
+     0fr->1fr-Grid-Trick sah beim Zuklappen gut aus, beim Aufklappen skaliert
+     ein Bruchteil-fr in einem hoehenlosen Grid die Pixelhoehe aber nicht mit —
+     die Karte sprang auf. */
+  .cat-cards-group,
+  .cat-cards-group.visible {
+    display: block;
+    background: var(--off-white);
+    border: var(--border-w) solid var(--black);
+    border-top: 0;
+    border-radius: 0 0 var(--r-lg) var(--r-lg);
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: height 360ms var(--ease-smooth);
+  }
+  .cat-cards-group { height: 0; border-bottom-width: 0; }
+  .cat-cards-group.visible { height: auto; border-bottom-width: var(--border-w); }
+  .cat-grid { padding: 0 18px; }
+  /* Der „Alle … ansehen"-CTA (btn-outline-white) ist im Off-White-Akkordeon
+     unsichtbar und hinterlaesst nur eine weisse Luecke -> mobil raus. */
+  .cat-cards-group .cat-group-more { display: none; }
+
+  /* Karten verlieren ihren eigenen Rahmen — die Dropdown-Card ist jetzt der
+     Rahmen. Getrennt werden die Eintraege nur noch durch eine Haarlinie. */
+  .cat-card {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 16px 0;
+  }
+  .cat-card + .cat-card { border-top: 1px solid rgba(24, 24, 24, 0.14); }
+  .cat-card:hover { transform: none; box-shadow: none; background: transparent; }
+
+  /* Pfeil rechts am gegenueberliegenden Rand (nicht ueber dem Titel) -> spart Hoehe */
+  .cat-card { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 14px; }
+  .cat-card__arrow { grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: end; margin-bottom: 0; }
+  .cat-card__title { grid-column: 1; grid-row: 1; }
+  .cat-card__body  { grid-column: 1; grid-row: 2; margin-top: 2px; }
+
+  /* Kategorie-Kacheln zweispaltig. Bei ~155px Spaltenbreite frisst das
+     Desktop-Padding (24px seitlich, 52px unten) zu viel — Innenabstaende und
+     Pfeilposition zusammen mit runterziehen. */
+  /* Einspaltig — im aufgeklappten Akkordeon bringen zwei Spalten wenig, und die
+     langen Komposita brachen dort dreizeilig um. */
+  .cat-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  /* Reviews als Slider. Die naechste Karte schaut ~10% herein und macht damit
+     ohne zusaetzliches UI klar, dass es seitlich weitergeht. */
+  .product-proof {
+    display: flex;
+    grid-template-columns: none;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .product-proof::-webkit-scrollbar { display: none; }
+  /* Jede Stimme fuellt den Viewport (kein Anschnitt der naechsten mehr — das
+     war der Grund fuer die Pfeile). Textspalte seitlich eingerueckt, damit die
+     flankierenden Pfeile in den Raendern Platz haben. */
+  .product-proof__item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-inline: clamp(44px, 13vw, 62px);
+  }
+  /* Kleine, dezente Pfeile links/rechts NEBEN der Stimme (vertikal zentriert) —
+     prev links, next rechts (dort schaut die naechste Stimme herein). Keine
+     grossen Kreise mehr, nur der Pfeil auf dem Orange. */
+  .proof-nav__btn {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--black);
+    opacity: 0.72;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity var(--dur-xs, 160ms) var(--ease-smooth), transform var(--dur-xs, 160ms) var(--ease-smooth);
+  }
+  .proof-nav__btn:active { opacity: 1; transform: translateY(-50%) scale(0.88); }
+  .proof-nav__btn--prev { left: -6px; }
+  .proof-nav__btn--next { right: -6px; }
+  .proof-nav__btn svg { width: 20px; height: 20px; }
+  /* Zitatkasten fuellt die Karte, damit die Kaesten trotz unterschiedlich
+     langer Texte auf gleicher Hoehe abschliessen */
+  .product-proof__quote { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; }
+
+  /* Die Karten huggen jetzt, --stack-card-h steuert hier nur noch den
+     Sticky-Offset. Ein Mittelwert der tatsaechlichen Hoehen (362-420px) haelt
+     den Stapel ungefaehr mittig im Viewport. */
+  html .steps-layout,
+  html .steps-layout:has(.steps-stack) { --stack-card-h: 385px; }
+
+  .hero--slideshow .hero__slide { object-position: 50% 45%; }
+
+  /* Weniger Innenabstand, damit die Karte auf dem schmalen Screen nicht
+     den halben Platz an Luft verliert */
+  .product-buy__panel { padding: 20px 18px; }
+  .product-gallery__thumbs { padding: 10px; }
+}
+
+/* Finale Mobile-Systemschicht: horizontale Swipe-Inhalte bleiben intern
+   scrollbar, erzeugen aber keine Seitenbreite; gepinnte CTAs werden mobil
+   als kompakte Karte ausgegeben. */
+@media (max-width: 900px) {
+  .product-section {
+    /* clip statt hidden: haelt die volle Seitenbreite frei, macht die Section
+       aber NICHT (ueber die auto-Ableitung der Gegenachse) zum vertikalen
+       Scroll-Container — sonst wird der nach oben gezogene Kartenkopf (Straddle)
+       oben abgeschnitten. */
+    overflow-x: clip;
+  }
+  /* .teamshop nutzt jetzt den gepinnten Bloom+Pan (siehe teamshop-Block oben) —
+     KEIN overflow-x:hidden hier, das wuerde die Section zum Scroll-Container
+     machen und das sticky-Pin brechen; die Pan-Rail braucht width:max-content. */
+  .zoomcta {
+    min-height: 0;
+    padding-block: 0;
+  }
+  /* Scroll-Stop auch mobil: der Pin haelt, waehrend sich der Regenbogen in den
+     schwarzen Endzustand aufbaut — erst danach laeuft der Scroll weiter.
+     (JS setzt die noetige Runway-Hoehe auf die Section, siehe measure().) */
+  .zoomcta__pin {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    min-height: 0;
+    padding-inline: var(--pad-x);
+  }
+  .zoomcta__card {
+    width: min(100%, 430px);
+    height: auto;
+    min-height: clamp(300px, 82vw, 420px);
+  }
+  .zoomcta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .zoomcta__actions .btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    clip-path: inset(-80vw 0 0 0);
+    /* mehr Abstand zum Zoom-CTA darueber — die vergroesserte Footer-Welle ragt
+       weit nach oben und darf das CTA-Modul nicht beruehren */
+    margin-top: clamp(180px, 32vw, 240px);
+  }
+}
+
+/* Home-Hero mobile: Motiv zuerst, Headline unten im Bild, Produkt-/Copy-Modul
+   nur als CTA-Anriss im ersten Viewport. */
+@media (max-width: 768px) {
+  .hero--craft {
+    min-height: calc(100svh + clamp(320px, 80vw, 440px));
+    padding-top: 0;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  /* Motiv fuellt nur den ersten Viewport (100svh, wie die Slideshow-Heroes) —
+     dadurch sitzt Dennis hoeher/kleiner im Bild und wird nicht von den
+     Textboxen verschluckt. Die Copy-Box liegt unter dem Fold auf der
+     Off-White-Flaeche und definiert sich ueber ihren Schatten. */
+  .hero--craft .hero__bg {
+    height: 100svh;
+    overflow: hidden;
+  }
+  /* Motiv wird bei voller Hero-Hoehe nur horizontal beschnitten -> X entscheidet.
+     Fokus auf Dennis (Kopf ~48%, Koerper 35-52%): X nach links, damit er
+     komplett im schmalen Ausschnitt sitzt statt mit viel Regal rechts. */
+  .hero--craft .hero__bg img {
+    object-position: 44% 50%;
+  }
+  .hero__craft-inner {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 100svh;
+    padding: 0 16px;
+    display: block;
+  }
+  .hero__craft-stack {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: calc(100svh - clamp(245px, 31svh, 270px));
+    width: auto;
+    max-width: none;
+    align-items: flex-end;   /* Boxen rechtsbuendig (wie die Slideshow-Heroes) */
+    gap: 12px;
+  }
+  .hero__craft-headline {
+    width: fit-content;
+    max-width: 100%;
+    align-self: flex-end;
+    padding: 20px 26px;
+  }
+  /* Mobil-only-Umbruch: „Vom Meister gemacht." passt bei der Home-Groesse nicht
+     in eine Zeile -> ohne Break liefe die Box auf volle Breite statt zu huggen.
+     Auf Desktop ausgeblendet (dort bleibt „Vom Meister gemacht." einzeilig). */
+  .br-m { display: inline; }
+  .hero__craft-headline .hero__title {
+    font-size: clamp(1.85rem, 7.7vw, 2.18rem);
+    line-height: 0.98;
+  }
+  .hero__craft-copy {
+    width: 100%;
+    align-self: stretch;
+    padding: 18px;
+    gap: 18px;
+  }
+  .hero__craft-copy .hero__actions {
+    width: 100%;
+  }
+  .hero__craft-shot,
+  .hero__craft-shot--wide {
+    aspect-ratio: 16 / 9;
+  }
+}

@@ -1,5 +1,27 @@
 # CONCRETE Relaunch
 
+## Aktueller Stand · 17.09.2026
+
+- goSchneider als 41. Projektseite ergänzt: vollständige Case-Copy vor dem
+  großen Introbild, gemischte Case-Gallery mit Branding, Packaging, Einlagen,
+  Werkstattfotos, Markenfigur-Videos und vier Regenbogen-Loops ohne weißen Fade.
+- Website-Präsentation mit der gelieferten `goschneider-scroll.mp4` (29,63 s),
+  stumm im Loop ohne Controls, weit oben in der Gallery. Christian-Perspektive
+  unten; Dennis-Kundenquote bleibt bis zur Lieferung ausgeblendet.
+- Alle 178 goSchneider-Bildteaser verwenden das Projekt-Hero. Elf persönliche
+  Stimmen nutzen die gemeinsame NextBed-Formatierung; goSchneider-Relevanz mit
+  Originalpfeil und NOEY-/NextBed-Raster angeglichen.
+- Gemeinsames Case-Mosaic gegen bildgetriebene Höhen und Rasterlücken stabilisiert;
+  Herausforderung-Headlines verbreitert. Case-Asset-Version: `v=176`.
+- Leistungsseite `interne-kommunikation-change-kommunikation.html` vorbereitet;
+  LINK- und Haftpflichtkasse-Cases stehen weiterhin aus. Der vollständige
+  Arbeitsstand wird auf ausdrücklichen Wunsch zu Git übertragen.
+- Verbindliches Regelwerk für neue Cases:
+  [CASE-FORMATIERUNGSREGELN](docs/CASE-FORMATIERUNGSREGELN.md), im Root über
+  `AGENTS.md` verpflichtend verankert. Bestehende Formatierungen 1:1 übernehmen,
+  keine eigenständige Neuinterpretation beim Duplizieren.
+- Ältere Einträge unten dokumentieren historische Stände und Cache-Versionen.
+
 ## Aktueller Produktionsstand · 15.09.2026
 
 - Das Netzwerk auf der Über-uns-Seite umfasst jetzt auch Eugen Regehr als
