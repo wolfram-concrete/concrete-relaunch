@@ -1,5 +1,22 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – Verbindlicher Farbwechsel bei jedem Reel-Frame
+
+- Vorherige Logo-Farbe bei jeder Auswahl ausgeschlossen, inklusive weißer
+  Startsequenz; Farb- und Bildwechsel erfolgen gemeinsam ohne Farbtransition.
+- Weiß und Off-White nicht direkt nacheinander, damit der Farbwechsel sichtbar ist.
+- Palette um Off-White und Marken-Dunkelgrau ergänzt. Lokaler Kontrast wählt
+  unter verbleibenden Farben; NextBed erhält kein Dunkelgrau.
+- Helle Betonstruktur für Dunkelgrau, dunkle Struktur für die übrigen Füllungen.
+
+## 17.09.2026 – Preloader-Maskierung und Motivkontrast
+
+- Betonebene übernimmt explizit dieselben Schriftmaße und Abstände wie das
+  Logo, ohne abweichenden Block-Zeilenkasten; Struktur bleibt bis zum Ausblenden.
+- Logo-Füllung anhand lokaler Kontrastwerte gewählt, schwächere Bildbereiche
+  stärker gewichtet. NextBed ohne dunkle Füllung; kein reines Schwarz.
+- Dezente 97-Prozent-Deckkraft im Reel; normale weiße Startsequenz bleibt erhalten.
+
 ## 17.09.2026 – Website-Referenzen direkt verlinkt
 
 - Alle sechs Website-Teaser auf Website Design und Website-Konzept öffnen

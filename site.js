@@ -125,13 +125,18 @@
       function linear(v){v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4);}
       return .2126*linear(r)+.7152*linear(g)+.0722*linear(b);
     }
+    var previousLogoFill="#ffffff";
     function bestLogoFill(img,frame){
-      // Bewusster Coral/Weiß-Rhythmus: pro Bildframe ein harter Farbwechsel.
-      // Schwarz nur optional für das besonders helle NextBed-Motiv (Frame 2).
-      var preferred=frame%2?"#ffffff":"#fe7e5e";
-      var candidates=[{color:"#ffffff",l:1},{color:"#000000",l:0},{color:"#fe7e5e",l:luminance(254,126,94)}];
+      // Kontrast im tatsächlichen Logo-Ausschnitt, nicht im Gesamtbild.
+      // Jeder Bildwechsel erhält eine neue Markenfarbe im selben RAF-Schritt.
+      var palette=["#fe7e5e","#ffffff","#febdac","#f3efe7","#171513"];
+      var preferred=palette[frame%palette.length];
+      if(preferred===previousLogoFill)preferred=palette[(frame+1)%palette.length];
+      var candidates=[{color:"#ffffff",l:1},{color:"#f3efe7",l:luminance(243,239,231)},{color:"#fe7e5e",l:luminance(254,126,94)},{color:"#febdac",l:luminance(254,189,172)},{color:"#171513",l:luminance(23,21,19)}].filter(function(c){var lightPair=(previousLogoFill==="#ffffff"||previousLogoFill==="#f3efe7")&&(c.color==="#ffffff"||c.color==="#f3efe7");return c.color!==previousLogoFill&&!lightPair&&(frame!==2||c.color!=="#171513");});
+      if(!candidates.some(function(c){return c.color===preferred;}))preferred=candidates[0].color;
+      function commitFill(fill){previousLogoFill=fill;img.dataset.logoFill=fill;return fill;}
       try{
-        if(!contrastCtx||!img.naturalWidth) return preferred;
+        if(!contrastCtx||!img.naturalWidth) return commitFill(preferred);
         var hb=hero.getBoundingClientRect(),wb=word.getBoundingClientRect();
         var scale=Math.max(hb.width/img.naturalWidth,hb.height/img.naturalHeight);
         var ox=(hb.width-img.naturalWidth*scale)/2,oy=(hb.height-img.naturalHeight*scale)/2;
@@ -139,16 +144,19 @@
         contrastCtx.clearRect(0,0,96,32);
         contrastCtx.drawImage(img,(wb.left-hb.left-ox)/scale,(wb.top-hb.top-oy)/scale,wb.width/scale,wb.height/scale,0,0,96,32);
         var pixels=contrastCtx.getImageData(0,0,96,32).data;
-        candidates.forEach(function(c){c.score=0;});
+        candidates.forEach(function(c){c.ratios=[];});
         for(var p=0;p<pixels.length;p+=4){
           var l=luminance(pixels[p],pixels[p+1],pixels[p+2]);
-          candidates.forEach(function(c){var ratio=(Math.max(l,c.l)+.05)/(Math.min(l,c.l)+.05);c.score+=Math.log(ratio);});
+          candidates.forEach(function(c){var ratio=(Math.max(l,c.l)+.05)/(Math.min(l,c.l)+.05);c.ratios.push(ratio);});
         }
+        // Schlechtere Bereiche stärker gewichten, damit dunkle und helle
+        // Details nicht hinter einem guten Durchschnitt verschwinden.
+        candidates.forEach(function(c){c.ratios.sort(function(a,b){return a-b;});c.score=c.ratios[Math.floor(c.ratios.length*.2)]*.7+c.ratios[Math.floor(c.ratios.length*.5)]*.3;});
         candidates.sort(function(a,b){return b.score-a.score;});
-        var fill=frame===2&&candidates[0].color==="#000000"?"#000000":preferred;
-        img.dataset.logoFill=fill;
-        return fill;
-      }catch(e){return preferred;}
+        var rhythmic=candidates.find(function(c){return c.color===preferred;});
+        var fill=rhythmic&&rhythmic.score>=candidates[0].score*.85?preferred:candidates[0].color;
+        return commitFill(fill);
+      }catch(e){return commitFill(preferred);}
     }
     var reduceHero=matchMedia("(prefers-reduced-motion:reduce)").matches;
     var saveDataHero=!!(navigator.connection&&navigator.connection.saveData);
@@ -196,7 +204,7 @@
             cur.style.zIndex=String(10+n);      // neuer Frame legt sich OBEN drauf
             cur.classList.add("on");             // alter bleibt sichtbar darunter — kein Schwarzblitz
             var fill=bestLogoFill(cur,n);word.style.color=fill;
-            word.dataset.logoFill=fill==="#000000"?"black":fill==="#ffffff"?"white":"coral";
+            word.dataset.logoFill=fill==="#171513"?"dark-grey":fill==="#febdac"?"soft-coral":fill==="#f3efe7"?"off-white":fill==="#ffffff"?"white":"coral";
             if(n>1){seq[n-2].classList.remove("on");seq[n-2].style.zIndex="";}
             n++;
           }

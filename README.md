@@ -2,6 +2,11 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Preloader: deckungsgleiche Schrift-/Textur-Metrik, Beton bis zum Ausblenden;
+  bei jedem Bildframe eine andere Farbe aus Weiß, Off-White, Coral, Soft Coral
+  und Dunkelgrau, kontrastabhängig und synchron; NextBed ohne Dunkelgrau. Leichte
+  Transparenz statt kontrastschwachem Multiply, erste Sequenz unverändert weiß.
+
 - Website-Teaser auf Website Design und Website-Konzept öffnen direkt die
   jeweilige Kundenwebsite in einem neuen Tab statt der internen Case-Seite.
 

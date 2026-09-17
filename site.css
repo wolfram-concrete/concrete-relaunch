@@ -152,11 +152,11 @@ body.intro .site-header{transform:translateY(-110%) !important}
 /* Erst normale weiße Wortmarke. Im Reel bleibt die Vollfüllung sichtbar;
    eine separate HD-Betonebene wird innerhalb derselben Glyphen maskiert. */
 .hero__word span{position:relative}
-.hero__word span::after{content:attr(data-word);position:absolute;inset:0;color:transparent;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") center/min(500px,100vw) auto repeat;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:brightness(0);opacity:0;pointer-events:none;transition:none}
-.hero.reel .hero__word span::after{opacity:.46}
-.hero__word span[data-logo-fill="black"]::after{filter:brightness(0) invert(1)}
+.hero__word span::after{content:attr(data-word);position:absolute;top:0;left:0;font:inherit;letter-spacing:inherit;text-transform:inherit;white-space:inherit;line-height:inherit;color:transparent;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") center/min(500px,100vw) auto repeat;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:brightness(0);opacity:0;pointer-events:none;transition:none}
+.hero.reel .hero__word span::after,.hero.done .hero__word span::after{opacity:.32}
+.hero__word span[data-logo-fill="dark-grey"]::after{filter:brightness(0) invert(1)}
 .hero__word span{text-transform:uppercase}
-.hero.reel .hero__word span{transition:none}
+.hero.reel .hero__word span{transition:none;opacity:.97}
 .hero.word .hero__word span{opacity:1;transform:none}
 .hero.done .hero__word span{opacity:0;transform:scale(1.03);transition:opacity .6s ease,transform .8s ease}
 .hero__content{position:relative;z-index:4;padding-bottom:clamp(28px,5vh,64px);opacity:0;transform:translateY(26px);transition:opacity .9s ease .15s,transform 1s ease .15s}
