@@ -1,0 +1,14 @@
+/* Styleguide rotations are regular cells of the shared case mosaic. */
+.case-styleguide{position:relative;overflow:hidden;background:var(--paper)}
+.case-styleguide__frames{position:absolute;inset:0}
+.case-styleguide__frame{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;opacity:0;transition:opacity .55s ease;pointer-events:none}
+.case-styleguide__frame.is-active{opacity:1}
+.case-styleguide__controls{position:absolute;right:8px;bottom:8px;display:flex;align-items:center;gap:4px;background:var(--paper);border:1px solid var(--rule);padding:0 4px;color:var(--ink);font-size:12px;z-index:1}
+.case-styleguide__controls button{min-width:44px;min-height:44px;border:0;padding:8px;background:none;color:inherit;cursor:pointer;font:inherit}
+.case-styleguide__controls [data-guide-prev],.case-styleguide__controls [data-guide-next]{font-size:0}
+.case-styleguide__controls [data-guide-prev]::before,.case-styleguide__controls [data-guide-next]::before{content:"";display:block;width:24px;height:24px;background:var(--coral);mask:url('assets/arrow.svg') center/contain no-repeat;-webkit-mask:url('assets/arrow.svg') center/contain no-repeat}
+.case-styleguide__controls [data-guide-prev]::before{transform:rotate(180deg)}
+.case-styleguide__controls button:focus-visible{outline:2px solid var(--coral);outline-offset:-2px}
+@media(prefers-reduced-motion:reduce){.case-styleguide__frame{transition:none}}
+
+.case-gallery__video{margin:clamp(18px,3vw,44px) 0;position:relative;background:var(--paper-deep);overflow:hidden}.case-gallery__video video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.case-gallery__video figcaption{padding:10px 0;font-size:12px;color:var(--ink-60)}

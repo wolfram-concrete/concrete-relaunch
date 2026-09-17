@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 17.09.2026 – PARQ Energy: Vertrauen als Marke für Solarpark-Projekte
+
+- Neuer PARQ-Energy-Case im bestehenden Projektseiten-Raster: Briefing-Inhalte, Hero-Motiv, Ergebnisvergleich, Relevanzmodul und Christians Projektstimme.
+- Galerie um einzelne Mockups, vier rotierende Styleguide-Slider und den Website-Screencast ergänzt. Der Screencast startet erst bei Sekunde 2.
+- PARQ Energy auf Position 4 der Projektübersicht gesetzt und in Mega-Menü, „Weitere Projekte“-Karussells sowie passende Strategie-, Corporate-Design-, Bildwelt-, Kommunikations- und Textreferenzen verankert.
+- Sitemap, README und technischer Preflight auf 136 Seiten aktualisiert.
+
+
 ## 17.09.2026 – Schwarmmotiv als großer Galerie-Einstieg
 
 - „Gemeinsam in Bewegung“ direkt unter der Slideshow großflächig eingesetzt,

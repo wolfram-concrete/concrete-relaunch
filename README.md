@@ -2,6 +2,9 @@
 
 ## Aktueller Stand · 17.09.2026
 
+- Neuer PARQ-Energy-Case auf Position 4: Solarpark-Projektentwicklung als Vertrauensaufgabe, mit gelieferten Mockups, vier rotierenden Styleguide-Gruppen und Website-Screencast ab Sekunde 2. In passende „Weitere Projekte“-Karussells, Projektmenü und Leistungsreferenzen integriert; Preflight und SEO für 136 Seiten ohne Befunde.
+
+
 - Unter dem Strategie-Slider startet die Haftpflichtkasse-Galerie mit dem
   großen „Gemeinsam in Bewegung“-Schwarmmotiv; Mitarbeiter-Kit im Bildraster.
 
