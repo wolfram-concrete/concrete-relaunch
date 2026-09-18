@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 18.09.2026 – Leistungsreferenzen systematisch ergänzt
+
+- Gesamtumfang: 189 neue Referenzen auf 20 Leistungsdetailseiten, einschließlich der zwei PARQ-Website-Referenzen. PARQ-Video-Container ohne Beschnitt gemeinsam veröffentlicht.
+
+- 30 Leistungsdetailseiten gegen die Leistungslinks in den Case-Projektüberblicken geprüft; 187 fehlende Referenzen auf 18 Seiten ergänzt. Namensentwicklung zeigt jetzt sechs Projekte, inklusive the moc.
+- Neue Referenzsections nach Sektion 01 für Namensentwicklung, Marken-Check, Brand-Workshop und Design-Kick-off; bestehende Referenzlisten vervollständigt. Hero-Visuals, Branchen, Reveal, Parallax und Markenpfeile nach bestehender Vorlage.
+- PARQ-Screencast in Website Design und Website Konzept ergänzt, unverändert ab Sekunde 2. Bestehende Website-Videos erhalten.
+- Technischer und SEO-Gauntlet zweimal fehlerfrei für 136 Seiten. Erneuter Abgleich ohne weitere ergänzbare Lücken; Desktop-/Mobilprüfung von Namensentwicklung ohne horizontalen Überlauf.
+- Audit-Werkzeug und Zuordnungsmatrix ergänzt. Leistungen ohne explizit belegten Case sowie Website-Cases ohne verfügbaren Screencast bleiben transparent dokumentiert.
+
+## 17.09.2026 – PARQ-Screencast ohne Beschnitt
+
+- Video-Container auf das native 16:9-Format abgestimmt; Website-Videos im Galerie-Raster werden vollständig statt mit `cover` angezeigt. Position im Bildraster und Start ab Sekunde 2 bleiben erhalten.
+
 ## 17.09.2026 – Sitemap-Abgleich und Live-Performance-Prüfung
 
 - Finale Live-Sitemap bytegleich geprüft und am 17.09.2026 in der Domain-Property erfolgreich erneut eingereicht. GA4-Webstream und GTM-Live-Version 41 geprüft; neue Cases benötigen keine zusätzlichen Seitentrigger.

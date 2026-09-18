@@ -1,6 +1,16 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 18.09.2026
+
+- Insgesamt 189 Referenzen auf 20 Leistungsdetailseiten ergänzt (187 Case-Referenzen plus zwei PARQ-Website-Referenzen). PARQ-Galerievideo vollständig im nativen 16:9-Container ohne seitlichen Beschnitt.
+
+- 30 Leistungsdetailseiten gegen die expliziten Leistungslinks der Cases abgeglichen. 187 fehlende Projektreferenzen auf 18 Seiten ergänzt, darunter sechs Naming-Cases inklusive the moc. Bestehende kuratierte Referenzen bleiben erhalten.
+- PARQ-Website-Screencast zusätzlich in Website Design und Website Konzept integriert; Hero-Motive für alle anderen Referenzen. Offene Leistungen ohne belegten Case sind im [Referenzabgleich](docs/LEISTUNGSREFERENZEN-2026-09-18.md) dokumentiert.
+- Gauntlet erneut fehlerfrei: technische und SEO-Prüfung für 136 Seiten, erneuter Zuordnungsabgleich sowie Desktop-/Mobilkontrolle des neuen Referenzrasters.
+
 ## Aktueller Stand · 17.09.2026
+
+- PARQ-Website-Screencast im Galerie-Raster mit nativem 16:9-Seitenverhältnis und ohne seitlichen Beschnitt.
 
 - Finale Sitemap live veröffentlicht und in Google Search Console erneut erfolgreich eingereicht. GA4/GTM decken neue Cases über das bestehende All-Pages-Tracking ab. Messwerte und offene Medienoptimierungen: [Performance- und Indexierungsbericht](docs/PERFORMANCE-INDEXIERUNG-2026-09-17.md).
 

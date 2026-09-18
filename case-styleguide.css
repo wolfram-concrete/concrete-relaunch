@@ -5,4 +5,7 @@
 
 @media(prefers-reduced-motion:reduce){.case-styleguide__frame{transition:none}}
 
+/* Website recordings must remain fully visible inside their mosaic cell. */
+.case-gallery .case-gallery__video--mosaic video{object-fit:contain}
+
 .case-gallery__video{width:min(44%,560px);margin:clamp(18px,3vw,44px) 0 0 auto;position:relative;background:var(--paper-deep);overflow:hidden}.case-gallery__video video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.case-gallery__video--mosaic{width:auto;margin:0;aspect-ratio:var(--ar,1.5);background:var(--paper-deep)}.case-gallery__video--mosaic video{height:100%;aspect-ratio:auto;object-fit:cover}@media(max-width:700px){.case-gallery__video{width:100%;margin-top:20px}.case-gallery__video--mosaic{width:100%;margin-top:0}}
