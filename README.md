@@ -902,7 +902,9 @@ ausgerichtete Leistungskarten und eine am oberen Viewportrand sticky
 Sprungnavigation. Der Prozessbereich nutzt einen Sidezeiler mit getrennten
 Text- und Schrittspalten; der persönliche Projekt-Einstieg verbindet Coral,
 Betontextur und Wolfram-Porträt. Die Anpassungen liegen in leistungen.html und
-bleiben ohne zusätzliche Abhängigkeiten.
+bleiben ohne zusätzliche Abhängigkeiten. Der CTA nutzt eine rastergebundene
+Coral-Fläche ohne Abschnittstrenner; die Copy bleibt eingerückt, während das
+Foto rechts bis zum Viewportrand läuft.
 
 ### Video-Performance
 

@@ -705,6 +705,8 @@
 - Die Coral-Fläche beginnt auf Desktop an der äußeren Seitenrasterkante und
   läuft mobil wieder vollflächig aus; die Copy erhält einen kontrollierten
   Innenabstand.
+- Die globale Abschnittslinie am Übergang zur Phase „Umsetzen“ ist für dieses
+  Modul explizit deaktiviert.
 - Prozessbereich als dreispaltiges Raster mit Sidezeiler, Bodytext und
   Projektablauf neu ausgerichtet; Mobile fällt auf ein einspaltiges Layout
   zurück.
