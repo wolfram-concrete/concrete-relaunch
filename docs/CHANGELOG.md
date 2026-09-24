@@ -1,5 +1,25 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 24.09.2026 – Website-Modernisierung als neuer Themencluster
+
+- Leistungsseite „Website modernisieren“ im bestehenden CONCRETE-System
+  ergänzt, inklusive Entscheidungslogik für technische Modernisierung,
+  Migration, Relaunch und KI-gestützte Umsetzung.
+- Drei Wissensartikel und 15 vollständige FAQ-Seiten aus dem neuen Briefing
+  umgesetzt; redaktionelle Umsetzungshinweise bleiben unveröffentlicht.
+- Wissens-Hub, Leistungsübersicht, Phase 03, Startseite, globaler Footer und
+  vier fachlich passende Leistungsseiten intern mit dem Cluster verknüpft.
+- Sitemap und Prüfroutinen auf 164 Seiten aktualisiert. Technischer Preflight
+  und SEO-Gauntlet: 164 Seiten, 0 Befunde.
+- Fünf bislang unverbundene Startseitenlogos mit ihren vorhandenen Cases
+  verlinkt: goSchneider, PARQ Energy, Banijay/Good Humor, LINK und Die
+  Haftpflichtkasse.
+- Drag-Erkennung der globalen „Weitere Projekte“-Bänder korrigiert: Pointer
+  Capture greift erst nach einer echten Ziehbewegung, sodass ein normaler
+  Klick wieder zuverlässig auf die Projektseite führt.
+- Good-Humor-Testimonial auf Heike Lutzers offizielles aktuelles Banijay-Foto
+  sowie die Funktionsbezeichnung „Director Marketing & Design“ aktualisiert.
+
 ## 24.09.2026 – Wissensartikel und Footer-Verlinkung rekonstruiert
 
 - Zehn Wissensartikel aus dem archivierten WordPress-Export in vollständiger

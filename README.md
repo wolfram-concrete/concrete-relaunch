@@ -2,14 +2,25 @@
 
 ## Aktualisierung · 24.09.2026
 
+- Neue Leistungsseite „Website modernisieren“ mit drei vertiefenden
+  Wissensartikeln und 15 eigenständigen FAQ-Seiten umgesetzt. Leistungs-,
+  Wissens-, Phasen- und Footer-Navigation sowie relevante interne Querverweise
+  bilden jetzt einen zusammenhängenden Modernisierungs-Cluster.
+- Sitemap auf 164 indexierbare Seiten erweitert; technischer Preflight und
+  SEO-Gauntlet bleiben ohne Befunde.
+- Projektlinks repariert: vorhandene Case-Logos auf der Startseite sind
+  vollständig verlinkt und normale Klicks in allen „Weitere Projekte“-Bändern
+  funktionieren wieder neben der Drag-Geste.
+- Good-Humor-Projektstimme verwendet Heike Lutzers aktuelles Teamfoto und ihre
+  aktuelle Funktionsbezeichnung von der offiziellen Banijay-Germany-Website.
 - Zehn Wissensartikel aus dem früheren WordPress-Bestand vollständig in das
   aktuelle Magazinlayout übertragen. Eigene Canonicals, Metadaten,
   Inhaltsnavigation und Originalmotive ergänzt.
 - Sämtliche Wissenslinks im globalen Footer führen jetzt auf die jeweiligen
   Artikel statt pauschal auf die Wissensübersicht. „Alle FAQs“ ist als
   gefetteter Pfeillink analog zu „Alle Branchen“ ausgezeichnet.
-- Sitemap auf 145 indexierbare Seiten erweitert; technischer Preflight und
-  SEO-Gauntlet ohne Befunde.
+- Vorherige Ausbaustufe der Sitemap: 145 indexierbare Seiten; technischer
+  Preflight und SEO-Gauntlet ohne Befunde.
 
 ## Aktualisierung · 18.09.2026
 

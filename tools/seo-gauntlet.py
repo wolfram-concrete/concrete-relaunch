@@ -40,7 +40,7 @@ def main():
         og=re.search(r'<meta property="og:url" content="([^"]*)"',s)
         if not og: fehler.append(f"{f}: kein og:url")
         elif og.group(1)!=soll: fehler.append(f"{f}: og:url {og.group(1)} statt {soll}")
-        html_links=re.findall(r'href=["\']([^"\']+\.html(?:[?#][^"\']*)?)["\']',s,re.I)
+        html_links=re.findall(r'href=["\']((?!(?:https?:)?//)[^"\']+\.html(?:[?#][^"\']*)?)["\']',s,re.I)
         if html_links: fehler.append(f"{f}: {len(html_links)} interne .html-Links, z.B. {html_links[:2]}")
         # 3 title
         t=re.search(r"<title>(.*?)</title>",s,re.S)
