@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 24.09.2026 – Mobile Clusterseiten und fokussierte Referenzen
+
+- Responsive Regeln der neuen Leistungs- und Wissensseiten erweitert: Grid-
+  Inhalte dürfen schrumpfen, lange deutsche Begriffe umbrechen kontrolliert,
+  Inhaltsnavigation und Linkgruppen werden einspaltig und Tabellen bleiben
+  horizontal innerhalb ihres eigenen Scrollcontainers.
+- Alle Projekt-Referenzmodule der Leistungsdetailseiten auf maximal fünf
+  inhaltlich priorisierte Cases gekürzt; überzählige Karten wurden aus dem HTML
+  entfernt und werden nicht lediglich ausgeblendet.
+- Preflight-Regel ergänzt, die künftige Referenzmodule mit mehr als fünf Cases
+  als Fehler meldet.
+
 ## 24.09.2026 – Website-Modernisierung als neuer Themencluster
 
 - Leistungsseite „Website modernisieren“ im bestehenden CONCRETE-System

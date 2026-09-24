@@ -3,6 +3,7 @@
 .website-projects__intro p{font-size:15px;line-height:1.6;margin:0}
 .website-projects__list{columns:3;column-gap:32px;list-style:none;padding:0;margin:0}
 #projekt-referenzen .website-projects__list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+#projekt-referenzen .website-projects__list>*{min-width:0}
 #projekt-referenzen .website-project__media img{object-fit:contain}
 .website-project{display:inline-block;vertical-align:top;width:100%;break-inside:avoid;border-top:1px solid var(--rule);padding-top:20px;margin-bottom:40px}
 .website-project__link{display:block;text-decoration:none}
@@ -28,5 +29,5 @@
 @media(max-width:1000px){.website-projects__list{columns:2}}
 @media(max-width:1000px){#projekt-referenzen .website-projects__list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){.website-projects__list{columns:1}.website-project{margin-bottom:32px}}
-@media(max-width:540px){#projekt-referenzen .website-projects__list{grid-template-columns:1fr}}
+@media(max-width:540px){#projekt-referenzen{overflow-x:clip}#projekt-referenzen .website-projects__list{width:100%;grid-template-columns:minmax(0,1fr)}#projekt-referenzen .website-project__head h3,#projekt-referenzen .website-project__copy{overflow-wrap:anywhere}}
 @media(prefers-reduced-motion:reduce){.website-project.rv{opacity:1;transform:none;transition:none}.website-project__media{clip-path:inset(0)!important;transition:none}.website-project__media :is(video,img){transform:none}}

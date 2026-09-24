@@ -12,6 +12,9 @@ Titel und Copy gemeinsam scrollen. `service-references.css` einbinden.
 Mobil, auf Touch-Geräten und bei reduzierter Bewegung Parallax deaktivieren.
 Hoverzoom der großen Projektliste übernehmen (scale 1.05, 0.7s Übergang).
 Für Teaseraktionen den Markenpfeil aus `assets/arrow.svg` verwenden, keine ↗.
+Jede Leistungs- oder Wissensseite zeigt höchstens fünf Case-Referenzen. Die
+Auswahl ist inhaltlich priorisiert; zusätzliche Cases werden nicht nur per CSS
+versteckt, sondern gar nicht erst in das Referenzmodul aufgenommen.
 
 `website-design.html` ist die Formatierungsvorlage für die Copy unter 01.
 Einleitung und Abschluss bleiben Fließtext. Inhaltliche Aufzählungen als

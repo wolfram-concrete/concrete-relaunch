@@ -50,9 +50,19 @@ class PageParser(HTMLParser):
         self.resources: list[tuple[str, str]] = []
         self.images_without_dimensions: list[str] = []
         self.asset_queries: list[str] = []
+        self.project_reference_count = 0
+        self._in_project_references = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         data = {key: value or "" for key, value in attrs}
+        if tag == "section" and data.get("id") == "projekt-referenzen":
+            self._in_project_references = True
+        elif (
+            self._in_project_references
+            and tag == "li"
+            and "website-project" in data.get("class", "").split()
+        ):
+            self.project_reference_count += 1
         if data.get("id"):
             self.ids.append(data["id"])
 
@@ -96,9 +106,19 @@ class PageParser(HTMLParser):
                 and not value.startswith("//")
                 and parsed.query
                 and parsed.path
-                and not parsed.path.endswith(("site.css", "site.js", "service-references.css"))
+                and not parsed.path.endswith((
+                    "site.css",
+                    "site.js",
+                    "service-references.css",
+                    "website-modernisieren.css",
+                    "knowledge-article.css",
+                ))
             ):
                 self.asset_queries.append(value)
+
+    def handle_endtag(self, tag: str) -> None:
+        if self._in_project_references and tag == "section":
+            self._in_project_references = False
 
 
 def sitemap_pages() -> list[Path]:
@@ -171,6 +191,11 @@ def scan() -> list[str]:
             findings.append(f"{page.name}: content after closing HTML tag")
         parser.feed(text)
         parsed_pages[page.resolve()] = parser
+        if parser.project_reference_count > 5:
+            findings.append(
+                f"{page.name}: project reference module contains "
+                f"{parser.project_reference_count} cases (maximum: 5)"
+            )
 
         schema_values: list[object] = []
         for block_number, block in enumerate(JSON_LD_RE.findall(text), start=1):

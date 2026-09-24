@@ -2,6 +2,12 @@
 
 ## Aktualisierung · 24.09.2026
 
+- Mobile Darstellung des neuen Website-Modernisierungs-Clusters nachgeschärft:
+  Grid-Kinder, lange Überschriften, Inhaltsnavigation, Tabellen und Karten
+  bleiben auch auf schmalen Smartphones innerhalb des Viewports.
+- Projekt-Referenzmodule auf sämtlichen Leistungsdetailseiten auf höchstens fünf
+  inhaltlich priorisierte Cases reduziert. Der technische Preflight sichert
+  diese Obergrenze künftig als feste Qualitätsregel ab.
 - Neue Leistungsseite „Website modernisieren“ mit drei vertiefenden
   Wissensartikeln und 15 eigenständigen FAQ-Seiten umgesetzt. Leistungs-,
   Wissens-, Phasen- und Footer-Navigation sowie relevante interne Querverweise
