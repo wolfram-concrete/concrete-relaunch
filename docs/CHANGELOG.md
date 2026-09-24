@@ -702,8 +702,9 @@
   responsiv angeordnet.
 - Das Modul ist als enger Split-Screen umgesetzt: CTA direkt unter dem Copytext,
   Porträt vollflächig in der rechten Coral-Hälfte.
-- Die Coral-Fläche beginnt auf Desktop an der Seitenrasterkante der Phasen-
-  ziffern und läuft mobil wieder vollflächig aus.
+- Die Coral-Fläche beginnt auf Desktop an der äußeren Seitenrasterkante und
+  läuft mobil wieder vollflächig aus; die Copy erhält einen kontrollierten
+  Innenabstand.
 - Prozessbereich als dreispaltiges Raster mit Sidezeiler, Bodytext und
   Projektablauf neu ausgerichtet; Mobile fällt auf ein einspaltiges Layout
   zurück.
