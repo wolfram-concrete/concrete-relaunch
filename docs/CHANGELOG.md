@@ -700,6 +700,8 @@
 - Der Projekt-Einstieg kombiniert Coral, Wolfram-Porträt und Betontextur als
   persönliches Modul; Headline, Eyebrow und CTA sind auf Desktop und Mobile
   responsiv angeordnet.
+- Das Modul ist als enger Split-Screen umgesetzt: CTA direkt unter dem Copytext,
+  Porträt vollflächig in der rechten Coral-Hälfte.
 - Prozessbereich als dreispaltiges Raster mit Sidezeiler, Bodytext und
   Projektablauf neu ausgerichtet; Mobile fällt auf ein einspaltiges Layout
   zurück.
