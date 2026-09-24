@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 24.09.2026 – UI-Finalisierung Website-Modernisierung
+
+- Dekoratives Sternsignal aus dem Hero der Leistungsseite entfernt; die übrigen
+  neuen Clusterseiten wurden auf vergleichbare Hero-Dekorationen geprüft.
+- Überschriften und Inhalte der drei Eingriffstiefen im Kartenraster auf eine
+  gemeinsame vertikale Struktur gebracht und mobile Umbrüche nachgeschärft.
+- Zentrales Statement auf das etablierte Quote-Modul der Wissens- und
+  Leistungsseiten umgestellt: dunkle, rechts auslaufende Fläche, weiße
+  Arame-Typografie und versetzte Coral-Betontextur.
+- Stylesheet-Version für alle Seiten des Website-Modernisierungs-Clusters
+  synchronisiert; technischer Preflight und SEO-Gauntlet bleiben ohne Befunde.
+
 ## 24.09.2026 – Mobile Clusterseiten und fokussierte Referenzen
 
 - Responsive Regeln der neuen Leistungs- und Wissensseiten erweitert: Grid-

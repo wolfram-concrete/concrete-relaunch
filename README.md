@@ -2,6 +2,10 @@
 
 ## Aktualisierung · 24.09.2026
 
+- Leistungsseite „Website modernisieren“ gestalterisch finalisiert: dekoratives
+  Hero-Signal entfernt, die drei Eingriffstiefen typografisch sauber
+  ausgerichtet und das zentrale Statement als systemkonformes Quote-Modul mit
+  dunkler Fläche und versetzter Coral-Betontextur umgesetzt.
 - Mobile Darstellung des neuen Website-Modernisierungs-Clusters nachgeschärft:
   Grid-Kinder, lange Überschriften, Inhaltsnavigation, Tabellen und Karten
   bleiben auch auf schmalen Smartphones innerhalb des Viewports.
