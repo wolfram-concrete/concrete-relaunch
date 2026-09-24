@@ -1,5 +1,16 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 24.09.2026
+
+- Zehn Wissensartikel aus dem früheren WordPress-Bestand vollständig in das
+  aktuelle Magazinlayout übertragen. Eigene Canonicals, Metadaten,
+  Inhaltsnavigation und Originalmotive ergänzt.
+- Sämtliche Wissenslinks im globalen Footer führen jetzt auf die jeweiligen
+  Artikel statt pauschal auf die Wissensübersicht. „Alle FAQs“ ist als
+  gefetteter Pfeillink analog zu „Alle Branchen“ ausgezeichnet.
+- Sitemap auf 145 indexierbare Seiten erweitert; technischer Preflight und
+  SEO-Gauntlet ohne Befunde.
+
 ## Aktualisierung · 18.09.2026
 
 - Insgesamt 189 Referenzen auf 20 Leistungsdetailseiten ergänzt (187 Case-Referenzen plus zwei PARQ-Website-Referenzen). PARQ-Galerievideo vollständig im nativen 16:9-Container ohne seitlichen Beschnitt.

@@ -156,8 +156,8 @@ def scan() -> list[str]:
         findings.append(f".vercelignore: missing deployment exclusion: {missing}")
 
     pages = sitemap_pages()
-    if len(pages) != 136:
-        findings.append(f"sitemap.xml: expected 136 URLs, found {len(pages)}")
+    if len(pages) != 145:
+        findings.append(f"sitemap.xml: expected 145 URLs, found {len(pages)}")
 
     parsed_pages: dict[Path, PageParser] = {}
     for page in pages:
@@ -430,7 +430,7 @@ def main() -> int:
         for finding in findings:
             print(f"- {finding}")
         return 1
-    print("Technical preflight: 136 pages, 0 findings")
+    print("Technical preflight: 145 pages, 0 findings")
     return 0
 
 

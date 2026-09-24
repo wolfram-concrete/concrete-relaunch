@@ -11,7 +11,8 @@ for (const file of fs.readdirSync(root).filter(f => f.endsWith('.html') && !f.st
   const canonical = source.match(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)?.[1];
   if (!canonical?.startsWith('https://www.concrete-designs.de/')) throw new Error('Missing production canonical: ' + file);
   const old = previous.split('<url>').find(row => row.includes('<loc>' + canonical + '</loc>')) || '';
-  const lastmod = execFileSync('git', ['log', '-1', '--format=%cs', '--', file], {cwd: root, encoding: 'utf8'}).trim();
+  const committed = execFileSync('git', ['log', '-1', '--format=%cs', '--', file], {cwd: root, encoding: 'utf8'}).trim();
+  const lastmod = committed || new Date().toISOString().slice(0, 10);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(lastmod)) throw new Error('Missing Git modification date: ' + file);
   const priority = old.match(/<priority>([^<]+)<\/priority>/)?.[1] || (file.startsWith('case-') ? '0.7' : '0.6');
   entries.push(`  <url><loc>${canonical}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>${priority}</priority></url>`);

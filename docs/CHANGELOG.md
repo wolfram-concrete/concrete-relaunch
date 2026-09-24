@@ -1,5 +1,17 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 24.09.2026 – Wissensartikel und Footer-Verlinkung rekonstruiert
+
+- Zehn Wissensartikel aus dem archivierten WordPress-Export in vollständiger
+  Länge und mit ihren ursprünglichen Titelmotiven ins Relaunch-System übernommen.
+- Gemeinsames redaktionelles Artikellayout mit Magazin-Hero, Inhaltsnavigation,
+  nummerierter Kapitelstruktur und responsiver Lesetypografie ergänzt.
+- Globalen Footer auf 145 Seiten synchronisiert: alle zehn Wissenseinträge
+  verlinken auf ihre tatsächlichen Artikel; „Alle FAQs“ ist der hervorgehobene
+  Pfeillink der Spalte.
+- Sitemap um neun bislang fehlende Artikel ergänzt. Technischer Preflight und
+  SEO-Gauntlet: 145 Seiten, 0 Befunde; Desktop und Mobile visuell geprüft.
+
 ## 18.09.2026 – Leistungsreferenzen systematisch ergänzt
 
 - Gesamtumfang: 189 neue Referenzen auf 20 Leistungsdetailseiten, einschließlich der zwei PARQ-Website-Referenzen. PARQ-Video-Container ohne Beschnitt gemeinsam veröffentlicht.
