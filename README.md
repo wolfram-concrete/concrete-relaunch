@@ -895,6 +895,15 @@ Performance-Aufgaben werden nach Priorität abgearbeitet. Weitere Entscheidungen
 `docs/TECHNISCHE-OPTIMIERUNG-2026-09-10.md` und
 `docs/UEBERGABE-CLAUDE-CODE.md`.
 
+### Leistungen-Seite
+
+Die Leistungsübersicht bündelt den Einstieg über einen begrenzten Coral-Grid,
+ausgerichtete Leistungskarten und eine am oberen Viewportrand sticky
+Sprungnavigation. Der Prozessbereich nutzt einen Sidezeiler mit getrennten
+Text- und Schrittspalten; der persönliche Projekt-Einstieg verbindet Coral,
+Betontextur und Wolfram-Porträt. Die Anpassungen liegen in leistungen.html und
+bleiben ohne zusätzliche Abhängigkeiten.
+
 ### Video-Performance
 
 Autoplay-Videos unterhalb des ersten Bildschirms werden erst in Sichtnähe

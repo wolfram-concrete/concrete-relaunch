@@ -689,6 +689,21 @@
 - `AGENTS.md` und `CASE-FORMATIERUNGSREGELN.md` machen die 1:1-Übernahme der
   bestehenden Case-Formatierungen verbindlich; NextBed als Hauptreferenz,
   NOEY als zweite Kontrolle. Abweichungen nur nach ausdrücklicher Freigabe.
+## 24.09.2026 – Leistungsübersicht und Prozessraster überarbeitet
+
+- Sticky Sprungnavigation am oberen Viewportrand für die vier Prozessphasen
+  ergänzt.
+- Coral-Schnelleinstieg in den Seitencontainer begrenzt, obere Linie entfernt
+  und Betontextur im Übergang per Multiply eingebunden.
+- Die fünf Leistungskarten nutzen feste Textzeilen, sodass Nummern,
+  Headlines und Beschreibungen spaltenübergreifend bündig beginnen.
+- Der Projekt-Einstieg kombiniert Coral, Wolfram-Porträt und Betontextur als
+  persönliches Modul; Headline, Eyebrow und CTA sind auf Desktop und Mobile
+  responsiv angeordnet.
+- Prozessbereich als dreispaltiges Raster mit Sidezeiler, Bodytext und
+  Projektablauf neu ausgerichtet; Mobile fällt auf ein einspaltiges Layout
+  zurück.
+- Statische Prüfung ohne Befunde.
 
 ## 16.09.2026 – Consent-Modal und Signalvorbereitung für ADSUITS
 
