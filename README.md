@@ -2,6 +2,9 @@
 
 ## Aktualisierung · 24.09.2026
 
+- Footer-CTA „Projekt anfragen“ in der Agenturspalte websiteweit als klarer
+  Coral-Button hervorgehoben. Globale CSS-/JS-Cacheversion synchronisiert;
+  die neue Sitemap umfasst weiterhin 164 indexierbare URLs.
 - Leistungsseite „Website modernisieren“ gestalterisch finalisiert: dekoratives
   Hero-Signal entfernt, die drei Eingriffstiefen typografisch sauber
   ausgerichtet und das zentrale Statement als systemkonformes Quote-Modul mit

@@ -1,5 +1,14 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 24.09.2026 – Footer-CTA und globale Cacheversion
+
+- „Projekt anfragen“ in der Footer-Spalte „Agentur“ auf sämtlichen Seiten als
+  eigenständigen Coral-Button mit sichtbarem Hover- und Fokuszustand gestaltet.
+- Globale Cacheversion von `site.css` und `site.js` synchron auf Version 178
+  angehoben und die Preflight-Erwartung entsprechend aktualisiert.
+- Sitemap erneut geprüft: 164 kanonische, indexierbare URLs; technischer
+  Preflight und SEO-Gauntlet ohne Befunde.
+
 ## 24.09.2026 – UI-Finalisierung Website-Modernisierung
 
 - Dekoratives Sternsignal aus dem Hero der Leistungsseite entfernt; die übrigen
