@@ -8,6 +8,12 @@
   angehoben und die Preflight-Erwartung entsprechend aktualisiert.
 - Sitemap erneut geprüft: 164 kanonische, indexierbare URLs; technischer
   Preflight und SEO-Gauntlet ohne Befunde.
+- Live-Abgleich am 24.09.2026: `https://www.concrete-designs.de/sitemap.xml`
+  liefert HTTP 200 und dieselben 164 URLs wie der Repository-Stand. Die Google
+  Search Console führt die Sitemap als erfolgreich eingereicht, zuletzt gelesen
+  am 23.09.2026, jedoch noch mit 136 erkannten Seiten. Die repräsentativ geprüfte
+  neue URL `/website-modernisieren` ist Google derzeit noch nicht bekannt und
+  noch nicht indexiert.
 
 ## 24.09.2026 – UI-Finalisierung Website-Modernisierung
 

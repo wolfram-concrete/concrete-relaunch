@@ -5,6 +5,10 @@
 - Footer-CTA „Projekt anfragen“ in der Agenturspalte websiteweit als klarer
   Coral-Button hervorgehoben. Globale CSS-/JS-Cacheversion synchronisiert;
   die neue Sitemap umfasst weiterhin 164 indexierbare URLs.
+- Live-Sitemap und Search Console am 24.09.2026 abgeglichen: Die öffentlich
+  erreichbare Sitemap enthält alle 164 URLs. Google führt die Einreichung als
+  erfolgreich, hat sie zuletzt am 23.09. gelesen und weist aktuell noch 136
+  erkannte Seiten aus; neue Clusterseiten sind daher noch nicht verarbeitet.
 - Leistungsseite „Website modernisieren“ gestalterisch finalisiert: dekoratives
   Hero-Signal entfernt, die drei Eingriffstiefen typografisch sauber
   ausgerichtet und das zentrale Statement als systemkonformes Quote-Modul mit
