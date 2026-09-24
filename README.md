@@ -2,6 +2,16 @@
 
 ## Aktualisierung · 24.09.2026
 
+- Typografischer Detailseiten-Pass: Auf allen 30 Leistungsdetailseiten nutzen
+  Abschnittsüberschriften jetzt die verfügbare Inhaltsspalte und umbrechen
+  ausgewogen statt durch eine feste `22ch`-Grenze. Die beiden Überschriften
+  „Icon- und Illustration-Sets“ und „Illustrations- & Icon-Projekte“ bleiben
+  am Desktop einzeilig.
+- Wissen/FAQ feinjustiert: mehr vertikaler Abstand in „Aktuell im Wissen“, eine
+  breitere FAQ-Titelspalte und ein kontrollierter Umbruch für „Zusammenarbeit &
+  Kosten“. Cluster-Stylesheet auf Version 5 aktualisiert; 320- und
+  390-Pixel-Prüfung ohne horizontalen Überlauf, Preflight und SEO-Gauntlet mit
+  164 Seiten ohne Befunde.
 - Footer-CTA „Projekt anfragen“ in der Agenturspalte websiteweit als klarer
   Coral-Button hervorgehoben. Globale CSS-/JS-Cacheversion synchronisiert;
   die neue Sitemap umfasst weiterhin 164 indexierbare URLs.

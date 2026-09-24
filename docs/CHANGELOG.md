@@ -1,5 +1,21 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 24.09.2026 – Typografischer Detailseiten-Pass
+
+- Künstliche `22ch`-Begrenzung der Abschnittsüberschriften auf allen 30
+  Leistungsdetailseiten entfernt und durch ausgewogene, an der verfügbaren
+  Inhaltsspalte orientierte Umbrüche ersetzt.
+- „Icon- und Illustration-Sets“ sowie „Illustrations- & Icon-Projekte“ stehen
+  auf üblichen Desktopbreiten jeweils vollständig in einer Zeile; der gesamte
+  Seitensatz wurde auf einzeln abgetrennte Restwörter geprüft.
+- Wissensübersicht nachgeschärft: mehr Abstand zwischen Trennlinie und
+  „Aktuell im Wissen“, breitere FAQ-Titelspalte sowie ein sauberer Umbruch von
+  „Zusammenarbeit & Kosten“.
+- Stylesheet-Version des 20-seitigen Website-Modernisierungs-Clusters auf
+  Version 5 synchronisiert. Browserprüfung bei 1536, 1280, 390 und 320 Pixeln
+  ohne horizontalen Überlauf; technischer Preflight und SEO-Gauntlet für 164
+  Seiten ohne Befunde.
+
 ## 24.09.2026 – Footer-CTA und globale Cacheversion
 
 - „Projekt anfragen“ in der Footer-Spalte „Agentur“ auf sämtlichen Seiten als
