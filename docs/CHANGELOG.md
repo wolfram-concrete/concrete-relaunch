@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 25.09.2026 – Wissensartikel redaktionell und visuell vereinheitlicht
+
+- Hero-Aufbau der zehn reaktivierten Wissensartikel gestrafft: kurze
+  Titel, eine klare Kernaussage und eine kompakte Orientierung ersetzen die
+  zuvor teilweise vollständigen, im Artikel wiederholten Einleitungsabsätze.
+- Gemeinsames Wissensartikel-Raster neu ausbalanciert: kontrolliertere
+  Titelgröße, kompaktere Abstände und eine besser lesbare Introspalte auf
+  Desktop, Tablet und Mobil.
+- Stylesheet-Version aller 13 Wissensartikel auf Version 3 angehoben, damit
+  das neue Raster nach dem Deployment ohne veralteten Browser-Cache erscheint.
+
 ## 25.09.2026 – Wissensartikel von Alt-Redirects befreit
 
 - Neun permanente Redirects entfernt, die vorhandene Wissensartikel auf

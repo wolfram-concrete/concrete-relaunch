@@ -2,6 +2,11 @@
 
 ## Aktualisierung · 25.09.2026
 
+- Die zehn reaktivierten Wissensartikel folgen jetzt einem einheitlichen,
+  redaktionell klaren Hero-Prinzip: kurze Headline, prägnante Kernaussage und
+  eine kompakte Einordnung statt doppelter oder konkurrierender Langtexte.
+  Titelmaß, Spaltenbalance und vertikale Abstände wurden im gemeinsamen
+  Artikel-Stylesheet für Desktop und Mobil nachgeschärft.
 - Neun veraltete WordPress-Redirects entfernt, die bereits wiederhergestellte
   Wissensartikel trotz eigener HTML-Datei, Canonical und Sitemap-Eintrag auf
   Leistungsseiten oder den Wissenshub umgeleitet hatten.
