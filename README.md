@@ -1,5 +1,16 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 25.09.2026
+
+- Neun veraltete WordPress-Redirects entfernt, die bereits wiederhergestellte
+  Wissensartikel trotz eigener HTML-Datei, Canonical und Sitemap-Eintrag auf
+  Leistungsseiten oder den Wissenshub umgeleitet hatten.
+- Die zehn Wissenslinks im Footer führen damit auf ihre jeweiligen
+  Einzelartikel. Jeder Artikel führt im Modul „Weiterdenken“ auf die fachlich
+  passende Leistungsseite. Der SEO-Gauntlet verhindert künftig
+  Redirect-Quellen, für die gleichzeitig eine lokale, indexierbare Seite
+  existiert.
+
 ## Aktualisierung · 24.09.2026
 
 - Typografischer Detailseiten-Pass: Auf allen 30 Leistungsdetailseiten nutzen

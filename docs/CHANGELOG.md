@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 25.09.2026 – Wissensartikel von Alt-Redirects befreit
+
+- Neun permanente Redirects entfernt, die vorhandene Wissensartikel auf
+  allgemeinere Leistungsseiten oder den Wissenshub überschrieben hatten.
+- `vercel.json` und `tools/redirects.json` synchron bereinigt; Footerlinks,
+  selbstreferenzierende Canonicals und Sitemap-Einträge bleiben unverändert.
+- Generischen Link „Unser Handwerk“ in allen zehn Artikeln durch einen
+  beschreibenden Link auf die jeweils passende Leistungsseite ersetzt.
+- SEO-Gauntlet um eine Kollisionsprüfung erweitert: Eine lokale indexierbare
+  HTML-Seite darf künftig nicht zugleich als Redirect-Quelle auftreten.
+
 ## 24.09.2026 – Typografischer Detailseiten-Pass
 
 - Künstliche `22ch`-Begrenzung der Abschnittsüberschriften auf allen 30

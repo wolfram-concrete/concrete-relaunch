@@ -89,6 +89,14 @@ def main():
     if extra: fehler.append(f"redirects.json: {len(extra)} Redirects fehlen, z.B. {extra[:3]}")
     falsch=sorted(s for s in set(red)&set(vpairs) if red[s]!=vpairs[s])
     if falsch: fehler.append(f"vercel.json: {len(falsch)} Redirect-Ziele weichen ab, z.B. {falsch[:3]}")
+    lokale_quellen=sorted(
+        set(red)&{("" if f=="index.html" else f[:-5]) for f in seiten}
+    )
+    if lokale_quellen:
+        fehler.append(
+            "Redirects ueberschreiben lokale, indexierbare Seiten, "
+            f"z.B. {lokale_quellen[:3]}"
+        )
     for source,target in red.items():
         if target!="/" and not os.path.exists(target+".html"):
             fehler.append(f"Redirect {source}: Ziel {target} existiert nicht lokal")

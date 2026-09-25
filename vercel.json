@@ -215,16 +215,6 @@
       "permanent": true
     },
     {
-      "source": "/diversitaet-und-inklusion-im-design",
-      "destination": "/corporate-design",
-      "permanent": true
-    },
-    {
-      "source": "/early-adopter-innovative-marken",
-      "destination": "/wissen",
-      "permanent": true
-    },
-    {
       "source": "/ergobag",
       "destination": "/case-ergobag",
       "permanent": true
@@ -281,11 +271,6 @@
     },
     {
       "source": "/icons-und-llustration-sets",
-      "destination": "/icons-und-illustration-sets",
-      "permanent": true
-    },
-    {
-      "source": "/illustrationen-im-markendesign",
       "destination": "/icons-und-illustration-sets",
       "permanent": true
     },
@@ -377,11 +362,6 @@
     {
       "source": "/maleco",
       "destination": "/case-maleco",
-      "permanent": true
-    },
-    {
-      "source": "/markenstrategie-mit-ki",
-      "destination": "/ki-tools-analyse-strategie",
       "permanent": true
     },
     {
@@ -545,11 +525,6 @@
       "permanent": true
     },
     {
-      "source": "/warum-ist-beratung-im-markenaufbau-wichtig",
-      "destination": "/wissen",
-      "permanent": true
-    },
-    {
       "source": "/warum-mit-concrete-arbeiten",
       "destination": "/ueber-uns",
       "permanent": true
@@ -562,11 +537,6 @@
     {
       "source": "/was-ist-brand-building-eine-klaredefinition",
       "destination": "/wissen",
-      "permanent": true
-    },
-    {
-      "source": "/was-ist-wichtig-beim-markendesign",
-      "destination": "/corporate-design",
       "permanent": true
     },
     {
@@ -637,11 +607,6 @@
     {
       "source": "/wie-detailliert-ist-die-brandvision-koennen-wir-damit-schon-arbeiten",
       "destination": "/brandvision",
-      "permanent": true
-    },
-    {
-      "source": "/wie-digitalisiert-man-eine-designagentur",
-      "destination": "/corporate-design",
       "permanent": true
     },
     {
@@ -847,16 +812,6 @@
     {
       "source": "/wie-viele-illustrationen-und-icons-sollten-wir-fuer-den-anfang-entwickeln-lassen",
       "destination": "/icons-und-illustration-sets",
-      "permanent": true
-    },
-    {
-      "source": "/wie-weit-ist-ki-im-layoutdesign",
-      "destination": "/website-design",
-      "permanent": true
-    },
-    {
-      "source": "/wie-wird-meine-marke-zu-lovebrand",
-      "destination": "/markenpositionierung-brand-story",
       "permanent": true
     },
     {
