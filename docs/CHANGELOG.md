@@ -1,5 +1,15 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 25.09.2026 – Fokuspunkte der Wissensartikel-Heroes optimiert
+
+- Alle zehn Hero-Motive der reaktivierten Altartikel im tatsächlichen breiten
+  Archiv-Container geprüft und mit bildindividuellen Fokuspunkten versehen.
+- Desktop- und Mobilfokus getrennt steuerbar gemacht, damit Portrait- und
+  Querformatmotive an beiden Breakpoints ihren inhaltlichen Schwerpunkt halten.
+- Early-Adopter-Drohne deutlich tiefer in den Ausschnitt gerückt und das
+  Porträt im Diversitätsartikel vor dem Abschneiden im Desktop-Crop geschützt.
+- Gemeinsame Wissensartikel-Stylesheet-Version auf Version 6 angehoben.
+
 ## 25.09.2026 – Reaktivierte Wissensartikel inhaltlich bereinigt
 
 - Alle zehn reaktivierten Altartikel auf unvollständige Quellenblöcke,

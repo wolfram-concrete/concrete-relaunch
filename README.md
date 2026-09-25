@@ -2,6 +2,10 @@
 
 ## Aktualisierung · 25.09.2026
 
+- Die Hero-Motive der zehn reaktivierten Wissensartikel besitzen jetzt
+  bildindividuelle Fokuspunkte für Desktop und Mobil. Motive wie die Drohne im
+  Early-Adopter-Artikel und das Porträt im Diversitätsartikel bleiben damit
+  auch im sehr breiten Archiv-Crop vollständig im relevanten Bildausschnitt.
 - Die reaktivierten Wissensartikel wurden vollständig auf unvollständige
   Altinhalte geprüft: leere Quellenblöcke entfernt, angekündigte Verweise in
   echte Links umgewandelt, doppelte Kapitelnummern bereinigt und fehlende
