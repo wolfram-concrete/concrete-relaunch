@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 25.09.2026 – Reaktivierte Wissensartikel inhaltlich bereinigt
+
+- Alle zehn reaktivierten Altartikel auf unvollständige Quellenblöcke,
+  fehlende Verlinkungen und fehlerhafte Kapitelstrukturen geprüft.
+- Fünf leere Quellen- beziehungsweise Bildquellenblöcke entfernt und die
+  bislang unverlinkten Handlungsaufforderungen in echte interne Links
+  umgewandelt.
+- Doppelte Kapitelnummern in Inhaltsverzeichnis und Überschriften bereinigt,
+  fehlende Einstiegsabschnitte ergänzt und einzelne veraltete oder sachlich
+  falsche Altformulierungen korrigiert.
+- Artikelspalte bis an die rechte Content-Gridkante verbreitert und Links im
+  Fließtext sichtbar ausgezeichnet. Stylesheet-Version auf Version 5 erhöht.
+- Technischen Preflight um Regressionstests gegen leere Quellenlabels und
+  angekündigte Links ohne Verlinkung erweitert.
+
 ## 25.09.2026 – Bildraster der historischen Wissensartikel korrigiert
 
 - Hero-Bilder der zehn reaktivierten Altartikel auf ein eigenes, kompakteres

@@ -2,6 +2,13 @@
 
 ## Aktualisierung · 25.09.2026
 
+- Die reaktivierten Wissensartikel wurden vollständig auf unvollständige
+  Altinhalte geprüft: leere Quellenblöcke entfernt, angekündigte Verweise in
+  echte Links umgewandelt, doppelte Kapitelnummern bereinigt und fehlende
+  Hauptabschnitte in der Inhaltsnavigation ergänzt. Die Lesespalte reicht nun
+  bis an die rechte Gridkante; Links im Fließtext sind klar erkennbar.
+- Der technische Preflight erkennt künftig leere Quellenüberschriften und
+  angekündigte, aber nicht verlinkte „folgende Links“ als Fehler.
 - Die zehn reaktivierten Altartikel verwenden ein kompakteres, asymmetrisches
   Hero-Bildraster: linke Kante am Content-Grid, rechte Kante am Browserrand und
   eine kontrollierte Maximalhöhe. Im Logo-Kosten-Artikel ersetzt das

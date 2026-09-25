@@ -186,6 +186,15 @@ def scan() -> list[str]:
             continue
         parser = PageParser()
         text = page.read_text(encoding="utf-8")
+        if re.search(
+            r"<p\b[^>]*>\s*(?:<strong>)?\s*(?:Bild)?Quellen?:?\s*"
+            r"(?:</strong>)?\s*</p>",
+            text,
+            re.IGNORECASE,
+        ):
+            findings.append(f"{page.name}: empty source label")
+        if re.search(r"klickt?\s+auf\s+(?:den\s+)?folgenden\s+Link", text, re.IGNORECASE):
+            findings.append(f"{page.name}: announced link without anchor")
         document_end = re.search(r"</html\s*>", text, re.IGNORECASE)
         if document_end and text[document_end.end():].strip():
             findings.append(f"{page.name}: content after closing HTML tag")
