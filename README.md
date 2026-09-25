@@ -2,6 +2,10 @@
 
 ## Aktualisierung · 25.09.2026
 
+- Die zehn reaktivierten Altartikel verwenden ein kompakteres, asymmetrisches
+  Hero-Bildraster: linke Kante am Content-Grid, rechte Kante am Browserrand und
+  eine kontrollierte Maximalhöhe. Im Logo-Kosten-Artikel ersetzt das
+  vorgegebene CONCRETE-Workshopfoto das zuvor fachlich unpassende Personenfoto.
 - Die zehn reaktivierten Wissensartikel folgen jetzt einem einheitlichen,
   redaktionell klaren Hero-Prinzip: kurze Headline, prägnante Kernaussage und
   eine kompakte Einordnung statt doppelter oder konkurrierender Langtexte.

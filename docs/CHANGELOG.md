@@ -1,5 +1,15 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 25.09.2026 – Bildraster der historischen Wissensartikel korrigiert
+
+- Hero-Bilder der zehn reaktivierten Altartikel auf ein eigenes, kompakteres
+  Bildsystem umgestellt: links bündig mit dem Content-Grid, rechts bewusst bis
+  zum Browserrand und in der Höhe auf maximal 560 Pixel begrenzt.
+- Unpassendes Personenmotiv im Artikel „Was kostet ein Logo-Design?“ durch das
+  vorgegebene CONCRETE-Workshopfoto `2U9A8580.jpg` ersetzt und als optimiertes
+  2.000-Pixel-WebP eingebunden.
+- Gemeinsame Wissensartikel-Stylesheet-Version auf Version 4 angehoben.
+
 ## 25.09.2026 – Wissensartikel redaktionell und visuell vereinheitlicht
 
 - Hero-Aufbau der zehn reaktivierten Wissensartikel gestrafft: kurze
