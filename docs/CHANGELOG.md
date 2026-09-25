@@ -1,5 +1,16 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 25.09.2026 – Eigene Ziffernspur für Wissensartikel
+
+- Die Kapitelnummern aller 13 Wissensartikel aus der Textspalte in eine eigene
+  schmale Zwischenspalte zwischen Inhaltsnavigation und Artikel verschoben.
+- Kapitelziffer und zugehörige Überschrift exakt auf derselben Oberkante
+  ausgerichtet; Fließtext und weitere Inhaltselemente bleiben in der breiten
+  rechten Lesespalte.
+- Für Smartphones bis 560 Pixel die bewährte gestapelte Darstellung mit der
+  Ziffer oberhalb der Überschrift beibehalten.
+- Gemeinsame Wissensartikel-Stylesheet-Version auf Version 7 angehoben.
+
 ## 25.09.2026 – Fokuspunkte der Wissensartikel-Heroes optimiert
 
 - Alle zehn Hero-Motive der reaktivierten Altartikel im tatsächlichen breiten

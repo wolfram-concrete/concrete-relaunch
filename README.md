@@ -2,6 +2,11 @@
 
 ## Aktualisierung · 25.09.2026
 
+- Die Kapitelstruktur aller 13 Wissensartikel ist jetzt dreistufig aufgebaut:
+  links die Inhaltsnavigation, mittig eine eigene schmale Ziffernspur und
+  rechts der eigentliche Artikel. Kapitelnummer und Überschrift stehen auf
+  derselben Oberkante; auf kleinen Smartphones wechselt die Darstellung wieder
+  in die platzsparende gestapelte Reihenfolge.
 - Die Hero-Motive der zehn reaktivierten Wissensartikel besitzen jetzt
   bildindividuelle Fokuspunkte für Desktop und Mobil. Motive wie die Drohne im
   Early-Adopter-Artikel und das Porträt im Diversitätsartikel bleiben damit
