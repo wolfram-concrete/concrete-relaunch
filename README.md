@@ -2,6 +2,11 @@
 
 ## Aktualisierung · 25.09.2026
 
+- Der Projekt-Einordnungs-CTA der Leistungsübersicht wurde kompakt neu
+  ausbalanciert: Coral- und Bildfläche starten bündig an der Ziffernspalte,
+  laufen rechts bis zum Viewportrand und sind gegenüber der bisherigen Fassung
+  deutlich niedriger. Die Copy liegt vollständig auf Coral; die Headline steht
+  am Desktop kontrolliert als Zweizeiler.
 - Die Kapitelstruktur aller 13 Wissensartikel ist jetzt dreistufig aufgebaut:
   links die Inhaltsnavigation, mittig eine eigene schmale Ziffernspur und
   rechts der eigentliche Artikel. Kapitelnummer und Überschrift stehen auf
@@ -938,9 +943,10 @@ ausgerichtete Leistungskarten und eine am oberen Viewportrand sticky
 Sprungnavigation. Der Prozessbereich nutzt einen Sidezeiler mit getrennten
 Text- und Schrittspalten; der persönliche Projekt-Einstieg verbindet Coral,
 Betontextur und Wolfram-Porträt. Die Anpassungen liegen in leistungen.html und
-bleiben ohne zusätzliche Abhängigkeiten. Der CTA nutzt eine rastergebundene
-Coral-Fläche ohne Abschnittstrenner; die Copy bleibt eingerückt, während das
-Foto rechts bis zum Viewportrand läuft.
+bleiben ohne zusätzliche Abhängigkeiten. Der kompakte CTA nutzt eine an der
+Ziffernspalte beginnende Coral-Fläche ohne Abschnittstrenner; die Copy steht
+vollständig auf Coral, die Headline läuft am Desktop zweizeilig und das Foto
+reicht rechts bis zum Viewportrand.
 
 ### Video-Performance
 

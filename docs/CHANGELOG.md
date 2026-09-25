@@ -1,5 +1,18 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 25.09.2026 – Projekt-Einordnungs-CTA komprimiert
+
+- CTA zwischen den Phasen „Definieren“ und „Umsetzen“ auf weniger als die
+  Hälfte der bisherigen Desktop-Höhe reduziert.
+- Gemeinsame Coral- und Porträtfläche links exakt an der Ziffernspalte der
+  folgenden Leistungsabschnitte ausgerichtet und rechts bis zum Viewportrand
+  weitergeführt.
+- Copy vollständig auf die Coral-Fläche gesetzt, Porträt kontrolliert in den
+  kompakten Container eingepasst und die CTA-Headline am Desktop durch einen
+  breiteren Textcontainer als Zweizeiler gestaltet.
+- Responsive Darstellung visuell geprüft; technischer Preflight und
+  SEO-Gauntlet für 164 Seiten bleiben ohne Befunde.
+
 ## 25.09.2026 – Eigene Ziffernspur für Wissensartikel
 
 - Die Kapitelnummern aller 13 Wissensartikel aus der Textspalte in eine eigene
