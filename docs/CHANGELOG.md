@@ -1,9 +1,21 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 26.09.2026 – Magazin unter concrete-designs.de/magazin
+
+- E-Paper, Seitenbilder, Download-PDF und Pop-up-Script aus dem separaten
+  Vercel-Projekt `concrete-magazin` in den Ordner `magazin/` übernommen.
+- Pop-up-Script, Menü-CTA und Vorschaubild verweisen auf `/magazin/…`;
+  `vercel.json` liefert das PDF als Download aus und cached Seitenbilder einen
+  Tag, das Script fünf Minuten.
+- Post-Bestellung der Druckausgabe bleibt ausgeblendet, bis das Apps Script
+  des Lead-Sheets eingetragen ist; der PDF-Download funktioniert bereits.
+- Build-Script (`tools/magazin/build.py`) und Apps Script
+  (`docs/magazin/apps-script.gs`) liegen außerhalb des Deploys.
+
 ## 26.09.2026 – Magazin-Pop-up als Lead-Magnet eingebunden
 
-- Script `magazin-popup.js` (concrete-magazin.vercel.app) auf allen 164 Seiten
-  direkt nach `consent-v9.js` eingebunden.
+- Script `magazin-popup.js` auf allen 164 Seiten direkt nach `consent-v9.js`
+  eingebunden.
 - Pop-up erscheint einmal pro Besuch ab der dritten Section unter dem Hero,
   wartet auf die Consent-Entscheidung und ist auf Kontakt, Datenschutz und
   Impressum deaktiviert.

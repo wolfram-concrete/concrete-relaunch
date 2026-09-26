@@ -5,7 +5,7 @@
 - Das CONCRETE Brandbuilding Magazin ist als Lead-Magnet auf allen 164 Seiten
   eingebunden. Das Pop-up (Heft-Animation, „11 B2B-Situationen. 11 Wege, sie
   zu lösen.“, Zitat Wolfram Stratmann) wird als eigenständiges Script von
-  `https://concrete-magazin.vercel.app/embed/magazin-popup.js` direkt nach
+  `/magazin/embed/magazin-popup.js` direkt nach
   `consent-v9.js` geladen und läuft gekapselt im Shadow DOM, ohne Einfluss auf
   `site.css`.
 - Auslöser: einmal pro Website-Besuch, sobald die dritte Section unterhalb des
@@ -20,8 +20,11 @@
 - Das E-Paper ist frei lesbar. PDF-Download und Versand der Druckausgabe fragen
   Ansprechpartner, Unternehmen, E-Mail und „Wo steht ihr gerade?“ ab; die
   Einträge landen im Google Sheet „CONCRETE Magazin – Leads“ (Apps-Script-
-  Web-App, Einrichtung im Magazin-Projekt unter `epaper/leads/apps-script.gs`).
+  Web-App, Code unter `docs/magazin/apps-script.gs`).
 - Globaler Cache-Buster für `site.css`/`site.js` auf Version 179 angehoben.
+- Das E-Paper ist aus dem separaten Vercel-Projekt ins Repo umgezogen und läuft
+  jetzt unter `concrete-designs.de/magazin` (Ordner `magazin/`). Pop-up-Script,
+  mobiler Menü-CTA und Download-PDF verweisen auf die eigene Domain.
 
 ## Aktualisierung · 25.09.2026
 
@@ -836,20 +839,37 @@ Die ältere Arbeitskopie unter `/Users/wolfram/web-projekte/concrete-relaunch`
 ist nicht die maßgebliche Quelle. Vor weiterer lokaler Arbeit immer den
 aktuellen Stand von `origin/main` auschecken.
 
-## Magazin-Pop-up
+## Magazin (E-Paper, PDF, Pop-up)
 
-Quelle und Pflege liegen außerhalb dieses Repos im Projekt „CONCRETE MAGAZIN“
-(`epaper/`), ausgeliefert über `concrete-magazin.vercel.app`. Änderungen an
-Text, Gestaltung oder Verhalten des Pop-ups erfordern daher keinen Deploy
-dieser Website. Eingebunden ist es auf jeder Seite mit:
+Das CONCRETE Brandbuilding Magazin liegt vollständig in diesem Repo unter
+`magazin/` und ist unter **https://www.concrete-designs.de/magazin** erreichbar:
 
-    <script src="https://concrete-magazin.vercel.app/embed/magazin-popup.js" defer></script>
+- `magazin/index.html` – E-Paper (Blätter-Viewer, `<base href="/magazin/">`),
+  PDF-Download bzw. Post-Bestellung nur über das Formular.
+- `magazin/pages/{th,md,lg}/pNN.webp` – Seitenbilder, `CONCRETE_Brandbuilding_Magazin.pdf`
+  – Download-PDF (per `vercel.json` als Download ausgeliefert).
+- `magazin/embed/magazin-popup.js` – Website-Pop-up inkl. Heft-Animation und
+  Magazin-Button am rechten Rand; gekapselt im Shadow DOM.
+- `tools/magazin/build.py` – erzeugt Seitenbilder und PDF neu aus den
+  Druckdaten (liegen im Projekt „CONCRETE MAGAZIN“, `RZ/pdf Druck/`).
+- `docs/magazin/apps-script.gs` – Apps Script für das Google Sheet
+  „CONCRETE Magazin – Leads“.
 
+Jede Seite lädt direkt nach `consent-v9.js`:
+
+    <script src="/magazin/embed/magazin-popup.js" defer></script>
+
+Das Script wird fünf Minuten gecacht; Änderungen sind danach überall aktiv.
 Optionen am Script-Tag: `data-section` (Standard 3), `data-cooldown`
 (`session` oder Tage), `data-tab="false"`, `data-autostart="false"`.
-`CBMPopup.open()` öffnet es manuell. Events für Auswertungen:
-`cbm_open`, `cbm_close`, `cbm_click`, `cbm_lead`, `cbm_tab_close` im
-`dataLayer`.
+`CBMPopup.open()` öffnet es manuell; Links mit `data-cbm-open` ebenso
+(mobiles Menü). Events im `dataLayer`: `cbm_open`, `cbm_close`, `cbm_click`,
+`cbm_lead`, `cbm_tab_close`.
+
+**Leads:** Solange `LEAD_ENDPOINT` in `magazin/embed/magazin-popup.js` und
+`magazin/index.html` leer ist, startet der PDF-Download ohne Speicherung und die
+Post-Bestellung ist ausgeblendet. Nach Einrichtung des Apps Scripts die
+`/exec`-URL an beiden Stellen eintragen.
 
 ## Datenschutz und Consent
 

@@ -37,17 +37,15 @@ Vor Übergabe Referenzvergleich auf Desktop und Mobile durchführen sowie
 `git diff --check` ausführen. README und Changelog bei akzeptierten Änderungen
 aktualisieren. Bestehende, nicht zum Auftrag gehörende Änderungen erhalten.
 
-## Magazin-Pop-up (CONCRETE Brandbuilding Magazin)
+## Magazin (E-Paper & Pop-up)
 
+- Alles zum CONCRETE Brandbuilding Magazin liegt in `magazin/` und ist unter
+  `/magazin` live. Das Pop-up ist `magazin/embed/magazin-popup.js`.
 - Jede Seite lädt direkt nach `consent-v9.js`:
-  `<script src="https://concrete-magazin.vercel.app/embed/magazin-popup.js" defer></script>`.
-  Diese Zeile auf neuen Seiten immer mit übernehmen und nicht entfernen.
-- Das Pop-up selbst (Heft-Animation, Texte, Formular, Magazin-Button am rechten
-  Rand) liegt **nicht in diesem Repo**, sondern im Projekt
-  `web-projekte/CONCRETE MAGAZIN/epaper/` (Datei `embed/magazin-popup.js`) und
-  wird von dort per `vercel deploy --prod` nach `concrete-magazin.vercel.app`
-  ausgeliefert. Änderungen am Pop-up dort vornehmen, nicht hier nachbauen.
-- In diesem Repo gehören nur dazu: die Script-Zeile auf allen Seiten und der
-  Magazin-CTA im mobilen Menü (`.mobile-nav__mag` in `site.css`, Link mit
-  `data-cbm-open` direkt unter „Projekt anfragen“). Neue Seiten brauchen beides.
-- Details, Optionen und Events: README, Abschnitt „Magazin-Pop-up“.
+  `<script src="/magazin/embed/magazin-popup.js" defer></script>`.
+  Auf neuen Seiten immer mit übernehmen, nicht entfernen. Das Script wird
+  fünf Minuten gecacht, kein Cache-Buster nötig.
+- Mobiles Menü: Magazin-CTA `.mobile-nav__mag` (Link mit `data-cbm-open`)
+  direkt unter „Projekt anfragen“. Neue Seiten brauchen ihn ebenfalls.
+- Seitenbilder/PDF nicht von Hand ändern, sondern mit `tools/magazin/build.py`
+  neu erzeugen. Details: README, Abschnitt „Magazin“.
