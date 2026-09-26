@@ -872,6 +872,10 @@ in das Google Sheet „CONCRETE Magazin – Leads“. Die `/exec`-URL steht als
 `LEAD_ENDPOINT` in `magazin/embed/magazin-popup.js` und `magazin/index.html`.
 Code-Änderungen am Script erfordern im Apps-Script-Editor „Bereitstellungen
 verwalten → Bearbeiten → Neue Version“, damit die URL gleich bleibt.
+Bei jedem Eintrag geht eine Benachrichtigung an wolfram@concrete-designs.de
+(Betreff „📄 PDF heruntergeladen“ bzw. „📬 Druckausgabe angefordert“ mit allen
+Angaben; Antworten gehen direkt an den Lead). Das Sheet läuft in der Zeitzone
+Europe/Berlin. Nach Scope-Änderungen einmal `freigabe()` im Editor ausführen.
 
 ## Datenschutz und Consent
 

@@ -6,6 +6,10 @@
   `LEAD_ENDPOINT` in Pop-up und E-Paper eingetragen.
 - Post-Bestellung der Druckausgabe damit wieder sichtbar; PDF- und
   Post-Anfragen landen im Sheet „CONCRETE Magazin – Leads“.
+- E-Mail-Benachrichtigung an wolfram@concrete-designs.de bei jedem Lead
+  (Reply-To = Lead), Sheet-Zeitzone auf Europe/Berlin gesetzt.
+- Live getestet: PDF-Anfrage aus dem E-Paper und Post-Anfrage aus dem Pop-up
+  stehen im Sheet, die Benachrichtigung kommt an.
 
 ## 26.09.2026 – Magazin unter concrete-designs.de/magazin
 
