@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 26.09.2026 – Preloader-Wortmarke ohne Betonstruktur
+
+- Die maskierte Betonebene (`.hero__word span::after`) im CONCRETE-Schriftzug
+  des Hero-Preloaders entfernt. Die Wortmarke erscheint in allen Farbframes als
+  reine Vollfüllung; Farbwechsel und Timing bleiben unverändert.
+- Cache-Buster für `site.css`/`site.js` und Preflight-Erwartung auf Version 180.
+- Technischer Preflight und SEO-Gauntlet: 164 Seiten, 0 Befunde.
+
 ## 26.09.2026 – Einwilligungstext neutral formuliert
 
 - Häkchen in Pop-up und E-Paper-Formular auf einen üblichen, neutralen Wortlaut

@@ -2,6 +2,9 @@
 
 ## Aktualisierung · 26.09.2026
 
+- Der CONCRETE-Schriftzug im Hero-Preloader zeigt keine Betonstruktur mehr,
+  sondern nur noch die flächige Wortmarke in den jeweiligen Farbframes.
+  Globaler Cache-Buster: `v=180`.
 - Das CONCRETE Brandbuilding Magazin ist als Lead-Magnet auf allen 164 Seiten
   eingebunden. Das Pop-up (Heft-Animation, „11 B2B-Situationen. 11 Wege, sie
   zu lösen.“, Zitat Wolfram Stratmann) wird als eigenständiges Script von

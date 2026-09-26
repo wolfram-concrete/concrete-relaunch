@@ -149,15 +149,8 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .hero.done .hero__scrim{opacity:1}
 .hero__word{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:visible}
 .hero__word span{font-family:"Arame";font-weight:700;font-size:17.5vw;white-space:nowrap;letter-spacing:-.02em;line-height:1;color:#fff;mix-blend-mode:normal;opacity:0;transform:scale(.96);transition:opacity .9s ease,transform 1.1s ease;will-change:transform,opacity}
-/* Erst normale weiße Wortmarke. Im Reel bleibt die Vollfüllung sichtbar;
-   eine separate HD-Betonebene wird innerhalb derselben Glyphen maskiert. */
+/* Preloader-Wortmarke: reine Vollfüllung in den Farbframes, ohne Betonstruktur. */
 .hero__word span{position:relative}
-.hero__word span::after{content:attr(data-word);position:absolute;top:0;left:0;font:inherit;letter-spacing:inherit;text-transform:inherit;white-space:inherit;line-height:inherit;color:transparent;background:url("assets/beton/beton-red-alpha-quer-hd-opt.webp") center/100% 100% no-repeat;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:brightness(0);opacity:0;pointer-events:none;transition:none}
-.hero.reel .hero__word span::after,.hero.done .hero__word span::after{opacity:.32}
-/* Arame-Glyphen reichen unter den kompakten Zeilenkasten. Nur die
-   Hintergrund-Malfläche erweitern, ohne die gemeinsame Baseline zu verschieben. */
-.hero__word span::after{padding-bottom:.2em}
-.hero__word span[data-logo-fill="dark-grey"]::after{filter:brightness(0) invert(1)}
 .hero__word span{text-transform:uppercase}
 .hero.reel .hero__word span{transition:none;opacity:.97}
 .hero.word .hero__word span{opacity:1;transform:none}
