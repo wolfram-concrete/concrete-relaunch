@@ -856,5 +856,11 @@
       "destination": "/zielgruppen-markt-und-wettbewerberanalyse",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/magazin",
+      "destination": "/magazin/index.html"
+    }
   ]
 }
