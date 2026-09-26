@@ -38,7 +38,7 @@
   const AUTOSTART = opt.autostart !== "false";
   const KEY = "cbm_popup_seen";
   const THEME = opt.theme || "";              // "", "paper", "sand", "coral-l"
-  const LEAD_ENDPOINT = opt.endpoint || "";   // TODO: Apps-Script-Web-App-URL (…/exec) eintragen
+  const LEAD_ENDPOINT = opt.endpoint || "https://script.google.com/macros/s/AKfycbz99y9XNuqNqzUdn3V0yvEqoR9G_dSF1zA_a28CBPz7A9I4g_m1JnlE9R9-f7z8973k/exec";   // Apps Script „CONCRETE Magazin Leads“ → Google Sheet
   const a = p => BASE + p;
 
   // Schriften müssen im Dokument registriert sein (nicht im Shadow Root)

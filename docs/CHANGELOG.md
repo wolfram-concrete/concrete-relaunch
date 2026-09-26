@@ -1,5 +1,12 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 26.09.2026 – Magazin-Leads ans Google Sheet angebunden
+
+- Apps Script „CONCRETE Magazin Leads“ als Web-App bereitgestellt und als
+  `LEAD_ENDPOINT` in Pop-up und E-Paper eingetragen.
+- Post-Bestellung der Druckausgabe damit wieder sichtbar; PDF- und
+  Post-Anfragen landen im Sheet „CONCRETE Magazin – Leads“.
+
 ## 26.09.2026 – Magazin unter concrete-designs.de/magazin
 
 - E-Paper, Seitenbilder, Download-PDF und Pop-up-Script aus dem separaten

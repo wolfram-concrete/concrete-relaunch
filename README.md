@@ -866,10 +866,12 @@ Optionen am Script-Tag: `data-section` (Standard 3), `data-cooldown`
 (mobiles Menü). Events im `dataLayer`: `cbm_open`, `cbm_close`, `cbm_click`,
 `cbm_lead`, `cbm_tab_close`.
 
-**Leads:** Solange `LEAD_ENDPOINT` in `magazin/embed/magazin-popup.js` und
-`magazin/index.html` leer ist, startet der PDF-Download ohne Speicherung und die
-Post-Bestellung ist ausgeblendet. Nach Einrichtung des Apps Scripts die
-`/exec`-URL an beiden Stellen eintragen.
+**Leads:** PDF-Download und Post-Bestellung schreiben über das Apps Script
+„CONCRETE Magazin Leads“ (Web-App, ausgeführt als wolfram@concrete-designs.de)
+in das Google Sheet „CONCRETE Magazin – Leads“. Die `/exec`-URL steht als
+`LEAD_ENDPOINT` in `magazin/embed/magazin-popup.js` und `magazin/index.html`.
+Code-Änderungen am Script erfordern im Apps-Script-Editor „Bereitstellungen
+verwalten → Bearbeiten → Neue Version“, damit die URL gleich bleibt.
 
 ## Datenschutz und Consent
 
