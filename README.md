@@ -876,9 +876,9 @@ Bei jedem Eintrag geht eine Benachrichtigung an wolfram@concrete-designs.de
 (Betreff „📄 PDF heruntergeladen“ bzw. „📬 Druckausgabe angefordert“ mit allen
 Angaben; Antworten gehen direkt an den Lead). Das Sheet läuft in der Zeitzone
 Europe/Berlin. Nach Scope-Änderungen einmal `freigabe()` im Editor ausführen.
-Ein freiwilliges, nicht vorausgewähltes Häkchen („Wolfram darf mich nach dem
-Lesen einmal persönlich per E-Mail fragen …“) wird als Spalte „Kontakt erlaubt“
-samt Einwilligungstext gespeichert. Nur Leads mit „ja“ per Mail nachfassen.
+Ein freiwilliges, nicht vorausgewähltes Häkchen („Ich bin einverstanden, dass
+CONCRETE mich per E-Mail zu Themen rund um Marke und Brandbuilding kontaktiert …“)
+wird als Spalte „Kontakt erlaubt“ samt Einwilligungstext gespeichert. Nur Leads mit „ja“ per Mail nachfassen.
 Entwurf für die Datenschutzerklärung: `docs/magazin/DATENSCHUTZ-ABSCHNITT-ENTWURF.md`.
 
 ## Datenschutz und Consent

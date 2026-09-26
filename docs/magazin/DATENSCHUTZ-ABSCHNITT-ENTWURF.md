@@ -22,8 +22,8 @@ Postanschrift. Außerdem speichern wir Zeitpunkt, Seite und Quelle der Anfrage.
   DSGVO (Durchführung Ihrer Anfrage).
 - Einordnung Ihrer Angaben zur Weiterentwicklung unserer Inhalte:
   Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
-- Einmalige persönliche Nachfrage per E-Mail, ob das Magazin weitergeholfen hat –
-  nur, wenn Sie das entsprechende Häkchen gesetzt haben: Art. 6 Abs. 1 lit. a
+- Kontaktaufnahme per E-Mail zu Themen rund um Marke und Brandbuilding – nur,
+  wenn Sie das entsprechende Häkchen gesetzt haben: Art. 6 Abs. 1 lit. a
   DSGVO (Einwilligung) i. V. m. § 7 Abs. 2 UWG. Die Einwilligung ist freiwillig,
   keine Voraussetzung für den Download und jederzeit mit Wirkung für die Zukunft
   widerrufbar, z. B. per E-Mail an hello@concrete-designs.de oder per Antwort auf
@@ -41,7 +41,7 @@ zertifiziert ist, bzw. der EU-Standardvertragsklauseln.
 **Speicherdauer:** Wir löschen Ihre Angaben, sobald sie für die genannten Zwecke
 nicht mehr erforderlich sind, spätestens 24 Monate nach Ihrer Anfrage, sofern
 kein weiterer Kontakt entstanden ist. Nach einem Widerruf Ihrer Einwilligung
-verwenden wir Ihre E-Mail-Adresse nicht mehr für eine Nachfrage.
+verwenden wir Ihre E-Mail-Adresse nicht mehr für eine Kontaktaufnahme.
 
 **Ihre Rechte:** Es gelten die in dieser Datenschutzerklärung beschriebenen
 Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit,

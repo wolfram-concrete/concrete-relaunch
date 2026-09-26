@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 26.09.2026 – Einwilligungstext neutral formuliert
+
+- Häkchen in Pop-up und E-Paper-Formular auf einen üblichen, neutralen Wortlaut
+  umgestellt: „Ich bin einverstanden, dass CONCRETE mich per E-Mail zu Themen
+  rund um Marke und Brandbuilding kontaktiert. Diese Einwilligung kann ich
+  jederzeit widerrufen.“ Der Wortlaut wird weiterhin mit jedem Lead gespeichert.
+- Hinweistext unter dem Formular und Entwurf der Datenschutzerklärung angepasst.
+
 ## 26.09.2026 – Einwilligung für persönliche Nachfrage
 
 - Pop-up und E-Paper-Formular um ein freiwilliges, nicht vorausgewähltes
