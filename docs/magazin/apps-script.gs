@@ -17,14 +17,15 @@ function doPost(e) {
     const ss = SpreadsheetApp.openById(SHEET_ID);
     if (ss.getSpreadsheetTimeZone() !== "Europe/Berlin") ss.setSpreadsheetTimeZone("Europe/Berlin");
     const sheet = ss.getSheets()[0];
-    const HEAD = ["Zeitstempel", "Anfrage", "Name", "Unternehmen", "E-Mail", "Situation", "Adresse", "Quelle", "Seite"];
-    if (sheet.getRange(1, 2).getValue() !== HEAD[1]) {           // Kopfzeile einmalig auf das neue Format setzen
-      sheet.getRange(1, 1, 1, sheet.getMaxColumns()).clearContent();
+    const HEAD = ["Zeitstempel", "Anfrage", "Name", "Unternehmen", "E-Mail", "Situation", "Adresse", "Quelle", "Seite",
+      "Kontakt erlaubt", "Einwilligungstext"];
+    if (sheet.getRange(1, HEAD.length).getValue() !== HEAD[HEAD.length - 1]) {   // Kopfzeile auf aktuelles Format setzen
       sheet.getRange(1, 1, 1, HEAD.length).setValues([HEAD]).setFontWeight("bold");
       sheet.setFrozenRows(1);
     }
     const row = [new Date(), clean(d.type || "PDF"), clean(d.name), clean(d.company), clean(email),
-      clean(d.situation), clean(d.address), clean(d.source), clean(d.page)];
+      clean(d.situation), clean(d.address), clean(d.source), clean(d.page),
+      d.contact ? "ja" : "nein", d.contact ? clean(d.consentText) : ""];
     sheet.appendRow(row);
     notify(row);
     return out("ok");
@@ -35,7 +36,7 @@ function doPost(e) {
 
 function notify(r) {
   try {
-    const [, type, name, company, email, situation, address, source, page] = r;
+    const [, type, name, company, email, situation, address, source, page, contact] = r;
     const post = type === "Post";
     MailApp.sendEmail({
       to: NOTIFY,
@@ -50,6 +51,7 @@ function notify(r) {
         `E-Mail:       ${email}`,
         `Situation:    ${situation || "–"}`,
         post ? `Adresse:      ${address}` : null,
+        `Kontakt:      ${contact === "ja" ? "✅ darf persönlich nachgefragt werden" : "– keine Einwilligung, bitte nicht per Mail anschreiben"}`,
         "",
         `Quelle: ${source} · ${page}`,
         "",

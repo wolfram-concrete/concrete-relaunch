@@ -38,6 +38,7 @@
   const AUTOSTART = opt.autostart !== "false";
   const KEY = "cbm_popup_seen";
   const THEME = opt.theme || "";              // "", "paper", "sand", "coral-l"
+  const CONSENT = "Wolfram darf mich nach dem Lesen einmal persönlich per E-Mail fragen, ob das Magazin weitergeholfen hat. Jederzeit widerrufbar.";   // Wortlaut wird mit dem Lead gespeichert
   const LEAD_ENDPOINT = opt.endpoint || "https://script.google.com/macros/s/AKfycbz99y9XNuqNqzUdn3V0yvEqoR9G_dSF1zA_a28CBPz7A9I4g_m1JnlE9R9-f7z8973k/exec";   // Apps Script „CONCRETE Magazin Leads“ → Google Sheet
   const a = p => BASE + p;
 
@@ -260,6 +261,7 @@ a{color:inherit;text-decoration:none}
             <option>Wir schauen uns erst einmal um</option>
             <option>Etwas anderes</option>
           </select></div>
+        <label class="chk"><input type="checkbox" name="contact"> Wolfram darf mich nach dem Lesen einmal persönlich per E-Mail fragen, ob das Magazin weitergeholfen hat. Jederzeit widerrufbar.</label>
         <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn pri plain" type="submit" data-kind="pdf" disabled><span class="t">PDF herunterladen</span><svg viewBox="0 0 18 18"><path d="M9 3v9M5 8l4 4 4-4M3 15h12"/></svg></button>
         <button class="btn plain" type="button" data-post-toggle aria-expanded="false"><span class="t">Gedruckt per Post anfordern</span><svg class="chev" viewBox="0 0 18 18"><path d="M4 7l5 5 5-5"/></svg></button>
@@ -272,7 +274,7 @@ a{color:inherit;text-decoration:none}
           <p class="note">Das Porto übernehmen wir.</p>
           <button class="btn pri plain" type="submit" data-kind="post" disabled><span class="t">Per Post anfordern</span><svg viewBox="0 0 18 18"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
         </div>
-        <p class="legal">* Pflichtangaben. Eure Angaben nutzen wir nur, um euch das Magazin bereitzustellen. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a></p>
+        <p class="legal">* Pflichtangaben. Eure Angaben nutzen wir, um euch das Magazin bereitzustellen, und nur mit Häkchen für diese eine persönliche Nachfrage. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a></p>
       </form>
 
       <div class="done">
@@ -333,6 +335,7 @@ a{color:inherit;text-decoration:none}
     const lead = { type: kind === "post" ? "Post" : "PDF", name: f.name.value.trim(), company: f.company.value.trim(),
       email: f.email.value.trim(), situation: f.situation.value,
       address: kind === "post" ? `${f.street.value.trim()}, ${f.zip.value.trim()} ${f.city.value.trim()}` : "",
+      contact: f.contact.checked, consentText: f.contact.checked ? CONSENT : "",
       source: "popup", page: location.href, website: f.website.value };
     if (LEAD_ENDPOINT) fetch(LEAD_ENDPOINT, { method: "POST", mode: "no-cors", body: JSON.stringify(lead) }).catch(() => {});
     else console.info("[CBM Lead – kein Endpunkt eingetragen]", lead);

@@ -295,6 +295,7 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
           <option>Wir schauen uns erst einmal um</option>
           <option>Etwas anderes</option>
         </select></div>
+      <label class="g-check"><input type="checkbox" name="contact"> Wolfram darf mich nach dem Lesen einmal persönlich per E-Mail fragen, ob das Magazin weitergeholfen hat. Jederzeit widerrufbar.</label>
       <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <button class="g-submit" type="submit" data-kind="pdf" disabled><span class="lbl">PDF herunterladen</span><svg viewBox="0 0 18 18"><path d="M9 3v9M5 8l4 4 4-4M3 15h12"/></svg></button>
       <button class="g-alt" type="button" id="dlPostToggle" aria-expanded="false"><span class="lbl">Gedruckt per Post anfordern</span><svg viewBox="0 0 18 18"><path d="M4 7l5 5 5-5"/></svg></button>
@@ -307,7 +308,7 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
         <p class="g-note">Das Porto übernehmen wir.</p>
         <button class="g-submit" type="submit" data-kind="post" disabled><span class="lbl">Per Post anfordern</span><svg viewBox="0 0 18 18"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
       </div>
-      <p class="g-legal">* Pflichtangaben. Eure Angaben nutzen wir nur, um euch das Magazin bereitzustellen. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a></p>
+      <p class="g-legal">* Pflichtangaben. Eure Angaben nutzen wir, um euch das Magazin bereitzustellen, und nur mit Häkchen für diese eine persönliche Nachfrage. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a></p>
     </form>
     <div class="g-done">
       <h3 id="dlDoneTitle">Danke!</h3>
@@ -561,6 +562,7 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
 
   // ---------- PDF-Download nur mit Name, E-Mail, Situation → Google Sheet ----------
   const PDF_URL = "CONCRETE_Brandbuilding_Magazin.pdf";
+  const CONSENT = "Wolfram darf mich nach dem Lesen einmal persönlich per E-Mail fragen, ob das Magazin weitergeholfen hat. Jederzeit widerrufbar.";   // Wortlaut wird mit dem Lead gespeichert
   const pdfBtn = document.querySelector(".tbtn.pdf"), dlg = $("#dlg"), dlForm = $("#dlForm");
   const startDownload = () => { const a = document.createElement("a"); a.href = PDF_URL; a.download = ""; document.body.append(a); a.click(); a.remove(); };
   pdfBtn.addEventListener("click", e => {
@@ -599,6 +601,7 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
     const lead = { type: kind === "post" ? "Post" : "PDF", name: f.name.value.trim(), company: f.company.value.trim(),
       email: f.email.value.trim(), situation: f.situation.value,
       address: kind === "post" ? `${f.street.value.trim()}, ${f.zip.value.trim()} ${f.city.value.trim()}` : "",
+      contact: f.contact.checked, consentText: f.contact.checked ? CONSENT : "",
       source: "epaper" + (qs.get("src") ? " / " + qs.get("src") : ""), page: location.href, website: f.website.value };
     if (LEAD_ENDPOINT) fetch(LEAD_ENDPOINT, { method: "POST", mode: "no-cors", body: JSON.stringify(lead) }).catch(() => {});
     else console.info("[Lead – kein Endpunkt eingetragen]", lead);

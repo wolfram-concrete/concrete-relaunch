@@ -1,5 +1,15 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 26.09.2026 – Einwilligung für persönliche Nachfrage
+
+- Pop-up und E-Paper-Formular um ein freiwilliges, nicht vorausgewähltes
+  Häkchen ergänzt: „Wolfram darf mich nach dem Lesen einmal persönlich per
+  E-Mail fragen, ob das Magazin weitergeholfen hat. Jederzeit widerrufbar.“
+- Apps Script (Version 3): Sheet-Spalten „Kontakt erlaubt“ und
+  „Einwilligungstext“; die Benachrichtigung zeigt, ob nachgefasst werden darf.
+- Hinweistext unter dem Formular angepasst; Entwurf für den Abschnitt der
+  Datenschutzerklärung unter `docs/magazin/DATENSCHUTZ-ABSCHNITT-ENTWURF.md`.
+
 ## 26.09.2026 – Magazin-Leads ans Google Sheet angebunden
 
 - Apps Script „CONCRETE Magazin Leads“ als Web-App bereitgestellt und als
