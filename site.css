@@ -893,6 +893,13 @@ section.sec--line::before{content:"";position:absolute;top:0;height:1px;backgrou
 .mobile-nav__cta .cta-avas{display:inline-flex}
 .mobile-nav__cta .cta-avas img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--coral)}
 .mobile-nav__cta .cta-avas img+img{margin-left:-12px}
+/* Magazin als zweiter CTA im mobilen Menue (oeffnet das Magazin-Pop-up) */
+.mobile-nav__mag{display:flex!important;align-items:center;gap:14px;margin-top:12px;padding:8px 20px 8px 8px!important;width:max-content;max-width:100%;
+  border-radius:var(--radius-cta);background:var(--paper-deep);color:var(--ink)!important;border-bottom:0!important;
+  font-family:"Arame";font-weight:700;font-size:clamp(18px,4.8vw,24px)!important;line-height:1.05;text-transform:uppercase}
+.mobile-nav__mag img{width:44px;height:44px;object-fit:cover;flex:none;border-radius:calc(var(--radius-cta) / 2)}
+.mobile-nav__mag small{display:block;margin-top:4px;font-family:"Grotesk",Arial,sans-serif;font-weight:400;font-size:13px;text-transform:none;letter-spacing:0}
+.mobile-nav__mag:hover,.mobile-nav__mag:focus-visible{background:var(--coral)}
 /* Unterpunkte mit Pfeil, Zeile eins fett, Zeile zwei leicht */
 .mobile-nav__sub a{display:block;position:relative;padding-left:1.5em;font-weight:700}
 .mobile-nav__sub a::before{content:"";position:absolute;left:0;top:.87em;width:.52em;height:.64em;background:var(--coral);

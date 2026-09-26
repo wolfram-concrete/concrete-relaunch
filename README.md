@@ -1,5 +1,28 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 26.09.2026
+
+- Das CONCRETE Brandbuilding Magazin ist als Lead-Magnet auf allen 164 Seiten
+  eingebunden. Das Pop-up (Heft-Animation, „11 B2B-Situationen. 11 Wege, sie
+  zu lösen.“, Zitat Wolfram Stratmann) wird als eigenständiges Script von
+  `https://concrete-magazin.vercel.app/embed/magazin-popup.js` direkt nach
+  `consent-v9.js` geladen und läuft gekapselt im Shadow DOM, ohne Einfluss auf
+  `site.css`.
+- Auslöser: einmal pro Website-Besuch, sobald die dritte Section unterhalb des
+  Heroes ins Bild kommt (auf Seiten ohne Hero ab 45 % Scrolltiefe). Solange das
+  Consent-Modal offen ist, wartet das Pop-up. Nicht auf Kontakt, Datenschutz
+  und Impressum.
+- Nach dem Schließen bleibt am Desktop ein schmaler Magazin-Button am rechten
+  Browserrand (nur Cover im Paper-Rahmen, bei Hover fährt der Text in Coral
+  heraus, ✕ blendet ihn für den Besuch aus). Mobil entfällt der Button; das
+  Magazin steht stattdessen im Burger-Menü unter „Projekt anfragen“
+  (`.mobile-nav__mag`, öffnet über `data-cbm-open` das Pop-up).
+- Das E-Paper ist frei lesbar. PDF-Download und Versand der Druckausgabe fragen
+  Ansprechpartner, Unternehmen, E-Mail und „Wo steht ihr gerade?“ ab; die
+  Einträge landen im Google Sheet „CONCRETE Magazin – Leads“ (Apps-Script-
+  Web-App, Einrichtung im Magazin-Projekt unter `epaper/leads/apps-script.gs`).
+- Globaler Cache-Buster für `site.css`/`site.js` auf Version 179 angehoben.
+
 ## Aktualisierung · 25.09.2026
 
 - Der Projekt-Einordnungs-CTA der Leistungsübersicht wurde kompakt neu
@@ -812,6 +835,21 @@ bekannten, gestalterisch abhängigen Abweichungen aus dem Technikbericht.
 Die ältere Arbeitskopie unter `/Users/wolfram/web-projekte/concrete-relaunch`
 ist nicht die maßgebliche Quelle. Vor weiterer lokaler Arbeit immer den
 aktuellen Stand von `origin/main` auschecken.
+
+## Magazin-Pop-up
+
+Quelle und Pflege liegen außerhalb dieses Repos im Projekt „CONCRETE MAGAZIN“
+(`epaper/`), ausgeliefert über `concrete-magazin.vercel.app`. Änderungen an
+Text, Gestaltung oder Verhalten des Pop-ups erfordern daher keinen Deploy
+dieser Website. Eingebunden ist es auf jeder Seite mit:
+
+    <script src="https://concrete-magazin.vercel.app/embed/magazin-popup.js" defer></script>
+
+Optionen am Script-Tag: `data-section` (Standard 3), `data-cooldown`
+(`session` oder Tage), `data-tab="false"`, `data-autostart="false"`.
+`CBMPopup.open()` öffnet es manuell. Events für Auswertungen:
+`cbm_open`, `cbm_close`, `cbm_click`, `cbm_lead`, `cbm_tab_close` im
+`dataLayer`.
 
 ## Datenschutz und Consent
 

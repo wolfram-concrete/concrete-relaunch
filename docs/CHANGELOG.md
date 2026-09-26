@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 26.09.2026 – Magazin-Pop-up als Lead-Magnet eingebunden
+
+- Script `magazin-popup.js` (concrete-magazin.vercel.app) auf allen 164 Seiten
+  direkt nach `consent-v9.js` eingebunden.
+- Pop-up erscheint einmal pro Besuch ab der dritten Section unter dem Hero,
+  wartet auf die Consent-Entscheidung und ist auf Kontakt, Datenschutz und
+  Impressum deaktiviert.
+- Desktop: einklappbarer Magazin-Button am rechten Rand nach dem Schließen,
+  per ✕ für den Besuch ausblendbar. Mobil: neuer CTA „Magazin“ im Burger-Menü
+  unter „Projekt anfragen“ (`.mobile-nav__mag` in `site.css`).
+- Cache-Buster für `site.css` und `site.js` sowie die Erwartung im technischen
+  Preflight auf Version 179 angehoben.
+- Technischer Preflight und SEO-Gauntlet: 164 Seiten, 0 Befunde.
+
 ## 25.09.2026 – Projekt-Einordnungs-CTA komprimiert
 
 - CTA zwischen den Phasen „Definieren“ und „Umsetzen“ auf weniger als die
