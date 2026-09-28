@@ -421,7 +421,7 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .coral-block h2{font-family:"Arame";font-weight:700;font-size:var(--fs-sub);line-height:1;letter-spacing:-.01em;margin-top:var(--s3);max-width:22ch}
 .inquiry__head{display:grid;grid-template-columns:minmax(120px,var(--indent)) 1fr;gap:0 clamp(16px,3vw,48px);align-items:start;padding:clamp(44px,5.5vw,88px) 0 clamp(28px,4vw,56px)}
 .inquiry__head .eyebrow{margin-top:.35em}
-.inquiry__head h2{font-family:"Arame";font-weight:700;font-size:clamp(38px,5.6vw,86px);line-height:.9;letter-spacing:-.015em;margin:0;max-width:16ch;color:var(--ink)}
+.inquiry__head h2{font-family:"Arame";font-weight:700;font-size:clamp(38px,5.6vw,86px);line-height:.9;letter-spacing:-.015em;margin:0;max-width:13ch;color:var(--ink)}
 @media(max-width:700px){.inquiry__head{grid-template-columns:1fr}.inquiry__head .eyebrow{margin:0 0 var(--s3)}}
 .inquiry__grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:0}
 .inquiry__media{position:relative;margin-left:calc(-1 * max(var(--pad), (100vw - var(--max)) / 2 + var(--pad)));margin-bottom:calc(-1 * clamp(44px,5.5vw,88px))}

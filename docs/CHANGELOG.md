@@ -2,6 +2,12 @@
 
 ## 28.09.2026 – Direkter E-Mail-CTA und klarere Kontaktwege
 
+- Den im Home-Hero eingeführten CTA „E-Mail schreiben“ auch in allen sieben
+  abschließenden Anfrage-Modulen ergänzt. Der Button öffnet direkt eine neue
+  Nachricht an `hallo@concrete-designs.de`.
+- Die maximale Laufbreite der CTA-Headlines im abschließenden Anfrage-Modul
+  von `16ch` auf `13ch` reduziert. Die Headline „Was verändert sich gerade bei
+  euch?“ bleibt damit seitenübergreifend als Dreizeiler gesetzt.
 - Den Home-Preloader auf den ersten Einstieg einer Browser-Sitzung begrenzt.
   Interne Rücksprünge über das Logo sowie erneute Home-Aufrufe innerhalb der
   Sitzung öffnen direkt die fertige Hero-Darstellung.

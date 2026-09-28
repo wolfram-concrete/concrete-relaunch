@@ -2,6 +2,12 @@
 
 ## Aktualisierung · 28.09.2026
 
+- Das abschließende Anfrage-Modul bietet jetzt auf allen betroffenen Seiten
+  neben „Projekt anfragen“ auch den direkten CTA „E-Mail schreiben“ an
+  `hallo@concrete-designs.de`.
+- Die Headline-Laufbreite des abschließenden Anfrage-Moduls ist zentral enger
+  gefasst. „Was verändert sich gerade bei euch?“ bleibt dadurch auf allen
+  betroffenen Seiten stabil als Dreizeiler gesetzt.
 - Das Home-Intro läuft nur beim ersten Einstieg einer Browser-Sitzung. Wer von
   einer Unterseite über das Logo zur Startseite zurückkehrt, sieht sofort den
   fertigen Hero statt eines erneut startenden Preloaders.
