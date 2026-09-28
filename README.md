@@ -1,5 +1,12 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 28.09.2026
+
+- Im Homepage-Hero steht neben „Projekt anfragen“ jetzt der direkte CTA
+  „E-Mail schreiben“ mit Verlinkung auf `hallo@concrete-designs.de`.
+- Die alternativen Kontaktwege auf der Erstgespräch-Seite sind eindeutiger als
+  „Telefon: 040 36024481“ und „Per E-Mail kontaktieren“ beschriftet.
+
 ## Aktualisierung · 26.09.2026
 
 - Der CONCRETE-Schriftzug im Hero-Preloader zeigt keine Betonstruktur mehr,

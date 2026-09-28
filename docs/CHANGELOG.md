@@ -1,5 +1,14 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 28.09.2026 – Direkter E-Mail-CTA und klarere Kontaktwege
+
+- Im Homepage-Hero neben „Projekt anfragen“ einen zweiten CTA „E-Mail
+  schreiben“ ergänzt; der Link öffnet eine neue Nachricht an
+  `hallo@concrete-designs.de`.
+- Die beiden alternativen CTAs auf der Erstgespräch-Seite in „Telefon: 040
+  36024481“ und „Per E-Mail kontaktieren“ umbenannt. Ziele und Funktion bleiben
+  unverändert.
+
 ## 26.09.2026 – Preloader-Wortmarke ohne Betonstruktur
 
 - Die maskierte Betonebene (`.hero__word span::after`) im CONCRETE-Schriftzug
