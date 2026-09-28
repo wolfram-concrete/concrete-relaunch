@@ -2,6 +2,9 @@
 
 ## 28.09.2026 – Direkter E-Mail-CTA und klarere Kontaktwege
 
+- Den Home-Preloader auf den ersten Einstieg einer Browser-Sitzung begrenzt.
+  Interne Rücksprünge über das Logo sowie erneute Home-Aufrufe innerhalb der
+  Sitzung öffnen direkt die fertige Hero-Darstellung.
 - Im Homepage-Hero neben „Projekt anfragen“ einen zweiten CTA „E-Mail
   schreiben“ ergänzt; der Link öffnet eine neue Nachricht an
   `hallo@concrete-designs.de`.

@@ -1,5 +1,17 @@
 
 (function(){
+  // Das aufwendige Home-Intro nur beim ersten echten Einstieg zeigen.
+  // Wer innerhalb derselben Sitzung oder von einer CONCRETE-Unterseite über
+  // das Logo zurückkehrt, landet direkt in der fertigen Hero-Darstellung.
+  var heroIntroSeen=false;
+  try{
+    heroIntroSeen=sessionStorage.getItem("concreteHeroIntroSeen")==="1";
+    if(!heroIntroSeen&&document.referrer){
+      heroIntroSeen=new URL(document.referrer,location.href).origin===location.origin;
+    }
+    sessionStorage.setItem("concreteHeroIntroSeen","1");
+  }catch(e){}
+
   // Statement: scroll-gescrubbtes Wort-Clip-Rise (GSAP ScrollTrigger)
   var st=document.querySelector("[data-str]");
   if(st&&window.gsap&&window.ScrollTrigger){
@@ -166,11 +178,16 @@
       document.documentElement.setAttribute("data-hero-intro-state","complete");
       window.dispatchEvent(new CustomEvent("concrete:hero-intro-complete"));
     }
-    function finish(){
+    function finish(skipIntro){
       document.body.classList.remove("intro");seq.forEach(function(i){i.classList.remove("on");i.style.zIndex="";});word.className="";finalImg.classList.add("on");hero.classList.remove("reel");hero.classList.add("done");
       document.documentElement.setAttribute("data-hero-consent-ready","true");
       window.dispatchEvent(new CustomEvent("concrete:hero-reel-complete"));
       if(finalImg.tagName==="VIDEO"&&!reduceHero&&!saveDataHero){
+        if(skipIntro){
+          finalImg.preload="auto";finalImg.load();announceIntroComplete();
+          var directPlay=finalImg.play();if(directPlay&&directPlay.catch)directPlay.catch(function(){});
+          return;
+        }
         var lastVideoTime=0;
         function firstLoopComplete(){finalImg.removeEventListener("timeupdate",watchFirstLoop);finalImg.removeEventListener("ended",firstLoopComplete);finalImg.removeEventListener("error",firstLoopComplete);announceIntroComplete();}
         function watchFirstLoop(){var now=finalImg.currentTime||0,duration=finalImg.duration||0;if(duration&&now>=duration-.45||lastVideoTime>1&&now<lastVideoTime)firstLoopComplete();lastVideoTime=now;}
@@ -179,7 +196,7 @@
         var playResult=finalImg.play();if(playResult&&playResult.catch)playResult.catch(firstLoopComplete);
       }else announceIntroComplete();
     }
-    if(reduceHero||saveDataHero){finish();}
+    if(heroIntroSeen||reduceHero||saveDataHero){finish(heroIntroSeen);}
     else{
       imgs.forEach(function(i){if(i.dataset.src)i.src=i.dataset.src;});
       var arame=(document.fonts&&document.fonts.load)?document.fonts.load('700 100px Arame').catch(function(){}):Promise.resolve();

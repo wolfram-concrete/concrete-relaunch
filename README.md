@@ -2,6 +2,9 @@
 
 ## Aktualisierung · 28.09.2026
 
+- Das Home-Intro läuft nur beim ersten Einstieg einer Browser-Sitzung. Wer von
+  einer Unterseite über das Logo zur Startseite zurückkehrt, sieht sofort den
+  fertigen Hero statt eines erneut startenden Preloaders.
 - Im Homepage-Hero steht neben „Projekt anfragen“ jetzt der direkte CTA
   „E-Mail schreiben“ mit Verlinkung auf `hallo@concrete-designs.de`.
 - Die alternativen Kontaktwege auf der Erstgespräch-Seite sind eindeutiger als
