@@ -1,5 +1,13 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 01.10.2026 – Aktualisiertes System360-Visitenkartenmockup
+
+- Das Visitenkartenmotiv im System360-Case gegen das aktualisierte Mockup mit
+  „system 360 AG“ und den neuen Kontaktdaten ausgetauscht.
+- Das 5000 × 2800 Pixel große Ausgangsbild für die Galerie auf 2400 × 1344
+  Pixel skaliert und als WebP ausgeliefert; Seitenverhältnis und Grid bleiben
+  dadurch unverändert.
+
 ## 28.09.2026 – Direkter E-Mail-CTA und klarere Kontaktwege
 
 - Den im Home-Hero eingeführten CTA „E-Mail schreiben“ auch in allen sieben

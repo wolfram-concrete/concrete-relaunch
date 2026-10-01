@@ -1,5 +1,11 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 01.10.2026
+
+- Im System360-Case wurde das Visitenkartenmotiv durch das aktualisierte Mockup
+  mit den neuen Unternehmens- und Kontaktdaten ersetzt. Das Asset liegt
+  weboptimiert als WebP in unverändertem Seitenverhältnis vor.
+
 ## Aktualisierung · 28.09.2026
 
 - Das abschließende Anfrage-Modul bietet jetzt auf allen betroffenen Seiten
