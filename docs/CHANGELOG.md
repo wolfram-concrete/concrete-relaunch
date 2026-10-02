@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 02.10.2026 – SalesViewer-Trackingendpunkt repariert
+
+- Ausfall seit dem 29.09. technisch reproduziert: Der bislang vom
+  SalesViewer-Dashboard ausgegebene XHR-Endpunkt liefert nur noch eine
+  Weiterleitung auf HTML und scheitert anschließend an CORS; dadurch wurde kein
+  Tracking-Skript mehr ausgeführt.
+- SalesViewer auf den aktuell von der offiziellen GitBook-Integration genutzten
+  Script-Endpunkt `slsnlytcs.com/stm.js` umgestellt; Account-ID, Produktionshost
+  und bannerunabhängige Ladebedingung bleiben unverändert.
+- Consent-Gauntlet erweitert: Der Test verlangt jetzt einen exakt einmaligen
+  Scriptabruf und dessen tatsächliche Ausführung, statt nur irgendeinen Request
+  an eine SalesViewer-Domain zu zählen.
+- Separaten Live-Gauntlet ergänzt, der Status, JavaScript-Content-Type und den
+  SalesViewer-Antwortcode auf der produktiven Website prüft.
+
 ## 01.10.2026 – Aktualisiertes System360-Visitenkartenmockup
 
 - Das Visitenkartenmotiv im System360-Case gegen das aktualisierte Mockup mit

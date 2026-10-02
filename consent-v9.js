@@ -7,6 +7,7 @@
   var MAX_AGE_DAYS = 180;
   var GTM_ID = "GTM-N8223FX";
   var SALESVIEWER_ACCOUNT_ID = "o9H9o8a1U5l3";
+  var SALESVIEWER_SCRIPT_ORIGIN = "https://slsnlytcs.com";
   var SORTLIST_RADAR_SETTINGS = {
     cdn: "collector.sortlist.com",
     apiEndpoint: "radar.sortlist.com",
@@ -155,38 +156,13 @@
   function loadSalesViewer() {
     if (!isProductionTrackingHost() || salesViewerLoaded) return;
     salesViewerLoaded = true;
-    (function (s, a, l, e, sv, i, ew, er) {
-      try {
-        a = s[a] || s[l] || function () { throw "no_xhr"; };
-        sv = i = "https://salesviewer.org";
-        ew = function (x) {
-          s = new Image();
-          s.src = "https://salesviewer.org/tle.gif?sva=" + e +
-            "&u=" + encodeURIComponent(window.location) + "&e=" + encodeURIComponent(x);
-        };
-        l = s.SV_XHR = function (d) {
-          er = new a();
-          er.onerror = function () {
-            if (sv !== i) return ew("load_err");
-            sv = "https://www.salesviewer.com/t";
-            window.setTimeout(l.bind(null, d), 0);
-          };
-          er.onload = function () {
-            (s.execScript || s.eval).call(er, er.responseText);
-          };
-          er.open("POST", sv, true);
-          er.withCredentials = true;
-          er.send(d);
-          return er;
-        };
-        l(
-          "h_json=" + Number("JSON" in s && typeof JSON.parse !== "undefined") +
-          "&h_wc=1&h_event=" + Number("addEventListener" in s) + "&sva=" + e
-        );
-      } catch (x) {
-        ew(x);
-      }
-    })(window, "XDomainRequest", "XMLHttpRequest", SALESVIEWER_ACCOUNT_ID);
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = SALESVIEWER_SCRIPT_ORIGIN + "/stm.js?id=" + encodeURIComponent(SALESVIEWER_ACCOUNT_ID);
+    script.referrerPolicy = "no-referrer-when-downgrade";
+    script.setAttribute("data-concrete-tracking", "salesviewer");
+    script.addEventListener("error", function () { salesViewerLoaded = false; });
+    document.head.appendChild(script);
   }
 
   function loadSortlistRadar(consent) {

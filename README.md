@@ -949,6 +949,12 @@ auf dem kanonischen Produktionshost `www.concrete-designs.de`. GTM bleibt an ein
 aktive Statistik- oder Marketingauswahl gebunden. Lokale Entwicklungsserver und
 Vercel-Previews erzeugen deshalb keine Clarity-, Analytics-, Ads- oder
 SalesViewer- oder Radar-Sitzungen. Das schützt die operative Auswertung vor Testtraffic.
+Seit dem 02.10.2026 nutzt der zentrale Loader den aktuellen Script-Endpunkt
+`slsnlytcs.com/stm.js`. Der zuvor vom SalesViewer-Dashboard ausgegebene
+Legacy-XHR-Endpunkt leitete auf eine HTML-Seite um und wurde dadurch im Browser
+per CORS blockiert. `tools/salesviewer-live-gauntlet.cjs` prüft deshalb nicht nur,
+dass ein Request entsteht, sondern auch HTTP-Status, JavaScript-Content-Type und
+den SalesViewer-Fehlercode der produktiven Antwort.
 Sortlist Radar ist seit `consent-v8.js` mit dem Profil `roNBkiXpHEc` auf allen
 131 Sitemap-Seiten vorbereitet. Das Radar-Script startet ausschließlich auf dem
 kanonischen Produktionshost und erst nach Einwilligung in „Marketing & externe

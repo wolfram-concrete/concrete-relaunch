@@ -31,6 +31,9 @@ async function fixture({hero=false,stored=null,viewport={width:1440,height:1000}
       if(url.pathname.startsWith('/fonts/')) return route.fulfill({body:fs.readFileSync(path.join(root,url.pathname))});
       return route.fulfill({contentType:'text/html',body:`<!doctype html><html lang="de" ${hero?'data-hero-intro-state="waiting"':''}><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/site.css"><script src="/consent-v9.js"></script></head><body><main><h1>CONCRETE</h1><a href="/next">Weiter</a>${hero?'<div data-hero></div>':''}</main><div id="already-inert" inert>Vorher gesperrt</div><footer><button data-consent-manage>Cookie-Einstellungen</button></footer></body></html>`});
     }
+    if(url.hostname==='slsnlytcs.com'&&url.pathname==='/stm.js') {
+      return route.fulfill({status:200,contentType:'application/javascript',body:'window.__salesViewerExecuted=(window.__salesViewerExecuted||0)+1;'});
+    }
     // Preserve tracking loader requests but never transfer visitor/lead data.
     return route.fulfill({status:200,contentType:'application/javascript',body:''});
   });
@@ -39,7 +42,7 @@ async function fixture({hero=false,stored=null,viewport={width:1440,height:1000}
   return {page,context,requests};
 }
 function ok(name) { checks++; console.log('PASS '+name); }
-async function state(page) { return page.evaluate(key=>({saved:JSON.parse(localStorage.getItem(key)),updates:window.dataLayer.filter(x=>x[0]==='consent').map(x=>[...x]),ga:window.BorlabsCookie.checkCookieConsent('google-analytics'),ads:window.BorlabsCookie.Consents.hasConsent('google-ads'),clarity:window.__clarity,inert:document.querySelector('main').inert}),key); }
+async function state(page) { return page.evaluate(key=>({saved:JSON.parse(localStorage.getItem(key)),updates:window.dataLayer.filter(x=>x[0]==='consent').map(x=>[...x]),ga:window.BorlabsCookie.checkCookieConsent('google-analytics'),ads:window.BorlabsCookie.Consents.hasConsent('google-ads'),clarity:window.__clarity,inert:document.querySelector('main').inert,salesViewerExecuted:window.__salesViewerExecuted||0,salesViewerScripts:document.querySelectorAll('script[data-concrete-tracking="salesviewer"]').length}),key); }
 async function run(){
  browser=await chromium.launch({headless:true});
  try {
@@ -55,7 +58,12 @@ async function run(){
    assert.equal((await state(page)).inert,true);
    assert.equal(requests.some(x=>x.includes('googletagmanager.com')),false);
    assert.equal(requests.some(x=>x.includes('collector.sortlist.com')),false);
-   assert.equal(requests.some(x=>x.includes('salesviewer.org')),true);
+   await page.waitForFunction(()=>window.__salesViewerExecuted===1);
+   const initialState=await state(page);
+   assert.equal(initialState.salesViewerExecuted,1);
+   assert.equal(initialState.salesViewerScripts,1);
+   assert.equal(requests.filter(x=>x.includes('slsnlytcs.com/stm.js?id=')).length,1);
+   assert.equal(requests.some(x=>x.includes('salesviewer.org')),false);
    if(name==='accept') await page.click('[data-consent-banner] [data-consent-accept]');
    else if(name==='reject') await page.locator('[data-consent-banner] [data-consent-reject]').click();
    else {await page.click('[data-consent-settings]');await page.locator(statistics?'[data-consent-statistics]':'[data-consent-marketing]').check();await page.click('[data-consent-save]');}
