@@ -2,6 +2,9 @@
 
 ## 04.10.2026 – Clarity-basierter Conversion-Pass
 
+- PARQ Energy als fachlich unpassende Website-Referenz aus den Projektlisten
+  von „Website Design“ und „Website Konzept“ entfernt; Karte und zusätzlicher
+  Textlink entfallen, die übrigen Website-Cases bleiben unverändert.
 - Die beiden zentralen SEA-Einstiege führen im Hero klarer zu ihren bereits
   vorhandenen Projektsektionen und zur Projekt-Einordnung. Ein zunächst
   ergänzter früher Case-Block wurde nach Review wieder entfernt, damit sich

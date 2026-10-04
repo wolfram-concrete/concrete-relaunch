@@ -2,6 +2,9 @@
 
 ## Aktualisierung · 04.10.2026
 
+- PARQ Energy wurde aus den fachlichen Projektlisten der Leistungsseiten
+  „Website Design“ und „Website Konzept“ entfernt. Die übrigen
+  Website-Referenzen und das globale Projektmenü bleiben unverändert.
 - Clarity-basierter Conversion-Pass für die zentralen SEA- und Anfragepfade:
   Die Einstiegsseiten „Branding- & Designagentur Hamburg“ und „Website Design“
   führen im Hero klarer zu ihren bestehenden Projektsektionen und zur
