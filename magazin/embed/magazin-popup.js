@@ -10,7 +10,7 @@
  *   data-tab="false"          kein seitlicher Magazin-Button nach dem Schließen (mobil ohnehin aus)
  *   Links mit data-cbm-open öffnen das Pop-up (z. B. Magazin-Eintrag im mobilen Menü)
  *   data-cooldown="session"  einmal pro Website-Besuch (Standard) – oder Zahl = Tage bis zur erneuten Anzeige
- *   data-exclude="kontakt|datenschutz|impressum"   Pfade ohne Pop-up (RegExp)
+ *   data-exclude="kontakt|datenschutz|impressum|erstgespraech"   Pfade ohne automatisches Pop-up (RegExp)
  *   data-autostart="false"   kein Scroll-Auslöser – nur per CBMPopup.open()
  *   data-theme="paper" | "coral-l"   alternativer Hintergrund der rechten Hälfte (Standard: Paper Deep #ece6da)
  *
@@ -34,13 +34,29 @@
   const PER_VISIT = !opt.cooldown || opt.cooldown === "session";
   const COOLDOWN = PER_VISIT ? 0 : parseFloat(opt.cooldown) * 864e5;
   const seenStore = PER_VISIT ? sessionStorage : localStorage;   // pro Besuch vs. über Tage
-  const EXCLUDE = new RegExp(opt.exclude || "kontakt|datenschutz|impressum", "i");
+  const EXCLUDE = new RegExp(opt.exclude || "kontakt|datenschutz|impressum|erstgespraech", "i");
   const AUTOSTART = opt.autostart !== "false";
   const KEY = "cbm_popup_seen";
   const THEME = opt.theme || "";              // "", "paper", "sand", "coral-l"
   const CONSENT = "Ich bin einverstanden, dass CONCRETE mich per E-Mail zu Themen rund um Marke und Brandbuilding kontaktiert. Diese Einwilligung kann ich jederzeit widerrufen.";   // Wortlaut wird mit dem Lead gespeichert
   const LEAD_ENDPOINT = opt.endpoint || "https://script.google.com/macros/s/AKfycbz99y9XNuqNqzUdn3V0yvEqoR9G_dSF1zA_a28CBPz7A9I4g_m1JnlE9R9-f7z8973k/exec";   // Apps Script „CONCRETE Magazin Leads“ → Google Sheet
   const a = p => BASE + p;
+
+  // Paid-Traffic wird für die gesamte Sitzung von automatischen Magazin-
+  // Unterbrechungen ausgenommen. Der manuelle Einstieg im mobilen Menü bleibt
+  // verfügbar. So geht die Kennzeichnung auch nach internen Seitenwechseln
+  // nicht verloren.
+  const PAID_KEY = "cbm_paid_visit";
+  let paidVisit = false;
+  try {
+    const query = new URLSearchParams(location.search);
+    const medium = (query.get("utm_medium") || "").toLowerCase();
+    const hasPaidMarker = ["gclid", "dclid", "gbraid", "wbraid", "msclkid"].some(key => query.has(key)) ||
+      /^(cpc|ppc|paid|paid-search|paid_social|display)$/.test(medium);
+    if (hasPaidMarker) sessionStorage.setItem(PAID_KEY, "1");
+    paidVisit = sessionStorage.getItem(PAID_KEY) === "1";
+  } catch {}
+  const autoBlocked = () => paidVisit || EXCLUDE.test(location.pathname);
 
   // Schriften müssen im Dokument registriert sein (nicht im Shadow Root)
   const fonts = document.createElement("style");
@@ -480,7 +496,7 @@ a{color:inherit;text-decoration:none}
   const TAB_OFF = "cbm_tab_off";
   function showTab() {
     let off = false; try { off = sessionStorage.getItem(TAB_OFF) === "1"; } catch {}
-    if (!TAB || off || EXCLUDE.test(location.pathname)) return;
+    if (!TAB || off || autoBlocked()) return;
     $(".tabw").hidden = false;
     try { seenStore.setItem(TAB_KEY, "1"); } catch {}
   }
@@ -508,7 +524,7 @@ a{color:inherit;text-decoration:none}
       recently = PER_VISIT ? seen > 0 : Date.now() - seen < COOLDOWN;
       tabBefore = seenStore.getItem(TAB_KEY) === "1";
     } catch {}
-    if (EXCLUDE.test(location.pathname)) return;
+    if (autoBlocked()) return;
     if (recently || tabBefore) showTab();                  // schon gesehen → nur der seitliche Button
     if (!AUTOSTART || recently) return;
     // 3. Section unter dem Hero; ohne Hero: Scrolltiefe

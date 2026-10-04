@@ -1,5 +1,31 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 04.10.2026 – Clarity-basierter Conversion-Pass
+
+- Die beiden zentralen SEA-Einstiege führen im Hero klarer zu ihren bereits
+  vorhandenen Projektsektionen und zur Projekt-Einordnung. Ein zunächst
+  ergänzter früher Case-Block wurde nach Review wieder entfernt, damit sich
+  die Projektbeweise auf den Seiten nicht doppeln. Auf Branding Hamburg wurde
+  außerdem der frühere Workshop-Bildblock zwischen Hero und Abschnitt 01
+  entfernt; die vollständige Projektliste nach Abschnitt 01 bleibt bestehen.
+- Hero-Höhen und Website-Design-Copy verdichtet, damit Nutzen und nächste
+  Handlung auf Mobile früher sichtbar werden.
+- Leistungsübersicht visuell verkürzt: fünf Leistungen pro Phase bleiben
+  direkt sichtbar, alle weiteren bleiben per zugänglichem `details`-Element
+  erreichbar. Den frühen Projekt-Einordnungs-CTA hinter Phase 01 verschoben.
+- Erstgespräch auf eine kompakte Projekt-Einordnung umgestellt:
+  „Freie Termine ansehen“ ist die Primäraktion, „Projekt per E-Mail schildern“
+  und Telefon bleiben als weitere direkte Kontaktwege sichtbar. Die zunächst
+  ergänzten Hinweise „Kostenlos“, „Unverbindlich“ und „Keine Vorbereitung
+  nötig“ wurden nach Review wieder entfernt.
+- Magazin-Autostart für `/erstgespraech` sowie für Sitzungen mit Google-/Bing-
+  Ads-Kennung oder Paid-UTM deaktiviert. Der manuelle Aufruf bleibt möglich.
+- Consent-gebundene Clarity-Custom-Events für Landingpage-Views, Projektklicks,
+  Erstgespräch, Calendly, E-Mail, Telefon und aufgeklappte Leistungslisten
+  ergänzt. Im Clarity-Dashboard zwei URL-Trichter für Branding Hamburg bzw.
+  Website Design über `/projekte` bis `/erstgespraech` angelegt. Cache-Buster
+  und Preflight-Erwartung auf `v=182` angehoben.
+
 ## 02.10.2026 – SalesViewer-Trackingendpunkt repariert
 
 - Ausfall seit dem 29.09. technisch reproduziert: Der bislang vom

@@ -23,7 +23,7 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=181">
+<link rel="stylesheet" href="site.css?v=182">
 <style>
 .page-head{padding-block:clamp(96px,10vw,136px) clamp(38px,4vw,56px);position:relative}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(38px,6.8vw,104px);line-height:.9;margin:0;max-width:16ch;font-kerning:normal}
@@ -69,6 +69,12 @@
 .svc-list a::after{content:"";flex:none;width:.5em;height:.64em;background:currentColor;-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain;opacity:.55;transition:transform .25s ease,opacity .25s ease}
 .svc-list a:hover,.svc-list a:focus-visible{color:var(--coral)}
 .svc-list a:hover::after,.svc-list a:focus-visible::after{opacity:1;transform:translateX(4px)}
+.phase-services-more{margin-top:12px;border-bottom:1px solid var(--rule)}
+.phase-services-more summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;font-size:14px;font-weight:700}
+.phase-services-more summary::-webkit-details-marker{display:none}
+.phase-services-more summary::after{content:"+";font-family:"Arame";font-size:22px;color:var(--coral)}
+.phase-services-more[open] summary::after{content:"−"}
+.phase-services-more .svc-list{margin:0 0 var(--s3)}
 @media(max-width:700px){.svc-list{columns:1}}
 .decision-band{position:relative;z-index:1;isolation:isolate;padding-block:0;background:transparent;border-bottom:0}
 .decision-band::before{display:none}
@@ -236,7 +242,7 @@
   <div class="rv">
     <h2>Verstehen:</h2>
     <p style="max-width:62ch">Bevor wir gestalten, schaffen wir Klarheit. Wir analysieren Märkte, Zielgruppen und Wettbewerber, hören Mitarbeitenden wie Kund:innen zu und machen Trends sichtbar. So legen wir das strategische Fundament, präzise, fundiert und zukunftsorientiert.</p>
-    <ul class="svc-list"><li><a href="zielgruppen-markt-und-wettbewerberanalyse">Zielgruppenanalyse</a></li><li><a href="zielgruppen-markt-und-wettbewerberanalyse">Markt-, Branchen- und Wettbewerbsanalyse</a></li><li><a href="social-listening">Social Listening & Trend Research</a></li><li><a href="kunden-und-mitarbeiterbefragungen">Kunden- & Mitarbeiterbefragungen</a></li><li><a href="marken-check">Marken-Check (Audit bestehender Markenauftritte)</a></li><li><a href="brand-workshop">Brand-Workshop (Status quo, Erwartungen, Ziele)</a></li><li><a href="ki-tools-analyse-strategie">KI-gestützte Analyse- & Strategietools</a></li><li><a href="markenpositionierung-brand-story">Markenpositionierung & Brand Story</a></li><li><a href="brandvision">Markenstrategie (Mission, Vision, Werte)</a></li><li><a href="employer-branding">Employer Branding & interne Kommunikation, Status quo & Insights</a></li></ul>
+    <ul class="svc-list" data-collapsible-list><li><a href="zielgruppen-markt-und-wettbewerberanalyse">Zielgruppenanalyse</a></li><li><a href="zielgruppen-markt-und-wettbewerberanalyse">Markt-, Branchen- und Wettbewerbsanalyse</a></li><li><a href="social-listening">Social Listening & Trend Research</a></li><li><a href="kunden-und-mitarbeiterbefragungen">Kunden- & Mitarbeiterbefragungen</a></li><li><a href="marken-check">Marken-Check (Audit bestehender Markenauftritte)</a></li><li><a href="brand-workshop">Brand-Workshop (Status quo, Erwartungen, Ziele)</a></li><li><a href="ki-tools-analyse-strategie">KI-gestützte Analyse- & Strategietools</a></li><li><a href="markenpositionierung-brand-story">Markenpositionierung & Brand Story</a></li><li><a href="brandvision">Markenstrategie (Mission, Vision, Werte)</a></li><li><a href="employer-branding">Employer Branding & interne Kommunikation, Status quo & Insights</a></li></ul>
     <p style="margin-top:var(--s3);font-weight:700">Analyse und Strategie, wir schaffen die Basis.</p>
     <a class="link-arrow" href="phase-verstehen">Mehr zur Phase Verstehen</a>
     <p class="eyebrow" style="margin:var(--s5) 0 var(--s2)">Persönlich erklärt</p>
@@ -244,22 +250,7 @@
       <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/verstehen.webp" width="1280" height="720" alt="Standbild: Warum wir mit dem Verstehen beginnen" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
       <span class="vteaser__meta"><span>Warum wir mit dem Verstehen beginnen</span><span class="t">Video</span></span>
     </button>
-    <a class="phase-case rv-media" href="case-conlivo"><span class="phase-case__img"><img src="assets/cases/conlivo/shooting-4.jpg" alt="Conlivo, Beratungsgespräch am Tisch" loading="lazy" width="1920" height="1280" decoding="async"></span><span class="phase-case__link">Conlivo <i>Zum Projekt</i></span></a>
-  </div>
-</div></section><section class="sec sec--line" id="definieren" data-screen-label="Phase Definieren"><div class="container cols">
-  <div><span class="num rv">02</span></div>
-  <div class="rv">
-    <h2>Definieren:</h2>
-    <p style="max-width:62ch">Aus Strategie wird Gestaltung. Wir entwickeln Identität, Sprache und visuelle Systeme, die Marken unverwechselbar machen, vom Logo bis zur Raumwelt, vom Key Visual bis zur Website. Klar, konsistent und mit Konzept.</p>
-    <ul class="svc-list"><li><a href="design-kick-off-fuer-corporate-design">Design Kick-off für Corporate Design</a></li><li><a href="corporate-design">Corporate Design (Logo, Typografie, Farbwelt, Systeme)</a></li><li><a href="kampagnen-design-key-visuals">Kampagnen-Design (Leitmotive, Key Visuals)</a></li><li><a href="website-design">Website Design</a></li><li><a href="namensentwicklung">Namensentwicklung (Produkte, Marken, Programme)</a></li><li><a href="retail-design">Retail Design (Messe, POS, Raumgestaltung), konzeptionelle Vision</a></li><li><a href="package-design">Package Design</a></li><li><a href="bildwelten-artworks-visual-looks">Artworks & Visual Looks, Moodboards, Key Motive</a></li><li><a href="icons-und-illustration-sets">Icon- & Illustration-Sets, Stilfindung, Bildsprache</a></li><li><a href="employer-branding">Employer Branding & interne Kommunikation, Leitidee & Konzept</a></li><li><a href="kommunikationsstrategie">Kommunikationsstrategie</a></li></ul>
-    <p style="margin-top:var(--s3);font-weight:700">Markenvision & Design, wir machen die Marke spürbar.</p>
-    <a class="link-arrow" href="phase-definieren">Mehr zur Phase Definieren</a>
-    <p class="eyebrow" style="margin:var(--s5) 0 var(--s2)">Persönlich erklärt</p>
-    <button class="vteaser rv" type="button" data-vteaser data-mux-playback-id="801pPAOZPYyW2MQRBie5ncvXHT76Te2fnE1EtPEo7WhM" data-video-title="Warum gutes Design keine Geschmacksfrage ist" style="margin-top:0">
-      <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/definieren.webp" width="1280" height="720" alt="Standbild: Wie aus Strategie Gestaltung wird" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
-      <span class="vteaser__meta"><span>Wie aus Strategie Gestaltung wird</span><span class="t">Video</span></span>
-    </button>
-    <a class="phase-case rv-media" href="case-nextbed"><span class="phase-case__img"><img src="assets/cases/nextbed/render-bett-quer.jpg" alt="NextBed, 3D-Rendering des Schlafsystems auf Gelb" loading="lazy" width="2400" height="1028" decoding="async"></span><span class="phase-case__link">NextBed <i>Zum Projekt</i></span></a>
+    <a class="phase-case rv-media" data-clarity-event="project_view" href="case-conlivo"><span class="phase-case__img"><img src="assets/cases/conlivo/shooting-4.jpg" alt="Conlivo, Beratungsgespräch am Tisch" loading="lazy" width="1920" height="1280" decoding="async"></span><span class="phase-case__link">Conlivo <i>Zum Projekt</i></span></a>
   </div>
 </div></section>
 <aside class="decision-band" aria-labelledby="decision-title" data-screen-label="Projekt einordnen">
@@ -267,8 +258,8 @@
     <div class="decision-band__copy">
       <p class="eyebrow">Noch nicht sicher?</p>
       <h2 id="decision-title">Lasst uns euer Projekt gemeinsam einordnen.</h2>
-      <p class="decision-band__text">Im Erstgespräch klären wir, wo ihr gerade steht, was wirklich gebraucht wird und welcher Einstieg sinnvoll ist.</p>
-      <a class="button button--solid" href="erstgespraech" data-track-cta="leistungen-mitte">Projekt einordnen</a>
+      <p class="decision-band__text">Im kostenlosen Erstgespräch klären wir unverbindlich, wo ihr gerade steht und welcher Einstieg sinnvoll ist.</p>
+      <a class="button button--solid" href="erstgespraech" data-track-cta="leistungen-frueh" data-clarity-event="first_call_open">Projekt einordnen</a>
     </div>
     <figure class="decision-band__portrait">
       <img src="assets/team/wolfram-portrait.jpg" alt="Wolfram Stratmann" width="1095" height="1600" loading="lazy" decoding="async">
@@ -276,12 +267,28 @@
     </figure>
   </div>
 </aside>
+<section class="sec sec--line" id="definieren" data-screen-label="Phase Definieren"><div class="container cols">
+  <div><span class="num rv">02</span></div>
+  <div class="rv">
+    <h2>Definieren:</h2>
+    <p style="max-width:62ch">Aus Strategie wird Gestaltung. Wir entwickeln Identität, Sprache und visuelle Systeme, die Marken unverwechselbar machen, vom Logo bis zur Raumwelt, vom Key Visual bis zur Website. Klar, konsistent und mit Konzept.</p>
+    <ul class="svc-list" data-collapsible-list><li><a href="design-kick-off-fuer-corporate-design">Design Kick-off für Corporate Design</a></li><li><a href="corporate-design">Corporate Design (Logo, Typografie, Farbwelt, Systeme)</a></li><li><a href="kampagnen-design-key-visuals">Kampagnen-Design (Leitmotive, Key Visuals)</a></li><li><a href="website-design">Website Design</a></li><li><a href="namensentwicklung">Namensentwicklung (Produkte, Marken, Programme)</a></li><li><a href="retail-design">Retail Design (Messe, POS, Raumgestaltung), konzeptionelle Vision</a></li><li><a href="package-design">Package Design</a></li><li><a href="bildwelten-artworks-visual-looks">Artworks & Visual Looks, Moodboards, Key Motive</a></li><li><a href="icons-und-illustration-sets">Icon- & Illustration-Sets, Stilfindung, Bildsprache</a></li><li><a href="employer-branding">Employer Branding & interne Kommunikation, Leitidee & Konzept</a></li><li><a href="kommunikationsstrategie">Kommunikationsstrategie</a></li></ul>
+    <p style="margin-top:var(--s3);font-weight:700">Markenvision & Design, wir machen die Marke spürbar.</p>
+    <a class="link-arrow" href="phase-definieren">Mehr zur Phase Definieren</a>
+    <p class="eyebrow" style="margin:var(--s5) 0 var(--s2)">Persönlich erklärt</p>
+    <button class="vteaser rv" type="button" data-vteaser data-mux-playback-id="801pPAOZPYyW2MQRBie5ncvXHT76Te2fnE1EtPEo7WhM" data-video-title="Warum gutes Design keine Geschmacksfrage ist" style="margin-top:0">
+      <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/definieren.webp" width="1280" height="720" alt="Standbild: Wie aus Strategie Gestaltung wird" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
+      <span class="vteaser__meta"><span>Wie aus Strategie Gestaltung wird</span><span class="t">Video</span></span>
+    </button>
+    <a class="phase-case rv-media" data-clarity-event="project_view" href="case-nextbed"><span class="phase-case__img"><img src="assets/cases/nextbed/render-bett-quer.jpg" alt="NextBed, 3D-Rendering des Schlafsystems auf Gelb" loading="lazy" width="2400" height="1028" decoding="async"></span><span class="phase-case__link">NextBed <i>Zum Projekt</i></span></a>
+  </div>
+</div></section>
 <section class="sec sec--line" id="umsetzen" data-screen-label="Phase Umsetzen"><div class="container cols">
   <div><span class="num rv">03</span></div>
   <div class="rv">
     <h2>Umsetzen:</h2>
     <p style="max-width:62ch">Wir bringen Marken auf die Straße, und auf jede Bühne. Von fein ausgearbeiteten Designelementen bis zu Content, Kampagnen und digitaler Umsetzung machen wir Konzepte erlebbar. Präzise, konsistent und in allen Kanälen wirksam.</p>
-    <ul class="svc-list"><li><a href="reinzeichnung">Reinzeichnung & detaillierte Ausarbeitung aller Designelemente</a></li><li><a href="corporate-design">Finalisierung Corporate Design Manual</a></li><li><a href="headlines-und-textkonzept">Headlines & Textkonzepte, Tonality, Leitbotschaften</a></li><li><a href="website-konzept">Umsetzung Website (Design-to-Code, Content-Integration, Testing)</a></li><li><a href="website-modernisieren">Website-Modernisierung &amp; CMS-Migration</a></li><li><a href="fotoproduktion">Content-Produktion (Foto, Video, Animationen)</a></li><li><a href="retail-design">Retail Design (Umsetzung von Messemodulen, POS etc.)</a></li><li><a href="bildwelten-artworks-visual-looks">Artworks & Visual Looks (Serienproduktion, Kampagnen-Assets)</a></li><li><a href="icons-und-illustration-sets">Icon- & Illustration-Sets (fertig ausgearbeitete Sets)</a></li><li><a href="animationen-motion-design">Motion Design & Animation</a></li><li><a href="kommunikationsstrategie">Kommunikationskonzept (intern & extern, Kampagnen-Roadmap)</a></li><li><a href="internes-rollout">Employer Branding & interne Kommunikation, Maßnahmen & Kanäle</a></li><li><a href="kampagnenentwicklung">Kampagnenentwicklung</a></li><li><a href="kampagnen-design-key-visuals">Kampagnen-Design &amp; Key Visuals</a></li></ul>
+    <ul class="svc-list" data-collapsible-list><li><a href="reinzeichnung">Reinzeichnung & detaillierte Ausarbeitung aller Designelemente</a></li><li><a href="corporate-design">Finalisierung Corporate Design Manual</a></li><li><a href="headlines-und-textkonzept">Headlines & Textkonzepte, Tonality, Leitbotschaften</a></li><li><a href="website-konzept">Umsetzung Website (Design-to-Code, Content-Integration, Testing)</a></li><li><a href="website-modernisieren">Website-Modernisierung &amp; CMS-Migration</a></li><li><a href="fotoproduktion">Content-Produktion (Foto, Video, Animationen)</a></li><li><a href="retail-design">Retail Design (Umsetzung von Messemodulen, POS etc.)</a></li><li><a href="bildwelten-artworks-visual-looks">Artworks & Visual Looks (Serienproduktion, Kampagnen-Assets)</a></li><li><a href="icons-und-illustration-sets">Icon- & Illustration-Sets (fertig ausgearbeitete Sets)</a></li><li><a href="animationen-motion-design">Motion Design & Animation</a></li><li><a href="kommunikationsstrategie">Kommunikationskonzept (intern & extern, Kampagnen-Roadmap)</a></li><li><a href="internes-rollout">Employer Branding & interne Kommunikation, Maßnahmen & Kanäle</a></li><li><a href="kampagnenentwicklung">Kampagnenentwicklung</a></li><li><a href="kampagnen-design-key-visuals">Kampagnen-Design &amp; Key Visuals</a></li></ul>
     <p style="margin-top:var(--s3);font-weight:700">Produktion & Realisierung, wir bauen die Marke.</p>
     <a class="link-arrow" href="phase-umsetzen">Mehr zur Phase Umsetzen</a>
     <p class="eyebrow" style="margin:var(--s5) 0 var(--s2)">Persönlich erklärt</p>
@@ -289,14 +296,14 @@
       <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/umsetzen-messbar.webp" width="1280" height="720" alt="Standbild: Was in der Umsetzung zählt" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
       <span class="vteaser__meta"><span>Was in der Umsetzung zählt</span><span class="t">Video</span></span>
     </button>
-    <a class="phase-case rv-media" href="case-bgf"><span class="phase-case__img"><img src="assets/cases/bgf/businesscards.jpg" alt="BGF+ Architekten, Visitenkarten" loading="lazy" width="1600" height="1200" decoding="async"></span><span class="phase-case__link">BGF+ Architekten <i>Zum Projekt</i></span></a>
+    <a class="phase-case rv-media" data-clarity-event="project_view" href="case-bgf"><span class="phase-case__img"><img src="assets/cases/bgf/businesscards.jpg" alt="BGF+ Architekten, Visitenkarten" loading="lazy" width="1600" height="1200" decoding="async"></span><span class="phase-case__link">BGF+ Architekten <i>Zum Projekt</i></span></a>
   </div>
 </div></section><section class="sec sec--line" id="begleiten" data-screen-label="Phase Begleiten"><div class="container cols">
   <div><span class="num rv">04</span></div>
   <div class="rv">
     <h2>Begleiten:</h2>
     <p style="max-width:62ch">Der Launch ist kein Endpunkt. Wir orchestrieren die nächsten Schritte, sorgen für eine stimmige Markenführung und stellen sicher, dass jede Maßnahme im Sinne der Marke wirkt, persönlich, verlässlich und mit Blick aufs große Ganze.</p>
-    <ul class="svc-list"><li><a href="internes-rollout">Interne Kommunikation (Mitarbeiter-Aktivierung, Change)</a></li><li><a href="employer-branding">Employer-Branding-Kommunikation</a></li><li><a href="social-media">Social Media (Strategie, Content, Community)</a></li><li><a href="seo-und-ki-search">SEO-/SEA-Begleitung für Marken- und Websiteprojekte</a></li><li><a href="kampagnenentwicklung">Kampagnenbegleitung für Markenkommunikation</a></li><li><a href="evaluierung-optimierung">Evaluierung & Optimierung</a></li></ul>
+    <ul class="svc-list" data-collapsible-list><li><a href="internes-rollout">Interne Kommunikation (Mitarbeiter-Aktivierung, Change)</a></li><li><a href="employer-branding">Employer-Branding-Kommunikation</a></li><li><a href="social-media">Social Media (Strategie, Content, Community)</a></li><li><a href="seo-und-ki-search">SEO-/SEA-Begleitung für Marken- und Websiteprojekte</a></li><li><a href="kampagnenentwicklung">Kampagnenbegleitung für Markenkommunikation</a></li><li><a href="evaluierung-optimierung">Evaluierung & Optimierung</a></li></ul>
     <p style="margin-top:var(--s3);font-weight:700">Aktivierung & Weiterentwicklung, wir sorgen für Wirkung im Alltag.</p>
     <a class="link-arrow" href="phase-begleiten">Mehr zur Phase Begleiten</a>
     <p class="eyebrow" style="margin:var(--s5) 0 var(--s2)">Persönlich erklärt</p>
@@ -304,7 +311,7 @@
       <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/begleiten.webp" width="1280" height="720" alt="Standbild: Warum Marken Begleitung brauchen" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
       <span class="vteaser__meta"><span>Warum Marken Begleitung brauchen</span><span class="t">Video</span></span>
     </button>
-    <a class="phase-case rv-media" href="case-wackelzahn"><span class="phase-case__img"><img src="assets/cases/wackelzahn/patienten.jpg" alt="Wackelzahn, Empfang der Kinderzahnarztpraxis" loading="lazy" width="1920" height="1277" decoding="async"></span><span class="phase-case__link">Wackelzahn <i>Zum Projekt</i></span></a>
+    <a class="phase-case rv-media" data-clarity-event="project_view" href="case-wackelzahn"><span class="phase-case__img"><img src="assets/cases/wackelzahn/patienten.jpg" alt="Wackelzahn, Empfang der Kinderzahnarztpraxis" loading="lazy" width="1920" height="1277" decoding="async"></span><span class="phase-case__link">Wackelzahn <i>Zum Projekt</i></span></a>
   </div>
 </div></section><section class="sec sec--line" data-screen-label="Prozess"><div class="container process-layout">
 <h2 class="process-layout__title rv">Warum ein klarer Prozess so wichtig ist.</h2>
@@ -425,6 +432,6 @@
   </div>
 </footer>
 <script src="values-stack-v1.js"></script>
-<script src="site.js?v=181"></script>
+<script src="site.js?v=182"></script>
 </body>
 </html>

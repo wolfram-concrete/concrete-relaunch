@@ -1,5 +1,31 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 04.10.2026
+
+- Clarity-basierter Conversion-Pass für die zentralen SEA- und Anfragepfade:
+  Die Einstiegsseiten „Branding- & Designagentur Hamburg“ und „Website Design“
+  führen im Hero klarer zu ihren bestehenden Projektsektionen und zur
+  Projekt-Einordnung. Die vorhandenen Projektbereiche bleiben dabei bewusst
+  die einzigen Case-Strecken der Seiten. Auf Branding Hamburg folgt auf den
+  Hero direkt Abschnitt 01; die vollständige Projektliste bleibt danach
+  erhalten.
+- Die Leistungsübersicht ist kompakter: Pro Phase bleiben fünf direkte
+  Leistungseinstiege sichtbar, weitere Einträge lassen sich vollständig
+  aufklappen. Der Projekt-Einordnungs-CTA steht bereits nach Phase 01.
+- Die Erstgespräch-Seite formuliert den Einstieg kompakt und bietet „Freie
+  Termine ansehen“, „Projekt per E-Mail schildern“ und Telefon als direkt
+  erreichbare Kontaktwege an. Zusätzliche Vertrauens-Badges wurden nach Review
+  bewusst wieder entfernt.
+- Das Magazin-Pop-up unterbricht weder bezahlte Sitzungen noch die
+  Erstgespräch-Seite automatisch. Der manuelle Magazin-Einstieg im mobilen
+  Menü bleibt erhalten.
+- Clarity-Custom-Events bilden Landingpage-Aufruf, Projektinteresse,
+  Erstgespräch-Aufruf sowie Calendly-, E-Mail- und Telefon-Klicks ab. Events
+  werden erst nach Statistik-Einwilligung gesendet. Im Clarity-Projekt
+  „Website CONCRETE“ sind zusätzlich die URL-Trichter „SEA Branding zu
+  Erstgespräch“ und „SEA Website Design zu Erstgespräch“ angelegt. Globaler
+  Cache-Buster: `v=182`.
+
 ## Aktualisierung · 01.10.2026
 
 - Im System360-Case wurde das Visitenkartenmotiv durch das aktualisierte Mockup

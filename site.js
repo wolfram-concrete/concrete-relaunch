@@ -1,5 +1,53 @@
 
 (function(){
+  // Messbare Conversion-Schritte für Microsoft Clarity. `window.clarity`
+  // existiert erst nach Statistik-Einwilligung; bis dahin wird nichts gesendet.
+  function emitClarityEvent(name){
+    if(!name||typeof window.clarity!=="function")return false;
+    window.clarity("event",name);
+    if(Array.isArray(window.dataLayer))window.dataLayer.push({event:"clarity_"+name});
+    return true;
+  }
+  window.CONCRETETrack=emitClarityEvent;
+  document.addEventListener("click",function(e){
+    var target=e.target.closest&&e.target.closest("[data-clarity-event]");
+    if(target)emitClarityEvent(target.getAttribute("data-clarity-event"));
+  });
+  var path=location.pathname.replace(/\.html$/,"").replace(/\/$/,"")||"/";
+  var viewEvent={
+    "/branding-designagentur-hamburg":"landing_branding_view",
+    "/website-design":"landing_website_view",
+    "/website-modernisieren":"landing_modernisierung_view",
+    "/projekte":"projects_view",
+    "/erstgespraech":"first_call_view"
+  }[path];
+  if(viewEvent){
+    var tries=0,viewTimer=setInterval(function(){
+      tries+=1;
+      if(emitClarityEvent(viewEvent)||tries>=20)clearInterval(viewTimer);
+    },250);
+  }
+
+  // Lange Leistungslisten bleiben vollständig im DOM, werden visuell aber auf
+  // die fünf wichtigsten Einstiege verdichtet. Ohne JavaScript ist weiterhin
+  // die komplette Liste sichtbar.
+  document.querySelectorAll("[data-collapsible-list]").forEach(function(list){
+    var items=[].slice.call(list.children);
+    if(items.length<=5)return;
+    var details=document.createElement("details");
+    details.className="phase-services-more";
+    var summary=document.createElement("summary");
+    summary.textContent="Weitere Leistungen dieser Phase anzeigen";
+    var more=document.createElement("ul");
+    more.className="svc-list svc-list--more";
+    items.slice(5).forEach(function(item){more.appendChild(item);});
+    details.appendChild(summary);details.appendChild(more);
+    list.insertAdjacentElement("afterend",details);
+    details.addEventListener("toggle",function(){
+      if(details.open)emitClarityEvent("services_expand");
+    });
+  });
+
   // Das aufwendige Home-Intro nur beim ersten echten Einstieg zeigen.
   // Wer innerhalb derselben Sitzung oder von einer CONCRETE-Unterseite über
   // das Logo zurückkehrt, landet direkt in der fertigen Hero-Darstellung.
