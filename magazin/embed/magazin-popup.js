@@ -8,7 +8,8 @@
  *   data-section="3"          erscheint, sobald die 3. Section unter dem Hero ins Bild kommt
  *   data-trigger="0.45"      Ersatz auf Seiten ohne Hero: Scrolltiefe (0–1)
  *   data-tab="false"          kein seitlicher Magazin-Button nach dem Schließen (mobil ohnehin aus)
- *   Links mit data-cbm-open öffnen das Pop-up (z. B. Magazin-Eintrag im mobilen Menü)
+ *   Nur auf der Startseite aktiv. Dort öffnen Links mit data-cbm-open das Pop-up.
+ *   Auf Unterseiten bleibt der Magazin-Eintrag ein normaler Link zum E-Paper.
  *   data-cooldown="session"  einmal pro Website-Besuch (Standard) – oder Zahl = Tage bis zur erneuten Anzeige
  *   data-exclude="kontakt|datenschutz|impressum|erstgespraech"   Pfade ohne automatisches Pop-up (RegExp)
  *   data-autostart="false"   kein Scroll-Auslöser – nur per CBMPopup.open()
@@ -23,6 +24,8 @@
  */
 (() => {
   if (window.CBMPopup) return;
+  const pagePath = location.pathname.replace(/\/+$/, "");
+  if (pagePath && pagePath !== "/index.html") return;
   const script = document.currentScript;
   const opt = script ? script.dataset : {};
   const BASE = new URL("../", script ? script.src : location.href).href;

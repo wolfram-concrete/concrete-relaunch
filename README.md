@@ -1,5 +1,25 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 13.10.2026
+
+- Christians Porträt auf „Über uns“ wurde durch das neue Shootingmotiv
+  `christian_rosenberger5` ersetzt.
+- Drei der fünf Situationsseiten verwenden in ihrem abschließenden
+  Anfrage-Modul neue Christian-Motive (`14`, `15` und `17`) mit einem je Motiv
+  gesetzten Bildfokus. Zwei Situationsseiten behalten bewusst das bisherige
+  Teamfoto, damit die wiederkehrenden Module nicht vollständig gleich wirken.
+- Das Magazin-Pop-up einschließlich des seitlichen Desktop-Tabs initialisiert
+  ausschließlich auf der Startseite. Auf allen Unterseiten führt der
+  Magazin-Eintrag im mobilen Menü direkt zum E-Paper.
+- Die Home-Hero-Headline berücksichtigt neben der Viewport-Breite auch die
+  verfügbare Höhe. Dadurch bleibt auf flacheren MacBook-Pro-Browserfenstern
+  ein stabiler Abstand zum Header erhalten; hohe Desktop- und Mobile-Layouts
+  bleiben unverändert.
+- Die Anfrage-Module verwenden im Kopf ein 12-Spalten-Raster: Eyebrow und
+  Headline beginnen auf Desktop jeweils eine Rasterspalte weiter innen. Mobile
+  bleibt die bündige einspaltige Anordnung erhalten. Das Home-Modul verwendet
+  nun ebenfalls Christians Shootingmotiv `15`. Globaler Cache-Buster: `v=184`.
+
 ## Aktualisierung · 04.10.2026
 
 - PARQ Energy wurde aus den fachlichen Projektlisten der Leistungsseiten
@@ -768,8 +788,9 @@ Datensparmodus wechseln ohne Intro direkt auf das Posterbild. Die mobilen
 Scroll-Stapel der Situationen und Kompetenzen behalten einen kurzen Nachlauf
 von 72 bis 112 px; der letzte Kompetenzblock bleibt auf natürlicher Höhe.
 Der Coral-CTA „Projekt anfragen" verwendet auf jeder Sitemap-Seite dieselbe
-Komponente mit den beiden Portraits; der technische Preflight prueft diese
-Konsistenz mit.
+Komponente. Auf drei Situationsseiten variiert das Bild mit aktuellen
+Christian-Motiven; die übrigen Seiten behalten das bisherige Teamfoto. Der
+technische Preflight prüft die Strukturkonsistenz der Komponente weiterhin mit.
 
 Das Coral-Anfragemodul am Ende der Startseite ist bewusst kein Formular: Es
 zeigt den Erstgespräch-Videoteaser und führt über „Projekt anfragen“ zur
@@ -913,11 +934,14 @@ Jede Seite lädt direkt nach `consent-v9.js`:
 
     <script src="/magazin/embed/magazin-popup.js" defer></script>
 
-Das Script wird fünf Minuten gecacht; Änderungen sind danach überall aktiv.
+Das Script wird fünf Minuten gecacht, initialisiert Pop-up und Magazin-Tab aber
+nur auf `/` beziehungsweise `/index.html`. Auf Unterseiten bleibt der
+Magazin-Eintrag im mobilen Menü ein normaler Link zum E-Paper. Änderungen am
+Script sind nach Ablauf des Caches überall aktiv.
 Optionen am Script-Tag: `data-section` (Standard 3), `data-cooldown`
 (`session` oder Tage), `data-tab="false"`, `data-autostart="false"`.
-`CBMPopup.open()` öffnet es manuell; Links mit `data-cbm-open` ebenso
-(mobiles Menü). Events im `dataLayer`: `cbm_open`, `cbm_close`, `cbm_click`,
+Auf der Startseite öffnet `CBMPopup.open()` es manuell; Links mit
+`data-cbm-open` ebenso. Events im `dataLayer`: `cbm_open`, `cbm_close`, `cbm_click`,
 `cbm_lead`, `cbm_tab_close`.
 
 **Leads:** PDF-Download und Post-Bestellung schreiben über das Apps Script

@@ -44,8 +44,10 @@ aktualisieren. Bestehende, nicht zum Auftrag gehörende Änderungen erhalten.
 - Jede Seite lädt direkt nach `consent-v9.js`:
   `<script src="/magazin/embed/magazin-popup.js" defer></script>`.
   Auf neuen Seiten immer mit übernehmen, nicht entfernen. Das Script wird
-  fünf Minuten gecacht, kein Cache-Buster nötig.
+  fünf Minuten gecacht, kein Cache-Buster nötig. Pop-up und seitlicher Tab
+  initialisieren ausschließlich auf der Startseite (`/` oder `/index.html`).
 - Mobiles Menü: Magazin-CTA `.mobile-nav__mag` (Link mit `data-cbm-open`)
-  direkt unter „Projekt anfragen“. Neue Seiten brauchen ihn ebenfalls.
+  direkt unter „Projekt anfragen“. Auf der Startseite öffnet er das Pop-up,
+  auf Unterseiten führt er direkt zum E-Paper. Neue Seiten brauchen ihn ebenfalls.
 - Seitenbilder/PDF nicht von Hand ändern, sondern mit `tools/magazin/build.py`
   neu erzeugen. Details: README, Abschnitt „Magazin“.

@@ -1,5 +1,39 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.10.2026 – Anfrage-Modul im Raster ausgerichtet
+
+- Eyebrow und Headline der abschließenden Anfrage-Module auf Desktop in ein
+  12-Spalten-Raster gesetzt: Das Label beginnt in Spalte 2, die Headline in
+  Spalte 4. Die mobile einspaltige Anordnung bleibt unverändert.
+- Im Anfrage-Modul der Startseite das bisherige Teamfoto durch Christians
+  Shootingmotiv `15` inklusive des bereits geprüften Bildfokus ersetzt.
+- Globalen Cache-Buster für `site.css` und `site.js` auf `v=184` erhöht.
+
+## 13.10.2026 – Home-Hero für MacBook-Pro-Viewports
+
+- Die Displaygröße der Home-Hero-Headline zusätzlich an die verfügbare
+  Viewport-Höhe gekoppelt. In flachen Desktop-Browserfenstern ragt die
+  Headline dadurch nicht mehr in den festen Header.
+- Desktop-Layouts mit ausreichender Höhe und die vorhandenen mobilen
+  Breakpoints behalten ihre bisherige Skalierung.
+- Globalen Cache-Buster für `site.css` und `site.js` auf `v=183` erhöht.
+
+## 13.10.2026 – Neue Christian-Fotos
+
+- Christians Porträt auf „Über uns“ durch das aktuelle Shootingmotiv `5`
+  ersetzt und für den vorhandenen 4:5-Container ausgerichtet.
+- Die Anfrage-Module auf drei der fünf Situationsseiten mit den Motiven `14`,
+  `15` und `17` variiert; motivbezogene Bildfokusse halten Christian auch im
+  breiten Desktop-Crop sichtbar. Zwei Seiten behalten das bisherige Teamfoto.
+- Alle vier Ausgangsbilder größenreduziert als WebP eingebunden.
+
+## 13.10.2026 – Magazin-Pop-up nur auf der Startseite
+
+- Die Initialisierung des Magazin-Pop-ups und des seitlichen Desktop-Tabs auf
+  `/` und `/index.html` begrenzt.
+- Auf Unterseiten bleibt der Magazin-Eintrag im mobilen Menü als direkter Link
+  zum E-Paper nutzbar, öffnet dort aber kein Pop-up mehr.
+
 ## 04.10.2026 – Clarity-basierter Conversion-Pass
 
 - PARQ Energy als fachlich unpassende Website-Referenz aus den Projektlisten
