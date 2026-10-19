@@ -1,5 +1,18 @@
 # CONCRETE Relaunch
 
+## Aktualisierung · 19.10.2026
+
+- Die Leistungsseite „Website modernisieren“ zeigt direkt unter Abschnitt 01
+  eine Website-Projektsektion im bestehenden Referenzstil. Enthalten sind
+  CA’N SORT, medium Architekten, BGF+ Architekten, MDB Finance, LINK Karriere
+  und goSchneider mit den vorhandenen Screencasts, Postern, Kurztexten und
+  externen Projektlinks.
+- Reveal, dezentes Parallax, Hoverzoom, Lazy-Autoplay mit halbem Tempo sowie
+  die vorhandenen 3/2/1-Spalten-Breakpoints werden unverändert übernommen.
+- Die drei Entscheidungskarten unter „Die richtige Eingriffstiefe“ verwenden
+  die Coral-Fläche und dunklen Trennlinien der Leistungsübersicht. Die äußere
+  Kontur entfällt; sichtbar bleiben nur die Linien zwischen den Karten.
+
 ## Aktualisierung · 13.10.2026
 
 - Christians Porträt auf „Über uns“ wurde durch das neue Shootingmotiv

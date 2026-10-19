@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 19.10.2026 – Website-Referenzen auf der Modernisierungsseite
+
+- Unter Abschnitt 01 der Seite „Website modernisieren“ die bestehende
+  Website-Projektsektion ergänzt.
+- Auswahl umfasst CA’N SORT, medium Architekten, BGF+ Architekten, MDB Finance,
+  LINK Karriere und goSchneider; vorhandene Screencasts, Poster, Texte und
+  externe Projektlinks wiederverwendet.
+- Gemeinsames Referenz-Stylesheet eingebunden und das von „Website Design“
+  bekannte halbe Wiedergabetempo für die sechs Lazy-Autoplay-Videos übernommen.
+- Die drei Karten unter „Die richtige Eingriffstiefe“ an die Coral-Boxen der
+  Leistungsübersicht angeglichen; Nummern und Trennlinien wechseln auf dunkle
+  Kontraste, die Mobile-Karten behalten einen sicheren Innenabstand.
+- Die äußere Kontur der Coral-Karten entfernt; nur die inneren Trennlinien
+  zwischen den drei Optionen bleiben sichtbar.
+
 ## 13.10.2026 – Anfrage-Modul im Raster ausgerichtet
 
 - Eyebrow und Headline der abschließenden Anfrage-Module auf Desktop in ein
