@@ -1,5 +1,10 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 20.10.2026 – Gesprächsdauer
+
+- Erstgespräch: 45 statt 30 Minuten im Einführungstext, passend zur öffentlich buchbaren Calendly-Terminart. Die Zeitangabe auf der Erstgesprächsseite ist damit konsistent mit dem 45-Minuten-Termin in Calendly.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne Befund; `git diff --check` erfolgreich.
+
 ## 19.10.2026 – Website-Referenzen auf der Modernisierungsseite
 
 - Unter Abschnitt 01 der Seite „Website modernisieren“ die bestehende
