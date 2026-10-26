@@ -160,6 +160,8 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
 }
 .g-submit[disabled]{opacity:.28;cursor:not-allowed}
 .g-submit[disabled]:hover{background:var(--ink);color:var(--grey-l)}
+.g-status{min-height:18px;margin:8px 0 0;font-size:12px;line-height:1.45;font-weight:700}
+.g-status[data-state="error"]{color:#9b2d20}
 .g-alt{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border:1px solid var(--ink);transition:background .15s,color .15s}
 .g-alt:hover{background:var(--ink);color:var(--grey-l)}
 .g-alt svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;transition:transform .2s}
@@ -251,15 +253,16 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
       <label class="g-check"><input type="checkbox" id="gPrintToggle"> Schicken Sie mir auch die gedruckte Ausgabe (solange der Vorrat reicht).</label>
       <div class="g-print" id="gPrint">
         <div class="g-row">
-          <div class="g-field"><label class="lbl" for="gName">Name</label><input id="gName" autocomplete="name"></div>
+          <div class="g-field"><label class="lbl" for="gName">Name *</label><input id="gName" autocomplete="name"></div>
           <div class="g-field"><label class="lbl" for="gRole">Position</label><input id="gRole" autocomplete="organization-title"></div>
         </div>
         <div class="g-field"><label class="lbl" for="gCompany">Unternehmen</label><input id="gCompany" autocomplete="organization"></div>
-        <div class="g-field"><label class="lbl" for="gAddr">Straße, PLZ, Ort</label><input id="gAddr" autocomplete="street-address"></div>
+        <div class="g-field"><label class="lbl" for="gAddr">Straße, PLZ, Ort *</label><input id="gAddr" autocomplete="street-address"></div>
       </div>
       <label class="g-check"><input type="checkbox" id="gNews"> Ab und zu Impulse zu Marke &amp; B2B per E-Mail – höchstens einmal im Monat, jederzeit abbestellbar.</label>
       <button class="g-submit" type="submit"><span class="lbl">Magazin freischalten</span><svg viewBox="0 0 18 18"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
-      <p class="g-legal">Sie erhalten das Magazin per E-Mail. Ihre Angaben nutzen wir nur dafür und – falls angehakt – für unsere Impulse. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a></p>
+      <p class="g-status" id="gStatus" role="status" aria-live="polite"></p>
+      <p class="g-legal">Sie schalten das Magazin frei und können das PDF herunterladen. Ihre Angaben nutzen wir nur dafür und – falls angehakt – für unsere Impulse. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a></p>
     </form>
     <div class="g-done">
       <div class="g-eyebrow lbl"><span class="bar"><i style="width:100%"></i></span><span>Freigeschaltet</span></div>
@@ -308,6 +311,7 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
         <p class="g-note">Das Porto übernehmen wir.</p>
         <button class="g-submit" type="submit" data-kind="post" disabled><span class="lbl">Per Post anfordern</span><svg viewBox="0 0 18 18"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
       </div>
+      <p class="g-status" id="dlStatus" role="status" aria-live="polite"></p>
       <p class="g-legal">* Pflichtangaben. Eure Angaben nutzen wir, um euch das Magazin bereitzustellen, und nur mit eurer Einwilligung für eine Kontaktaufnahme per E-Mail. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a></p>
     </form>
     <div class="g-done">
@@ -476,7 +480,23 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
   // ---------- Gate & Einstieg über Herausforderung ----------
   // ?gate=1 aktiviert die Sperre (Pop-up/Ads). Persönliche Links ohne Parameter bleiben offen.
   // ?c=<slug> startet direkt beim passenden Case.
-  const LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbz99y9XNuqNqzUdn3V0yvEqoR9G_dSF1zA_a28CBPz7A9I4g_m1JnlE9R9-f7z8973k/exec";   // Apps Script „CONCRETE Magazin Leads“ → Google Sheet
+  const LEAD_ENDPOINT = "/api/magazin-lead";   // bestätigt den tatsächlichen Google-Sheet-Eintrag
+  const NEWSLETTER_CONSENT = "Ab und zu Impulse zu Marke & B2B per E-Mail – höchstens einmal im Monat, jederzeit abbestellbar.";
+  const trackLead = (name, detail = {}) => {
+    if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: "cbm_" + name, ...detail });
+    if (typeof window.clarity === "function") window.clarity("event", "cbm_" + name);
+  };
+  const sendLead = async lead => {
+    const response = await fetch(LEAD_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "same-origin",
+      body: JSON.stringify(lead)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) throw new Error(result.error || "lead_not_stored");
+    return result;
+  };
   const FREE_VIEWS = 3;         // frei sichtbare Ansichten (Cover/Doppelseiten) vor der Sperre
   const TOPICS = {
     wachstum:     ["Wir sind gewachsen – unsere Marke nicht", "FinaPlus", 16],
@@ -516,23 +536,58 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
     if (!unlocked) { book.turnToPage(lastOk); update(lastOk); }
   }
   document.querySelectorAll("[data-gate-close]").forEach(b => b.onclick = e => { e.preventDefault(); closeGate(); });
-  $("#gPrintToggle").onchange = e => $("#gPrint").classList.toggle("show", e.target.checked);
+  $("#gPrintToggle").onchange = e => {
+    const enabled = e.target.checked;
+    $("#gPrint").classList.toggle("show", enabled);
+    $("#gName").required = enabled;
+    $("#gAddr").required = enabled;
+    if (enabled) $("#gName").focus();
+  };
 
   $("#gForm").onsubmit = async e => {
     e.preventDefault();
     const mail = $("#gMail");
     if (!mail.value || !mail.checkValidity()) { mail.focus(); mail.style.borderColor = "var(--coral)"; return; }
+    const wantsPrint = $("#gPrintToggle").checked;
+    if (wantsPrint && (!$("#gName").value.trim() || !$("#gAddr").value.trim())) {
+      const missing = !$("#gName").value.trim() ? $("#gName") : $("#gAddr");
+      missing.focus(); missing.style.borderColor = "var(--coral)"; return;
+    }
+    const submitter = e.submitter;
+    const submitLabel = submitter?.querySelector(".lbl");
+    const previousLabel = submitLabel?.textContent || "";
+    const status = $("#gStatus");
     const lead = {
-      email: mail.value.trim(), topic: sel.value || null, newsletter: $("#gNews").checked,
-      print: $("#gPrintToggle").checked ? { name: $("#gName").value, role: $("#gRole").value,
-        company: $("#gCompany").value, address: $("#gAddr").value } : null,
-      pagesSeen: [...seen].map(k => k + 1), source: qs.get("utm_source") || qs.get("src") || "direct", ts: new Date().toISOString()
+      type: wantsPrint ? "Post" : "PDF",
+      name: wantsPrint ? $("#gName").value.trim() : "",
+      company: wantsPrint ? $("#gCompany").value.trim() : "",
+      email: mail.value.trim(),
+      situation: [sel.options[sel.selectedIndex]?.text || "", $("#gRole").value.trim() ? `Position: ${$("#gRole").value.trim()}` : ""].filter(Boolean).join(" · "),
+      address: wantsPrint ? $("#gAddr").value.trim() : "",
+      contact: $("#gNews").checked,
+      consentText: $("#gNews").checked ? NEWSLETTER_CONSENT : "",
+      source: "epaper / " + (qs.get("utm_source") || qs.get("src") || "direct"),
+      page: location.href,
+      website: ""
     };
-    if (LEAD_ENDPOINT) { fetch(LEAD_ENDPOINT, { method: "POST", mode: "no-cors", body: JSON.stringify(lead) }).catch(() => {}); }
-    else console.info("[Lead – Demo, nicht gesendet]", lead);
+    status.textContent = "";
+    status.removeAttribute("data-state");
+    if (submitter) submitter.disabled = true;
+    if (submitLabel) submitLabel.textContent = "Wird gespeichert …";
+    try {
+      await sendLead(lead);
+      trackLead("lead", { type: lead.type, situation: lead.situation || null, status: "stored" });
+    } catch (error) {
+      status.dataset.state = "error";
+      status.textContent = "Die Anfrage konnte gerade nicht gespeichert werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.";
+      trackLead("lead_error", { type: lead.type });
+      if (submitter) submitter.disabled = false;
+      if (submitLabel) submitLabel.textContent = previousLabel;
+      return;
+    }
     unlocked = true; store.set("cbm_unlocked", "1");
-    $("#gDoneTx").textContent = `Alle ${N} Seiten sind jetzt offen. Das PDF ist unterwegs an ${lead.email}.` +
-      (lead.print ? " Die Druckausgabe schicken wir Ihnen in den nächsten Tagen." : "");
+    $("#gDoneTx").textContent = `Alle ${N} Seiten sind jetzt offen. Das PDF können Sie oben herunterladen.` +
+      (wantsPrint ? " Die Druckausgabe schicken wir Ihnen in den nächsten Tagen." : "");
     $("#gCard").classList.add("done");
   };
 
@@ -594,17 +649,34 @@ footer{position:fixed;inset:auto 0 0 0;height:var(--bar);display:flex;align-item
     e.currentTarget.setAttribute("aria-expanded", open);
     if (open) setTimeout(() => $("#dlStreet").focus(), 30);
   };
-  dlForm.onsubmit = e => {
+  dlForm.onsubmit = async e => {
     e.preventDefault();
     const kind = e.submitter?.dataset.kind || "pdf";
     if (kind === "pdf" ? !okBase() : !okPost()) return;
+    const submitter = e.submitter;
+    const submitLabel = submitter?.querySelector(".lbl");
+    const previousLabel = submitLabel?.textContent || "";
+    const status = $("#dlStatus");
     const lead = { type: kind === "post" ? "Post" : "PDF", name: f.name.value.trim(), company: f.company.value.trim(),
       email: f.email.value.trim(), situation: f.situation.value,
       address: kind === "post" ? `${f.street.value.trim()}, ${f.zip.value.trim()} ${f.city.value.trim()}` : "",
       contact: f.contact.checked, consentText: f.contact.checked ? CONSENT : "",
       source: "epaper" + (qs.get("src") ? " / " + qs.get("src") : ""), page: location.href, website: f.website.value };
-    if (LEAD_ENDPOINT) fetch(LEAD_ENDPOINT, { method: "POST", mode: "no-cors", body: JSON.stringify(lead) }).catch(() => {});
-    else console.info("[Lead – kein Endpunkt eingetragen]", lead);
+    status.textContent = "";
+    status.removeAttribute("data-state");
+    if (submitter) submitter.disabled = true;
+    if (submitLabel) submitLabel.textContent = "Wird gespeichert …";
+    try {
+      await sendLead(lead);
+      trackLead("lead", { type: lead.type, situation: lead.situation || null, status: "stored" });
+    } catch (error) {
+      status.dataset.state = "error";
+      status.textContent = "Die Anfrage konnte gerade nicht gespeichert werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.";
+      trackLead("lead_error", { type: lead.type });
+      if (submitLabel) submitLabel.textContent = previousLabel;
+      refreshBtns();
+      return;
+    }
     store.set("cbm_lead", "1");
     const first = lead.name.split(" ")[0];
     $("#dlDoneTitle").textContent = `Danke, ${first}!`;

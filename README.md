@@ -98,7 +98,7 @@
   eingebunden. Das Pop-up (Heft-Animation, „11 B2B-Situationen. 11 Wege, sie
   zu lösen.“, Zitat Wolfram Stratmann) wird als eigenständiges Script von
   `/magazin/embed/magazin-popup.js` direkt nach
-  `consent-v9.js` geladen und läuft gekapselt im Shadow DOM, ohne Einfluss auf
+  `consent-v10.js` geladen und läuft gekapselt im Shadow DOM, ohne Einfluss auf
   `site.css`.
 - Auslöser: einmal pro Website-Besuch, sobald die dritte Section unterhalb des
   Heroes ins Bild kommt (auf Seiten ohne Hero ab 45 % Scrolltiefe). Solange das
@@ -433,7 +433,7 @@
   README und Changelog dokumentieren die Nachpflege der historischen GSC-URL.
 
 - Remote-Stand zur Consent-/GTM-Vorbereitung integriert; die beiden neuen
-  Seiten verwenden ebenfalls `consent-v9.js`. Case-Cache jetzt `v=177`, übrige Seiten
+  Seiten verwenden ebenfalls `consent-v10.js`. Case-Cache jetzt `v=177`, übrige Seiten
   `v=174`; gemeinsame Abschlussprüfungen ohne Befund.
 - Großes Gallery-Intro bei goSchneider auf `GoSchneider80.jpg` (Einlage in den
   Händen) ausgetauscht; Projekt-Hero und zugehörige Teaser bleiben unverändert.
@@ -471,7 +471,7 @@
   unabhängig vom folgenden Video-Loop; Sicherheitsfallback nach 8 Sekunden.
   Direkte Unterseiten zeigen es ohne Hero-Wartezeit. Eine gespeicherte Auswahl
   wird wiederverwendet; Cookie-Einstellungen bleiben im Footer zugänglich.
-- Cache-sicherer Loader `consent-v9.js`, globales CSS/JS `v=174`, unveränderte
+- Cache-sicherer Loader `consent-v10.js`, globales CSS/JS `v=174`, unveränderte
   Consent-Speicherversion 4. Statistik und Marketing bleiben getrennt;
   keine optionalen Google-/Radar-Dienste vor entsprechender Zustimmung.
   SalesViewer bleibt wie bisher separat aktiv. Kampagnen und Budgets unverändert.
@@ -948,8 +948,10 @@ Das CONCRETE Brandbuilding Magazin liegt vollständig in diesem Repo unter
 - `docs/magazin/apps-script.gs` – Apps Script für das Google Sheet
   „CONCRETE Magazin – Leads“.
 
-Jede Seite lädt direkt nach `consent-v9.js`:
+Jede Seite lädt das Pop-up direkt nach Consent und Attribution:
 
+    <script src="consent-v10.js"></script>
+    <script src="attribution-v3.js"></script>
     <script src="/magazin/embed/magazin-popup.js" defer></script>
 
 Das Script wird fünf Minuten gecacht, initialisiert Pop-up und Magazin-Tab aber
@@ -961,11 +963,25 @@ Optionen am Script-Tag: `data-section` (Standard 3), `data-cooldown`
 Auf der Startseite öffnet `CBMPopup.open()` es manuell; Links mit
 `data-cbm-open` ebenso. Events im `dataLayer`: `cbm_open`, `cbm_close`, `cbm_click`,
 `cbm_lead`, `cbm_tab_close`.
+Clarity erhält zusätzlich datenschutzsparsame Custom Events ohne Formulardaten:
+neben den Summenereignissen unter anderem `cbm_open_auto_section`,
+`cbm_open_menu`, `cbm_open_tab`, `cbm_click_epaper`, `cbm_click_pdf`,
+`cbm_click_post_expand`, `cbm_close_button`, `cbm_close_escape` und
+`cbm_close_no_action`. Dadurch lassen sich Einblendungen, CTA-Interesse und
+Abbrüche in Clarity getrennt filtern; die jeweiligen Gesamtzahlen bleiben über
+`cbm_open`, `cbm_click` und `cbm_close` verfügbar.
 
 **Leads:** PDF-Download und Post-Bestellung schreiben über das Apps Script
 „CONCRETE Magazin Leads“ (Web-App, ausgeführt als wolfram@concrete-designs.de)
-in das Google Sheet „CONCRETE Magazin – Leads“. Die `/exec`-URL steht als
-`LEAD_ENDPOINT` in `magazin/embed/magazin-popup.js` und `magazin/index.html`.
+in das Google Sheet „CONCRETE Magazin – Leads“. Browserformulare senden
+gleichförmige Daten an die eigene Vercel Function `/api/magazin-lead`; erst ein
+bestätigtes `ok` des Apps Scripts löst die Erfolgsmeldung aus. Fehler lassen das
+Formular offen und werden als `cbm_lead_error` in `dataLayer` und Clarity
+erfasst. Die Apps-Script-`/exec`-URL liegt serverseitig in
+`api/magazin-lead.js` und kann bei Bedarf über `MAGAZIN_LEAD_UPSTREAM`
+überschrieben werden. Printbestellungen benötigen Name und vollständige
+Anschrift und werden sowohl aus dem Pop-up als auch aus dem E-Paper als
+`Anfrage = Post` gespeichert.
 Code-Änderungen am Script erfordern im Apps-Script-Editor „Bereitstellungen
 verwalten → Bearbeiten → Neue Version“, damit die URL gleich bleibt.
 Bei jedem Eintrag geht eine Benachrichtigung an wolfram@concrete-designs.de
@@ -979,7 +995,7 @@ Entwurf für die Datenschutzerklärung: `docs/magazin/DATENSCHUTZ-ABSCHNITT-ENTW
 
 ## Datenschutz und Consent
 
-`consent-v9.js` ist der eigene Consent-Manager der statischen Website. Er
+`consent-v10.js` ist der eigene Consent-Manager der statischen Website. Er
 setzt Google Consent Mode standardmäßig auf `denied` und lädt den Container
 `GTM-N8223FX` erst, wenn mindestens eine optionale Kategorie freigegeben ist.
 Die Auswahl gilt 180 Tage und kann über „Cookie-Einstellungen“ im Footer
@@ -1020,6 +1036,19 @@ auf dem kanonischen Produktionshost `www.concrete-designs.de`. GTM bleibt an ein
 aktive Statistik- oder Marketingauswahl gebunden. Lokale Entwicklungsserver und
 Vercel-Previews erzeugen deshalb keine Clarity-, Analytics-, Ads- oder
 SalesViewer- oder Radar-Sitzungen. Das schützt die operative Auswertung vor Testtraffic.
+
+`attribution-v3.js` startet erst, wenn Statistik oder Marketing freigegeben
+ist. Das Script hält die letzte belastbare Nicht-Direct-Herkunft höchstens 90
+Tage in First-Party-Storage und erhält sie über Seitenwechsel sowie neue Tabs.
+Direkte Wiederbesuche überschreiben einen bekannten Kampagnenkontakt nicht;
+eine neue Kampagne oder ein neuer externer Referrer startet eine neue Journey.
+Beim Calendly-Übergang werden `utm_source`, `utm_medium`, `utm_campaign` und
+eine zufällige `ctj_…`-Kennung übergeben. Rohe Google-Click-IDs werden weder im
+Attributionszustand gespeichert noch an Calendly weitergereicht. Der Webhook
+speichert statt der Rohkennung ausschließlich einen HMAC. Die Ereignisse
+`concrete_attribution_ready` und `concrete_calendly_handoff` enthalten nur
+technische Herkunftsfelder, keine Namen, E-Mail-Adressen oder Formulardaten.
+
 Seit dem 02.10.2026 nutzt der zentrale Loader den aktuellen Script-Endpunkt
 `slsnlytcs.com/stm.js`. Der zuvor vom SalesViewer-Dashboard ausgegebene
 Legacy-XHR-Endpunkt leitete auf eine HTML-Seite um und wurde dadurch im Browser

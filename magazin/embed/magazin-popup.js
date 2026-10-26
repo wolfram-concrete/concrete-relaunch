@@ -16,7 +16,10 @@
  *   data-theme="paper" | "coral-l"   alternativer Hintergrund der rechten Hälfte (Standard: Paper Deep #ece6da)
  *
  * API: CBMPopup.open(), CBMPopup.close()
- * Events: window "cbm:open", "cbm:close", "cbm:click" (detail.action: epaper|pdf), "cbm:lead" + dataLayer.push, falls vorhanden
+ * Events: window "cbm:open", "cbm:close", "cbm:click" (detail.action: epaper|pdf), "cbm:lead" + dataLayer.push, falls vorhanden.
+ * Clarity erhaelt zusaetzlich auswertbare Varianten wie cbm_open_auto_section,
+ * cbm_click_epaper und cbm_close_no_action. Personenbezogene Formulardaten
+ * werden nicht an Clarity uebergeben.
  *
  * Leads: PDF-Download / Post-Anforderung fragt Name, Unternehmen, E-Mail, Situation (+ Adresse) ab → Google Sheet (LEAD_ENDPOINT = Apps-Script-Web-App, siehe leads/apps-script.gs)
  *
@@ -42,7 +45,7 @@
   const KEY = "cbm_popup_seen";
   const THEME = opt.theme || "";              // "", "paper", "sand", "coral-l"
   const CONSENT = "Ich bin einverstanden, dass CONCRETE mich per E-Mail zu Themen rund um Marke und Brandbuilding kontaktiert. Diese Einwilligung kann ich jederzeit widerrufen.";   // Wortlaut wird mit dem Lead gespeichert
-  const LEAD_ENDPOINT = opt.endpoint || "https://script.google.com/macros/s/AKfycbz99y9XNuqNqzUdn3V0yvEqoR9G_dSF1zA_a28CBPz7A9I4g_m1JnlE9R9-f7z8973k/exec";   // Apps Script „CONCRETE Magazin Leads“ → Google Sheet
+  const LEAD_ENDPOINT = opt.endpoint || "/api/magazin-lead";   // bestätigt den tatsächlichen Google-Sheet-Eintrag
   const a = p => BASE + p;
 
   // Paid-Traffic wird für die gesamte Sitzung von automatischen Magazin-
@@ -195,6 +198,8 @@ a{color:inherit;text-decoration:none}
 .post{display:grid;gap:14px}
 .post[hidden]{display:none}
 .note{font-weight:700;font-size:13px}
+.form-status{min-height:18px;margin:8px 0 0;font-size:12px;line-height:1.45;font-weight:700}
+.form-status[data-state="error"]{color:#9b2d20}
 .btn[disabled]{opacity:.35;cursor:not-allowed}
 .btn[disabled]:hover{background:var(--coral);color:var(--ink)}
 .btn .chev{transition:transform .2s}
@@ -293,6 +298,7 @@ a{color:inherit;text-decoration:none}
           <p class="note">Das Porto übernehmen wir.</p>
           <button class="btn pri plain" type="submit" data-kind="post" disabled><span class="t">Per Post anfordern</span><svg viewBox="0 0 18 18"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
         </div>
+        <p class="form-status" data-form-status role="status" aria-live="polite"></p>
         <p class="legal">* Pflichtangaben. Eure Angaben nutzen wir, um euch das Magazin bereitzustellen, und nur mit eurer Einwilligung für eine Kontaktaufnahme per E-Mail. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a></p>
       </form>
 
@@ -317,17 +323,60 @@ a{color:inherit;text-decoration:none}
   const PDF = a("CONCRETE_Brandbuilding_Magazin.pdf");
   const UTM = "utm_source=website&utm_medium=popup&utm_campaign=magazin";
 
+  const eventToken = value => String(value || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "") || "unknown";
+  const clarityEvents = (name, detail) => {
+    const base = "cbm_" + eventToken(name);
+    const names = [base];
+    if (name === "open" && detail.source) names.push(`${base}_${eventToken(detail.source)}`);
+    if (name === "click" && detail.action) names.push(`${base}_${eventToken(detail.action)}`);
+    if ((name === "lead" || name === "lead_error") && detail.type) names.push(`${base}_${eventToken(detail.type)}`);
+    if (name === "close") {
+      if (detail.reason) names.push(`${base}_${eventToken(detail.reason)}`);
+      names.push(detail.engaged && detail.action
+        ? `${base}_after_${eventToken(detail.action)}`
+        : `${base}_no_action`);
+    }
+    return [...new Set(names)];
+  };
   const track = (name, detail = {}) => {
     window.dispatchEvent(new CustomEvent("cbm:" + name, { detail }));
     if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: "cbm_" + name, ...detail });
+    if (typeof window.clarity === "function") {
+      clarityEvents(name, detail).forEach(eventName => window.clarity("event", eventName));
+    }
   };
+  let popupOpenSource = "api";
+  let popupLastAction = "none";
+  let popupOpenedAt = 0;
   root.querySelectorAll("[data-go]").forEach(g => {
     g.href = `${EPAPER}?src=popup&${UTM}`;
-    g.onclick = () => { track("click", { action: "epaper" }); close(); };
+    g.onclick = () => {
+      popupLastAction = "epaper";
+      track("click", { action: "epaper" });
+      close("epaper");
+    };
   });
   const step = s => { card.classList.remove("step-form", "step-done"); if (s) card.classList.add("step-" + s); card.scrollTop = 0; };
-  $("[data-pdf]").onclick = () => { step("form"); track("click", { action: "pdf" }); setTimeout(() => { refreshBtns(); $("#fn").focus(); }, 30); };
-  $("[data-back]").onclick = () => step(null);
+  $("[data-pdf]").onclick = () => {
+    popupLastAction = "pdf";
+    step("form");
+    track("click", { action: "pdf" });
+    setTimeout(() => { refreshBtns(); $("#fn").focus(); }, 30);
+  };
+  $("[data-back]").onclick = () => {
+    popupLastAction = "form_back";
+    track("click", { action: "form_back" });
+    step(null);
+  };
+  $(".mail").onclick = () => {
+    popupLastAction = "mail";
+    track("click", { action: "mail" });
+  };
 
   // ---------- Lead-Formular → Google Sheet ----------
   // PDF: Name + E-Mail Pflicht. Post: zusätzlich Adresse. Buttons erst aktiv, wenn das erfüllt ist.
@@ -345,20 +394,48 @@ a{color:inherit;text-decoration:none}
     const post = $(".post"), show = post.hidden;
     post.hidden = !show;
     e.currentTarget.setAttribute("aria-expanded", show);
+    if (show) {
+      popupLastAction = "post_expand";
+      track("click", { action: "post_expand" });
+    }
     if (show) setTimeout(() => $("#fst").focus(), 30);
   };
-  form.onsubmit = e => {
+  form.onsubmit = async e => {
     e.preventDefault();
     const kind = e.submitter?.dataset.kind || "pdf";
     if (kind === "pdf" ? !okBase() : !okPost()) return;
+    const submitter = e.submitter;
+    const submitLabel = submitter?.querySelector(".t");
+    const previousLabel = submitLabel?.textContent || "";
+    const status = $("[data-form-status]");
     const lead = { type: kind === "post" ? "Post" : "PDF", name: f.name.value.trim(), company: f.company.value.trim(),
       email: f.email.value.trim(), situation: f.situation.value,
       address: kind === "post" ? `${f.street.value.trim()}, ${f.zip.value.trim()} ${f.city.value.trim()}` : "",
       contact: f.contact.checked, consentText: f.contact.checked ? CONSENT : "",
       source: "popup", page: location.href, website: f.website.value };
-    if (LEAD_ENDPOINT) fetch(LEAD_ENDPOINT, { method: "POST", mode: "no-cors", body: JSON.stringify(lead) }).catch(() => {});
-    else console.info("[CBM Lead – kein Endpunkt eingetragen]", lead);
-    track("lead", { type: lead.type, situation: lead.situation || null });
+    status.textContent = "";
+    status.removeAttribute("data-state");
+    if (submitter) submitter.disabled = true;
+    if (submitLabel) submitLabel.textContent = "Wird gespeichert …";
+    try {
+      const response = await fetch(LEAD_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "same-origin",
+        body: JSON.stringify(lead)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.ok) throw new Error(result.error || "lead_not_stored");
+      popupLastAction = `lead_${eventToken(lead.type)}`;
+      track("lead", { type: lead.type, situation: lead.situation || null, status: "stored" });
+    } catch (error) {
+      status.dataset.state = "error";
+      status.textContent = "Die Anfrage konnte gerade nicht gespeichert werden. Bitte versucht es erneut oder schreibt uns direkt.";
+      track("lead_error", { type: lead.type });
+      if (submitLabel) submitLabel.textContent = previousLabel;
+      refreshBtns();
+      return;
+    }
     $("#dh").textContent = `Danke, ${lead.name.split(" ")[0]}!`;
     if (kind === "post") {
       $("[data-done-tx]").innerHTML = `Wir schicken euch das gedruckte Magazin in den nächsten Tagen zu. Das Porto übernehmen wir. Bis dahin: <a href="${PDF}">PDF herunterladen</a>.`;
@@ -371,28 +448,37 @@ a{color:inherit;text-decoration:none}
   };
 
   let lastFocus = null;
-  function open() {
+  function open(source = "api") {
     if (pop.classList.contains("open")) return;
+    popupOpenSource = eventToken(source);
+    popupLastAction = "none";
+    popupOpenedAt = Date.now();
     lastFocus = document.activeElement;
     pop.classList.add("open");
     $(".tabw").hidden = true;
     $(".card").focus({ preventScroll: true });
     try { seenStore.setItem(KEY, Date.now()); } catch {}
-    track("open");
+    track("open", { source: popupOpenSource });
     start();
   }
-  function close() {
+  function close(reason = "api") {
     if (!pop.classList.contains("open")) return;
     pop.classList.remove("open");
     lastFocus?.focus?.({ preventScroll: true });
-    track("close");
+    track("close", {
+      reason: eventToken(reason),
+      source: popupOpenSource,
+      action: popupLastAction,
+      engaged: popupLastAction !== "none",
+      openSeconds: popupOpenedAt ? Math.max(0, Math.round((Date.now() - popupOpenedAt) / 1000)) : 0
+    });
     showTab();
   }
-  root.querySelectorAll("[data-close]").forEach(b => b.onclick = close);
-  pop.addEventListener("click", e => { if (e.target === pop) close(); });
+  root.querySelectorAll("[data-close]").forEach(b => b.onclick = () => close("button"));
+  pop.addEventListener("click", e => { if (e.target === pop) close("backdrop"); });
   document.addEventListener("keydown", e => {
     if (!pop.classList.contains("open")) return;
-    if (e.key === "Escape") close();
+    if (e.key === "Escape") close("escape");
     if (e.key === "Tab") {                                 // Fokus im Dialog halten
       const f = [...pop.querySelectorAll("button,select,input:not(.hp),a[href]")].filter(el => el.offsetParent);
       const i = f.indexOf(root.activeElement);
@@ -503,7 +589,7 @@ a{color:inherit;text-decoration:none}
     $(".tabw").hidden = false;
     try { seenStore.setItem(TAB_KEY, "1"); } catch {}
   }
-  $(".tab").onclick = () => { track("click", { action: "tab" }); open(); };
+  $(".tab").onclick = () => { track("click", { action: "tab" }); open("tab"); };
   $(".tabx").onclick = () => {                              // für diesen Besuch ausblenden
     $(".tabw").hidden = true;
     try { sessionStorage.setItem(TAB_OFF, "1"); } catch {}
@@ -518,7 +604,11 @@ a{color:inherit;text-decoration:none}
   };
   const whenConsentDone = fn => { const t = setInterval(() => { if (!consentOpen()) { clearInterval(t); fn(); } }, 600); };
   let triggered = false;
-  const trigger = () => { if (triggered) return; triggered = true; consentOpen() ? whenConsentDone(open) : open(); };
+  const trigger = source => {
+    if (triggered) return;
+    triggered = true;
+    consentOpen() ? whenConsentDone(() => open(source)) : open(source);
+  };
 
   function arm() {
     let recently = false, tabBefore = false;
@@ -535,13 +625,13 @@ a{color:inherit;text-decoration:none}
     const hero = sections.findIndex(el => /hero/.test(el.className) || el.hasAttribute("data-hero"));
     const target = hero >= 0 ? sections[hero + SECTION] : null;
     if (target && "IntersectionObserver" in window) {
-      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); trigger(); } },
+      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); trigger("auto_section"); } },
         { rootMargin: "0px 0px -25% 0px" });
       io.observe(target);
     } else {
       const onScroll = () => {
         const max = document.documentElement.scrollHeight - innerHeight;
-        if (max > 0 && scrollY / max >= TRIGGER) { removeEventListener("scroll", onScroll); trigger(); }
+        if (max > 0 && scrollY / max >= TRIGGER) { removeEventListener("scroll", onScroll); trigger("auto_scroll"); }
       };
       addEventListener("scroll", onScroll, { passive: true });
     }
@@ -554,7 +644,7 @@ a{color:inherit;text-decoration:none}
     const menu = document.querySelector("[data-menu-toggle][aria-expanded='true']");
     if (menu) menu.click();                                  // mobiles Menü schließen
     track("click", { action: "menu" });
-    open();
+    open("menu");
   });
 
   const mount = () => { document.body.append(host); arm(); };

@@ -1,5 +1,46 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 26.10.2026 – Lead-Attribution zwischen Website, Calendly und Audit stabilisiert
+
+- Consent-Manager auf `consent-v10.js` angehoben und eine lesbare, rein
+  boolesche Consent-Schnittstelle für First-Party-Skripte ergänzt.
+- Neue consent-gebundene Attribution v3 bewahrt die letzte belastbare
+  Nicht-Direct-Herkunft für höchstens 90 Tage über Seitenwechsel und neue Tabs.
+- Calendly-Links erhalten Quelle, Medium, Kampagne und eine pseudonyme
+  Journey-ID; rohe GCLID-/GBRAID-/WBRAID-Werte werden weder gespeichert noch an
+  Calendly übergeben.
+- Tracking-Status und Calendly-Übergang als eigene `dataLayer`- und
+  Clarity-Ereignisse ergänzt, ohne Kontakt- oder Formulardaten zu senden.
+- Datenschutzerklärung um Speicherdauer, Consent-Bedingung und die
+  pseudonymisierte Journey-Verarbeitung ergänzt.
+
+## 23.10.2026 – Magazin-Pop-up detailliert mit Clarity verknüpft
+
+- Clarity-Custom-Events für automatische und manuelle Öffnungen, einzelne
+  CTA-Aktionen sowie den jeweiligen Schließgrund ergänzt.
+- Abbrüche ohne vorherige Aktion separat als `cbm_close_no_action` messbar
+  gemacht; Schließungen nach einer Interaktion erhalten eine eigene Variante.
+- Öffnungsdauer und Interaktionskontext bleiben im `dataLayer` erhalten, während
+  Clarity ausschließlich technische Ereignisnamen ohne personenbezogene
+  Formulardaten empfängt.
+
+## 21.10.2026 – Magazin-Printbestellungen zuverlässig speichern
+
+- Magazin-Pop-up und E-Paper senden Leads nicht mehr als unbestätigten
+  `no-cors`-Request direkt an Apps Script, sondern über die neue serverseitige
+  Route `/api/magazin-lead`.
+- Die Erfolgsmeldung erscheint erst nach einem bestätigten Eintrag in Google
+  Sheets; bei Netzwerk- oder Sheet-Fehlern bleibt das Formular offen und bietet
+  einen erneuten Versuch an.
+- Das abweichende Datenformat des E-Paper-Gates vereinheitlicht. Druckausgaben
+  werden jetzt als `Post` inklusive Name, Unternehmen und Anschrift erfasst;
+  Name und Anschrift sind dafür Pflichtangaben.
+- Erfolgreiche und fehlgeschlagene Übermittlungen zusätzlich als
+  `cbm_lead` beziehungsweise `cbm_lead_error` in Clarity und `dataLayer`
+  messbar gemacht.
+- Automatisierte Tests für Popup-Printdaten, das frühere E-Paper-Format,
+  Pflichtfeldprüfung und die serverseitige Sheet-Bestätigung ergänzt.
+
 ## 20.10.2026 – Gesprächsdauer
 
 - Erstgespräch: 45 statt 30 Minuten im Einführungstext, passend zur öffentlich buchbaren Calendly-Terminart. Die Zeitangabe auf der Erstgesprächsseite ist damit konsistent mit dem 45-Minuten-Termin in Calendly.
