@@ -884,7 +884,10 @@ maschinen. Die alten WordPress-Adressen liegen als Weiterleitung in
 Der technische Gauntlet prüft alle Sitemap-Seiten auf interne Links,
 Fragmentziele, lokale Ressourcen, Bilddimensionen, doppelte IDs,
 Medien-Querystrings, Cache-Version, die einheitliche Award-Auszeichnung im
-Footer und seit dem Livegang auf versehentliches Production-`noindex`:
+Footer und seit dem Livegang auf versehentliches Production-`noindex`. Zusätzlich
+prüft er auf jeder Sitemap-Seite genau eine `consent-v10.js` und genau eine
+nachgelagerte `attribution-v3.js` im Dokument-Head sowie die zentralen
+Datenschutz- und Übergabesicherungen beider Skripte:
 
     python3 tools/technical-preflight.py
 

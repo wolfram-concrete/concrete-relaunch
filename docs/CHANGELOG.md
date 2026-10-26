@@ -13,6 +13,9 @@
   Clarity-Ereignisse ergänzt, ohne Kontakt- oder Formulardaten zu senden.
 - Datenschutzerklärung um Speicherdauer, Consent-Bedingung und die
   pseudonymisierte Journey-Verarbeitung ergänzt.
+- Automatischen GitHub-Preflight auf `consent-v10.js` und `attribution-v3.js`
+  umgestellt; der Check validiert beide Skripte jetzt pro Seite und verhindert
+  dadurch sowohl veraltete Falschmeldungen als auch künftige Auslassungen.
 
 ## 23.10.2026 – Magazin-Pop-up detailliert mit Clarity verknüpft
 

@@ -23,6 +23,8 @@ from xml.etree import ElementTree
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_CACHE_VERSION = "184"
 EXPECTED_CASE_CACHE_VERSION = "184"
+CONSENT_SCRIPT = "consent-v10.js"
+ATTRIBUTION_SCRIPT = "attribution-v3.js"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
 URL_RE = re.compile(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", re.I)
 JSON_LD_RE = re.compile(
@@ -271,15 +273,25 @@ def scan() -> list[str]:
         )
         if "Fabian Lampert" in attribution_text:
             findings.append(f"{page.name}: incorrect CA’N SORT quote attribution")
-        if text.count('<script src="consent-v9.js"></script>') != 1:
+        consent_tag = f'<script src="{CONSENT_SCRIPT}"></script>'
+        attribution_tag = f'<script src="{ATTRIBUTION_SCRIPT}"></script>'
+        if text.count(consent_tag) != 1:
             findings.append(f"{page.name}: consent manager missing or duplicated")
         else:
-            consent_position = text.index('<script src="consent-v9.js"></script>')
+            consent_position = text.index(consent_tag)
             site_script_position = text.find(f'<script src="site.js?v={expected_cache_version}"></script>')
             if site_script_position >= 0 and consent_position > site_script_position:
                 findings.append(f"{page.name}: consent manager must load before site.js")
             if consent_position > text.index("</head>"):
                 findings.append(f"{page.name}: consent manager must load in document head")
+        if text.count(attribution_tag) != 1:
+            findings.append(f"{page.name}: attribution v3 missing or duplicated")
+        else:
+            attribution_position = text.index(attribution_tag)
+            if text.count(consent_tag) == 1 and attribution_position < text.index(consent_tag):
+                findings.append(f"{page.name}: attribution must load after consent manager")
+            if attribution_position > text.index("</head>"):
+                findings.append(f"{page.name}: attribution must load in document head")
         if any(domain in text for domain in (
             "googletagmanager.com", "google-analytics.com", "clarity.ms",
             "connect.facebook.net", "youtube.com/embed", "fonts.googleapis.com",
@@ -372,7 +384,7 @@ def scan() -> list[str]:
             if source.startswith(("http://", "https://", "//")):
                 findings.append(f"{css_path.name}: external CSS resource bypasses consent: {source}")
 
-    consent = (ROOT / "consent-v9.js").read_text(encoding="utf-8")
+    consent = (ROOT / CONSENT_SCRIPT).read_text(encoding="utf-8")
     for required in (
         'var STORAGE_KEY = "concrete-consent-v4"',
         "var CONSENT_VERSION = 4",
@@ -405,7 +417,7 @@ def scan() -> list[str]:
         "window.BorlabsCookie.Consents.hasConsent = hasConsent",
     ):
         if required not in consent:
-            findings.append(f"consent-v9.js: missing consent safeguard: {required}")
+            findings.append(f"{CONSENT_SCRIPT}: missing consent safeguard: {required}")
     for forbidden in (
         '"facebook-pixel"',
         '"hubspot-pixel"',
@@ -413,7 +425,20 @@ def scan() -> list[str]:
         "loadSalesViewer(consent)",
     ):
         if forbidden in consent:
-            findings.append(f"consent-v9.js: obsolete or consent-gated service found: {forbidden}")
+            findings.append(f"{CONSENT_SCRIPT}: obsolete or consent-gated service found: {forbidden}")
+
+    attribution = (ROOT / ATTRIBUTION_SCRIPT).read_text(encoding="utf-8")
+    for required in (
+        "CONCRETE_CALENDLY_ATTRIBUTION_V3",
+        "concrete:consent-update",
+        "concrete_attribution_ready",
+        "concrete_calendly_handoff",
+        "calendly_handoff",
+        "CLICK_IDS",
+        "state.attribution",
+    ):
+        if required not in attribution:
+            findings.append(f"{ATTRIBUTION_SCRIPT}: missing attribution safeguard: {required}")
 
     privacy = (ROOT / "datenschutz.html").read_text(encoding="utf-8")
     for required in ("Vercel Inc.", "Microsoft Clarity", "Google Analytics 4", "SalesViewer", "Sortlist Radar", "Sortlist Trusted Partner Badge"):
