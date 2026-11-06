@@ -4,7 +4,11 @@ const path = require('path');
 const assert = require('node:assert/strict');
 const {chromium} = require('playwright');
 const root = process.argv[2] || path.resolve(__dirname,'..');
-const source = fs.readFileSync(path.join(root,'consent-v9.js'),'utf8');
+// Die ausgelieferte Consent-Version aus index.html lesen, damit der Test nie
+// gegen eine alte Datei laeuft, wenn die Version hochgezogen wird.
+const consentFile = (fs.readFileSync(path.join(root,'index.html'),'utf8')
+  .match(/consent-v\d+\.js/) || ['consent-v9.js'])[0];
+const source = fs.readFileSync(path.join(root,consentFile),'utf8');
 const css = fs.readFileSync(path.join(root,'site.css'),'utf8');
 const origin = 'https://www.concrete-designs.de';
 const key = 'concrete-consent-v4';

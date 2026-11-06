@@ -1151,3 +1151,9 @@ main .case-hero+.container{padding-top:clamp(56px,8vw,112px)!important}
   .consent-option{gap:14px}.footer-legal__links{flex-wrap:wrap;gap:12px 22px}
 }
 @media(prefers-reduced-motion:reduce){.consent-switch i,.consent-switch i::after{transition:none}.consent-banner--enter{animation:none}}
+
+/* Branchenzeile im Projektueberblick: eigene Zeile im Dreispaltenraster,
+   damit Label und Wert nebeneinander stehen und nicht in freie Zellen rutschen. */
+.case-meta .lbl.branche{grid-column:1}
+.case-meta .svc.branche{grid-column:2}
+@media(max-width:820px){.case-meta .lbl.branche,.case-meta .svc.branche{grid-column:1}}
