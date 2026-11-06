@@ -1,5 +1,14 @@
 # CONCRETE Relaunch
 
+## 06.11.2026 – Startseite, Praxis-Cases
+
+- In den drei Case-Modulen steht der Markenname jetzt im Label über der
+  Trennlinie. Die gleichlautende Zeile über der Headline ist entfallen.
+- Betroffen sind Nextbed, BGF+ und NOEY; bei NOEY ersetzt der Markenname das
+  bisherige Label „Projekt“.
+- Nur Text und Struktur in `index.html`, keine Änderung an `site.css` oder
+  `site.js`. Der Cache-Buster bleibt bei `v=186`.
+
 ## 20.10.2026 – Gesprächsdauer
 
 - Erstgespräch: 45 statt 30 Minuten im Einführungstext, passend zur öffentlich buchbaren Calendly-Terminart. Die Zeitangabe auf der Erstgesprächsseite ist damit konsistent mit dem 45-Minuten-Termin in Calendly.

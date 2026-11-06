@@ -7,3 +7,4 @@ _entwuerfe/fonts-otf/
 # Eingang fuer Originalbilder, nicht versionieren
 _eingang/*
 !_eingang/README.md
+.claude/

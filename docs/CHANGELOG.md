@@ -1,5 +1,15 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 06.11.2026 – Praxis-Cases auf der Startseite ohne doppelte Marke
+
+- Die drei Case-Module der Startseite (Nextbed, BGF+, NOEY) nannten die Marke
+  zweimal: als Label über der Trennlinie und noch einmal als Zeile über der
+  Headline.
+- Das Label über der Linie trägt jetzt den Markennamen, die Zeile über der
+  Headline entfällt. Bei NOEY ersetzt der Markenname das bisherige „Projekt“.
+- Die Laufschrift „Aus der Praxis“ über dem NOEY-Modul bleibt unverändert.
+- Validierung: SEO-Gauntlet, technischer Preflight und Linkgraph ohne Befund.
+
 ## 26.10.2026 – Lead-Attribution zwischen Website, Calendly und Audit stabilisiert
 
 - Consent-Manager auf `consent-v10.js` angehoben und eine lesbare, rein
