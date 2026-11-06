@@ -465,11 +465,26 @@ def scan() -> list[str]:
         if rule.get("source") == "/(.*)"
         for header in rule.get("headers", [])
     }
+    def scoped_to_non_production(rule: dict) -> bool:
+        """True, wenn die Regel per host-Bedingung nur auf einer Nicht-Produktions-
+        Domain greift. Ein noindex fuer die Vorschaudomain ist erwuenscht, ein
+        ungeschuetztes noindex auf der Produktionsdomain bleibt ein Fehler."""
+        conditions = rule.get("has", [])
+        if not conditions:
+            return False
+        for condition in conditions:
+            if condition.get("type") != "host":
+                return False
+            if "concrete-designs.de" in condition.get("value", ""):
+                return False
+        return True
+
     for rule in vercel.get("headers", []):
         for header in rule.get("headers", []):
             if (
                 header.get("key", "").lower() == "x-robots-tag"
                 and "noindex" in header.get("value", "").lower()
+                and not scoped_to_non_production(rule)
             ):
                 findings.append(
                     f"vercel.json: production X-Robots-Tag contains noindex for {rule.get('source')}"
