@@ -1,5 +1,13 @@
 # CONCRETE Relaunch
 
+## 13.11.2026 – goSchneider, Kundenstimme
+
+- Die Projektseite goSchneider zeigt die Rezension von Dennis Schneider an
+  derselben Stelle wie die übrigen Caseseiten, mit Porträt aus der Werkstatt.
+- Der Platzhalter `template#dennis-quote-pending` ist damit aufgelöst.
+- Nur `case-goschneider.html`, keine Änderung an `site.css` oder `site.js`.
+  Der Cache-Buster bleibt bei `v=186`.
+
 ## 06.11.2026 – Startseite, Praxis-Cases
 
 - In den drei Case-Modulen steht der Markenname jetzt im Label über der

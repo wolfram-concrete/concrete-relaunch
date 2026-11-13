@@ -1,5 +1,19 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 13.11.2026 – Rezension von Dennis Schneider auf der goSchneider-Seite
+
+- Das seit Oktober vorbereitete Zitatmodul (`template#dennis-quote-pending`)
+  ist aktiviert und trägt jetzt die Google-Rezension von Dennis Schneider.
+  Übernommen ist der Wortlaut ohne die Grußformel am Ende.
+- Position und Aufbau entsprechen den anderen Caseseiten: Porträt links,
+  Zitat rechts, Marke unten rechts im Bild, direkt vor „Warum dieses Projekt“.
+- Die Bildunterschrift weist Dennis Schneider als Gründer aus; der Alt-Text des
+  Porträts folgt derselben Rolle.
+- Das Porträt `dennis.webp` liegt im Querformat vor. Eine seitenlokale Regel
+  schneidet es im Modul auf 4:5 zu (`object-fit:cover`), damit es wie die
+  Hochformate auf den übrigen Caseseiten sitzt. Keine neue Bilddatei.
+- Validierung: SEO-Gauntlet und technischer Preflight ohne Befund.
+
 ## 06.11.2026 – Praxis-Cases auf der Startseite ohne doppelte Marke
 
 - Die drei Case-Module der Startseite (Nextbed, BGF+, NOEY) nannten die Marke
