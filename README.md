@@ -1125,7 +1125,12 @@ Zusätzlich Startseite und zentrale Seitentypen mit Status 200, eine unbekannte
 URL mit Status 404 sowie `robots.txt`, `sitemap.xml`, ausgewählte alte
 Weiterleitungen, Canonicals, Calendly, Consent-Zustände und Browserkonsole
 kontrollieren. Individuelle Preview-Deployment-URLs bleiben über Vercel-SSO
-geschützt und sind von dieser Production-Regel getrennt.
+geschützt und sind von dieser Production-Regel getrennt. Die öffentliche
+Standard-Alias-Domain `concrete-relaunch.vercel.app` leitet zusätzlich jeden
+Pfad dauerhaft und pfadgleich auf `www.concrete-designs.de` weiter. So kann sie
+keine zweite crawlbare Version der Produktionsseiten mehr bilden; der
+hostgebundene `X-Robots-Tag: noindex, nofollow` bleibt als zusätzliche
+Absicherung bestehen.
 
 ### URL-Migration nach dem Livegang
 
@@ -1135,6 +1140,13 @@ dieselben eindeutigen Sources und Ziele enthalten und dass jedes lokale Ziel
 existiert. Interne Links, Canonicals, `og:url`, JSON-LD und Sitemap verwenden
 direkt die extensionless Produktions-URLs; `.html` bleibt ausschließlich eine
 von Vercel normalisierte externe Altvariante.
+
+Die acht gemessenen alten Projektpfade (`/baked`, `/becare`,
+`/cologne-comedy-festival`, `/conlivo`, `/finaplus`, `/me-my-life-my-job`,
+`/nextbed` und `/we-celebrate-streetfood`) fangen über `/:path*` auch ihre
+historische Slash-Schreibweise direkt ab. Die sichtbare Benennung bleibt
+„Projekte“; `/case-*` bezeichnet nur die bereits etablierten technischen
+Canonical-URLs und wird nicht erneut migriert.
 
 Der anfangs versehentlich veröffentlichte Pfad
 `/icons-und-llustration-sets` wird dauerhaft auf den korrigierten Canonical

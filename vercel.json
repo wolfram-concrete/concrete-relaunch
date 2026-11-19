@@ -86,6 +86,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "concrete-relaunch\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://www.concrete-designs.de/:path*",
+      "permanent": true
+    },
+    {
       "source": "/aconvia",
       "destination": "/case-aconvia",
       "permanent": true
@@ -106,12 +117,12 @@
       "permanent": true
     },
     {
-      "source": "/baked",
+      "source": "/baked/:path*",
       "destination": "/case-baked",
       "permanent": true
     },
     {
-      "source": "/becare",
+      "source": "/becare/:path*",
       "destination": "/case-be-care",
       "permanent": true
     },
@@ -236,12 +247,12 @@
       "permanent": true
     },
     {
-      "source": "/cologne-comedy-festival",
+      "source": "/cologne-comedy-festival/:path*",
       "destination": "/case-cologne-comedy",
       "permanent": true
     },
     {
-      "source": "/conlivo",
+      "source": "/conlivo/:path*",
       "destination": "/case-conlivo",
       "permanent": true
     },
@@ -281,7 +292,7 @@
       "permanent": true
     },
     {
-      "source": "/finaplus",
+      "source": "/finaplus/:path*",
       "destination": "/case-finaplus",
       "permanent": true
     },
@@ -421,7 +432,7 @@
       "permanent": true
     },
     {
-      "source": "/me-my-life-my-job",
+      "source": "/me-my-life-my-job/:path*",
       "destination": "/case-me",
       "permanent": true
     },
@@ -441,7 +452,7 @@
       "permanent": true
     },
     {
-      "source": "/nextbed",
+      "source": "/nextbed/:path*",
       "destination": "/case-nextbed",
       "permanent": true
     },
@@ -596,7 +607,7 @@
       "permanent": true
     },
     {
-      "source": "/we-celebrate-streetfood",
+      "source": "/we-celebrate-streetfood/:path*",
       "destination": "/case-we-celebrate",
       "permanent": true
     },

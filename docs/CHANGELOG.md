@@ -1,5 +1,20 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 19.11.2026 – Crawlbare Vercel-Alias-Domain und Projekt-Redirects bereinigt
+
+- Die öffentliche Standard-Domain `concrete-relaunch.vercel.app` leitet jetzt
+  jeden Pfad dauerhaft auf die entsprechende URL unter
+  `www.concrete-designs.de` weiter. Der hostgebundene Noindex-Header bleibt als
+  zusätzliche Absicherung erhalten.
+- Acht alte Projektpfade fangen Slash- und Nicht-Slash-Schreibweise in einer
+  Regel ab und führen direkt auf ihre bestehenden `/case-*`-Canonicals.
+- Die sichtbare Website-Benennung bleibt „Projekte“. `case` wird nur als
+  bestehender technischer URL-Bestandteil geführt; es gibt keine erneute
+  URL-Migration auf `/projekt-*`.
+- Der SEO-Gauntlet unterscheidet pathbasierte Legacy-Redirects von
+  hostgebundenen Infrastruktur-Redirects und normalisiert die gezielt
+  verwendeten `/:path*`-Quellen für den Manifestabgleich.
+
 ## 13.11.2026 – Rezension von Dennis Schneider auf der goSchneider-Seite
 
 - Das seit Oktober vorbereitete Zitatmodul (`template#dennis-quote-pending`)

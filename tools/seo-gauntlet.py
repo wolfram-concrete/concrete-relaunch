@@ -74,12 +74,17 @@ def main():
     # 7 Redirects
     red=json.load(open(S+"/redirects.json"))
     vj=json.load(open("vercel.json"))
-    vrows=vj.get("redirects",[])
-    vsources=[r["source"].lstrip("/") for r in vrows]
+    # Host-based infrastructure redirects are intentionally not part of the
+    # legacy path manifest. A trailing ``/:path*`` lets one Vercel rule catch
+    # both the slash and non-slash spelling of selected legacy URLs.
+    vrows=[r for r in vj.get("redirects",[]) if not r.get("has")]
+    def manifest_source(row):
+        return re.sub(r"/:path\*$", "", row["source"].lstrip("/"))
+    vsources=[manifest_source(r) for r in vrows]
     doppelt=sorted({s for s in vsources if vsources.count(s)>1})
     if doppelt: fehler.append(f"vercel.json: doppelte Redirect-Sources, z.B. {doppelt[:3]}")
     vpairs={
-        r["source"].lstrip("/"):
+        manifest_source(r):
         ("/" if r["destination"]=="/" else r["destination"].lstrip("/"))
         for r in vrows
     }
