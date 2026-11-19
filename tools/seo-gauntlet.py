@@ -74,7 +74,9 @@ def main():
     # 7 Redirects
     red=json.load(open(S+"/redirects.json"))
     vj=json.load(open("vercel.json"))
-    vrows=vj.get("redirects",[])
+    # Host-based infrastructure redirects are intentionally not part of the
+    # legacy path manifest.
+    vrows=[r for r in vj.get("redirects",[]) if not r.get("has")]
     vsources=[r["source"].lstrip("/") for r in vrows]
     doppelt=sorted({s for s in vsources if vsources.count(s)>1})
     if doppelt: fehler.append(f"vercel.json: doppelte Redirect-Sources, z.B. {doppelt[:3]}")
