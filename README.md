@@ -1143,10 +1143,12 @@ von Vercel normalisierte externe Altvariante.
 
 Die acht gemessenen alten Projektpfade (`/baked`, `/becare`,
 `/cologne-comedy-festival`, `/conlivo`, `/finaplus`, `/me-my-life-my-job`,
-`/nextbed` und `/we-celebrate-streetfood`) fangen über `/:path*` auch ihre
-historische Slash-Schreibweise direkt ab. Die sichtbare Benennung bleibt
-„Projekte“; `/case-*` bezeichnet nur die bereits etablierten technischen
-Canonical-URLs und wird nicht erneut migriert.
+`/nextbed` und `/we-celebrate-streetfood`) besitzen zusätzlich vorgelagerte
+Vercel Project Routing Rules. Deren Regex erfasst Slash- und Nicht-Slash-
+Schreibweise vor Vercels globaler `trailingSlash`-Normalisierung und leitet
+beide Varianten in einem 308-Schritt auf die bestehende Canonical weiter. Die
+sichtbare Benennung bleibt „Projekte“; `/case-*` bezeichnet nur die bereits
+etablierten technischen Canonical-URLs und wird nicht erneut migriert.
 
 Der anfangs versehentlich veröffentlichte Pfad
 `/icons-und-llustration-sets` wird dauerhaft auf den korrigierten Canonical

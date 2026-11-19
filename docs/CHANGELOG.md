@@ -6,14 +6,15 @@
   jeden Pfad dauerhaft auf die entsprechende URL unter
   `www.concrete-designs.de` weiter. Der hostgebundene Noindex-Header bleibt als
   zusätzliche Absicherung erhalten.
-- Acht alte Projektpfade fangen Slash- und Nicht-Slash-Schreibweise in einer
-  Regel ab und führen direkt auf ihre bestehenden `/case-*`-Canonicals.
+- Acht alte Projektpfade erhalten vorgelagerte Vercel Project Routing Rules.
+  Sie fangen Slash- und Nicht-Slash-Schreibweise vor der globalen
+  `trailingSlash`-Normalisierung ab und führen direkt auf ihre bestehenden
+  `/case-*`-Canonicals.
 - Die sichtbare Website-Benennung bleibt „Projekte“. `case` wird nur als
   bestehender technischer URL-Bestandteil geführt; es gibt keine erneute
   URL-Migration auf `/projekt-*`.
 - Der SEO-Gauntlet unterscheidet pathbasierte Legacy-Redirects von
-  hostgebundenen Infrastruktur-Redirects und normalisiert die gezielt
-  verwendeten `/:path*`-Quellen für den Manifestabgleich.
+  hostgebundenen Infrastruktur-Redirects.
 
 ## 13.11.2026 – Rezension von Dennis Schneider auf der goSchneider-Seite
 

@@ -117,12 +117,12 @@
       "permanent": true
     },
     {
-      "source": "/baked/:path*",
+      "source": "/baked",
       "destination": "/case-baked",
       "permanent": true
     },
     {
-      "source": "/becare/:path*",
+      "source": "/becare",
       "destination": "/case-be-care",
       "permanent": true
     },
@@ -247,12 +247,12 @@
       "permanent": true
     },
     {
-      "source": "/cologne-comedy-festival/:path*",
+      "source": "/cologne-comedy-festival",
       "destination": "/case-cologne-comedy",
       "permanent": true
     },
     {
-      "source": "/conlivo/:path*",
+      "source": "/conlivo",
       "destination": "/case-conlivo",
       "permanent": true
     },
@@ -292,7 +292,7 @@
       "permanent": true
     },
     {
-      "source": "/finaplus/:path*",
+      "source": "/finaplus",
       "destination": "/case-finaplus",
       "permanent": true
     },
@@ -432,7 +432,7 @@
       "permanent": true
     },
     {
-      "source": "/me-my-life-my-job/:path*",
+      "source": "/me-my-life-my-job",
       "destination": "/case-me",
       "permanent": true
     },
@@ -452,7 +452,7 @@
       "permanent": true
     },
     {
-      "source": "/nextbed/:path*",
+      "source": "/nextbed",
       "destination": "/case-nextbed",
       "permanent": true
     },
@@ -607,7 +607,7 @@
       "permanent": true
     },
     {
-      "source": "/we-celebrate-streetfood/:path*",
+      "source": "/we-celebrate-streetfood",
       "destination": "/case-we-celebrate",
       "permanent": true
     },
