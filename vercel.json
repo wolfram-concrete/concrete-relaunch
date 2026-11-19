@@ -86,6 +86,17 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "concrete-relaunch\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://www.concrete-designs.de/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
