@@ -49,6 +49,13 @@
 .legal{max-width:76ch;font-size:15px;line-height:1.7}
 .legal h2{font-size:clamp(20px,2vw,28px);margin-top:var(--s6)}
 .legal p{margin:0 0 1em}
+.eg-person .pair{align-items:center;gap:clamp(28px,5vw,72px)}
+.eg-person h2{margin-bottom:var(--s3)}
+.eg-person p{max-width:46ch;color:var(--ink-60);line-height:1.6;margin:0 0 .8em}
+.eg-person p:last-child{margin-bottom:0}
+.eg-person__fig{margin:0;overflow:hidden;background:var(--paper-deep)}
+.eg-person__fig img{display:block;width:100%;height:auto}
+@media(max-width:860px){.eg-person .pair{gap:var(--s4)}}
 .eg-faq h2{font-family:"Arame";font-weight:700;font-size:clamp(24px,2.6vw,36px);line-height:1;margin:0 0 var(--s3)}
 .acc{max-width:76ch;margin-top:var(--s3)}
 .acc details{border-bottom:1px solid var(--rule)}
@@ -190,6 +197,18 @@
 </button>
   </div>
 </section>
+  <section class="sec sec--line eg-person" data-screen-label="Euer Gespraechspartner">
+    <div class="container pair">
+      <div class="rv">
+        <h2>Wer euch gegen&uuml;bersitzt</h2>
+        <p>Das Erstgespr&auml;ch f&uuml;hrt Wolfram Stratmann, Gesch&auml;ftsf&uuml;hrer Kreation bei CONCRETE. Er arbeitet seit &uuml;ber 20 Jahren an Marken und ordnet ein, was eure Aufgabe braucht.</p>
+        <p>Ihr sprecht also von Anfang an mit jemandem, der sp&auml;ter selbst an eurem Projekt arbeitet.</p>
+      </div>
+      <figure class="eg-person__fig rv-media">
+        <img src="assets/team/wolfram-erstgespraech.jpg" width="1600" height="1064" alt="Wolfram Stratmann" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
   <section class="sec sec--line eg-faq" data-screen-label="Fragen vor dem Erstgespräch"><div class="container cols">
 <div><span class="num">02</span></div>
 <div>
