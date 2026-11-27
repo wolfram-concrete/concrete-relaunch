@@ -21,8 +21,8 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CACHE_VERSION = "191"
-EXPECTED_CASE_CACHE_VERSION = "191"
+EXPECTED_CACHE_VERSION = "192"
+EXPECTED_CASE_CACHE_VERSION = "192"
 CONSENT_SCRIPT = "consent-v10.js"
 ATTRIBUTION_SCRIPT = "attribution-v3.js"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
@@ -300,12 +300,11 @@ def scan() -> list[str]:
             findings.append(f"{page.name}: direct third-party tracker or embed bypasses consent")
         if text.count('data-consent-manage') < 1:
             findings.append(f"{page.name}: cookie settings control missing")
-        if text.count('data-consent-category="marketing"') != 1 or text.count(
-            'data-consent-src="https://www.sortlist.de/api/badge-embed?'
-        ) != 1:
-            findings.append(f"{page.name}: Sortlist badge consent gate missing or duplicated")
-        if '<script src="https://www.sortlist.de/' in text:
-            findings.append(f"{page.name}: Sortlist badge bypasses consent")
+        # Das Sortlist-Badge liegt seit 27.11.2026 lokal, es laedt nichts von Sortlist nach.
+        if text.count('src="assets/partners/sortlist-trusted-partner.svg"') != 1:
+            findings.append(f"{page.name}: Sortlist badge missing or duplicated")
+        if 'sortlist.de/api/badge-embed' in text or '<script src="https://www.sortlist.de/' in text:
+            findings.append(f"{page.name}: Sortlist badge loads from third party")
 
         mobile_cta = re.search(
             r'<a class="mobile-nav__cta"[^>]*>.*?</a>', text, flags=re.S
