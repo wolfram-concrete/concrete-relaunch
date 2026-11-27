@@ -1,5 +1,14 @@
 # CONCRETE Relaunch
 
+## 27.11.2026 – Projektlink in den Rezensionskarten
+
+- Jede Rezension führt auf ihr Projekt. Der Link sitzt als kleine Coral-Pille
+  im Bild, unten links gegenüber der Marke, Text „Zum Projekt“ mit Markenpfeil.
+- 36 Links auf 18 Projekte, verteilt auf Startseite, Erstgespräch sowie die
+  Standortseiten Hamburg und Frankfurt. Kidsbert und goodBytz haben noch keine
+  Case-Seite und bleiben ohne Link.
+- Cache-Buster auf `v=188`.
+
 ## 27.11.2026 – Rezensionsband, Zitate schließen
 
 - Die aufklappbaren Zitate im Rezensionsband ließen sich nicht zuverlässig

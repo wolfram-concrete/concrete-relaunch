@@ -1,5 +1,26 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 27.11.2026 – Projektlink in den Rezensionskarten
+
+- Jede Rezension führt jetzt auf das zugehörige Projekt. Der Link sitzt als
+  kleine Coral-Pille im Bild, unten links gegenüber der Marke, und trägt den
+  Text „Zum Projekt“ mit dem Markenpfeil aus `assets/arrow.svg`.
+- Form: 11px, Innenabstand 6px auf 11px, CTA-Rundung, Ink auf Coral. Beim Hover
+  wechselt die Fläche auf Papier, wie beim Videoteaser. Das korallfarbene
+  „Weiterlesen“ im Zitat bleibt die einzige weitere Akzentfarbe der Karte.
+- Gesetzt sind 36 Links auf 18 verschiedene Case-Seiten: 11 auf `index.html`,
+  11 auf `erstgespraech.html`, 9 auf `branding-designagentur-hamburg.html`,
+  5 auf `branding-designagentur-frankfurt.html`.
+- Ohne Link bleiben Kidsbert und goodBytz, für beide gibt es keine Case-Seite.
+  Sobald eine entsteht, kommt der Link nach demselben Muster dazu.
+- Im Karussell erben die geklonten Karten den Link; das vorhandene Skript nimmt
+  ihn über `tabindex="-1"` aus der Tabfolge, wie die übrigen Bedienelemente.
+- Cache-Buster auf `v=188` für `site.css` und `site.js`, erwartete Version in
+  `tools/technical-preflight.py` nachgezogen.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne
+  Befund, `git diff --check` erfolgreich, alle 18 Linkziele existieren als
+  Datei. Im lokalen Browser auf `erstgespraech.html` optisch geprüft.
+
 ## 27.11.2026 – Rezensionszitate lassen sich wieder zuverlässig schließen
 
 - Das Rezensionskarussell klont beim Start jede Karte einmal, damit das Band
