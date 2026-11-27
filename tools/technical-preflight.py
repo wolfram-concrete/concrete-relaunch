@@ -21,8 +21,8 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CACHE_VERSION = "196"
-EXPECTED_CASE_CACHE_VERSION = "196"
+EXPECTED_CACHE_VERSION = "197"
+EXPECTED_CASE_CACHE_VERSION = "197"
 CONSENT_SCRIPT = "consent-v10.js"
 ATTRIBUTION_SCRIPT = "attribution-v3.js"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}

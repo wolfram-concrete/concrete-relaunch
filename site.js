@@ -755,3 +755,15 @@
     var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(layout,80);});
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
   });
+
+/* Podcast-Player: Spotify laedt erst nach dem Klick */
+document.addEventListener("click",function(e){
+  var b=e.target.closest&&e.target.closest(".podcast-embed__start");if(!b)return;
+  var w=b.closest("[data-podcast-embed]");if(!w)return;
+  var f=document.createElement("iframe");
+  f.src=w.getAttribute("data-embed-src");
+  f.height="152";f.loading="lazy";f.title="Podcastfolge bei Spotify";
+  f.setAttribute("frameborder","0");f.setAttribute("allowfullscreen","");
+  f.setAttribute("allow","autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture");
+  w.innerHTML="";w.appendChild(f);
+});
