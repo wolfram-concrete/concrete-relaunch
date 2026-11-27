@@ -400,17 +400,28 @@
     addEventListener("resize",schedule,{passive:true});
     schedule();
   })();
-  // Weiterlesen in Rezensionen (delegiert, gilt auch fuer geklonte Karten)
+  // Weiterlesen in Rezensionen (delegiert, gilt auch fuer geklonte Karten).
+  // Das Karussell haelt jede Rezension zweimal im DOM, Original und Klon. Beide
+  // tragen dieselbe data-rev-id und werden gemeinsam geschaltet, sonst bleibt die
+  // zweite Instanz offen und das Zitat laesst sich scheinbar nicht schliessen.
   document.addEventListener("click",function(e){
     var b=e.target.closest&&e.target.closest("[data-readmore]");if(!b)return;
-    var f=b.closest(".review"),open=f.classList.toggle("open");
-    b.textContent=open?"Ausblenden":"Weiterlesen";b.setAttribute("aria-expanded",String(open));
+    var f=b.closest(".review");if(!f)return;
+    var id=f.getAttribute("data-rev-id"),open=!f.classList.contains("open");
+    var set=id?document.querySelectorAll('.review[data-rev-id="'+id+'"]'):[f];
+    Array.prototype.forEach.call(set,function(c){
+      c.classList.toggle("open",open);
+      var btn=c.querySelector("[data-readmore]");
+      if(btn){btn.textContent=open?"Ausblenden":"Weiterlesen";btn.setAttribute("aria-expanded",String(open));}
+    });
   });
   // Rezensions-Karussell: laeuft von selbst, wird bei Hover/Fokus/Drag langsam und bleibt stehen, Pfeile springen kartenweise
   (function(){
     var t=document.querySelector("[data-revtrack]");if(!t)return;
     var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
     var cards=Array.prototype.slice.call(t.querySelectorAll(".review"));if(cards.length<2)return;
+    // Kennung vor dem Klonen, damit Original und Klon zusammengehoeren
+    cards.forEach(function(c,i){c.setAttribute("data-rev-id",String(i));});
     function step(){var c=t.querySelector(".review");return c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(t).gap||0):320;}
     // Endlos: Karten einmal klonen, beim Erreichen der Haelfte zurueckspringen
     var loopW=0;

@@ -1,5 +1,27 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 27.11.2026 – Rezensionszitate lassen sich wieder zuverlässig schließen
+
+- Das Rezensionskarussell klont beim Start jede Karte einmal, damit das Band
+  endlos laufen kann. Original und Klon trugen je einen eigenen
+  „Weiterlesen“-Button und schalteten unabhängig voneinander. Wer ein Zitat an
+  einer Stelle öffnete und an der anderen schloss, ließ die zweite Instanz
+  offen. Sie kam beim Weiterlaufen des Bands aufgeklappt erneut ins Bild, und
+  das wirkte wie ein Zitat, das sich nicht schließen lässt.
+- `site.js` vergibt jetzt vor dem Klonen je Karte ein `data-rev-id`. Der
+  delegierte Klick-Handler schaltet alle Karten mit derselben Kennung
+  gemeinsam und setzt Buttontext und `aria-expanded` auf beiden.
+- Betroffen waren `index.html`, `erstgespraech.html`,
+  `branding-designagentur-hamburg.html` und
+  `branding-designagentur-frankfurt.html` mit zusammen 41 Rezensionen, die als
+  82 Karten im DOM liegen.
+- Cache-Buster auf `v=187` für `site.css` und `site.js`, dazu die erwartete
+  Version in `tools/technical-preflight.py`.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne
+  Befund, `git diff --check` erfolgreich. Im lokalen Browser auf allen vier
+  Seiten geprüft: Öffnen und Schließen wirken von beiden Instanzen aus, am Ende
+  stehen alle Buttons wieder auf „Weiterlesen“ mit `aria-expanded="false"`.
+
 ## 19.11.2026 – Crawlbare Vercel-Alias-Domain und Projekt-Redirects bereinigt
 
 - Die öffentliche Standard-Domain `concrete-relaunch.vercel.app` leitet jetzt

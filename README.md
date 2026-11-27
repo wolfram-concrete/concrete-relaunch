@@ -1,5 +1,15 @@
 # CONCRETE Relaunch
 
+## 27.11.2026 – Rezensionsband, Zitate schließen
+
+- Die aufklappbaren Zitate im Rezensionsband ließen sich nicht zuverlässig
+  schließen. Ursache sind die Klone, die das Karussell für den Endlauf anlegt:
+  Original und Klon einer Rezension schalteten getrennt.
+- `site.js` paart beide über `data-rev-id` und schaltet sie gemeinsam, samt
+  Buttontext und `aria-expanded`.
+- Betroffen waren Startseite, Erstgespräch sowie die Standortseiten Hamburg und
+  Frankfurt. Der Cache-Buster steht jetzt auf `v=187`.
+
 ## 13.11.2026 – goSchneider, Kundenstimme
 
 - Die Projektseite goSchneider zeigt die Rezension von Dennis Schneider an
