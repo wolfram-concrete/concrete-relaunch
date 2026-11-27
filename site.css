@@ -431,9 +431,9 @@ body.intro .site-header{transform:translateY(-110%) !important}
 .inquiry__form{padding:clamp(8px,1vw,16px) 0 clamp(44px,5.5vw,88px) clamp(28px,4vw,72px)}
 @media(max-width:900px){.inquiry__head h2{margin-left:0}.inquiry__grid{grid-template-columns:1fr}.inquiry__media{margin-bottom:0}.inquiry__form{padding-left:0;padding-top:var(--s5)}}
 .coral-block a:hover,.coral-block a:focus-visible{color:var(--paper)}
-.coral-block .button--solid{border-color:var(--ink);color:var(--ink)}
-.coral-block .button--solid::before{background:var(--ink)}
-.coral-block .button--solid:hover,.coral-block .button--solid:focus-visible{border-color:var(--ink);color:var(--coral)}
+.coral-block .button--solid,.next-band .button--solid{border-color:var(--ink);color:var(--ink)}
+.coral-block .button--solid::before,.next-band .button--solid::before{background:var(--ink)}
+.coral-block .button--solid:hover,.coral-block .button--solid:focus-visible,.next-band .button--solid:hover,.next-band .button--solid:focus-visible{border-color:var(--ink);color:var(--coral)}
 
 /* ===== Google-Rezensionen ===== */
 .reviews{padding-block:clamp(48px,7vw,96px);overflow:hidden}
