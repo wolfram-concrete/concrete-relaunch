@@ -15,7 +15,10 @@
 - Logoleiste mit 24 Marken auf Family und Kids.
 - Podcastfolge als Player auf zwei Seiten und als `PodcastEpisode` im Markup.
 - Sortlist-Badge liegt lokal statt über ein Script von sortlist.de.
-- Cache-Buster v=202.
+- Faktenseite zweiter Durchgang: Anschriften, Telefon, E-Mail, neuer
+  Abschnitt „Technik und Betrieb" mit den Care-Paketen, Referenzgrößen
+  mit Quelle. Ziffern 01 bis 12.
+- Cache-Buster v=203.
 
 ## 27.11.2026 – Organisationsverweis und Änderungsdatum auf allen Seiten
 
