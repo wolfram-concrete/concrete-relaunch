@@ -1,5 +1,11 @@
 # CONCRETE Relaunch
 
+## 27.11.2026 – Organisationsverweis und Änderungsdatum auf allen Seiten
+
+- `tools/webpage-schema.py` ergänzt auf jeder Seite ein WebPage-Objekt, das auf
+  Website und Organisation verweist und das Git-Änderungsdatum trägt.
+- Das Markup der Preisseite trug noch die alte Antwort und ist korrigiert.
+
 ## 27.11.2026 – Projektdauern auf den Leistungs- und Phasenseiten
 
 - Die vier Phasen und vier Leistungsseiten nennen ihre Dauer, jeweils mit einem

@@ -1,5 +1,26 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 27.11.2026 – WebPage-Objekt mit Organisationsverweis und Änderungsdatum
+
+- Jede der 164 Seiten trägt jetzt ein `WebPage`-Objekt im JSON-LD, das über
+  `isPartOf` auf die Website und über `publisher` auf
+  `https://www.concrete-designs.de/#organization` verweist. Die Organisation
+  bleibt einmal vollständig beschrieben, statt 164 Kopien derselben Adresse.
+  Vorher hatten drei Seiten ein solches Objekt.
+- Dasselbe Objekt trägt `dateModified`, gefüllt aus dem letzten Git-Datum der
+  Datei. Damit stimmt das Datum immer und muss nicht gepflegt werden.
+- Erzeugt von `tools/webpage-schema.py`. Das Skript ist wiederholbar und
+  aktualisiert vorhandene Objekte, statt sie zu verdoppeln. Probelauf mit
+  `--trocken`.
+- Korrektur: Die FAQ-Auszeichnung auf `was-kostet-ein-marken-setup-bei-euch`
+  trug noch die alte Antwort „Es gibt keinen festen Preis“, während sichtbar
+  seit heute die drei Größenordnungen stehen. Markup und Seite sind wieder
+  gleich. Strukturierte Daten müssen den sichtbaren Inhalt abbilden.
+- Noch offen, aus dem Bestand: Auf `ist-eine-website-nach-der-migration-wartungsfrei`
+  und `uebernehmet-ihr-nur-die-strategie-oder-auch-design-und-umsetzung` weicht
+  der Antworttext im Markup ebenfalls vom sichtbaren Text ab.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne Befund.
+
 ## 27.11.2026 – Dauern auf Phasen- und Leistungsseiten, Erstgespräch gestrafft
 
 - Die vier Phasenseiten tragen die Dauer im Eyebrow: „Phase 01 von 04 · circa 2
