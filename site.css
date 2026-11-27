@@ -1174,3 +1174,4 @@ main .case-hero+.container{padding-top:clamp(56px,8vw,112px)!important}
 .podcast-embed__start:hover .podcast-embed__meta b,.podcast-embed__start:focus-visible .podcast-embed__meta b{color:var(--coral)}
 .podcast-embed iframe{display:block;width:100%;border:0;border-radius:12px}
 .podcast-embed--schmal{margin-top:var(--s3);margin-bottom:var(--s3);max-width:none}
+.podcast-iframe{display:block;width:100%;border:0;border-radius:12px;margin:var(--s3) 0}
