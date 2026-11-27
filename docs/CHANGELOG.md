@@ -8,6 +8,14 @@
   Erstgesprächsseite: Mindestbudget, Eigenleistungen, einzelne Leistungen,
   Dauer, individuelles Angebot. Die Antworten stammen aus Christians Kurzfassung
   für das Erstgespräch.
+- Der Budget-Abschnitt ist als `#budget` verankert und steht als „05 Budget“ in
+  der Sprungnavigation oben auf der Seite, neben den vier Prozessschritten.
+- Korrektur: Die Dauer- und Umfangszeilen in den Feldern standen in einer
+  Serifenschrift, weil die Schrift dort als `"Roc"` angegeben war. Auf der
+  Website heißt sie `"Grotesk"`, nur im Magazin `"Roc"`. Zwei Stellen korrigiert.
+- Die Orientierungszeile im Erstgespräch sitzt jetzt auf einer Coral-Fläche und
+  hat die Größe des Fließtextes. Vorher stand sie größer und nur eingerückt, was
+  zusammen mit Headline, Copy und Link zu viele Stufen ergab.
 - Auf `was-kostet-eine-veraltete-website` steht der Verweis auf die Preisseite
   jetzt als vierte Kachel im Block der weiterführenden Fragen. Vorher hing er
   als loser Absatz hinter diesem Block.
