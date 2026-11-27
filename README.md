@@ -1,5 +1,11 @@
 # CONCRETE Relaunch
 
+## 27.11.2026 – Projektdauern auf den Leistungs- und Phasenseiten
+
+- Die vier Phasen und vier Leistungsseiten nennen ihre Dauer, jeweils mit einem
+  Satz dazu, wovon die Spanne abhängt. 16 Seiten statt einer.
+- Das Erstgespräch zeigt im FAQ-Abschnitt nur noch Überschrift und Fragen.
+
 ## 27.11.2026 – Coral-Senkrechte raus, Trennlinien im Raster
 
 - Die senkrechte Coral-Linie vor den Kurzantworten ist auf 46 Seiten entfernt.

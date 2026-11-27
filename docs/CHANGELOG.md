@@ -1,5 +1,25 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 27.11.2026 – Dauern auf Phasen- und Leistungsseiten, Erstgespräch gestrafft
+
+- Die vier Phasenseiten tragen die Dauer im Eyebrow: „Phase 01 von 04 · circa 2
+  Wochen“. Für Begleiten steht dort „laufend“, weil diese Phase kein Ende hat.
+  Auf der Leistungsübersicht steht die Angabe als Coral-Zeile unter jeder Phase.
+- Vier Leistungsseiten nennen jetzt ihre Dauer, im Eyebrow und in einem Satz
+  darunter, der die Spanne erklärt: Corporate Design circa 4 Wochen (2 bis 3 bis
+  zur Präsentation), Website-Design 2 bis 6 Wochen je nach Umfang, Package Design
+  circa 4 Wochen bei drei bis fünf Formaten, Markenpositionierung circa 2 Wochen.
+- Grundsatz dahinter, von Wolfram am 27.11.2026: Die Arbeitszeit ist konstant, die
+  Gesamtdauer schwankt mit Freigaben und Projektgröße. Deshalb steht auf jeder
+  Seite neben der Zahl ein Satz dazu, wovon die Spanne abhängt.
+- Damit nennen 16 Seiten eine Dauer, vorher war es eine.
+- Auf der Erstgesprächsseite sind der Einleitungsabsatz und die korallfarbene
+  Orientierungsbox entfernt. Der Abschnitt besteht jetzt aus Überschrift und den
+  14 Fragen. Die Budgetangaben stehen weiterhin in Frage 12 und auf der
+  Preisseite.
+- Alle Werte in `fakten.yaml` unter `phasen` und `bearbeitungszeiten`.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne Befund.
+
 ## 27.11.2026 – Budget-Abschnitt auf der Leistungsübersicht ausgebaut
 
 - Der Abschnitt 05 zeigte nur drei Zahlen. Jetzt trägt jedes der drei Felder
