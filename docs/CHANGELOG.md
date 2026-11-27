@@ -1,5 +1,18 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 27.11.2026 – Budget-Abschnitt auf der Leistungsübersicht ausgebaut
+
+- Der Abschnitt 05 zeigte nur drei Zahlen. Jetzt trägt jedes der drei Felder
+  Budget, Dauer und den Leistungsumfang in einem Satz.
+- Darunter stehen fünf Fragen als Akkordeon, im selben Muster wie auf der
+  Erstgesprächsseite: Mindestbudget, Eigenleistungen, einzelne Leistungen,
+  Dauer, individuelles Angebot. Die Antworten stammen aus Christians Kurzfassung
+  für das Erstgespräch.
+- Auf `was-kostet-eine-veraltete-website` steht der Verweis auf die Preisseite
+  jetzt als vierte Kachel im Block der weiterführenden Fragen. Vorher hing er
+  als loser Absatz hinter diesem Block.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne Befund.
+
 ## 27.11.2026 – Zwei Textfehler, Einzug der Kurzantworten, Kapitelziffern
 
 - „Übernehmet ihr“ heißt jetzt „Übernehmt ihr“, an allen fünf Stellen der Seite:

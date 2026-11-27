@@ -34,6 +34,17 @@
 .budget-felder>div{background:var(--paper-deep);padding:clamp(16px,1.8vw,24px) clamp(16px,1.8vw,26px)}
 .budget-felder dt{font-family:"Arame";font-weight:700;font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:0 0 10px;line-height:1.3}
 .budget-felder dd{margin:0;font-family:"Arame";font-weight:700;font-size:clamp(18px,1.9vw,26px);line-height:1;color:var(--ink);letter-spacing:-.01em}
+.budget-felder .dauer{display:block;margin-top:8px;font-family:"Roc";font-weight:400;font-size:var(--fs-meta);letter-spacing:0;color:var(--ink-60)}
+.budget-felder .umfang{display:block;margin-top:12px;font-family:"Roc";font-weight:400;font-size:13px;line-height:1.45;letter-spacing:0;color:var(--ink-60)}
+.budget-acc{max-width:76ch;margin-top:var(--s4)}
+.budget-acc details{border-bottom:1px solid var(--rule)}
+.budget-acc summary{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:14px 0;cursor:pointer;list-style:none;font-weight:700;font-size:var(--fs-body);color:var(--ink)}
+.budget-acc summary::-webkit-details-marker{display:none}
+.budget-acc summary::after{content:"+";font-family:"Arame";font-weight:700;font-size:20px;color:var(--coral);flex:none;transition:transform .25s ease}
+.budget-acc details[open] summary::after{transform:rotate(45deg)}
+.budget-acc .acc-body{padding:0 0 var(--s3);color:var(--ink-60);max-width:66ch}
+.budget-acc .acc-body p{margin:0 0 .8em}
+.budget-acc .acc-body p:last-child{margin-bottom:0}
 @media(max-width:700px){.budget-felder{grid-template-columns:1fr}}
 
 .page-head{padding-block:clamp(96px,10vw,136px) clamp(38px,4vw,56px);position:relative}
@@ -334,11 +345,12 @@
 <h2>Was kostet ein Markenprojekt?</h2>
 <p>Drei typische Projekte zur Orientierung. Sie zeigen, was in einem Gesamtprojekt steckt und wie lange es ungefähr dauert. Vorhandene Grundlagen, Eigenleistungen und ein angepasster Umfang verändern euren Bedarf. Alle Beträge netto.</p>
 <dl class="budget-felder">
-<div><dt>Fokussierter Markenstart</dt><dd>circa 20.000 €</dd></div>
-<div><dt>Vollständiger Markenaufbau</dt><dd>circa 40.000 €</dd></div>
-<div><dt>Neuordnung und Rebranding</dt><dd>circa 55.000 €</dd></div>
+<div><dt>Fokussierter Markenstart</dt><dd>circa 20.000 €<span class="dauer">circa 6 Wochen</span><span class="umfang">Strategische Grundlage, kompaktes Corporate Design, Onepager, Texte und Bilder.</span></dd></div>
+<div><dt>Vollständiger Markenaufbau</dt><dd>circa 40.000 €<span class="dauer">circa 2 Monate</span><span class="umfang">Markenstrategie und Brand Story, Naming, Brandvision, mehrseitige Website, Texte und Fotografie.</span></dd></div>
+<div><dt>Neuordnung und Rebranding</dt><dd>circa 55.000 €<span class="dauer">circa 2,5 bis 3 Monate</span><span class="umfang">Vertiefte Analyse, Positionierung, erweitertes Markensystem, größerer Website-Auftritt, SEO- und KI-Contentausbau, interne Einführung.</span></dd></div>
 </dl>
-<p><a class="link-arrow" href="was-kostet-ein-marken-setup-bei-euch">Projektbeispiele mit Umfang und Dauer</a></p>
+<div class="budget-acc"><details><summary>Sind 20.000 € euer Mindestbudget?</summary><div class="acc-body"><p>Nein. Dieser Betrag beschreibt ein vollständiges Markenprojekt mit Strategie, Corporate Design, Onepager, Texten und Bildern.</p><p>Ihr könnt auch einzelne Leistungen beauftragen. Vorhandene Grundlagen und Eigenleistungen verringern Umfang und Budget.</p></div></details><details><summary>Müssen wir alles von euch machen lassen?</summary><div class="acc-body"><p>Nein. Wir können auf vorhandener Strategie, Gestaltung oder Inhalten aufbauen. Ihr könnt Aufgaben selbst übernehmen und Anwendungen später ergänzen.</p><p>Gemeinsam legen wir fest, was ihr tatsächlich braucht und wer welchen Teil übernimmt. Was ihr selbst macht oder vorerst nicht benötigt, berücksichtigen wir im Angebot.</p></div></details><details><summary>Können wir auch einzelne Leistungen beauftragen?</summary><div class="acc-body"><p>Ja. Unser Leistungsangebot ist modular aufgebaut. Ihr könnt mit uns eine Markenstrategie entwickeln, einen Namen finden, ein Corporate Design weiterentwickeln oder eine Website realisieren.</p><p>Wichtig ist uns, dass die Leistung auf einer guten strategischen Grundlage aufbaut. Besteht die Klarheit schon, arbeiten wir damit weiter. Fehlt sie, schaffen wir sie gemeinsam.</p></div></details><details><summary>Wie lange dauert ein Markenprojekt?</summary><div class="acc-body"><p>Als Orientierung: circa sechs Wochen für einen fokussierten Markenstart, circa zwei Monate für einen vollständigen Markenaufbau, circa zweieinhalb bis drei Monate für eine Neuordnung mit Rebranding.</p><p>Vorhandene Grundlagen und kurze Freigabewege verkürzen den Ablauf. Rechtzeitige Rückmeldungen und Zulieferungen bestimmen den Zeitplan mit.</p></div></details><details><summary>Bekommen wir ein individuelles Angebot?</summary><div class="acc-body"><p>Ja. Die Beispiele geben einen ersten Anhaltspunkt. Auf Basis eurer Aufgabe legen wir im Angebot die konkreten Leistungen, Ergebnisse, Zuständigkeiten und den Projektpreis fest.</p><p>Dazu gehören ein Projektfahrplan und ein persönliches Erläuterungsvideo, in der Regel innerhalb von 24 Stunden nach dem Erstgespräch.</p></div></details></div>
+<p style="margin-top:var(--s4)"><a class="link-arrow" href="was-kostet-ein-marken-setup-bei-euch">Alle drei Projektbeispiele im Detail</a></p>
 </div>
 </div></section><section class="sec sec--line" data-screen-label="Prozess"><div class="container process-layout">
 <h2 class="process-layout__title rv">Warum ein klarer Prozess so wichtig ist.</h2>
