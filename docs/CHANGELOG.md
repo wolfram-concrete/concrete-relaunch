@@ -56,6 +56,16 @@ Resources bei der Waldemar Link GmbH & Co. KG, vorher „HR, LINK GmbH + Co. KG"
 nicht geben; Q18 aus Christians Audit ist damit beantwortet. Die drei
 Preisgrößen bleiben im FAQ-Akkordeon der Erstgesprächsseite.
 
+**Personenbereich mobil, Korrektur.** Auf dem Handy verdeckte das Foto den
+zweiten Absatz, und das Video stand vor dem Bild. Ursache war eine Regel in
+`site.css`, die `.eg-video` mit `!important` und einem negativen Rand von
+268 Pixeln nach oben zieht. Sie gehört zum Klebeeffekt der vier Ablaufschritte
+und galt bisher für jedes Video auf der Seite. Sie ist jetzt auf
+`.eg-steps + .eg-video` begrenzt, greift also nur noch, wenn das Video direkt
+auf die Schritte folgt, wie auf der Kontaktseite. Der Personenbereich stapelt
+mobil über Flex in fester Reihenfolge: Headline, Text, Bild, Video. Auf dem
+Desktop bleibt es bei Text und Video links, Bild rechts.
+
 **Validierung.** Technischer Preflight und SEO-Gauntlet über 164 Seiten ohne
 Befund, Desktop und Mobil im Browser geprüft, Klickwege mit echten
 Mausklicks getestet. Cache-Buster auf v=202.

@@ -18,7 +18,10 @@
 - Faktenseite zweiter Durchgang: Anschriften, Telefon, E-Mail, neuer
   Abschnitt „Technik und Betrieb" mit den Care-Paketen, Referenzgrößen
   mit Quelle. Ziffern 01 bis 12.
-- Cache-Buster v=203.
+- Personenbereich stapelt mobil Headline, Text, Bild, Video. Die Regel
+  für den Klebeeffekt der Ablaufschritte ist auf `.eg-steps + .eg-video`
+  begrenzt, sie zog das Video vorher überall nach oben.
+- Cache-Buster v=204.
 
 ## 27.11.2026 – Organisationsverweis und Änderungsdatum auf allen Seiten
 

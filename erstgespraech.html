@@ -23,7 +23,7 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=203">
+<link rel="stylesheet" href="site.css?v=204">
 <style>
 .page-head{padding-block:clamp(120px,18vw,260px) clamp(48px,6vw,88px)}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(38px,6.8vw,104px);line-height:.9;margin:0;max-width:16ch;font-kerning:normal}
@@ -49,7 +49,10 @@
 .legal{max-width:76ch;font-size:15px;line-height:1.7}
 .legal h2{font-size:clamp(20px,2vw,28px);margin-top:var(--s6)}
 .legal p{margin:0 0 1em}
-.eg-person .pair{align-items:center;gap:clamp(28px,5vw,72px)}
+.eg-person .pair{align-items:start;gap:clamp(28px,5vw,72px) clamp(28px,5vw,72px);grid-template-areas:"text bild" "video bild";grid-template-rows:auto 1fr}
+.eg-person .pair > .rv{grid-area:text}
+.eg-person__fig{grid-area:bild;align-self:center}
+.eg-person .vteaser{grid-area:video;align-self:start}
 .eg-person h2{margin-bottom:var(--s3)}
 .eg-person p{max-width:46ch;color:var(--ink-60);line-height:1.6;margin:0 0 .8em}
 .eg-person p:last-child{margin-bottom:0}
@@ -59,7 +62,7 @@
 /* Video bleibt auch beim Abspielen klein */
 .eg-person .vteaser.open .vteaser__thumb{width:min(100%,460px)}
 .eg-person .vteaser.open .vteaser__meta{opacity:1;flex:1}
-@media(max-width:860px){.eg-person .pair{gap:var(--s4)}}
+@media(max-width:860px){.eg-person .pair{display:flex;flex-direction:column;gap:var(--s4)}.eg-person .pair > .rv{order:1}.eg-person__fig{order:2}.eg-person .vteaser{order:3;margin-top:0}}
 .page-head .eg-actions .button--solid{background:var(--coral);border-color:var(--coral);color:var(--ink)}
 .page-head .eg-actions .button--solid::before{background:var(--ink)}
 .page-head .eg-actions .button--solid:hover,.page-head .eg-actions .button--solid:focus-visible{border-color:var(--ink);color:var(--coral)}
@@ -219,14 +222,14 @@
         <h2>Wer euch gegen&uuml;bersitzt</h2>
         <p>Das Erstgespr&auml;ch f&uuml;hrt Wolfram Stratmann, Gesch&auml;ftsf&uuml;hrer Kreation bei CONCRETE. Er arbeitet seit &uuml;ber 20 Jahren an Marken und ordnet ein, was eure Aufgabe braucht.</p>
         <p>Ihr sprecht also von Anfang an mit jemandem, der sp&auml;ter selbst an eurem Projekt arbeitet.</p>
-      <button class="vteaser rv-media eg-video" type="button" data-vteaser data-mux-playback-id="bMEULVNtXClXrodV1rePIfYT4YvBf2X2P8nVbK600hCM" data-video-title="Das Erstgespräch. Warum es uns so wichtig ist">
-  <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/erstgespraech.webp" width="1280" height="720" alt="Standbild: Das Erstgespräch, warum es uns so wichtig ist" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
-  <span class="vteaser__meta"><span>Das Erstgespräch, warum es uns so wichtig ist</span><span class="t">Video</span></span>
-</button>
       </div>
       <figure class="eg-person__fig rv-media">
         <img src="assets/team/wolfram-erstgespraech.jpg" width="1600" height="1064" alt="Wolfram Stratmann" loading="lazy" decoding="async">
       </figure>
+      <button class="vteaser rv-media eg-video" type="button" data-vteaser data-mux-playback-id="bMEULVNtXClXrodV1rePIfYT4YvBf2X2P8nVbK600hCM" data-video-title="Das Erstgespräch. Warum es uns so wichtig ist">
+  <span class="vteaser__thumb"><img src="https://concrete-video-cdn.vercel.app/poster/erstgespraech.webp" width="1280" height="720" alt="Standbild: Das Erstgespräch, warum es uns so wichtig ist" loading="lazy" decoding="async"><span class="vteaser__badge"><i class="icon-arrow"></i></span></span>
+  <span class="vteaser__meta"><span>Das Erstgespräch, warum es uns so wichtig ist</span><span class="t">Video</span></span>
+</button>
     </div>
   </section>
 <section class="reviews" data-screen-label="Google-Rezensionen">
@@ -409,6 +412,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=203"></script>
+<script src="site.js?v=204"></script>
 </body>
 </html>
