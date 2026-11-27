@@ -21,20 +21,33 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=188">
+<link rel="stylesheet" href="site.css?v=189">
 <style>
 .page-head{padding-block:clamp(120px,16vw,220px) clamp(40px,5vw,72px)}
 .page-head .eyebrow{display:block;margin:0 0 var(--s3)}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(30px,4.6vw,72px);line-height:.94;margin:0;max-width:22ch;font-kerning:normal}
-.sec{border-top:1px solid var(--rule);padding-block:clamp(40px,5vw,80px)}
+.sec{position:relative;padding-block:clamp(40px,5vw,80px)}
+.sec::before{content:"";position:absolute;top:0;height:1px;background:var(--rule);left:calc(max(0px,(100% - var(--max)) / 2) + var(--pad));right:calc(max(0px,(100% - var(--max)) / 2) + var(--pad))}
 .sec .grid{display:grid;grid-template-columns:minmax(160px,var(--indent)) 1fr;gap:var(--s3) clamp(40px,8vw,120px)}
 @media(max-width:820px){.sec .grid{grid-template-columns:1fr}}
 .sec h2{font-family:"Arame";font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1;margin:0 0 var(--s3)}
 .sec p{max-width:62ch;color:var(--ink-60);margin:0 0 .9em}
 .num{font-family:"Arame";font-weight:700;font-size:clamp(36px,4.4vw,64px);line-height:.8;color:var(--coral);letter-spacing:-.02em}
-.kurz{font-size:clamp(19px,1.6vw,24px);line-height:1.45;color:var(--ink)!important;max-width:52ch!important;border-left:2px solid var(--coral);padding-left:var(--s3)}
+.kurz{font-size:clamp(19px,1.6vw,24px);line-height:1.45;color:var(--ink)!important;max-width:52ch!important;padding-left:var(--s3)}
 .sym{list-style:none;padding:0;margin:0 0 .9em}
 .sym li{padding:10px 0 10px 22px;border-bottom:1px solid var(--rule);position:relative;color:var(--ink-60)}
+.paket-fakten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;max-width:620px;margin:0 0 var(--s4)}
+.paket-fakten>div{background:var(--paper-deep);padding:clamp(18px,2vw,26px) clamp(18px,2vw,28px)}
+.paket-fakten dt{font-family:"Arame";font-weight:700;font-size:var(--fs-meta);letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin:0 0 10px}
+.paket-fakten dd{margin:0;font-family:"Arame";font-weight:700;font-size:clamp(20px,2.2vw,30px);line-height:1;color:var(--ink);letter-spacing:-.01em}
+@media(max-width:620px){.paket-fakten{grid-template-columns:1fr}}
+.paket-label{font-family:"Arame";font-weight:700;font-size:var(--fs-meta);letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin:var(--s3) 0 var(--s2)}
+.paket-liste{list-style:none;margin:0 0 var(--s3);padding:0;max-width:72ch}
+.paket-liste li{padding:12px 0 12px 24px;border-bottom:1px solid var(--rule);position:relative;color:var(--ink-60)}
+.paket-liste li::before{content:"";position:absolute;left:0;top:calc(12px + .35em);width:.55em;height:.7em;background:var(--coral);-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain}
+.paket-liste li b{color:var(--ink);font-weight:700}
+.pfaq h3{font-family:"Arame";font-weight:700;font-size:clamp(17px,1.5vw,21px);line-height:1.2;margin:var(--s4) 0 var(--s2);max-width:58ch}
+.pfaq h3:first-of-type{margin-top:0}
 .sym li::before{position:absolute;left:0;top:1.05em;content:"";-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain;background:var(--coral);width:.55em;height:.7em}</style>
 <script src="consent-v10.js"></script>
 <script src="attribution-v3.js"></script>
@@ -119,14 +132,51 @@
 </div></section>
 <section class="sec" data-screen-label="Kurz erklärt"><div class="container grid">
 <div><span class="num rv">01</span></div>
-<div class="rv"><h2>Kurz erklärt</h2><p class="kurz">Es gibt keinen festen Preis. Wir passen das Marken-Setup an eure Ressourcen, Möglichkeiten und Wünsche an, modular und flexibel.</p></div>
+<div class="rv"><h2>Kurz erklärt</h2><p class="kurz">Ein fokussierter Markenstart liegt bei circa 20.000 €, ein vollständiger Markenaufbau bei circa 40.000 €, eine Neuordnung mit Rebranding bei circa 55.000 €, jeweils netto. Einzelne Leistungen sind auch separat beauftragbar.</p></div>
 </div></section>
 <section class="sec" data-screen-label="Die ganze Antwort"><div class="container grid">
 <div><span class="num rv">02</span></div>
-<div class="rv"><h2>Die ganze Antwort</h2><p>Ein Marken-Setup hat bei uns keinen Standardpreis, weil jedes Unternehmen mit anderen Voraussetzungen startet. Manche bringen schon Inhalte, Strukturen oder Designbausteine mit, andere fangen komplett bei null an. Auch der Umfang, in dem ihr euch selbst einbringen wollt, wirkt sich auf den Aufwand aus.</p><p>Deshalb haben wir ein modulares System: Jede Phase ist eine abgeschlossene Leistung. Ihr könnt beispielsweise mit Phase 1, Verstehen, starten und darauf aufbauen. Phase 3, die Umsetzung, machen wir allerdings nie ohne eine klare Brandvision aus Phase 2, weil sonst die Grundlage fehlen würde.</p><p>Das bedeutet: Wir sind flexibel und können den Prozess so anpassen, dass er zu euren finanziellen Möglichkeiten, Ressourcen und Zielen passt. Ob ihr alle Phasen direkt beauftragt oder Schritt für Schritt vorgeht, das Setup bleibt immer transparent, nachvollziehbar und auf eure Situation zugeschnitten.</p></div>
+<div class="rv"><h2>Die ganze Antwort</h2><p>Ein Marken-Setup hat bei uns keinen Standardpreis, weil jedes Unternehmen mit anderen Voraussetzungen startet. Manche bringen schon Inhalte, Strukturen oder Designbausteine mit, andere fangen komplett bei null an. Auch der Umfang, in dem ihr euch selbst einbringen wollt, wirkt sich auf den Aufwand aus.</p><p>Deshalb haben wir ein modulares System: Jede Phase ist eine abgeschlossene Leistung. Ihr könnt beispielsweise mit Phase 1, Verstehen, starten und darauf aufbauen. Phase 3, die Umsetzung, machen wir allerdings nie ohne eine klare Brandvision aus Phase 2, weil sonst die Grundlage fehlen würde.</p><p>Das bedeutet: Wir sind flexibel und können den Prozess so anpassen, dass er zu euren finanziellen Möglichkeiten, Ressourcen und Zielen passt. Ob ihr alle Phasen direkt beauftragt oder Schritt für Schritt vorgeht, das Setup bleibt immer transparent, nachvollziehbar und auf eure Situation zugeschnitten.</p><p>Damit ihr trotzdem planen könnt, zeigen die drei folgenden Beispiele typische Gesamtumfänge mit Budget und Dauer. Vorhandene Grundlagen, Eigenleistungen und ein angepasster Umfang verändern beides. Ein schnellerer Ablauf bedeutet dabei nicht automatisch weniger Arbeitsaufwand. Alle Preisangaben verstehen sich netto zuzüglich Umsatzsteuer.</p></div>
+</div></section>
+<section class="sec" data-screen-label="Fokussierter Markenstart"><div class="container grid">
+<div><span class="num rv">03</span></div>
+<div class="rv"><h2>Fokussierter Markenstart</h2>
+<dl class="paket-fakten"><div><dt>Budget</dt><dd>circa 20.000 €</dd></div><div><dt>Dauer</dt><dd>circa 6 Wochen</dd></div></dl>
+<p>Für Startup-Gründungen, Einzelgründungen, neue Institute oder klar abgegrenzte Angebote, die eine strategische Grundlage, ein eigenständiges Erscheinungsbild und eine kleine Website benötigen.</p>
+<p class="paket-label">Das steckt drin</p>
+<ul class="paket-liste"><li><b>Strategische Grundlage</b> Wir prüfen vorhandene Unterlagen, betrachten Markt und Wettbewerb und entwickeln auf Basis eines schriftlichen Fragenkatalogs die Positionierung. Offene Punkte klären wir in einem kurzen Arbeitstermin.</li><li><b>Kompaktes Corporate Design</b> Nach einem Design-Kick-off entwickeln wir Logo, Farben, Typografie und die grundlegende visuelle Richtung.</li><li><b>Onepager</b> Wir konzipieren, gestalten und realisieren eine zusammenhängende Website, die euer Angebot verständlich erklärt.</li><li><b>Texte und Bilder</b> Die Texte für den Onepager und eine passende Foto- oder KI-Bildproduktion gehören zum Umfang.</li><li><b>Übergabe</b> Ihr bekommt die vereinbarten Markenassets fertig ausgearbeitet und eine Einweisung in die Pflege der Website.</li></ul>
+<p class="paket-label">Das Ergebnis</p>
+<p>Eine klar ausgerichtete Marke mit einem nutzbaren Erscheinungsbild und einer fertigen kleinen Website. Ihr könnt mit eurem Angebot sichtbar werden und darauf aufbauen.</p>
+<p>Weitere Anwendungen wie Geschäftspapier, Visitenkarten oder ein Pitch Deck lassen sich anschließend ergänzen.</p></div>
+</div></section>
+<section class="sec" data-screen-label="Vollständiger Markenaufbau"><div class="container grid">
+<div><span class="num rv">04</span></div>
+<div class="rv"><h2>Vollständiger Markenaufbau</h2>
+<dl class="paket-fakten"><div><dt>Budget</dt><dd>circa 40.000 €</dd></div><div><dt>Dauer</dt><dd>circa 2 Monate</dd></div></dl>
+<p>Für Unternehmens-, Praxis- oder Beratungsgründungen sowie neue Angebote, die eine umfassendere Markenidentität und einen vollständigen digitalen Auftritt brauchen.</p>
+<p class="paket-label">Das steckt drin</p>
+<ul class="paket-liste"><li><b>Markenstrategie und Brand Story</b> Wir analysieren die Ausgangslage, arbeiten gemeinsam im Workshop an der Positionierung und formulieren, was die Marke ausmacht und wie sie darüber spricht.</li><li><b>Namensentwicklung</b> Wenn ein neuer Name benötigt wird, entwickeln wir ihn für die definierte Benennungsaufgabe.</li><li><b>Brandvision</b> Wir übersetzen die Strategie in eine konzeptionelle und visuelle Leitidee. Logo, Farben, Typografie, Bildsprache und ausgewählte Anwendungsbeispiele machen die Marke greifbar.</li><li><b>Unternehmenswebsite</b> Wir entwickeln Struktur, Nutzerführung und Gestaltung und übernehmen die technische Umsetzung einer mehrseitigen Website.</li><li><b>Texte und Fotografie</b> Wir erstellen die Website-Texte und produzieren passende eigene Bilder.</li><li><b>Finalisierung und Übergabe</b> Die Markenassets werden ausgearbeitet, die Gestaltungsgrundlagen dokumentiert und die Website zur eigenständigen Pflege übergeben.</li></ul>
+<p class="paket-label">Das Ergebnis</p>
+<p>Ein zusammenhängender Markenauftritt: von der Positionierung über die visuelle Identität bis zur fertigen Website mit Texten und Bildern.</p>
+<p>Ein bereits feststehender Name oder andere nutzbare Vorarbeiten verändern den Umfang. Zusätzliche Anwendungen und ein weiterführender SEO- und KI-Contentausbau können ergänzt werden.</p></div>
+</div></section>
+<section class="sec" data-screen-label="Neuordnung und Rebranding"><div class="container grid">
+<div><span class="num rv">05</span></div>
+<div class="rv"><h2>Neuordnung und Rebranding</h2>
+<dl class="paket-fakten"><div><dt>Budget</dt><dd>circa 55.000 €</dd></div><div><dt>Dauer</dt><dd>circa 2,5 bis 3 Monate</dd></div></dl>
+<p>Für Projekte, bei denen Angebote, Strukturen und unterschiedliche Perspektiven neu zusammengeführt werden müssen, etwa weil sich das Unternehmen weiterentwickelt hat und die bisherige Marke diese Entwicklung nicht mehr verständlich vermittelt.</p>
+<p class="paket-label">Das steckt drin</p>
+<ul class="paket-liste"><li><b>Vertiefte Analyse und strategische Neuordnung</b> Wir betrachten die bestehende Marke, ihre Angebote, Zielgruppen und ihr Umfeld. Gespräche und gemeinsame Arbeitstermine bringen die relevanten Perspektiven zusammen.</li><li><b>Positionierung und Brand Story</b> Wir schaffen eine gemeinsame Richtung und eine verständliche Grundlage für die weitere Markenarbeit.</li><li><b>Brandvision und erweitertes Markensystem</b> Die neue Ausrichtung wird in eine Gesamtidee übersetzt und für die vereinbarten Anwendungen ausgearbeitet.</li><li><b>Umfangreicherer Website-Auftritt</b> Wir ordnen die Inhalte, entwickeln die Nutzerführung und übernehmen Gestaltung und technische Umsetzung.</li><li><b>Texte und Fotografie</b> Die Kerninhalte werden verständlich aufbereitet und durch eine Fotoproduktion ergänzt.</li><li><b>Contentausbau für SEO und KI-Suche</b> Weitere Leistungs-, Themen- und FAQ-Seiten erweitern die Website auf Basis vorhandener Fachinformationen.</li><li><b>Interne Einführung</b> Ein vorbereiteter gemeinsamer Termin vermittelt die neue Ausrichtung im Team und schafft Raum für Fragen.</li><li><b>Dokumentation und Übergabe</b> Ihr bekommt die vereinbarten Assets, Gestaltungsgrundlagen und die Einweisung für die weitere Anwendung.</li></ul>
+<p class="paket-label">Das Ergebnis</p>
+<p>Eine neu geordnete Marke mit einem konsistenten Auftritt und einer Website, die das Angebot verständlich vermittelt. Die relevanten Beteiligten werden einbezogen und auf die Anwendung vorbereitet.</p>
+<p>Der zusätzliche Umfang entsteht durch mehr Analyse, Abstimmung, Gestaltung und Umsetzung. Entscheidend sind die Anforderungen des Projekts.</p></div>
+</div></section>
+<section class="sec" data-screen-label="Häufige Fragen"><div class="container grid">
+<div><span class="num rv">06</span></div>
+<div class="rv pfaq"><h2 style="margin-bottom:var(--s4)">Häufige Fragen zu Preisen und Dauer</h2><h3>Sind 20.000 € euer Mindestbudget?</h3><p>Nein. Die circa 20.000 € beziehen sich auf das beschriebene Gesamtprojekt mit Strategie, Corporate Design, Onepager, Texten und Bildern. Einzelne Leistungen können separat und mit kleineren Budgets beauftragt werden.</p><h3>Können wir nur eine Website oder ein Corporate Design beauftragen?</h3><p>Ja. Unsere Leistungen sind einzeln beauftragbar und bauen aufeinander auf. Für Gestaltung und Website brauchen wir eine klare Vorstellung von Positionierung, Zielgruppen und Angebot. Sind diese Grundlagen vorhanden, prüfen wir sie gemeinsam und arbeiten damit weiter.</p><h3>Weshalb nennt ihr Circa-Preise?</h3><p>Die Beispiele sollen euch die erste Budgetplanung und die Auswahl eines passenden Partners erleichtern. Euer tatsächlicher Bedarf kann abweichen. Im Angebot legen wir fest, welche Leistungen und Ergebnisse enthalten sind, was gegenüber dem Beispiel hinzukommt oder entfällt und wie sich das auf den Preis auswirkt.</p><h3>Können wir vorhandene Texte, Bilder oder strategische Grundlagen nutzen?</h3><p>Ja. Wir schauen gemeinsam, welche Vorarbeiten zur Aufgabe passen. Das kann eine vorhandene Positionierung sein, eigenes Bildmaterial oder gut aufbereitete Inhalte. Entscheidend ist, dass die Grundlagen das angestrebte Ergebnis tragen. Nutzbare Vorarbeiten verringern unseren Leistungsumfang und damit das Budget.</p><h3>Können wir Aufgaben selbst übernehmen oder später umsetzen?</h3><p>Ja. Euer Team kann Fachinformationen und Texte zuliefern oder weitere Anwendungen auf Basis der Gestaltungsregeln erstellen. Auch ein schrittweiser Ausbau ist möglich. Wir vereinbaren vorab, wer welche Aufgaben übernimmt und welche Übergaben dafür nötig sind.</p><h3>Können wir schneller zum Ergebnis kommen?</h3><p>Ja, wenn die Voraussetzungen passen. Vorhandene Grundlagen, klare Zuständigkeiten, kurze Freigabewege und parallele Arbeit verkürzen den Ablauf. Eine kürzere Kalenderdauer senkt den Preis allerdings nicht automatisch. Entscheidend ist, ob sich auch der Arbeitsumfang verändert.</p><h3>Was bestimmt den Preis eines Projekts?</h3><p>Vor allem die Aufgabe und die vereinbarten Ergebnisse: Wie viel muss analysiert und geklärt werden, welche Perspektiven werden einbezogen, welche Gestaltung und welche Anwendungen werden gebraucht? Wir vereinbaren dafür einen Projektpreis. Die Unternehmensgröße allein ist keine Preisstufe.</p><h3>Was bedeutet die angegebene Projektdauer?</h3><p>Die Zeiträume sind Erfahrungswerte für den gesamten Projektverlauf, von der Vorbereitung über Entwicklung und Abstimmung bis zu den Freigaben. Texte, Bildproduktion und vorbereitende Website-Arbeit laufen teilweise parallel. Für die genannten Zeiträume setzen wir voraus, dass eure Beiträge und Entscheidungen rechtzeitig vorliegen.</p><h3>Welche zusätzlichen Kosten können entstehen?</h3><p>Im Angebot grenzen wir externe Leistungen und laufende Kosten ab. Dazu können Hosting, Domains, kostenpflichtige Lizenzen, Reisen oder externe Produktions- und Prüfleistungen gehören. Zusätzliche Anwendungen wie Geschäftsausstattung oder Präsentationen berücksichtigen wir, wenn sie Teil eurer Aufgabe sind.</p></div>
 </div></section>
 <section class="sec" data-screen-label="Passt dazu"><div class="container grid">
-<div><span class="num rv">03</span></div>
+<div><span class="num rv">07</span></div>
 <div class="rv"><h2>Passt dazu</h2>
 <ul class="sym"><li><a href="koennen-wir-unsere-eigenen-ideen-und-vorlieben-im-branding-prozess-einbringen">Können wir unsere eigenen Ideen und Vorlieben im Branding Prozess einbringen?</a></li><li><a href="wie-schnell-koennt-ihr-eine-marke-entwickeln">Wie schnell könnt ihr eine Marke entwickeln?</a></li><li><a href="was-passiert-wenn-uns-mehrere-designrouten-gefallen">Was passiert, wenn uns mehrere Designrouten gefallen?</a></li></ul>
 </div>
@@ -236,6 +286,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=188"></script>
+<script src="site.js?v=189"></script>
 </body>
 </html>

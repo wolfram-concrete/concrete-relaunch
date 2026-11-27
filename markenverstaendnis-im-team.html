@@ -21,18 +21,19 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=188">
+<link rel="stylesheet" href="site.css?v=189">
 <style>
 .page-head{padding-block:clamp(120px,16vw,220px) clamp(40px,5vw,72px)}
 .page-head .eyebrow{display:block;margin:0 0 var(--s3)}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(30px,4.6vw,72px);line-height:.94;margin:0;max-width:22ch;font-kerning:normal}
-.sec{border-top:1px solid var(--rule);padding-block:clamp(40px,5vw,80px)}
+.sec{position:relative;padding-block:clamp(40px,5vw,80px)}
+.sec::before{content:"";position:absolute;top:0;height:1px;background:var(--rule);left:calc(max(0px,(100% - var(--max)) / 2) + var(--pad));right:calc(max(0px,(100% - var(--max)) / 2) + var(--pad))}
 .sec .grid{display:grid;grid-template-columns:minmax(160px,var(--indent)) 1fr;gap:var(--s3) clamp(40px,8vw,120px)}
 @media(max-width:820px){.sec .grid{grid-template-columns:1fr}}
 .sec h2{font-family:"Arame";font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1;margin:0 0 var(--s3)}
 .sec p{max-width:62ch;color:var(--ink-60);margin:0 0 .9em}
 .num{font-family:"Arame";font-weight:700;font-size:clamp(36px,4.4vw,64px);line-height:.8;color:var(--coral);letter-spacing:-.02em}
-.kurz{font-size:clamp(19px,1.6vw,24px);line-height:1.45;color:var(--ink)!important;max-width:52ch!important;border-left:2px solid var(--coral);padding-left:var(--s3)}
+.kurz{font-size:clamp(19px,1.6vw,24px);line-height:1.45;color:var(--ink)!important;max-width:52ch!important;padding-left:var(--s3)}
 .sym{list-style:none;padding:0;margin:0 0 .9em}
 .sym li{padding:10px 0 10px 22px;border-bottom:1px solid var(--rule);position:relative;color:var(--ink-60)}
 .sym li::before{position:absolute;left:0;top:1.05em;content:"";-webkit-mask:url("assets/arrow.svg") no-repeat center/contain;mask:url("assets/arrow.svg") no-repeat center/contain;background:var(--coral);width:.55em;height:.7em}</style>
@@ -237,6 +238,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=188"></script>
+<script src="site.js?v=189"></script>
 </body>
 </html>

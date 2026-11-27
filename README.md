@@ -1,5 +1,40 @@
 # CONCRETE Relaunch
 
+## 27.11.2026 – Coral-Senkrechte raus, Trennlinien im Raster
+
+- Die senkrechte Coral-Linie vor den Kurzantworten ist auf 46 Seiten entfernt.
+  Sie gehört nicht zur Gestaltung der Marke.
+- Die Trennlinien zwischen Abschnitten liefen randlos über das Fenster. Auf 86
+  Seiten enden sie jetzt am Satzspiegel, wie bei `section.sec--line`.
+
+## 27.11.2026 – Preise auf Logoseite, Leistungen und Website-Artikel
+
+- Die Logoseite nennt jetzt 1.950 bis 5.950 Euro netto für eine einzelne
+  Logoentwicklung und verweist auf die Preisseite.
+- Die Leistungsübersicht hat einen Teaser mit den drei Budgets.
+- Der Artikel zur veralteten Website verlinkt auf die Preisseite.
+
+## 27.11.2026 – Preise und Projektdauer
+
+- Die vorhandene Preisseite nennt jetzt drei Projektbeispiele mit Budget und
+  Dauer, dazu neun Fragen. Keine neue URL.
+- Das Erstgespräch hat einen FAQ-Abschnitt mit 14 Fragen und einer sichtbaren
+  Orientierungszeile zu Budget und Dauer.
+
+## 27.11.2026 – Zwei statt drei Ansprechpartner
+
+- Neun Stellen auf acht Branchenseiten sprachen von „uns drei“. Jetzt steht dort
+  „uns beiden“, passend zur Über-uns-Seite und zu Christians FAQ-Entwurf.
+
+## 27.11.2026 – Klick im Rezensionsband, Markenpfeile in Fragenlisten
+
+- „Weiterlesen“ und „Zum Projekt“ reagierten auf einen echten Mausklick nicht:
+  Das Band fing den Zeiger sofort ein und bekam das Klickereignis. Gezogen wird
+  jetzt erst ab sechs Pixeln Bewegung.
+- Die eckigen Aufzählungszeichen in den Fragenlisten sind auf 40 Seiten durch
+  den Markenpfeil ersetzt.
+- Cache-Buster auf `v=189`.
+
 ## 27.11.2026 – Projektlink in den Rezensionskarten
 
 - Jede Rezension führt auf ihr Projekt. Der Link sitzt als kleine Coral-Pille

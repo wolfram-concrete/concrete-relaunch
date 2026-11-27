@@ -451,9 +451,26 @@
     if(p)p.addEventListener("click",function(){nudge(-1)});
     if(n)n.addEventListener("click",function(){nudge(1)});
     var down=false,sx=0,sl=0;
-    t.addEventListener("pointerdown",function(e){down=true;paused=true;sx=e.clientX;sl=t.scrollLeft;t.classList.add("dragging");t.setPointerCapture(e.pointerId);});
-    t.addEventListener("pointermove",function(e){if(down){t.scrollLeft=sl-(e.clientX-sx);wrap();}});
-    ["pointerup","pointercancel"].forEach(function(ev){t.addEventListener(ev,function(){down=false;paused=false;t.classList.remove("dragging");});});
+    // Erst ab sechs Pixeln Bewegung ziehen. Wer sofort den Pointer einfaengt, nimmt
+    // "Weiterlesen" und "Zum Projekt" den Klick weg: das click-Ereignis geht dann an
+    // das Band statt an den Knopf. Gleiches Muster wie im Logoband weiter unten.
+    var moved=0,geraden=false;
+    t.addEventListener("pointerdown",function(e){down=true;paused=true;sx=e.clientX;sl=t.scrollLeft;moved=0;});
+    t.addEventListener("pointermove",function(e){
+      if(!down)return;
+      moved=Math.max(moved,Math.abs(e.clientX-sx));
+      if(moved>6&&!t.hasPointerCapture(e.pointerId)){t.classList.add("dragging");t.setPointerCapture(e.pointerId);}
+      if(moved>6){t.scrollLeft=sl-(e.clientX-sx);wrap();}
+    });
+    ["pointerup","pointercancel"].forEach(function(ev){t.addEventListener(ev,function(e){
+      if(!down)return;
+      geraden=moved>6;
+      if(t.hasPointerCapture&&t.hasPointerCapture(e.pointerId))t.releasePointerCapture(e.pointerId);
+      down=false;paused=false;t.classList.remove("dragging");
+    });});
+    // Nach einem echten Zug den folgenden Klick verwerfen, damit das Ziehen kein
+    // Zitat aufklappt und keinem Projektlink folgt.
+    t.addEventListener("click",function(e){if(geraden){geraden=false;e.stopPropagation();e.preventDefault();}},true);
     t.addEventListener("scroll",function(){if(!down)wrap()},{passive:true});
     start();
   })();

@@ -1,5 +1,126 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 27.11.2026 – Zwei Textfehler, Einzug der Kurzantworten, Kapitelziffern
+
+- „Übernehmet ihr“ heißt jetzt „Übernehmt ihr“, an allen fünf Stellen der Seite:
+  Titel, OG-Titel, JSON-LD, Breadcrumb und Überschrift. Die URL bleibt, damit
+  keine Weiterleitung nötig wird.
+- In der Positionierungs-FAQ hing am Ende der Kurzantwort der Satzteil „ein Logo
+  und ein Designsystem“. Entfernt, an allen vier Stellen im Dokument.
+- Die Kurzantworten behalten ihren Einzug von 24 Pixeln, nachdem die
+  korallfarbene Senkrechte entfernt wurde. Nur die Linie ist weg, die Einrückung
+  bleibt.
+- Die Kapitelziffern in den Wissensartikeln brachen zweizeilig um. Bei 1440
+  Pixeln Fensterbreite brauchte die zweistellige Zahl 70 Pixel, die Spalte bot
+  72, also zwei Pixel Reserve. Die Ziffer ist jetzt umbruchsicher, die Spalte
+  wächst von `clamp(56px,5vw,84px)` auf `clamp(60px,5.6vw,92px)`. Cache-Buster
+  für `knowledge-article.css` auf v=9, 13 Seiten.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne Befund.
+
+## 27.11.2026 – Korallfarbene Senkrechte entfernt, Trennlinien ins Raster
+
+- Die senkrechte Coral-Linie vor den Kurzantworten ist kein Gestaltungsmittel
+  der Marke. Sie stand auf 45 Fragenseiten vor `.kurz` und seit heute auch vor
+  der Budgetzeile im Erstgespräch. Entfernt, zusammen mit dem Einzug. Die
+  Kurzantwort bleibt durch Schriftgröße und Ink-Farbe hervorgehoben.
+- Die Trennlinien zwischen den Abschnitten liefen über die volle Fensterbreite,
+  weil die Seiten `.sec{border-top}` lokal setzten. Auf 86 Seiten steht jetzt
+  dasselbe Muster, das `section.sec--line` in `site.css` schon verwendet: die
+  Linie als `::before`, begrenzt auf Satzspiegel und Innenabstand. Damit endet
+  sie auf derselben Kante wie der Inhalt.
+- Geprüft bei 1440 und bei 375 Pixeln Fensterbreite: Die Linie rückt links und
+  rechts um `var(--pad)` ein, bei 1440 also 46 Pixel.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne
+  Befund, `git diff --check` erfolgreich.
+
+## 27.11.2026 – Preisangaben auf Logoseite, Leistungsübersicht und Website-Artikel
+
+- `was-kostet-ein-logo-design.html` nennt am Artikelende erstmals einen eigenen
+  Preis: 1.950 bis 5.950 Euro netto für eine einzelne Logoentwicklung, mit der
+  Einordnung, dass das Zeichen in den meisten Projekten aus der Positionierung
+  heraus und zusammen mit Farbe, Typografie und Bildsprache entsteht. Bisher
+  endete der Artikel mit dem Marktüberblick von 5 Euro bis einer Million, ohne
+  Angabe für CONCRETE. Der neue Abschnitt steht auch im Inhaltsverzeichnis.
+- `leistungen.html` bekommt vor dem Prozessabschnitt den Teaser „Was kostet ein
+  Markenprojekt?“ mit den drei Budgets in denselben Faktenfeldern wie auf der
+  Preisseite, als Abschnitt 05 in der vorhandenen Nummerierung.
+- `was-kostet-eine-veraltete-website.html` verweist am Artikelende auf die
+  Preisseite, falls aus der Modernisierung ein größeres Vorhaben wird.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne
+  Befund, `git diff --check` erfolgreich, Teaser im Browser geprüft.
+- Offen: Christians Briefing schreibt für die Erstgesprächs-FAQs „keine
+  Einzelpreise“. Die Zahl auf der Logoseite ist eine bewusste Ausnahme, weil die
+  Seite sonst die Frage im Titel nicht beantwortet. Sie lässt sich mit einem
+  Absatz wieder entfernen.
+
+## 27.11.2026 – Preise und Projektdauer auf der vorhandenen Preisseite und im Erstgespräch
+
+- `was-kostet-ein-marken-setup-bei-euch.html` beantwortet die Frage jetzt mit
+  Zahlen. „Kurz erklärt“ beginnt mit den drei Größenordnungen statt mit „Es gibt
+  keinen festen Preis“.
+- Budget und Dauer stehen je Projektbeispiel in zwei Feldern auf der
+  Bildflächenfarbe `--paper-deep`, mit Coral-Label und der Zahl in Arame,
+  getrennt durch zwei Pixel Fuge statt durch einen Rahmen. Auf schmalen Schirmen
+  stapeln die Felder. Zur Auswahl standen drei Varianten, darunter eine mit
+  Coral- und Ink-Fläche; Wolfram hat die ruhige gewählt, weil die Coral-Fläche
+  im CTA-Block am Seitenende bereits gesetzt ist. Darunter stehen die drei Projektbeispiele aus Christians
+  Briefing mit Budget, Dauer, Leistungsumfang und Ergebnis, dazu neun Fragen zu
+  Preisen und Dauer. Die Seite hat jetzt sieben Abschnitte statt drei.
+- Bewusst keine neue Preisseite. Eine zweite URL zur selben Frage würde mit der
+  vorhandenen konkurrieren, und Christians Briefing schließt neue Seiten für
+  bereits beantwortete Fragen aus.
+- `erstgespraech.html` bekommt zwischen Ablauf und Kundenstimmen den Abschnitt
+  „Fragen vor dem Erstgespräch“: eine sichtbare Orientierungszeile mit den drei
+  Budgets und der Dauer, darunter 14 Fragen als Akkordeon. Die Budgetzeile steht
+  offen, nicht eingeklappt, damit die Zahl auch ohne Klick gelesen wird.
+- Frage 15 aus Christians Entwurf ist nicht übernommen, ihr Inhalt steht bereits
+  im Intro der Seite.
+- Drei Angaben sind gegenüber dem Briefing ergänzt: Frage 07 nennt 2009 als
+  Ursprung, 2013 als GmbH und 25 bis 30 Projekte pro Jahr. Frage 09 nennt die
+  Größen von Waldemar Link, Haftpflichtkasse und ergobag. Frage 14 verweist auf
+  die Care-Pakete.
+- Die Dauer des fokussierten Markenstarts steht auf sechs Wochen. Die beiden
+  Briefings nannten vier und sechs Wochen, Wolfram hat sechs entschieden.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne Befund,
+  `git diff --check` erfolgreich, beide Seiten im lokalen Browser geprüft.
+
+## 27.11.2026 – Zwei statt drei Ansprechpartner auf den Branchenseiten
+
+- Acht Branchenseiten versprachen die Zusammenarbeit „mit uns drei“ oder „mit uns
+  dreien“: Architektur und Immobilien, Consulting IT und Finance, Event und
+  Entertainment, Family und Kids, Food und Beverage, Marketing und Media,
+  Recruiting und Startups. Neun Stellen stehen jetzt auf „mit uns beiden“.
+- Die Über-uns-Seite nannte bereits zwei zentrale Köpfe. Daniel Fatemi steht dort
+  unverändert im Netzwerk, zusammen mit 21 weiteren Partnern.
+- Der Satz auf der Case-Seite von MDB Finance über die drei Gründer des Kunden
+  bleibt unberührt.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne Befund.
+
+## 27.11.2026 – Klick im Rezensionsband und Markenpfeile in den Fragenlisten
+
+- Das Rezensionsband fing den Zeiger schon beim Aufsetzen ein
+  (`setPointerCapture` im `pointerdown`). Dadurch ging das Klickereignis an das
+  Band statt an den Knopf, und „Weiterlesen“ wie „Zum Projekt“ reagierten auf
+  einen echten Mausklick nicht. Mit der Tastatur und per Skript funktionierten
+  sie, was den Fehler lange verdeckt hat.
+- Gezogen wird jetzt erst ab sechs Pixeln Bewegung, und der Zeiger wird erst
+  dann eingefangen. Das ist dasselbe Muster, das das Logoband im selben Skript
+  schon verwendet. Nach einem echten Zug verwirft ein Klick-Listener in der
+  Capture-Phase den folgenden Klick, damit das Ziehen kein Zitat aufklappt und
+  keinem Projektlink folgt.
+- Geprüft mit echten Mausklicks: Öffnen und Schließen wirken, der Projektlink
+  führt auf die Case-Seite, das Band lässt sich weiterhin ziehen
+  (`scrollLeft` 0 auf 320), und beim Ziehen klappt kein Zitat auf.
+- Die eckigen Aufzählungszeichen in den Fragenlisten (`ul.faql`) sind durch den
+  Markenpfeil aus `assets/arrow.svg` ersetzt, auf 40 Seiten. Eine Seite,
+  `website-design.html`, hatte den Pfeil schon; deren Regel ist jetzt der
+  Standard. Damit folgt die Liste der Vorgabe aus AGENTS.md, die für
+  Aufzählungen korallfarbene Pfeile verlangt.
+- Cache-Buster auf `v=189` für `site.css` und `site.js`, erwartete Version in
+  `tools/technical-preflight.py` nachgezogen.
+- Validierung: technischer Preflight und SEO-Gauntlet für 164 Seiten ohne
+  Befund, `git diff --check` erfolgreich, `node --check site.js` sauber.
+
 ## 27.11.2026 – Projektlink in den Rezensionskarten
 
 - Jede Rezension führt jetzt auf das zugehörige Projekt. Der Link sitzt als

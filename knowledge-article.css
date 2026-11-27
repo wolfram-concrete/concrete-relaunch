@@ -18,11 +18,11 @@
 .knowledge-toc a{display:grid;grid-template-columns:2.2em 1fr;gap:.5em;padding:10px 0;color:var(--ink-60);font-size:13px;line-height:1.35;text-decoration:none}
 .knowledge-toc a::before{content:counter(toc,decimal-leading-zero);font-family:"Arame";font-weight:700;color:var(--coral)}
 .knowledge-toc a:hover,.knowledge-toc a:focus-visible{color:var(--ink)}
-.knowledge-copy{--chapter-rail:clamp(56px,5vw,84px);--chapter-gap:clamp(24px,3vw,48px);display:grid;grid-template-columns:var(--chapter-rail) minmax(0,1fr);column-gap:var(--chapter-gap);counter-reset:chapter}
+.knowledge-copy{--chapter-rail:clamp(60px,5.6vw,92px);--chapter-gap:clamp(24px,3vw,48px);display:grid;grid-template-columns:var(--chapter-rail) minmax(0,1fr);column-gap:var(--chapter-gap);counter-reset:chapter}
 .knowledge-copy>*{grid-column:2}
 .knowledge-copy h2,.knowledge-copy h3{font-family:"Arame";font-weight:700;line-height:1.02;letter-spacing:-.01em;margin:clamp(56px,7vw,96px) 0 var(--s3);max-width:24ch;scroll-margin-top:120px}
 .knowledge-copy h2{position:relative;counter-increment:chapter;font-size:clamp(28px,3.3vw,48px)}
-.knowledge-copy h2::before{content:counter(chapter,decimal-leading-zero);position:absolute;top:0;right:calc(100% + var(--chapter-gap));width:var(--chapter-rail);font-size:clamp(38px,4vw,60px);line-height:1.02;color:var(--coral)}
+.knowledge-copy h2::before{content:counter(chapter,decimal-leading-zero);position:absolute;top:0;right:calc(100% + var(--chapter-gap));width:var(--chapter-rail);font-size:clamp(38px,4vw,60px);line-height:1.02;color:var(--coral);white-space:nowrap}
 .knowledge-copy h3{font-size:clamp(22px,2.2vw,32px)}
 .knowledge-copy>h2:first-child,.knowledge-copy>h3:first-child{margin-top:0}
 .knowledge-copy p,.knowledge-copy li{font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:var(--ink-60)}
