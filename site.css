@@ -1164,3 +1164,7 @@ main .case-hero+.container{padding-top:clamp(56px,8vw,112px)!important}
 .case-meta .svc.branche{grid-column:2}
 @media(max-width:820px){.case-meta .lbl.branche,.case-meta .svc.branche{grid-column:1}}
 .podcast-iframe{display:block;width:100%;border:0;border-radius:12px;margin:var(--s3) 0}
+
+/* Heroes mit Markenpfeil: Pfeil und Copy auf einer eingerueckten Linie */
+.page-head--indent .container > .brand-arrow,.page-head--indent .container > .lead,.page-head--indent .container > p:not(.eyebrow){margin-left:var(--indent)}
+@media(max-width:900px){.page-head--indent .container > .brand-arrow,.page-head--indent .container > .lead,.page-head--indent .container > p:not(.eyebrow){margin-left:0}}

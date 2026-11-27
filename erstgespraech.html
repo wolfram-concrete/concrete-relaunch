@@ -23,7 +23,7 @@
 <link rel="preload" href="fonts/arame-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rocgrotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=200">
+<link rel="stylesheet" href="site.css?v=202">
 <style>
 .page-head{padding-block:clamp(120px,18vw,260px) clamp(48px,6vw,88px)}
 .page-head h1{font-family:"Arame";font-weight:700;font-size:clamp(38px,6.8vw,104px);line-height:.9;margin:0;max-width:16ch;font-kerning:normal}
@@ -60,9 +60,6 @@
 .eg-person .vteaser.open .vteaser__thumb{width:min(100%,460px)}
 .eg-person .vteaser.open .vteaser__meta{opacity:1;flex:1}
 @media(max-width:860px){.eg-person .pair{gap:var(--s4)}}
-/* Hero: Copy auf der Linie der Buttons, Primaerbutton gefuellt */
-.page-head .container > .lead{margin-left:var(--indent)}
-@media(max-width:900px){.page-head .container > .lead{margin-left:0}}
 .page-head .eg-actions .button--solid{background:var(--coral);border-color:var(--coral);color:var(--ink)}
 .page-head .eg-actions .button--solid::before{background:var(--ink)}
 .page-head .eg-actions .button--solid:hover,.page-head .eg-actions .button--solid:focus-visible{border-color:var(--ink);color:var(--coral)}
@@ -192,7 +189,7 @@
   <ul class="social-links"><li><a class="li" href="https://www.linkedin.com/company/concrete-brandbuilding/" target="_blank" rel="noopener noreferrer" aria-label="CONCRETE auf LinkedIn"></a></li><li><a class="ig" href="https://www.instagram.com/concrete.brandbuilding/" target="_blank" rel="noopener noreferrer" aria-label="CONCRETE auf Instagram"></a></li></ul>
 </nav>
 <main id="main">
-  <section class="page-head" data-screen-label="Erstgespräch Intro" style="position:relative;overflow:visible">
+  <section class="page-head page-head--indent" data-screen-label="Erstgespräch Intro" style="position:relative;overflow:visible">
     <img class="plx" data-plx="-10" src="assets/beton/beton-coral-alpha-quer.webp" alt="" aria-hidden="true" style="position:absolute;right:-4%;bottom:-4%;width:clamp(340px,40vw,760px);pointer-events:none;z-index:0" width="1800" height="1014">
     <div class="container">
       <p class="eyebrow" style="margin:0 0 var(--s3)">Erstgespräch</p>
@@ -412,6 +409,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=200"></script>
+<script src="site.js?v=202"></script>
 </body>
 </html>

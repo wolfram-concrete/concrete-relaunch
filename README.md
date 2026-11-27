@@ -1,5 +1,22 @@
 # CONCRETE Relaunch
 
+## 27.11.2026 (abends) – Ergebnis und Stimme nach oben
+
+- Auf allen 44 Projektseiten steht das Ergebnis-Modul an vierter Stelle, die
+  33 Kundenzitate direkt danach. Reihenfolge: Hero, Projektüberblick,
+  Herausforderung, Ergebnis, Zitat.
+- Erstgesprächsseite: Stimmen vor den Fragen, Terminblock sticky daneben,
+  neuer Abschnitt „Wer euch gegenübersitzt".
+- Neue Klasse `page-head--indent` für die 12 Heroes mit Markenpfeil: Pfeil
+  und Copy auf `var(--indent)`, Headline am Satzspiegel.
+- Faktenseite gefüllt: Herkunft, Register, Zahlen, Projektgrößen, Märkte,
+  Bewertung. Im Footer verlinkt. Organization-Markup um Gründer, Register und
+  Service mit Offer erweitert.
+- Logoleiste mit 24 Marken auf Family und Kids.
+- Podcastfolge als Player auf zwei Seiten und als `PodcastEpisode` im Markup.
+- Sortlist-Badge liegt lokal statt über ein Script von sortlist.de.
+- Cache-Buster v=202.
+
 ## 27.11.2026 – Organisationsverweis und Änderungsdatum auf allen Seiten
 
 - `tools/webpage-schema.py` ergänzt auf jeder Seite ein WebPage-Objekt, das auf

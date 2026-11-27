@@ -1,5 +1,65 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 27.11.2026 (abends) – Ergebnis und Stimme nach oben, Podcast, Hero-Raster
+
+**Projektseiten, alle 44.** Das Ergebnis-Modul mit der Gegenüberstellung
+Ausgangspunkt gegen Ergebnis steht jetzt an vierter Stelle statt in der
+Seitenmitte, im Median nach 10 Prozent des Seitentextes statt nach 44. Die
+33 Cases mit Kundenzitat zeigen es direkt danach. Reihenfolge überall: Hero,
+Projektüberblick, Herausforderung, Ergebnis, Zitat. Bei `case-goschneider`
+war Tag-Zählung statt Mustersuche nötig, dort steckt eine Section in der
+anderen. Die LINK-Seite hat zusätzlich Eckdaten und einen Claim als Muster
+für die übrigen Cases.
+
+**Erstgesprächsseite.** Die Kundenstimmen stehen vor den Fragen statt
+dahinter. Der Terminblock sitzt als Coral-Kasten rechts neben dem Akkordeon
+und bleibt beim Scrollen stehen; das Muster `.next-band` lag ungenutzt im
+Stylesheet. Neuer Abschnitt „Wer euch gegenübersitzt" mit Foto und Video.
+Hero: Copy und Markenpfeil auf einer eingerückten Linie, Primärbutton coral
+gefüllt mit Ink-Text (Kontrast 7,25:1), Wording von „Freie Termine ansehen"
+auf „Termin aussuchen".
+
+**Heroes mit Markenpfeil, 12 Seiten.** Neue Klasse `page-head--indent`:
+Pfeil und Copy rücken auf `var(--indent)` ein, die Headline bleibt am
+Satzspiegel. Das Grunge-Modul im Hero wuchs auf fünf Seiten von
+`clamp(220px,28vw,480px)` auf `clamp(340px,40vw,760px)`.
+
+**Faktenseite.** Herkunft und Entwicklung (2009 aus dem ergobag-Branding,
+GmbH seit 2013), Handelsregister, USt-ID, Märkte, 25 bis 30 Projekte pro
+Jahr, 106 Marken, 44 Projektbeispiele, Projektgrößen mit Dauer,
+Schwerpunkte, Google-Bewertung. Abschnittsziffern laufen jetzt durch,
+vorher trugen zwei Abschnitte die 03. Organization-Markup auf Faktenseite
+und Startseite um `legalName`, `foundingDate`, `vatID`, Handelsregister und
+beide Gründer als `Person` erweitert, dazu `Service` mit `offers` für die
+drei Projektgrößen. Faktenseite im Footer verlinkt, auf allen 165 Seiten.
+
+**Family und Kids.** Logoleiste mit 24 Marken nach dem Muster der
+Startseite, Schwarzwaldkind aus dem Drive-Archiv ergänzt (EPS nach SVG über
+Ghostscript). LÄSSIG und WiRTH laufen über `grayscale`, weil ihre Flächen
+unter `brightness(0)` zu schwarzen Klötzen werden; Schwarzwaldkind bleibt
+ungefiltert, damit die Negativschrift der Banderole erhalten bleibt.
+
+**Podcast.** Die Folge „Corporate Design: Brauchts das für Behörden? #47"
+aus dem Podcast Kleinstadtniveau (12.10.2023, 1:22 h) steht als Player auf
+`corporate-design` und `ueber-uns`, als Zeile bei den Vertrauenssignalen
+der Faktenseite und als `PodcastEpisode` an Wolframs Person-Objekt.
+
+**Sortlist-Badge.** Es lud über ein Script von sortlist.de, das auf die
+Marketing-Zustimmung wartete. Seit dem Wegfall des Cookie-Banners war es nie
+sichtbar. Das SVG liegt jetzt im Projekt, ohne Drittanbieter-Request. Die
+Preflight-Regel prüft entsprechend das Gegenteil von vorher.
+
+**Korrektur.** Lena Wilms steht im Rezensionsband jetzt als Head of Human
+Resources bei der Waldemar Link GmbH & Co. KG, vorher „HR, LINK GmbH + Co. KG".
+
+**Entschieden.** Kennzahlen zur Wirkung bei Kunden gibt es nicht und wird es
+nicht geben; Q18 aus Christians Audit ist damit beantwortet. Die drei
+Preisgrößen bleiben im FAQ-Akkordeon der Erstgesprächsseite.
+
+**Validierung.** Technischer Preflight und SEO-Gauntlet über 164 Seiten ohne
+Befund, Desktop und Mobil im Browser geprüft, Klickwege mit echten
+Mausklicks getestet. Cache-Buster auf v=202.
+
 ## 27.11.2026 – WebPage-Objekt mit Organisationsverweis und Änderungsdatum
 
 - Jede der 164 Seiten trägt jetzt ein `WebPage`-Objekt im JSON-LD, das über
