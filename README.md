@@ -1,5 +1,15 @@
 # CONCRETE Relaunch
 
+## 28.11.2026 – Projektjahre und Korrekturen
+
+- 43 der 44 Projektseiten tragen ihr Jahr, sichtbar und als `datePublished`.
+- Waldemar Link rund 1.200 statt 620 bis 640 Mitarbeitende, Die
+  Haftpflichtkasse 477 statt 431. Beide Quellen in `fakten.yaml` erneuert.
+- Zitat von Lena Wilms auf der LINK-Seite.
+- Award-Logos im Footer tragen ihren Namen jetzt im Alt-Text.
+- Sitemap-`lastmod` aus Git, IndexNow mit 164 URLs angestoßen.
+- Cache-Buster v=205.
+
 ## 27.11.2026 (abends) – Ergebnis und Stimme nach oben
 
 - Auf allen 44 Projektseiten steht das Ergebnis-Modul an vierter Stelle, die

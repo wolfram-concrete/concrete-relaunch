@@ -21,8 +21,8 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CACHE_VERSION = "204"
-EXPECTED_CASE_CACHE_VERSION = "204"
+EXPECTED_CACHE_VERSION = "205"
+EXPECTED_CASE_CACHE_VERSION = "205"
 CONSENT_SCRIPT = "consent-v10.js"
 ATTRIBUTION_SCRIPT = "attribution-v3.js"
 LOCAL_HOSTS = {"concrete-designs.de", "www.concrete-designs.de"}
@@ -327,10 +327,10 @@ def scan() -> list[str]:
         else:
             required_awards = {
                 'assets/awards/concrete-awards-2026.png',
-                'aria-label="German Brand Award"',
-                'aria-label="Deutscher Gründerpreis"',
-                'aria-label="Marken Award"',
-                'aria-label="German Design Award"',
+                'alt="German Brand Award"',
+                'alt="Deutscher Gründerpreis"',
+                'alt="Marken Award"',
+                'alt="German Design Award"',
                 'https://www.german-brand-award.com/',
                 'https://www.deutscher-gruenderpreis.de/',
                 'https://marken-award.de/',

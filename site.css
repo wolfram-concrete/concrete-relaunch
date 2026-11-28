@@ -1162,7 +1162,9 @@ main .case-hero+.container{padding-top:clamp(56px,8vw,112px)!important}
    damit Label und Wert nebeneinander stehen und nicht in freie Zellen rutschen. */
 .case-meta .lbl.branche{grid-column:1}
 .case-meta .svc.branche{grid-column:2}
-@media(max-width:820px){.case-meta .lbl.branche,.case-meta .svc.branche{grid-column:1}}
+.case-meta .lbl.jahr{grid-column:1}
+.case-meta .svc.jahr{grid-column:2}
+@media(max-width:820px){.case-meta .lbl.branche,.case-meta .svc.branche,.case-meta .lbl.jahr,.case-meta .svc.jahr{grid-column:1}}
 .podcast-iframe{display:block;width:100%;border:0;border-radius:12px;margin:var(--s3) 0}
 
 /* Heroes mit Markenpfeil: Pfeil und Copy auf einer eingerueckten Linie */

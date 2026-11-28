@@ -1,5 +1,39 @@
 # Changelog – CONCRETE Strukturprototyp
 
+## 28.11.2026 – Projektjahre, Kundengrößen korrigiert, Alt-Texte
+
+**Projektjahre auf allen Projektseiten.** 43 der 44 Cases tragen jetzt ihr
+Jahr, sichtbar im Projektüberblick und als `datePublished` am
+CreativeWork-Objekt. ergobag steht mit „2009 bis 2021" und zusätzlich
+`temporalCoverage`. Für Poodlewohl fehlt die Angabe noch. Ein Datum ist einer
+der vier gemessenen Faktoren, nach denen Antwortmaschinen Quellen auswählen;
+bis heute trug keine Projektseite eines.
+
+**Zwei Kundengrößen waren falsch.** Für Waldemar Link stand „rund 620 bis 640
+Mitarbeitende weltweit" aus einem Datenportal. Die eigenen
+Stellenausschreibungen des Unternehmens nennen rund 1.200, davon etwa 900 in
+Deutschland. Für Die Haftpflichtkasse stand die Zahl aus dem Geschäftsbericht
+2023 (431); der Bericht 2025 nennt 477 zum Stichtag. Beide Angaben sind auf
+der Faktenseite, in der Erstgespräch-FAQ und auf der LINK-Projektseite
+korrigiert, dazu in `fakten.yaml` mit neuer Quelle.
+
+**Zitat von Lena Wilms auf der LINK-Seite.** Es lag bisher nur im
+Rezensionsband. Jetzt steht es als eigenes Zitatmodul hinter dem Ergebnis,
+mit Foto, Funktion und Firmierung. Die Flächenfarbe ist aus dem Hero-Bild
+abgeleitet, Kontrast zum Text 7,43:1.
+
+**Award-Logos im Footer.** Die vier Verweise trugen ihren Namen nur im
+`aria-label`, das Bild war leer ausgezeichnet. Ein Crawler, der nur
+Alt-Texte liest, fand sie nicht. Der Name steht jetzt im Alt-Attribut, das
+doppelte `aria-label` ist entfallen. Preflight-Regel entsprechend angepasst.
+
+**Sitemap und Indexierung.** `lastmod` stand für alle 164 Seiten auf dem
+6. November, obwohl die Website seitdem umgebaut wurde. Jetzt aus der
+Versionsverwaltung. IndexNow mit allen 164 URLs angestoßen, Antwort 200.
+
+**Validierung.** Preflight und SEO-Gauntlet über 164 Seiten ohne Befund,
+Desktop und Mobil geprüft. Cache-Buster auf 205.
+
 ## 27.11.2026 (abends) – Ergebnis und Stimme nach oben, Podcast, Hero-Raster
 
 **Projektseiten, alle 44.** Das Ergebnis-Modul mit der Gegenüberstellung
