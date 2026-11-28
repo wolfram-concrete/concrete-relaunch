@@ -2,10 +2,10 @@
 
 ## 28.11.2026 – Projektjahre, Kundengrößen korrigiert, Alt-Texte
 
-**Projektjahre auf allen Projektseiten.** 43 der 44 Cases tragen jetzt ihr
+**Projektjahre auf allen Projektseiten.** Alle 44 Cases tragen jetzt ihr
 Jahr, sichtbar im Projektüberblick und als `datePublished` am
 CreativeWork-Objekt. ergobag steht mit „2009 bis 2021" und zusätzlich
-`temporalCoverage`. Für Poodlewohl fehlt die Angabe noch. Ein Datum ist einer
+`temporalCoverage`. Ein Datum ist einer
 der vier gemessenen Faktoren, nach denen Antwortmaschinen Quellen auswählen;
 bis heute trug keine Projektseite eines.
 
@@ -32,7 +32,7 @@ doppelte `aria-label` ist entfallen. Preflight-Regel entsprechend angepasst.
 Versionsverwaltung. IndexNow mit allen 164 URLs angestoßen, Antwort 200.
 
 **Validierung.** Preflight und SEO-Gauntlet über 164 Seiten ohne Befund,
-Desktop und Mobil geprüft. Cache-Buster auf 205.
+Desktop und Mobil geprüft. Cache-Buster auf 206.
 
 ## 27.11.2026 (abends) – Ergebnis und Stimme nach oben, Podcast, Hero-Raster
 
